@@ -1,5 +1,6 @@
 /.quarto/
 /env/
+_site/
 
 .Rdata
 .Rhistory
