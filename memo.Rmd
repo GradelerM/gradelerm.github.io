@@ -1,0 +1,42 @@
+# Code de la page d’accueil d’origine (qui référence le blog)
+
+```         
+---
+title: "Home"
+toc: false
+listing:
+  id: blog-listing
+  contents: posts
+  sort: date-desc
+  type: grid
+  grid-columns: 3
+  max-items: 3
+  image-placeholder: /static/logo.png
+---
+
+Bienvenue sur mon site en cours de construction. Si vous arrivez ici, il y a de grandes chances pour que vous soyiez en master GeoNum. Les ressources pour les TP, c’est [par ici](./cours/geonum/introduction.qmd) !
+
+------------------------------------------------------------------------
+
+::: {#blog-listing}
+:::
+
+[Voir le blog](blog.qmd)
+```
+
+## Navigation d’origine
+
+```         
+  navbar:
+    left:
+      - text: "Accueil"
+        href: index.qmd
+      - text: "À propos"
+        href: about.qmd
+      - text: "Blog"
+        href: blog.qmd
+      - text: "Cours"
+        menu:
+          - text: "GeoNum"
+            file: cours/geonum/introduction.qmd
+```

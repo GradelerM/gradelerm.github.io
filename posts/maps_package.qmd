@@ -1,0 +1,55 @@
+---
+title: "Figures layout"
+description: "Layout des figures dans les articles avec Quarto."
+author: "Marie Gradeler"
+date: "15/10/2024"
+categories:
+  - R
+  - tmap
+---
+
+```{r}
+#| echo: false
+
+# Load ggplot2
+library(ggplot2)
+
+# Create data
+data <- data.frame(
+  name=c("A","B","C","D","E") ,  
+  value=c(3,12,5,18,45)
+  )
+```
+
+## Test des layouts
+
+Classique, on n’ajoute rien.
+
+```{r}
+#| echo: false
+
+ggplot(data, aes(x=name, y=value)) + 
+  geom_bar(stat = "identity")
+```
+
+On utilise plus d’espace pour afficher une figure en plus large.
+
+```{r}
+#| echo: false
+#| column: screen-inset-shaded
+
+ggplot(data, aes(x=name, y=value)) + 
+  geom_bar(stat = "identity")
+
+```
+
+On peut aussi afficher les figures dans la marge, il semblerait.
+
+```{r}
+#| echo: false
+#| column: margin
+
+ggplot(data, aes(x=name, y=value)) + 
+  geom_bar(stat = "identity")
+
+```

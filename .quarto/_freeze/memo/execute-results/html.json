@@ -1,0 +1,15 @@
+{
+  "hash": "7aa9d2018e68988e0ae511782404bd6a",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Code de la page d’accueil d’origine (qui référence le blog)\n\n```         \n---\ntitle: \"Home\"\ntoc: false\nlisting:\n  id: blog-listing\n  contents: posts\n  sort: date-desc\n  type: grid\n  grid-columns: 3\n  max-items: 3\n  image-placeholder: /static/logo.png\n---\n\nBienvenue sur mon site en cours de construction. Si vous arrivez ici, il y a de grandes chances pour que vous soyiez en master GeoNum. Les ressources pour les TP, c’est [par ici](./cours/geonum/introduction.qmd) !\n\n------------------------------------------------------------------------\n\n::: {#blog-listing}\n:::\n\n[Voir le blog](blog.qmd)\n```\n\n## Navigation d’origine\n\n```         \n  navbar:\n    left:\n      - text: \"Accueil\"\n        href: index.qmd\n      - text: \"À propos\"\n        href: about.qmd\n      - text: \"Blog\"\n        href: blog.qmd\n      - text: \"Cours\"\n        menu:\n          - text: \"GeoNum\"\n            file: cours/geonum/introduction.qmd\n```\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

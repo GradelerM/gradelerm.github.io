@@ -1,0 +1,18 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/dummy_blog_post.html",
+      "/posts/dummy_blog_post_two.html",
+      "/posts/maps_package.html"
+    ]
+  },
+  {
+    "listing": "/blog.html",
+    "items": [
+      "/posts/dummy_blog_post_two.html",
+      "/posts/maps_package.html",
+      "/posts/dummy_blog_post.html"
+    ]
+  }
+]

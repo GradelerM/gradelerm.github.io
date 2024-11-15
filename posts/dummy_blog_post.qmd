@@ -1,0 +1,12 @@
+---
+title: "Dummy blog post"
+description: "Some dummy blog post for pages config"
+author: "Marie Gradeler"
+date: "10/10/2024"
+categories:
+  - R
+  - dataviz
+  
+title-block-banner: false
+title-block-categories: true
+---
