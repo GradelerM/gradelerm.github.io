@@ -1,5 +1,16 @@
 /.quarto/
+/env/
+
 .Rdata
 .Rhistory
+.Rapp.history
+.Ruserdata
+.Rproj.user/
 *.Rproj
+*_cache/
+/cache/
+*.utf8.md
+*.knit.md
+.Renviron
+
 memo.Rmd
