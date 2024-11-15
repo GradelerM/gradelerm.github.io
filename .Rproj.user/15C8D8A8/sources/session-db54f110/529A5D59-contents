@@ -1,5 +1,5 @@
 /.quarto/
 .Rdata
 .Rhistory
-memo.Rmd
 *.Rproj
+memo.Rmd
