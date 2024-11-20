@@ -1,9 +1,0 @@
----
-title: "Serveurs Cartographiques"
-author: "Marie Gradeler"
-format: revealjs
----
-
-## Oh non, c’est vide !
-
-Pas de panique, je suis en train de terminer les slides. Une version complète sera mise en ligne avec la prochaine mise à jour du site.

@@ -1,0 +1,91 @@
+---
+title: "Formation WebCarto GeoNum 2024-2025"
+author: "Marie Gradeler"
+date: 21 Nov 2024
+format: 
+  revealjs: 
+    theme: [default, ../../styles/slides.scss]
+    transition: slide
+    controls: true
+    controls-layout: edges
+    footer: "Formation WebCarto GeoNum 2024 -2025"
+    logo: ../../static/logos/logo-geonum.webp
+---
+
+## Intervenante
+
+### Marie Gradeler
+
+⛰️ Licence de Géologie
+
+🤠 Master d’Archéologie du Paysage (SIG, télédec, stats)
+
+🤷 Pas de sous en archéo donc galère de trouver du travail
+
+🗺️ Master GeoNum (arrivée en M2)
+
+💻 Stage AgroParisTech dans le cadre du Master : développement d’une appli de cartographie web
+
+💻 Contrat de 6 mois au CIRAD pour terminer la production de l’appli carto du stage
+
+💻 Depuis, je travaille comme consultante IFAD sur le project Land Matrix (création d’indicateurs, stats avec R, beaucoup de dataviz et développement Web)
+
+## Les cours
+
+-   Jeudi 21 Nov : 9h - 12h
+
+-   Mercredi 27 Nov : 9h - 12h
+
+-   Jeudi 28 Nov : 9h - 12h
+
+-   Jeudi 28 Nov : 13h30 - 16h30
+
+On va beaucoup travailler sur les **serveurs cartographiques**, notamment **GeoServer**, mais aussi sur la librairie de cartographie **OpenLayers**. Cela va nous demander de savoir écrire du code en **JavaScript**, d’être capable d’exécuter une ou deux lignes de commandes en **Bash** et de comprendre l’architecture **client-serveur** du web.
+
+Je vous recommande d’être bien attentifs aux cours de **Leaflet** (entre autres) qui sont complémentaires de celui-ci. Si vous connaissez Leaflet, vous connaissez presque déjà OpenLayers.
+
+## Les ressources
+
+#### 💻 Mon site internet : <https://gradelerm.github.io>
+
+Il est en cours de construction mais suffit déjà à héberger les ressources pour le cours. Vous y trouverez tout le reste !
+
+#### Moi : [marie.gradeler\@gmail.com](mailto:marie.gradeler@gmail.com)
+
+N’hésitez pas à me contacter. Mes cours sont condensés sur 2 semaines. Si quelque chose ne va pas, je dois le savoir dès la première séance. Je serai aussi disponible pour vous accompagner durant les projets GeoNum si vous avez besoin d’aide sur l’une des notions abordées en cours.
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjU0MWlrOHM3djBoYmNpa2U2bDl0bGJucWtieGU0NXdzOGVnbnN0NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUA7b7cyCdP8INUXjG/giphy.webp){fig-alt="GIF: Write a letter" fig-align="center" width="267"}
+
+## Comment ça se passe
+
+### Organisation des cours
+
+-   Pas mal de mise en pratique
+
+-   On m’appelle si on est perdu, je suis là pour **vous aider** (ne me laissez pas faire mon cours dans le vide parce que vous avez abandonné tout espoir de raccrocher les wagons, ça ne sert à rien)
+
+-   Si on doit ralentir parce que j’ai trop prévu de choses techniques, **on ralentit** et puis c’est tout, j’adapterai l’évaluation à ce qu’on a eu le temps de voir en cours
+
+-   **Pas d’IA pour écrire le code !** Je donne généralement les corrigés dans le TP, vous n’en aurez même pas besoin. Pour apprendre, le mieux, c’est de faire soi-même, et ça ne m’intéresse pas trop de venir faire cours à Chat-GPT ou Gemini de toute façon.
+
+-   Je sais que c’est difficile mais on **lâche son téléphone pendant le cours** (ou cet onglet mal planqué) et on se concentre sur le cours. WhatsApp et les ouvertures de boosters attendront la pause café.
+
+## Évaluation
+
+**Projet à rendre basé sur une petite architecture web que je vous fournirai** (et qui pourrait *éventuellement* servir de base pour une archi de projet GeoNum, je dis ça je dis rien…). Dans les grandes lignes, ce qui vous sera demandé :
+
+🛠️ Publication de couches sur un **GeoServer**
+
+🗺️ Lecture des flux WMS sur une petite appli **OpenLayers**
+
+💻 Déploiement (rudimentaire) de votre serveur GeoServer + application OpenLayers en s’appuyant sur l’architecture web fournie
+
+Je vais recalibrer l’évaluation suivant la vitesse à laquelle on avance et le niveau moyen de la promo en dev. Du coup, vous aurez les consignes pendant le dernier cours.
+
+## C’est parti !
+
+Prêts à ~~encore~~ entendre parler de serveurs, clients, requêtes, variables et fonctions ?
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHRrbTR3cnJrb283b2p4OHh4dHBjaTJvZjRubjRraDNqMjBiemZ1NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8vIFoKU8s4m4CBqCao/giphy.webp){fig-alt="GIF: GTA here we go again" fig-align="center"}
+
+Courage. Promis, ça va nous permettre de faire des trucs cools qui seront très utiles pour les projets GeoNum et si vous faites de la webcarto ou des IDGs plus tard.

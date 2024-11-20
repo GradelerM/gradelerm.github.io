@@ -217,7 +217,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="cours" class="level2">
 <h2 class="anchored" data-anchor-id="cours">Cours</h2>
-<p><a href="../../cours/geonum/slides_cours_1.html" target="_blank">Slides&nbsp;: Serveurs Cartographiques</a></p>
+<p><a href="../../cours/geonum/slides_serveurs_carto.html" target="_blank">Slides&nbsp;: Serveurs Cartographiques</a></p>
 </section>
 <section id="tp---prise-en-main-de-geoserver" class="level2">
 <h2 class="anchored" data-anchor-id="tp---prise-en-main-de-geoserver">️TP - Prise en main de GeoServer</h2>
@@ -234,7 +234,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Ce TP suppose que Docker est installé sur la machine. Il a aussi été écrit pour une machine Linux, certains chemins et lignes de commande peuvent donc être différents sur une machine Windows ou Mac.</p>
+<p>Ce TP suppose que Docker est installé sur la machine. Il a été écrit pour une machine Linux, certains chemins et lignes de commande peuvent donc être différents sur une machine Windows ou Mac.</p>
 </div>
 </div>
 <p>Une fois que Docker est installé, lancez la commande suivante pour télécharger une image de GeoServer en version 2.26.0&nbsp;:</p>
@@ -448,16 +448,13 @@ Rappel des commandes principales
 </ul>
 <p>On pourrait aller lire en détail le <a href="https://docs.geoserver.org/main/en/user/styling/sld/cookbook/index.html">SLD Cookbook</a> de GeoServer pour écrire notre fichier manuellement, mais on est plus malins que ça. On a un super outil à disposition qui s’appelle QGIS.</p>
 <ul>
-<li><strong>Si vous ne l’avez pas déjà fait, créer un projet QGIS et ajoutez les couches Land Matrix.</strong></li>
-</ul>
-<!-- -->
-<ul>
-<li><p>Donnez un style sympa aux points de la couche deals. J’ai changé la couleur pour les rendre orange.</p></li>
-<li><p>Allez dans les propriétés de votre couche et dans “Symbologie”. Tout en bas, choisissez “Style” et “Enregistrer le style…”.</p></li>
-<li><p>Choisissez l’option “En tant que fichier SLD” et choisissez le chemin et le nom de votre fichier en cliquant sur “…” après “Fichier”. J’ai appelé le mien “deals.sld”</p></li>
-<li><p>Allez chercher votre fichier et ouvrez-le avec un éditeur de texte (Notepad, VSCode, peu importe).</p></li>
-<li><p>Copiez le contenu.</p></li>
-<li><p>Retournez sur votre page GeoServer, supprimez tout le contenu de la zone de texte et collez à la place le contenu de <code>deals.sld</code>. Renommez le contenu de la balise <code>&lt;se:Name&gt;</code> en <code>Deal</code>. Voilà ce que ça donne pour moi&nbsp;:</p></li>
+<li><strong>Si vous ne l’avez pas déjà fait, créez un projet QGIS et ajoutez les couches Land Matrix.</strong></li>
+<li>Donnez un style sympa aux points de la couche deals. J’ai changé la couleur pour les rendre orange.</li>
+<li>Allez dans les propriétés de votre couche et dans “Symbologie”. Tout en bas, choisissez “Style” et “Enregistrer le style…”.</li>
+<li>Choisissez l’option “En tant que fichier SLD” et choisissez le chemin et le nom de votre fichier en cliquant sur “…” après “Fichier”. J’ai appelé le mien “deals.sld”</li>
+<li>Allez chercher votre fichier et ouvrez-le avec un éditeur de texte (Notepad, VSCode, peu importe).</li>
+<li>Copiez le contenu.</li>
+<li>Retournez sur votre page GeoServer, supprimez tout le contenu de la zone de texte et collez à la place le contenu de <code>deals.sld</code>. Renommez le contenu de la balise <code>&lt;se:Name&gt;</code> en <code>Deal</code>. Voilà ce que ça donne pour moi&nbsp;:</li>
 </ul>
 <div class="sourceCode" id="cb11"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;?xml</span><span class="ot"> version=</span><span class="st">"1.0"</span><span class="ot"> encoding=</span><span class="st">"UTF-8"</span><span class="fu">?&gt;</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">StyledLayerDescriptor</span><span class="ot"> xmlns=</span><span class="st">"http://www.opengis.net/sld"</span><span class="ot"> xmlns:se=</span><span class="st">"http://www.opengis.net/se"</span><span class="ot"> xmlns:ogc=</span><span class="st">"http://www.opengis.net/ogc"</span><span class="ot"> xsi:schemaLocation=</span><span class="st">"http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd"</span><span class="ot"> xmlns:xsi=</span><span class="st">"http://www.w3.org/2001/XMLSchema-instance"</span><span class="ot"> xmlns:xlink=</span><span class="st">"http://www.w3.org/1999/xlink"</span><span class="ot"> version=</span><span class="st">"1.1.0"</span>&gt;</span>
@@ -505,11 +502,8 @@ Tip
 <p>Maintenant, il faut dire à GeoServer qu’on veut utiliser ce style avec notre couche “deals”.</p>
 <ul>
 <li>Allez dans “Couches”.</li>
-</ul>
-<!-- -->
-<ul>
-<li><p>Sélectionnez la couche “deals et allez dans l’onglet”Publication”.</p></li>
-<li><p>Dans “Style par défaut”, sélectionnez “land_matrix:deals” et Sauvegardez.</p></li>
+<li>Sélectionnez la couche “deals et allez dans l’onglet”Publication”.</li>
+<li>Dans “Style par défaut”, sélectionnez “land_matrix:deals” et Sauvegardez.</li>
 </ul>
 <p>Maintenant, vous pouvez de nouveau prévisualiser la couche “deals” et voilà&nbsp;! Nos points sont ronds et jaunes. Vous savez maintenant créer un nouveau style SLD depuis QGIS et l’ajouter à une couche dans GeoServer&nbsp;!</p>
 <div class="quarto-figure quarto-figure-center">
@@ -884,7 +878,7 @@ SLD pour “deals_by_country_centroid”
 <p>Si vous avez un doute, allez dans “Prévisualisation de la couche” et regardez le contenu de la colonne “Nom”. C’est la valeur à donner à ‘LAYERS’.</p>
 <p>Enfin, on renseigne le type du serveur, ici ‘geoserver’. Ce paramètre permet à OpenLayers de communiquer plus facilement avec GeoServer lorsque vous utiliserez des fonctionnalités plus avancées. De manière générale, cela vous permet aussi de vous souvenir du type de serveur avec lequel vous communiquez.</p>
 <p>Chouette, après tout ça on a enfin réussi à créer, lire et afficher un flux WMS&nbsp;! Sauf que, il manque encore quelque chose… la légende&nbsp;! Et là vous me dites “pitié, j’en peux plus, j’ai la tête qui va exploser”. Allez, encore un petit effort. On a vu que GeoServer est capable de générer tout seul une légende, il nous suffit donc de la récupérer. Pour ça, rien de plus facile&nbsp;! Le serveur distribue les images comme il distribue les couches de données. Il nous suffit de récupérer l’image en question et l’afficher dans une nouvelle <code>&lt;div&gt;</code> sur notre carte.</p>
-<p>On reviendra en détail le fonctionnement des légendes dans le TP sur OpenLayers. Commencez par créer une <code>&lt;div&gt;</code> pour la légende sous <code>&lt;div id="map"&gt;&lt;/div&gt;</code> :</p>
+<p>On reviendra en détail sur le fonctionnement des légendes dans le TP sur OpenLayers. Commencez par créer une <code>&lt;div&gt;</code> pour la légende sous <code>&lt;div id="map"&gt;&lt;/div&gt;</code> :</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"map"</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;&lt;</span><span class="kw">img</span><span class="ot"> id</span><span class="op">=</span><span class="st">"legend"</span><span class="ot"> </span><span class="dt">/&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Notre script permettra de modifier la source de l’image <code>legend</code> en interrogeant GeoServer à chaque fois qu’on fera changer la résolution de la carte. Dans le tag <code>&lt;script&gt;</code>, en dessous du code de la carte “Map”, ajoutez les lignes suivantes :</p>

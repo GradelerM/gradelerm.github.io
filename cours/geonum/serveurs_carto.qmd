@@ -19,7 +19,7 @@ subtitle: "Introduction aux serveurs cartographiques et à l’utilisation de Ge
 
 ## Cours
 
-[Slides : Serveurs Cartographiques](./slides_cours_1.qmd){target="_blank"}
+[Slides : Serveurs Cartographiques](./slides_serveurs_carto.qmd){target="_blank"}
 
 ## ️TP - Prise en main de GeoServer
 
@@ -28,7 +28,7 @@ subtitle: "Introduction aux serveurs cartographiques et à l’utilisation de Ge
 [Documentation GeoServer](https://docs.geoserver.org/main/en/user/installation/docker.html) - [Dépôt de l’image Docker](https://github.com/geoserver/docker)
 
 ::: callout-important
-Ce TP suppose que Docker est installé sur la machine. Il a aussi été écrit pour une machine Linux, certains chemins et lignes de commande peuvent donc être différents sur une machine Windows ou Mac.
+Ce TP suppose que Docker est installé sur la machine. Il a été écrit pour une machine Linux, certains chemins et lignes de commande peuvent donc être différents sur une machine Windows ou Mac.
 :::
 
 Une fois que Docker est installé, lancez la commande suivante pour télécharger une image de GeoServer en version 2.26.0 :
@@ -256,20 +256,12 @@ Pour le moment, afficher notre couche "deals" va juste donner l’impression que
 
 On pourrait aller lire en détail le [SLD Cookbook](https://docs.geoserver.org/main/en/user/styling/sld/cookbook/index.html) de GeoServer pour écrire notre fichier manuellement, mais on est plus malins que ça. On a un super outil à disposition qui s’appelle QGIS.
 
--   **Si vous ne l’avez pas déjà fait, créer un projet QGIS et ajoutez les couches Land Matrix.**
-
-<!-- -->
-
+-   **Si vous ne l’avez pas déjà fait, créez un projet QGIS et ajoutez les couches Land Matrix.**
 -   Donnez un style sympa aux points de la couche deals. J’ai changé la couleur pour les rendre orange.
-
 -   Allez dans les propriétés de votre couche et dans "Symbologie". Tout en bas, choisissez "Style" et "Enregistrer le style…".
-
 -   Choisissez l’option "En tant que fichier SLD" et choisissez le chemin et le nom de votre fichier en cliquant sur "…" après "Fichier". J’ai appelé le mien "deals.sld"
-
 -   Allez chercher votre fichier et ouvrez-le avec un éditeur de texte (Notepad, VSCode, peu importe).
-
 -   Copiez le contenu.
-
 -   Retournez sur votre page GeoServer, supprimez tout le contenu de la zone de texte et collez à la place le contenu de `deals.sld`. Renommez le contenu de la balise `<se:Name>` en `Deal`. Voilà ce que ça donne pour moi :
 
 ``` xml
@@ -313,11 +305,7 @@ Une autre méthode pour charger le contenu d’un fichier de style .sld est de c
 Maintenant, il faut dire à GeoServer qu’on veut utiliser ce style avec notre couche "deals".
 
 -   Allez dans "Couches".
-
-<!-- -->
-
 -   Sélectionnez la couche "deals et allez dans l’onglet "Publication".
-
 -   Dans "Style par défaut", sélectionnez "land_matrix:deals" et Sauvegardez.
 
 Maintenant, vous pouvez de nouveau prévisualiser la couche "deals" et voilà ! Nos points sont ronds et jaunes. Vous savez maintenant créer un nouveau style SLD depuis QGIS et l’ajouter à une couche dans GeoServer !
@@ -693,7 +681,7 @@ Enfin, on renseigne le type du serveur, ici 'geoserver'. Ce paramètre permet à
 
 Chouette, après tout ça on a enfin réussi à créer, lire et afficher un flux WMS ! Sauf que, il manque encore quelque chose… la légende ! Et là vous me dites "pitié, j’en peux plus, j’ai la tête qui va exploser". Allez, encore un petit effort. On a vu que GeoServer est capable de générer tout seul une légende, il nous suffit donc de la récupérer. Pour ça, rien de plus facile ! Le serveur distribue les images comme il distribue les couches de données. Il nous suffit de récupérer l’image en question et l’afficher dans une nouvelle `<div>` sur notre carte.
 
-On reviendra en détail le fonctionnement des légendes dans le TP sur OpenLayers. Commencez par créer une `<div>` pour la légende sous `<div id="map"></div>` :
+On reviendra en détail sur le fonctionnement des légendes dans le TP sur OpenLayers. Commencez par créer une `<div>` pour la légende sous `<div id="map"></div>` :
 
 ``` html
 <div id="map"></div>
