@@ -260,7 +260,7 @@ On pourrait aller lire en détail le [SLD Cookbook](https://docs.geoserver.org/m
 -   Choisissez l’option "En tant que fichier SLD" et choisissez le chemin et le nom de votre fichier en cliquant sur "…" après "Fichier". J’ai appelé le mien "deals.sld"
 -   Allez chercher votre fichier et ouvrez-le avec un éditeur de texte (Notepad, VSCode, peu importe).
 -   Copiez le contenu.
--   Retournez sur votre page GeoServer, supprimez tout le contenu de la zone de texte et collez à la place le contenu de `deals.sld`. Renommez le contenu de la balise `<se:Name>` en `Deal`. Voilà ce que ça donne pour moi :
+-   Retournez sur votre page GeoServer, supprimez tout le contenu de la zone de texte et collez à la place le contenu de `deals.sld`. Voilà ce que ça donne pour moi :
 
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
