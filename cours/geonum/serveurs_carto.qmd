@@ -114,9 +114,7 @@ Ensuite, on va créer un dossier à monter sur le `/data` de notre container.
 -   Remplacez `"/absolute/path/on/host"` dans la commande suivante et copiez-collez la quelque part, on ne sait jamais.
 
 ``` bash
-docker run -it -p 80:8080 \
-  --mount src="/absolute/path/on/host",target=/opt/geoserver_data/,type=bind \
-  docker.osgeo.org/geoserver:2.26.0
+docker run -it -p 80:8080 --mount src="/absolute/path/on/host",target=/opt/geoserver_data/,type=bind docker.osgeo.org/geoserver:2.26.0
 ```
 
 -   Exécutez la ligne de commande.

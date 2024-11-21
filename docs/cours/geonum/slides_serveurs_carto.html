@@ -426,7 +426,7 @@ Marie Gradeler
 </section>
 <section id="les-standards-ogc-3" class="slide level2">
 <h2>Les standards OGC</h2>
-<h3 id="web-feature-service-wcs">Web Feature Service (WCS)</h3>
+<h3 id="web-coverage-service-wcs">Web Coverage Service (WCS)</h3>
 <ul>
 <li><p>La spécification WCS fournit une interface pour accéder à de la donnée <strong>raster</strong>. On peut le voir comme le WMS pour du raster.</p></li>
 <li><p>La requête <strong>DescribeCoverage</strong> retourne un document XML qui décrit la couverture du pixel sélectionné.</p></li>
@@ -478,14 +478,14 @@ Marie Gradeler
 <h3 id="geoserver">GeoServer</h3>
 <p><a href="https://geoserver.org/about/">Lien vers GeoServer</a></p>
 <p><strong>Serveur</strong> Java gratuit et Open Source qui permet aux utilisateurs de visualiser et éditer de la donnée géospatiale. La librairie OpenLayers est intégrée à GeoServer pour générer rapidement des cartes. Les capacités du serveur peuvent être étendues via l’installation d’extensions divserses.</p>
-<p>GeoServer est le plus simple à mettre en place. Il n’est pas forcément conçu pour fonctionner avec QGIS mais aussi directement avec des bases de données comme PostgreSQL - l’équipe le décrit comme étant “designé pour l’<strong>interopérabilité</strong>. GeoServer est plus complexe à configurer mais le plus adaptable aux besoins utilisateur, notamment grâce à la gestion fine des droits utilisateurs et l’utilisation de plugins pour enrichir les possibilités.</p>
+<p>GeoServer est le plus simple à déployer. Il peut aussi directement se connecter avec des bases de données comme PostgreSQL - l’équipe le décrit comme étant “designé pour l’<strong>interopérabilité</strong>”. GeoServer est assez complexe à configurer mais le plus adaptable aux besoins utilisateur, notamment grâce à la gestion fine des droits utilisateurs et l’utilisation de plugins pour enrichir les possibilités.</p>
 </section>
 <section id="exemples-de-serveurs-cartographiques-2" class="slide level2">
 <h2>Exemples de serveurs cartographiques</h2>
 <h3 id="qgis-server">QGIS Server</h3>
 <p><a href="https://docs.qgis.org/3.34/en/docs/server_manual/introduction.html">Lien vers QGIS Server Guide Manual</a></p>
 <p><strong>API</strong> gratuite et Open Source qui permet aussi d’implanter des éléments cartographiques avancés pour créer des cartes thématiques. Elle fonctionne avec un <strong>serveur</strong> web (Apache ou Nginx).</p>
-<p>QGIS Server est plus difficile à mettre en place (on utilisera une application tierce comme <a href="https://www.lizmap.com/">LizMap</a>) mais est le plus compatible avec la publication de projets via QGIS. C’est la meilleure solution pour publier rapidement un projet QGIS. On la présentera rapidement à la fin du TP.</p>
+<p>QGIS Server est plus difficile à mettre en place (on utilisera une application tierce comme <a href="https://www.lizmap.com/">LizMap</a>) mais est le plus compatible avec la publication de projets via QGIS. C’est la meilleure solution pour publier rapidement un projet QGIS. On le présentera rapidement dans un des TP.</p>
 </section>
 <section id="geoserver---introduction" class="slide level2">
 <h2>GeoServer - Introduction</h2>
@@ -495,7 +495,8 @@ Marie Gradeler
 <li><p>GeoServer est un projet <strong>développé, testé et soutenu par sa communauté</strong> - comme dans le cas de QGIS.</p></li>
 <li><p>GeoServer est une <strong>référence</strong> dans l’implementation des standards WFS, WMS et WCS de l’OGC.</p></li>
 </ul>
-<p><a href="https://docs.geoserver.org/latest/en/user/introduction/overview.html"><em>Source : GeoServer Overview</em></a></p>
+
+<img data-src="media/geoserver_schema.png" class="r-stretch quarto-figure-center"><p class="caption">Source : hansongis.com/blog/</p><p><a href="https://docs.geoserver.org/latest/en/user/introduction/overview.html"><em>Source : GeoServer Overview</em></a></p>
 </section>
 <section id="geoserver---introduction-1" class="slide level2">
 <h2>GeoServer - Introduction</h2>

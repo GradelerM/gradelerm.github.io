@@ -60,7 +60,7 @@ Dans le cas des serveurs web et cartographiques, le client (par exemple notre Fi
 
 En réalité, la plupart des applications fonctionnent de la manière suivante : le client envoie des requêtes au serveur. Le serveur va communiquer avec la base de données, traiter le résultat et renvoyer une réponse au client.
 
-*Exemple : \
+*Exemple :\
 - Client = mon application Firefox\
 - Serveur = les serveurs de Google\
 - Database = la base de données de Google\
@@ -117,7 +117,7 @@ Pas de panique - "interface" est un joli mot pour expliquer comment on doit stru
 
 ## Les standards OGC
 
-### Web Feature Service (WCS)
+### Web Coverage Service (WCS)
 
 -   La spécification WCS fournit une interface pour accéder à de la donnée **raster**. On peut le voir comme le WMS pour du raster.
 
@@ -181,7 +181,7 @@ MapServer continue à exister dans les organisations qui s’en servent déjà m
 
 **Serveur** Java gratuit et Open Source qui permet aux utilisateurs de visualiser et éditer de la donnée géospatiale. La librairie OpenLayers est intégrée à GeoServer pour générer rapidement des cartes. Les capacités du serveur peuvent être étendues via l’installation d’extensions divserses.
 
-GeoServer est le plus simple à mettre en place. Il n’est pas forcément conçu pour fonctionner avec QGIS mais aussi directement avec des bases de données comme PostgreSQL - l’équipe le décrit comme étant "designé pour l’**interopérabilité**. GeoServer est plus complexe à configurer mais le plus adaptable aux besoins utilisateur, notamment grâce à la gestion fine des droits utilisateurs et l’utilisation de plugins pour enrichir les possibilités.
+GeoServer est le plus simple à déployer. Il peut aussi directement se connecter avec des bases de données comme PostgreSQL - l’équipe le décrit comme étant "designé pour l’**interopérabilité**". GeoServer est assez complexe à configurer mais le plus adaptable aux besoins utilisateur, notamment grâce à la gestion fine des droits utilisateurs et l’utilisation de plugins pour enrichir les possibilités.
 
 ## Exemples de serveurs cartographiques
 
@@ -191,7 +191,7 @@ GeoServer est le plus simple à mettre en place. Il n’est pas forcément conç
 
 **API** gratuite et Open Source qui permet aussi d’implanter des éléments cartographiques avancés pour créer des cartes thématiques. Elle fonctionne avec un **serveur** web (Apache ou Nginx).
 
-QGIS Server est plus difficile à mettre en place (on utilisera une application tierce comme [LizMap](https://www.lizmap.com/)) mais est le plus compatible avec la publication de projets via QGIS. C’est la meilleure solution pour publier rapidement un projet QGIS. On la présentera rapidement à la fin du TP.
+QGIS Server est plus difficile à mettre en place (on utilisera une application tierce comme [LizMap](https://www.lizmap.com/)) mais est le plus compatible avec la publication de projets via QGIS. C’est la meilleure solution pour publier rapidement un projet QGIS. On le présentera rapidement dans un des TP.
 
 ## GeoServer - Introduction
 
@@ -202,6 +202,8 @@ QGIS Server est plus difficile à mettre en place (on utilisera une application 
 -   GeoServer est un projet **développé, testé et soutenu par sa communauté** - comme dans le cas de QGIS.
 
 -   GeoServer est une **référence** dans l’implementation des standards WFS, WMS et WCS de l’OGC.
+
+![Source : hansongis.com/blog/](media/geoserver_schema.png)
 
 [*Source : GeoServer Overview*](https://docs.geoserver.org/latest/en/user/introduction/overview.html)
 

@@ -312,9 +312,7 @@ Tip
 <li><p>Copiez le chemin ABSOLU vers ce dossier. Par exemple, chez moi (Ubuntu), ça donne ça&nbsp;: <code>/home/marie/Documents/GeoServer</code></p></li>
 <li><p>Remplacez <code>"/absolute/path/on/host"</code> dans la commande suivante et copiez-collez la quelque part, on ne sait jamais.</p></li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-it</span> <span class="at">-p</span> 80:8080 <span class="dt">\</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">--mount</span> src=<span class="st">"/absolute/path/on/host"</span>,target=/opt/geoserver_data/,type=bind <span class="dt">\</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  docker.osgeo.org/geoserver:2.26.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">-it</span> <span class="at">-p</span> 80:8080 <span class="at">--mount</span> src=<span class="st">"/absolute/path/on/host"</span>,target=/opt/geoserver_data/,type=bind docker.osgeo.org/geoserver:2.26.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Exécutez la ligne de commande.</li>
 </ul>
