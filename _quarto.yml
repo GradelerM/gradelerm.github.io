@@ -24,6 +24,7 @@ website:
         - cours/geonum/introduction.qmd
         - cours/geonum/serveurs_carto.qmd
         - cours/geonum/openlayers_geoserver.qmd
+        - cours/geonum/enrichir_ma_carte.qmd
   
   page-footer: 
     left: ""

@@ -1,0 +1,8 @@
+---
+title: "Enrichir ma carte en fonctionnalités"
+subtitle: "Enrichir ma carte OpenLayers en fonctionnalités en utilisant les capabilities de GeoServer et plus de fonctions et objets OpenLayers."
+---
+
+## Objectifs
+
+*En cours de rédaction*
