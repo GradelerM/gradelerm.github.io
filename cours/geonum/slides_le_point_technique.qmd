@@ -1,0 +1,238 @@
+---
+title: "Serveurs Carto et OpenLayers - le point technique"
+author: "Marie Gradeler"
+date: 27 Nov 2024
+format: 
+  revealjs: 
+    theme: [default, ../../styles/slides.scss]
+    transition: slide
+    controls: true
+    controls-layout: edges
+    footer: "Formation WebCarto GeoNum 2024 -2025"
+    logo: ../../static/logos/logo-geonum.webp
+---
+
+## Sommaire
+
+-   Présentation brève d’OpenLayers
+
+-   Les bases de Node JS
+
+-   De quelle architecture on a besoin ?
+
+-   VMs, Docker et Docker Compose
+
+-   Notre Docker Compose
+
+Et si on avance bien, aujourd’hui on aura non pas **UN** mais **DEUX** cours ! Alors ne perdons pas de temps et en avant !
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnpieGN1MXJ4NzZvZ3Vzd2R5ODN6cGtvOGk5MTNqaG91MGd5aXlhMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Uow8AG1hMg1qxfWrzQ/giphy.webp){fig-alt="GIF : Rick et Morty désespoir" fig-align="center"}
+
+## Présentation brève d’OpenLayers
+
+-   [OpenLayers](https://openlayers.org/) est une librairie JavaScript Open Source qui permet de créer des cartes interactives pour le web.
+
+-   La librairie a plus de 11 000 stars sur GitHub et 3 000 forks.
+
+-   Au moment où j’écris ce cours, la dernière mise à jour date d’il y a deux jours.
+
+-   L’alpha d’OpenLayers (première version mise en ligne sur GitHub) date de 2013.
+
+**C’est une librairie populaire, mature, maintenue et bien documentée.**
+
+![](media/openlayers_site.png){fig-alt="GIF : Site de OpenLayers" fig-align="center" width="620"}
+
+## Présentation brève d’OpenLayers
+
+🤔 Ça ressemble en tout point à [Leaflet](https://leafletjs.com/), non ? Alors pourquoi apprendre les deux ?
+
+. . .
+
+👉 Oui et non !
+
+-   **Leaflet** est plus pratique pour obtenir rapidement une "jolie" carte avec moins de code, par exemple afficher/masquer les couches.
+
+-   Mais Leaflet a aussi ses défauts : la carte est plus difficile à customiser "en profondeur" qu’OpenLayers, il y a de nombreux plug-ins qui parfois font plus ou moins la même chose, parfois ne sont plus maintenus, là où beaucoup de ces fonctionnalités sont disponibles dans le code de base d’OpenLayers.
+
+. . .
+
+**Pour faire simple**, selon mon expérience avec les deux librairies, **OpenLayers est plus facilement customisable et se repose moins sur des plug-ins externes.** Il existe une source de plug-ins pour ajouter des fonctionnalités supplémentaires publiée par l’utilisateur GitHub [viglino](https://github.com/Viglino). Ces extensions [ol-ext](https://viglino.github.io/ol-ext/) sont régulièrement maintenues.
+
+## Présentation brève d’OpenLayers
+
+Il est donc intéressant de savoir utiliser à la fois Leaflet et OpenLayers car chacune des librairies a ses points forts et ses faiblesses.
+
+Cela dit, en ce qui concerne un usage simplifié, **si vous comprenez Leaflet vous comprenez aussi OpenLayers**.
+
+![](media/la_webcarto_libre.jpg){fig-alt="GIF : Leaflet et OpenLayers, la webcarto libre" fig-align="center" width="356"}
+
+On va devoir créer une application Node JS pour pouvoir importer la librairie OpenLayers et commencer à coder.
+
+## Les bases de Node JS
+
+Node JS, c’est ce qu’on appelle un environnement runtime de JavaScript.
+
+Voilà. On continue ?
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXNsN2xrc2kzM3dleGRhcXgya3o1dnAwdWlpb2FzbmNuMW5xa2pidCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o84TZ6rOiGqdpzNRe/giphy.webp){fig-alt="GIF : Perceval dit \"j'ai rien compris\"" fig-align="center"}
+
+## Les bases de Node JS
+
+Pour simplifier, voyons comment vous écrivez et exécutez votre code JavaScript jusqu’à maintenant.
+
+-   On crée un document `index.html` dans lequel on met quelque part une balise `<script>`
+
+-   On écrit le code dans la balise `<script>`
+
+-   On ouvre `index.html` dans le navigateur
+
+-   Comme le JavaScript est dans `index.html` qui est ouvert dans un navigateur, le navigateur peut exécuter le code JavaScript
+
+**Ce n’est pas super pratique quand on commence à avoir une application qui grandit (ou "scale").**
+
+## Les bases de Node JS
+
+La force de Node JS est de permettre d’exécuter du code écrit en JavaScript sans passer par le navigateur. Si par la suite vous devez écrire du code côté serveur, vous pouvez aussi le faire en JavaScript. Et surtout, Node JS permet de télécharger facilement des librairies et déployer encore plus facilement notre application pour la **mettre en production** en utilisant quelques lignes de commande.
+
+![](media/logo_node_js.png){fig-alt="Logo Node JS" fig-align="center" width="300"}
+
+## Un serveur pour mon appli web
+
+Vous vous souvenez sûrement du premier cours de Leaflet.
+
+![](media/diapo_mickael_shocked.png){fig-alt="Diapo Leaflet \"on va tricher\"" fig-align="center" width="536"}
+
+## Un serveur pour mon appli web
+
+Vous avez "triché" pour éviter d’avoir à utiliser un serveur. Mais maintenant, ça ne vous fait plus peur. Après tout, on a bien utilisé un serveur carto la dernière fois et tout le monde a survécu. Maintenant, on va pouvoir écrire une application web plus complexe, bien la structurer grâce à Node JS, et la servir sur un **serveur web**.
+
+![](media/diapo_mickael_server.png){fig-alt="Diapo Leaflet sur l’architecture serveur" fig-align="center" width="1250"}
+
+## De quelle architecture on a besoin ?
+
+Facile ! On veut :
+
+-   un **serveur webcarto** (GeoServer)
+
+-   mais aussi un **serveur web** pour servir notre application.
+
+Durant le premier TP, on a utilisé Docker pour déployer notre GeoServer. On peut aussi déployer notre serveur web avec Docker. Mais ça voudrait dire qu’à chaque fois, on aurait deux containers différents à allumer et éteindre, qu’il faut faire attention à ne pas les configurer de travers, ne pas oublier les lignes de commande qu’on a tapées…
+
+![](media/logo-docker.jpg){fig-alt="Logo docker" fig-align="center" width="356"}
+
+Heureusement, Docker dispose d’un petit outil bien pratique pour gérer des architectures à plusieurs containers : **Docker Compose**. Sauf que pour comprendre Docker Compose, il faut comprendre Docker. Et pour comprendre Docker, il faut comprendre les Machines Virtuelles (VM).
+
+## VMs, Docker et Docker Compose
+
+Encore de la théorie ?!
+
+![](https://media1.tenor.com/m/N47hDzQgp5QAAAAd/jdg-bored.gif){fig-alt="Joueur du Grenier blasé" fig-align="center"}
+
+On ne va pas rentrer dans le détail, l’idée est que vous compreniez pourquoi on a utilisé Docker et pas des machines virtuelles pour nos serveurs. Docker, c’est bien. Si vous déployez des architectures par la suite, vous allez apprendre à l’aimer.
+
+## VMs, Docker et Docker Compose
+
+### Les Machines Virtuelles (VM)
+
+-   Il faut voir une machine virtuelle comme un ordinateur qui serait **dématérialisé** (sans composants matériels). Elle possède un processeur, de la mémoire, des espaces de stockage pour la donnée, elle peut se connecter à internet…
+
+-   Outils de création de machines virtuelles : VirtualBox, VMWare…
+
+*Exemple : en téléchargeant VirtualBox, je peux créer une machine virtuelle Linux sur mon ordinateur Windows.*
+
+![Source : microsoft.com](media/virtual-machine-diagram.svg){fig-alt="Diagramme Machine Virtuelle" fig-align="center"}
+
+## VMs, Docker et Docker Compose
+
+### Les Machines Virtuelles (VM)
+
+Si je voulais mettre en place mon serveur sur une machine virtuelle, je devrais :
+
+-   créer la machine (avec des caractéristiques suffisantes pour faire tourner l’application)
+
+-   installer et configurer mon serveur web (Apache, Nginx, Caddy)
+
+-   ajouter le build de mon application Node JS dans le dossier `/var/www/` de mon serveur web
+
+-   télécharger, installer et configurer GeoServer
+
+-   éventuellement télécharger, installer et configurer une base Postgresql avec PostGIS et la connecter au serveur
+
+-   etc.
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYm1qNGw0eHk1ZmxmNmtiaXQwenc5NDdqcDRkbTNyc3M1YmJzdXRnbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LgR0AnXJBrO4E/giphy.webp){fig-alt="GIF : Chat déboussolé" fig-align="center" width="412"}
+
+## VMs, Docker et Docker Compose
+
+### Les Machines Virtuelles (VM)
+
+Multiplier les machines virtuelles sur l’hôte est très demandeur.
+
+-   ressources divisées entre l’hôte et les machines
+
+-   autant d’OS à faire tourner que de machines
+
+-   chaque machine = plusieurs Go d’espace
+
+C’est aussi **difficile à maintenir** - il faut garder tous les OS à jour, etc.
+
+**Mais nous, on aime la simplicité et éviter de consommer plein de mémoire "pour rien".**
+
+## VMs, Docker et Docker Compose
+
+### Docker
+
+-   Docker permet de faire tourner ce qu’on appelle des **containers.**
+
+-   Les containers sont réduits au **minimum nécessaire** pour faire tourner des services (un serveur, une base de données, …).
+
+-   Autre outil de containerisation : Podman
+
+![Source : microsoft.com](media/container-diagram.svg){fig-alt="Schéma containers" fig-align="center"}
+
+## VMs, Docker et Docker Compose
+
+### Docker Compose
+
+-   Sorti en 2013, **Docker Compose** permet de gérer des applications multi-containers.
+
+-   Pour cela, on va rédiger un fichier de type `docker-compose.yml` qui va agir comme une "recette" pour permettre à Docker de créer et connecter l’ensemble des containers dont on a besoin.
+
+------------------------------------------------------------------------
+
+Courage, on touche à la fin de ce cours. On fait juste ensemble un tour du `docker-compose.yml` du TP et vous allez pouvoir commencer à manipuler.
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnBiZHgwZ2t3M281cnFnYWtoZXBmdGxzMW1sM2J6MnFkemdseHRmNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fXzA0KYfjTPjWLzmPj/giphy.webp){fig-alt="GIF : Rick et Morty paniquent, la suite" fig-align="center" width="320"}
+
+## Notre Docker Compose
+
+Explications sur le contenu :
+
+``` {.yaml code-line-numbers="|1|3,15|3|4|5|6,7,8,9|10,11|12,13|15|16|17|18,19|20,21,22"}
+services:
+
+  geoserver:
+    container_name: geonum_geoserver
+    image: docker.osgeo.org/geoserver:2.26.0
+    environment:
+      - RUN_UNPRIVILEGED=true
+      - CHANGE_OWNERSHIP_ON_FOLDERS="/opt /opt/geoserver_data/ /mnt/geoserver_geodata"
+      - CORS_ENABLED=true
+    ports:
+      - "8080:8080"
+    volumes:
+      - $PWD/geoserver/opt:/opt/geoserver_data
+  
+  web:
+    container_name: geonum_web
+    image: caddy:latest
+    ports:
+      - "80:80"
+    volumes:
+      - $PWD/Caddyfile:/etc/caddy/Caddyfile
+      - $PWD/app/dist/:/srv
+```
+
+## À vous !
+
+Commencez le TP "démarrage de la stack" pour mettre en place vos containers ! Ensuite, on pourra se pencher un peu plus sur le cas d’OpenLayers.

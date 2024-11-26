@@ -23,7 +23,7 @@ website:
       contents: 
         - cours/geonum/introduction.qmd
         - cours/geonum/serveurs_carto.qmd
-        - cours/geonum/archi_web.qmd
+        - cours/geonum/openlayers_geoserver.qmd
   
   page-footer: 
     left: ""

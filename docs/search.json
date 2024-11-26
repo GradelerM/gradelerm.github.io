@@ -298,40 +298,28 @@
     "href": "cours/geonum/archi_web.html",
     "title": "Architecture web",
     "section": "",
-    "text": "Comprendre le fonctionnement d’une architecture web classique, la notion de client et de serveur et le fonctionnement d’une requête.\nComprendre la notion de dockerisation et être capable de démarrer des containers avec Docker.\nDécouvrir Docker Compose, un service de Docker pour articuler facilement plusieurs containers entre eux, et savoir faire tourner l’architecture web OpenLayers (Node JS) + GeoServer fournie.",
-    "crumbs": [
-      "Architecture web"
-    ]
+    "text": "Comprendre le fonctionnement d’une architecture web classique, la notion de client et de serveur et le fonctionnement d’une requête.\nComprendre la notion de dockerisation et être capable de démarrer des containers avec Docker.\nDécouvrir Docker Compose, un service de Docker pour articuler facilement plusieurs containers entre eux, et savoir faire tourner l’architecture web OpenLayers (Node JS) + GeoServer fournie."
   },
   {
     "objectID": "cours/geonum/archi_web.html#objectifs",
     "href": "cours/geonum/archi_web.html#objectifs",
     "title": "Architecture web",
     "section": "",
-    "text": "Comprendre le fonctionnement d’une architecture web classique, la notion de client et de serveur et le fonctionnement d’une requête.\nComprendre la notion de dockerisation et être capable de démarrer des containers avec Docker.\nDécouvrir Docker Compose, un service de Docker pour articuler facilement plusieurs containers entre eux, et savoir faire tourner l’architecture web OpenLayers (Node JS) + GeoServer fournie.",
-    "crumbs": [
-      "Architecture web"
-    ]
+    "text": "Comprendre le fonctionnement d’une architecture web classique, la notion de client et de serveur et le fonctionnement d’une requête.\nComprendre la notion de dockerisation et être capable de démarrer des containers avec Docker.\nDécouvrir Docker Compose, un service de Docker pour articuler facilement plusieurs containers entre eux, et savoir faire tourner l’architecture web OpenLayers (Node JS) + GeoServer fournie."
   },
   {
     "objectID": "cours/geonum/archi_web.html#cours",
     "href": "cours/geonum/archi_web.html#cours",
     "title": "Architecture web",
     "section": "Cours",
-    "text": "Cours\nEn cours de rédaction…",
-    "crumbs": [
-      "Architecture web"
-    ]
+    "text": "Cours\nEn cours de rédaction…"
   },
   {
     "objectID": "cours/geonum/archi_web.html#tp---architecture-de-webcarto-avec-docker",
     "href": "cours/geonum/archi_web.html#tp---architecture-de-webcarto-avec-docker",
     "title": "Architecture web",
     "section": "TP - Architecture de webcarto avec Docker",
-    "text": "TP - Architecture de webcarto avec Docker\nEn cours de rédaction…",
-    "crumbs": [
-      "Architecture web"
-    ]
+    "text": "TP - Architecture de webcarto avec Docker\nEn cours de rédaction…"
   },
   {
     "objectID": "index.html",
@@ -339,5 +327,414 @@
     "title": "Accueil",
     "section": "",
     "text": "Bienvenue sur mon site en cours de construction. Si vous avez trouvé cette page, vous êtes sûrement un étudiant en master GeoNum. Les ressources pour les TD, c’est par ici !"
+  },
+  {
+    "objectID": "cours/geonum/openlayers_geoserver.html",
+    "href": "cours/geonum/openlayers_geoserver.html",
+    "title": "OpenLayers & GeoServer",
+    "section": "",
+    "text": "Savoir ce que sont Node JS, OpenLayers et Docker.\nComprendre la différence entre une machine virtuelle et un container.\nDéployer une stack de développement avec un serveur GeoServer et un serveur Caddy pour servir une application sous Node JS en utilisant Docker Compose.\nCréer une application OpenLayers avec Node JS.\nComprendre le contenu de l’application de base de OpenLayers et où doit vivre mon code.\nApprendre à utiliser la documentation et les exemples d’OpenLayers pour ajouter des éléments à ma carte.\nAfficher des couches WMS dans une application OpenLayers.",
+    "crumbs": [
+      "OpenLayers & GeoServer"
+    ]
+  },
+  {
+    "objectID": "cours/geonum/openlayers_geoserver.html#objectifs",
+    "href": "cours/geonum/openlayers_geoserver.html#objectifs",
+    "title": "OpenLayers & GeoServer",
+    "section": "",
+    "text": "Savoir ce que sont Node JS, OpenLayers et Docker.\nComprendre la différence entre une machine virtuelle et un container.\nDéployer une stack de développement avec un serveur GeoServer et un serveur Caddy pour servir une application sous Node JS en utilisant Docker Compose.\nCréer une application OpenLayers avec Node JS.\nComprendre le contenu de l’application de base de OpenLayers et où doit vivre mon code.\nApprendre à utiliser la documentation et les exemples d’OpenLayers pour ajouter des éléments à ma carte.\nAfficher des couches WMS dans une application OpenLayers.",
+    "crumbs": [
+      "OpenLayers & GeoServer"
+    ]
+  },
+  {
+    "objectID": "cours/geonum/openlayers_geoserver.html#cours---le-point-technique",
+    "href": "cours/geonum/openlayers_geoserver.html#cours---le-point-technique",
+    "title": "OpenLayers & GeoServer",
+    "section": "Cours - Le point technique",
+    "text": "Cours - Le point technique\nSlides : Le point technique",
+    "crumbs": [
+      "OpenLayers & GeoServer"
+    ]
+  },
+  {
+    "objectID": "cours/geonum/openlayers_geoserver.html#tp---démarrage-de-la-stack",
+    "href": "cours/geonum/openlayers_geoserver.html#tp---démarrage-de-la-stack",
+    "title": "OpenLayers & GeoServer",
+    "section": "TP - Démarrage de la stack",
+    "text": "TP - Démarrage de la stack\n\n\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nCe TP suppose que Docker et Docker Compose sont installés sur la machine. Il a été écrit pour une machine Linux, certains chemins et lignes de commande peuvent donc être différents sur une machine Windows ou Mac.\nL’éditeur de code utilisé pour l’écriture de ce TP est VSCode mais n’importe quel autre éditeur fait l’affaire.\n\n\n\nInitialiser mon dossier\nCommencez par créer un nouveau dossier dans lequel nous allons développer notre app. Vous pouvez le mettre où vous voulez - par exemple dans Mes Documents. J’ai appelé mon dossier app_openlayers_geoserver mais le nom importe peu.\nOuvez-ce dossier dans VSCode (par exemple avec un clic-droit &gt; Ouvrir avec VSCode). Vous vous trouvez à la racine du dossier. Pour la suite du TP, à chaque fois que j’évoquerais la racine du projet, il s’agita de ce dossier.\nCréez un nouveau fichier et appelez-le README.md. Il s’agit d’un simple fichier texte au format markdown qui nous servira de mémo. L’application pourrait tout à fait fonctionner sans.\nCopiez dans README.md le texte suivant et sauvegardez le document :\nPour démarrer les containers :\n`docker compose up -d`\n\nPour arrêter les containers :\n`docker compose down`\nSi jamais vous oubliez les commandes pour utiliser docker compose, vous pourrez les retrouver dans ce fichier.\nEnsuite, toujours à la racine du projet, créer un nouveau fichier et appelez-le Caddyfile (la majuscule est importante !). Collez le contenu suivant à l’intérieur et sauvegardez.\n:80 {\n    root * /srv\n    file_server\n}\n\n\n\n\n\n\nC’est quoi, ce Caddyfile ?\n\n\n\n\n\nIl s’agit du fichier de configuration du serveur Caddy que nous allons utiliser pour servir notre application OpenLayers. On aurait pu choisir d’utiliser Apache ou Nginx, mais j’aime bien Caddy, je le trouve plus clair à prendre en main.\nOn lui indique simplement trois éléments :\n\nOn sert notre application sur le port 80 (le localhost par défaut). Il faudra donc aller sur localhost pour voir notre application OpenLayers.\nCaddy doit chercher les fichiers de notre site web dans le dossier /srv (configuration par défaut).\nCaddy sait qu’on va utiliser des fichiers statiques.\n\n\n\n\n\n\nCréer (et comprendre) mon docker-compose.yml\nNormalement, si vous avez bien suivi les étapes précédentes, le contenu de votre dossier devrait ressembler à ça :\n- Caddyfile\n- README.md\nÀ la racine du projet, créez un nouveau fichier et appelez-le docker-compose.yml. Collez le contenu suivant dans ce fichier et sauvegardez.\nservices:\n\n  geoserver:\n    container_name: geonum_geoserver\n    image: docker.osgeo.org/geoserver:2.26.0\n    environment:\n      - RUN_UNPRIVILEGED=true\n      - CHANGE_OWNERSHIP_ON_FOLDERS=\"/opt /opt/geoserver_data/ /mnt/geoserver_geodata\"\n      - CORS_ENABLED=true\n    ports:\n      - \"8080:8080\"\n    volumes:\n      - $PWD/geoserver/opt:/opt/geoserver_data\n  \n  web:\n    container_name: geonum_web\n    image: caddy:latest\n    ports:\n      - \"80:80\"\n    volumes:\n      - $PWD/Caddyfile:/etc/caddy/Caddyfile\n      - $PWD/app/dist/:/srv\n\n\n\n\n\n\nEt ça, ça veut dire quoi ?\n\n\n\n\n\nSi tout s’est bien passé, on a déjà vu ensemble comment fonctionne le docker-compose.yml en cours, mais voici un petit rappel :\n\non crée deux “services”, qui sont en fait deux containers, un geoserver et un web .\npour chaque service, on indique :\n\nle nom qu’on donne au container (pour éviter les noms générés aléatoirement comme lors du précédent TP, qui ne sont pas super clairs)\nle nom de l’image Docker (pour rappel, image = recette pour construire un container) qu’on souhaite utiliser\nles ports qu’on souhaite connecter, sous la forme HOST_PORT:CONTAINER_PORT . Exemple pour GeoServer : je sais qu’il est toujours servi sur le port 8080, donc si j’écris 3000:8080, ça veut dire que sur mon ordinateur je dois aller sur localhost:3000 pour pouvoir regarder le port 8080 de mon container et voir mon GeoServer.\nSi ce n’est pas clair et que ça vous travaille de comprendre comment ça fonctionne, on m’appelle !\ndes volumes dans lesquels on stocke de la donnée, ici on va connecter les volumes docker à des dossier dans notre ordinateur (comme au TP précédent) en utilisant la syntaxe HOST_DIRECTORY:CONTAINER_DIRECTORY . Pour reprendre l’exemple de GeoServer, je sais que par défaut la donnée est stockée dans /opt/geoserver_data/ dans le serveur. Je dis donc à mon container de se connecter à un dossier sur ma machine dans $PWD/geoserver/opt , un dossier qui sera créé au premier lancement de la stack. Comme on l’a expérimenté au TP précédent, monter des volumes depuis les containers sur mon ordinateur est le moyen le plus simple d’y transférer de la donnée. Ce n’est pas toujours aussi simple d’accéder à l’intérieur d’un serveur - c’est toute la puissance de Docker, et c’est pour ça qu’on s’en sert !\n\n\nCe n’est encore pas super clair ? Attendez de commencer à manipuler le TP, ça viendra tout seul. Si c’est toujours flou au bout de quelques exercices, appelez-moi et on refait une explication !\n\n\n\n\n\nInitialiser mon application OpenLayers\nDocumentation OpenLayers\nAvant de pouvoir lancer tous nos services, on doit encore créer notre application OpenLayers. Ouvrez un terminal à la racine du projet. Vous avez deux options :\n\nla simple : ouvrez un Terminal dans votre editeur de Code (par exemple, dans VSCode, allez dans le menu en haut et cliquez sur “Terminal”)\nla moins simple : ouvez un terminal et déplacez-vous jusqu’à votre projet en utilisant la commande cd /chemin/de/mon/projet\n\nUne fois que le terminal est ouvert dans le projet (vérifiez bien deux fois !), tapez la commande suivante pour créer un projet OpenLayers qu’on appelle “app” :\nnpm create ol-app app\nVous devriez voir un nouveau dossier appelé “app”. Tapez la commande suivante pour vous “déplacer” dans le dossier “app”.\ncd app\nOn va démarrer notre application avec la commande suivante :\nnpm start\nVous devriez avoir quelque chose comme ça dans votre terminal :\n  VITE v5.4.11  ready in 137 ms\n\n  ➜  Local:   http://localhost:5173/\n  ➜  Network: use --host to expose\n  ➜  press h + enter to show help\nSuper, le serveur de développement de l’application fonctionne ! On va pouvoir y accéder en entrant dans le navigateur l’adresse indiquée dans Local. Allez-y et vérifiez que vous voyez bien une carte.\n\n\n\n\n\n\nUn serveur de développement ?\n\n\n\n\n\nComme on l’a vu en cours, l’un des intérêts de Node JS est qu’il permet d’avoir un serveur de développement pour servir notre application facilement et la mettre à jour au fur et à mesure des changements. Pour lancer ce serveur de développement, on utilise la commande npm start depuis le dossier app.\nPar contre, c’est un serveur de développement et non pas de production. On apprendra donc pendant le dernier cours à mettre en production une application - ce sera dans le rendu de votre évaluation, mais pas de pression 😈\n\n\n\nSi vous voyez bien une carte, il ne reste que deux toutes petites étapes et on va enfin pouvoir passer à la suite.\nD’abord, quittez le serveur de développement (ctrl + c dans le terminal). Tapez ensuite la commande suivante :\nnpm run build\nNode JS va créer un build, une version pour la production de notre site. C’est ce build qui va être servi par notre fameux serveur Caddy qu’on a vu dans le docker-compose.yml. Les fichiers de cette application se trouvent dans le dossier ./app/dist/.\nPour vérifier que tout a fonctionné, tapez les commandes suivantes dans votre terminal :\ncd ..\ndocker compose up\nLa première commande permet de retourner à la racine du projet. La seconde demande à Docker de créer nos containers à partir des instructions de docker-compose.yml. Le démarrage peut prendre un peu de temps, profitez-en pour vous reposer un peu le cerveau.\nQuand c’est terminé, le contenu de votre projet devrait ressembler à ça :\n- app/\n- geoserver/\n- Caddyfile\n- docker-compose.yml\n- README.md\nSi c’est le cas, il reste une dernière chose à vérifier.\n\nallez sur http://localhost/ et confirmez que vous voyez bien une carte\nallez sur http://localhost:8080/geoserver/ et confirmez que vous voyez bien une interface de GeoServer\n\nSi tout est OK, félicitations ! Vous venez de créer une stack avec un serveur pour votre application en Node JS et un GeoServer.",
+    "crumbs": [
+      "OpenLayers & GeoServer"
+    ]
+  },
+  {
+    "objectID": "cours/geonum/openlayers_geoserver.html#cours---les-bases-dopenlayers",
+    "href": "cours/geonum/openlayers_geoserver.html#cours---les-bases-dopenlayers",
+    "title": "OpenLayers & GeoServer",
+    "section": "Cours - Les bases d’OpenLayers",
+    "text": "Cours - Les bases d’OpenLayers\nSlides : Les bases d’OpenLayers",
+    "crumbs": [
+      "OpenLayers & GeoServer"
+    ]
+  },
+  {
+    "objectID": "cours/geonum/openlayers_geoserver.html#tp---cartographie-web-avec-geoserver-et-openlayers",
+    "href": "cours/geonum/openlayers_geoserver.html#tp---cartographie-web-avec-geoserver-et-openlayers",
+    "title": "OpenLayers & GeoServer",
+    "section": "TP - Cartographie web avec GeoServer et OpenLayers",
+    "text": "TP - Cartographie web avec GeoServer et OpenLayers\n\nImporter la couche de l’exemple OpenLayers\nEn vous basant sur l’exemple OpenLayers “Single Image WMS”, importez la couche de cet exemple dans votre application.\n\n\n\n\n\n\nRappels pour démarrer mon application\n\n\n\n\n\n\nOuvrir le fichier du projet (si vous avez suivi le premier TP il devrait s’appeler app_openlayers_geoserver) dans votre éditeur de code, par exemple VS Code\nOuvrir un terminal et taper cd app pour vous déplacer dans le dossier de votre application\nTapez npm start pour démarrer le serveur de développement\nOuvrez le localhost indiqué dans votre terminal pour voir votre application\n\n\n\n\nEssayez un peu par vous-même avant de simplement copier-coller ma solution depuis les diapos ! N’oubliez pas que tant que votre code fonctionne, c’est bon. Il n’y a pas une seule et unique manière d’écrire votre application. Souvent, dans mes solutions, je vais écrire du code un peu plus long que la moyenne pour bien décortiquer ce qu’on fait avec OpenLayers. Plus on va avancer dans les TPs et plus vous devrez comparer votre code au mien plutôt que copier-coller (on ne va sûrement pas appeler toutes les variables pareil).\n\n\n\n\n\n\nMa solution (code montré dans les diapos)\n\n\n\n\n\nimport './style.css';\nimport {Map, View} from 'ol';\nimport { ImageWMS } from 'ol/source';\nimport TileLayer from 'ol/layer/Tile';\nimport ImageLayer from 'ol/layer/Image';\nimport OSM from 'ol/source/OSM';\n\n// Je sors la couche OSM de l’objet Map pour la stocker dans une variable\nconst couche_osm = new TileLayer({ source: new OSM() });\n\n// Création de la source et la couche\nconst ma_source = new ImageWMS({\n  url: 'https://ahocevar.com/geoserver/wms',\n  params: { 'LAYERS' : 'topp:states' },\n  serverType: 'geoserver',\n});\n\nconst ma_couche = new ImageLayer({\n  source: ma_source,\n});\n\n// Création de l’objet map avec appel de mes deux couches \"couche_osm\" et \"ma_couche\" dans layers\nconst map = new Map({\n  target: 'map',\n  layers: [ couche_osm, ma_couche ],\n  view: new View({\n    center: [0, 0],\n    zoom: 2\n  })\n});\n\n\n\nMaintenant, modifiez le code pour créer directement ma_couche sans passer par une source ma_source. Pour rappel, voici le morceau de code que j’avais mis dans mes diapos :\nconst ma_couche = new ImageLayer({\n  source: new ImageWMS({\n    url: '&lt;lien_vers_mon_serveur&gt;',\n    params: {'LAYERS': '&lt;espace&gt;:&lt;couche&gt;'},\n    serverType: 'geoserver',\n  }),\n});\n\n\n\n\n\n\nTip\n\n\n\nAttention à la différence entre les virgules et les points-virgules !\n\n\nPour cet exercice, pas de solution, ça devrait couler de source. Si vous bloquez, appelez-moi ! Je le dis et le re-dis, mais on ne reste pas dans son coin à s’arracher les cheveux. C’est contre productif et en plus si on ne me demande pas de l’aide je sers juste à tourner en rond dans la salle. C’est un peu ennuyeux.\nQuand ça fonctionne, on passe à la suite !\n\n\nImporter une couche depuis mon GeoServer\nCommencez par vérifier que vos containers Docker tournent toujours. Pour ça, rendez-vous sur http://localhost:8080/geoserver/ et vérifiez que vous voyez bien l’interface de GeoServer. Sinon, démarrez la stack depuis Docker Desktop ou bien ouvrez un terminal à la racine de votre projet et tapez docker compose up.\nOn souhaite maintenant ajouter une couche OpenLayers depuis notre GeoServer.\nVous avez une impression de déjà-vu ? Normal ! Si vous avez bien suivi le TP précédent, ce sera un jeu d’enfant pour vous. Si vous voulez retourner au TP pour être guidés parce que vous avez un trou de mémoire, c’est par ici. Pour vous aider, je vous remets ici quelques éléments :\n\nLe jeu de données land_matrix_mines à télécharger\nLe fichier de style SLD des couches à copier ci-dessous (vous n’êtes pas obligés d’utiliser ceux-ci !)\n\n\n\n\n\n\n\nSLD pour “deals”\n\n\n\n\n\n&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;\n&lt;StyledLayerDescriptor xmlns=\"http://www.opengis.net/sld\" xmlns:se=\"http://www.opengis.net/se\" xmlns:ogc=\"http://www.opengis.net/ogc\" xsi:schemaLocation=\"http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1.0\"&gt;\n  &lt;NamedLayer&gt;\n    &lt;se:Name&gt;gpkg_land_matrix — deals&lt;/se:Name&gt;\n    &lt;UserStyle&gt;\n      &lt;se:Name&gt;gpkg_land_matrix — deals&lt;/se:Name&gt;\n      &lt;se:FeatureTypeStyle&gt;\n        &lt;se:Rule&gt;\n          &lt;se:Name&gt;Deal&lt;/se:Name&gt;\n          &lt;se:PointSymbolizer&gt;\n            &lt;se:Graphic&gt;\n              &lt;se:Mark&gt;\n                &lt;se:WellKnownName&gt;circle&lt;/se:WellKnownName&gt;\n                &lt;se:Fill&gt;\n                  &lt;se:SvgParameter name=\"fill\"&gt;#ffd157&lt;/se:SvgParameter&gt;\n                &lt;/se:Fill&gt;\n                &lt;se:Stroke&gt;\n                  &lt;se:SvgParameter name=\"stroke\"&gt;#232323&lt;/se:SvgParameter&gt;\n                  &lt;se:SvgParameter name=\"stroke-width\"&gt;0.5&lt;/se:SvgParameter&gt;\n                &lt;/se:Stroke&gt;\n              &lt;/se:Mark&gt;\n              &lt;se:Size&gt;7&lt;/se:Size&gt;\n            &lt;/se:Graphic&gt;\n          &lt;/se:PointSymbolizer&gt;\n        &lt;/se:Rule&gt;\n      &lt;/se:FeatureTypeStyle&gt;\n    &lt;/UserStyle&gt;\n  &lt;/NamedLayer&gt;\n&lt;/StyledLayerDescriptor&gt;\n\n\n\n\n\n\n\n\n\nSLD pour “deals_by_country”\n\n\n\n\n\n&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;\n&lt;StyledLayerDescriptor xmlns=\"http://www.opengis.net/sld\" xmlns:se=\"http://www.opengis.net/se\" xmlns:ogc=\"http://www.opengis.net/ogc\" xsi:schemaLocation=\"http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1.0\"&gt;\n  &lt;NamedLayer&gt;\n    &lt;se:Name&gt;gpkg_land_matrix — deals_by_country&lt;/se:Name&gt;\n    &lt;UserStyle&gt;\n      &lt;se:Name&gt;gpkg_land_matrix — deals_by_country&lt;/se:Name&gt;\n      &lt;se:FeatureTypeStyle&gt;\n        &lt;se:Rule&gt;\n          &lt;se:Name&gt;Single symbol&lt;/se:Name&gt;\n          &lt;se:PolygonSymbolizer&gt;\n            &lt;se:Fill&gt;\n              &lt;se:SvgParameter name=\"fill\"&gt;#fdbf6f&lt;/se:SvgParameter&gt;\n              &lt;se:SvgParameter name=\"fill-opacity\"&gt;0.35&lt;/se:SvgParameter&gt;\n            &lt;/se:Fill&gt;\n            &lt;se:Stroke&gt;\n              &lt;se:SvgParameter name=\"stroke\"&gt;#232323&lt;/se:SvgParameter&gt;\n              &lt;se:SvgParameter name=\"stroke-width\"&gt;1&lt;/se:SvgParameter&gt;\n              &lt;se:SvgParameter name=\"stroke-linejoin\"&gt;bevel&lt;/se:SvgParameter&gt;\n            &lt;/se:Stroke&gt;\n          &lt;/se:PolygonSymbolizer&gt;\n        &lt;/se:Rule&gt;\n      &lt;/se:FeatureTypeStyle&gt;\n    &lt;/UserStyle&gt;\n  &lt;/NamedLayer&gt;\n&lt;/StyledLayerDescriptor&gt;\n\n\n\n\n\n\n\n\n\nSLD pour “deals_by_country_centroid”\n\n\n\n\n\n&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;\n&lt;StyledLayerDescriptor xmlns=\"http://www.opengis.net/sld\" xmlns:se=\"http://www.opengis.net/se\" xmlns:ogc=\"http://www.opengis.net/ogc\" xsi:schemaLocation=\"http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1.0\"&gt;\n  &lt;NamedLayer&gt;\n    &lt;se:Name&gt;gpkg_land_matrix — deals_by_country_centroid&lt;/se:Name&gt;\n    &lt;UserStyle&gt;\n      &lt;se:Name&gt;gpkg_land_matrix — deals_by_country_centroid&lt;/se:Name&gt;\n      &lt;se:FeatureTypeStyle&gt;\n        &lt;se:Rule&gt;\n          &lt;se:Name&gt;201 - 5466&lt;/se:Name&gt;\n          &lt;se:Description&gt;\n            &lt;se:Title&gt;201 - 5466&lt;/se:Title&gt;\n          &lt;/se:Description&gt;\n          &lt;ogc:Filter xmlns:ogc=\"http://www.opengis.net/ogc\"&gt;\n            &lt;ogc:And&gt;\n              &lt;ogc:PropertyIsGreaterThanOrEqualTo&gt;\n                &lt;ogc:PropertyName&gt;suface_ha&lt;/ogc:PropertyName&gt;\n                &lt;ogc:Literal&gt;200.81000000000000227&lt;/ogc:Literal&gt;\n              &lt;/ogc:PropertyIsGreaterThanOrEqualTo&gt;\n              &lt;ogc:PropertyIsLessThanOrEqualTo&gt;\n                &lt;ogc:PropertyName&gt;suface_ha&lt;/ogc:PropertyName&gt;\n                &lt;ogc:Literal&gt;5466.3999999999996362&lt;/ogc:Literal&gt;\n              &lt;/ogc:PropertyIsLessThanOrEqualTo&gt;\n            &lt;/ogc:And&gt;\n          &lt;/ogc:Filter&gt;\n          &lt;se:PointSymbolizer&gt;\n            &lt;se:Graphic&gt;\n              &lt;se:Mark&gt;\n                &lt;se:WellKnownName&gt;circle&lt;/se:WellKnownName&gt;\n                &lt;se:Fill&gt;\n                  &lt;se:SvgParameter name=\"fill\"&gt;#e5b636&lt;/se:SvgParameter&gt;\n                &lt;/se:Fill&gt;\n                &lt;se:Stroke&gt;\n                  &lt;se:SvgParameter name=\"stroke\"&gt;#232323&lt;/se:SvgParameter&gt;\n                  &lt;se:SvgParameter name=\"stroke-width\"&gt;0.5&lt;/se:SvgParameter&gt;\n                &lt;/se:Stroke&gt;\n              &lt;/se:Mark&gt;\n              &lt;se:Size&gt;4&lt;/se:Size&gt;\n            &lt;/se:Graphic&gt;\n          &lt;/se:PointSymbolizer&gt;\n        &lt;/se:Rule&gt;\n        &lt;se:Rule&gt;\n          &lt;se:Name&gt;5466 - 20413&lt;/se:Name&gt;\n          &lt;se:Description&gt;\n            &lt;se:Title&gt;5466 - 20413&lt;/se:Title&gt;\n          &lt;/se:Description&gt;\n          &lt;ogc:Filter xmlns:ogc=\"http://www.opengis.net/ogc\"&gt;\n            &lt;ogc:And&gt;\n              &lt;ogc:PropertyIsGreaterThan&gt;\n                &lt;ogc:PropertyName&gt;suface_ha&lt;/ogc:PropertyName&gt;\n                &lt;ogc:Literal&gt;5466.3999999999996362&lt;/ogc:Literal&gt;\n              &lt;/ogc:PropertyIsGreaterThan&gt;\n              &lt;ogc:PropertyIsLessThanOrEqualTo&gt;\n                &lt;ogc:PropertyName&gt;suface_ha&lt;/ogc:PropertyName&gt;\n                &lt;ogc:Literal&gt;20412.80000000001018634&lt;/ogc:Literal&gt;\n              &lt;/ogc:PropertyIsLessThanOrEqualTo&gt;\n            &lt;/ogc:And&gt;\n          &lt;/ogc:Filter&gt;\n          &lt;se:PointSymbolizer&gt;\n            &lt;se:Graphic&gt;\n              &lt;se:Mark&gt;\n                &lt;se:WellKnownName&gt;circle&lt;/se:WellKnownName&gt;\n                &lt;se:Fill&gt;\n                  &lt;se:SvgParameter name=\"fill\"&gt;#e5b636&lt;/se:SvgParameter&gt;\n                &lt;/se:Fill&gt;\n                &lt;se:Stroke&gt;\n                  &lt;se:SvgParameter name=\"stroke\"&gt;#232323&lt;/se:SvgParameter&gt;\n                  &lt;se:SvgParameter name=\"stroke-width\"&gt;0.5&lt;/se:SvgParameter&gt;\n                &lt;/se:Stroke&gt;\n              &lt;/se:Mark&gt;\n              &lt;se:Size&gt;10&lt;/se:Size&gt;\n            &lt;/se:Graphic&gt;\n          &lt;/se:PointSymbolizer&gt;\n        &lt;/se:Rule&gt;\n        &lt;se:Rule&gt;\n          &lt;se:Name&gt;20413 - 61376&lt;/se:Name&gt;\n          &lt;se:Description&gt;\n            &lt;se:Title&gt;20413 - 61376&lt;/se:Title&gt;\n          &lt;/se:Description&gt;\n          &lt;ogc:Filter xmlns:ogc=\"http://www.opengis.net/ogc\"&gt;\n            &lt;ogc:And&gt;\n              &lt;ogc:PropertyIsGreaterThan&gt;\n                &lt;ogc:PropertyName&gt;suface_ha&lt;/ogc:PropertyName&gt;\n                &lt;ogc:Literal&gt;20412.80000000001018634&lt;/ogc:Literal&gt;\n              &lt;/ogc:PropertyIsGreaterThan&gt;\n              &lt;ogc:PropertyIsLessThanOrEqualTo&gt;\n                &lt;ogc:PropertyName&gt;suface_ha&lt;/ogc:PropertyName&gt;\n                &lt;ogc:Literal&gt;61375.88199999996868428&lt;/ogc:Literal&gt;\n              &lt;/ogc:PropertyIsLessThanOrEqualTo&gt;\n            &lt;/ogc:And&gt;\n          &lt;/ogc:Filter&gt;\n          &lt;se:PointSymbolizer&gt;\n            &lt;se:Graphic&gt;\n              &lt;se:Mark&gt;\n                &lt;se:WellKnownName&gt;circle&lt;/se:WellKnownName&gt;\n                &lt;se:Fill&gt;\n                  &lt;se:SvgParameter name=\"fill\"&gt;#e5b636&lt;/se:SvgParameter&gt;\n                &lt;/se:Fill&gt;\n                &lt;se:Stroke&gt;\n                  &lt;se:SvgParameter name=\"stroke\"&gt;#232323&lt;/se:SvgParameter&gt;\n                  &lt;se:SvgParameter name=\"stroke-width\"&gt;0.5&lt;/se:SvgParameter&gt;\n                &lt;/se:Stroke&gt;\n              &lt;/se:Mark&gt;\n              &lt;se:Size&gt;16&lt;/se:Size&gt;\n            &lt;/se:Graphic&gt;\n          &lt;/se:PointSymbolizer&gt;\n        &lt;/se:Rule&gt;\n        &lt;se:Rule&gt;\n          &lt;se:Name&gt;61376 - 160220&lt;/se:Name&gt;\n          &lt;se:Description&gt;\n            &lt;se:Title&gt;61376 - 160220&lt;/se:Title&gt;\n          &lt;/se:Description&gt;\n          &lt;ogc:Filter xmlns:ogc=\"http://www.opengis.net/ogc\"&gt;\n            &lt;ogc:And&gt;\n              &lt;ogc:PropertyIsGreaterThan&gt;\n                &lt;ogc:PropertyName&gt;suface_ha&lt;/ogc:PropertyName&gt;\n                &lt;ogc:Literal&gt;61375.88199999996868428&lt;/ogc:Literal&gt;\n              &lt;/ogc:PropertyIsGreaterThan&gt;\n              &lt;ogc:PropertyIsLessThanOrEqualTo&gt;\n                &lt;ogc:PropertyName&gt;suface_ha&lt;/ogc:PropertyName&gt;\n                &lt;ogc:Literal&gt;160220.00000000005820766&lt;/ogc:Literal&gt;\n              &lt;/ogc:PropertyIsLessThanOrEqualTo&gt;\n            &lt;/ogc:And&gt;\n          &lt;/ogc:Filter&gt;\n          &lt;se:PointSymbolizer&gt;\n            &lt;se:Graphic&gt;\n              &lt;se:Mark&gt;\n                &lt;se:WellKnownName&gt;circle&lt;/se:WellKnownName&gt;\n                &lt;se:Fill&gt;\n                  &lt;se:SvgParameter name=\"fill\"&gt;#e5b636&lt;/se:SvgParameter&gt;\n                &lt;/se:Fill&gt;\n                &lt;se:Stroke&gt;\n                  &lt;se:SvgParameter name=\"stroke\"&gt;#232323&lt;/se:SvgParameter&gt;\n                  &lt;se:SvgParameter name=\"stroke-width\"&gt;0.5&lt;/se:SvgParameter&gt;\n                &lt;/se:Stroke&gt;\n              &lt;/se:Mark&gt;\n              &lt;se:Size&gt;22&lt;/se:Size&gt;\n            &lt;/se:Graphic&gt;\n          &lt;/se:PointSymbolizer&gt;\n        &lt;/se:Rule&gt;\n        &lt;se:Rule&gt;\n          &lt;se:Name&gt;160220 - 1509612&lt;/se:Name&gt;\n          &lt;se:Description&gt;\n            &lt;se:Title&gt;160220 - 1509612&lt;/se:Title&gt;\n          &lt;/se:Description&gt;\n          &lt;ogc:Filter xmlns:ogc=\"http://www.opengis.net/ogc\"&gt;\n            &lt;ogc:And&gt;\n              &lt;ogc:PropertyIsGreaterThan&gt;\n                &lt;ogc:PropertyName&gt;suface_ha&lt;/ogc:PropertyName&gt;\n                &lt;ogc:Literal&gt;160220.00000000005820766&lt;/ogc:Literal&gt;\n              &lt;/ogc:PropertyIsGreaterThan&gt;\n              &lt;ogc:PropertyIsLessThanOrEqualTo&gt;\n                &lt;ogc:PropertyName&gt;suface_ha&lt;/ogc:PropertyName&gt;\n                &lt;ogc:Literal&gt;1509612&lt;/ogc:Literal&gt;\n              &lt;/ogc:PropertyIsLessThanOrEqualTo&gt;\n            &lt;/ogc:And&gt;\n          &lt;/ogc:Filter&gt;\n          &lt;se:PointSymbolizer&gt;\n            &lt;se:Graphic&gt;\n              &lt;se:Mark&gt;\n                &lt;se:WellKnownName&gt;circle&lt;/se:WellKnownName&gt;\n                &lt;se:Fill&gt;\n                  &lt;se:SvgParameter name=\"fill\"&gt;#e5b636&lt;/se:SvgParameter&gt;\n                &lt;/se:Fill&gt;\n                &lt;se:Stroke&gt;\n                  &lt;se:SvgParameter name=\"stroke\"&gt;#232323&lt;/se:SvgParameter&gt;\n                  &lt;se:SvgParameter name=\"stroke-width\"&gt;0.5&lt;/se:SvgParameter&gt;\n                &lt;/se:Stroke&gt;\n              &lt;/se:Mark&gt;\n              &lt;se:Size&gt;29&lt;/se:Size&gt;\n            &lt;/se:Graphic&gt;\n          &lt;/se:PointSymbolizer&gt;\n        &lt;/se:Rule&gt;\n      &lt;/se:FeatureTypeStyle&gt;\n    &lt;/UserStyle&gt;\n  &lt;/NamedLayer&gt;\n&lt;/StyledLayerDescriptor&gt;\n\n\n\nUne fois que vos couches sont (à nouveau) importées dans votre GeoServer et que vous parvenez à les visualiser correctement, importez la couche “deals” dans votre application OpenLayers. Il doit s’agir d’une nouvelle couche : ne remplacez pas celle de l’exemple que nous venons d’afficher ! En utilisant le TP précédent et ce qu’on vient de voir, vous ne devriez pas avoir trop de difficultés.\nPour rappel, vous pouvez ouvrir l’outil de développement de votre navigateur avec la touche F12 et vous verrez les messages d’erreur dans l’onglet Console. C’est eux qui vous diront ce qui ne va pas dans le code !\nAu besoin, vous pouvez utiliser une fusée de détresse, mais comme pour les vraies, c’est mieux de les allumer quand on en a besoin et pas juste parce qu’on est curieux.\n\n\n\n\n\n\nFusée de détresse : comment trouver l’url qui pointe vers mon service wms ?\n\n\n\n\n\n\n\n\n\n\n\nPrévisualisez votre couche dans GeoServer\nCopiez l’URL qui est dans la barre de votre navigateur\nSupprimez tout ce qui est après le “?” et votre URL devrait se terminer par “wms”, par exemple : “http://localhost/geoserver/land_matrix/wms”\n\n\n\n\n\n\n\n\n\n\nFusée de détresse : comment trouver le nom de mon espace et de ma couche ?\n\n\n\n\n\n\n\n\n\n\n\nAllez dans “Couches” ou “Prévisualisation de la couche” dans GeoServer\nTrouvez votre couche dans la liste et regardez la colonne “Nom”\nLa première partie du nom (avant les “:”) correspond à l’espace et la seconde partie au nom de la couche, par exemple : “land_matrix:deals”\n\n\n\n\n\n\n\n\n\n\nFusée de détresse : J’ai créé ma couche mais elle n’apparaît pas sur la carte\n\n\n\n\n\n\n\n\n\n\nVous pensez avoir bien créé votre source ImageWMS et votre couche ImageLayer mais il n’y a rien sur la carte et pas de message d’erreur ?\nVérifiez que vous avez bien ajouté votre couche dans la propriété layers: de votre objet map ! Pour rappel, pour ajouter un élément à un tableau (“array”) en JavaScript, il faut séparer ces éléments par des virgules.\n\n\n\nSi vous avez atteint cette ligne, bravo ! Si vous coincez, appelez-moi. Il faudrait que tout le monde parvienne à atteindre au moins cette étape avant la fin du TP.\nS’il après ça vous reste un peu de temps, ajoutez les couches “deals_by_country” et “deals_by_country_centroid” à la carte.\n\n\nJe suis en avance !\nPas de panique, on n’a pas le temps de s’ennuyer ici ! On va faire un peu de HTML et de CSS. Trouvez comment gagner de l’espace en haut de la page web pour ajouter un titre (avec la balise &lt;h1&gt;) et donnez un joli nom à votre page !\nSi vous avez encore un peu de temps, expérimentez avec le style de la carte. Vous pouvez arrondir les coins, changer la police du titre, ou pourquoi pas commencer à dégager une zone pour mettre la légende et les options d’affichage des couches.\nVous pourriez aussi relire votre code JavaScript. Est-ce que certaines informations se répètent, est-ce que vous pourriez les mettre dans des variables ?",
+    "crumbs": [
+      "OpenLayers & GeoServer"
+    ]
+  },
+  {
+    "objectID": "cours/geonum/slides_le_point_technique.html#sommaire",
+    "href": "cours/geonum/slides_le_point_technique.html#sommaire",
+    "title": "Serveurs Carto et OpenLayers - le point technique",
+    "section": "Sommaire",
+    "text": "Sommaire\n\nPrésentation brève d’OpenLayers\nLes bases de Node JS\nDe quelle architecture on a besoin ?\nVMs, Docker et Docker Compose\nNotre Docker Compose\n\nEt si on avance bien, aujourd’hui on aura non pas UN mais DEUX cours ! Alors ne perdons pas de temps et en avant !"
+  },
+  {
+    "objectID": "cours/geonum/slides_le_point_technique.html#présentation-brève-dopenlayers",
+    "href": "cours/geonum/slides_le_point_technique.html#présentation-brève-dopenlayers",
+    "title": "Serveurs Carto et OpenLayers - le point technique",
+    "section": "Présentation brève d’OpenLayers",
+    "text": "Présentation brève d’OpenLayers\n\nOpenLayers est une librairie JavaScript Open Source qui permet de créer des cartes interactives pour le web.\nLa librairie a plus de 11 000 stars sur GitHub et 3 000 forks.\nAu moment où j’écris ce cours, la dernière mise à jour date d’il y a deux jours.\nL’alpha d’OpenLayers (première version mise en ligne sur GitHub) date de 2013.\n\nC’est une librairie populaire, mature, maintenue et bien documentée."
+  },
+  {
+    "objectID": "cours/geonum/slides_le_point_technique.html#présentation-brève-dopenlayers-1",
+    "href": "cours/geonum/slides_le_point_technique.html#présentation-brève-dopenlayers-1",
+    "title": "Serveurs Carto et OpenLayers - le point technique",
+    "section": "Présentation brève d’OpenLayers",
+    "text": "Présentation brève d’OpenLayers\n🤔 Ça ressemble en tout point à Leaflet, non ? Alors pourquoi apprendre les deux ?\n\n👉 Oui et non !\n\nLeaflet est plus pratique pour obtenir rapidement une “jolie” carte avec moins de code, par exemple afficher/masquer les couches.\nMais Leaflet a aussi ses défauts : la carte est plus difficile à customiser “en profondeur” qu’OpenLayers, il y a de nombreux plug-ins qui parfois font plus ou moins la même chose, parfois ne sont plus maintenus, là où beaucoup de ces fonctionnalités sont disponibles dans le code de base d’OpenLayers.\n\n\n\nPour faire simple, selon mon expérience avec les deux librairies, OpenLayers est plus facilement customisable et se repose moins sur des plug-ins externes. Il existe une source de plug-ins pour ajouter des fonctionnalités supplémentaires publiée par l’utilisateur GitHub viglino. Ces extensions ol-ext sont régulièrement maintenues."
+  },
+  {
+    "objectID": "cours/geonum/slides_le_point_technique.html#présentation-brève-dopenlayers-2",
+    "href": "cours/geonum/slides_le_point_technique.html#présentation-brève-dopenlayers-2",
+    "title": "Serveurs Carto et OpenLayers - le point technique",
+    "section": "Présentation brève d’OpenLayers",
+    "text": "Présentation brève d’OpenLayers\nIl est donc intéressant de savoir utiliser à la fois Leaflet et OpenLayers car chacune des librairies a ses points forts et ses faiblesses.\nCela dit, en ce qui concerne un usage simplifié, si vous comprenez Leaflet vous comprenez aussi OpenLayers.\n\nOn va devoir créer une application Node JS pour pouvoir importer la librairie OpenLayers et commencer à coder."
+  },
+  {
+    "objectID": "cours/geonum/slides_le_point_technique.html#les-bases-de-node-js",
+    "href": "cours/geonum/slides_le_point_technique.html#les-bases-de-node-js",
+    "title": "Serveurs Carto et OpenLayers - le point technique",
+    "section": "Les bases de Node JS",
+    "text": "Les bases de Node JS\nNode JS, c’est ce qu’on appelle un environnement runtime de JavaScript.\nVoilà. On continue ?"
+  },
+  {
+    "objectID": "cours/geonum/slides_le_point_technique.html#les-bases-de-node-js-1",
+    "href": "cours/geonum/slides_le_point_technique.html#les-bases-de-node-js-1",
+    "title": "Serveurs Carto et OpenLayers - le point technique",
+    "section": "Les bases de Node JS",
+    "text": "Les bases de Node JS\nPour simplifier, voyons comment vous écrivez et exécutez votre code JavaScript jusqu’à maintenant.\n\nOn crée un document index.html dans lequel on met quelque part une balise &lt;script&gt;\nOn écrit le code dans la balise &lt;script&gt;\nOn ouvre index.html dans le navigateur\nComme le JavaScript est dans index.html qui est ouvert dans un navigateur, le navigateur peut exécuter le code JavaScript\n\nCe n’est pas super pratique quand on commence à avoir une application qui grandit (ou “scale”)."
+  },
+  {
+    "objectID": "cours/geonum/slides_le_point_technique.html#les-bases-de-node-js-2",
+    "href": "cours/geonum/slides_le_point_technique.html#les-bases-de-node-js-2",
+    "title": "Serveurs Carto et OpenLayers - le point technique",
+    "section": "Les bases de Node JS",
+    "text": "Les bases de Node JS\nLa force de Node JS est de permettre d’exécuter du code écrit en JavaScript sans passer par le navigateur. Si par la suite vous devez écrire du code côté serveur, vous pouvez aussi le faire en JavaScript. Et surtout, Node JS permet de télécharger facilement des librairies et déployer encore plus facilement notre application pour la mettre en production en utilisant quelques lignes de commande."
+  },
+  {
+    "objectID": "cours/geonum/slides_le_point_technique.html#les-bases-de-node-js-3",
+    "href": "cours/geonum/slides_le_point_technique.html#les-bases-de-node-js-3",
+    "title": "Serveur Carto et OpenLayers - le point technique",
+    "section": "Les bases de Node JS",
+    "text": "Les bases de Node JS\n\n\n\n\n\nEn Leaflet, vous avez “triché” pour éviter d’avoir à utiliser un serveur. Mais maintenant, ça ne vous fait plus peur, on va pouvoir utiliser toute une architecture…\n\n\n\n\nFormation WebCarto GeoNum 2024 -2025"
+  },
+  {
+    "objectID": "cours/geonum/slides_le_point_technique.html#un-serveur-pour-mon-appli-web",
+    "href": "cours/geonum/slides_le_point_technique.html#un-serveur-pour-mon-appli-web",
+    "title": "Serveurs Carto et OpenLayers - le point technique",
+    "section": "Un serveur pour mon appli web",
+    "text": "Un serveur pour mon appli web\nVous vous souvenez sûrement du premier cours de Leaflet."
+  },
+  {
+    "objectID": "cours/geonum/slides_le_point_technique.html#un-serveur-pour-mon-appli-web-1",
+    "href": "cours/geonum/slides_le_point_technique.html#un-serveur-pour-mon-appli-web-1",
+    "title": "Serveurs Carto et OpenLayers - le point technique",
+    "section": "Un serveur pour mon appli web",
+    "text": "Un serveur pour mon appli web\nVous avez “triché” pour éviter d’avoir à utiliser un serveur. Mais maintenant, ça ne vous fait plus peur. Après tout, on a bien utilisé un serveur carto la dernière fois et tout le monde a survécu. Maintenant, on va pouvoir écrire une application web plus complexe, bien la structurer grâce à Node JS, et la servir sur un serveur web."
+  },
+  {
+    "objectID": "cours/geonum/slides_le_point_technique.html#de-quelle-architecture-on-a-besoin",
+    "href": "cours/geonum/slides_le_point_technique.html#de-quelle-architecture-on-a-besoin",
+    "title": "Serveurs Carto et OpenLayers - le point technique",
+    "section": "De quelle architecture on a besoin ?",
+    "text": "De quelle architecture on a besoin ?\nFacile ! On veut :\n\nun serveur webcarto (GeoServer)\nmais aussi un serveur web pour servir notre application.\n\nDurant le premier TP, on a utilisé Docker pour déployer notre GeoServer. On peut aussi déployer notre serveur web avec Docker. Mais ça voudrait dire qu’à chaque fois, on aurait deux containers différents à allumer et éteindre, qu’il faut faire attention à ne pas les configurer de travers, ne pas oublier les lignes de commande qu’on a tapées…\n\nHeureusement, Docker dispose d’un petit outil bien pratique pour gérer des architectures à plusieurs containers : Docker Compose. Sauf que pour comprendre Docker Compose, il faut comprendre Docker. Et pour comprendre Docker, il faut comprendre les Machines Virtuelles (VM)."
+  },
+  {
+    "objectID": "cours/geonum/slides_le_point_technique.html#section",
+    "href": "cours/geonum/slides_le_point_technique.html#section",
+    "title": "Serveur Carto et OpenLayers - le point technique",
+    "section": "",
+    "text": "Formation WebCarto GeoNum 2024 -2025"
+  },
+  {
+    "objectID": "cours/geonum/slides_le_point_technique.html#vms-docker-et-docker-compose",
+    "href": "cours/geonum/slides_le_point_technique.html#vms-docker-et-docker-compose",
+    "title": "Serveurs Carto et OpenLayers - le point technique",
+    "section": "VMs, Docker et Docker Compose",
+    "text": "VMs, Docker et Docker Compose\nEncore de la théorie ?!\n\nOn ne va pas rentrer dans le détail, l’idée est que vous compreniez pourquoi on a utilisé Docker et pas des machines virtuelles pour nos serveurs. Docker, c’est bien. Si vous déployez des architectures par la suite, vous allez apprendre à l’aimer."
+  },
+  {
+    "objectID": "cours/geonum/slides_le_point_technique.html#vms-docker-et-docker-compose-1",
+    "href": "cours/geonum/slides_le_point_technique.html#vms-docker-et-docker-compose-1",
+    "title": "Serveurs Carto et OpenLayers - le point technique",
+    "section": "VMs, Docker et Docker Compose",
+    "text": "VMs, Docker et Docker Compose\nLes Machines Virtuelles (VM)\n\nIl faut voir une machine virtuelle comme un ordinateur qui serait dématérialisé (sans composants matériels). Elle possède un processeur, de la mémoire, des espaces de stockage pour la donnée, elle peut se connecter à internet…\nOutils de création de machines virtuelles : VirtualBox, VMWare…\n\nExemple : en téléchargeant VirtualBox, je peux créer une machine virtuelle Linux sur mon ordinateur Windows.\n\nSource : microsoft.com"
+  },
+  {
+    "objectID": "cours/geonum/slides_le_point_technique.html#vms-docker-et-docker-compose-2",
+    "href": "cours/geonum/slides_le_point_technique.html#vms-docker-et-docker-compose-2",
+    "title": "Serveurs Carto et OpenLayers - le point technique",
+    "section": "VMs, Docker et Docker Compose",
+    "text": "VMs, Docker et Docker Compose\nLes Machines Virtuelles (VM)\nSi je voulais mettre en place mon serveur sur une machine virtuelle, je devrais :\n\ncréer la machine (avec des caractéristiques suffisantes pour faire tourner l’application)\ninstaller et configurer mon serveur web (Apache, Nginx, Caddy)\najouter le build de mon application Node JS dans le dossier /var/www/ de mon serveur web\ntélécharger, installer et configurer GeoServer\néventuellement télécharger, installer et configurer une base Postgresql avec PostGIS et la connecter au serveur\netc."
+  },
+  {
+    "objectID": "cours/geonum/slides_le_point_technique.html#vms-docker-et-docker-compose-3",
+    "href": "cours/geonum/slides_le_point_technique.html#vms-docker-et-docker-compose-3",
+    "title": "Serveurs Carto et OpenLayers - le point technique",
+    "section": "VMs, Docker et Docker Compose",
+    "text": "VMs, Docker et Docker Compose\nLes Machines Virtuelles (VM)\nMultiplier les machines virtuelles sur l’hôte est très demandeur.\n\nressources divisées entre l’hôte et les machines\nautant d’OS à faire tourner que de machines\nchaque machine = plusieurs Go d’espace\n\nC’est aussi difficile à maintenir - il faut garder tous les OS à jour, etc.\nMais nous, on aime la simplicité et éviter de consommer plein de mémoire “pour rien”."
+  },
+  {
+    "objectID": "cours/geonum/slides_le_point_technique.html#vms-docker-et-docker-compose-4",
+    "href": "cours/geonum/slides_le_point_technique.html#vms-docker-et-docker-compose-4",
+    "title": "Serveurs Carto et OpenLayers - le point technique",
+    "section": "VMs, Docker et Docker Compose",
+    "text": "VMs, Docker et Docker Compose\nDocker\n\nDocker permet de faire tourner ce qu’on appelle des containers.\nLes containers sont réduits au minimum nécessaire pour faire tourner des services (un serveur, une base de données, …).\nAutre outil de containerisation : Podman\n\n\nSource : microsoft.com"
+  },
+  {
+    "objectID": "cours/geonum/slides_le_point_technique.html#vms-docker-et-docker-compose-5",
+    "href": "cours/geonum/slides_le_point_technique.html#vms-docker-et-docker-compose-5",
+    "title": "Serveurs Carto et OpenLayers - le point technique",
+    "section": "VMs, Docker et Docker Compose",
+    "text": "VMs, Docker et Docker Compose\nDocker Compose\n\nSorti en 2013, Docker Compose permet de gérer des applications multi-containers.\nPour cela, on va rédiger un fichier de type docker-compose.yml qui va agir comme une “recette” pour permettre à Docker de créer et connecter l’ensemble des containers dont on a besoin."
+  },
+  {
+    "objectID": "cours/geonum/slides_le_point_technique.html#notre-docker-compose",
+    "href": "cours/geonum/slides_le_point_technique.html#notre-docker-compose",
+    "title": "Serveurs Carto et OpenLayers - le point technique",
+    "section": "Notre Docker Compose",
+    "text": "Notre Docker Compose\nExplications sur le contenu :\nservices:\n\n  geoserver:\n    container_name: geonum_geoserver\n    image: docker.osgeo.org/geoserver:2.26.0\n    environment:\n      - RUN_UNPRIVILEGED=true\n      - CHANGE_OWNERSHIP_ON_FOLDERS=\"/opt /opt/geoserver_data/ /mnt/geoserver_geodata\"\n      - CORS_ENABLED=true\n    ports:\n      - \"8080:8080\"\n    volumes:\n      - $PWD/geoserver/opt:/opt/geoserver_data\n  \n  web:\n    container_name: geonum_web\n    image: caddy:latest\n    ports:\n      - \"80:80\"\n    volumes:\n      - $PWD/Caddyfile:/etc/caddy/Caddyfile\n      - $PWD/app/dist/:/srv"
+  },
+  {
+    "objectID": "cours/geonum/slides_openlayers_td1.html#section",
+    "href": "cours/geonum/slides_openlayers_td1.html#section",
+    "title": "Introduction à OpenLayers",
+    "section": "",
+    "text": "Formation WebCarto GeoNum 2024 -2025"
+  },
+  {
+    "objectID": "cours/geonum/slides_le_point_technique.html#à-vous",
+    "href": "cours/geonum/slides_le_point_technique.html#à-vous",
+    "title": "Serveurs Carto et OpenLayers - le point technique",
+    "section": "À vous !",
+    "text": "À vous !\nCommencez le TP “démarrage de la stack” pour mettre en place vos containers ! Ensuite, on pourra se pencher un peu plus sur le cas d’OpenLayers.\n\n\n\n\nFormation WebCarto GeoNum 2024 -2025"
+  },
+  {
+    "objectID": "cours/geonum/openlayers_geoserver.html#memo-à-supprimer",
+    "href": "cours/geonum/openlayers_geoserver.html#memo-à-supprimer",
+    "title": "OpenLayers & GeoServer",
+    "section": "Memo (à supprimer)",
+    "text": "Memo (à supprimer)\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n  &lt;head&gt;\n    &lt;meta charset=\"UTF-8\" /&gt;\n    &lt;link rel=\"icon\" type=\"image/x-icon\" href=\"https://openlayers.org/favicon.ico\" /&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;\n    &lt;title&gt;GeoNum&lt;/title&gt;\n  &lt;/head&gt;\n  &lt;body&gt;\n    &lt;h1&gt;OpenLayers et GeoServer pour les GeoNum&lt;/h1&gt;\n    &lt;div id=\"map\"&gt;&lt;/div&gt;\n    &lt;div id=\"info\"&gt;&lt;/div&gt;\n    &lt;script type=\"module\" src=\"./main.js\"&gt;&lt;/script&gt;\n  &lt;/body&gt;\n&lt;/html&gt;\n@import \"node_modules/ol/ol.css\";\n\nhtml, body {\n  margin: 0;\n  padding: 0;\n  height: 100%;\n  overflow-x: auto;\n}\n\nh1 {\n  padding-left: 2rem;\n}\n\n#map {\n  position: absolute;\n  top: 5em;\n  bottom: 0;\n  width: 100%;\n}\n\n#info {\n  position: absolute;\n  bottom: 2em;\n  left: 2em;\n  width: calc(100% - 4rem);\n  height: 12rem;\n  border-radius: 12px;\n  background-color: white;\n  overflow: auto;\n}\nimport './style.css';\nimport {Map, View} from 'ol';\nimport TileLayer from 'ol/layer/Tile';\nimport OSM from 'ol/source/OSM';\nimport { ImageWMS } from 'ol/source';\nimport { Image as ImageLayer } from 'ol/layer';\nimport WMSGetFeatureInfo from 'ol/format/WMSGetFeatureInfo';\n\nconst osm_layer = new TileLayer({ source: new OSM() });\n\nconst geoserver_url = 'http://localhost:8080/geoserver/land_matrix/wms';\n\nconst source_deals = new ImageWMS({\n  url: geoserver_url,\n  params: {\n    \"LAYERS\": \"land_matrix:deals\",\n    // \"cql_filter\": \"deal_size &gt; 50000\",\n    // \"cql_filter\": \"target_country = 'Argentina'\", // Attention: Il ne faut pas inverser les \"\" et '' sinon ça ne fonctionne pas\n    // \"cql_filter\": \"lithium = true\",\n    // \"cql_filter\": \"cultural_loss = true\",\n    // \"cql_filter\": \"deal_size &gt; 500 AND gold = true\",\n  },\n  serverType: \"geoserver\",\n  // crossOrigin: \"anonymous\",\n});\n\nconst layer_deals = new ImageLayer({ source: source_deals });\n\nconst view = new View({\n  center: [0, 0],\n  zoom: 2,\n});\n\nconst map = new Map({\n  target: \"map\",\n  layers: [ osm_layer, layer_deals ],\n  view: view\n});\n\n// Module to get feature info from deals layer\nmap.on('singleclick', function(evt) {\n  console.log('--------------------------------');\n\n  const viewResolution = map.getView().getResolution();\n  const url = source_deals.getFeatureInfoUrl(\n    evt.coordinate,\n    viewResolution,\n    'EPSG:3857',\n    {'INFO_FORMAT': 'text/html'}\n  );\n\n  console.log(url);\n\n  if (url) {\n    fetch(url)\n      .then((response) =&gt; response.text())\n      .then((html) =&gt; {\n        console.log(html);\n        document.getElementById('info').innerHTML = html;\n        console.log(\"oké\");\n      })\n  }\n});\n\nmap.on('pointermove', function (evt) {\n  if (evt.dragging) {\n    return;\n  }\n  const data = layer_deals.getData(evt.pixel);\n  const hit = data && data[3] &gt; 0;\n  map.getTargetElement().style.cursor = hit ? 'pointer' : '';\n});",
+    "crumbs": [
+      "OpenLayers & GeoServer"
+    ]
+  },
+  {
+    "objectID": "cours/geonum/slides_openlayers_td1.html#sommaire",
+    "href": "cours/geonum/slides_openlayers_td1.html#sommaire",
+    "title": "Introduction à OpenLayers",
+    "section": "Sommaire",
+    "text": "Sommaire\n\nSe familiariser avec le code de l’application\nLes ressources OpenLayers\nConseils pour coder\nOn ajoute notre première couche ensemble"
+  },
+  {
+    "objectID": "cours/geonum/slides_openlayers_td1.html#se-familiariser-avec-le-code-de-lapplication",
+    "href": "cours/geonum/slides_openlayers_td1.html#se-familiariser-avec-le-code-de-lapplication",
+    "title": "Introduction à OpenLayers",
+    "section": "Se familiariser avec le code de l’application",
+    "text": "Se familiariser avec le code de l’application\nNode JS crée beaucoup d’éléments mais voici ceux qu’on utilisera :\n\nindex.html\nstyle.css\nmain.js\n\nDeux autres explications à titre d’information :\n\nnode_modules/ contient notamment le code des librairies installées, c’est ici que vit le code source d’OpenLayers\ndist/ contient l’output du build du site, c’est les fichiers qui sont prêts à être servis par le serveur (pour nous, Caddy) pour mettre notre site en production"
+  },
+  {
+    "objectID": "cours/geonum/slides_openlayers_td1.html#se-familiariser-avec-le-code-de-lapplication-1",
+    "href": "cours/geonum/slides_openlayers_td1.html#se-familiariser-avec-le-code-de-lapplication-1",
+    "title": "Introduction à OpenLayers",
+    "section": "Se familiariser avec le code de l’application",
+    "text": "Se familiariser avec le code de l’application\nindex.html\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n  &lt;head&gt;\n    &lt;meta charset=\"UTF-8\" /&gt;\n    &lt;link rel=\"icon\" type=\"image/x-icon\" href=\"https://openlayers.org/favicon.ico\" /&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt;\n    &lt;title&gt;Using OpenLayers with Vite&lt;/title&gt;\n  &lt;/head&gt;\n  &lt;body&gt;\n    &lt;div id=\"map\"&gt;&lt;/div&gt;\n    &lt;script type=\"module\" src=\"./main.js\"&gt;&lt;/script&gt;\n  &lt;/body&gt;\n&lt;/html&gt;"
+  },
+  {
+    "objectID": "cours/geonum/slides_openlayers_td1.html#se-familiariser-avec-le-code-de-lapplication-2",
+    "href": "cours/geonum/slides_openlayers_td1.html#se-familiariser-avec-le-code-de-lapplication-2",
+    "title": "Introduction à OpenLayers",
+    "section": "Se familiariser avec le code de l’application",
+    "text": "Se familiariser avec le code de l’application\nindex.html\nUne référence pratique pour les balises html : W3schools.com"
+  },
+  {
+    "objectID": "cours/geonum/slides_openlayers_td1.html#se-familiariser-avec-le-code-de-lapplication-3",
+    "href": "cours/geonum/slides_openlayers_td1.html#se-familiariser-avec-le-code-de-lapplication-3",
+    "title": "Introduction à OpenLayers",
+    "section": "Se familiariser avec le code de l’application",
+    "text": "Se familiariser avec le code de l’application\nstyle.css\n@import \"node_modules/ol/ol.css\";\n\nhtml, body {\n  margin: 0;\n  height: 100%;\n}\n#map {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  width: 100%;\n}"
+  },
+  {
+    "objectID": "cours/geonum/slides_openlayers_td1.html#les-ressources-openlayers",
+    "href": "cours/geonum/slides_openlayers_td1.html#les-ressources-openlayers",
+    "title": "Introduction à OpenLayers",
+    "section": "Les ressources OpenLayers",
+    "text": "Les ressources OpenLayers\nD’abord, la documentation. C’est la bible d’OpenLayers et vous allez devoir apprendre à la comprendre, au moins en partie, ou vous allez avoir beaucoup de mal à comprendre ce que vous faites quand vous codez. Elle peut être trouvée à cette addresse : https://openlayers.org/en/latest/apidoc/\n\nExemple d’utilisation de la documentation pour l’objet Map qui est créé dans main.js :\nTapez “Map” et cliquez sur le premier résultat (lien ici). On voit en haut de la page :\n\nComment importer cet objet Map\nUne description de ce qu’est cet objet Map\nUn exemple (“snippet”, petit morceau de code) qui montre comment utiliser Map\n\n\n\nQuand on continue à défiler vers le bas, on voit plusieurs autres sections :\n\nLa définition de la fonction pour créer l’objet Map et les options qu’il prend (new Map(options))\nLes évènements qui peuvent être déclenchés (“fired”) par notre objet Map dans la section Fires:\nLes Méthodes de l’objet Map, donc les fonctions qui peuvent être déclenchées avec cet objet Map pour généralement le lire ou le modifier"
+  },
+  {
+    "objectID": "cours/geonum/slides_openlayers_td1.html#conseils-pour-coder",
+    "href": "cours/geonum/slides_openlayers_td1.html#conseils-pour-coder",
+    "title": "Introduction à OpenLayers",
+    "section": "Conseils pour coder",
+    "text": "Conseils pour coder\n\n\nUtilisez des console.log() à outrance pour vérifier qu’une fonction a bien été appelée, qu’une variable a bien été lue, etc.\nCopiez le code des exemples OpenLayers et essayez de le changer petit à petit pour l’adapter à votre code.\nQuand vous voulez ajouter de nouveaux éléments, allez-y petit à petit et vérifiez à chaque étape que tout fonctionne, ça permettra plus facilement de retrouver les bugs.\nUne des premières choses à vérifier quand le code ne fonctionne pas est le nom des variables. Parfois on oublie un “s”, parfois on a ajouté une majuscule…\nCOMMENTEZ VOTRE CODE ! Non seulement ce sera pris en compte dans l’évaluation, mais surtout vous allez galérer à comprendre votre code en revenant dessus dans quelques mois et/ou les personnes avec qui vous allez travailler vont aussi mettre du temps à vous comprendre."
+  },
+  {
+    "objectID": "cours/geonum/slides_openlayers_td1.html#se-familiariser-avec-le-code-de-lapplication-4",
+    "href": "cours/geonum/slides_openlayers_td1.html#se-familiariser-avec-le-code-de-lapplication-4",
+    "title": "Introduction à OpenLayers",
+    "section": "Se familiariser avec le code de l’application",
+    "text": "Se familiariser avec le code de l’application\nstyle.css\nDes références pratiques pour écrire du CSS :\n\ncssreference.io pour la plupart des propriétés CSS\nW3schools.com pour les sélécteurs\nd’excellents guides sur css-tricks.com pour utiliser grid ou flexbox"
+  },
+  {
+    "objectID": "cours/geonum/slides_openlayers_td1.html#se-familiariser-avec-le-code-de-lapplication-5",
+    "href": "cours/geonum/slides_openlayers_td1.html#se-familiariser-avec-le-code-de-lapplication-5",
+    "title": "Introduction à OpenLayers",
+    "section": "Se familiariser avec le code de l’application",
+    "text": "Se familiariser avec le code de l’application\nmain.js\nimport './style.css';\nimport {Map, View} from 'ol';\nimport TileLayer from 'ol/layer/Tile';\nimport OSM from 'ol/source/OSM';\n\nconst map = new Map({\n  target: 'map',\n  layers: [\n    new TileLayer({\n      source: new OSM()\n    })\n  ],\n  view: new View({\n    center: [0, 0],\n    zoom: 2\n  })\n});"
+  },
+  {
+    "objectID": "cours/geonum/slides_openlayers_td1.html#les-ressources-openlayers-1",
+    "href": "cours/geonum/slides_openlayers_td1.html#les-ressources-openlayers-1",
+    "title": "Introduction à OpenLayers",
+    "section": "Les ressources OpenLayers",
+    "text": "Les ressources OpenLayers\nPetit point UML pour mieux comprendre (j’espère)\n\n\n\n\n\nclassDiagram\n    class Map{\n        controls\n        pixelRatio\n        interactions\n        keyboardEventTarget\n        layers\n        maxTilesLoading\n        moveTolerance\n        overlays\n        target\n        view\n        +methods…()\n    }\n\n\n\n\n\n\nOK c’est un peu compliqué. Pour simplifier, on va prendre les éléments qui nous intéressent le plus."
+  },
+  {
+    "objectID": "cours/geonum/slides_openlayers_td1.html#les-ressources-openlayers-2",
+    "href": "cours/geonum/slides_openlayers_td1.html#les-ressources-openlayers-2",
+    "title": "Introduction à OpenLayers",
+    "section": "Les ressources OpenLayers",
+    "text": "Les ressources OpenLayers\nPetit point UML pour mieux comprendre (j’espère)\n\n\n\n\n\n\n\nclassDiagram\n    class Map{\n        target\n        layers\n        view\n        +addLayer()\n        +getlayers()\n        +getView()\n    }\n\n\n\n\n\n\n\nClasse : Map\nAttributs :\n\n\ntarget = l’id de ma &lt;div&gt; qui va contenir ma carte\nlayers = les couches créées avec OpenLayers qui doivent être ajoutées à ma carte\nview = les paramètres de la vue (centre, niveau de zoom) de ma carte lorsqu’elle est initialisée\n\n\nMéthodes :\n\n\naddLayer() = ajouter une couche créée avec OpenLayers à ma carte\ngetLayers() = récupérer les couches qui sont attachées à ma carte\ngetView() = récupérer les paramètres de la vue actuelle (centre, niveau de zoom)"
+  },
+  {
+    "objectID": "cours/geonum/slides_openlayers_td1.html#les-ressources-openlayers-3",
+    "href": "cours/geonum/slides_openlayers_td1.html#les-ressources-openlayers-3",
+    "title": "Introduction à OpenLayers",
+    "section": "Les ressources OpenLayers",
+    "text": "Les ressources OpenLayers\nLa galerie d’exemples\nPour créer une carte sous OpenLayers, le point d’entrée principal est la galerie d’exemples. Je vous conseille vivement de toujours commencer par là avant d’aller voir d’autres ressources comme StackOverflow, etc. comme ce sont les exemples officiels qui sont maintenus à jour et respectent les bonnes pratiques d’utilisation du code OpenLayers.\nPar exemple, si vous souhaitez ajouter un flux WMS à votre carte, basez-vous sur le code de l’exemple Single Image WMS."
+  },
+  {
+    "objectID": "cours/geonum/slides_openlayers_td1.html#on-va-ajouter-notre-première-couche-ensemble",
+    "href": "cours/geonum/slides_openlayers_td1.html#on-va-ajouter-notre-première-couche-ensemble",
+    "title": "Introduction à OpenLayers",
+    "section": "On va ajouter notre première couche ensemble",
+    "text": "On va ajouter notre première couche ensemble\n🤔 Qu’est-ce qui est différent dans index.html ?\n\n\n\n\nFormation WebCarto GeoNum 2024 -2025"
+  },
+  {
+    "objectID": "cours/geonum/slides_openlayers_td1.html#on-ajoute-notre-première-couche-ensemble",
+    "href": "cours/geonum/slides_openlayers_td1.html#on-ajoute-notre-première-couche-ensemble",
+    "title": "Introduction à OpenLayers",
+    "section": "On ajoute notre première couche ensemble",
+    "text": "On ajoute notre première couche ensemble\nMaintenant, on va ajouter notre première couche WMS ensemble.\n\nOuvrez votre projet dans VSCode (ou votre éditeur préféré) si ce n’est pas déjà fait\nSi vous aviez arrêté votre serveur node, ouvrez un terminal dans votre dossier app et tapez npm start puis allez sur le lien localhost qu vous est donné pour rouvrir votre carte\n\n\nOpenLayers c’est comme tout : avant de pouvoir partir en vrille et créer vos meilleures applications, il faut bien comprendre les bases.\nDonc au lieu de connecter notre couche WMS à l’aveugle, on va chercher à comprendre comment c’est fait. Ci-dessous, un exemple d’étudiants qui ont bien étudié les bases pour comprendre ce qu’ils font."
+  },
+  {
+    "objectID": "cours/geonum/slides_openlayers_td1.html#on-ajoute-notre-première-couche-ensemble-1",
+    "href": "cours/geonum/slides_openlayers_td1.html#on-ajoute-notre-première-couche-ensemble-1",
+    "title": "Introduction à OpenLayers",
+    "section": "On ajoute notre première couche ensemble",
+    "text": "On ajoute notre première couche ensemble\n🤔 Qu’est-ce qui est différent dans index.html ?\n\n\nle style n’est pas dans style.css mais dans une balise de &lt;style&gt;. Nous on a déjà un fichier de style qui fonctionne très bien et la carte en plein écran nous plait, on ne change rien.\n\n\n\n\nla balise &lt;div id=\"map\"&gt; a aussi une classe de style class = \"map\". Cela permet d’appliquer le même style à toutes les cartes avec la classe map. Nous on a une seule carte dans notre application, donc on s’en moque.\n\n\n\nEn gros, on n’a rien à modifier dans index.html ni dans le fichier de style style.css. On peut passer au gros morceau : le fichier de script main.js."
+  },
+  {
+    "objectID": "cours/geonum/slides_openlayers_td1.html#on-ajoute-notre-première-couche-ensemble-2",
+    "href": "cours/geonum/slides_openlayers_td1.html#on-ajoute-notre-première-couche-ensemble-2",
+    "title": "Introduction à OpenLayers",
+    "section": "On ajoute notre première couche ensemble",
+    "text": "On ajoute notre première couche ensemble\n🤔 Qu’est-ce qui est différent dans main.js ?\n\n👆 Mon conseil : au début, ignorez toute la section import qui peut sembler un peu floue et concentrer vous sur les variables qui sont définies dans le code, puis sur les objets OpenLayers.\n\n\n\n\nNotre code :\nimport './style.css';\nimport {Map, View} from 'ol';\nimport TileLayer from 'ol/layer/Tile';\nimport OSM from 'ol/source/OSM';\n\nconst map = new Map({\n  target: 'map',\n  layers: [\n    new TileLayer({\n      source: new OSM()\n    })\n  ],\n  view: new View({\n    center: [0, 0],\n    zoom: 2\n  })\n});\n\nLe code de l’exemple :\nimport ImageWMS from 'ol/source/ImageWMS.js';\nimport Map from 'ol/Map.js';\nimport OSM from 'ol/source/OSM.js';\nimport View from 'ol/View.js';\nimport {Image as ImageLayer, Tile as TileLayer} from 'ol/layer.js';\n\nconst layers = [\n  new TileLayer({\n    source: new OSM(),\n  }),\n  new ImageLayer({\n    extent: [-13884991, 2870341, -7455066, 6338219],\n    source: new ImageWMS({\n      url: 'https://ahocevar.com/geoserver/wms',\n      params: {'LAYERS': 'topp:states'},\n      ratio: 1,\n      serverType: 'geoserver',\n    }),\n  }),\n];\nconst map = new Map({\n  layers: layers,\n  target: 'map',\n  view: new View({\n    center: [-10997148, 4569099],\n    zoom: 4,\n  }),\n});"
+  },
+  {
+    "objectID": "cours/geonum/slides_openlayers_td1.html#on-ajoute-notre-première-couche-ensemble-3",
+    "href": "cours/geonum/slides_openlayers_td1.html#on-ajoute-notre-première-couche-ensemble-3",
+    "title": "Introduction à OpenLayers",
+    "section": "On ajoute notre première couche ensemble",
+    "text": "On ajoute notre première couche ensemble\n\n\nNotre code :\nimport './style.css';\nimport {Map, View} from 'ol';\nimport TileLayer from 'ol/layer/Tile';\nimport OSM from 'ol/source/OSM';\n\nconst map = new Map({\n  target: 'map',\n  layers: [\n    new TileLayer({\n      source: new OSM()\n    })\n  ],\n  view: new View({\n    center: [0, 0],\n    zoom: 2\n  })\n});\n\nLe code de l’exemple :\nimport ImageWMS from 'ol/source/ImageWMS.js';\nimport Map from 'ol/Map.js';\nimport OSM from 'ol/source/OSM.js';\nimport View from 'ol/View.js';\nimport {Image as ImageLayer, Tile as TileLayer} from 'ol/layer.js';\n\nconst layers = [\n  new TileLayer({\n    source: new OSM(),\n  }),\n  new ImageLayer({\n    extent: [-13884991, 2870341, -7455066, 6338219],\n    source: new ImageWMS({\n      url: 'https://ahocevar.com/geoserver/wms',\n      params: {'LAYERS': 'topp:states'},\n      ratio: 1,\n      serverType: 'geoserver',\n    }),\n  }),\n];\nconst map = new Map({\n  layers: layers,\n  target: 'map',\n  view: new View({\n    center: [-10997148, 4569099],\n    zoom: 4,\n  }),\n});"
+  },
+  {
+    "objectID": "cours/geonum/slides_openlayers_td1.html#on-ajoute-notre-première-couche-ensemble-4",
+    "href": "cours/geonum/slides_openlayers_td1.html#on-ajoute-notre-première-couche-ensemble-4",
+    "title": "Introduction à OpenLayers",
+    "section": "On ajoute notre première couche ensemble",
+    "text": "On ajoute notre première couche ensemble\n\n\nNotre code :\nimport './style.css';\nimport {Map, View} from 'ol';\nimport TileLayer from 'ol/layer/Tile';\nimport OSM from 'ol/source/OSM';\n\nconst map = new Map({\n  target: 'map',\n  layers: [\n    new TileLayer({\n      source: new OSM()\n    })\n  ],\n  view: new View({\n    center: [0, 0],\n    zoom: 2\n  })\n});\n\nLe code de l’exemple :\nimport ImageWMS from 'ol/source/ImageWMS.js';\nimport Map from 'ol/Map.js';\nimport OSM from 'ol/source/OSM.js';\nimport View from 'ol/View.js';\nimport {Image as ImageLayer, Tile as TileLayer} from 'ol/layer.js';\n\nconst layers = [\n  new TileLayer({\n    source: new OSM(),\n  }),\n  new ImageLayer({\n    extent: [-13884991, 2870341, -7455066, 6338219],\n    source: new ImageWMS({\n      url: 'https://ahocevar.com/geoserver/wms',\n      params: {'LAYERS': 'topp:states'},\n      ratio: 1,\n      serverType: 'geoserver',\n    }),\n  }),\n];\nconst map = new Map({\n  layers: layers,\n  target: 'map',\n  view: new View({\n    center: [-10997148, 4569099],\n    zoom: 4,\n  }),\n});"
+  },
+  {
+    "objectID": "cours/geonum/slides_openlayers_td1.html#on-ajoute-notre-première-couche-ensemble-5",
+    "href": "cours/geonum/slides_openlayers_td1.html#on-ajoute-notre-première-couche-ensemble-5",
+    "title": "Introduction à OpenLayers",
+    "section": "On ajoute notre première couche ensemble",
+    "text": "On ajoute notre première couche ensemble\n\n\nNotre code :\nimport './style.css';\nimport {Map, View} from 'ol';\nimport TileLayer from 'ol/layer/Tile';\nimport OSM from 'ol/source/OSM';\n\nconst map = new Map({\n  target: 'map',\n  layers: [\n    new TileLayer({\n      source: new OSM()\n    })\n  ],\n  view: new View({\n    center: [0, 0],\n    zoom: 2\n  })\n});\n\nLe code de l’exemple :\nimport ImageWMS from 'ol/source/ImageWMS.js';\nimport Map from 'ol/Map.js';\nimport OSM from 'ol/source/OSM.js';\nimport View from 'ol/View.js';\nimport {Image as ImageLayer, Tile as TileLayer} from 'ol/layer.js';\n\nconst layers = [\n  new TileLayer({\n    source: new OSM(),\n  }),\n  new ImageLayer({\n    extent: [-13884991, 2870341, -7455066, 6338219],\n    source: new ImageWMS({\n      url: 'https://ahocevar.com/geoserver/wms',\n      params: {'LAYERS': 'topp:states'},\n      ratio: 1,\n      serverType: 'geoserver',\n    }),\n  }),\n];\nconst map = new Map({\n  layers: layers,\n  target: 'map',\n  view: new View({\n    center: [-10997148, 4569099],\n    zoom: 4,\n  }),\n});"
+  },
+  {
+    "objectID": "cours/geonum/slides_openlayers_td1.html#on-ajoute-notre-première-couche-ensemble-6",
+    "href": "cours/geonum/slides_openlayers_td1.html#on-ajoute-notre-première-couche-ensemble-6",
+    "title": "Introduction à OpenLayers",
+    "section": "On ajoute notre première couche ensemble",
+    "text": "On ajoute notre première couche ensemble\n\n\nNotre code :\nimport './style.css';\nimport {Map, View} from 'ol';\nimport TileLayer from 'ol/layer/Tile';\nimport OSM from 'ol/source/OSM';\n\nconst map = new Map({\n  target: 'map',\n  layers: [\n    new TileLayer({\n      source: new OSM()\n    })\n  ],\n  view: new View({\n    center: [0, 0],\n    zoom: 2\n  })\n});\n\nLe code de l’exemple :\nimport ImageWMS from 'ol/source/ImageWMS.js';\nimport Map from 'ol/Map.js';\nimport OSM from 'ol/source/OSM.js';\nimport View from 'ol/View.js';\nimport {Image as ImageLayer, Tile as TileLayer} from 'ol/layer.js';\n\nconst layers = [\n  new TileLayer({\n    source: new OSM(),\n  }),\n  new ImageLayer({\n    extent: [-13884991, 2870341, -7455066, 6338219],\n    source: new ImageWMS({\n      url: 'https://ahocevar.com/geoserver/wms',\n      params: {'LAYERS': 'topp:states'},\n      ratio: 1,\n      serverType: 'geoserver',\n    }),\n  }),\n];\nconst map = new Map({\n  layers: layers,\n  target: 'map',\n  view: new View({\n    center: [-10997148, 4569099],\n    zoom: 4,\n  }),\n});"
+  },
+  {
+    "objectID": "cours/geonum/slides_openlayers_td1.html#on-ajoute-notre-première-couche-ensemble-7",
+    "href": "cours/geonum/slides_openlayers_td1.html#on-ajoute-notre-première-couche-ensemble-7",
+    "title": "Introduction à OpenLayers",
+    "section": "On ajoute notre première couche ensemble",
+    "text": "On ajoute notre première couche ensemble\nLe code de l’exemple :\nimport ImageWMS from 'ol/source/ImageWMS.js';\nimport Map from 'ol/Map.js';\nimport OSM from 'ol/source/OSM.js';\nimport View from 'ol/View.js';\nimport {Image as ImageLayer, Tile as TileLayer} from 'ol/layer.js';\n\nconst layers = [\n  new TileLayer({\n    source: new OSM(),\n  }),\n  new ImageLayer({\n    extent: [-13884991, 2870341, -7455066, 6338219],\n    source: new ImageWMS({\n      url: 'https://ahocevar.com/geoserver/wms',\n      params: {'LAYERS': 'topp:states'},\n      ratio: 1,\n      serverType: 'geoserver',\n    }),\n  }),\n];\nconst map = new Map({\n  layers: layers,\n  target: 'map',\n  view: new View({\n    center: [-10997148, 4569099],\n    zoom: 4,\n  }),\n});"
+  },
+  {
+    "objectID": "cours/geonum/slides_openlayers_td1.html#on-ajoute-notre-première-couche-ensemble-8",
+    "href": "cours/geonum/slides_openlayers_td1.html#on-ajoute-notre-première-couche-ensemble-8",
+    "title": "Introduction à OpenLayers",
+    "section": "On ajoute notre première couche ensemble",
+    "text": "On ajoute notre première couche ensemble\nDe quoi j’ai besoin pour ajouter une couche WMS à ma carte ?\n\n\nIl nous faut une source pour le flux WMS qu’on crée avec l’objet ImageWMS (documentation)\nIl nous faut un objet ImageLayer pour créer notre couche à partir de notre source\nIl nous faut un objet Map (déjà créé dans notre cas) auquel ajouter la couche\n\n\n\nMa proposition de code pour créer une couche (en retirant les éléments superflus pour simplifier) :\nconst ma_source = new ImageWMS({\n  url: '&lt;lien_vers_mon_serveur&gt;',\n  params: {'LAYERS': '&lt;espace&gt;:&lt;couche&gt;'},\n  serverType: 'geoserver',\n});\n\nconst ma_couche = new ImageLayer({\n  source: ma_source,\n});\n\n\nOn pourrait aussi l’écrire en imbriquant tout comme dans l’exemple, mais je préfère séparer les éléments, je trouve ça moins confus (surtout quand on apprend).\nconst ma_couche = new ImageLayer({\n  source: new ImageWMS({\n    url: '&lt;lien_vers_mon_serveur&gt;',\n    params: {'LAYERS': '&lt;espace&gt;:&lt;couche&gt;'},\n    serverType: 'geoserver',\n  }),\n});"
+  },
+  {
+    "objectID": "cours/geonum/slides_openlayers_td1.html#on-ajoute-notre-première-couche-ensemble-9",
+    "href": "cours/geonum/slides_openlayers_td1.html#on-ajoute-notre-première-couche-ensemble-9",
+    "title": "Introduction à OpenLayers",
+    "section": "On ajoute notre première couche ensemble",
+    "text": "On ajoute notre première couche ensemble\nIl nous manque un dernier détail : les imports. Si vous utilisez le code tel quel, vous allez avoir des messages d’erreur indiquant que les fonctions ne sont pas trouvées. Vous pouvez trouver les imports de trois manières :\n\nvous regardez les imports dans l’exemple OpenLayers et vous récupérez ceux dont vous avez besoin (lien)\nvous allez voir la documentation de ImageWMS par exemple et la première ligne vous indique comment importer le module dans votre code (lien)\nsi votre éditeur de code est bien fichu, il peut lui-même ajouter un import quand vous appelez un constructeur ou une méthode dans votre code\n\n👆 D’ailleurs, n’oubliez pas que les import doivent toujours être déclarés tout en haut du document !"
+  },
+  {
+    "objectID": "cours/geonum/slides_openlayers_td1.html#on-ajoute-notre-première-couche-ensemble-10",
+    "href": "cours/geonum/slides_openlayers_td1.html#on-ajoute-notre-première-couche-ensemble-10",
+    "title": "Introduction à OpenLayers",
+    "section": "On ajoute notre première couche ensemble",
+    "text": "On ajoute notre première couche ensemble\nVoici mon résultat pour importer la couche de l’exemple d’OpenLayers :\nimport './style.css';\nimport {Map, View} from 'ol';\nimport { ImageWMS } from 'ol/source';\nimport TileLayer from 'ol/layer/Tile';\nimport ImageLayer from 'ol/layer/Image';\nimport OSM from 'ol/source/OSM';\n\nconst couche_osm = new TileLayer({ source: new OSM() });\n\nconst ma_source = new ImageWMS({\n  url: 'https://ahocevar.com/geoserver/wms',\n  params: { 'LAYERS' : 'topp:states' },\n  serverType: 'geoserver',\n});\n\nconst ma_couche = new ImageLayer({\n  source: ma_source,\n});\n\nconst map = new Map({\n  target: 'map',\n  layers: [ couche_osm, ma_couche ],\n  view: new View({\n    center: [0, 0],\n    zoom: 2\n  })\n});"
+  },
+  {
+    "objectID": "cours/geonum/slides_openlayers_td1.html#à-vous",
+    "href": "cours/geonum/slides_openlayers_td1.html#à-vous",
+    "title": "Introduction à OpenLayers",
+    "section": "À vous !",
+    "text": "À vous !\nVous allez pouvoir commencer le TP suivant pour commencer à ajouter vos couches dans votre application OpenLayers.\nC’est parti !\n\n\n\n\n\n\n\n\n\nFormation WebCarto GeoNum 2024 -2025"
+  },
+  {
+    "objectID": "cours/geonum/slides_le_point_technique.html",
+    "href": "cours/geonum/slides_le_point_technique.html",
+    "title": "Serveur Carto et OpenLayers - le point technique",
+    "section": "",
+    "text": "Présentation brève d’OpenLayers\nLes bases de Node JS\nDe quelle architecture on a besoin ?\nVMs, Docker et Docker Compose\nNotre Docker Compose\n\nEt si on avance bien, aujourd’hui on aura non pas UN mais DEUX cours ! Alors ne perdons pas de temps et en avant !"
+  },
+  {
+    "objectID": "cours/geonum/openlayers_geoserver.html#cest-fini-pour-aujourdhui",
+    "href": "cours/geonum/openlayers_geoserver.html#cest-fini-pour-aujourdhui",
+    "title": "OpenLayers & GeoServer",
+    "section": "C’est fini pour aujourd’hui !",
+    "text": "C’est fini pour aujourd’hui !\nMerci à vous d’avoir tenu le coup, je sais que c’était dense. Pendant les deux premiers cours, on a appris tout ce qu’il nous fallait pour les prochaines séances. Maintenant, adieu la théorie, on va pouvoir passer à la pratique et ENFIN pouvoir enrichir notre super carte interactive !",
+    "crumbs": [
+      "OpenLayers & GeoServer"
+    ]
   }
 ]

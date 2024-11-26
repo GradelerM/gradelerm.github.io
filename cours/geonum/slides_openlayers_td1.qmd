@@ -1,0 +1,723 @@
+---
+title: "Introduction à OpenLayers"
+author: "Marie Gradeler"
+date: 27 Nov 2024
+format: 
+  revealjs: 
+    theme: [default, ../../styles/slides.scss]
+    transition: slide
+    controls: true
+    controls-layout: edges
+    footer: "Formation WebCarto GeoNum 2024 -2025"
+    logo: ../../static/logos/logo-geonum.webp
+---
+
+## Sommaire
+
+-   Se familiariser avec le code de l’application
+
+-   Les ressources OpenLayers
+
+-   Conseils pour coder
+
+-   On ajoute notre première couche ensemble
+
+## Se familiariser avec le code de l’application
+
+Node JS crée beaucoup d’éléments mais voici ceux qu’on utilisera :
+
+-   `index.html`
+
+-   `style.css`
+
+-   `main.js`
+
+Deux autres explications à titre d’information :
+
+-   `node_modules/` contient notamment le code des librairies installées, **c’est ici que vit le code source d’OpenLayers**
+
+-   `dist/` contient l’output du build du site, c’est les fichiers qui sont prêts à être servis par le serveur (pour nous, Caddy) pour mettre notre site en **production**
+
+## Se familiariser avec le code de l’application
+
+### index.html
+
+``` {.html code-line-numbers="|1|2,13|3,8|4,5,6,7|9,12|10|11"}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="https://openlayers.org/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Using OpenLayers with Vite</title>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
+```
+
+## Se familiariser avec le code de l’application
+
+### index.html
+
+Une référence pratique pour les balises html : [W3schools.com](https://www.w3schools.com/tags/ref_byfunc.asp)
+
+## Se familiariser avec le code de l’application
+
+### style.css
+
+``` {.css code-line-numbers="|1|3-6|7-12"}
+@import "node_modules/ol/ol.css";
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+```
+
+## Se familiariser avec le code de l’application
+
+### style.css
+
+Des références pratiques pour écrire du CSS :
+
+-   [cssreference.io](https://cssreference.io/) pour la plupart des propriétés CSS
+
+-   [W3schools.com](https://www.w3schools.com/cssref/css_selectors.php) pour les sélécteurs
+
+-   d’excellents guides sur css-tricks.com pour utiliser [grid](https://css-tricks.com/snippets/css/complete-guide-grid/) ou [flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
+## Se familiariser avec le code de l’application
+
+### main.js
+
+``` {.javascript code-line-numbers="|1-4|6-17|6|7|8-12|9-10|13-16|1-17"}
+import './style.css';
+import {Map, View} from 'ol';
+import TileLayer from 'ol/layer/Tile';
+import OSM from 'ol/source/OSM';
+
+const map = new Map({
+  target: 'map',
+  layers: [
+    new TileLayer({
+      source: new OSM()
+    })
+  ],
+  view: new View({
+    center: [0, 0],
+    zoom: 2
+  })
+});
+```
+
+## Les ressources OpenLayers
+
+**D’abord, la documentation.** C’est la bible d’OpenLayers et vous allez devoir apprendre à la comprendre, au moins en partie, ou vous allez avoir beaucoup de mal à comprendre ce que vous faites quand vous codez. Elle peut être trouvée à cette addresse : <https://openlayers.org/en/latest/apidoc/>
+
+. . .
+
+**Exemple d’utilisation de la documentation pour l’objet `Map` qui est créé dans `main.js` :**
+
+Tapez "Map" et cliquez sur le premier résultat ([lien ici](https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.html)). On voit en haut de la page :
+
+-   Comment importer cet objet `Map`
+
+-   Une description de ce qu’est cet objet `Map`
+
+-   Un exemple ("*snippet*", petit morceau de code) qui montre comment utiliser `Map`
+
+. . .
+
+**Quand on continue à défiler vers le bas, on voit plusieurs autres sections :**
+
+-   La définition de la fonction pour créer l’objet `Map` et les options qu’il prend (`new Map(options)`)
+
+-   Les évènements qui peuvent être déclenchés ("*fired*") par notre objet `Map` dans la section `Fires:`
+
+-   Les `Méthodes` de l’objet `Map`, donc les fonctions qui peuvent être déclenchées avec cet objet Map pour généralement le lire ou le modifier
+
+## Les ressources OpenLayers
+
+### Petit point UML pour mieux comprendre (j’espère)
+
+```{mermaid}
+classDiagram
+    class Map{
+        controls
+        pixelRatio
+        interactions
+        keyboardEventTarget
+        layers
+        maxTilesLoading
+        moveTolerance
+        overlays
+        target
+        view
+        +methods…()
+    }
+```
+
+OK c’est un peu compliqué. Pour simplifier, on va prendre les éléments qui nous intéressent le plus.
+
+## Les ressources OpenLayers
+
+### Petit point UML pour mieux comprendre (j’espère)
+
+::::::: columns
+::: {.column width="30%"}
+```{mermaid}
+classDiagram
+    class Map{
+        target
+        layers
+        view
+        +addLayer()
+        +getlayers()
+        +getView()
+    }
+```
+:::
+
+::::: {.column width="70%"}
+**Classe :** Map
+
+**Attributs :**
+
+::: incremental
+-   `target` = l’id de ma `<div>` qui va contenir ma carte
+
+-   `layers` = les couches créées avec OpenLayers qui doivent être ajoutées à ma carte
+
+-   `view` = les paramètres de la vue (centre, niveau de zoom) de ma carte lorsqu’elle est initialisée
+:::
+
+**Méthodes :**
+
+::: incremental
+-   `addLayer()` = ajouter une couche créée avec OpenLayers à ma carte
+
+-   `getLayers()` = récupérer les couches qui sont attachées à ma carte
+
+-   `getView()` = récupérer les paramètres de la vue actuelle (centre, niveau de zoom)
+:::
+:::::
+:::::::
+
+## Les ressources OpenLayers
+
+### La galerie d’exemples
+
+Pour créer une carte sous OpenLayers, le point d’entrée principal est la [galerie d’exemples](https://openlayers.org/en/latest/examples/). **Je vous conseille vivement de toujours commencer par là** avant d’aller voir d’autres ressources comme StackOverflow, etc. comme ce sont les exemples officiels qui sont maintenus à jour et respectent les bonnes pratiques d’utilisation du code OpenLayers.
+
+Par exemple, si vous souhaitez ajouter un flux WMS à votre carte, basez-vous sur le code de l’exemple [Single Image WMS](https://openlayers.org/en/latest/examples/wms-image.html).
+
+![](media/example_openlayers.png){fig-alt="Exemple d’OpenLayers pour importer une couche WMS" fig-align="center"}
+
+## Conseils pour coder
+
+::: incremental
+-   Utilisez des `console.log()` à outrance pour vérifier qu’une fonction a bien été appelée, qu’une variable a bien été lue, etc.
+
+-   Copiez le code des exemples OpenLayers et essayez de le changer petit à petit pour l’adapter à votre code.
+
+-   Quand vous voulez ajouter de nouveaux éléments, allez-y petit à petit et vérifiez à chaque étape que tout fonctionne, ça permettra plus facilement de retrouver les bugs.
+
+-   Une des premières choses à vérifier quand le code ne fonctionne pas est le **nom des variables**. Parfois on oublie un "s", parfois on a ajouté une majuscule…
+
+-   **COMMENTEZ VOTRE CODE !** Non seulement ce sera pris en compte dans l’évaluation, mais surtout vous allez galérer à comprendre votre code en revenant dessus dans quelques mois et/ou les personnes avec qui vous allez travailler vont aussi mettre du temps à vous comprendre.
+:::
+
+## On ajoute notre première couche ensemble
+
+Maintenant, on va ajouter notre première couche WMS ensemble.
+
+-   Ouvrez votre projet dans VSCode (ou votre éditeur préféré) si ce n’est pas déjà fait
+
+-   Si vous aviez arrêté votre serveur node, ouvrez un terminal dans votre dossier `app` et tapez `npm start` puis allez sur le lien localhost qu vous est donné pour rouvrir votre carte
+
+. . .
+
+**OpenLayers c’est comme tout : avant de pouvoir partir en vrille et créer vos meilleures applications, il faut bien comprendre les bases.**
+
+Donc au lieu de connecter notre couche WMS à l’aveugle, on va chercher à comprendre comment c’est fait. Ci-dessous, un exemple d’étudiants qui ont bien étudié les bases pour comprendre ce qu’ils font.
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjJwdmdrbTA5bDc2YWVreDFhdjA5eGNkbDA4YXRyN2NnY3Nvdm5uMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/B00q7QKzzRQ0qPZ7Pn/giphy.webp){fig-alt="GIF : Arcane : Jayce et Victor font de la science" fig-align="center" width="669"}
+
+## On ajoute notre première couche ensemble
+
+🤔 Qu’est-ce qui est différent dans `index.html` ?
+
+. . .
+
+-   le style n’est pas dans `style.css` mais dans une balise de `<style>`. Nous on a déjà un fichier de style qui fonctionne très bien et la carte en plein écran nous plait, on ne change rien.
+
+. . .
+
+-   la balise `<div id="map">` a aussi une classe de style `class = "map"`. Cela permet d’appliquer le même style à toutes les cartes avec la classe `map`. Nous on a une seule carte dans notre application, donc on s’en moque.
+
+. . .
+
+En gros, on n’a rien à modifier dans `index.html` ni dans le fichier de style `style.css`. On peut passer au gros morceau : le fichier de script `main.js`.
+
+## On ajoute notre première couche ensemble
+
+🤔 Qu’est-ce qui est différent dans `main.js` ?
+
+. . .
+
+👆 Mon conseil : au début, ignorez toute la section **import** qui peut sembler un peu floue et concentrer vous sur les **variables** qui sont définies dans le code, puis sur les **objets OpenLayers**.
+
+. . .
+
+::::: columns
+::: {.column width="50%"}
+Notre code :
+
+``` javascript
+import './style.css';
+import {Map, View} from 'ol';
+import TileLayer from 'ol/layer/Tile';
+import OSM from 'ol/source/OSM';
+
+const map = new Map({
+  target: 'map',
+  layers: [
+    new TileLayer({
+      source: new OSM()
+    })
+  ],
+  view: new View({
+    center: [0, 0],
+    zoom: 2
+  })
+});
+```
+:::
+
+::: {.column width="50%"}
+Le code de l’exemple :
+
+``` javascript
+import ImageWMS from 'ol/source/ImageWMS.js';
+import Map from 'ol/Map.js';
+import OSM from 'ol/source/OSM.js';
+import View from 'ol/View.js';
+import {Image as ImageLayer, Tile as TileLayer} from 'ol/layer.js';
+
+const layers = [
+  new TileLayer({
+    source: new OSM(),
+  }),
+  new ImageLayer({
+    extent: [-13884991, 2870341, -7455066, 6338219],
+    source: new ImageWMS({
+      url: 'https://ahocevar.com/geoserver/wms',
+      params: {'LAYERS': 'topp:states'},
+      ratio: 1,
+      serverType: 'geoserver',
+    }),
+  }),
+];
+const map = new Map({
+  layers: layers,
+  target: 'map',
+  view: new View({
+    center: [-10997148, 4569099],
+    zoom: 4,
+  }),
+});
+```
+:::
+:::::
+
+## On ajoute notre première couche ensemble
+
+::::: columns
+::: {.column width="50%"}
+Notre code :
+
+``` {.javascript code-line-numbers="6-17"}
+import './style.css';
+import {Map, View} from 'ol';
+import TileLayer from 'ol/layer/Tile';
+import OSM from 'ol/source/OSM';
+
+const map = new Map({
+  target: 'map',
+  layers: [
+    new TileLayer({
+      source: new OSM()
+    })
+  ],
+  view: new View({
+    center: [0, 0],
+    zoom: 2
+  })
+});
+```
+:::
+
+::: {.column width="50%"}
+Le code de l’exemple :
+
+``` {.javascript code-line-numbers="7-28|21-28"}
+import ImageWMS from 'ol/source/ImageWMS.js';
+import Map from 'ol/Map.js';
+import OSM from 'ol/source/OSM.js';
+import View from 'ol/View.js';
+import {Image as ImageLayer, Tile as TileLayer} from 'ol/layer.js';
+
+const layers = [
+  new TileLayer({
+    source: new OSM(),
+  }),
+  new ImageLayer({
+    extent: [-13884991, 2870341, -7455066, 6338219],
+    source: new ImageWMS({
+      url: 'https://ahocevar.com/geoserver/wms',
+      params: {'LAYERS': 'topp:states'},
+      ratio: 1,
+      serverType: 'geoserver',
+    }),
+  }),
+];
+const map = new Map({
+  layers: layers,
+  target: 'map',
+  view: new View({
+    center: [-10997148, 4569099],
+    zoom: 4,
+  }),
+});
+```
+:::
+:::::
+
+## On ajoute notre première couche ensemble
+
+::::: columns
+::: {.column width="50%"}
+Notre code :
+
+``` {.javascript code-line-numbers="7"}
+import './style.css';
+import {Map, View} from 'ol';
+import TileLayer from 'ol/layer/Tile';
+import OSM from 'ol/source/OSM';
+
+const map = new Map({
+  target: 'map',
+  layers: [
+    new TileLayer({
+      source: new OSM()
+    })
+  ],
+  view: new View({
+    center: [0, 0],
+    zoom: 2
+  })
+});
+```
+:::
+
+::: {.column width="50%"}
+Le code de l’exemple :
+
+``` {.javascript code-line-numbers="23"}
+import ImageWMS from 'ol/source/ImageWMS.js';
+import Map from 'ol/Map.js';
+import OSM from 'ol/source/OSM.js';
+import View from 'ol/View.js';
+import {Image as ImageLayer, Tile as TileLayer} from 'ol/layer.js';
+
+const layers = [
+  new TileLayer({
+    source: new OSM(),
+  }),
+  new ImageLayer({
+    extent: [-13884991, 2870341, -7455066, 6338219],
+    source: new ImageWMS({
+      url: 'https://ahocevar.com/geoserver/wms',
+      params: {'LAYERS': 'topp:states'},
+      ratio: 1,
+      serverType: 'geoserver',
+    }),
+  }),
+];
+const map = new Map({
+  layers: layers,
+  target: 'map',
+  view: new View({
+    center: [-10997148, 4569099],
+    zoom: 4,
+  }),
+});
+```
+:::
+:::::
+
+## On ajoute notre première couche ensemble
+
+::::: columns
+::: {.column width="50%"}
+Notre code :
+
+``` {.javascript code-line-numbers="13-16"}
+import './style.css';
+import {Map, View} from 'ol';
+import TileLayer from 'ol/layer/Tile';
+import OSM from 'ol/source/OSM';
+
+const map = new Map({
+  target: 'map',
+  layers: [
+    new TileLayer({
+      source: new OSM()
+    })
+  ],
+  view: new View({
+    center: [0, 0],
+    zoom: 2
+  })
+});
+```
+:::
+
+::: {.column width="50%"}
+Le code de l’exemple :
+
+``` {.javascript code-line-numbers="24-27"}
+import ImageWMS from 'ol/source/ImageWMS.js';
+import Map from 'ol/Map.js';
+import OSM from 'ol/source/OSM.js';
+import View from 'ol/View.js';
+import {Image as ImageLayer, Tile as TileLayer} from 'ol/layer.js';
+
+const layers = [
+  new TileLayer({
+    source: new OSM(),
+  }),
+  new ImageLayer({
+    extent: [-13884991, 2870341, -7455066, 6338219],
+    source: new ImageWMS({
+      url: 'https://ahocevar.com/geoserver/wms',
+      params: {'LAYERS': 'topp:states'},
+      ratio: 1,
+      serverType: 'geoserver',
+    }),
+  }),
+];
+const map = new Map({
+  layers: layers,
+  target: 'map',
+  view: new View({
+    center: [-10997148, 4569099],
+    zoom: 4,
+  }),
+});
+```
+:::
+:::::
+
+## On ajoute notre première couche ensemble
+
+::::: columns
+::: {.column width="50%"}
+Notre code :
+
+``` {.javascript code-line-numbers="8-12"}
+import './style.css';
+import {Map, View} from 'ol';
+import TileLayer from 'ol/layer/Tile';
+import OSM from 'ol/source/OSM';
+
+const map = new Map({
+  target: 'map',
+  layers: [
+    new TileLayer({
+      source: new OSM()
+    })
+  ],
+  view: new View({
+    center: [0, 0],
+    zoom: 2
+  })
+});
+```
+:::
+
+::: {.column width="50%"}
+Le code de l’exemple :
+
+``` {.javascript code-line-numbers="22|22,7-20"}
+import ImageWMS from 'ol/source/ImageWMS.js';
+import Map from 'ol/Map.js';
+import OSM from 'ol/source/OSM.js';
+import View from 'ol/View.js';
+import {Image as ImageLayer, Tile as TileLayer} from 'ol/layer.js';
+
+const layers = [
+  new TileLayer({
+    source: new OSM(),
+  }),
+  new ImageLayer({
+    extent: [-13884991, 2870341, -7455066, 6338219],
+    source: new ImageWMS({
+      url: 'https://ahocevar.com/geoserver/wms',
+      params: {'LAYERS': 'topp:states'},
+      ratio: 1,
+      serverType: 'geoserver',
+    }),
+  }),
+];
+const map = new Map({
+  layers: layers,
+  target: 'map',
+  view: new View({
+    center: [-10997148, 4569099],
+    zoom: 4,
+  }),
+});
+```
+:::
+:::::
+
+## On ajoute notre première couche ensemble
+
+Le code de l’exemple :
+
+``` {.javascript code-line-numbers="7-28|11-19|13-18"}
+import ImageWMS from 'ol/source/ImageWMS.js';
+import Map from 'ol/Map.js';
+import OSM from 'ol/source/OSM.js';
+import View from 'ol/View.js';
+import {Image as ImageLayer, Tile as TileLayer} from 'ol/layer.js';
+
+const layers = [
+  new TileLayer({
+    source: new OSM(),
+  }),
+  new ImageLayer({
+    extent: [-13884991, 2870341, -7455066, 6338219],
+    source: new ImageWMS({
+      url: 'https://ahocevar.com/geoserver/wms',
+      params: {'LAYERS': 'topp:states'},
+      ratio: 1,
+      serverType: 'geoserver',
+    }),
+  }),
+];
+const map = new Map({
+  layers: layers,
+  target: 'map',
+  view: new View({
+    center: [-10997148, 4569099],
+    zoom: 4,
+  }),
+});
+```
+
+## On ajoute notre première couche ensemble
+
+De quoi j’ai besoin pour ajouter une couche WMS à ma carte ?
+
+::: incremental
+-   Il nous faut une source pour le flux WMS qu’on crée avec l’objet `ImageWMS` ([documentation](https://openlayers.org/en/latest/apidoc/module-ol_source_ImageWMS-ImageWMS.html))
+
+-   Il nous faut un objet `ImageLayer` pour créer notre couche à partir de notre source
+
+-   Il nous faut un objet `Map` (déjà créé dans notre cas) auquel ajouter la couche
+:::
+
+. . .
+
+Ma proposition de code pour créer une couche (en retirant les éléments superflus pour simplifier) :
+
+``` javascript
+const ma_source = new ImageWMS({
+  url: '<lien_vers_mon_serveur>',
+  params: {'LAYERS': '<espace>:<couche>'},
+  serverType: 'geoserver',
+});
+
+const ma_couche = new ImageLayer({
+  source: ma_source,
+});
+```
+
+. . .
+
+On pourrait aussi l’écrire en imbriquant tout comme dans l’exemple, mais je préfère séparer les éléments, je trouve ça moins confus (surtout quand on apprend).
+
+``` javascript
+const ma_couche = new ImageLayer({
+  source: new ImageWMS({
+    url: '<lien_vers_mon_serveur>',
+    params: {'LAYERS': '<espace>:<couche>'},
+    serverType: 'geoserver',
+  }),
+});
+```
+
+## On ajoute notre première couche ensemble
+
+Il nous manque un dernier détail : les `imports`. Si vous utilisez le code tel quel, vous allez avoir des messages d’erreur indiquant que les fonctions ne sont pas trouvées. Vous pouvez trouver les imports de trois manières :
+
+-   vous regardez les imports dans l’exemple OpenLayers et vous récupérez ceux dont vous avez besoin ([lien](https://openlayers.org/en/latest/examples/wms-image.html))
+
+-   vous allez voir la documentation de `ImageWMS` par exemple et la première ligne vous indique comment importer le module dans votre code ([lien](https://openlayers.org/en/latest/apidoc/module-ol_source_ImageWMS-ImageWMS.html))
+
+-   si votre éditeur de code est bien fichu, il peut lui-même ajouter un `import` quand vous appelez un constructeur ou une méthode dans votre code
+
+👆 D’ailleurs, n’oubliez pas que les `import` **doivent toujours être déclarés tout en haut du document !**
+
+## On ajoute notre première couche ensemble
+
+Voici mon résultat pour importer la couche de l’exemple d’OpenLayers :
+
+``` javascript
+import './style.css';
+import {Map, View} from 'ol';
+import { ImageWMS } from 'ol/source';
+import TileLayer from 'ol/layer/Tile';
+import ImageLayer from 'ol/layer/Image';
+import OSM from 'ol/source/OSM';
+
+const couche_osm = new TileLayer({ source: new OSM() });
+
+const ma_source = new ImageWMS({
+  url: 'https://ahocevar.com/geoserver/wms',
+  params: { 'LAYERS' : 'topp:states' },
+  serverType: 'geoserver',
+});
+
+const ma_couche = new ImageLayer({
+  source: ma_source,
+});
+
+const map = new Map({
+  target: 'map',
+  layers: [ couche_osm, ma_couche ],
+  view: new View({
+    center: [0, 0],
+    zoom: 2
+  })
+});
+```
+
+## À vous !
+
+Vous allez pouvoir commencer le TP suivant pour commencer à ajouter vos couches dans votre application OpenLayers.
+
+C’est parti !
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjc5bGExdHQyaHJqN3E3ZXN4M3J6cWdpZ3EwZ3ZpOHdxcDlkc3psMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/HVr4gFHYIqeti/giphy.webp){fig-alt="GIF : Bilbo part pour une aventure !" fig-align="center"}
