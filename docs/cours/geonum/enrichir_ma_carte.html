@@ -90,7 +90,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -122,10 +122,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../cours/geonum/enrichir_ma_carte.html">Enrichir ma carte en fonctionnalités</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../cours/geonum/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../cours/geonum/serveurs_carto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Serveurs cartographiques</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../cours/geonum/openlayers_geoserver.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">OpenLayers &amp; GeoServer</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../cours/geonum/enrichir_ma_carte.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Enrichir ma carte en fonctionnalités</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -140,12 +181,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#interroger-une-couche-wms-et-afficher-les-résultats" id="toc-interroger-une-couche-wms-et-afficher-les-résultats" class="nav-link" data-scroll-target="#interroger-une-couche-wms-et-afficher-les-résultats">Interroger une couche WMS et afficher les résultats</a></li>
   <li><a href="#filtrer-des-couches-wms" id="toc-filtrer-des-couches-wms" class="nav-link" data-scroll-target="#filtrer-des-couches-wms">Filtrer des couches WMS</a></li>
   <li><a href="#des-cercles-proportionnels-avec-un-flux-wfs" id="toc-des-cercles-proportionnels-avec-un-flux-wfs" class="nav-link" data-scroll-target="#des-cercles-proportionnels-avec-un-flux-wfs">Des cercles proportionnels avec un flux WFS</a></li>
-  <li><a href="#des-boutons-pour-afficher-des-cartes-thématiques" id="toc-des-boutons-pour-afficher-des-cartes-thématiques" class="nav-link" data-scroll-target="#des-boutons-pour-afficher-des-cartes-thématiques">Des boutons pour afficher des cartes thématiques</a></li>
-  <li><a href="#un-curseur-dévolution-temporelle" id="toc-un-curseur-dévolution-temporelle" class="nav-link" data-scroll-target="#un-curseur-dévolution-temporelle">Un curseur d’évolution temporelle</a></li>
-  <li><a href="#mince-jai-oublié-léchelle" id="toc-mince-jai-oublié-léchelle" class="nav-link" data-scroll-target="#mince-jai-oublié-léchelle">Mince, j’ai oublié l’échelle&nbsp;!</a></li>
-  <li><a href="#il-est-temps-de-polir-un-peu-linterface" id="toc-il-est-temps-de-polir-un-peu-linterface" class="nav-link" data-scroll-target="#il-est-temps-de-polir-un-peu-linterface">Il est temps de polir un peu l’interface</a></li>
-  <li><a href="#pour-aller-plus-loin-utiliser-des-plugins" id="toc-pour-aller-plus-loin-utiliser-des-plugins" class="nav-link" data-scroll-target="#pour-aller-plus-loin-utiliser-des-plugins">Pour aller plus loin&nbsp;: utiliser des plugins</a></li>
   </ul></li>
+  <li><a href="#létape-finale" id="toc-létape-finale" class="nav-link" data-scroll-target="#létape-finale">L’étape finale&nbsp;!</a></li>
+  <li><a href="#jai-fini-en-avance-quest-ce-que-je-fais" id="toc-jai-fini-en-avance-quest-ce-que-je-fais" class="nav-link" data-scroll-target="#jai-fini-en-avance-quest-ce-que-je-fais">J’ai fini en avance, qu’est-ce que je fais&nbsp;?</a></li>
   </ul>
 </nav>
     </div>
@@ -176,16 +214,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="objectifs">Objectifs</h2>
 <ul>
 <li>Créer un menu d’affichage des couches</li>
-</ul>
-<!-- -->
-<ul>
-<li><p>Interroger une couche WMS et afficher les résultats</p></li>
-<li><p>Filtrer une couche WMS</p></li>
-<li><p>Lire un flux WFS et afficher la géométrie</p></li>
-<li><p>Créer un curseur d’évolution temporelle</p></li>
-<li><p>Ajouter une échelle à la carte</p></li>
-<li><p>Polir un peu l’interface de l’application avec du CSS</p></li>
-<li><p>Pour aller plus loin, apprendre à utiliser des plugins OpenLayers</p></li>
+<li>Interroger une couche WMS et afficher les résultats</li>
+<li>Filtrer une couche WMS</li>
+<li>Lire un flux WFS et afficher la géométrie</li>
+<li>Créer un curseur d’évolution temporelle</li>
+<li>Ajouter une échelle à la carte</li>
+<li>Polir un peu l’interface de l’application avec du CSS</li>
+<li>Pour aller plus loin, apprendre à utiliser des plugins OpenLayers</li>
 </ul>
 </section>
 <section id="cours" class="level2">
@@ -572,7 +607,7 @@ Pourquoi on ne reprend pas le /** @type */ du code original&nbsp;?
 <li><p><code>.then((response) =&gt; response.text())</code> → “Ensuite (”<em>then</em>”), quand tu as <strong>réussi</strong> à récupérer la réponse, stocke-la dans une variable que j’appelle “response” puis utilise sa méthode <code>.text()</code> pour récupérer du texte au format HTML”</p></li>
 <li><p><code>.then((html) =&gt; { console.log("C’est une réussite&nbsp;!"); })</code> → “Ensuite, quand tu as <strong>réussi</strong> l’étape précédente, stocke le texte au format HTML de l’étape précédente dans une variable que j’appelle”html” et affiche un message dans ma console”</p></li>
 </ul>
-<p>Vous noterez que j’ai précisé que <code>.then()</code> s’exécute si l’étape précédente a réussi. Si ce n’est pas le cas, l’exécution de notre chaîne de méthodes <code>fetch()</code> s’arrête et un message d’erreur s’affiche dans la console. Comme on a plutôt confiance en notre GeoServer, on peut se lancer et exécuter ce <code>fecth()</code> mais attention, seulement si on a bien une addresse à interroger&nbsp;! Si la variable <code>url</code> est <code>undefined</code>, notre application risque de péter les plombs. On ajoute une condition autour du <code>fetch()</code> pour éviter les erreurs&nbsp;:</p>
+<p>Vous noterez que j’ai précisé que <code>.then()</code> s’exécute si l’étape précédente a réussi. Si ce n’est pas le cas, l’exécution de notre chaîne de méthodes <code>fetch()</code> s’arrête et un message d’erreur s’affiche dans la console. Comme on a plutôt confiance en notre GeoServer, on peut se lancer et exécuter ce <code>fetch()</code> mais attention, seulement si on a bien une addresse à interroger&nbsp;! Si la variable <code>url</code> est <code>undefined</code>, notre application risque de péter les plombs. On ajoute une condition autour du <code>fetch()</code> pour éviter les erreurs&nbsp;:</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (url) {</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fetch</span>(url)</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">then</span>((response) <span class="kw">=&gt;</span> response<span class="op">.</span><span class="fu">text</span>())</span>
@@ -582,37 +617,487 @@ Pourquoi on ne reprend pas le /** @type */ du code original&nbsp;?
 <span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
 <span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Vous pouvez tester les <code>console.log()</code>. Le HTML qu’on obtient n’est pas très gracieux tel quel, il vaudrait mieux l’afficher dans l’interface de l’application&nbsp;!</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Au secours, je n’ai toujours pas compris fetch()
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYm5odGpnZTVnY3V4ZGZyNHQ2aDhqZjFqMGVlNnhpZXZ5Yjgxa3gxaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/9iBIdXITr6LoVf8XgY/giphy.webp" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="GIF : Kermit qui n’en peut plus"></p>
+</figure>
+</div>
+<p>Si votre cerveau est un peu comme ça quand on parle de <code>fetch()</code>, n’hésitez pas à m’appeler pour avoir une nouvelle explication. J’ai peur de ne pas pouvoir faire mieux par écrit. La notion de fonction asynchrone est complexe et j’ai mis pas mal de temps à la comprendre, donc en deux minutes en plein milieu d’un TP c’est encore pire.</p>
+<p>Sinon, vous pouvez continuer le TP, on aura d’autres occasion d’utiliser <code>fetch()</code>. Peut-être que les autres exemples seront plus clairs&nbsp;!</p>
+</div>
+</div>
+</div>
+<p>Quand on doit afficher un nouvel élément dans l’interface, il faut toujours penser à créer une nouvelle balise HTML (souvent une <code>&lt;div&gt;</code>) pour le mettre à l’intérieur. Comme pour l’exemple précédent, on crée une div dans le HTML. Je place la mienne après <code>&lt;div id="layers"&gt;</code> et je remets n’importe quoi dedans juste pour la voir dans mon interface.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"attributes"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"menu"</span><span class="dt">&gt;</span>cthulhu ftaghn<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Sauvegardez et regardez l’application. Et là, horreur&nbsp;! Notre menu de couches est remplacé par la nouvelle div qu’on vient de créer&nbsp;! C’est normal, elles ont le même style car on a aussi appelé <code>class="menu"</code> dans la div. Le problème, c’est que dans <code>styles.css</code>, on voit que tous nos menus sont positionnés au même endroit&nbsp;: regardez <code>top</code> et <code>right</code>.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.menu</span> {</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Positionnement dans le body */</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">position</span><span class="ch">:</span> <span class="dv">absolute</span><span class="op">;</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">top</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">right</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Padding */</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">8</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Dimensions minimales */</span></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">min-height</span><span class="ch">:</span> <span class="dv">80</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">min-width</span><span class="ch">:</span> <span class="dv">160</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Rectangle blanc avec coins arrondis */</span></span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">white</span><span class="op">;</span></span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a>  <span class="kw">border-radius</span><span class="ch">:</span> <span class="dv">8</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>On va donc devoir positionner nos deux <code>&lt;div&gt;</code> indépendamment l’une de l’autre. Pour les sélectionner individuellement, on peut utiliser le sélecteur <code>#</code> qui permet de chercher par <code>id</code>. Voilà mon code&nbsp;:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.menu</span> {</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Padding */</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">8</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Dimensions minimales */</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">min-height</span><span class="ch">:</span> <span class="dv">80</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">min-width</span><span class="ch">:</span> <span class="dv">160</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Rectangle blanc avec coins arrondis */</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">white</span><span class="op">;</span></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">border-radius</span><span class="ch">:</span> <span class="dv">8</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a><span class="pp">#layers</span> {</span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Positionnement dans le body */</span></span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>  <span class="kw">position</span><span class="ch">:</span> <span class="dv">absolute</span><span class="op">;</span></span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>  <span class="kw">top</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>  <span class="kw">right</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a><span class="pp">#attributes</span> {</span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Positionnement dans le body */</span></span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>  <span class="kw">position</span><span class="ch">:</span> <span class="dv">absolute</span><span class="op">;</span></span>
+<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a>  <span class="kw">top</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a>  <span class="kw">left</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Voilà, maintenant <code>.menu</code> me permet de définir un padding, des dimensions minimales, une couleur de background et des coins arrondis pour tous mes éléments avec la classe <code>class="menu"</code>, mais par contre j’ai bien positionné indépendamment mon menu de layers et ma nouvelle div <code>attributes</code>.</p>
+<p>Maintenant, modifiez le style de <code>#attributes</code> pour l’afficher en bas de la carte et sur toute la largeur de l’écran. Il nous faut beaucoup d’espace pour afficher notre table.</p>
+<p>C’est bon, vous avez une <code>&lt;div id="attributes"&gt;</code> qui vous plaît&nbsp;? Vous pouvez supprimer le texte qui était dans la div, on n’en aura plus besoin. Maintenant, on cherche à dire à notre application&nbsp;: “Prends le texte HTML que je récupère grâce à ma fonction et mets-le dans ma div Attributes”. On a formulé notre idée en langage naturel, on va maintenant pouvoir l’écrire en JavaScript. D’abord, on se demande à quel endroit dans notre code on récupère ce HTML. Souvenez-vous&nbsp;:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Interroger la couche deals et afficher les résultats</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>map<span class="op">.</span><span class="fu">on</span>(<span class="st">'singleclick'</span><span class="op">,</span> (<span class="bu">event</span>) <span class="kw">=&gt;</span> {</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"J’ai cliqué sur la carte&nbsp;!"</span>)<span class="op">;</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> coord <span class="op">=</span> <span class="bu">event</span><span class="op">.</span><span class="at">coordinate</span><span class="op">;</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> res <span class="op">=</span> map<span class="op">.</span><span class="fu">getView</span>()<span class="op">.</span><span class="fu">getResolution</span>()<span class="op">;</span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> proj <span class="op">=</span> <span class="st">'EPSG:3857'</span><span class="op">;</span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> parametres <span class="op">=</span> {<span class="st">'INFO_FORMAT'</span><span class="op">:</span> <span class="st">'text/html'</span>}<span class="op">;</span></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> url <span class="op">=</span> sourceDeals<span class="op">.</span><span class="fu">getFeatureInfoUrl</span>(coord<span class="op">,</span> res<span class="op">,</span> proj<span class="op">,</span> parametres)<span class="op">;</span></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (url) {</span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fetch</span>(url)</span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">then</span>((response) <span class="kw">=&gt;</span> response<span class="op">.</span><span class="fu">text</span>())</span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">then</span>((html) <span class="kw">=&gt;</span> {</span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Dans cette fonction, on a accès à notre "html" !</span></span>
+<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"C’est une réussite&nbsp;!"</span>)<span class="op">;</span></span>
+<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(html)<span class="op">;</span></span>
+<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a>      })<span class="op">;</span></span>
+<span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Vous voyez mon commentaire&nbsp;? C’est dans cette fonction qu’on va écrire notre code. Zoomons sur cette petite partie&nbsp;:</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">then</span>((html) <span class="kw">=&gt;</span> {</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Dans cette fonction, on a accès à notre "html" !</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"C’est une réussite&nbsp;!"</span>)<span class="op">;</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(html)<span class="op">;</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>      })<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Si je traduis le texte précédent en langage naturel, pour rappel, ça fait&nbsp;:</p>
+<ul>
+<li><p>Quand tu as <strong>réussi</strong> l’étape précédente (souvenez-vous de <em>then</em>), alors stocke le résultat dans une variable <code>html</code> et&nbsp;:</p></li>
+<li><p>Affiche “C’est une réussite&nbsp;!” dans ma console</p></li>
+<li><p>Affiche le contenu du HTML dans ma console</p></li>
+</ul>
+<p>On aimerait remplacer les deux dernières étapes par “affiche le HTML dans mon interface”. Pour cela, on utilise la ligne de code suivante (à ajouter au bon endroit dans la fonction)&nbsp;:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'attributes'</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> html<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Super, vous savez maintenant requêter une couche WMS&nbsp;! Le résultat est un peu moche pour le moment mais vous pourrez revenir plus tard pour l’affiner. Si vous finissez le TP en avance, revenez sur les sections “Pour aller plus loin…”.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Pour aller plus loin…
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Si vous avez déjà fait le tour du TP, vous allez trouver dans cette section des éléments supplémentaires pour aller plus loin.</p>
+<p><em>En cours de rédaction</em></p>
+</div>
+</div>
+</div>
 </section>
 <section id="filtrer-des-couches-wms" class="level3">
 <h3 class="anchored" data-anchor-id="filtrer-des-couches-wms">Filtrer des couches WMS</h3>
-<p>…</p>
+<p>On a vu dans l’étape précédente qu’il était possible de requêter une couche WMS. Vous ne serez donc pas surpris d’apprendre qu’il est aussi possible de filtrer ces couches&nbsp;! Les flux WMS ont beau retourner une image, on constate maintenant qu’elles ne manquent pas d’interactivité.</p>
+<p>GeoServer permet d’ajouter des filtres écrits au format cql à la requête pour lui dire “applique ce filtre à ma couche avant de m’envoyer le résultat”. Le filtrage se fait donc <strong>du côté du serveur</strong>. Vous pouvez trouver les spécifications WMS avec <code>cql_filter</code> <a href="https://docs.geoserver.org/main/en/user/services/wms/vendor.html#cql-filter">ici</a> et le tutoriel de filtrage <a href="https://docs.geoserver.org/2.24.x/en/user/tutorials/cql/cql_tutorial.html">là</a> mais comme c’est une notion un peu complexe à appliquer seul, on va une fois de plus procéder étape par étape ensemble.</p>
+<p>Dans votre GeoServer, prévisualisez la couche <code>deals</code> et cliquez sur les <code>...</code> bleus en haut à gauche de la carte. Vous devriez voir plusieurs nouvelles options apparaître dont une qui s’appelle “Filter:”. L’option “CQL” devrait déjà être sélectionnée, gardez-la. C’est ce qu’on va utiliser pour la suite.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/geoserver_cql_filter.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Capture d’écran de la preview de ma couche deals avec les options affichées"></p>
+</figure>
+</div>
+<p>Collez le texte suivant dans le champ CQL et cliquez sur “Appliquer”&nbsp;:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode html cql code-with-copy"><code class="sourceCode html"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>deal_size &gt; 10000</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Normalement, vous avez vu certains points disparaître. Il ne vous reste plus que les deals de plus de 10&nbsp;000 hectares. Si vous avez un doute, vous pouvez vérifier en cliquant sur les points pour afficher leurs attributs. C’est facile, non&nbsp;? Essayez les filtres suivant et essayez de comprendre à quoi ils peuvent servir&nbsp;:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>silver = true</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>target_country = 'Argentina'</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>target_country = 'Argentina' OR target_country = 'Philippines'</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Quand vous écrivez des chaînes de caractères dans un filtre CQL (“<em>string</em>”), il faut <strong>impérativement</strong> utiliser les guillemets simples <code>'my_string'</code> et pas les doubles <code>"my_string"</code>.</p>
+<p><em>Ne me demandez pas pourquoi, ce n’est pas expliqué, il faut juste l’accepter et vivre avec.</em></p>
+</div>
+</div>
+<p>Bien, vous savez maintenant écrire un filtre simple en CQL, mais comment est-ce qu’on fait pour filtrer la couche depuis notre application OpenLayers&nbsp;? Voici mon code pour appliquer à ma couche <code>deals</code> un filtre qui va uniquement récupérer les mines qui produisent de l’or (<em>Gold</em>) ou de l’argent (<em>Silver</em>). Comparez ce snippet avec votre code pour comprendre où mettre ce code et ce qu’il fait&nbsp;:</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> sourceDeals <span class="op">=</span> <span class="kw">new</span> <span class="fu">ImageWMS</span>({</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">url</span><span class="op">:</span> geoserverWms<span class="op">,</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">params</span><span class="op">:</span> {</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'LAYERS'</span> <span class="op">:</span> <span class="st">'land_matrix:deals'</span><span class="op">,</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"CQL_FILTER"</span> <span class="op">:</span> <span class="st">"target_country = 'Argentina' OR target_country = 'Philippines'"</span><span class="op">,</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">serverType</span><span class="op">:</span> <span class="st">'geoserver'</span><span class="op">,</span></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Si vous vous êtes contenté de copier-coller tout ça dans votre code, c’est raté&nbsp;! Il faut regarder mon snippet de code pour comprendre ce que <strong>vous devez ajouter à votre code existant</strong>&nbsp;!</p>
+</div>
+</div>
+<p>Sauvegardez et regardez votre carte. Si vous avez compris ce que fait mon CQL, vous devriez rapidement être capables de dire si le filtre a fonctionné ou non. Vous voyez, filtrer un flux WMS, c’est facile&nbsp;!</p>
+<p><strong>Maintenant, modifiez votre code pour afficher uniquement des mines qui produisent de l’or.</strong> Je vous donne deux indices&nbsp;: regardez la table attributaire de la couche <code>deals</code> et souvenez vous que “or” se dit “<em>Gold</em>” en anglais. Pour ceux qui ont eu des consoles portables, il y a une licence vidéoludique bien pratique pour retenir des noms de minéraux en anglais&nbsp;:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXlmbngwNmNlM3FwZWkzank0N3J2YndnMG43em43enp1bW1ta2MwdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Pn21gQZ3CHzFhL8uep/giphy.webp" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="GIF : Pokémon Gold" width="220"></p>
+</figure>
+</div>
+<p><em>(Si vous êtes capable d’entendre ce GIF juste en le regardant, vous commencez à être vieux aussi, désolée. Quoi qu’il en soit, j’espère que les interruptions GIFs vous font un peu décompresser.)</em></p>
+<p>Maintenant que vous savez filtrer la couche, vous pouvez ajouter un peu plus d’interactivité à votre carte. On va afficher un menu avec des boutons de type “radio” pour sélectionner des filtres. Je vous fais un schéma moche à la main pour vous aider à comprendre.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/map_select_produce.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Schéma du menu &quot;Production&quot; à ajouter à la carte"></p>
+</figure>
+</div>
+<p>Vous voyez où on veut en venir&nbsp;? Comme on commence à avoir l’habitude de faire des menus, je vous laisse créer et positionner celui-ci avec un peu de HTML et de CSS et on passe directement à l’ajout des boutons. On va devoir mettre dans notre élément <code>&lt;div&gt;</code> plusieurs boutons radio avec la balise <code>&lt;input type="radio"&gt;</code>. Voilà le code pour les éléments “Or” et “Argent”&nbsp;:</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- Radio button menu - production --&gt;</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"production"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"menu"</span><span class="dt">&gt;</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"radio"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"button-gold"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"produce"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"gold"</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">label</span><span class="ot"> for</span><span class="op">=</span><span class="st">"gold"</span><span class="dt">&gt;</span>Or<span class="dt">&lt;/</span><span class="kw">label</span><span class="dt">&gt;</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"radio"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"button-silver"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"produce"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"silver"</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">label</span><span class="ot"> for</span><span class="op">=</span><span class="st">"silver"</span><span class="dt">&gt;</span>Argent<span class="dt">&lt;/</span><span class="kw">label</span><span class="dt">&gt;</span></span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Vous noterez plusieurs choses&nbsp;:</p>
+<ul>
+<li><p><code>&lt;input&gt;</code> et <code>&lt;label&gt;</code> vont par paires</p></li>
+<li><p>la balise <code>&lt;label&gt;</code> contient le nom en français de mon élément, c’est ce qui s’affiche dans l’application</p></li>
+<li><p>toutes les balises <code>&lt;input&gt;</code> on la même propriété <code>name="produce"</code>, on dirait donc qu’il vaut mieux continuer dans ce sens</p></li>
+<li><p>on a une propriété <code>id</code> unique à chaque <code>&lt;input&gt;</code> qui nous permettra, au besoin, d’aller les chercher avec du JavaScript</p></li>
+<li><p>la propriété <code>value</code> de mes <code>&lt;input&gt;</code> semble correspondre à des colonnes de la table attributaire de ma couche</p></li>
+</ul>
+<p>Avec ces éléments, ajoutez les boutons pour Charbon, Lithium et Cobalt comme indiqués sur mon schéma plus haut. <strong>Attention à bien mettre Charbon en haut&nbsp;!</strong> Quand c’est terminé, allez sur votre carte et cliquez un peu sur ces boutons radio. Normalement, vous ne pouvez pas sélectionner plus d’un seul élément à la fois au sein du groupe. Votre application sait que tous ces boutons font partie du même groupe car vous leur avez tous donné la même valeur <code>name="produce"</code>. Si vous commencez à modifier cette valeur, vous verrez apparaître un comportement indésirable.</p>
+<p>Une fois que votre menu est prêt, bien positionné sur la carte et que vos cinq boutons radio fonctionnent, on va pouvoir passer au JavaScript. Comme d’habitude, on va exprimer notre besoin en langage naturel&nbsp;: <strong>“Lorsque je sélectionne un minéral, je souhaite modifier le filtre de ma couche <code>deals</code> pour récupérer uniquement les deals qui produisent les minéraux sélectionnés”</strong>.</p>
+<p>Pour rappel, voici les éléments dont on dispose&nbsp;:</p>
+<ul>
+<li><p>on a des boutons radio avec une valeur <code>value</code> qui correspond à une colonne de la table attributaire</p></li>
+<li><p>vous avez déjà une couche qui filtre les deals qui produisent de l’or avec un filtre CQL</p></li>
+<li><p>le filtre CQL est tout simplement une chaîne de caractères (<em>string</em>)</p></li>
+</ul>
+<p>Le résultat auquel on voudrait arriver, c’est donc&nbsp;: <strong>“Mon CQL dans les <code>params</code> de la source de ma couche <code>deals</code> change dès que je sélectionne un nouveau minéral”</strong>.</p>
+<p>Ça tombe bien&nbsp;! La <a href="https://openlayers.org/en/latest/apidoc/module-ol_source_ImageWMS-ImageWMS.html#updateParams">documentation de la source ImageWMS</a> (celle qu’on utilise pour notre couche) nous apprend qu’il existe une méthode <code>.updateParams()</code> qui permet de mettre à jour les paramètres d’une couche.</p>
+<p>Commencez par ajouter ces deux éléments en bas de <code>main.js</code>. Souvenez-vous de la manière dont on a “écouté” notre checkbox du premier exercice de ce TP. Le code ressemble beaucoup, non&nbsp;?</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> buttonGold <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'button-gold'</span>)<span class="op">;</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>buttonGold<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">'change'</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Test"</span>)<span class="op">;</span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Voici ce que font les deux éléments du code&nbsp;:</p>
+<ul>
+<li><p>la première ligne récupère mon bouton radio qui grâce à son identifiant en utilisant la méthode <code>.getElementById()</code> que vous avons déjà vue précédemment</p></li>
+<li><p>les trois lignes suivantes nous permettent d’écouter notre bouton radio grâce à <code>.addEventListener()</code> et d’exécuter une fonction quand le bouton radio est coché, et la fonction affiche “Test” dans la console de développement</p></li>
+</ul>
+<p>On y est presque. On arrive à exécuter quelque chose quand on sélectionne “Or” dans notre carte, mais ça ne nous permet pas de filtrer la couche. On va retirer notre <code>console.log()</code> et demander à JavaScript de modifier les paramètres de la source de notre couche deals grâce à la ligne suivante&nbsp;:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>sourceDeals<span class="op">.</span><span class="fu">updateParams</span>({ <span class="st">'CQL_FILTER'</span> <span class="op">:</span> <span class="st">'gold=true'</span> })<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Pour rappel, la source de mes deals est stockée dans la variable <code>sourceDeals</code> mais attention, il est possible que la votre porte un autre nom. Pensez à vérifier&nbsp;!</p>
+<p>Histoire de pouvoir tester au moins avec les boutons “Or” et “Argent”, je vous donne un snippet de code plus complet. Inspirez-vous aussi des commentaires que je laisse, je rappelle que j’attends un code commenté pour l’évaluation&nbsp;!</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Or</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> buttonGold <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'button-gold'</span>)<span class="op">;</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>buttonGold<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">'change'</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Quand l’utilisateur clique sur le bouton "Or", je mets à jour mon filtre CQL</span></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>  sourceDeals<span class="op">.</span><span class="fu">updateParams</span>({ <span class="st">'CQL_FILTER'</span> <span class="op">:</span> <span class="st">'gold=true'</span> })<span class="op">;</span></span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a><span class="co">// Argent</span></span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> buttonSilver <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'button-silver'</span>)<span class="op">;</span></span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>buttonSilver<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">'change'</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>  sourceDeals<span class="op">.</span><span class="fu">updateParams</span>({ <span class="st">'CQL_FILTER'</span> <span class="op">:</span> <span class="st">'silver=true'</span> })<span class="op">;</span></span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Testez l’application en cliquant alternativement sur les boutons radio de Or et Argent. Si les deux couches sont différentes, super, ça fonctionne&nbsp;!</p>
+<p>Maintenant que vous avez compris comment faire, faites les étapes suivantes (et souvenez-vous que c’est à vous que je demande, pas à Chat-GPT, je vous ai quand même déjà bien mâché le travail avec l’exemple ci-dessus&nbsp;!).</p>
+<ul>
+<li><p>on a créé un filtre fonctionnel pour Or et Argent, maintenant <strong>faites la même chose pour toutes les autres options</strong></p></li>
+<li><p>quand vous avez terminé, rajoutez une option “Tous” avec la valeur <code>value="all"</code> et faites en sorte qu’il affiche tous les deals (je vous ai mis des indices ci-dessous si vous avez du mal mais essayez d’abord de réfléchir sans)</p></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Indice 1 - ajouter l’option “Tous”
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Souvenez vous&nbsp;: si vous voulez ajouter un élément à l’interface, commencez par <code>index.html</code>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Indice 2 - filtrer “Tous”
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Comme on écrit du code JavaScript, on doit le faire dans <code>main.js</code>. Comme pour les autres options, vous pouvez récupérer le bouton radio avec <code>.getElementById()</code> puis l’écouter avec <code>.addEventListener()</code>.</p>
+<p>Pour ce qui est du filtre CQL&nbsp;: si on veut tous les deals, il suffit que notre filtre soit <strong>vide</strong>. Donc vous devriez avoir quelque part une chaîne de caractères (<em>string</em>) vide.</p>
+</div>
+</div>
+</div>
+<p>Une fois que c’est terminé et que vous avez un beau menu fonctionnel pour filtrer vos couches, on peut passer à la suite&nbsp;!</p>
 </section>
 <section id="des-cercles-proportionnels-avec-un-flux-wfs" class="level3">
 <h3 class="anchored" data-anchor-id="des-cercles-proportionnels-avec-un-flux-wfs">Des cercles proportionnels avec un flux WFS</h3>
-<p>…</p>
+<p>On commence à avoir fait le tour des interactions basiques avec les flux WMS, qui pour rappel nous envoient des images. Mais, si vous vous souvenez bien, on a aussi évoqué dans le premier cours la possibilité de récupérer non pas une image mais des <strong>vecteurs grâce aux flux WFS</strong>. C’est ce qui va nous intéresser maintenant&nbsp;: notre objectif va être d’afficher notre couche <code>deals_by_country_centroid</code> et de la styliser pour afficher des cercles proportionnels. Et vous allez voir que récupérer une couche WFS avec OpenLayers, c’est du gâteau.</p>
+<p>Je vous donne la structure du code à écrire dans <code>main.js</code>. N’oubliez pas que les éléments encadrés par des chevrons <code>"&lt;un_truc&gt;"</code> doivent être remplacés par une vraie valeur. Par exemple, si je vous écris <code>const formation = "&lt;ma_formation&gt;"</code>, vous devrez mettre dans votre code <code>const formation = "geonum"</code>. Facile&nbsp;! Voilà donc le snippet de base&nbsp;:</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co">// N’oubliez pas de mettre un commentaire pour m’expliquer ce que vous faites</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> sourceCentroid <span class="op">=</span> <span class="kw">new</span> <span class="fu">VectorSource</span>({</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">format</span><span class="op">:</span> <span class="kw">new</span> <span class="fu">GeoJSON</span>()<span class="op">,</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">url</span><span class="op">:</span> <span class="st">'&lt;mon_flux_wfs&gt;'</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> layerCentroid <span class="op">=</span> <span class="kw">new</span> <span class="fu">VectorLayer</span>({</span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">source</span><span class="op">:</span> sourceCentroid<span class="op">,</span></span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>… et les imports à ajouter tout en haut du fichier&nbsp;:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> VectorSource <span class="im">from</span> <span class="st">'ol/source/Vector'</span><span class="op">;</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> GeoJSON <span class="im">from</span> <span class="st">'ol/format/GeoJSON.js'</span><span class="op">;</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> VectorLayer <span class="im">from</span> <span class="st">'ol/layer/Vector'</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Vous remarquez que vous avons un élément <code>&lt;mon_flux_wms&gt;</code> à remplacer. Pour trouver l’URL de ce flux, allez dans votre interface GeoServer, sélectionnez “Prévisualisation de la couche”. Cette fois, au lieu de choisir “OpenLayers” (qui nous donne le flux WMS), allez dans la colonne “Tous les formats” et sélectionnez GeoJSON. <strong>Je rappelle qu’on ne travaille plus sur la couche <code>deals</code> mais bien sur la couche <code>deals_by_country_centroid</code>.</strong> Il ne vous reste plus qu’à copier l’URL dans votre navigateur&nbsp;: c’est la valeur de <code>url</code> dans votre <code>VectorSource()</code>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Oups, j’ai oublié de retirer les chevrons “&lt;” en collant mon url
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbm84eWJjMWNlNnF4d2lxdjFhYnJoYmRkM3RweWZ5M2Q3ZWlya3hidSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eUrE2DuMKOE0g/giphy.webp" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="GIF : Justine Timberlake blasé"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Il ne reste plus qu’une seule étape pour afficher la couche sur la carte. Je vous laisse trouver laquelle&nbsp;!</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Allez, un petit indice&nbsp;?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Vous l’avez déjà fait plusieurs fois dans le TP précédent et celui-ci, et c’est souvent une étape qu’on oublie.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmN4NWdqczB6enZtdzJwZW5wazBwbjducTA2aDhnMm1qNWF1dm10eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MZ9nZGQn1nqBG/200.webp" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="GIF : Mr Bean malicieux"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Je ne trouve vraiment pas…
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHl0dHJvajQ2cm9ldGxhcWtvaXRobmhtZGpmeWZlNjBxM3V3bjBwciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/w89ak63KNl0nJl80ig/giphy.webp" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="GIF : The Office, agent sous couverture" width="240"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Promis, j’ai vraiment cherché&nbsp;!
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Bon, d’accord. Dites-moi, comment se porte l’attribut <code>layers</code> de votre objet <code>map</code>&nbsp;?</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTMxd2h6aDBvczhuandzdzRnNTYwYzRhOW14NW53OXo5Y2tqYmk1aiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/i7WbuFkyAZ8HUAIn8E/giphy.webp" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="GIF : Gollum donne la réponse de l’énigme" width="200"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Une fois cette étape complétée, la couche devrait apparaître sur votre carte. Super&nbsp;! Par contre, ça ressemble certainement à des cercles blancs, un peu transparents, avec un contour bleu. Et surtout, ce ne sont pas des cercles proportionnels&nbsp;!</p>
+<p>Heureusement, vous avez été bien attentifs pendant vos cours de Leaflet et vous avez déjà stylisé des couches à partir de donnée GeoJSON, ça devrait être super facile pour vous. Comme la documentation GeoServer n’est pas très claire sur ce point, je vous donne un snippet et je vais vous demander de l’ajuster un peu pour vérifier que vous comprendez bien qui fait quoi.</p>
+<p>D’abord, on importe les éléments de style dont on va avoir besoin&nbsp;:</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {Circle<span class="op">,</span> Fill<span class="op">,</span> Stroke<span class="op">,</span> Style} <span class="im">from</span> <span class="st">'ol/style.js'</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>On commence par créer un style “pas proportionnel” qu’on stocke dans la constante <code>styleCentroid</code>.</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> styleCentroid <span class="op">=</span> <span class="kw">new</span> <span class="fu">Style</span>({</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">image</span><span class="op">:</span> <span class="kw">new</span> <span class="fu">Circle</span>({</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">radius</span><span class="op">:</span> <span class="dv">40</span><span class="op">,</span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">fill</span><span class="op">:</span> <span class="kw">new</span> <span class="fu">Fill</span>({ <span class="dt">color</span><span class="op">:</span> <span class="st">'white'</span> })<span class="op">,</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">stroke</span><span class="op">:</span> <span class="kw">new</span> <span class="fu">Stroke</span>({ <span class="dt">color</span><span class="op">:</span> <span class="st">'blue'</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> <span class="dv">5</span> })<span class="op">,</span></span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>  })<span class="op">,</span></span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>N’oubliez pas d’appeler votre style dans la propriété <code>style</code> de votre <code>VectorLayer</code> ou bien la couche ne changera pas.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> layerCentroid <span class="op">=</span> <span class="kw">new</span> <span class="fu">VectorLayer</span>({</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">source</span><span class="op">:</span> sourceCentroid<span class="op">,</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">style</span><span class="op">:</span> styleCentroid    <span class="co">// On a rajouté cette ligne</span></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Attention à l’ordre dans lequel vous ajoutez les éléments dans le code. N’oubliez pas que pour appeler une constante (ou une variable) comme <code>styleCentroid</code>, il faut avoir défini celle-ci avant&nbsp;!</p>
+<p>Regardez à quoi ressemble la couche maintenant qu’on lui a donné un style. C’est moche, hein&nbsp;? Et bien c’est à vous de la rendre belle. Modifiez le code pour obtenir quelque chose qui ressemble à ça&nbsp;:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/ol_styling_circles.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Couche de cercles oranges sur OpenLayers"></p>
+</figure>
+</div>
+<p>Notez que les cercles ne sont pas entièrement opaques. Prenez le temps de vous appliquer, cela vous servira de base pour la suite. <strong>Quand vous avez terminé</strong>, vous pourrez utiliser ce snippet pour afficher des cercles proportionnels.</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">getStyleCentroid</span>(feature) {</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> nDeals <span class="op">=</span> feature<span class="op">.</span><span class="fu">get</span>(<span class="st">'n_deals'</span>)<span class="op">;</span></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> rayon <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sqrt</span>(nDeals) <span class="op">*</span> <span class="fl">0.01</span><span class="op">;</span></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> style <span class="op">=</span> <span class="kw">new</span> <span class="fu">Style</span>({</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">image</span><span class="op">:</span> <span class="kw">new</span> <span class="fu">Circle</span>({</span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>      <span class="dt">radius</span><span class="op">:</span> rayon<span class="op">,</span></span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="kw">new</span> <span class="fu">Fill</span>({ <span class="dt">color</span><span class="op">:</span> <span class="st">'white'</span> })<span class="op">,</span></span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>      <span class="dt">stroke</span><span class="op">:</span> <span class="kw">new</span> <span class="fu">Stroke</span>({ <span class="dt">color</span><span class="op">:</span> <span class="st">'blue'</span><span class="op">,</span> <span class="dt">width</span><span class="op">:</span> <span class="dv">5</span> })<span class="op">,</span></span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> style<span class="op">;</span></span>
+<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> layerCentroid <span class="op">=</span> <span class="kw">new</span> <span class="fu">VectorLayer</span>({</span>
+<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a>  <span class="dt">source</span><span class="op">:</span> sourceCentroid<span class="op">,</span></span>
+<span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a>  <span class="dt">style</span><span class="op">:</span> getStyleCentroid<span class="op">,</span></span>
+<span id="cb50-17"><a href="#cb50-17" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Vous noterez que la différence principale ici est qu’on appelle une <strong>fonction</strong> et non une constante, et que cette fonction prend <code>feature</code> en argument. En fait, ce qu’il se passe, c’est que la fonction va regarder chaque objet de ma couche (chaque <em>feature</em>) et appliquer les étapes qu’on a définies à l’intérieur.</p>
+<ul>
+<li><p>on lit un attribut de notre <code>feature</code> avec la méthode <code>.get()</code></p></li>
+<li><p>on calcule un rayon</p></li>
+<li><p>on définit notre style comme précédemment, mais au lieu d’être une valeur fixe, notre propriété <code>radius</code> prend la valeur de notre rayon</p></li>
+</ul>
+<p>Je suis restée volontairement vague dans ce cas pour ne pas vous souffler toutes les réponses. Comme précédemment, vous allez devoir modifier le snippet de code pour rendre la couche un peu plus élégante. Je vous montre mon exemple, essayez de le reproduire le plus fidèlement possible&nbsp;:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="media/ol_styling_proportional.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Couche de cercles proportionnels dans OpenLayers"></p>
+</figure>
+</div>
+<p>Une fois que c’est terminé, il reste un dernier exercice à faire avec ces cercles proportionnels. Vous aurez compris qu’ici, nos cercles sont proportionnels au nombre de deals qui sont enregistrés dans le pays. <strong>Maintenant, créez une couche de cercles proportionnels en vous basant sur la surface total couverte par les deals dans chaque pays.</strong></p>
+<p>On arrive sur la fin du TP et vous commencez (j’espère) à bien comprendre comment fonctionne notre application donc je ne vous donne pas d’indices. Faites juste attention à bien faire varier la taille des cercles petit à petit&nbsp;: si jamais votre navigateur essaie de dessiner des cercles trop grands, vous avez des chances de faire crasher votre ordinateur (ça m’est <em>peut-être</em> arrivé pendant mes tests et ce serait dommage que ça vous arrive aussi).</p>
 </section>
-<section id="des-boutons-pour-afficher-des-cartes-thématiques" class="level3">
-<h3 class="anchored" data-anchor-id="des-boutons-pour-afficher-des-cartes-thématiques">Des boutons pour afficher des cartes thématiques</h3>
-<p>…</p>
 </section>
-<section id="un-curseur-dévolution-temporelle" class="level3">
-<h3 class="anchored" data-anchor-id="un-curseur-dévolution-temporelle">Un curseur d’évolution temporelle</h3>
-<p>…</p>
+<section id="létape-finale" class="level2">
+<h2 class="anchored" data-anchor-id="létape-finale">L’étape finale&nbsp;!</h2>
+<p>Enfin l’étape finale du TP&nbsp;! Une fois que votre application fonctionne et qu’elle vous convient, n’oubliez <strong>SURTOUT PAS</strong> de la build&nbsp;! Pour le moment, vous travaillez dans ce qu’on appelle un environnement de développement mais quand vous êtes prêts à pousser une application en production, il faut la build. On l’a déjà fait au début du TP précédent mais je vous remets les instructions ici parce que je suis bien sympa (et que vous avez sûrement le cerveau en compote après tout ça)&nbsp;:</p>
+<ul>
+<li><p>ouvrez un terminal à la racine de votre projet</p></li>
+<li><p>utilisez la commande <code>cd app</code> pour vous déplacer dans le dossier de votre application</p></li>
+<li><p>utilisez la commande <code>npm run build</code> pour build votre application, le résultat sera mis dans le dossier <code>/dist</code></p></li>
+<li><p>allez sur <a href="http://localhost/" class="uri">http://localhost/</a> et vérifiez que vous voyez bien la dernière version de votre application</p></li>
+</ul>
+<p>Et voilà, bien joué&nbsp;! Vous n’avez plus qu’à m’appeler pour me montrer le résultat.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDJ1Nzd4b2tkbzZicmZ5eXBycG1wOGZ1ZzZncW5obzh2MTcwMDc1ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/AQRapWCgC7dThyVEYb/giphy.webp" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="GIF : Solaire, Praise the Sun"></p>
+</figure>
+</div>
 </section>
-<section id="mince-jai-oublié-léchelle" class="level3">
-<h3 class="anchored" data-anchor-id="mince-jai-oublié-léchelle">Mince, j’ai oublié l’échelle&nbsp;!</h3>
-<p>…</p>
-</section>
-<section id="il-est-temps-de-polir-un-peu-linterface" class="level3">
-<h3 class="anchored" data-anchor-id="il-est-temps-de-polir-un-peu-linterface">Il est temps de polir un peu l’interface</h3>
-<p>…</p>
-</section>
-<section id="pour-aller-plus-loin-utiliser-des-plugins" class="level3">
-<h3 class="anchored" data-anchor-id="pour-aller-plus-loin-utiliser-des-plugins">Pour aller plus loin&nbsp;: utiliser des plugins</h3>
-<p>…</p>
+<section id="jai-fini-en-avance-quest-ce-que-je-fais" class="level2">
+<h2 class="anchored" data-anchor-id="jai-fini-en-avance-quest-ce-que-je-fais">J’ai fini en avance, qu’est-ce que je fais&nbsp;?</h2>
+<p>Déjà, bravo, c’était un gros TP. S’il reste du temps, je vais rajouter ici petit à petit des tâches pendant le TP qui vous permettront d’aller un peu plus loin et de préparer votre code pour l’évaluation. En attendant&nbsp;:</p>
+<ul>
+<li><p>vérifiez bien l’intendation de votre code</p></li>
+<li><p>vérifiez aussi qu’il soit bien commenté</p></li>
+<li><p>améliorez le style des couches WMS comme WFS pour avoir une carte harmonieuse et un peu stylée</p></li>
+<li><p>ajoutez un titre à votre page</p></li>
+<li><p>ajoutez une échelle (avec OpenLayers)</p></li>
+</ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

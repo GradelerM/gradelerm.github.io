@@ -1,0 +1,22 @@
+---
+title: "Évaluation"
+subtitle: "Modalités d’évaluation pour le cours GeoServer + OpenLayers."
+---
+
+## Memo
+
+-   Commentaires dans le code
+
+-   Intendation du code
+
+-   Pas de fautes dans le texte (surtout qu’il y en a vraiment très peu !)
+
+-   On ajoute un peu de CSS, on essaie de ne pas juste faire le minimum vital
+
+## Ce qui est demandé
+
+…
+
+## Points bonus
+
+…

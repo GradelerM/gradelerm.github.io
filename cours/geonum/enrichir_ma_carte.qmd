@@ -6,21 +6,12 @@ subtitle: "Enrichir ma carte OpenLayers en fonctionnalités en utilisant les cap
 ## Objectifs
 
 -   Créer un menu d’affichage des couches
-
-<!-- -->
-
 -   Interroger une couche WMS et afficher les résultats
-
 -   Filtrer une couche WMS
-
 -   Lire un flux WFS et afficher la géométrie
-
 -   Créer un curseur d’évolution temporelle
-
 -   Ajouter une échelle à la carte
-
 -   Polir un peu l’interface de l’application avec du CSS
-
 -   Pour aller plus loin, apprendre à utiliser des plugins OpenLayers
 
 ## Cours
@@ -490,7 +481,7 @@ Vous noterez l’utilisation de méthodes `.then()` qui contiennent des fonction
 
 -   `.then((html) => { console.log("C’est une réussite !"); })` → "Ensuite, quand tu as **réussi** l’étape précédente, stocke le texte au format HTML de l’étape précédente dans une variable que j’appelle "html" et affiche un message dans ma console"
 
-Vous noterez que j’ai précisé que `.then()` s’exécute si l’étape précédente a réussi. Si ce n’est pas le cas, l’exécution de notre chaîne de méthodes `fetch()` s’arrête et un message d’erreur s’affiche dans la console. Comme on a plutôt confiance en notre GeoServer, on peut se lancer et exécuter ce `fecth()` mais attention, seulement si on a bien une addresse à interroger ! Si la variable `url` est `undefined`, notre application risque de péter les plombs. On ajoute une condition autour du `fetch()` pour éviter les erreurs :
+Vous noterez que j’ai précisé que `.then()` s’exécute si l’étape précédente a réussi. Si ce n’est pas le cas, l’exécution de notre chaîne de méthodes `fetch()` s’arrête et un message d’erreur s’affiche dans la console. Comme on a plutôt confiance en notre GeoServer, on peut se lancer et exécuter ce `fetch()` mais attention, seulement si on a bien une addresse à interroger ! Si la variable `url` est `undefined`, notre application risque de péter les plombs. On ajoute une condition autour du `fetch()` pour éviter les erreurs :
 
 ``` javascript
 if (url) {
@@ -505,30 +496,476 @@ if (url) {
 
 Vous pouvez tester les `console.log()`. Le HTML qu’on obtient n’est pas très gracieux tel quel, il vaudrait mieux l’afficher dans l’interface de l’application !
 
+::: {.callout-note collapse="true"}
+## Au secours, je n’ai toujours pas compris fetch()
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYm5odGpnZTVnY3V4ZGZyNHQ2aDhqZjFqMGVlNnhpZXZ5Yjgxa3gxaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/9iBIdXITr6LoVf8XgY/giphy.webp){fig-alt="GIF : Kermit qui n’en peut plus" fig-align="center"}
+
+Si votre cerveau est un peu comme ça quand on parle de `fetch()`, n’hésitez pas à m’appeler pour avoir une nouvelle explication. J’ai peur de ne pas pouvoir faire mieux par écrit. La notion de fonction asynchrone est complexe et j’ai mis pas mal de temps à la comprendre, donc en deux minutes en plein milieu d’un TP c’est encore pire.
+
+Sinon, vous pouvez continuer le TP, on aura d’autres occasion d’utiliser `fetch()`. Peut-être que les autres exemples seront plus clairs !
+:::
+
+Quand on doit afficher un nouvel élément dans l’interface, il faut toujours penser à créer une nouvelle balise HTML (souvent une `<div>`) pour le mettre à l’intérieur. Comme pour l’exemple précédent, on crée une div dans le HTML. Je place la mienne après `<div id="layers">` et je remets n’importe quoi dedans juste pour la voir dans mon interface.
+
+``` html
+<div id="attributes" class="menu">cthulhu ftaghn</div>
+```
+
+Sauvegardez et regardez l’application. Et là, horreur ! Notre menu de couches est remplacé par la nouvelle div qu’on vient de créer ! C’est normal, elles ont le même style car on a aussi appelé `class="menu"` dans la div. Le problème, c’est que dans `styles.css`, on voit que tous nos menus sont positionnés au même endroit : regardez `top` et `right`.
+
+``` css
+.menu {
+  /* Positionnement dans le body */
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  /* Padding */
+  padding: 8px;
+
+  /* Dimensions minimales */
+  min-height: 80px;
+  min-width: 160px;
+
+  /* Rectangle blanc avec coins arrondis */
+  background-color: white;
+  border-radius: 8px;
+}
+```
+
+On va donc devoir positionner nos deux `<div>` indépendamment l’une de l’autre. Pour les sélectionner individuellement, on peut utiliser le sélecteur `#` qui permet de chercher par `id`. Voilà mon code :
+
+``` css
+.menu {
+  /* Padding */
+  padding: 8px;
+
+  /* Dimensions minimales */
+  min-height: 80px;
+  min-width: 160px;
+
+  /* Rectangle blanc avec coins arrondis */
+  background-color: white;
+  border-radius: 8px;
+}
+
+#layers {
+  /* Positionnement dans le body */
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+#attributes {
+  /* Positionnement dans le body */
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+```
+
+Voilà, maintenant `.menu` me permet de définir un padding, des dimensions minimales, une couleur de background et des coins arrondis pour tous mes éléments avec la classe `class="menu"`, mais par contre j’ai bien positionné indépendamment mon menu de layers et ma nouvelle div `attributes`.
+
+Maintenant, modifiez le style de `#attributes` pour l’afficher en bas de la carte et sur toute la largeur de l’écran. Il nous faut beaucoup d’espace pour afficher notre table.
+
+C’est bon, vous avez une `<div id="attributes">` qui vous plaît ? Vous pouvez supprimer le texte qui était dans la div, on n’en aura plus besoin. Maintenant, on cherche à dire à notre application : "Prends le texte HTML que je récupère grâce à ma fonction et mets-le dans ma div Attributes". On a formulé notre idée en langage naturel, on va maintenant pouvoir l’écrire en JavaScript. D’abord, on se demande à quel endroit dans notre code on récupère ce HTML. Souvenez-vous :
+
+``` javascript
+// Interroger la couche deals et afficher les résultats
+map.on('singleclick', (event) => {
+  console.log("J’ai cliqué sur la carte !");
+
+  const coord = event.coordinate;
+  const res = map.getView().getResolution();
+  const proj = 'EPSG:3857';
+  const parametres = {'INFO_FORMAT': 'text/html'};
+
+  const url = sourceDeals.getFeatureInfoUrl(coord, res, proj, parametres);
+
+  if (url) {
+    fetch(url)
+      .then((response) => response.text())
+      .then((html) => {
+        // Dans cette fonction, on a accès à notre "html" !
+        console.log("C’est une réussite !");
+        console.log(html);
+      });
+  }
+});
+```
+
+Vous voyez mon commentaire ? C’est dans cette fonction qu’on va écrire notre code. Zoomons sur cette petite partie :
+
+``` javascript
+      .then((html) => {
+        // Dans cette fonction, on a accès à notre "html" !
+        console.log("C’est une réussite !");
+        console.log(html);
+      });
+```
+
+Si je traduis le texte précédent en langage naturel, pour rappel, ça fait :
+
+-   Quand tu as **réussi** l’étape précédente (souvenez-vous de *then*), alors stocke le résultat dans une variable `html` et :
+
+-   Affiche "C’est une réussite !" dans ma console
+
+-   Affiche le contenu du HTML dans ma console
+
+On aimerait remplacer les deux dernières étapes par "affiche le HTML dans mon interface". Pour cela, on utilise la ligne de code suivante (à ajouter au bon endroit dans la fonction) :
+
+``` javascript
+document.getElementById('attributes').innerHTML = html;
+```
+
+Super, vous savez maintenant requêter une couche WMS ! Le résultat est un peu moche pour le moment mais vous pourrez revenir plus tard pour l’affiner. Si vous finissez le TP en avance, revenez sur les sections "Pour aller plus loin…".
+
+::: {.callout-note collapse="true"}
+## Pour aller plus loin…
+
+Si vous avez déjà fait le tour du TP, vous allez trouver dans cette section des éléments supplémentaires pour aller plus loin.
+
+*En cours de rédaction*
+:::
+
 ### Filtrer des couches WMS
 
-…
+On a vu dans l’étape précédente qu’il était possible de requêter une couche WMS. Vous ne serez donc pas surpris d’apprendre qu’il est aussi possible de filtrer ces couches ! Les flux WMS ont beau retourner une image, on constate maintenant qu’elles ne manquent pas d’interactivité.
+
+GeoServer permet d’ajouter des filtres écrits au format cql à la requête pour lui dire "applique ce filtre à ma couche avant de m’envoyer le résultat". Le filtrage se fait donc **du côté du serveur**. Vous pouvez trouver les spécifications WMS avec `cql_filter` [ici](https://docs.geoserver.org/main/en/user/services/wms/vendor.html#cql-filter) et le tutoriel de filtrage [là](https://docs.geoserver.org/2.24.x/en/user/tutorials/cql/cql_tutorial.html) mais comme c’est une notion un peu complexe à appliquer seul, on va une fois de plus procéder étape par étape ensemble.
+
+Dans votre GeoServer, prévisualisez la couche `deals` et cliquez sur les `...` bleus en haut à gauche de la carte. Vous devriez voir plusieurs nouvelles options apparaître dont une qui s’appelle "Filter:". L’option "CQL" devrait déjà être sélectionnée, gardez-la. C’est ce qu’on va utiliser pour la suite.
+
+![](media/geoserver_cql_filter.png){fig-alt="Capture d’écran de la preview de ma couche deals avec les options affichées" fig-align="center"}
+
+Collez le texte suivant dans le champ CQL et cliquez sur "Appliquer" :
+
+``` {.html .cql}
+deal_size > 10000
+```
+
+Normalement, vous avez vu certains points disparaître. Il ne vous reste plus que les deals de plus de 10 000 hectares. Si vous avez un doute, vous pouvez vérifier en cliquant sur les points pour afficher leurs attributs. C’est facile, non ? Essayez les filtres suivant et essayez de comprendre à quoi ils peuvent servir :
+
+``` html
+silver = true
+```
+
+``` html
+target_country = 'Argentina'
+```
+
+``` html
+target_country = 'Argentina' OR target_country = 'Philippines'
+```
+
+::: callout-important
+Quand vous écrivez des chaînes de caractères dans un filtre CQL ("*string*"), il faut **impérativement** utiliser les guillemets simples `'my_string'` et pas les doubles `"my_string"`.
+
+*Ne me demandez pas pourquoi, ce n’est pas expliqué, il faut juste l’accepter et vivre avec.*
+:::
+
+Bien, vous savez maintenant écrire un filtre simple en CQL, mais comment est-ce qu’on fait pour filtrer la couche depuis notre application OpenLayers ? Voici mon code pour appliquer à ma couche `deals` un filtre qui va uniquement récupérer les mines qui produisent de l’or (*Gold*) ou de l’argent (*Silver*). Comparez ce snippet avec votre code pour comprendre où mettre ce code et ce qu’il fait :
+
+``` javascript
+const sourceDeals = new ImageWMS({
+  url: geoserverWms,
+  params: {
+    'LAYERS' : 'land_matrix:deals',
+    "CQL_FILTER" : "target_country = 'Argentina' OR target_country = 'Philippines'",
+  },
+  serverType: 'geoserver',
+});
+```
+
+::: callout-important
+Si vous vous êtes contenté de copier-coller tout ça dans votre code, c’est raté ! Il faut regarder mon snippet de code pour comprendre ce que **vous devez ajouter à votre code existant** !
+:::
+
+Sauvegardez et regardez votre carte. Si vous avez compris ce que fait mon CQL, vous devriez rapidement être capables de dire si le filtre a fonctionné ou non. Vous voyez, filtrer un flux WMS, c’est facile !
+
+**Maintenant, modifiez votre code pour afficher uniquement des mines qui produisent de l’or.** Je vous donne deux indices : regardez la table attributaire de la couche `deals` et souvenez vous que "or" se dit "*Gold*" en anglais. Pour ceux qui ont eu des consoles portables, il y a une licence vidéoludique bien pratique pour retenir des noms de minéraux en anglais :
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXlmbngwNmNlM3FwZWkzank0N3J2YndnMG43em43enp1bW1ta2MwdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Pn21gQZ3CHzFhL8uep/giphy.webp){fig-alt="GIF : Pokémon Gold" fig-align="center" width="220"}
+
+*(Si vous êtes capable d’entendre ce GIF juste en le regardant, vous commencez à être vieux aussi, désolée. Quoi qu’il en soit, j’espère que les interruptions GIFs vous font un peu décompresser.)*
+
+Maintenant que vous savez filtrer la couche, vous pouvez ajouter un peu plus d’interactivité à votre carte. On va afficher un menu avec des boutons de type "radio" pour sélectionner des filtres. Je vous fais un schéma moche à la main pour vous aider à comprendre.
+
+![](media/map_select_produce.png){fig-alt="Schéma du menu \"Production\" à ajouter à la carte" fig-align="center"}
+
+Vous voyez où on veut en venir ? Comme on commence à avoir l’habitude de faire des menus, je vous laisse créer et positionner celui-ci avec un peu de HTML et de CSS et on passe directement à l’ajout des boutons. On va devoir mettre dans notre élément `<div>` plusieurs boutons radio avec la balise `<input type="radio">`. Voilà le code pour les éléments "Or" et "Argent" :
+
+``` html
+    <!-- Radio button menu - production -->
+    <div id="production" class="menu">
+  
+      <div>
+        <input type="radio" id="button-gold" name="produce" value="gold" />
+        <label for="gold">Or</label>
+      </div>
+  
+
+      <div>
+        <input type="radio" id="button-silver" name="produce" value="silver" />
+        <label for="silver">Argent</label>
+      </div>
+
+    </div>
+```
+
+Vous noterez plusieurs choses :
+
+-   `<input>` et `<label>` vont par paires
+
+-   la balise `<label>` contient le nom en français de mon élément, c’est ce qui s’affiche dans l’application
+
+-   toutes les balises `<input>` on la même propriété `name="produce"`, on dirait donc qu’il vaut mieux continuer dans ce sens
+
+-   on a une propriété `id` unique à chaque `<input>` qui nous permettra, au besoin, d’aller les chercher avec du JavaScript
+
+-   la propriété `value` de mes `<input>` semble correspondre à des colonnes de la table attributaire de ma couche
+
+Avec ces éléments, ajoutez les boutons pour Charbon, Lithium et Cobalt comme indiqués sur mon schéma plus haut. **Attention à bien mettre Charbon en haut !** Quand c’est terminé, allez sur votre carte et cliquez un peu sur ces boutons radio. Normalement, vous ne pouvez pas sélectionner plus d’un seul élément à la fois au sein du groupe. Votre application sait que tous ces boutons font partie du même groupe car vous leur avez tous donné la même valeur `name="produce"`. Si vous commencez à modifier cette valeur, vous verrez apparaître un comportement indésirable.
+
+Une fois que votre menu est prêt, bien positionné sur la carte et que vos cinq boutons radio fonctionnent, on va pouvoir passer au JavaScript. Comme d’habitude, on va exprimer notre besoin en langage naturel : **"Lorsque je sélectionne un minéral, je souhaite modifier le filtre de ma couche `deals` pour récupérer uniquement les deals qui produisent les minéraux sélectionnés"**.
+
+Pour rappel, voici les éléments dont on dispose :
+
+-   on a des boutons radio avec une valeur `value` qui correspond à une colonne de la table attributaire
+
+-   vous avez déjà une couche qui filtre les deals qui produisent de l’or avec un filtre CQL
+
+-   le filtre CQL est tout simplement une chaîne de caractères (*string*)
+
+Le résultat auquel on voudrait arriver, c’est donc : **"Mon CQL dans les `params` de la source de ma couche `deals` change dès que je sélectionne un nouveau minéral"**.
+
+Ça tombe bien ! La [documentation de la source ImageWMS](https://openlayers.org/en/latest/apidoc/module-ol_source_ImageWMS-ImageWMS.html#updateParams) (celle qu’on utilise pour notre couche) nous apprend qu’il existe une méthode `.updateParams()` qui permet de mettre à jour les paramètres d’une couche.
+
+Commencez par ajouter ces deux éléments en bas de `main.js`. Souvenez-vous de la manière dont on a "écouté" notre checkbox du premier exercice de ce TP. Le code ressemble beaucoup, non ?
+
+``` javascript
+const buttonGold = document.getElementById('button-gold');
+
+buttonGold.addEventListener('change', () => {
+  console.log("Test");
+});
+```
+
+Voici ce que font les deux éléments du code :
+
+-   la première ligne récupère mon bouton radio qui grâce à son identifiant en utilisant la méthode `.getElementById()` que vous avons déjà vue précédemment
+
+-   les trois lignes suivantes nous permettent d’écouter notre bouton radio grâce à `.addEventListener()` et d’exécuter une fonction quand le bouton radio est coché, et la fonction affiche "Test" dans la console de développement
+
+On y est presque. On arrive à exécuter quelque chose quand on sélectionne "Or" dans notre carte, mais ça ne nous permet pas de filtrer la couche. On va retirer notre `console.log()` et demander à JavaScript de modifier les paramètres de la source de notre couche deals grâce à la ligne suivante :
+
+``` javascript
+sourceDeals.updateParams({ 'CQL_FILTER' : 'gold=true' });
+```
+
+Pour rappel, la source de mes deals est stockée dans la variable `sourceDeals` mais attention, il est possible que la votre porte un autre nom. Pensez à vérifier !
+
+Histoire de pouvoir tester au moins avec les boutons "Or" et "Argent", je vous donne un snippet de code plus complet. Inspirez-vous aussi des commentaires que je laisse, je rappelle que j’attends un code commenté pour l’évaluation !
+
+``` javascript
+// Or
+const buttonGold = document.getElementById('button-gold');
+buttonGold.addEventListener('change', () => {
+  // Quand l’utilisateur clique sur le bouton "Or", je mets à jour mon filtre CQL
+  sourceDeals.updateParams({ 'CQL_FILTER' : 'gold=true' });
+});
+
+// Argent
+const buttonSilver = document.getElementById('button-silver');
+buttonSilver.addEventListener('change', () => {
+  sourceDeals.updateParams({ 'CQL_FILTER' : 'silver=true' });
+});
+```
+
+Testez l’application en cliquant alternativement sur les boutons radio de Or et Argent. Si les deux couches sont différentes, super, ça fonctionne !
+
+Maintenant que vous avez compris comment faire, faites les étapes suivantes (et souvenez-vous que c’est à vous que je demande, pas à Chat-GPT, je vous ai quand même déjà bien mâché le travail avec l’exemple ci-dessus !).
+
+-   on a créé un filtre fonctionnel pour Or et Argent, maintenant **faites la même chose pour toutes les autres options**
+
+-   quand vous avez terminé, rajoutez une option "Tous" avec la valeur `value="all"` et faites en sorte qu’il affiche tous les deals (je vous ai mis des indices ci-dessous si vous avez du mal mais essayez d’abord de réfléchir sans)
+
+::: {.callout-note collapse="true"}
+## Indice 1 - ajouter l’option "Tous"
+
+Souvenez vous : si vous voulez ajouter un élément à l’interface, commencez par `index.html`.
+:::
+
+::: {.callout-note collapse="true"}
+## Indice 2 - filtrer "Tous"
+
+Comme on écrit du code JavaScript, on doit le faire dans `main.js`. Comme pour les autres options, vous pouvez récupérer le bouton radio avec `.getElementById()` puis l’écouter avec `.addEventListener()`.
+
+Pour ce qui est du filtre CQL : si on veut tous les deals, il suffit que notre filtre soit **vide**. Donc vous devriez avoir quelque part une chaîne de caractères (*string*) vide.
+:::
+
+Une fois que c’est terminé et que vous avez un beau menu fonctionnel pour filtrer vos couches, on peut passer à la suite !
 
 ### Des cercles proportionnels avec un flux WFS
 
-…
+On commence à avoir fait le tour des interactions basiques avec les flux WMS, qui pour rappel nous envoient des images. Mais, si vous vous souvenez bien, on a aussi évoqué dans le premier cours la possibilité de récupérer non pas une image mais des **vecteurs grâce aux flux WFS**. C’est ce qui va nous intéresser maintenant : notre objectif va être d’afficher notre couche `deals_by_country_centroid` et de la styliser pour afficher des cercles proportionnels. Et vous allez voir que récupérer une couche WFS avec OpenLayers, c’est du gâteau.
 
-### Des boutons pour afficher des cartes thématiques
+Je vous donne la structure du code à écrire dans `main.js`. N’oubliez pas que les éléments encadrés par des chevrons `"<un_truc>"` doivent être remplacés par une vraie valeur. Par exemple, si je vous écris `const formation = "<ma_formation>"`, vous devrez mettre dans votre code `const formation = "geonum"`. Facile ! Voilà donc le snippet de base :
 
-…
+``` javascript
+// N’oubliez pas de mettre un commentaire pour m’expliquer ce que vous faites
+const sourceCentroid = new VectorSource({
+  format: new GeoJSON(),
+  url: '<mon_flux_wfs>'
+});
 
-### Un curseur d’évolution temporelle
+const layerCentroid = new VectorLayer({
+  source: sourceCentroid,
+});
+```
 
-…
+… et les imports à ajouter tout en haut du fichier :
 
-### Mince, j’ai oublié l’échelle !
+``` javascript
+import VectorSource from 'ol/source/Vector';
+import GeoJSON from 'ol/format/GeoJSON.js';
+import VectorLayer from 'ol/layer/Vector';
+```
 
-…
+Vous remarquez que vous avons un élément `<mon_flux_wms>` à remplacer. Pour trouver l’URL de ce flux, allez dans votre interface GeoServer, sélectionnez "Prévisualisation de la couche". Cette fois, au lieu de choisir "OpenLayers" (qui nous donne le flux WMS), allez dans la colonne "Tous les formats" et sélectionnez GeoJSON. **Je rappelle qu’on ne travaille plus sur la couche `deals` mais bien sur la couche `deals_by_country_centroid`.** Il ne vous reste plus qu’à copier l’URL dans votre navigateur : c’est la valeur de `url` dans votre `VectorSource()`.
 
-### Il est temps de polir un peu l’interface
+::: {.callout-note collapse="true"}
+## Oups, j’ai oublié de retirer les chevrons "\<" en collant mon url
 
-…
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbm84eWJjMWNlNnF4d2lxdjFhYnJoYmRkM3RweWZ5M2Q3ZWlya3hidSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eUrE2DuMKOE0g/giphy.webp){fig-alt="GIF : Justine Timberlake blasé" fig-align="center"}
+:::
 
-### Pour aller plus loin : utiliser des plugins
+Il ne reste plus qu’une seule étape pour afficher la couche sur la carte. Je vous laisse trouver laquelle !
 
-…
+::::: {.callout-note collapse="true"}
+## Allez, un petit indice ?
+
+Vous l’avez déjà fait plusieurs fois dans le TP précédent et celui-ci, et c’est souvent une étape qu’on oublie.
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmN4NWdqczB6enZtdzJwZW5wazBwbjducTA2aDhnMm1qNWF1dm10eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MZ9nZGQn1nqBG/200.webp){fig-alt="GIF : Mr Bean malicieux" fig-align="center"}
+
+:::: {.callout-note collapse="true"}
+## Je ne trouve vraiment pas…
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHl0dHJvajQ2cm9ldGxhcWtvaXRobmhtZGpmeWZlNjBxM3V3bjBwciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/w89ak63KNl0nJl80ig/giphy.webp){fig-alt="GIF : The Office, agent sous couverture" fig-align="center" width="240"}
+
+::: {.callout-note collapse="true"}
+## Promis, j’ai vraiment cherché !
+
+Bon, d’accord. Dites-moi, comment se porte l’attribut `layers` de votre objet `map` ?
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTMxd2h6aDBvczhuandzdzRnNTYwYzRhOW14NW53OXo5Y2tqYmk1aiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/i7WbuFkyAZ8HUAIn8E/giphy.webp){fig-alt="GIF : Gollum donne la réponse de l’énigme" fig-align="center" width="200"}
+:::
+::::
+:::::
+
+Une fois cette étape complétée, la couche devrait apparaître sur votre carte. Super ! Par contre, ça ressemble certainement à des cercles blancs, un peu transparents, avec un contour bleu. Et surtout, ce ne sont pas des cercles proportionnels !
+
+Heureusement, vous avez été bien attentifs pendant vos cours de Leaflet et vous avez déjà stylisé des couches à partir de donnée GeoJSON, ça devrait être super facile pour vous. Comme la documentation GeoServer n’est pas très claire sur ce point, je vous donne un snippet et je vais vous demander de l’ajuster un peu pour vérifier que vous comprendez bien qui fait quoi.
+
+D’abord, on importe les éléments de style dont on va avoir besoin :
+
+``` javascript
+import {Circle, Fill, Stroke, Style} from 'ol/style.js';
+```
+
+On commence par créer un style "pas proportionnel" qu’on stocke dans la constante `styleCentroid`.
+
+``` javascript
+const styleCentroid = new Style({
+  image: new Circle({
+    radius: 40,
+    fill: new Fill({ color: 'white' }),
+    stroke: new Stroke({ color: 'blue', width: 5 }),
+  }),
+});
+```
+
+N’oubliez pas d’appeler votre style dans la propriété `style` de votre `VectorLayer` ou bien la couche ne changera pas.
+
+``` javascript
+const layerCentroid = new VectorLayer({
+  source: sourceCentroid,
+  style: styleCentroid    // On a rajouté cette ligne
+});
+```
+
+Attention à l’ordre dans lequel vous ajoutez les éléments dans le code. N’oubliez pas que pour appeler une constante (ou une variable) comme `styleCentroid`, il faut avoir défini celle-ci avant !
+
+Regardez à quoi ressemble la couche maintenant qu’on lui a donné un style. C’est moche, hein ? Et bien c’est à vous de la rendre belle. Modifiez le code pour obtenir quelque chose qui ressemble à ça :
+
+![](media/ol_styling_circles.png){fig-alt="Couche de cercles oranges sur OpenLayers" fig-align="center"}
+
+Notez que les cercles ne sont pas entièrement opaques. Prenez le temps de vous appliquer, cela vous servira de base pour la suite. **Quand vous avez terminé**, vous pourrez utiliser ce snippet pour afficher des cercles proportionnels.
+
+``` javascript
+function getStyleCentroid(feature) {
+  const nDeals = feature.get('n_deals');
+  const rayon = Math.sqrt(nDeals) * 0.01;
+  const style = new Style({
+    image: new Circle({
+      radius: rayon,
+      fill: new Fill({ color: 'white' }),
+      stroke: new Stroke({ color: 'blue', width: 5 }),
+    }),
+  });
+  return style;
+}
+
+const layerCentroid = new VectorLayer({
+  source: sourceCentroid,
+  style: getStyleCentroid,
+});
+```
+
+Vous noterez que la différence principale ici est qu’on appelle une **fonction** et non une constante, et que cette fonction prend `feature` en argument. En fait, ce qu’il se passe, c’est que la fonction va regarder chaque objet de ma couche (chaque *feature*) et appliquer les étapes qu’on a définies à l’intérieur.
+
+-   on lit un attribut de notre `feature` avec la méthode `.get()`
+
+-   on calcule un rayon
+
+-   on définit notre style comme précédemment, mais au lieu d’être une valeur fixe, notre propriété `radius` prend la valeur de notre rayon
+
+Je suis restée volontairement vague dans ce cas pour ne pas vous souffler toutes les réponses. Comme précédemment, vous allez devoir modifier le snippet de code pour rendre la couche un peu plus élégante. Je vous montre mon exemple, essayez de le reproduire le plus fidèlement possible :
+
+![](media/ol_styling_proportional.png){fig-alt="Couche de cercles proportionnels dans OpenLayers" fig-align="center"}
+
+Une fois que c’est terminé, il reste un dernier exercice à faire avec ces cercles proportionnels. Vous aurez compris qu’ici, nos cercles sont proportionnels au nombre de deals qui sont enregistrés dans le pays. **Maintenant, créez une couche de cercles proportionnels en vous basant sur la surface total couverte par les deals dans chaque pays.**
+
+On arrive sur la fin du TP et vous commencez (j’espère) à bien comprendre comment fonctionne notre application donc je ne vous donne pas d’indices. Faites juste attention à bien faire varier la taille des cercles petit à petit : si jamais votre navigateur essaie de dessiner des cercles trop grands, vous avez des chances de faire crasher votre ordinateur (ça m’est *peut-être* arrivé pendant mes tests et ce serait dommage que ça vous arrive aussi).
+
+## L’étape finale !
+
+Enfin l’étape finale du TP ! Une fois que votre application fonctionne et qu’elle vous convient, n’oubliez **SURTOUT PAS** de la build ! Pour le moment, vous travaillez dans ce qu’on appelle un environnement de développement mais quand vous êtes prêts à pousser une application en production, il faut la build. On l’a déjà fait au début du TP précédent mais je vous remets les instructions ici parce que je suis bien sympa (et que vous avez sûrement le cerveau en compote après tout ça) :
+
+-   ouvrez un terminal à la racine de votre projet
+
+-   utilisez la commande `cd app` pour vous déplacer dans le dossier de votre application
+
+-   utilisez la commande `npm run build` pour build votre application, le résultat sera mis dans le dossier `/dist`
+
+-   allez sur <http://localhost/> et vérifiez que vous voyez bien la dernière version de votre application
+
+Et voilà, bien joué ! Vous n’avez plus qu’à m’appeler pour me montrer le résultat.
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDJ1Nzd4b2tkbzZicmZ5eXBycG1wOGZ1ZzZncW5obzh2MTcwMDc1ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/AQRapWCgC7dThyVEYb/giphy.webp){fig-alt="GIF : Solaire, Praise the Sun" fig-align="center"}
+
+## J’ai fini en avance, qu’est-ce que je fais ?
+
+Déjà, bravo, c’était un gros TP. S’il reste du temps, je vais rajouter ici petit à petit des tâches pendant le TP qui vous permettront d’aller un peu plus loin et de préparer votre code pour l’évaluation. En attendant :
+
+-   vérifiez bien l’intendation de votre code
+
+-   vérifiez aussi qu’il soit bien commenté
+
+-   améliorez le style des couches WMS comme WFS pour avoir une carte harmonieuse et un peu stylée
+
+-   ajoutez un titre à votre page
+
+-   ajoutez une échelle (avec OpenLayers)
