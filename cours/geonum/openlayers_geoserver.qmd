@@ -101,7 +101,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - $PWD/geoserver/opt:/opt/geoserver_data
+      - ./geoserver/opt:/opt/geoserver_data
   
   web:
     container_name: geonum_web
@@ -109,8 +109,8 @@ services:
     ports:
       - "80:80"
     volumes:
-      - $PWD/Caddyfile:/etc/caddy/Caddyfile
-      - $PWD/app/dist/:/srv
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./app/dist/:/srv
 ```
 
 ::: {.callout-note collapse="true"}
