@@ -150,6 +150,22 @@ Une fois que le terminal est ouvert dans le projet (vérifiez bien deux fois !)
 npm create ol-app app
 ```
 
+::: {.callout-important collapse="true"}
+## J’ai un message d’erreur "could not find commit hash for HEAD"
+
+Cela doit vouloir dire que git n’est pas installé sur la machine. Pour savoir comment installer Git pour Linux, Windows et MacOS, rendez-vous sur le site officiel de Git : <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>
+
+Pour gagner du temps, voilà la page pour Windows : <https://git-scm.com/downloads/win>
+
+Quand git est installé, recommencez l’étape précédente. Si ça ne fonctionne toujours pas, essayez de :
+
+-   fermer et ouvrir de nouveau VS Code
+
+-   redémarrer l’ordinateur
+
+Pour moi ça a fonctionné dans la salle de TP 🤞
+:::
+
 Vous devriez voir un nouveau dossier appelé "app". Tapez la commande suivante pour vous "déplacer" dans le dossier "app".
 
 ``` bash

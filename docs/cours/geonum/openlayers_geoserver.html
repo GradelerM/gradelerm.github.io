@@ -157,12 +157,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">OpenLayers &amp; GeoServer</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../cours/geonum/enrichir_ma_carte.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Enrichir ma carte en fonctionnalités</span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
@@ -360,6 +354,29 @@ Et ça, ça veut dire quoi&nbsp;?
 </ul>
 <p>Une fois que le terminal est ouvert dans le projet (vérifiez bien deux fois&nbsp;!), tapez la commande suivante pour créer un projet OpenLayers qu’on appelle “app”&nbsp;:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> create ol-app app</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+J’ai un message d’erreur “could not find commit hash for HEAD”
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Cela doit vouloir dire que git n’est pas installé sur la machine. Pour savoir comment installer Git pour Linux, Windows et MacOS, rendez-vous sur le site officiel de Git&nbsp;: <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" class="uri">https://git-scm.com/book/en/v2/Getting-Started-Installing-Git</a></p>
+<p>Pour gagner du temps, voilà la page pour Windows&nbsp;: <a href="https://git-scm.com/downloads/win" class="uri">https://git-scm.com/downloads/win</a></p>
+<p>Quand git est installé, recommencez l’étape précédente. Si ça ne fonctionne toujours pas, essayez de&nbsp;:</p>
+<ul>
+<li><p>fermer et ouvrir de nouveau VS Code</p></li>
+<li><p>redémarrer l’ordinateur</p></li>
+</ul>
+<p>Pour moi ça a fonctionné dans la salle de TP 🤞</p>
+</div>
+</div>
+</div>
 <p>Vous devriez voir un nouveau dossier appelé “app”. Tapez la commande suivante pour vous “déplacer” dans le dossier “app”.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> app</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>On va démarrer notre application avec la commande suivante&nbsp;:</p>
@@ -372,7 +389,7 @@ Et ça, ça veut dire quoi&nbsp;?
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="ex">➜</span>  press h + enter to show help</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Super, le serveur de développement de l’application fonctionne&nbsp;! On va pouvoir y accéder en entrant dans le navigateur l’adresse indiquée dans <code>Local</code>. Allez-y et vérifiez que vous voyez bien une carte.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -381,7 +398,7 @@ Un serveur de développement&nbsp;?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Comme on l’a vu en cours, l’un des intérêts de Node JS est qu’il permet d’avoir un serveur de développement pour servir notre application facilement et la mettre à jour au fur et à mesure des changements. Pour lancer ce serveur de développement, on utilise la commande <code>npm start</code> depuis le dossier <code>app</code>.</p>
 <p>Par contre, c’est un serveur de <strong>développement</strong> et non pas de <strong>production</strong>. On apprendra donc pendant le dernier cours à mettre en production une application - ce sera dans le rendu de votre évaluation, mais pas de pression 😈</p>
@@ -425,7 +442,7 @@ Un serveur de développement&nbsp;?
 <h3 class="anchored" data-anchor-id="importer-la-couche-de-lexemple-openlayers">Importer la couche de l’exemple OpenLayers</h3>
 <p>En vous basant sur l’exemple OpenLayers “<a href="https://openlayers.org/en/latest/examples/wms-image.html">Single Image WMS</a>”, importez la couche de cet exemple dans votre application.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -434,7 +451,7 @@ Rappels pour démarrer mon application
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li><p>Ouvrir le fichier du projet (si vous avez suivi le premier TP il devrait s’appeler <code>app_openlayers_geoserver</code>) dans votre éditeur de code, par exemple VS Code</p></li>
@@ -447,7 +464,7 @@ Rappels pour démarrer mon application
 </div>
 <p><strong>Essayez un peu par vous-même avant de simplement copier-coller ma solution depuis les diapos&nbsp;!</strong> N’oubliez pas que tant que votre code fonctionne, c’est bon. Il n’y a pas une seule et unique manière d’écrire votre application. Souvent, dans mes solutions, je vais écrire du code un peu plus long que la moyenne pour bien décortiquer ce qu’on fait avec OpenLayers. Plus on va avancer dans les TPs et plus vous devrez comparer votre code au mien plutôt que copier-coller (on ne va sûrement pas appeler toutes les variables pareil).</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -456,7 +473,7 @@ Ma solution (code montré dans les diapos)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="sourceCode" id="cb12"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="st">'./style.css'</span><span class="op">;</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {<span class="bu">Map</span><span class="op">,</span> View} <span class="im">from</span> <span class="st">'ol'</span><span class="op">;</span></span>
@@ -525,7 +542,7 @@ Tip
 <li><p>Le fichier de style SLD des couches à copier ci-dessous (vous n’êtes pas obligés d’utiliser ceux-ci&nbsp;!)</p></li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -534,7 +551,7 @@ SLD pour “deals”
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="sourceCode" id="cb14"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;?xml</span><span class="ot"> version=</span><span class="st">"1.0"</span><span class="ot"> encoding=</span><span class="st">"UTF-8"</span><span class="fu">?&gt;</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">StyledLayerDescriptor</span><span class="ot"> xmlns=</span><span class="st">"http://www.opengis.net/sld"</span><span class="ot"> xmlns:se=</span><span class="st">"http://www.opengis.net/se"</span><span class="ot"> xmlns:ogc=</span><span class="st">"http://www.opengis.net/ogc"</span><span class="ot"> xsi:schemaLocation=</span><span class="st">"http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd"</span><span class="ot"> xmlns:xsi=</span><span class="st">"http://www.w3.org/2001/XMLSchema-instance"</span><span class="ot"> xmlns:xlink=</span><span class="st">"http://www.w3.org/1999/xlink"</span><span class="ot"> version=</span><span class="st">"1.1.0"</span>&gt;</span>
@@ -569,7 +586,7 @@ SLD pour “deals”
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -578,7 +595,7 @@ SLD pour “deals_by_country”
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="sourceCode" id="cb15"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;?xml</span><span class="ot"> version=</span><span class="st">"1.0"</span><span class="ot"> encoding=</span><span class="st">"UTF-8"</span><span class="fu">?&gt;</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">StyledLayerDescriptor</span><span class="ot"> xmlns=</span><span class="st">"http://www.opengis.net/sld"</span><span class="ot"> xmlns:se=</span><span class="st">"http://www.opengis.net/se"</span><span class="ot"> xmlns:ogc=</span><span class="st">"http://www.opengis.net/ogc"</span><span class="ot"> xsi:schemaLocation=</span><span class="st">"http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd"</span><span class="ot"> xmlns:xsi=</span><span class="st">"http://www.w3.org/2001/XMLSchema-instance"</span><span class="ot"> xmlns:xlink=</span><span class="st">"http://www.w3.org/1999/xlink"</span><span class="ot"> version=</span><span class="st">"1.1.0"</span>&gt;</span>
@@ -609,7 +626,7 @@ SLD pour “deals_by_country”
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -618,7 +635,7 @@ SLD pour “deals_by_country_centroid”
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="sourceCode" id="cb16"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;?xml</span><span class="ot"> version=</span><span class="st">"1.0"</span><span class="ot"> encoding=</span><span class="st">"UTF-8"</span><span class="fu">?&gt;</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">StyledLayerDescriptor</span><span class="ot"> xmlns=</span><span class="st">"http://www.opengis.net/sld"</span><span class="ot"> xmlns:se=</span><span class="st">"http://www.opengis.net/se"</span><span class="ot"> xmlns:ogc=</span><span class="st">"http://www.opengis.net/ogc"</span><span class="ot"> xsi:schemaLocation=</span><span class="st">"http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd"</span><span class="ot"> xmlns:xsi=</span><span class="st">"http://www.w3.org/2001/XMLSchema-instance"</span><span class="ot"> xmlns:xlink=</span><span class="st">"http://www.w3.org/1999/xlink"</span><span class="ot"> version=</span><span class="st">"1.1.0"</span>&gt;</span>
@@ -803,7 +820,7 @@ SLD pour “deals_by_country_centroid”
 <p>Pour rappel, vous pouvez ouvrir l’outil de développement de votre navigateur avec la touche <code>F12</code> et vous verrez les messages d’erreur dans l’onglet <code>Console</code>. C’est eux qui vous diront ce qui ne va pas dans le code&nbsp;!</p>
 <p>Au besoin, vous pouvez utiliser une fusée de détresse, mais comme pour les vraies, c’est mieux de les allumer <strong>quand on en a besoin</strong> et pas juste parce qu’on est curieux.</p>
 <div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -812,7 +829,7 @@ Fusée de détresse : comment trouver l’url qui pointe vers mon service wms&nb
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -828,7 +845,7 @@ Fusée de détresse : comment trouver l’url qui pointe vers mon service wms&nb
 </div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -837,7 +854,7 @@ Fusée de détresse&nbsp;: comment trouver le nom de mon espace et de ma couche&
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -853,7 +870,7 @@ Fusée de détresse&nbsp;: comment trouver le nom de mon espace et de ma couche&
 </div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -862,7 +879,7 @@ Fusée de détresse&nbsp;: J’ai créé ma couche mais elle n’apparaît pas s
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
