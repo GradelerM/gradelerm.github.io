@@ -184,6 +184,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#létape-finale" id="toc-létape-finale" class="nav-link" data-scroll-target="#létape-finale">L’étape finale&nbsp;!</a></li>
   <li><a href="#jai-fini-en-avance-quest-ce-que-je-fais" id="toc-jai-fini-en-avance-quest-ce-que-je-fais" class="nav-link" data-scroll-target="#jai-fini-en-avance-quest-ce-que-je-fais">J’ai fini en avance, qu’est-ce que je fais&nbsp;?</a></li>
+  <li><a href="#rajouté-à-la-fin-mais-à-faire-quand-même-une-table-attributaire-personnalisée" id="toc-rajouté-à-la-fin-mais-à-faire-quand-même-une-table-attributaire-personnalisée" class="nav-link" data-scroll-target="#rajouté-à-la-fin-mais-à-faire-quand-même-une-table-attributaire-personnalisée">Rajouté à la fin MAIS À FAIRE QUAND MÊME&nbsp;: une table attributaire personnalisée</a></li>
+  <li><a href="#jai-fini-ça-aussi" id="toc-jai-fini-ça-aussi" class="nav-link" data-scroll-target="#jai-fini-ça-aussi">J’ai fini ça aussi&nbsp;!</a></li>
+  <li><a href="#bon-ben-jai-aussi-une-échelle-sur-ma-carte" id="toc-bon-ben-jai-aussi-une-échelle-sur-ma-carte" class="nav-link" data-scroll-target="#bon-ben-jai-aussi-une-échelle-sur-ma-carte">Bon, ben j’ai AUSSI une échelle sur ma carte…</a></li>
+  <li><a href="#cette-fois-cest-vraiment-fini" id="toc-cette-fois-cest-vraiment-fini" class="nav-link" data-scroll-target="#cette-fois-cest-vraiment-fini">Cette fois, c’est vraiment fini&nbsp;!</a></li>
   </ul>
 </nav>
     </div>
@@ -1096,6 +1100,139 @@ Promis, j’ai vraiment cherché&nbsp;!
 <li><p>ajoutez un titre à votre page</p></li>
 <li><p>ajoutez une échelle (avec OpenLayers)</p></li>
 </ul>
+</section>
+<section id="rajouté-à-la-fin-mais-à-faire-quand-même-une-table-attributaire-personnalisée" class="level2">
+<h2 class="anchored" data-anchor-id="rajouté-à-la-fin-mais-à-faire-quand-même-une-table-attributaire-personnalisée">Rajouté à la fin MAIS À FAIRE QUAND MÊME&nbsp;: une table attributaire personnalisée</h2>
+<p>On va se réintéresser à notre couche WMS “deals” et à sa table attributaire (souvenez-vous&nbsp;: <a href="#interroger-une-couche-wms-et-afficher-les-résultats">Interroger une couche WMS et afficher les résultats</a>). Je vous remets notre code ici pour vous rappeler quels éléments permettent de récupérer la table attributaire. Attention au nom de vos couches et de vos sources, ce ne sont peut-être pas les mêmes que les miens&nbsp;!</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>map<span class="op">.</span><span class="fu">on</span>(<span class="st">'singleclick'</span><span class="op">,</span> (<span class="bu">event</span>) <span class="kw">=&gt;</span> {</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> coord <span class="op">=</span> <span class="bu">event</span><span class="op">.</span><span class="at">coordinate</span><span class="op">;</span></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> res <span class="op">=</span> map<span class="op">.</span><span class="fu">getView</span>()<span class="op">.</span><span class="fu">getResolution</span>()<span class="op">;</span></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> proj <span class="op">=</span> <span class="st">'EPSG:3857'</span><span class="op">;</span></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> parametres <span class="op">=</span> {<span class="st">'INFO_FORMAT'</span><span class="op">:</span> <span class="st">'text/html'</span>}<span class="op">;</span></span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> url <span class="op">=</span> sourceDeals<span class="op">.</span><span class="fu">getFeatureInfoUrl</span>(coord<span class="op">,</span> res<span class="op">,</span> proj<span class="op">,</span> parametres)<span class="op">;</span></span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (url) {</span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fetch</span>(url)</span>
+<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">then</span>((response) <span class="kw">=&gt;</span> response<span class="op">.</span><span class="fu">text</span>())</span>
+<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">then</span>((html) <span class="kw">=&gt;</span> {</span>
+<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'attributes'</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> html<span class="op">;</span></span>
+<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a>       })<span class="op">;</span></span>
+<span id="cb51-15"><a href="#cb51-15" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb51-16"><a href="#cb51-16" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Faites attention à cet élément&nbsp;:</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> parametres <span class="op">=</span> {<span class="st">'INFO_FORMAT'</span><span class="op">:</span> <span class="st">'text/html'</span>}<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Notez qu’on demande en fait à notre GeoServer de nous donner la <strong>réponse</strong> de notre <strong>requête</strong> au format <strong>text/html</strong>. C’est sympathique, mais difficile à customiser et surtout pas super pratique quand la table attribuaire est LONGUE. Heureusement, on peut récupérer le résultat au format JSON qui sera bien pratique pour customiser notre table.</p>
+<p>Comme toujours, quand on souhaite ajouter un nouvel élément à notre carte, il faut qu’on commence par écrire du HTML. On va modifier notre div <code>id="attributes"</code> pour y ajouter une table. Récupérez le code ci-dessous et regardez la différence, vous allez comprendre.</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>div id<span class="op">=</span><span class="st">"attributes"</span> <span class="kw">class</span><span class="op">=</span><span class="st">"menu"</span><span class="op">&gt;</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">&lt;!--</span> Je crée une table <span class="op">--&gt;</span></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">&lt;</span>table<span class="op">&gt;</span></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;!--</span> On utilise l’élément tr pour créer une ligne <span class="op">:</span> tr <span class="op">=</span> table row <span class="op">--&gt;</span></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>tr<span class="op">&gt;</span></span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;!--</span> On utilise les éléments <span class="fu">th</span> (table header) pour créer les headers de nos trois colonnes <span class="op">--&gt;</span></span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>th<span class="op">&gt;</span>Deal ID<span class="op">&lt;/</span>th<span class="op">&gt;</span></span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>th<span class="op">&gt;</span>Creation date<span class="op">&lt;/</span>th<span class="op">&gt;</span></span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>th<span class="op">&gt;</span>Country<span class="op">&lt;/</span>th<span class="op">&gt;</span></span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;/</span>tr<span class="op">&gt;</span></span>
+<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;!--</span> On utilise l’élément tr pour créer une AUTRE ligne <span class="op">:</span> tr <span class="op">=</span> table row <span class="op">--&gt;</span></span>
+<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>tr<span class="op">&gt;</span></span>
+<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;!--</span> On crée trois colonnes vides avec td <span class="op">--&gt;</span></span>
+<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>td<span class="op">&gt;</span>…<span class="op">&lt;/</span>td<span class="op">&gt;</span></span>
+<span id="cb53-15"><a href="#cb53-15" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>td<span class="op">&gt;</span>…<span class="op">&lt;/</span>td<span class="op">&gt;</span></span>
+<span id="cb53-16"><a href="#cb53-16" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>td<span class="op">&gt;</span>…<span class="op">&lt;/</span>td<span class="op">&gt;</span></span>
+<span id="cb53-17"><a href="#cb53-17" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;/</span>tr<span class="op">&gt;</span></span>
+<span id="cb53-18"><a href="#cb53-18" aria-hidden="true" tabindex="-1"></a>  <span class="op">&lt;/</span>table<span class="op">&gt;</span></span>
+<span id="cb53-19"><a href="#cb53-19" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>div<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Vous devriez maintenant voir apparaître une table dans votre <code>div</code>. Elle est austère, d’accord, mais vous pourrez la styliser après. Pour le moment, on va faire avec. Regardez bien mes commentaires pour comprendre comment est structuré le code. Regardez bien ces trois éléments&nbsp;:</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>…<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>…<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>…<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Vous comprenez sûrement qu’on souhaite remplacer ces “…” par des valeurs lorsqu’on clique sur un point de la couche. Il va donc falloir modifier cet élément HTML avec nos fonctions JavaScript. Souvenez-vous qu’on utilise les identifiants pour retrouver les éléments HTML avec <code>.getElementById()</code>. Donc&nbsp;:</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">td</span><span class="ot"> id</span><span class="op">=</span><span class="st">"table-deal-id"</span><span class="dt">&gt;</span>…<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">td</span><span class="ot"> id</span><span class="op">=</span><span class="st">"table-creation-date"</span><span class="dt">&gt;</span>…<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">td</span><span class="ot"> id</span><span class="op">=</span><span class="st">"table-country"</span><span class="dt">&gt;</span>…<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Maintenant qu’on a nos éléments, il va falloir les remplir. Retournez chercher votre méthode <code>map.on()</code> dans votre code, on va devoir l’améliorer un peu.</p>
+<pre class="javscript"><code>map.on('singleclick', (event) =&gt; {
+  const coord = event.coordinate;
+  const res = map.getView().getResolution();
+  const proj = 'EPSG:3857';
+
+  const parametres = { 'INFO_FORMAT': 'application/json' } // On a changé un truc ici
+
+  const url = sourceDeals.getFeatureInfoUrl(coord, res, proj, parametres);
+
+  if (url) {
+    fetch(url)
+      .then((response) =&gt; response.text())
+      .then((json) =&gt; { // On a aussi changé un truc ici et dans la fonction
+        const obj = JSON.parse(json);
+        console.log(obj);
+      });
+  }
+});</code></pre>
+<p>Testez votre couche et regardez le résultat dans la console. Si tout a fonctionné, vous devriez voir un objet JavaScript&nbsp;! Dépliez-le et prenez le temps de l’explorer dans votre console pour comprendre ce que vous regardez. L‘information qui nous intéresse est quelque part dans <code>features</code>. Voilà ce qu’on doit faire avec la donnée&nbsp;:</p>
+<ul>
+<li><p>vérifier qu’on a bien cliqué sur une feature sur la carte (en JavaScript, ça demande de vérifier qu’on a bien de la donnée dans <code>features</code>)</p></li>
+<li><p>récupérer la <code>feature</code> sur laquelle j’ai cliqué pour pouvoir accéder à ses <code>properties</code></p></li>
+<li><p>récupérer mes cellules pour remplacer leur contenu</p></li>
+<li><p>remplacer le contenu des cellules de ma table avec les <code>properties</code></p></li>
+</ul>
+<p>On va procéder petit à petit. D’abord, on <strong>vérifie qu’on a bien une feature dans <code>feature</code></strong>&nbsp;:</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (url) {</span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fetch</span>(url)</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">then</span>((response) <span class="kw">=&gt;</span> response<span class="op">.</span><span class="fu">text</span>())</span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">then</span>((json) <span class="kw">=&gt;</span> { <span class="co">// On a aussi changé un truc ici et dans la fonction</span></span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">const</span> obj <span class="op">=</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">parse</span>(json)<span class="op">;</span></span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (obj<span class="op">.</span><span class="at">features</span>[<span class="dv">0</span>]) {</span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a>          <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"J’ai cliqué sur une feature&nbsp;!"</span>)<span class="op">;</span></span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a>        } <span class="cf">else</span> {</span>
+<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a>          <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"J’ai cliqué à côté…"</span>)<span class="op">;</span></span>
+<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a>      })<span class="op">;</span></span>
+<span id="cb57-12"><a href="#cb57-12" aria-hidden="true" tabindex="-1"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>On utilise une condition <code>if</code> pour tester la présence d’une feature dans <code>obj</code>. <code>obj.features[0]</code> peut se traduire par&nbsp;: “Récupère mon tableau <code>feature</code> de mon <code>obj</code> et prends le premier élément”. La condition regarde simplement si <code>feature[0]</code> est vide ou non. Si ce n’est pas vide, on a reçu quelque chose, on a donc cliqué sur une feature. Au contraire, si c’est vide, c’est qu’on a cliqué à côté. Testez la fonction avant de passer à la suite.</p>
+<p>Si on a bien récupéré une <code>feature</code>, cela veut dire qu’on peut récupérer ses <code>properties</code>. Il suffit d’ajouter au bon endroit de la fonction les deux lignes suivantes&nbsp;:</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> properties <span class="op">=</span> obj<span class="op">.</span><span class="at">features</span>[<span class="dv">0</span>]<span class="op">.</span><span class="at">properties</span><span class="op">;</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(properties)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Vous commencez à comprendre comment on accède à un élément dans un objet JavaScript. Il suffit d’appeler la propriété qu’on veut avec <code>.&lt;propriété&gt;</code>. Regardez comment est structuré votre objet <code>properties</code> dans la console du navigateur. Maintenant, modifiez la ligne <code>console.log(properties);</code> pour afficher la propriété <code>target_country</code>. Quand c’est réussi, passez à la suite&nbsp;!</p>
+<p>Très bien, on sait maintenant récupérer des propriétés. Il ne nous reste plus qu’à modifier le HTML de notre document en conséquence en utilisant <code>.innerHTML</code>&nbsp;! Je vous donne le code pour la colonne <code>deal_id</code> et je vous laisse compléter le code pour les deux autres colonnes.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (url) {</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fetch</span>(url)</span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">then</span>((response) <span class="kw">=&gt;</span> response<span class="op">.</span><span class="fu">text</span>())</span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">then</span>((json) <span class="kw">=&gt;</span> {</span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">const</span> obj <span class="op">=</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">parse</span>(json)<span class="op">;</span></span>
+<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (obj<span class="op">.</span><span class="at">features</span>[<span class="dv">0</span>]) {</span>
+<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a>          <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"J’ai cliqué sur une feature&nbsp;!"</span>)<span class="op">;</span></span>
+<span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a>          <span class="kw">const</span> properties <span class="op">=</span> obj<span class="op">.</span><span class="at">features</span>[<span class="dv">0</span>]<span class="op">.</span><span class="at">properties</span><span class="op">;</span></span>
+<span id="cb59-9"><a href="#cb59-9" aria-hidden="true" tabindex="-1"></a>          <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(properties)<span class="op">;</span></span>
+<span id="cb59-10"><a href="#cb59-10" aria-hidden="true" tabindex="-1"></a>          <span class="co">// On affiche deal_id dans notre table</span></span>
+<span id="cb59-11"><a href="#cb59-11" aria-hidden="true" tabindex="-1"></a>          <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'table-deal-id'</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> properties<span class="op">.</span><span class="at">deal_id</span><span class="op">;</span></span>
+<span id="cb59-12"><a href="#cb59-12" aria-hidden="true" tabindex="-1"></a>        } <span class="cf">else</span> {</span>
+<span id="cb59-13"><a href="#cb59-13" aria-hidden="true" tabindex="-1"></a>          <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"J’ai cliqué à côté…"</span>)<span class="op">;</span></span>
+<span id="cb59-14"><a href="#cb59-14" aria-hidden="true" tabindex="-1"></a>          <span class="co">// On a cliqué "nulle part" donc on remet des … dans la colonne "deal_id"</span></span>
+<span id="cb59-15"><a href="#cb59-15" aria-hidden="true" tabindex="-1"></a>          <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'table-deal-id'</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="st">""</span><span class="op">;</span></span>
+<span id="cb59-16"><a href="#cb59-16" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb59-17"><a href="#cb59-17" aria-hidden="true" tabindex="-1"></a>      })<span class="op">;</span></span>
+<span id="cb59-18"><a href="#cb59-18" aria-hidden="true" tabindex="-1"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Testez votre application. Normalement, ça marche&nbsp;! Quand vous cliquez sur une feature, vous devriez récupérer son ID. Voilà comment on crée une table customisée pour interroger une couche&nbsp;! <strong>Maintenant, à vous de compléter les deux autres colonnes.</strong> Une fois que vous avez réussi, ajoutez une colonne qui montre la valeur de <code>mineral_resources</code> pour le deal sur lequel vous cliquez. Et quand ça aussi ça fonctionne, prenez quelques minutes pour styliser votre table&nbsp;! Google est votre ami (et ok, pourquoi pas ChatGPT si vous y tenez vraiiiiment, ça ne me dérange pas si c’est pour du CSS comme <code>&lt;table&gt;</code> commence à être complexe, mais on utilise l’IA intelligemment svp).</p>
+</section>
+<section id="jai-fini-ça-aussi" class="level2">
+<h2 class="anchored" data-anchor-id="jai-fini-ça-aussi">J’ai fini ça aussi&nbsp;!</h2>
+<p>Fantastique&nbsp;! Eh bien maintenant, débrouillez-vous pour <a href="https://openlayers.org/en/latest/examples/scale-line.html">ajouter une échelle à votre carte</a>. Ça devrait vous occuper un moment, j’espère.</p>
+</section>
+<section id="bon-ben-jai-aussi-une-échelle-sur-ma-carte" class="level2">
+<h2 class="anchored" data-anchor-id="bon-ben-jai-aussi-une-échelle-sur-ma-carte">Bon, ben j’ai AUSSI une échelle sur ma carte…</h2>
+<p>Bravo&nbsp;! Vous pouvez répéter <a href="#létape-finale">L’étape finale&nbsp;!</a> pour build votre application. Ensuite, je vous conseille de commencer à ajouter à votre carte des éléments dont vous avez besoin pour vos projets GeoNum. Vous pourriez vouloir par exemple un curseur temporel, des tooltips, etc. Commencez par faire des recherches parmi les <a href="https://openlayers.org/en/latest/examples/">exemples d’OpenLayers</a> mais aussi dans les extensions disponibles sur <a href="https://viglino.github.io/ol-ext/">ol-ext</a> histoire de faire un tour des possibilités.</p>
+<p>Et suivant le temps qu’on a, on peut éventuellement commencez à regardez QGIS Server ensemble pendant le TP, sinon je vous ajouterai une petite notre sur le site si jamais vous préférez l’utiliser pour vos projets. Quoi qu’il en soit, vous ne serez pas notés dessus&nbsp;!</p>
+</section>
+<section id="cette-fois-cest-vraiment-fini" class="level2">
+<h2 class="anchored" data-anchor-id="cette-fois-cest-vraiment-fini">Cette fois, c’est vraiment fini&nbsp;!</h2>
+<p>Merci pour votre attention&nbsp;!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjlteWxjN3JjYzU4aXBmY3huODRxYmk4ZGg5MWdza216MDdhNzlyNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZfK4cXKJTTay1Ava29/giphy.webp" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="GIF : The Office Thank You"></p>
+</figure>
+</div>
 
 
 </section>

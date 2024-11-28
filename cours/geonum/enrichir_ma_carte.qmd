@@ -969,3 +969,176 @@ Déjà, bravo, c’était un gros TP. S’il reste du temps, je vais rajouter ic
 -   ajoutez un titre à votre page
 
 -   ajoutez une échelle (avec OpenLayers)
+
+## Rajouté à la fin MAIS À FAIRE QUAND MÊME : une table attributaire personnalisée
+
+On va se réintéresser à notre couche WMS "deals" et à sa table attributaire (souvenez-vous : [Interroger une couche WMS et afficher les résultats]). Je vous remets notre code ici pour vous rappeler quels éléments permettent de récupérer la table attributaire. Attention au nom de vos couches et de vos sources, ce ne sont peut-être pas les mêmes que les miens !
+
+``` javascript
+map.on('singleclick', (event) => {
+  const coord = event.coordinate;
+  const res = map.getView().getResolution();
+  const proj = 'EPSG:3857';
+  const parametres = {'INFO_FORMAT': 'text/html'};
+
+  const url = sourceDeals.getFeatureInfoUrl(coord, res, proj, parametres);
+
+  if (url) {
+    fetch(url)
+      .then((response) => response.text())
+      .then((html) => {
+        document.getElementById('attributes').innerHTML = html;
+       });
+  }
+});
+```
+
+Faites attention à cet élément :
+
+``` javascript
+const parametres = {'INFO_FORMAT': 'text/html'};
+```
+
+Notez qu’on demande en fait à notre GeoServer de nous donner la **réponse** de notre **requête** au format **text/html**. C’est sympathique, mais difficile à customiser et surtout pas super pratique quand la table attribuaire est LONGUE. Heureusement, on peut récupérer le résultat au format JSON qui sera bien pratique pour customiser notre table.
+
+Comme toujours, quand on souhaite ajouter un nouvel élément à notre carte, il faut qu’on commence par écrire du HTML. On va modifier notre div `id="attributes"` pour y ajouter une table. Récupérez le code ci-dessous et regardez la différence, vous allez comprendre.
+
+``` javascript
+<div id="attributes" class="menu">
+  <!-- Je crée une table -->
+  <table>
+    <!-- On utilise l’élément tr pour créer une ligne : tr = table row -->
+    <tr>
+      <!-- On utilise les éléments th (table header) pour créer les headers de nos trois colonnes -->
+      <th>Deal ID</th>
+      <th>Creation date</th>
+      <th>Country</th>
+    </tr>
+    <!-- On utilise l’élément tr pour créer une AUTRE ligne : tr = table row -->
+    <tr>
+      <!-- On crée trois colonnes vides avec td -->
+      <td>…</td>
+      <td>…</td>
+      <td>…</td>
+    </tr>
+  </table>
+</div>
+```
+
+Vous devriez maintenant voir apparaître une table dans votre `div`. Elle est austère, d’accord, mais vous pourrez la styliser après. Pour le moment, on va faire avec. Regardez bien mes commentaires pour comprendre comment est structuré le code. Regardez bien ces trois éléments :
+
+``` html
+      <td>…</td>
+      <td>…</td>
+      <td>…</td>
+```
+
+Vous comprenez sûrement qu’on souhaite remplacer ces "…" par des valeurs lorsqu’on clique sur un point de la couche. Il va donc falloir modifier cet élément HTML avec nos fonctions JavaScript. Souvenez-vous qu’on utilise les identifiants pour retrouver les éléments HTML avec `.getElementById()`. Donc :
+
+``` html
+      <td id="table-deal-id">…</td>
+      <td id="table-creation-date">…</td>
+      <td id="table-country">…</td>
+```
+
+Maintenant qu’on a nos éléments, il va falloir les remplir. Retournez chercher votre méthode `map.on()` dans votre code, on va devoir l’améliorer un peu.
+
+``` javscript
+map.on('singleclick', (event) => {
+  const coord = event.coordinate;
+  const res = map.getView().getResolution();
+  const proj = 'EPSG:3857';
+
+  const parametres = { 'INFO_FORMAT': 'application/json' } // On a changé un truc ici
+
+  const url = sourceDeals.getFeatureInfoUrl(coord, res, proj, parametres);
+
+  if (url) {
+    fetch(url)
+      .then((response) => response.text())
+      .then((json) => { // On a aussi changé un truc ici et dans la fonction
+        const obj = JSON.parse(json);
+        console.log(obj);
+      });
+  }
+});
+```
+
+Testez votre couche et regardez le résultat dans la console. Si tout a fonctionné, vous devriez voir un objet JavaScript ! Dépliez-le et prenez le temps de l’explorer dans votre console pour comprendre ce que vous regardez. L‘information qui nous intéresse est quelque part dans `features`. Voilà ce qu’on doit faire avec la donnée :
+
+-   vérifier qu’on a bien cliqué sur une feature sur la carte (en JavaScript, ça demande de vérifier qu’on a bien de la donnée dans `features`)
+
+-   récupérer la `feature` sur laquelle j’ai cliqué pour pouvoir accéder à ses `properties`
+
+-   récupérer mes cellules pour remplacer leur contenu
+
+-   remplacer le contenu des cellules de ma table avec les `properties`
+
+On va procéder petit à petit. D’abord, on **vérifie qu’on a bien une feature dans `feature`** :
+
+``` javascript
+  if (url) {
+    fetch(url)
+      .then((response) => response.text())
+      .then((json) => { // On a aussi changé un truc ici et dans la fonction
+        const obj = JSON.parse(json);
+        if (obj.features[0]) {
+          console.log("J’ai cliqué sur une feature !");
+        } else {
+          console.log("J’ai cliqué à côté…");
+        }
+      });
+  }
+```
+
+On utilise une condition `if` pour tester la présence d’une feature dans `obj`. `obj.features[0]` peut se traduire par : "Récupère mon tableau `feature` de mon `obj` et prends le premier élément". La condition regarde simplement si `feature[0]` est vide ou non. Si ce n’est pas vide, on a reçu quelque chose, on a donc cliqué sur une feature. Au contraire, si c’est vide, c’est qu’on a cliqué à côté. Testez la fonction avant de passer à la suite.
+
+Si on a bien récupéré une `feature`, cela veut dire qu’on peut récupérer ses `properties`. Il suffit d’ajouter au bon endroit de la fonction les deux lignes suivantes :
+
+``` javascript
+const properties = obj.features[0].properties;
+console.log(properties);
+```
+
+Vous commencez à comprendre comment on accède à un élément dans un objet JavaScript. Il suffit d’appeler la propriété qu’on veut avec `.<propriété>`. Regardez comment est structuré votre objet `properties` dans la console du navigateur. Maintenant, modifiez la ligne `console.log(properties);` pour afficher la propriété `target_country`. Quand c’est réussi, passez à la suite !
+
+Très bien, on sait maintenant récupérer des propriétés. Il ne nous reste plus qu’à modifier le HTML de notre document en conséquence en utilisant `.innerHTML` ! Je vous donne le code pour la colonne `deal_id` et je vous laisse compléter le code pour les deux autres colonnes.
+
+``` javascript
+  if (url) {
+    fetch(url)
+      .then((response) => response.text())
+      .then((json) => {
+        const obj = JSON.parse(json);
+        if (obj.features[0]) {
+          console.log("J’ai cliqué sur une feature !");
+          const properties = obj.features[0].properties;
+          console.log(properties);
+          // On affiche deal_id dans notre table
+          document.getElementById('table-deal-id').innerHTML = properties.deal_id;
+        } else {
+          console.log("J’ai cliqué à côté…");
+          // On a cliqué "nulle part" donc on remet des … dans la colonne "deal_id"
+          document.getElementById('table-deal-id').innerHTML = "";
+        }
+      });
+  }
+```
+
+Testez votre application. Normalement, ça marche ! Quand vous cliquez sur une feature, vous devriez récupérer son ID. Voilà comment on crée une table customisée pour interroger une couche ! **Maintenant, à vous de compléter les deux autres colonnes.** Une fois que vous avez réussi, ajoutez une colonne qui montre la valeur de `mineral_resources` pour le deal sur lequel vous cliquez. Et quand ça aussi ça fonctionne, prenez quelques minutes pour styliser votre table ! Google est votre ami (et ok, pourquoi pas ChatGPT si vous y tenez vraiiiiment, ça ne me dérange pas si c’est pour du CSS comme `<table>` commence à être complexe, mais on utilise l’IA intelligemment svp).
+
+## J’ai fini ça aussi !
+
+Fantastique ! Eh bien maintenant, débrouillez-vous pour [ajouter une échelle à votre carte](https://openlayers.org/en/latest/examples/scale-line.html). Ça devrait vous occuper un moment, j’espère.
+
+## Bon, ben j’ai AUSSI une échelle sur ma carte…
+
+Bravo ! Vous pouvez répéter [L’étape finale !] pour build votre application. Ensuite, je vous conseille de commencer à ajouter à votre carte des éléments dont vous avez besoin pour vos projets GeoNum. Vous pourriez vouloir par exemple un curseur temporel, des tooltips, etc. Commencez par faire des recherches parmi les [exemples d’OpenLayers](https://openlayers.org/en/latest/examples/) mais aussi dans les extensions disponibles sur [ol-ext](https://viglino.github.io/ol-ext/) histoire de faire un tour des possibilités.
+
+Et suivant le temps qu’on a, on peut éventuellement commencez à regardez QGIS Server ensemble pendant le TP, sinon je vous ajouterai une petite notre sur le site si jamais vous préférez l’utiliser pour vos projets. Quoi qu’il en soit, vous ne serez pas notés dessus !
+
+## Cette fois, c’est vraiment fini !
+
+Merci pour votre attention !
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjlteWxjN3JjYzU4aXBmY3huODRxYmk4ZGg5MWdza216MDdhNzlyNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZfK4cXKJTTay1Ava29/giphy.webp){fig-alt="GIF : The Office Thank You" fig-align="center"}
