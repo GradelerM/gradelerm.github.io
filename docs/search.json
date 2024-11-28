@@ -256,7 +256,7 @@
     "href": "cours/geonum/enrichir_ma_carte.html#jai-fini-ça-aussi",
     "title": "Enrichir ma carte en fonctionnalités",
     "section": "J’ai fini ça aussi !",
-    "text": "J’ai fini ça aussi !\nFantastique ! Eh bien maintenant, débrouillez-vous pour ajouter une échelle à votre carte. Ça devrait vous occuper un moment, j’espère.",
+    "text": "J’ai fini ça aussi !\nFantastique ! Eh bien maintenant, débrouillez-vous pour ajouter une échelle à votre carte. Ça devrait vous occuper un moment, j’espère. Je vous donne ça, à vous de le mettre au bon endroit :\nimport ScaleLine from 'ol/control/ScaleLine.js';\nUn autre morceau, pour créer l’objet “échelle” :\nconst scaleline = new ScaleLine();\nEt enfin, trouvez comment ajouter ça à votre code existant :\nconst map = new Map({\n  controls: [scaleline],\n});\nEt voilà !",
     "crumbs": [
       "Enrichir ma carte en fonctionnalités"
     ]

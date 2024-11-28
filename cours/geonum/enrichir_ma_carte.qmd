@@ -1129,7 +1129,27 @@ Testez votre application. Normalement, ça marche ! Quand vous cliquez sur une 
 
 ## J’ai fini ça aussi !
 
-Fantastique ! Eh bien maintenant, débrouillez-vous pour [ajouter une échelle à votre carte](https://openlayers.org/en/latest/examples/scale-line.html). Ça devrait vous occuper un moment, j’espère.
+Fantastique ! Eh bien maintenant, débrouillez-vous pour [ajouter une échelle à votre carte](https://openlayers.org/en/latest/examples/scale-line.html). Ça devrait vous occuper un moment, j’espère. Je vous donne ça, à vous de le mettre au bon endroit :
+
+``` javascript
+import ScaleLine from 'ol/control/ScaleLine.js';
+```
+
+Un autre morceau, pour créer l’objet "échelle" :
+
+``` javascript
+const scaleline = new ScaleLine();
+```
+
+Et enfin, trouvez comment ajouter ça à votre code existant :
+
+``` javascript
+const map = new Map({
+  controls: [scaleline],
+});
+```
+
+Et voilà !
 
 ## Bon, ben j’ai AUSSI une échelle sur ma carte…
 

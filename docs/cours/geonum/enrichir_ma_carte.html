@@ -1218,7 +1218,15 @@ Promis, j’ai vraiment cherché&nbsp;!
 </section>
 <section id="jai-fini-ça-aussi" class="level2">
 <h2 class="anchored" data-anchor-id="jai-fini-ça-aussi">J’ai fini ça aussi&nbsp;!</h2>
-<p>Fantastique&nbsp;! Eh bien maintenant, débrouillez-vous pour <a href="https://openlayers.org/en/latest/examples/scale-line.html">ajouter une échelle à votre carte</a>. Ça devrait vous occuper un moment, j’espère.</p>
+<p>Fantastique&nbsp;! Eh bien maintenant, débrouillez-vous pour <a href="https://openlayers.org/en/latest/examples/scale-line.html">ajouter une échelle à votre carte</a>. Ça devrait vous occuper un moment, j’espère. Je vous donne ça, à vous de le mettre au bon endroit&nbsp;:</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ScaleLine <span class="im">from</span> <span class="st">'ol/control/ScaleLine.js'</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Un autre morceau, pour créer l’objet “échelle”&nbsp;:</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> scaleline <span class="op">=</span> <span class="kw">new</span> <span class="fu">ScaleLine</span>()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Et enfin, trouvez comment ajouter ça à votre code existant&nbsp;:</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> map <span class="op">=</span> <span class="kw">new</span> <span class="bu">Map</span>({</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">controls</span><span class="op">:</span> [scaleline]<span class="op">,</span></span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Et voilà&nbsp;!</p>
 </section>
 <section id="bon-ben-jai-aussi-une-échelle-sur-ma-carte" class="level2">
 <h2 class="anchored" data-anchor-id="bon-ben-jai-aussi-une-échelle-sur-ma-carte">Bon, ben j’ai AUSSI une échelle sur ma carte…</h2>
