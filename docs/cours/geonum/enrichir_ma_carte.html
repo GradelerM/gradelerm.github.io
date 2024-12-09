@@ -163,6 +163,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Enrichir ma carte en fonctionnalités</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../cours/geonum/evaluation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Évaluation</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -729,23 +735,6 @@ Au secours, je n’ai toujours pas compris fetch()
 <p>On aimerait remplacer les deux dernières étapes par “affiche le HTML dans mon interface”. Pour cela, on utilise la ligne de code suivante (à ajouter au bon endroit dans la fonction)&nbsp;:</p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'attributes'</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> html<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Super, vous savez maintenant requêter une couche WMS&nbsp;! Le résultat est un peu moche pour le moment mais vous pourrez revenir plus tard pour l’affiner. Si vous finissez le TP en avance, revenez sur les sections “Pour aller plus loin…”.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Pour aller plus loin…
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Si vous avez déjà fait le tour du TP, vous allez trouver dans cette section des éléments supplémentaires pour aller plus loin.</p>
-<p><em>En cours de rédaction</em></p>
-</div>
-</div>
-</div>
 </section>
 <section id="filtrer-des-couches-wms" class="level3">
 <h3 class="anchored" data-anchor-id="filtrer-des-couches-wms">Filtrer des couches WMS</h3>
@@ -777,7 +766,7 @@ Important
 <p><em>Ne me demandez pas pourquoi, ce n’est pas expliqué, il faut juste l’accepter et vivre avec.</em></p>
 </div>
 </div>
-<p>Bien, vous savez maintenant écrire un filtre simple en CQL, mais comment est-ce qu’on fait pour filtrer la couche depuis notre application OpenLayers&nbsp;? Voici mon code pour appliquer à ma couche <code>deals</code> un filtre qui va uniquement récupérer les mines qui produisent de l’or (<em>Gold</em>) ou de l’argent (<em>Silver</em>). Comparez ce snippet avec votre code pour comprendre où mettre ce code et ce qu’il fait&nbsp;:</p>
+<p>Bien, vous savez maintenant écrire un filtre simple en CQL, mais comment est-ce qu’on fait pour filtrer la couche depuis notre application OpenLayers&nbsp;? Voici mon code pour appliquer à ma couche <code>deals</code> un filtre qui va uniquement récupérer les mines qui se trouvent en Argentine (<em>Argentina</em>) ou aux Philippines (<em>Philippines</em>). Comparez ce snippet avec votre code pour comprendre où mettre ce code et ce qu’il fait&nbsp;:</p>
 <div class="sourceCode" id="cb40"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> sourceDeals <span class="op">=</span> <span class="kw">new</span> <span class="fu">ImageWMS</span>({</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">url</span><span class="op">:</span> geoserverWms<span class="op">,</span></span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">params</span><span class="op">:</span> {</span>
@@ -881,7 +870,7 @@ Important
 <li><p>quand vous avez terminé, rajoutez une option “Tous” avec la valeur <code>value="all"</code> et faites en sorte qu’il affiche tous les deals (je vous ai mis des indices ci-dessous si vous avez du mal mais essayez d’abord de réfléchir sans)</p></li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -890,14 +879,14 @@ Indice 1 - ajouter l’option “Tous”
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Souvenez vous&nbsp;: si vous voulez ajouter un élément à l’interface, commencez par <code>index.html</code>.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -906,7 +895,7 @@ Indice 2 - filtrer “Tous”
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Comme on écrit du code JavaScript, on doit le faire dans <code>main.js</code>. Comme pour les autres options, vous pouvez récupérer le bouton radio avec <code>.getElementById()</code> puis l’écouter avec <code>.addEventListener()</code>.</p>
 <p>Pour ce qui est du filtre CQL&nbsp;: si on veut tous les deals, il suffit que notre filtre soit <strong>vide</strong>. Donc vous devriez avoir quelque part une chaîne de caractères (<em>string</em>) vide.</p>
@@ -934,7 +923,7 @@ Indice 2 - filtrer “Tous”
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> VectorLayer <span class="im">from</span> <span class="st">'ol/layer/Vector'</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Vous remarquez que vous avons un élément <code>&lt;mon_flux_wms&gt;</code> à remplacer. Pour trouver l’URL de ce flux, allez dans votre interface GeoServer, sélectionnez “Prévisualisation de la couche”. Cette fois, au lieu de choisir “OpenLayers” (qui nous donne le flux WMS), allez dans la colonne “Tous les formats” et sélectionnez GeoJSON. <strong>Je rappelle qu’on ne travaille plus sur la couche <code>deals</code> mais bien sur la couche <code>deals_by_country_centroid</code>.</strong> Il ne vous reste plus qu’à copier l’URL dans votre navigateur&nbsp;: c’est la valeur de <code>url</code> dans votre <code>VectorSource()</code>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -943,7 +932,7 @@ Oups, j’ai oublié de retirer les chevrons “&lt;” en collant mon url
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -955,7 +944,7 @@ Oups, j’ai oublié de retirer les chevrons “&lt;” en collant mon url
 </div>
 <p>Il ne reste plus qu’une seule étape pour afficher la couche sur la carte. Je vous laisse trouver laquelle&nbsp;!</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -964,7 +953,7 @@ Allez, un petit indice&nbsp;?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Vous l’avez déjà fait plusieurs fois dans le TP précédent et celui-ci, et c’est souvent une étape qu’on oublie.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -973,7 +962,7 @@ Allez, un petit indice&nbsp;?
 </figure>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -982,7 +971,7 @@ Je ne trouve vraiment pas…
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -990,7 +979,7 @@ Je ne trouve vraiment pas…
 </figure>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -999,7 +988,7 @@ Promis, j’ai vraiment cherché&nbsp;!
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Bon, d’accord. Dites-moi, comment se porte l’attribut <code>layers</code> de votre objet <code>map</code>&nbsp;?</p>
 <div class="quarto-figure quarto-figure-center">
@@ -1127,21 +1116,21 @@ Promis, j’ai vraiment cherché&nbsp;!
 <div class="sourceCode" id="cb53"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>div id<span class="op">=</span><span class="st">"attributes"</span> <span class="kw">class</span><span class="op">=</span><span class="st">"menu"</span><span class="op">&gt;</span></span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">&lt;!--</span> Je crée une table <span class="op">--&gt;</span></span>
 <span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">&lt;</span>table<span class="op">&gt;</span></span>
-<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;!--</span> On utilise l’élément tr pour créer une ligne <span class="op">:</span> tr <span class="op">=</span> table row <span class="op">--&gt;</span></span>
-<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>tr<span class="op">&gt;</span></span>
-<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;!--</span> On utilise les éléments <span class="fu">th</span> (table header) pour créer les headers de nos trois colonnes <span class="op">--&gt;</span></span>
-<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>th<span class="op">&gt;</span>Deal ID<span class="op">&lt;/</span>th<span class="op">&gt;</span></span>
-<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>th<span class="op">&gt;</span>Creation date<span class="op">&lt;/</span>th<span class="op">&gt;</span></span>
-<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>th<span class="op">&gt;</span>Country<span class="op">&lt;/</span>th<span class="op">&gt;</span></span>
-<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;/</span>tr<span class="op">&gt;</span></span>
-<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;!--</span> On utilise l’élément tr pour créer une AUTRE ligne <span class="op">:</span> tr <span class="op">=</span> table row <span class="op">--&gt;</span></span>
-<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>tr<span class="op">&gt;</span></span>
-<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;!--</span> On crée trois colonnes vides avec td <span class="op">--&gt;</span></span>
-<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>td<span class="op">&gt;</span>…<span class="op">&lt;/</span>td<span class="op">&gt;</span></span>
-<span id="cb53-15"><a href="#cb53-15" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>td<span class="op">&gt;</span>…<span class="op">&lt;/</span>td<span class="op">&gt;</span></span>
-<span id="cb53-16"><a href="#cb53-16" aria-hidden="true" tabindex="-1"></a>      <span class="op">&lt;</span>td<span class="op">&gt;</span>…<span class="op">&lt;/</span>td<span class="op">&gt;</span></span>
-<span id="cb53-17"><a href="#cb53-17" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;/</span>tr<span class="op">&gt;</span></span>
-<span id="cb53-18"><a href="#cb53-18" aria-hidden="true" tabindex="-1"></a>  <span class="op">&lt;/</span>table<span class="op">&gt;</span></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;!--</span> On utilise l’élément tr pour créer une ligne <span class="op">:</span> tr <span class="op">=</span> table row <span class="op">--&gt;</span></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>tr<span class="op">&gt;</span></span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;!--</span> On utilise les éléments <span class="fu">th</span> (table header) pour créer les headers de nos trois colonnes <span class="op">--&gt;</span></span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>th<span class="op">&gt;</span>Deal ID<span class="op">&lt;/</span>th<span class="op">&gt;</span></span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>th<span class="op">&gt;</span>Creation date<span class="op">&lt;/</span>th<span class="op">&gt;</span></span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>th<span class="op">&gt;</span>Country<span class="op">&lt;/</span>th<span class="op">&gt;</span></span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>tr<span class="op">&gt;</span></span>
+<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;!--</span> On utilise l’élément tr pour créer une AUTRE ligne <span class="op">:</span> tr <span class="op">=</span> table row <span class="op">--&gt;</span></span>
+<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>tr<span class="op">&gt;</span></span>
+<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;!--</span> On crée trois colonnes vides avec td <span class="op">--&gt;</span></span>
+<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>td<span class="op">&gt;</span>…<span class="op">&lt;/</span>td<span class="op">&gt;</span></span>
+<span id="cb53-15"><a href="#cb53-15" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>td<span class="op">&gt;</span>…<span class="op">&lt;/</span>td<span class="op">&gt;</span></span>
+<span id="cb53-16"><a href="#cb53-16" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>td<span class="op">&gt;</span>…<span class="op">&lt;/</span>td<span class="op">&gt;</span></span>
+<span id="cb53-17"><a href="#cb53-17" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>tr<span class="op">&gt;</span></span>
+<span id="cb53-18"><a href="#cb53-18" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>table<span class="op">&gt;</span></span>
 <span id="cb53-19"><a href="#cb53-19" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>div<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Vous devriez maintenant voir apparaître une table dans votre <code>div</code>. Elle est austère, d’accord, mais vous pourrez la styliser après. Pour le moment, on va faire avec. Regardez bien mes commentaires pour comprendre comment est structuré le code. Regardez bien ces trois éléments&nbsp;:</p>
 <div class="sourceCode" id="cb54"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>…<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
@@ -1152,24 +1141,24 @@ Promis, j’ai vraiment cherché&nbsp;!
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">td</span><span class="ot"> id</span><span class="op">=</span><span class="st">"table-creation-date"</span><span class="dt">&gt;</span>…<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
 <span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">td</span><span class="ot"> id</span><span class="op">=</span><span class="st">"table-country"</span><span class="dt">&gt;</span>…<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Maintenant qu’on a nos éléments, il va falloir les remplir. Retournez chercher votre méthode <code>map.on()</code> dans votre code, on va devoir l’améliorer un peu.</p>
-<pre class="javscript"><code>map.on('singleclick', (event) =&gt; {
-  const coord = event.coordinate;
-  const res = map.getView().getResolution();
-  const proj = 'EPSG:3857';
-
-  const parametres = { 'INFO_FORMAT': 'application/json' } // On a changé un truc ici
-
-  const url = sourceDeals.getFeatureInfoUrl(coord, res, proj, parametres);
-
-  if (url) {
-    fetch(url)
-      .then((response) =&gt; response.text())
-      .then((json) =&gt; { // On a aussi changé un truc ici et dans la fonction
-        const obj = JSON.parse(json);
-        console.log(obj);
-      });
-  }
-});</code></pre>
+<div class="sourceCode" id="cb56"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>map<span class="op">.</span><span class="fu">on</span>(<span class="st">'singleclick'</span><span class="op">,</span> (<span class="bu">event</span>) <span class="kw">=&gt;</span> {</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> coord <span class="op">=</span> <span class="bu">event</span><span class="op">.</span><span class="at">coordinate</span><span class="op">;</span></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> res <span class="op">=</span> map<span class="op">.</span><span class="fu">getView</span>()<span class="op">.</span><span class="fu">getResolution</span>()<span class="op">;</span></span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> proj <span class="op">=</span> <span class="st">'EPSG:3857'</span><span class="op">;</span></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> parametres <span class="op">=</span> { <span class="st">'INFO_FORMAT'</span><span class="op">:</span> <span class="st">'application/json'</span> } <span class="co">// On a changé un truc ici</span></span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> url <span class="op">=</span> sourceDeals<span class="op">.</span><span class="fu">getFeatureInfoUrl</span>(coord<span class="op">,</span> res<span class="op">,</span> proj<span class="op">,</span> parametres)<span class="op">;</span></span>
+<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (url) {</span>
+<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fetch</span>(url)</span>
+<span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">then</span>((response) <span class="kw">=&gt;</span> response<span class="op">.</span><span class="fu">text</span>())</span>
+<span id="cb56-13"><a href="#cb56-13" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">then</span>((json) <span class="kw">=&gt;</span> { <span class="co">// On a aussi changé un truc ici et dans la fonction</span></span>
+<span id="cb56-14"><a href="#cb56-14" aria-hidden="true" tabindex="-1"></a>        <span class="kw">const</span> obj <span class="op">=</span> <span class="bu">JSON</span><span class="op">.</span><span class="fu">parse</span>(json)<span class="op">;</span></span>
+<span id="cb56-15"><a href="#cb56-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(obj)<span class="op">;</span></span>
+<span id="cb56-16"><a href="#cb56-16" aria-hidden="true" tabindex="-1"></a>      })<span class="op">;</span></span>
+<span id="cb56-17"><a href="#cb56-17" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb56-18"><a href="#cb56-18" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Testez votre couche et regardez le résultat dans la console. Si tout a fonctionné, vous devriez voir un objet JavaScript&nbsp;! Dépliez-le et prenez le temps de l’explorer dans votre console pour comprendre ce que vous regardez. L‘information qui nous intéresse est quelque part dans <code>features</code>. Voilà ce qu’on doit faire avec la donnée&nbsp;:</p>
 <ul>
 <li><p>vérifier qu’on a bien cliqué sur une feature sur la carte (en JavaScript, ça demande de vérifier qu’on a bien de la donnée dans <code>features</code>)</p></li>
@@ -1218,7 +1207,7 @@ Promis, j’ai vraiment cherché&nbsp;!
 </section>
 <section id="jai-fini-ça-aussi" class="level2">
 <h2 class="anchored" data-anchor-id="jai-fini-ça-aussi">J’ai fini ça aussi&nbsp;!</h2>
-<p>Fantastique&nbsp;! Eh bien maintenant, débrouillez-vous pour <a href="https://openlayers.org/en/latest/examples/scale-line.html">ajouter une échelle à votre carte</a>. Ça devrait vous occuper un moment, j’espère. Je vous donne ça, à vous de le mettre au bon endroit&nbsp;:</p>
+<p>Fantastique&nbsp;! Eh bien maintenant, débrouillez-vous pour ajouter une échelle à votre carte. Ça devrait vous occuper un moment, j’espère. Je vous donne ça, à vous de le mettre au bon endroit&nbsp;:</p>
 <div class="sourceCode" id="cb60"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ScaleLine <span class="im">from</span> <span class="st">'ol/control/ScaleLine.js'</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Un autre morceau, pour créer l’objet “échelle”&nbsp;:</p>
 <div class="sourceCode" id="cb61"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> scaleline <span class="op">=</span> <span class="kw">new</span> <span class="fu">ScaleLine</span>()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1231,7 +1220,7 @@ Promis, j’ai vraiment cherché&nbsp;!
 <section id="bon-ben-jai-aussi-une-échelle-sur-ma-carte" class="level2">
 <h2 class="anchored" data-anchor-id="bon-ben-jai-aussi-une-échelle-sur-ma-carte">Bon, ben j’ai AUSSI une échelle sur ma carte…</h2>
 <p>Bravo&nbsp;! Vous pouvez répéter <a href="#létape-finale">L’étape finale&nbsp;!</a> pour build votre application. Ensuite, je vous conseille de commencer à ajouter à votre carte des éléments dont vous avez besoin pour vos projets GeoNum. Vous pourriez vouloir par exemple un curseur temporel, des tooltips, etc. Commencez par faire des recherches parmi les <a href="https://openlayers.org/en/latest/examples/">exemples d’OpenLayers</a> mais aussi dans les extensions disponibles sur <a href="https://viglino.github.io/ol-ext/">ol-ext</a> histoire de faire un tour des possibilités.</p>
-<p>Et suivant le temps qu’on a, on peut éventuellement commencez à regardez QGIS Server ensemble pendant le TP, sinon je vous ajouterai une petite notre sur le site si jamais vous préférez l’utiliser pour vos projets. Quoi qu’il en soit, vous ne serez pas notés dessus&nbsp;!</p>
+<p>Et suivant le temps qu’on a, on peut éventuellement commencez à regardez QGIS Server ensemble pendant le TP, sinon je vous ajouterai une petite note sur le site si jamais vous préférez l’utiliser pour vos projets. Quoi qu’il en soit, vous ne serez pas notés dessus&nbsp;!</p>
 </section>
 <section id="cette-fois-cest-vraiment-fini" class="level2">
 <h2 class="anchored" data-anchor-id="cette-fois-cest-vraiment-fini">Cette fois, c’est vraiment fini&nbsp;!</h2>

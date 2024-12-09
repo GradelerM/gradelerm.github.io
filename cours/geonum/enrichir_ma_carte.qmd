@@ -621,14 +621,6 @@ document.getElementById('attributes').innerHTML = html;
 
 Super, vous savez maintenant requêter une couche WMS ! Le résultat est un peu moche pour le moment mais vous pourrez revenir plus tard pour l’affiner. Si vous finissez le TP en avance, revenez sur les sections "Pour aller plus loin…".
 
-::: {.callout-note collapse="true"}
-## Pour aller plus loin…
-
-Si vous avez déjà fait le tour du TP, vous allez trouver dans cette section des éléments supplémentaires pour aller plus loin.
-
-*En cours de rédaction*
-:::
-
 ### Filtrer des couches WMS
 
 On a vu dans l’étape précédente qu’il était possible de requêter une couche WMS. Vous ne serez donc pas surpris d’apprendre qu’il est aussi possible de filtrer ces couches ! Les flux WMS ont beau retourner une image, on constate maintenant qu’elles ne manquent pas d’interactivité.
@@ -665,7 +657,7 @@ Quand vous écrivez des chaînes de caractères dans un filtre CQL ("*string*"),
 *Ne me demandez pas pourquoi, ce n’est pas expliqué, il faut juste l’accepter et vivre avec.*
 :::
 
-Bien, vous savez maintenant écrire un filtre simple en CQL, mais comment est-ce qu’on fait pour filtrer la couche depuis notre application OpenLayers ? Voici mon code pour appliquer à ma couche `deals` un filtre qui va uniquement récupérer les mines qui produisent de l’or (*Gold*) ou de l’argent (*Silver*). Comparez ce snippet avec votre code pour comprendre où mettre ce code et ce qu’il fait :
+Bien, vous savez maintenant écrire un filtre simple en CQL, mais comment est-ce qu’on fait pour filtrer la couche depuis notre application OpenLayers ? Voici mon code pour appliquer à ma couche `deals` un filtre qui va uniquement récupérer les mines qui se trouvent en Argentine (*Argentina*) ou aux Philippines (*Philippines*). Comparez ce snippet avec votre code pour comprendre où mettre ce code et ce qu’il fait :
 
 ``` javascript
 const sourceDeals = new ImageWMS({
@@ -940,7 +932,7 @@ Une fois que c’est terminé, il reste un dernier exercice à faire avec ces ce
 
 On arrive sur la fin du TP et vous commencez (j’espère) à bien comprendre comment fonctionne notre application donc je ne vous donne pas d’indices. Faites juste attention à bien faire varier la taille des cercles petit à petit : si jamais votre navigateur essaie de dessiner des cercles trop grands, vous avez des chances de faire crasher votre ordinateur (ça m’est *peut-être* arrivé pendant mes tests et ce serait dommage que ça vous arrive aussi).
 
-## L’étape finale !
+## L’étape finale ! {#létape-finale}
 
 Enfin l’étape finale du TP ! Une fois que votre application fonctionne et qu’elle vous convient, n’oubliez **SURTOUT PAS** de la build ! Pour le moment, vous travaillez dans ce qu’on appelle un environnement de développement mais quand vous êtes prêts à pousser une application en production, il faut la build. On l’a déjà fait au début du TP précédent mais je vous remets les instructions ici parce que je suis bien sympa (et que vous avez sûrement le cerveau en compote après tout ça) :
 
@@ -1007,21 +999,21 @@ Comme toujours, quand on souhaite ajouter un nouvel élément à notre carte, il
 <div id="attributes" class="menu">
   <!-- Je crée une table -->
   <table>
-    <!-- On utilise l’élément tr pour créer une ligne : tr = table row -->
-    <tr>
-      <!-- On utilise les éléments th (table header) pour créer les headers de nos trois colonnes -->
-      <th>Deal ID</th>
-      <th>Creation date</th>
-      <th>Country</th>
-    </tr>
-    <!-- On utilise l’élément tr pour créer une AUTRE ligne : tr = table row -->
-    <tr>
-      <!-- On crée trois colonnes vides avec td -->
-      <td>…</td>
-      <td>…</td>
-      <td>…</td>
-    </tr>
-  </table>
+<!-- On utilise l’élément tr pour créer une ligne : tr = table row -->
+<tr>
+<!-- On utilise les éléments th (table header) pour créer les headers de nos trois colonnes -->
+<th>Deal ID</th>
+<th>Creation date</th>
+<th>Country</th>
+</tr>
+<!-- On utilise l’élément tr pour créer une AUTRE ligne : tr = table row -->
+<tr>
+<!-- On crée trois colonnes vides avec td -->
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+</table>
 </div>
 ```
 
@@ -1043,7 +1035,7 @@ Vous comprenez sûrement qu’on souhaite remplacer ces "…" par des valeurs lo
 
 Maintenant qu’on a nos éléments, il va falloir les remplir. Retournez chercher votre méthode `map.on()` dans votre code, on va devoir l’améliorer un peu.
 
-``` javscript
+``` javascript
 map.on('singleclick', (event) => {
   const coord = event.coordinate;
   const res = map.getView().getResolution();
@@ -1129,7 +1121,7 @@ Testez votre application. Normalement, ça marche ! Quand vous cliquez sur une 
 
 ## J’ai fini ça aussi !
 
-Fantastique ! Eh bien maintenant, débrouillez-vous pour [ajouter une échelle à votre carte](https://openlayers.org/en/latest/examples/scale-line.html). Ça devrait vous occuper un moment, j’espère. Je vous donne ça, à vous de le mettre au bon endroit :
+Fantastique ! Eh bien maintenant, débrouillez-vous pour ajouter une échelle à votre carte. Ça devrait vous occuper un moment, j’espère. Je vous donne ça, à vous de le mettre au bon endroit :
 
 ``` javascript
 import ScaleLine from 'ol/control/ScaleLine.js';
@@ -1153,9 +1145,9 @@ Et voilà !
 
 ## Bon, ben j’ai AUSSI une échelle sur ma carte…
 
-Bravo ! Vous pouvez répéter [L’étape finale !] pour build votre application. Ensuite, je vous conseille de commencer à ajouter à votre carte des éléments dont vous avez besoin pour vos projets GeoNum. Vous pourriez vouloir par exemple un curseur temporel, des tooltips, etc. Commencez par faire des recherches parmi les [exemples d’OpenLayers](https://openlayers.org/en/latest/examples/) mais aussi dans les extensions disponibles sur [ol-ext](https://viglino.github.io/ol-ext/) histoire de faire un tour des possibilités.
+Bravo ! Vous pouvez répéter [L’étape finale !](#létape-finale) pour build votre application. Ensuite, je vous conseille de commencer à ajouter à votre carte des éléments dont vous avez besoin pour vos projets GeoNum. Vous pourriez vouloir par exemple un curseur temporel, des tooltips, etc. Commencez par faire des recherches parmi les [exemples d’OpenLayers](https://openlayers.org/en/latest/examples/) mais aussi dans les extensions disponibles sur [ol-ext](https://viglino.github.io/ol-ext/) histoire de faire un tour des possibilités.
 
-Et suivant le temps qu’on a, on peut éventuellement commencez à regardez QGIS Server ensemble pendant le TP, sinon je vous ajouterai une petite notre sur le site si jamais vous préférez l’utiliser pour vos projets. Quoi qu’il en soit, vous ne serez pas notés dessus !
+Et suivant le temps qu’on a, on peut éventuellement commencez à regardez QGIS Server ensemble pendant le TP, sinon je vous ajouterai une petite note sur le site si jamais vous préférez l’utiliser pour vos projets. Quoi qu’il en soit, vous ne serez pas notés dessus !
 
 ## Cette fois, c’est vraiment fini !
 
