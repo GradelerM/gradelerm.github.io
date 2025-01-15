@@ -13,7 +13,7 @@ Les consignes suivantes s’adressent à la promo du M2 GeoNum 2024-2025.
 
 -   Le rendu se fait seul ou en **binôme**, mais pas plus !
 
--   Le détail de tout ce que vous avez à m’envoyer se trouve dans la section [À rendre].
+-   Le détail de tout ce que vous avez à m’envoyer se trouve dans la section [À rendre](#à-rendre).
 
 -   Je vous demande quelques nouveaux éléments (normal, on ne va pas juste faire un copier-coller du TP) mais **TOUT peut être fait en se basant sur le code que vous avez déjà**. Si je vous demande de créer des "radio buttons" quelque part, souvenez-vous qu’on avait déjà des "radio buttons" pour d’autres fonctionnalités dans l’application. Il suffit d’appliquer la même méthode que celle qu’on a vue ensemble. Je vous ai mis quelques snippets de code là où je jugeais un coup de pouce nécessaire.
 
@@ -77,7 +77,7 @@ Votre instance de GeoServer doit comprendre :
 
 -   Toutes les couches du jeu de données publiées et requêtables dans la prévisualisation type "OpenLayers" de GeoServer.
 
--    Les couches de la donnée `deals` et `deals_by_country` doivent être stylisées. Vous n’êtes pas obligés de respecter l’exemple (voir [Ma carte finale]) mais attention à la sémio quand même.
+-   Les couches de la donnée `deals` et `deals_by_country` doivent être stylisées. Vous n’êtes pas obligés de respecter l’exemple (voir [Ma carte finale]) mais attention à la sémio quand même.
 
 ### OpenLayers - base
 
@@ -233,9 +233,9 @@ Vous allez devoir vous baser sur la manière dont vous calculez le `rayon` de vo
 
 ### Affichage dynamique des légendes
 
-En utilisant les deux points précédents, faites en sorte que les légendes ne s’affichent que si la couche associée est affichée. Si la propriété CSS `visibility` ne donne pas des résultats suffisants, vous pouvez regardez la propriété `display`.
+En utilisant les deux points précédents, faites en sorte que les légendes ne s’affichent que si la couche associée est affichée. Si la propriété CSS `visibility` ne donne pas des résultats suffisants, vous pouvez regarder la propriété `display`.
 
-## À rendre
+## À rendre {#à-rendre}
 
 Le travail d’équipe a payé, vous avez enfin une application à me rendre pour l’évaluation ! Vous pouvez être fiers de vous.
 
@@ -261,7 +261,7 @@ Vous pouvez au choix push votre code sur GitHub ou GitLab (n’oubliez pas de re
 
 -   `geoserver/opt/workspaces`
 
-Pour envoyer l’archive, vous pouvez utiliser la méthode de votre choix : Google Drive partagé, WeTransfer, FileTransfer avec l’université… peut importe, mais n’oubliez pas que je dois recevoir les éléments listés ci-dessus (ou le lien qui pointe vers ces éléments) à l’adresse **marie.gradeler\@gmail.com** **le 17 Janvier 2025 au plus tard** !
+Pour envoyer l’archive, vous pouvez utiliser la méthode de votre choix : Google Drive partagé, WeTransfer, FileTransfer avec l’université… peut importe, mais n’oubliez pas que je dois recevoir les éléments listés ci-dessus (ou le lien qui pointe vers ces éléments) à l’adresse **marie.gradeler\@gmail.com** **le 20 Janvier 2025 au plus tard** !
 
 ::: callout-important
 ## Attention
