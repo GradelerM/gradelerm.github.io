@@ -1,0 +1,102 @@
+---
+title: "OpenLayers – introduction"
+format: html
+---
+
+## Objectifs de la session
+
+-   Comprendre à quoi sert NodeJS
+
+-   Apprendre à créer une application OpenLayers avec NodeJS
+
+-   Afficher de la donnée dans mon application
+
+*Durée : 1h30 à 2h*
+
+## Supports
+
+[Cours : Introduction à OpenLayers](./04_diapos_intro_openlayers.qmd){target="_blank"}
+
+## TP – Mise en place d’une application OpenLayers avec NodeJS
+
+### Quartier libre pour faire une première carte !
+
+Comme vous avez des bases solides en Leaflet et que OpenLayers n’est pas si différent que ça, je vous propose de commencer par un petit exercice "libre" où vous essayez de vous approcher le plus possible de la consigne suivante :
+
+Créez une carte grâce à **OpenLayers** à l’échelle globale. Vous pouvez utiliser le **fond de carte** que vous voulez SAUF celui par défaut (si vous êtes en manque d’inspiration, je vous conseille un des fonds de [Stamen Maps](https://maps.stamen.com/#watercolor/12/37.7706/-122.3782)). Ensuite, en partant du jeu de données [land_matrix_mines](/data/land_matrix/land_matrix_mines.gpkg) qu’on a utilisé la dernière fois, **affichez la couche de votre choix sur la carte**. Si vous avez besoin de la couche au format GeoJSON vous pouvez l’exporter comme telle depuis QGIS (pour rappel, on travaille en WGS84, il serait avisé d’exporter la couche dans ce système de projection). Enfin, si vous avez le temps, ajoutez **un titre** à votre carte.
+
+Vous pouvez utiliser tous les outils à votre disposition sans restriction. Ça peut inclure les cours que je vous ai déjà faits, d’autres cours, de la documentation, des forums, des sites, des vidéos, des chatbots… comme on dit, tous les moyens sont bons pour coder !
+
+**Pendant que vous effectuez cet exercice,** prenez des notes (mêmes très simples) sur ce que vous faites pour pouvoir retracer les étapes de votre développement. **Il se peut que je vous demande ces notes en fin de séance, donc faites-le avec sérieux !**
+
+Voilà un exemple de notes attendues (je vous l’ai dit, ça doit rester simple) :
+
+> -   Nouveau dossier pour créer appli
+>
+> -   Choisi d’utiliser NodeJS pour l’appli *\[ajoutez ici les commandes utilisées pour créer le projet si c’est le cas\]*
+>
+> -   Cours Leaflet -\> importer un GeoJSON. Sauvegarde couche `deals` au format GeoJSON depuis QGIS (EPSG:3857).
+
+Vous pouvez y ajouter quelques petits bouts de code ou de fonctions si vous le jugez pertinent. J’aimerais aussi y trouver les **liens des ressources qui vous ont été utiles** ou vos **prompts** si vous utilisez une IA (avec le nom de l’IA, évidemment). Si c’est un autre étudiant qui vous a donné un coup de main, indiquez-le moi aussi (ex: "Aide reçue pour niveau de zoom carte", vous voyez l’idée).
+
+::: callout-note
+Je rappelle que cet exercice n’est pas noté. Recevoir de l’aide d’un autre étudiant ou de ma part n’est pas pénalisé. Utiliser Chat-GPT n’est pas pénalisé. **Vous avez droit à toutes les ressources disponibles, j’ai juste besoin de savoir lesquelles vous avez utilisé.**
+
+C’est bien si vous essayez d’aller le plus loin possible mais prenez quand-même votre temps et essayez de procéder par étapes.
+
+Par contre, si vous ne faites aucun effort pour avancer et pour comprendre ce que vous faites, ça va finir par se voir… et il y aura quelques points d’investissement dans mon cours sur la note finale, donc faites quand même un effort.
+:::
+
+::: {.callout-tip collapse="true"}
+## À ouvrir après avoir fait un premier test (création de carte)
+
+Si vous ne savez vraiment pas par où commencer…
+
+-   Le premier réflexe que vous devriez avoir serait d’ouvrir le site officiel d’OpenLayers. Il existe toujours sur ces outils de développement une section "getting started".
+
+-   OpenLayers ressemble beaucoup à Leaflet. Vraiment, vraiment beaucoup.
+
+-   N’oubliez pas d’utiliser `F12` pour afficher la console de développement et d’abuser des `console.log()` pour trouver d’où viennent vos erreurs !
+
+-   La structure de la page se trouve dans `index.html`. Le style se trouve dans `style.css`. Le code JavaScript se trouve dans `main.js`.
+
+Si ce n’était pas vraiment utile pour vous, alors c’est que vous êtes déjà sur la bonne voie.
+:::
+
+::: {.callout-tip collapse="true"}
+## À ouvrir après avoir fait un premier test (GeoJSON)
+
+Là, c’est un peu plus technique alors je vous donne une astuce :
+
+-   Déjà, utilisez du GeoJSON si vous ne savez pas par où prendre le problème. C’est votre meilleure porte d’entrée. Vous pouvez exporter la couche de votre choix en GeoJSON depuis QGIS.
+
+-   OpenLayers utilise les fonctions `ol/layer/Vector` pour créer des couches au format vectoriel. C’est ce qu’il faut utiliser avec du GeoJSON.
+
+-   Toujours si vous travaillez avec du GeoJSON, vous devriez regarder du côté de `ol/format/GeoJSON`.
+:::
+
+### Fin de session
+
+Quand tout le monde a terminé (peu probable) ou qu’on a déjà passé beaucoup de temps sur la question (très probable), on va prendre le temps de **comparer nos résultats et les méthodes qui ont le mieux fonctionné pour afficher la carte attendue**. L’idée est d’avoir un échange pendant quelques minutes, préparez-vous donc à parler des points suivants :
+
+-   Par quoi est-ce que j’ai commencé, quel a été mon premier réflexe ? Si c’est une recherche Google, qu’est-ce que j’ai tapé en premier ? Si c’est Chat-GPT, quel a été mon premier prompt ?
+
+-   Comment est-ce que je me suis organisé⋅e, est-ce que j’ai découpé l’exercice en étapes ? Est-ce que j’ai réussi à tout faire d’un bloc ?
+
+<!-- -->
+
+-   Quelle ressource / site / outil m’a le plus aidé ?
+
+-   Est-ce que j’ai pensé à consulter la documentation officielle d’OpenLayers ? Est-ce que j’ai réussi à m’en servir ?
+
+-   Si j’ai utilisé l’IA, comment est-ce que j’ai raffiné mes prompts ? Est-ce que je lui ai demandé de générer du code ? De me donner des explications ?
+
+-   HTML, CSS, JavaScript… est-ce que je comprends la différence ? Est-ce que je sais où trouver le code de mon application, où aller pour ajouter une couche, où aller pour ajouter un titre sur ma carte ?
+
+-   Est-ce que je comprends les notions de "source" et de "layer" d’OpenLayers, ou bien est-ce que c’est encore trop flou même après cet exercice ?
+
+**Pendant la discussion, à la suite de vos notes, ajoutez les pistes que vous envisagez pour vous débloquer / pour améliorer votre carte.**
+
+Il se peut que je vous demande de **partager votre écran** pour montrer l’état actuel de votre carte et votre code et en parler un peu, si la discussion s’y prête.
+
+*Si jamais vous vous êtes laissés distraire, ce serait le bon moment pour fermer tous les onglets qui n’ont pas de rapport avec mon cours 👀*

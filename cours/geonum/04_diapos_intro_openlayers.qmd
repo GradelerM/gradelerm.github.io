@@ -1,0 +1,99 @@
+---
+title: "Introduction à OpenLayers"
+author: "Marie Gradeler"
+date: 2 Dec 2025
+format: 
+  revealjs: 
+    theme: [default, ../../styles/slides.scss]
+    transition: slide
+    controls: true
+    controls-layout: edges
+    footer: "Formation WebCarto GeoNum 2025-2026"
+    logo: ../../static/logos/logo-geonum.webp
+---
+
+## Sommaire
+
+-   Objectif du cours
+
+-   Présentation brève d’OpenLayers
+
+-   Présentation (brève aussi) de NodeJS
+
+## Objectif du cours
+
+Créer une application OpenLayers avec NodeJS.
+
+## Présentation brève d’OpenLayers
+
+-   [OpenLayers](https://openlayers.org/) est une librairie JavaScript Open Source qui permet de créer des cartes interactives pour le web.
+
+-   La librairie a plus de 11 000 stars sur GitHub et 3 000 forks.
+
+-   Au moment où j’écris ce cours, la dernière mise à jour date de hier.
+
+-   L’alpha d’OpenLayers (première version mise en ligne sur GitHub) date de 2013.
+
+**C’est une librairie populaire, mature, maintenue et bien documentée.**
+
+![](media/openlayers_site.png){fig-alt="GIF : Site de OpenLayers" fig-align="center" width="620"}
+
+## Présentation brève d’OpenLayers
+
+🤔 Ça ressemble en tout point à [Leaflet](https://leafletjs.com/), non ? Alors pourquoi apprendre les deux ?
+
+. . .
+
+👉 Oui et non !
+
+-   **Leaflet** est plus pratique pour obtenir rapidement une "jolie" carte avec moins de code, par exemple afficher/masquer les couches.
+
+-   Mais Leaflet a aussi ses défauts : la carte est plus difficile à customiser "en profondeur" qu’OpenLayers, il y a de nombreux plug-ins qui parfois font plus ou moins la même chose, parfois ne sont plus maintenus, là où beaucoup de ces fonctionnalités sont disponibles dans le code de base d’OpenLayers.
+
+. . .
+
+**Pour faire simple**, selon mon expérience avec les deux librairies, **OpenLayers est plus facilement customisable et se repose moins sur des plug-ins externes.** Il existe une source de plug-ins pour ajouter des fonctionnalités supplémentaires publiée par l’utilisateur GitHub [viglino](https://github.com/Viglino). Ces extensions [ol-ext](https://viglino.github.io/ol-ext/) sont régulièrement maintenues.
+
+## Présentation brève d’OpenLayers
+
+Il est donc intéressant de savoir utiliser à la fois Leaflet et OpenLayers car chacune des librairies a ses points forts et ses faiblesses.
+
+Cela dit, en ce qui concerne un usage simplifié, **si vous comprenez Leaflet vous comprenez aussi OpenLayers**.
+
+![](media/la_webcarto_libre.jpg){fig-alt="GIF : Leaflet et OpenLayers, la webcarto libre" fig-align="center" width="356"}
+
+On va devoir créer une application Node JS pour pouvoir importer la librairie OpenLayers et commencer à coder.
+
+## Les bases de Node JS
+
+Node JS, c’est ce qu’on appelle un environnement runtime de JavaScript.
+
+Voilà. On continue ?
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcXNsN2xrc2kzM3dleGRhcXgya3o1dnAwdWlpb2FzbmNuMW5xa2pidCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o84TZ6rOiGqdpzNRe/giphy.webp){fig-alt="GIF : Perceval dit \"j'ai rien compris\"" fig-align="center"}
+
+## Les bases de Node JS
+
+Pour simplifier, voyons comment vous écrivez et exécutez votre code JavaScript jusqu’à maintenant.
+
+-   On crée un document `index.html` dans lequel on met quelque part une balise `<script>`
+
+-   On écrit le code dans la balise `<script>`
+
+-   On ouvre `index.html` dans le navigateur
+
+-   Comme le JavaScript est dans `index.html` qui est ouvert dans un navigateur, le navigateur peut exécuter le code JavaScript
+
+**Ce n’est pas super pratique quand on commence à avoir une application qui grandit (ou "scale").**
+
+## Les bases de Node JS
+
+La force de Node JS est de permettre d’exécuter du code écrit en JavaScript sans passer par le navigateur. Si par la suite vous devez écrire du code côté serveur, vous pouvez aussi le faire en JavaScript. Et surtout, Node JS permet de télécharger facilement des librairies et déployer encore plus facilement notre application pour la **mettre en production** en utilisant quelques lignes de commande.
+
+![](media/logo_node_js.png){fig-alt="Logo Node JS" fig-align="center" width="300"}
+
+## Les bases de Node JS
+
+Pour mieux comprendre de quoi on parle, on va commencer par créer une application OpenLayers grâce à NodeJS.
+
+Vous pouvez commencer à suivre le TP !

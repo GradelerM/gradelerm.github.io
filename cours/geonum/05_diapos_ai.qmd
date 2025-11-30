@@ -1,0 +1,177 @@
+---
+title: "Un point sur l’IA générative"
+author: "Marie Gradeler"
+date: 2 Dec 2025
+format: 
+  revealjs: 
+    theme: [default, ../../styles/slides.scss]
+    transition: slide
+    controls: true
+    controls-layout: edges
+    footer: "Formation WebCarto GeoNum 2025-2026"
+    logo: ../../static/logos/logo-geonum.webp
+---
+
+## Sommaire
+
+-   Pourquoi ce point ?
+
+-   Introduction au concept d’intelligence artificielle
+
+## Pourquoi ce point ?
+
+### D’abord, pour moi.
+
+…
+
+### Ensuite, pour vous aussi.
+
+…
+
+## Pourquoi ce point ?
+
+### L’IA dans mon cours : oui, avec intelligence et transparence
+
+**Vous avez le droit d’utiliser l’IA générative pendant mon cours et pour les rendus.**
+
+Par contre, je vous demande de **le faire intelligemment** et avec **transparence**.
+
+::: incremental
+-   Intelligemment : en fait, il faudrait plutôt dire le faire **quand on en a besoin** (et pas par réflexe ou pire, par fainéantise), de rédiger des prompts **efficaces**, de toujours conserver un **esprit critique** quand vous utilisez l’IA et de **revoir les réponses** pour les affiner (surtout si vous générez du texte).
+
+-   Avec transparence : si vous utilisez de l’IA générative dans un rapport, dans votre code, etc. je dois pouvoir savoir **laquelle** vous avez utilisé et **pourquoi** (générer du code ? générer le texte de présentation de votre application ?). Vous verrez que je vous demande parfois de garder un ou deux prompts en exemple.
+:::
+
+::: fragment
+Vous verrez que la partie "intelligemment" viendra toute seule au fil de ma présentation, soyez attentifs !
+:::
+
+## Pourquoi ce point ?
+
+### De grandes inconnues autour d’un outil du quotidien
+
+::: incremental
+-   Qui sait quelle est la différence entre IA, ML, LLM, IA générative ?
+
+-   Savez-vous comment fonctionne une IA générative ?
+
+-   Est-ce qu’on peut dire que les IA génératives "créent du nouveau contenu" ?
+
+-   **Qui ici est déjà allé se renseigner sur le fonctionnement des IA génératives ? Leur entraînement ? Leur coût ?**
+:::
+
+## Introduction au concept d’intelligence artificielle
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHIxeGtjcGJ0cmwxa2ozOHV1bWhqYjB1NjBjYjE1ejVxbDJsam5xdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dTz8JKVNcIMtiMIOE9/giphy.gif){fig-alt="Dalecs, lots of them" fig-align="center"}
+
+## Introduction au concept d’intelligence artificielle
+
+::::::::::::: {style="border: 1px solid grey; padding: 1rem; background-color: #f0f8f6;"}
+**Intelligence Artificielle (AI)**
+
+[Simulation avec un ordinateur dans le but d’égaler ou excéder l’intelligence humaine.]{.smaller}
+
+:::::::::::: {.fragment style="border: 1px solid grey; padding: 1rem; background-color: #e1f1ed;"}
+::::: {style="display: flex;"}
+::: {style="margin-right: 2rem;"}
+**Machine Learning (LM)**
+:::
+
+<div>
+
+[🍎]{.fragment} [🍐️]{.fragment} [🍋️]{.fragment} [🍎️]{.fragment} [🍐️]{.fragment} [🍋️]{.fragment} [🍋]{.fragment style="border: 1px solid red; border-radius: 8px;"} [🍎]{.fragment} [🍐️]{.fragment}
+
+</div>
+:::::
+
+[La machine "apprend", on n’a pas besoin de coder toutes ses actions. Elle est aussi douée pour chercher des exceptions, des éléments qui ne respectent pas les patterns.]{.smaller}
+
+:::::::: {.fragment style="border: 1px solid grey; padding: 1rem; background-color: #d2ebe4;"}
+:::::: {style="display: flex; gap: 2rem; align-items: center;"}
+**Deep Learning (DL)**
+
+::: fragment
+💬 → 🍎
+:::
+
+::: fragment
+💬 → 🍐
+:::
+
+::: fragment
+💬 → 🍋
+:::
+::::::
+
+[Fonctionne avec des réseaux de neurones, une manière de simuler le fonctionnement du cerveau humain avec un ordinateur. Les résultats commencent à devenir imprévisibles : pour le même *input*, on n’a pas toujours le même *output*.]{.smaller}
+
+::: {.fragment style="border: 1px solid grey; padding: 1rem; background-color: #c3e4db;"}
+**Generative AI**
+
+[Basé sur des Large Language Models (LLM). Analogie du T9 =\> le modèle regarde le contexte / la phrase existante et prédit le prochain mot, la prochaine phrase, le prochain document…]{.smaller}
+
+[D’autres IA génératives peuvent produire des images, des vidéos, de la musique…]{.smaller}
+:::
+::::::::
+::::::::::::
+:::::::::::::
+
+[Source : [AI, Machine Learning, Deep Learning and Generative AI explained (IBM Technology)](https://www.youtube.com/watch?v=qYNweeDHiyU)]{.smaller}
+
+## Le cas de l’IA générative, exemple avec Chat-GPT
+
+Regarder la vidéo explicative de [Frandroid : 7min pour savoir comment fonctionne CHATGPT (et se la péter ensuite)](https://www.youtube.com/watch?v=730MjF-70b4)
+
+. . .
+
+**Faisons une liste de ce qu’on a appris sur l’IA générative.**
+
+## Le cycle de la vie de l’IA générative
+
+Chat-GPT est un **chatbot** basé sur le modèle **GPT-4** de **OpenAI**. D’autres agents conversationnels connus sont **Llama3** (Meta, Open-Source), **Gemini** (Google), **Claude** (Anthropic). Ces modèles sont entraînés de la même manière :
+
+::: incremental
+-   D’abord, une phase de **pré-entraînement** expose le modèle à un corpus massif de livres, articles et autres contenus accessibles en ligne. Il utilise ce corpus pour apprendre à prédire un mot dans une phrase. C’est à ce moment qu’il détecte des relations entre les mots (par exemple, *chaud* et *froid* qui sont souvent utilisés ensemble, en opposition), prédire des structures grammaticales, etc.
+
+-   Ensuite, la phase de ***fine-tuning*** permet d’affiner le modèle pour qu’il réponde à des besoins spécifiques (par exemple, les agents conversationnels doivent pouvoir tenir des conversations). On demande à des humains de vérifier les réponses de Chat-GPT et dire si oui ou non elles sont correctes, correspondent à la demande, si elles sont appropriées (questions d’éthique surtout), etc.
+:::
+
+Source: [Comment Fonctionne un Modèle de Langage comme ChatGPT ? — Technomind](https://technomind.fr/2025/05/05/fonctionnement-modele-langage-chatgpt/)
+
+## Le coût de l’IA générative
+
+. . .
+
+-   La **phase d’entraînement** (c.f. diapo précédente) demande à des milliers de GPU (NVIDIA, ça vous parle ?) qui tournent à plein régime pendant des mois.
+
+. . .
+
+> En 2026, la hausse de la consommation électrique des centres de données, des cryptomonnaies et de l’IA pourrait s’élever à l’équivalent de la consommation électrique de la Suède ou de l’Allemagne, par rapport à 2022.
+>
+> L’empreinte carbone de l’IA est loin d’être négligeable, ainsi, des scientifiques estiment que l'entraînement du modèle d'IA BLOOM émet 10 fois plus de gaz à effet de serre qu’un Français en une année.
+>
+> [Source : <https://www.polytechnique-insights.com/tribunes/energie/ia-generative-la-consommation-energetique-explose/>]{.smaller}
+
+. . .
+
+-   La **phrase d’inférence** (quand vous faites vos requêtes) consomme aussi énormément. L’eau est particulièrement touchée. Elle est utilisée pour refroidir les serveurs : chaque requête consomme en moyenne 1/2 litre d’eau.
+
+. . .
+
+> Les interactions avec des IA comme ChatGPT pourraient consommer 10 fois plus d’électricité qu’une recherche Google classique, d’après l’Agence internationale de l’énergie.
+>
+> [Source: <https://www.polytechnique-insights.com/tribunes/energie/ia-generative-la-consommation-energetique-explose/>]{.smaller}
+
+## Le coût de l’IA générative
+
+Posez-vous la question : **Est-ce que j’ai vraiment besoin de cette requête ?**
+
+. . .
+
+J’ai demandé à Gemini de me parler de son coût environnemental. Voilà une partie de sa réponse :
+
+> **Message :** *"Utiliser l'IA pour générer un 'Hello World' en HTML, c'est comme prendre l'avion pour aller acheter du pain. C'est possible, mais est-ce raisonnable ?"*
+
+## Conseils pour utiliser l’IA : efficacité et esprit critique
+
+…

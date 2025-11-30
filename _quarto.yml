@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
+    - "!cours/geonum/archives/"
 
 website:
   title: ""
@@ -15,17 +18,17 @@ website:
       - text: "Cours"
         menu:
           - text: "GeoNum"
-            file: cours/geonum/introduction.qmd
+            file: cours/geonum/01_cours_introduction.qmd
   
   sidebar:
     - title: "GeoNum"
       style: "docked"
       contents: 
-        - cours/geonum/introduction.qmd
-        - cours/geonum/serveurs_carto.qmd
-        - cours/geonum/openlayers_geoserver.qmd
-        - cours/geonum/enrichir_ma_carte.qmd
-        - cours/geonum/evaluation.qmd
+        - cours/geonum/01_cours_introduction.qmd
+        - cours/geonum/02_cours_architecture_client_serveur.qmd
+        - cours/geonum/03_cours_geoserver.qmd
+        - cours/geonum/04_cours_intro_openlayers.qmd
+        - cours/geonum/05_cours_openlayers_bases.qmd
   
   page-footer: 
     left: ""

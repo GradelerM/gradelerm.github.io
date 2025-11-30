@@ -1,0 +1,173 @@
+---
+title: "OpenLayers – cycle de développement"
+format: html
+---
+
+## Objectifs de la session
+
+-   Discuter des outils de développement web et comment les utiliser
+
+<!-- -->
+
+-   Ajouter une application OpenLayers à notre *stack* Docker
+
+-   *Build* et "mettre en production" l’application, servie par un serveur Caddy
+
+-   Comprendre la structure du code de l’application OpenLayers et
+
+-   Créer un commit et héberger mon code sur GitHub
+
+## Supports
+
+[Cours : Outils de développement web](./05_diapos_ai.qmd){target="_blank"}
+
+[Cours : Développer avec NodeJS et OpenLayers](./05_diapos_node_openlayers){target="_blank"}
+
+## TP – Mise en place d’une application OpenLayers avec NodeJS, mais cette fois on est préparés
+
+### Création de l’application en NodeJS
+
+On va ajouter l’application dans notre stack existante. Pour ça, retournez dans le dossier dans lequel on a travaillé lors de la dernière séance (celui avec le GeoServer) qui devrait s’appeler `geonum_docker`.
+
+Rendez-vous sur le [site officiel d’OpenLayers](https://openlayers.org/) et cherchez la section "Quick Start". Prenez le temps de parcourir la page, elle contient toutes les informations dont vous avez besoin. Ensuite, ouvrez un terminal dans votre dossier `geonum_docker` et tapez la commande suivante :
+
+``` bash
+npm create ol-app app
+```
+
+*Note : elle est un peu différente de celle qui vous est donné sur la page. Cherchez la différence, essayez de comprendre ce qui change.*
+
+Ensuite, déplacez-vous dans le dossier `app` :
+
+``` bash
+cd app
+```
+
+Ensuite, on doit *build* notre application pour que notre serveur de production (Caddy) puisse lire le contenu de l’application.
+
+``` bash
+npm build
+```
+
+::: callout-important
+## Point diapos tous ensemble sur le cycle de développement
+:::
+
+### Le cycle de développement
+
+Comme on l’a vu à l’instant en cours, le développement d’une application est un cycle. Si on le simplifie, on a une boucle qui alterne *développement \> tests \> production*.
+
+```{mermaid}
+flowchart LR
+    dev("Développement") --> tests
+    tests("Tests") --> dev
+    tests --> prod("Production")
+    prod --> dev
+```
+
+-   **Développement :** on ajoute de nouveaux éléments à l’application.
+
+-   **Tests :** on teste les nouvelles fonctionnalités. Si on trouve des bugs ou des choses à améliorer, on retourne à la phase de développement.
+
+-   **Production :** si notre application a passé tous les tests, alors elle est prête à accueillir définitivement les nouveaux éléments qu’on a développés.
+
+Pour accéder au serveur de développement (pour développer les nouveaux éléments et faire les tests) :
+
+``` bash
+npm start
+```
+
+Pour *build* notre application qui est stable et prête à être mise en production :
+
+``` bash
+npm run build
+```
+
+Pour rappel, si vous voulez voir le résultats de votre build, il faut lancer votre *stack* docker pour que votre serveur web (Caddy) puisse servir votre application.
+
+``` bash
+cd .. # Pour revenir à la racine de geonum_docker
+docker compose up -d
+```
+
+Accédez à votre <http://localhost/> pour voir l’application en production.
+
+### Versionner mon code en local avec un *commit*
+
+Avant d’aller plus loin dans la création de notre application, on va utiliser **Git** pour versionner notre projet et l’héberger en ligne.
+
+D’abord, vérifiez que votre projet est bien versionné.
+
+``` bash
+git status
+```
+
+Si vous avez un message long qui fait peur, c’est bon signe. En fait, **notre projet est déjà vesionné parce qu’on l’a récupéré sur mon GitHub**. On a importé mes fichiers… mais aussi le git associé !
+
+*Note : toutes les étapes suivantes peuvent être faites en interface graphique si vous préférez. Moi je travaille en lignes de commande, et comme c’est ce qui est le plus universel c’est ce que je vous partage ici.*
+
+Normalement, vous savez faire la suite, mais voilà quand même comment *stage* vos changements (autrement dit, les ajouter à votre prochain *commit*) :
+
+``` bash
+git add .
+```
+
+Maintenant, on crée notre *commit* avec un message qui indique ce que fait le code qu’on a ajouté depuis le dernier *commit* :
+
+``` bash
+git commit -m "Carte OpenLayers basique"
+```
+
+### Héberger mon code sur GitHub
+
+Ensuite, vous pouvez créer un dépôt GitHub (ce sera plus sympa pour voir et partager votre application). Je pars du principe que vous avez tous un compte GitHub. Vous n’êtes pas obligé de le faire, mais ça reste **vivement recommandé** surtout que je vais vous demander un rendu sur GitHub… et que vous devrez aussi héberger vos projets GeoNum sur GitHub.
+
+::: callout-warning
+## Attention aux infos que vous mettez en ligne
+
+Vous allez créer un dépôt qui sera visible en ligne. Bien évidemment, ne mettez aucune information sensible (mots de passe, etc.) ni rien d’autre que vous ne voulez pas partager. Avec Git, on peut même retrouver le commentaire dans votre code où vous avez écrit des mots pas très élégants parce que vous étiez frustré⋅e, donc n’écrivez pas n’importe quoi.
+
+Oui, je parle d’expérience. Non, tous mes collègues n’ont pas ri.
+:::
+
+-   Ouvrez [GitHub](https://github.com/)
+
+-   Créez un nouveau Repository (Dépôt ?) en cliquand sur le bouton New (ou en allant directement sur <https://github.com/new>)
+
+-   Donnez un nom et une description à votre dépôt
+
+-   Ne changez rien d’autre
+
+-   Cliquez sur "create repository"
+
+Ensuite, suivez les instructions données par GitHub pour mettre en ligne votre dépôt. Commencez après la ligne `git commit -m "First commit"` (on a déjà créé notre commit juste avant).
+
+::: {.callout-tip collapse="true"}
+## Double authentification
+
+Si vous prenez la sécurité de vos comptes en ligne au sérieux et que vous avez activé la double-authentification en ligne, ce sera un petit peu plus compliqué de définir votre `remote origin`. Le lien "simple" vers votre dépôt ne suffit pas.
+
+Pour accéder à votre code depuis votre PC, vous allez devoir créer un **Personal access token** depuis vos [Developers settings](https://github.com/settings/tokens) (vous devez être connecté pour accéder au lien). En haut à droite, sélectionnez "Generate new token (classic)" et donnez vous au moins les droits de la section *Repo*. Ensuite, **sauvegardez bien votre token quelque part (comme dans un gestionnaire de mots de passe) car vous ne pourrez plus le récupérer !**
+
+Maintenant, retourner dans votre dossier `geonum_docker` et dans la ligne de commande, tapez en remplaçant les valeurs entre `<>` ;
+
+``` bash
+git remote set-url origin https://oauth2:<accesstoken1234>@github.com/<Username>/<repository_name>
+```
+
+> Par exemple, si mon token est `123456789azerty`, mon nom d’utilisateur `GradelerM` et mon dépôt `geonum_docker`, ça donne ça :
+
+``` bash
+git remote set-url origin https://oauth2:123456789azerty@github.com/GradelerM/geonum_docker
+```
+
+Vous pouvez lancer à nouveau un `git push` !
+:::
+
+Voilà, normalement tout est prêt pour la suite !
+
+## TP – J’ajoute ma première couche à l’application
+
+Avant d’aller plus loin, on va prendre le temps de comprendre comment est structuré le code de notre application et quels outils sont à notre disposition pour coder. Ensuite, on ajoutera la première couche de données ensemble.
+
+Tous les éléments de ce TP se trouvent dans les diapos, alors soyez attentifs !

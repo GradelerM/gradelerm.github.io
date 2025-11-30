@@ -1,0 +1,15 @@
+---
+title: "Introduction"
+format: html
+---
+
+[Cours : Introduction](./01_diapos_introduction.qmd){target="_blank"}
+
+## Cours en 2025-2026
+
+-   *1er Décembre, 9h-12h* — Architecture Web et Serveurs Cartographiques
+-   *2 Décembre, 9h-12h* — Introduction à OpenLayers
+-   *4 Décembre, 9h-12h* — Ajouter des couches à ma carte
+-   *8 Décembre, 9h-12h* — Interactions entre carte et interface
+-   *11 Décembre, 9h-12h* — Enrichir la carte en fonctionnalités, partie 1
+-   *12 Décembre, 9h-12h* — Enrichir la carte en fonctionnalités, partie 2

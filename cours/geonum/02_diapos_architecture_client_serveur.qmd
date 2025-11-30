@@ -1,0 +1,192 @@
+---
+title: "Architecture client-serveur"
+author: "Marie Gradeler"
+date: 1 Dec 2025
+format: 
+  revealjs: 
+    theme: [default, ../../styles/slides.scss]
+    transition: slide
+    controls: true
+    controls-layout: edges
+    footer: "Formation WebCarto GeoNum 2025-2026"
+    logo: ../../static/logos/logo-geonum.webp
+---
+
+## Sommaire
+
+-   Révision du fonctionnement d’une architecture client-serveur
+
+-   Introduction à Docker pour créer une architecture client-serveur
+
+## L’architecture client-serveur
+
+. . .
+
+### Rappels sur ce qu’est un serveur
+
+**Le serveur matériel (hardware) :** Une ou plusieurs machines physiques reliées entre elles et et sur lesquelles fonctionnent un ou plusieurs logiciels.\
+[*Source : Ionos*](https://www.ionos.fr/digitalguide/serveur/know-how/quest-ce-quun-serveur-une-notion-deux-definitions/)
+
+Dans ce TP, notre serveur physique sera notre ordinateur. En pratique, cela ressemble plus souvent à ça (serveurs WikiMedia foundation) :
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Wikimedia_Foundation_Servers-8055_35.jpg/1920px-Wikimedia_Foundation_Servers-8055_35.jpg){fig-alt="Wikimedia foundation servers (hardware)" fig-align="center" width="60%"}
+
+## L’architecture client-serveur
+
+### Rappels sur ce qu’est un serveur
+
+**Le serveur (software) :** Un programme effectuant des interactions en réseau avec d’autres programmes appelés logiciels clients. Le service apporté dépend du logiciel serveur.\
+[*Source : Ionos*](https://www.ionos.fr/digitalguide/serveur/know-how/quest-ce-quun-serveur-une-notion-deux-definitions/)
+
+Un logiciel serveur peut-être un serveur Web (Apache, Nginx), un serveur email, un serveur de bases de données (PostgreSQL), un serveur cartographique (GeoServer), etc. Un logiciel client est par exemple un navigateur internet pour afficher un site web (Firefox, Google Chrome), un client mail (Thunderbird), et plus généralement une machine cliente.
+
+## L’architecture client-serveur
+
+### Comment le serveur communique-t-il avec les clients ?
+
+Dans le cas des serveurs web et cartographiques, le client (par exemple notre Firefox) va envoyer des **requêtes** au serveur (par exemple GeoServer). Le serveur va lire la requête et renvoyer une **réponse**. Cette réponse peut-être une page web, un JSON, un flux cartographique, mais aussi un message d’erreur comme le fameux *404 not found*.
+
+![Source : codegym.cc](media/client_server.jpeg){fig-align="center"}
+
+## L’architecture client-serveur
+
+### Comment le serveur communique-t-il avec la source de donnée ?
+
+En réalité, la plupart des applications fonctionnent de la manière suivante : le client envoie des requêtes au serveur. Le serveur va communiquer avec la base de données, traiter le résultat et renvoyer une réponse au client.
+
+*Exemple :\
+- Client = mon application Firefox\
+- Serveur = les serveurs de Google\
+- Database = la base de données de Google\
+- Requête = cherche les sites qui correspondent à la requête "apprendre le JavaScript"\
+- Réponse = liste des sites qui correspondent à la requête "apprendre le JavaScript"*
+
+![Source : codegym.cc](media/client_server_db.jpeg){fig-align="center"}
+
+## Nos besoins
+
+. . .
+
+On souhaite servir des couches de données géographique avec GeoServer et pouvoir permettre à des applications clientes de les lire.
+
+-   Un client pour récupérer et afficher nos couches de données (Firefox, QGIS, …)
+-   Un serveur web cartographique (GeoServer)
+
+. . .
+
+Généralement, quand on développe une application, on a tout sur notre ordinateur (les serveurs et les clients) et on attend que l’application soit prête pour l’héberger sur un serveur dédié. On a deux possibilités : utiliser des machines virtuelles (VM) ou **Docker**.
+
+## VMs, Docker et Docker Compose
+
+. . .
+
+### Les Machines Virtuelles (VM)
+
+-   Il faut voir une machine virtuelle comme un ordinateur qui serait **dématérialisé** (sans composants matériels). Elle possède un processeur, de la mémoire, des espaces de stockage pour la donnée, elle peut se connecter à internet…
+
+-   Outils de création de machines virtuelles : VirtualBox, VMWare…
+
+*Exemple : en téléchargeant VirtualBox, je peux créer une machine virtuelle Linux sur mon ordinateur Windows.*
+
+![Source : microsoft.com](media/virtual-machine-diagram.svg){fig-alt="Diagramme Machine Virtuelle" fig-align="center"}
+
+## VMs, Docker et Docker Compose
+
+### Les Machines Virtuelles (VM)
+
+Si je voulais mettre en place mon serveur sur une machine virtuelle, je devrais :
+
+-   créer la machine (avec des caractéristiques suffisantes pour faire tourner l’application)
+
+-   télécharger, installer et configurer GeoServer
+
+-   éventuellement télécharger, installer et configurer une base Postgresql avec PostGIS et la connecter au serveur
+
+-   refaire la même chose pour tout autre serveur que je voudrais installer (au hasard, un serveur pour une application OpenLayers)
+
+-   etc.
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYm1qNGw0eHk1ZmxmNmtiaXQwenc5NDdqcDRkbTNyc3M1YmJzdXRnbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LgR0AnXJBrO4E/giphy.webp){fig-alt="GIF : Chat déboussolé" fig-align="center" width="412"}
+
+## VMs, Docker et Docker Compose
+
+### Les Machines Virtuelles (VM)
+
+Multiplier les machines virtuelles sur l’hôte est très demandeur.
+
+-   ressources divisées entre l’hôte et les machines
+
+-   autant d’OS à faire tourner que de machines
+
+-   chaque machine = plusieurs Go d’espace
+
+C’est aussi **difficile à maintenir** - il faut garder tous les OS à jour, etc.
+
+**Mais nous, on aime la simplicité et éviter de consommer plein de mémoire "pour rien".**
+
+## VMs, Docker et Docker Compose
+
+### Heureusement…
+
+…il existe des outils de containerisation comme **Docker**.
+
+![](media/Docker_logo.svg){fig-alt="Ancien logo docker" fig-align="center"}
+
+## VMs, Docker et Docker Compose
+
+### Docker
+
+-   Docker permet de faire tourner ce qu’on appelle des **containers.**
+
+-   Les containers sont réduits au **minimum nécessaire** pour faire tourner des services (un serveur, une base de données, …).
+
+-   Autre outil de containerisation : Podman
+
+![Source : microsoft.com](media/container-diagram.svg){fig-alt="Schéma containers" fig-align="center"}
+
+## VMs, Docker et Docker Compose
+
+### Docker Compose
+
+-   Sorti en 2013, **Docker Compose** permet de gérer des applications multi-containers.
+
+-   Pour cela, on va rédiger un fichier de type `docker-compose.yml` qui va agir comme une "recette" pour permettre à Docker de créer et connecter l’ensemble des containers dont on a besoin.
+
+## Déploiement
+
+### Recette pour un bon GeoServer
+
+Récupérez le contenu du dépôt GitHub du cours (voir notes du TP).
+
+## Notre Docker Compose
+
+Explications sur le contenu :
+
+``` {.yaml code-line-numbers="|1|3,15|3|4|5|6,7,8,9|10,11|12,13"}
+services:
+
+  geoserver:
+    container_name: geonum_geoserver
+    image: docker.osgeo.org/geoserver:2.26.0
+    environment:
+      - RUN_UNPRIVILEGED=true
+      - CHANGE_OWNERSHIP_ON_FOLDERS="/opt /opt/geoserver_data/ /mnt/geoserver_geodata"
+      - CORS_ENABLED=true
+    ports:
+      - "8080:8080"
+    volumes:
+      - $PWD/geoserver/opt:/opt/geoserver_data
+  
+  web:
+    container_name: geonum_web
+    image: caddy:latest
+    ports:
+      - "80:80"
+    volumes:
+      - $PWD/Caddyfile:/etc/caddy/Caddyfile
+      - $PWD/app/dist/:/srv
+```
+
+## À vous !
+
+Poursuivez le TP jusqu’à réussir à vous connecter à votre GeoServer.
