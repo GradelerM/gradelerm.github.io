@@ -7,21 +7,19 @@ format: html
 
 -   Discuter des outils de développement web et comment les utiliser
 
-<!-- -->
-
 -   Ajouter une application OpenLayers à notre *stack* Docker
 
 -   *Build* et "mettre en production" l’application, servie par un serveur Caddy
 
--   Comprendre la structure du code de l’application OpenLayers et
+-   Comprendre la structure du code de l’application OpenLayers
 
--   Créer un commit et héberger mon code sur GitHub
+-   Créer un commit et héberger votre code sur GitHub
 
 ## Supports
 
-[Cours : Outils de développement web](./05_diapos_ai.qmd){target="_blank"}
+[Cours : Un point sur l’IA](./05_diapos_ai.qmd){target="_blank"}
 
-[Cours : Développer avec NodeJS et OpenLayers](./05_diapos_node_openlayers){target="_blank"}
+[Cours : Développer avec NodeJS et OpenLayers](./05_diapos_node_openlayers.qmd){target="_blank"}
 
 ## TP – Mise en place d’une application OpenLayers avec NodeJS, mais cette fois on est préparés
 

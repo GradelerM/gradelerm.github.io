@@ -31,7 +31,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-337dac79b850e7fa49933493c629fa89.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-f62b70d53a1de5675516717b0017cdc5.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -146,14 +146,21 @@ Marie Gradeler
 <ul>
 <li><p>Pourquoi ce point&nbsp;?</p></li>
 <li><p>Introduction au concept d’intelligence artificielle</p></li>
+<li><p>Le cas de l’IA générative, exemple avec Chat-GPT</p></li>
+<li><p>Le coût de l’IA générative</p></li>
+<li><p>Conseils pour utiliser l’IA&nbsp;: efficacité et esprit critique</p></li>
+<li><p>Si on a le temps de débattre un peu…</p></li>
+<li><p>Le mot de la fin</p></li>
 </ul>
 </section>
 <section id="pourquoi-ce-point" class="slide level2">
 <h2>Pourquoi ce point&nbsp;?</h2>
 <h3 id="dabord-pour-moi.">D’abord, pour moi.</h3>
-<p>…</p>
+<p>Parce qu’à force d’entendre tout et n’importe quoi sur cet outil que j’ai commencé à utiliser un peu plus tard que la moyenne (l’an dernier), il fallait que j’éclaire quelques points.</p>
+<div class="fragment">
 <h3 id="ensuite-pour-vous-aussi.">Ensuite, pour vous aussi.</h3>
-<p>…</p>
+<p>C’est toujours mieux de comprendre un outil qu’on utilise. Vous pourriez apprendre des choses (en tout cas j’espère) qui changeront votre manière de l’aborder.</p>
+</div>
 </section>
 <section id="pourquoi-ce-point-1" class="slide level2">
 <h2>Pourquoi ce point&nbsp;?</h2>
@@ -165,7 +172,7 @@ Marie Gradeler
 <li class="fragment"><p>Avec transparence&nbsp;: si vous utilisez de l’IA générative dans un rapport, dans votre code, etc. je dois pouvoir savoir <strong>laquelle</strong> vous avez utilisé et <strong>pourquoi</strong> (générer du code&nbsp;? générer le texte de présentation de votre application&nbsp;?). Vous verrez que je vous demande parfois de garder un ou deux prompts en exemple.</p></li>
 </ul>
 <div class="fragment">
-<p>Vous verrez que la partie “intelligemment” viendra toute seule au fil de ma présentation, soyez attentifs&nbsp;!</p>
+<p>La partie “intelligemment” devrait venir petit à petit quand vous comprendrez mieux l’outil.</p>
 </div>
 </section>
 <section id="pourquoi-ce-point-2" class="slide level2">
@@ -174,7 +181,6 @@ Marie Gradeler
 <ul>
 <li class="fragment"><p>Qui sait quelle est la différence entre IA, ML, LLM, IA générative&nbsp;?</p></li>
 <li class="fragment"><p>Savez-vous comment fonctionne une IA générative&nbsp;?</p></li>
-<li class="fragment"><p>Est-ce qu’on peut dire que les IA génératives “créent du nouveau contenu”&nbsp;?</p></li>
 <li class="fragment"><p><strong>Qui ici est déjà allé se renseigner sur le fonctionnement des IA génératives&nbsp;? Leur entraînement&nbsp;? Leur coût&nbsp;?</strong></p></li>
 </ul>
 </section>
@@ -182,24 +188,23 @@ Marie Gradeler
 <h2>Introduction au concept d’intelligence artificielle</h2>
 
 <img data-src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHIxeGtjcGJ0cmwxa2ozOHV1bWhqYjB1NjBjYjE1ejVxbDJsam5xdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dTz8JKVNcIMtiMIOE9/giphy.gif" class="quarto-figure quarto-figure-center r-stretch" alt="Dalecs, lots of them"></section>
-<section id="introduction-au-concept-dintelligence-artificielle-1" class="slide level2">
-<h2>Introduction au concept d’intelligence artificielle</h2>
-<div style="border: 1px solid grey; padding: 1rem; background-color: #f0f8f6;">
-<p><strong>Intelligence Artificielle (AI)</strong></p>
-<p><span class="smaller">Simulation avec un ordinateur dans le but d’égaler ou excéder l’intelligence humaine.</span></p>
-<div class="fragment" style="border: 1px solid grey; padding: 1rem; background-color: #e1f1ed;">
+<section class="slide level2">
+
+<div style="border: 1px solid grey; padding: 0 1rem 1rem 1rem; background-color: #f0f8f6;">
+<p><span class="smaller"><strong>Intelligence Artificielle (AI)&nbsp;:</strong></span> <span class="smaller">Simulation avec un ordinateur dans le but d’égaler ou excéder l’intelligence humaine.</span></p>
+<div class="fragment" style="border: 1px solid grey; padding: 0 1rem 1rem 1rem; background-color: #e1f1ed;">
 <div style="display: flex;">
 <div style="margin-right: 2rem;">
-<p><strong>Machine Learning (LM)</strong></p>
+<p><span class="smaller"><strong>Machine Learning (LM)</strong></span></p>
 </div>
 <div>
 <p><span class="fragment">🍎</span> <span class="fragment">🍐️</span> <span class="fragment">🍋️</span> <span class="fragment">🍎️</span> <span class="fragment">🍐️</span> <span class="fragment">🍋️</span> <span class="fragment" style="border: 1px solid red; border-radius: 8px;">🍋</span> <span class="fragment">🍎</span> <span class="fragment">🍐️</span></p>
 </div>
 </div>
 <p><span class="smaller">La machine “apprend”, on n’a pas besoin de coder toutes ses actions. Elle est aussi douée pour chercher des exceptions, des éléments qui ne respectent pas les patterns.</span></p>
-<div class="fragment" style="border: 1px solid grey; padding: 1rem; background-color: #d2ebe4;">
+<div class="fragment" style="border: 1px solid grey; padding: 0 1rem 1rem 1rem; background-color: #d2ebe4;">
 <div style="display: flex; gap: 2rem; align-items: center;">
-<p><strong>Deep Learning (DL)</strong></p>
+<p><span class="smaller"><strong>Deep Learning (DL)</strong></span></p>
 <div class="fragment">
 <p>💬 → 🍎</p>
 </div>
@@ -211,8 +216,8 @@ Marie Gradeler
 </div>
 </div>
 <p><span class="smaller">Fonctionne avec des réseaux de neurones, une manière de simuler le fonctionnement du cerveau humain avec un ordinateur. Les résultats commencent à devenir imprévisibles&nbsp;: pour le même <em>input</em>, on n’a pas toujours le même <em>output</em>.</span></p>
-<div class="fragment" style="border: 1px solid grey; padding: 1rem; background-color: #c3e4db;">
-<p><strong>Generative AI</strong></p>
+<div class="fragment" style="border: 1px solid grey; padding: 0 1rem 1rem 1rem; background-color: #c3e4db;">
+<p><span class="smaller"><strong>Generative AI</strong></span></p>
 <p><span class="smaller">Basé sur des Large Language Models (LLM). Analogie du T9 =&gt; le modèle regarde le contexte / la phrase existante et prédit le prochain mot, la prochaine phrase, le prochain document…</span></p>
 <p><span class="smaller">D’autres IA génératives peuvent produire des images, des vidéos, de la musique…</span></p>
 </div>
@@ -251,11 +256,12 @@ Marie Gradeler
 <p><span class="smaller">Source&nbsp;: <a href="https://www.polytechnique-insights.com/tribunes/energie/ia-generative-la-consommation-energetique-explose/" class="uri">https://www.polytechnique-insights.com/tribunes/energie/ia-generative-la-consommation-energetique-explose/</a></span></p>
 </blockquote>
 </div>
-<div class="fragment">
+</section>
+<section id="le-coût-de-lia-générative-1" class="slide level2">
+<h2>Le coût de l’IA générative</h2>
 <ul>
 <li>La <strong>phrase d’inférence</strong> (quand vous faites vos requêtes) consomme aussi énormément. L’eau est particulièrement touchée. Elle est utilisée pour refroidir les serveurs&nbsp;: chaque requête consomme en moyenne 1/2 litre d’eau.</li>
 </ul>
-</div>
 <div class="fragment">
 <blockquote>
 <p>Les interactions avec des IA comme ChatGPT pourraient consommer 10 fois plus d’électricité qu’une recherche Google classique, d’après l’Agence internationale de l’énergie.</p>
@@ -263,7 +269,7 @@ Marie Gradeler
 </blockquote>
 </div>
 </section>
-<section id="le-coût-de-lia-générative-1" class="slide level2">
+<section id="le-coût-de-lia-générative-2" class="slide level2">
 <h2>Le coût de l’IA générative</h2>
 <p>Posez-vous la question&nbsp;: <strong>Est-ce que j’ai vraiment besoin de cette requête&nbsp;?</strong></p>
 <div class="fragment">
@@ -275,7 +281,145 @@ Marie Gradeler
 </section>
 <section id="conseils-pour-utiliser-lia-efficacité-et-esprit-critique" class="slide level2">
 <h2>Conseils pour utiliser l’IA : efficacité et esprit critique</h2>
-<p>…</p>
+<p>J’ai utilisé <strong>Gemini</strong> pour générer des conseils pour rédiger un prompt efficace <span class="faint">(réponses éditées pour ajouter des éléments et retirer une hallucination de l’IA)</span>. Voilà son exemple de “mauvais prompt”&nbsp;:</p>
+<div class="fragment">
+<blockquote>
+<p><span class="smaller">“Fais-moi une carte avec des mines de lithium en rouge à partir de mon fichier geojson. Mets un fond de carte Stamen Watercolor et ajoute du texte en bas pour expliquer le contexte.”</span></p>
+</blockquote>
+<div class="smaller">
+<ul>
+<li class="fragment"><p>Il n’y a <strong>aucun contexte technique</strong>&nbsp;: l’IA ne sait pas si on veut utiliser Leaflet, OpenLayers, MapBox… elle va donc deviner. <span class="faint">(Dans la réponse de l’IA, le nom de <strong>Leaflet</strong> est revenu le plus fréquemment).</span></p></li>
+<li class="fragment"><p>L’IA <strong>ignore les données et leur structure</strong>. Elle ne peut pas examiner la structure d’un éventuel fichier d’entrée et inventer des noms de colonnes “logiques” mais faux.</p></li>
+<li class="fragment"><p>La demande d’ajouter du “texte en bas” est aussi <strong>trop floue</strong>, l’IA va produire du texte d’une longueur non contrôlée (vous espérez cinq lignes et vous avez cinq paragraphes).</p></li>
+<li class="fragment"><p>Dans tous les cas, il reste le problème de la <strong>version</strong> utilisée (que ce soit pour Leaflet/OpenLayers ou pour la ressource de couche Stamen). L’IA ne pourra utiliser que des <strong>informations sur lesquelles elle a été entraînée</strong> qui deviennent très rapidement obsolètes dans le contexte du développement informatique. Préciser une version demandée ou aller chercher un lien vers une couche soi-même permet d’éviter d’écrire du code obsolète.</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="conseils-pour-utiliser-lia-efficacité-et-esprit-critique-1" class="slide level2">
+<h2>Conseils pour utiliser l’IA : efficacité et esprit critique</h2>
+<p>Voilà maintenant son exemple de “bon prompt” (j’ai surligné en vert les passages qui me semblent discutables).</p>
+<div class="fragment">
+<div class="smaller">
+<blockquote>
+<p>Rôle : Agis comme un développeur web expert en géomatique.</p>
+<p>Contexte technique : Je crée une page web avec la librairie OpenLayers (version 8 ou supérieure). J’ai un fichier local nommé mines.geojson.</p>
+<p>Description des données : Dans ce GeoJSON, chaque point a une propriété nommée “produce”.</p>
+<p>Tâches à réaliser :</p>
+<p>Initialise une carte centrée sur le monde avec le fond de carte Stamen Watercolor <span class="faint">(Attention : utilise les URLs valides actuelles via Stadia Maps si possible, ou préviens-moi si tu n’es pas sûr)</span>.</p>
+<p><span class="faint">Charge le fichier mines.geojson.</span></p>
+<p>Applique un style conditionnel : Si la propriété “produce” est égale à “lithium”, le point doit être un cercle rouge. Sinon, utilise une couleur par défaut.</p>
+<p>Ajoute des éléments HTML hors de la carte : Un titre <code>&lt;h1&gt;</code>, un sous-titre <code>&lt;h3&gt;</code> avec le texte “Étudiant : [Mon Nom]”, et un <code>&lt;footer&gt;</code>.</p>
+<p>Génération de texte : Dans le footer, rédige un paragraphe de 5 phrases maximum expliquant les enjeux géopolitiques et environnementaux de l’extraction du lithium aujourd’hui. Ajoute l’année du Master.</p>
+<p>Contrainte : Ne génère pas tout le code d’un coup, explique d’abord la logique du style conditionnel.</p>
+</blockquote>
+</div>
+</div>
+</section>
+<section id="conseils-pour-utiliser-lia-efficacité-et-esprit-critique-2" class="slide level2">
+<h2>Conseils pour utiliser l’IA : efficacité et esprit critique</h2>
+<p><strong>Ce qui fonctionne&nbsp;:</strong></p>
+<ul>
+<li class="fragment"><p>Le prompt est structuré en <strong>parties claires</strong> ce qui permet à l’IA (et aussi et surtout à <em>vous</em>) de bien dégager les éléments dont vous avez besoin pour coder&nbsp;: contexte, données, librairies et versions, etc.</p></li>
+<li class="fragment"><p>On indique qu’on utilise <strong>OpenLayers</strong> et sa <strong>version</strong> ce qui limite la probabilité de générer du code obsolète.</p></li>
+<li class="fragment"><p>On indique à l’IA la structure du jeu de données (en tout cas la partie qui nous intéresse), elle pourra donc <strong>inclure les champs de la donnée dans le code</strong> sans halluciner (donc sans inventer un nom probable mais faux).</p></li>
+<li class="fragment"><p>L’<strong>ordre des étapes</strong> est clair et permet à l’IA de structurer le code (et ajouter ses commentaires) en conséquence.</p></li>
+<li class="fragment"><p>Les éléments <strong>HTML</strong> sont clairement indiqués par les balises qu’on attend. L’IA n’aura pas à deviner de quelles balises on aura besoin et aura de grandes chances de bien les positionner.</p></li>
+<li class="fragment"><p>La longueur du texte attendu et son contenu sont clairs. L’IA a de grandes chances de <strong>générer un texte qui correspond à nos attentes</strong>.</p></li>
+</ul>
+</section>
+<section id="conseils-pour-utiliser-lia-efficacité-et-esprit-critique-3" class="slide level2">
+<h2>Conseils pour utiliser l’IA : efficacité et esprit critique</h2>
+<p><strong>Ce qui, selon moi, doit encore être amélioré&nbsp;:</strong></p>
+<div class="fragment">
+<blockquote>
+<p><span class="smaller">(Attention : utilise les URLs valides actuelles via Stadia Maps si possible, ou préviens-moi si tu n’es pas sûr)</span></p>
+</blockquote>
+<p>(De ce que j’ai compris de son fonctionnement et par expérience), <strong>l’IA n’aura pas de moyens d’être “sûre” d’utiliser la nouvelle version</strong>. Elle aura des chances de simplement retourner quelque chose comme “Je ne suis pas sûre, allez vérifier sur les sources officielles” ou, pire, “Je suis sûre d’utiliser la dernière version” alors que ce n’est pas le cas.</p>
+</div>
+<div class="fragment">
+<blockquote>
+<p><span class="smaller">Charge le fichier mines.geojson.</span></p>
+</blockquote>
+<p>Ça, même pour un humain, c’est <strong>flou</strong>. J’écrirais “Charge le fichier nommé <code>mines.geojson</code> <strong>dans l’application</strong>”.</p>
+</div>
+<div class="fragment">
+<p><strong>Attention aussi à revoir le texte généré&nbsp;:</strong> on travaille notamment sur des mines, qui sont concentrées sur de certaines régions du mondes qui peuvent être victimes de biais de la part de l’IA en fonction du corpus sur lequel elle a été entraînée.</p>
+</div>
+</section>
+<section id="conseils-pour-utiliser-lia-efficacité-et-esprit-critique-4" class="slide level2">
+<h2>Conseils pour utiliser l’IA : efficacité et esprit critique</h2>
+<p><strong>En règle générale, quand vous générez du texte, relisez <em>toujours</em> et remettez <em>toujours</em> en question ce que dit l’IA&nbsp;:</strong> plus l’élément est important et plus vous devez passer de temps à vérifier sa véracité.</p>
+</section>
+<section id="conseils-pour-utiliser-lia-efficacité-et-esprit-critique-5" class="slide level2">
+<h2>Conseils pour utiliser l’IA : efficacité et esprit critique</h2>
+<p>Gemini a conclu sa réponse avec une liste de “Do’s” and “Don’t” suffisamment intéressante pour que je vous la partage aussi. Cette liste est non-exhaustive, améliorable et en partie éditée par mes soins (texte en couleur).</p>
+<div class="columns">
+<div class="column smaller" style="width:50%;">
+<p>🟢 <strong>À FAIRE (DOs)</strong></p>
+<ul>
+<li class="fragment"><p><strong>Décrire les données :</strong> Toujours dire à l’IA comment s’appellent vos colonnes/attributs (ex: “J’ai une colonne ‘population’ et une colonne ‘nom_ville’”). L’IA ne peut pas voir vos fichiers locaux !</p></li>
+<li class="fragment"><p><strong>Préciser la version :</strong> Les librairies JS évoluent vite. Précisez “OpenLayers v7+” sinon vous aurez du code de 2015 (v3) incompatible. <span class="faint">Souvenez-vous que l’IA ne peut pas utiliser une version de la librairie sur laquelle elle n’a pas été entraînée. Les dernières fonctions ne seront peut-être pas disponibles et elle pourait vous donner des fonctions obsolètes.</span></p></li>
+<li class="fragment"><p><strong>Demander des commentaires :</strong> Ajoutez “Commente chaque ligne importante du code” pour comprendre ce que vous copiez. <span class="faint">L’IA commente parfois “trop”. Vous pouvez lui demander d’ajuster la fréquence des commentaires.</span></p></li>
+<li class="fragment"><p><strong>Découper le problème :</strong> Ne demandez pas tout le site d’un coup. Demandez d’abord l’affichage de la carte, puis le chargement du GeoJSON, puis le style. <span class="faint">Mais essayez quand même de limiter le nombre de prompts. C’est une question d’équilibre&nbsp;!</span></p></li>
+</ul>
+</div><div class="column smaller" style="width:50%;">
+<p>🔴 <strong>À NE PAS FAIRE (DON’Ts)</strong></p>
+<ul>
+<li class="fragment"><p><strong>Faire confiance aveuglément aux URLs :</strong> L’IA invente souvent des liens vers des données ou des tuiles qui n’existent plus. Vérifiez toujours la documentation.</p></li>
+<li class="fragment"><p><strong>Copier-coller sans lire :</strong> C’est la garantie d’avoir des variables qui s’appellent <code>var map</code> en haut et <code>const myMap</code> en bas, ce qui cassera le code.</p></li>
+<li class="fragment"><p><strong>Oublier l’esprit critique :</strong> Si l’IA propose une fonction <code>map.enable3DMode()</code>, demandez-vous si ça existe vraiment dans OpenLayers (spoiler : non, c’est du CesiumJS ou du Mapbox, l’IA hallucine souvent des mix de librairies). <span class="faint">L’IA vient de nous faire une superbe hallucination, parce que je n’ai pas non plus trouvé cette fonction dans CesiumJS ni Mapbox.</span></p></li>
+</ul>
+</div></div>
+</section>
+<section id="conseils-pour-utiliser-lia-efficacité-et-esprit-critique-6" class="slide level2">
+<h2>Conseils pour utiliser l’IA : efficacité et esprit critique</h2>
+<p>Enfin, voici quelques exemples de biais à garder en tête quand on utilise de l’IA générative.</p>
+<p><strong>Biais présents lors de la sélection des données&nbsp;:</strong></p>
+<ul>
+<li class="fragment"><p><strong>Biais de sélection</strong> et <strong>biais d’omission</strong>&nbsp;: au moment de l’entraînement du modèle, sélection consciente ou inconsciente de donnée qui confirme des croyances ou hypothèses existantes.</p></li>
+<li class="fragment"><p><strong>Biais de disponibilité</strong>&nbsp;: le modèle est plus entraîné sur de l’information facilement accessible qui peut ne pas être complète.</p></li>
+<li class="fragment"><p><strong>Biais de représentativité&nbsp;:</strong> Les données utilisées ne reflètent pas correctement la diversité des personnes ou des cas d’utilisation.</p></li>
+<li class="fragment"><p><strong>Biais de préjugés:</strong> Des stéréotypes ou hypothèses sociétales erronnées se retrouvent dans le jeu de données ce qui conduit le modèle à les “adopter”.</p></li>
+</ul>
+<p><span class="smaller">_Sources&nbsp;: <a href="https://www.iqo.eu/data/biais-humains-ia-generative/">https://www.iqo.eu/data/biais-humains-ia-generative/</a> et <a href="https://www.ibm.com/fr-fr/think/topics/ai-bias_">https://www.ibm.com/fr-fr/think/topics/ai-bias_</a></span></p>
+</section>
+<section id="conseils-pour-utiliser-lia-efficacité-et-esprit-critique-7" class="slide level2">
+<h2>Conseils pour utiliser l’IA : efficacité et esprit critique</h2>
+<p>Enfin, voici quelques exemples de biais à garder en tête quand on utilise de l’IA générative.</p>
+<p><strong>Biais présents lors de l’utilisation du modèle&nbsp;:</strong></p>
+<ul>
+<li class="fragment"><p><strong>Biais d’automatisation&nbsp;:</strong> Il s’agit de la confiance excessive de l’utilisateur dans les performances du modèle qui négligera donc ses vérifications.</p></li>
+<li class="fragment"><p><strong>Illusion de connaissance&nbsp;:</strong> C’est la croyance de l’utilisateur dans le fait que le modèle comprend les sujets ou répond aux questions de manière plus précise qu’elle ne le fait réellement. Ce biais est particulièrement préjudiciable dans le cas d’hallucinations.</p></li>
+<li class="fragment"><p><strong>Biais de confirmation&nbsp;:</strong> C’est l’interprétation des résultats (ou même la rédaction de prompts) d’une manière qui confirme nos croyances préexistantes.</p></li>
+</ul>
+</section>
+<section id="si-on-a-le-temps-de-débattre-un-peu" class="slide level2">
+<h2>Si on a le temps de débattre un peu…</h2>
+<p>…voici quelques questions qui peuvent vous donner à réfléchir.</p>
+</section>
+<section class="slide level2">
+
+<p>Est-ce qu’on peut dire que les IA génératives <strong>“créent du nouveau contenu”</strong>&nbsp;?</p>
+</section>
+<section class="slide level2">
+
+<p>Vous êtes un prof de français et n’importe qui peut générer un essai sur l’usage de la sténographie dans <em>Dracula</em>. <strong>Êtes-vous en train d’évaluer l’élève ou l’IA&nbsp;? Comment adapteriez-vous votre évaluation&nbsp;?</strong> <span class="faint smaller">Avec un <a href="https://www.youtube.com/watch?v=ogcSQ-cFRVM">TED talk qui a inspiré ma question</a>.</span></p>
+</section>
+<section class="slide level2">
+
+<p>On l’a vu, les LLM fonctionnent grâce à des probabilités. <strong>Peut-on innover avec un outil qui cherche la moyenne&nbsp;?</strong></p>
+</section>
+<section class="slide level2">
+
+<p>Les IA génératives commencent à être entraînées sur du contenu généré par de l’IA. On peut parler de <strong><a href="https://matthias-gaspard.fr/blog/actualite/consanguinite-ia-quest-ce-que-cest">consanguinité de l’IA</a></strong>. Avec cette boucle rétroactive, va-t-on vers un <strong>“lissage”</strong> du contenu disponible sur internet&nbsp;? Vers une <strong>débilitation</strong> de l’IA&nbsp;? Quelles sont les solutions&nbsp;?</p>
+</section>
+<section id="le-mot-de-la-fin" class="slide level2">
+<h2>Le mot de la fin</h2>
+<p>L’IA générative est un outil auquel vous êtes déjà confrontés au quotidien et serez (très, <em>très</em> certainement) confrontés dans le monde du travail.</p>
+<p>Servez-vous en avec <strong>intelligence</strong> et <strong>esprit critique</strong>, et je ne peux que vous conseiller de vous <strong>documenter</strong> sur le sujet.</p>
+<p>Confrontez les points de vue, identifiez les biais des utilisateurs de l’IA, de ses défenseurs et ses opposants. Comment est-ce qu’elle transforme notre société, <strong>comment est-ce qu’elle déplace les compétences demandées aux humains ?</strong></p>
+<p>Et faites un peu de prévention auprès de vos proches qui s’en servent un peu trop sans réfléchir !</p>
 
 
 </section>

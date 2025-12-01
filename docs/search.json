@@ -340,7 +340,7 @@
     "href": "cours/geonum/05_cours_openlayers_bases.html",
     "title": "OpenLayers – cycle de développement",
     "section": "",
-    "text": "Discuter des outils de développement web et comment les utiliser\n\n\n\nAjouter une application OpenLayers à notre stack Docker\nBuild et “mettre en production” l’application, servie par un serveur Caddy\nComprendre la structure du code de l’application OpenLayers et\nCréer un commit et héberger mon code sur GitHub",
+    "text": "Discuter des outils de développement web et comment les utiliser\nAjouter une application OpenLayers à notre stack Docker\nBuild et “mettre en production” l’application, servie par un serveur Caddy\nComprendre la structure du code de l’application OpenLayers\nCréer un commit et héberger votre code sur GitHub",
     "crumbs": [
       "OpenLayers – cycle de développement"
     ]
@@ -350,7 +350,7 @@
     "href": "cours/geonum/05_cours_openlayers_bases.html#objectifs-de-la-session",
     "title": "OpenLayers – cycle de développement",
     "section": "",
-    "text": "Discuter des outils de développement web et comment les utiliser\n\n\n\nAjouter une application OpenLayers à notre stack Docker\nBuild et “mettre en production” l’application, servie par un serveur Caddy\nComprendre la structure du code de l’application OpenLayers et\nCréer un commit et héberger mon code sur GitHub",
+    "text": "Discuter des outils de développement web et comment les utiliser\nAjouter une application OpenLayers à notre stack Docker\nBuild et “mettre en production” l’application, servie par un serveur Caddy\nComprendre la structure du code de l’application OpenLayers\nCréer un commit et héberger votre code sur GitHub",
     "crumbs": [
       "OpenLayers – cycle de développement"
     ]
@@ -360,7 +360,7 @@
     "href": "cours/geonum/05_cours_openlayers_bases.html#supports",
     "title": "OpenLayers – cycle de développement",
     "section": "Supports",
-    "text": "Supports\nCours : Outils de développement web\nCours : Développer avec NodeJS et OpenLayers",
+    "text": "Supports\nCours : Un point sur l’IA\nCours : Développer avec NodeJS et OpenLayers",
     "crumbs": [
       "OpenLayers – cycle de développement"
     ]
@@ -830,7 +830,7 @@
     "href": "cours/geonum/04_diapos_intro_openlayers.html#sommaire",
     "title": "Introduction à OpenLayers",
     "section": "Sommaire",
-    "text": "Sommaire\n\nObjectif du cours\nPrésentation brève d’OpenLayers\nPrésentation (brève aussi) de NodeJS"
+    "text": "Sommaire\n\nPrésentation brève d’OpenLayers\nPrésentation (brève aussi) de NodeJS"
   },
   {
     "objectID": "cours/geonum/04_diapos_intro_openlayers.html#objectif-du-cours",
@@ -893,28 +893,28 @@
     "href": "cours/geonum/05_diapos_ai.html#sommaire",
     "title": "Un point sur l’IA générative",
     "section": "Sommaire",
-    "text": "Sommaire\n\nPourquoi ce point ?\nIntroduction au concept d’intelligence artificielle"
+    "text": "Sommaire\n\nPourquoi ce point ?\nIntroduction au concept d’intelligence artificielle\nLe cas de l’IA générative, exemple avec Chat-GPT\nLe coût de l’IA générative\nConseils pour utiliser l’IA : efficacité et esprit critique\nSi on a le temps de débattre un peu…\nLe mot de la fin"
   },
   {
     "objectID": "cours/geonum/05_diapos_ai.html#pourquoi-ce-point",
     "href": "cours/geonum/05_diapos_ai.html#pourquoi-ce-point",
     "title": "Un point sur l’IA générative",
     "section": "Pourquoi ce point ?",
-    "text": "Pourquoi ce point ?\nD’abord, pour moi.\n…\nEnsuite, pour vous aussi.\n…"
+    "text": "Pourquoi ce point ?\nD’abord, pour moi.\nParce qu’à force d’entendre tout et n’importe quoi sur cet outil que j’ai commencé à utiliser un peu plus tard que la moyenne (l’an dernier), il fallait que j’éclaire quelques points.\n\nEnsuite, pour vous aussi.\nC’est toujours mieux de comprendre un outil qu’on utilise. Vous pourriez apprendre des choses (en tout cas j’espère) qui changeront votre manière de l’aborder."
   },
   {
     "objectID": "cours/geonum/05_diapos_ai.html#pourquoi-ce-point-1",
     "href": "cours/geonum/05_diapos_ai.html#pourquoi-ce-point-1",
     "title": "Un point sur l’IA générative",
     "section": "Pourquoi ce point ?",
-    "text": "Pourquoi ce point ?\nL’IA dans mon cours : oui, avec intelligence et transparence\nVous avez le droit d’utiliser l’IA générative pendant mon cours et pour les rendus.\nPar contre, je vous demande de le faire intelligemment et avec transparence.\n\nIntelligemment : en fait, il faudrait plutôt dire le faire quand on en a besoin (et pas par réflexe ou pire, par fainéantise), de rédiger des prompts efficaces, de toujours conserver un esprit critique quand vous utilisez l’IA et de revoir les réponses pour les affiner (surtout si vous générez du texte).\nAvec transparence : si vous utilisez de l’IA générative dans un rapport, dans votre code, etc. je dois pouvoir savoir laquelle vous avez utilisé et pourquoi (générer du code ? générer le texte de présentation de votre application ?). Vous verrez que je vous demande parfois de garder un ou deux prompts en exemple.\n\n\nVous verrez que la partie “intelligemment” viendra toute seule au fil de ma présentation, soyez attentifs !"
+    "text": "Pourquoi ce point ?\nL’IA dans mon cours : oui, avec intelligence et transparence\nVous avez le droit d’utiliser l’IA générative pendant mon cours et pour les rendus.\nPar contre, je vous demande de le faire intelligemment et avec transparence.\n\nIntelligemment : en fait, il faudrait plutôt dire le faire quand on en a besoin (et pas par réflexe ou pire, par fainéantise), de rédiger des prompts efficaces, de toujours conserver un esprit critique quand vous utilisez l’IA et de revoir les réponses pour les affiner (surtout si vous générez du texte).\nAvec transparence : si vous utilisez de l’IA générative dans un rapport, dans votre code, etc. je dois pouvoir savoir laquelle vous avez utilisé et pourquoi (générer du code ? générer le texte de présentation de votre application ?). Vous verrez que je vous demande parfois de garder un ou deux prompts en exemple.\n\n\nLa partie “intelligemment” devrait venir petit à petit quand vous comprendrez mieux l’outil."
   },
   {
     "objectID": "cours/geonum/05_diapos_ai.html#pourquoi-ce-point-2",
     "href": "cours/geonum/05_diapos_ai.html#pourquoi-ce-point-2",
     "title": "Un point sur l’IA générative",
     "section": "Pourquoi ce point ?",
-    "text": "Pourquoi ce point ?\nDe grandes inconnues autour d’un outil du quotidien\n\nQui sait quelle est la différence entre IA, ML, LLM, IA générative ?\nSavez-vous comment fonctionne une IA générative ?\nEst-ce qu’on peut dire que les IA génératives “créent du nouveau contenu” ?\nQui ici est déjà allé se renseigner sur le fonctionnement des IA génératives ? Leur entraînement ? Leur coût ?"
+    "text": "Pourquoi ce point ?\nDe grandes inconnues autour d’un outil du quotidien\n\nQui sait quelle est la différence entre IA, ML, LLM, IA générative ?\nSavez-vous comment fonctionne une IA générative ?\nQui ici est déjà allé se renseigner sur le fonctionnement des IA génératives ? Leur entraînement ? Leur coût ?"
   },
   {
     "objectID": "cours/geonum/05_diapos_ai.html#introduction-au-concept-dintelligence-artificielle",
@@ -922,13 +922,6 @@
     "title": "Un point sur l’IA générative",
     "section": "Introduction au concept d’intelligence artificielle",
     "text": "Introduction au concept d’intelligence artificielle"
-  },
-  {
-    "objectID": "cours/geonum/05_diapos_ai.html#introduction-au-concept-dintelligence-artificielle-1",
-    "href": "cours/geonum/05_diapos_ai.html#introduction-au-concept-dintelligence-artificielle-1",
-    "title": "Un point sur l’IA générative",
-    "section": "Introduction au concept d’intelligence artificielle",
-    "text": "Introduction au concept d’intelligence artificielle\n\nIntelligence Artificielle (AI)\nSimulation avec un ordinateur dans le but d’égaler ou excéder l’intelligence humaine.\n\n\n\nMachine Learning (LM)\n\n\n🍎 🍐️ 🍋️ 🍎️ 🍐️ 🍋️ 🍋 🍎 🍐️\n\n\nLa machine “apprend”, on n’a pas besoin de coder toutes ses actions. Elle est aussi douée pour chercher des exceptions, des éléments qui ne respectent pas les patterns.\n\n\nDeep Learning (DL)\n\n💬 → 🍎\n\n\n💬 → 🍐\n\n\n💬 → 🍋\n\n\nFonctionne avec des réseaux de neurones, une manière de simuler le fonctionnement du cerveau humain avec un ordinateur. Les résultats commencent à devenir imprévisibles : pour le même input, on n’a pas toujours le même output.\n\nGenerative AI\nBasé sur des Large Language Models (LLM). Analogie du T9 =&gt; le modèle regarde le contexte / la phrase existante et prédit le prochain mot, la prochaine phrase, le prochain document…\nD’autres IA génératives peuvent produire des images, des vidéos, de la musique…\n\n\n\n\nSource : AI, Machine Learning, Deep Learning and Generative AI explained (IBM Technology)"
   },
   {
     "objectID": "cours/geonum/05_diapos_ai.html#le-cas-de-lia-générative-exemple-avec-chat-gpt",
@@ -949,11 +942,18 @@
     "href": "cours/geonum/05_diapos_ai.html#le-coût-de-lia-générative",
     "title": "Un point sur l’IA générative",
     "section": "Le coût de l’IA générative",
-    "text": "Le coût de l’IA générative\n\n\nLa phase d’entraînement (c.f. diapo précédente) demande à des milliers de GPU (NVIDIA, ça vous parle ?) qui tournent à plein régime pendant des mois.\n\n\n\n\nEn 2026, la hausse de la consommation électrique des centres de données, des cryptomonnaies et de l’IA pourrait s’élever à l’équivalent de la consommation électrique de la Suède ou de l’Allemagne, par rapport à 2022.\nL’empreinte carbone de l’IA est loin d’être négligeable, ainsi, des scientifiques estiment que l’entraînement du modèle d’IA BLOOM émet 10 fois plus de gaz à effet de serre qu’un Français en une année.\nSource : https://www.polytechnique-insights.com/tribunes/energie/ia-generative-la-consommation-energetique-explose/\n\n\n\n\nLa phrase d’inférence (quand vous faites vos requêtes) consomme aussi énormément. L’eau est particulièrement touchée. Elle est utilisée pour refroidir les serveurs : chaque requête consomme en moyenne 1/2 litre d’eau.\n\n\n\n\nLes interactions avec des IA comme ChatGPT pourraient consommer 10 fois plus d’électricité qu’une recherche Google classique, d’après l’Agence internationale de l’énergie.\nSource: https://www.polytechnique-insights.com/tribunes/energie/ia-generative-la-consommation-energetique-explose/"
+    "text": "Le coût de l’IA générative\n\n\nLa phase d’entraînement (c.f. diapo précédente) demande à des milliers de GPU (NVIDIA, ça vous parle ?) qui tournent à plein régime pendant des mois.\n\n\n\n\nEn 2026, la hausse de la consommation électrique des centres de données, des cryptomonnaies et de l’IA pourrait s’élever à l’équivalent de la consommation électrique de la Suède ou de l’Allemagne, par rapport à 2022.\nL’empreinte carbone de l’IA est loin d’être négligeable, ainsi, des scientifiques estiment que l’entraînement du modèle d’IA BLOOM émet 10 fois plus de gaz à effet de serre qu’un Français en une année.\nSource : https://www.polytechnique-insights.com/tribunes/energie/ia-generative-la-consommation-energetique-explose/"
   },
   {
     "objectID": "cours/geonum/05_diapos_ai.html#le-coût-de-lia-générative-1",
     "href": "cours/geonum/05_diapos_ai.html#le-coût-de-lia-générative-1",
+    "title": "Un point sur l’IA générative",
+    "section": "Le coût de l’IA générative",
+    "text": "Le coût de l’IA générative\n\nLa phrase d’inférence (quand vous faites vos requêtes) consomme aussi énormément. L’eau est particulièrement touchée. Elle est utilisée pour refroidir les serveurs : chaque requête consomme en moyenne 1/2 litre d’eau.\n\n\n\nLes interactions avec des IA comme ChatGPT pourraient consommer 10 fois plus d’électricité qu’une recherche Google classique, d’après l’Agence internationale de l’énergie.\nSource: https://www.polytechnique-insights.com/tribunes/energie/ia-generative-la-consommation-energetique-explose/"
+  },
+  {
+    "objectID": "cours/geonum/05_diapos_ai.html#le-coût-de-lia-générative-2",
+    "href": "cours/geonum/05_diapos_ai.html#le-coût-de-lia-générative-2",
     "title": "Un point sur l’IA générative",
     "section": "Le coût de l’IA générative",
     "text": "Le coût de l’IA générative\nPosez-vous la question : Est-ce que j’ai vraiment besoin de cette requête ?\n\nJ’ai demandé à Gemini de me parler de son coût environnemental. Voilà une partie de sa réponse :\n\nMessage : “Utiliser l’IA pour générer un ‘Hello World’ en HTML, c’est comme prendre l’avion pour aller acheter du pain. C’est possible, mais est-ce raisonnable ?”"
@@ -963,7 +963,70 @@
     "href": "cours/geonum/05_diapos_ai.html#conseils-pour-utiliser-lia-efficacité-et-esprit-critique",
     "title": "Un point sur l’IA générative",
     "section": "Conseils pour utiliser l’IA : efficacité et esprit critique",
-    "text": "Conseils pour utiliser l’IA : efficacité et esprit critique\n…"
+    "text": "Conseils pour utiliser l’IA : efficacité et esprit critique\nJ’ai utilisé Gemini pour générer des conseils pour rédiger un prompt efficace (réponses éditées pour ajouter des éléments et retirer une hallucination de l’IA). Voilà son exemple de “mauvais prompt” :\n\n\n“Fais-moi une carte avec des mines de lithium en rouge à partir de mon fichier geojson. Mets un fond de carte Stamen Watercolor et ajoute du texte en bas pour expliquer le contexte.”\n\n\n\nIl n’y a aucun contexte technique : l’IA ne sait pas si on veut utiliser Leaflet, OpenLayers, MapBox… elle va donc deviner. (Dans la réponse de l’IA, le nom de Leaflet est revenu le plus fréquemment).\nL’IA ignore les données et leur structure. Elle ne peut pas examiner la structure d’un éventuel fichier d’entrée et inventer des noms de colonnes “logiques” mais faux.\nLa demande d’ajouter du “texte en bas” est aussi trop floue, l’IA va produire du texte d’une longueur non contrôlée (vous espérez cinq lignes et vous avez cinq paragraphes).\nDans tous les cas, il reste le problème de la version utilisée (que ce soit pour Leaflet/OpenLayers ou pour la ressource de couche Stamen). L’IA ne pourra utiliser que des informations sur lesquelles elle a été entraînée qui deviennent très rapidement obsolètes dans le contexte du développement informatique. Préciser une version demandée ou aller chercher un lien vers une couche soi-même permet d’éviter d’écrire du code obsolète."
+  },
+  {
+    "objectID": "cours/geonum/05_diapos_ai.html#conseils-pour-utiliser-lia-efficacité-et-esprit-critique-1",
+    "href": "cours/geonum/05_diapos_ai.html#conseils-pour-utiliser-lia-efficacité-et-esprit-critique-1",
+    "title": "Un point sur l’IA générative",
+    "section": "Conseils pour utiliser l’IA : efficacité et esprit critique",
+    "text": "Conseils pour utiliser l’IA : efficacité et esprit critique\nVoilà maintenant son exemple de “bon prompt” (j’ai surligné en vert les passages qui me semblent discutables).\n\n\n\nRôle : Agis comme un développeur web expert en géomatique.\nContexte technique : Je crée une page web avec la librairie OpenLayers (version 8 ou supérieure). J’ai un fichier local nommé mines.geojson.\nDescription des données : Dans ce GeoJSON, chaque point a une propriété nommée “produce”.\nTâches à réaliser :\nInitialise une carte centrée sur le monde avec le fond de carte Stamen Watercolor (Attention : utilise les URLs valides actuelles via Stadia Maps si possible, ou préviens-moi si tu n’es pas sûr).\nCharge le fichier mines.geojson.\nApplique un style conditionnel : Si la propriété “produce” est égale à “lithium”, le point doit être un cercle rouge. Sinon, utilise une couleur par défaut.\nAjoute des éléments HTML hors de la carte : Un titre &lt;h1&gt;, un sous-titre &lt;h3&gt; avec le texte “Étudiant : [Mon Nom]”, et un &lt;footer&gt;.\nGénération de texte : Dans le footer, rédige un paragraphe de 5 phrases maximum expliquant les enjeux géopolitiques et environnementaux de l’extraction du lithium aujourd’hui. Ajoute l’année du Master.\nContrainte : Ne génère pas tout le code d’un coup, explique d’abord la logique du style conditionnel."
+  },
+  {
+    "objectID": "cours/geonum/05_diapos_ai.html#conseils-pour-utiliser-lia-efficacité-et-esprit-critique-2",
+    "href": "cours/geonum/05_diapos_ai.html#conseils-pour-utiliser-lia-efficacité-et-esprit-critique-2",
+    "title": "Un point sur l’IA générative",
+    "section": "Conseils pour utiliser l’IA : efficacité et esprit critique",
+    "text": "Conseils pour utiliser l’IA : efficacité et esprit critique\nCe qui fonctionne :\n\nLe prompt est structuré en parties claires ce qui permet à l’IA (et aussi et surtout à vous) de bien dégager les éléments dont vous avez besoin pour coder : contexte, données, librairies et versions, etc.\nOn indique qu’on utilise OpenLayers et sa version ce qui limite la probabilité de générer du code obsolète.\nOn indique à l’IA la structure du jeu de données (en tout cas la partie qui nous intéresse), elle pourra donc inclure les champs de la donnée dans le code sans halluciner (donc sans inventer un nom probable mais faux).\nL’ordre des étapes est clair et permet à l’IA de structurer le code (et ajouter ses commentaires) en conséquence.\nLes éléments HTML sont clairement indiqués par les balises qu’on attend. L’IA n’aura pas à deviner de quelles balises on aura besoin et aura de grandes chances de bien les positionner.\nLa longueur du texte attendu et son contenu sont clairs. L’IA a de grandes chances de générer un texte qui correspond à nos attentes."
+  },
+  {
+    "objectID": "cours/geonum/05_diapos_ai.html#conseils-pour-utiliser-lia-efficacité-et-esprit-critique-3",
+    "href": "cours/geonum/05_diapos_ai.html#conseils-pour-utiliser-lia-efficacité-et-esprit-critique-3",
+    "title": "Un point sur l’IA générative",
+    "section": "Conseils pour utiliser l’IA : efficacité et esprit critique",
+    "text": "Conseils pour utiliser l’IA : efficacité et esprit critique\nCe qui, selon moi, doit encore être amélioré :\n\n\n(Attention : utilise les URLs valides actuelles via Stadia Maps si possible, ou préviens-moi si tu n’es pas sûr)\n\n(De ce que j’ai compris de son fonctionnement et par expérience), l’IA n’aura pas de moyens d’être “sûre” d’utiliser la nouvelle version. Elle aura des chances de simplement retourner quelque chose comme “Je ne suis pas sûre, allez vérifier sur les sources officielles” ou, pire, “Je suis sûre d’utiliser la dernière version” alors que ce n’est pas le cas.\n\n\n\nCharge le fichier mines.geojson.\n\nÇa, même pour un humain, c’est flou. J’écrirais “Charge le fichier nommé mines.geojson dans l’application”.\n\n\nAttention aussi à revoir le texte généré : on travaille notamment sur des mines, qui sont concentrées sur de certaines régions du mondes qui peuvent être victimes de biais de la part de l’IA en fonction du corpus sur lequel elle a été entraînée."
+  },
+  {
+    "objectID": "cours/geonum/05_diapos_ai.html#conseils-pour-utiliser-lia-efficacité-et-esprit-critique-4",
+    "href": "cours/geonum/05_diapos_ai.html#conseils-pour-utiliser-lia-efficacité-et-esprit-critique-4",
+    "title": "Un point sur l’IA générative",
+    "section": "Conseils pour utiliser l’IA : efficacité et esprit critique",
+    "text": "Conseils pour utiliser l’IA : efficacité et esprit critique\nEn règle générale, quand vous générez du texte, relisez toujours et remettez toujours en question ce que dit l’IA : plus l’élément est important et plus vous devez passer de temps à vérifier sa véracité."
+  },
+  {
+    "objectID": "cours/geonum/05_diapos_ai.html#conseils-pour-utiliser-lia-efficacité-et-esprit-critique-5",
+    "href": "cours/geonum/05_diapos_ai.html#conseils-pour-utiliser-lia-efficacité-et-esprit-critique-5",
+    "title": "Un point sur l’IA générative",
+    "section": "Conseils pour utiliser l’IA : efficacité et esprit critique",
+    "text": "Conseils pour utiliser l’IA : efficacité et esprit critique\nGemini a conclu sa réponse avec une liste de “Do’s” and “Don’t” suffisamment intéressante pour que je vous la partage aussi. Cette liste est non-exhaustive, améliorable et en partie éditée par mes soins (texte en couleur).\n\n\n🟢 À FAIRE (DOs)\n\nDécrire les données : Toujours dire à l’IA comment s’appellent vos colonnes/attributs (ex: “J’ai une colonne ‘population’ et une colonne ‘nom_ville’”). L’IA ne peut pas voir vos fichiers locaux !\nPréciser la version : Les librairies JS évoluent vite. Précisez “OpenLayers v7+” sinon vous aurez du code de 2015 (v3) incompatible. Souvenez-vous que l’IA ne peut pas utiliser une version de la librairie sur laquelle elle n’a pas été entraînée. Les dernières fonctions ne seront peut-être pas disponibles et elle pourait vous donner des fonctions obsolètes.\nDemander des commentaires : Ajoutez “Commente chaque ligne importante du code” pour comprendre ce que vous copiez. L’IA commente parfois “trop”. Vous pouvez lui demander d’ajuster la fréquence des commentaires.\nDécouper le problème : Ne demandez pas tout le site d’un coup. Demandez d’abord l’affichage de la carte, puis le chargement du GeoJSON, puis le style. Mais essayez quand même de limiter le nombre de prompts. C’est une question d’équilibre !\n\n\n🔴 À NE PAS FAIRE (DON’Ts)\n\nFaire confiance aveuglément aux URLs : L’IA invente souvent des liens vers des données ou des tuiles qui n’existent plus. Vérifiez toujours la documentation.\nCopier-coller sans lire : C’est la garantie d’avoir des variables qui s’appellent var map en haut et const myMap en bas, ce qui cassera le code.\nOublier l’esprit critique : Si l’IA propose une fonction map.enable3DMode(), demandez-vous si ça existe vraiment dans OpenLayers (spoiler : non, c’est du CesiumJS ou du Mapbox, l’IA hallucine souvent des mix de librairies). L’IA vient de nous faire une superbe hallucination, parce que je n’ai pas non plus trouvé cette fonction dans CesiumJS ni Mapbox."
+  },
+  {
+    "objectID": "cours/geonum/05_diapos_ai.html#conseils-pour-utiliser-lia-efficacité-et-esprit-critique-6",
+    "href": "cours/geonum/05_diapos_ai.html#conseils-pour-utiliser-lia-efficacité-et-esprit-critique-6",
+    "title": "Un point sur l’IA générative",
+    "section": "Conseils pour utiliser l’IA : efficacité et esprit critique",
+    "text": "Conseils pour utiliser l’IA : efficacité et esprit critique\nEnfin, voici quelques exemples de biais à garder en tête quand on utilise de l’IA générative.\nBiais présents lors de la sélection des données :\n\nBiais de sélection et biais d’omission : au moment de l’entraînement du modèle, sélection consciente ou inconsciente de donnée qui confirme des croyances ou hypothèses existantes.\nBiais de disponibilité : le modèle est plus entraîné sur de l’information facilement accessible qui peut ne pas être complète.\nBiais de représentativité : Les données utilisées ne reflètent pas correctement la diversité des personnes ou des cas d’utilisation.\nBiais de préjugés: Des stéréotypes ou hypothèses sociétales erronnées se retrouvent dans le jeu de données ce qui conduit le modèle à les “adopter”.\n\n_Sources : https://www.iqo.eu/data/biais-humains-ia-generative/ et https://www.ibm.com/fr-fr/think/topics/ai-bias_"
+  },
+  {
+    "objectID": "cours/geonum/05_diapos_ai.html#conseils-pour-utiliser-lia-efficacité-et-esprit-critique-7",
+    "href": "cours/geonum/05_diapos_ai.html#conseils-pour-utiliser-lia-efficacité-et-esprit-critique-7",
+    "title": "Un point sur l’IA générative",
+    "section": "Conseils pour utiliser l’IA : efficacité et esprit critique",
+    "text": "Conseils pour utiliser l’IA : efficacité et esprit critique\nEnfin, voici quelques exemples de biais à garder en tête quand on utilise de l’IA générative.\nBiais présents lors de l’utilisation du modèle :\n\nBiais d’automatisation : Il s’agit de la confiance excessive de l’utilisateur dans les performances du modèle qui négligera donc ses vérifications.\nIllusion de connaissance : C’est la croyance de l’utilisateur dans le fait que le modèle comprend les sujets ou répond aux questions de manière plus précise qu’elle ne le fait réellement. Ce biais est particulièrement préjudiciable dans le cas d’hallucinations.\nBiais de confirmation : C’est l’interprétation des résultats (ou même la rédaction de prompts) d’une manière qui confirme nos croyances préexistantes."
+  },
+  {
+    "objectID": "cours/geonum/05_diapos_ai.html#si-on-a-le-temps-de-débattre-un-peu",
+    "href": "cours/geonum/05_diapos_ai.html#si-on-a-le-temps-de-débattre-un-peu",
+    "title": "Un point sur l’IA générative",
+    "section": "Si on a le temps de débattre un peu…",
+    "text": "Si on a le temps de débattre un peu…\n…voici quelques questions qui peuvent vous donner à réfléchir."
+  },
+  {
+    "objectID": "cours/geonum/05_diapos_ai.html#le-mot-de-la-fin",
+    "href": "cours/geonum/05_diapos_ai.html#le-mot-de-la-fin",
+    "title": "Un point sur l’IA générative",
+    "section": "Le mot de la fin",
+    "text": "Le mot de la fin\nL’IA générative est un outil auquel vous êtes déjà confrontés au quotidien et serez (très, très certainement) confrontés dans le monde du travail.\nServez-vous en avec intelligence et esprit critique, et je ne peux que vous conseiller de vous documenter sur le sujet.\nConfrontez les points de vue, identifiez les biais des utilisateurs de l’IA, de ses défenseurs et ses opposants. Comment est-ce qu’elle transforme notre société, comment est-ce qu’elle déplace les compétences demandées aux humains ?\nEt faites un peu de prévention auprès de vos proches qui s’en servent un peu trop sans réfléchir !"
   },
   {
     "objectID": "index.html",

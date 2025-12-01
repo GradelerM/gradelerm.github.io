@@ -14,8 +14,6 @@ format:
 
 ## Sommaire
 
--   Objectif du cours
-
 -   Présentation brève d’OpenLayers
 
 -   Présentation (brève aussi) de NodeJS
