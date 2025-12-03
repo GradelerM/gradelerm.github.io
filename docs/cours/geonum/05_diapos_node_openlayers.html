@@ -97,7 +97,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-f62b70d53a1de5675516717b0017cdc5.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-18e29b6cea4c0a39f312ef258f15e278.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -222,6 +222,10 @@ Marie Gradeler
 <li><p>On ajoute notre première couche ensemble</p></li>
 </ul>
 </section>
+<section id="avant-toute-chose" class="slide level2">
+<h2>Avant toute chose…</h2>
+<p>Commencez par suivre la section “Création de l’application en NodeJS” du TP avant de commencer le point sur le cycle de développement.</p>
+</section>
 <section id="le-cycle-du-développement-web" class="slide level2">
 <h2>Le cycle du développement web</h2>
 <h3 id="la-version-simpliste">La version simpliste</h3>
@@ -301,12 +305,41 @@ Marie Gradeler
 <li><p>Je crée une <strong>nouvelle branche</strong> (<code>git branch</code>) pour ma nouvelle <em>feature</em> / ma correction de bug, par exemple <code>fond-carte-stamen</code>.</p></li>
 <li><p>Quand je juge que le développement est terminé, je <strong>build mon application</strong> (<code>npm run build</code>) pour pouvoir tester la nouvelle version.</p></li>
 <li><p>Si je trouve des bugs, je continue le développement.</p></li>
-<li><p>Si mon <em>build</em> est prêt, je peux <em>commit</em> mes changements (<code>git commit</code>) et j’ajoute un message qui explique ce que fait le nouveau code que je viens commit. Si votre développement vous fait ajouter beaucoup de code pour une seule feature, vous pouvez (devez) faire plusieurs <em>commits</em>. Vous pouvez les voir comme des <em>checkpoints</em> dans votre développement — si vous cassez quelque chose, vous pouvez revenir au dernier <em>commit</em>, ou celui d’avant, etc.</p></li>
 </ul>
 </section>
 <section id="le-cycle-du-développement-web-3" class="slide level2">
 <h2>Le cycle du développement web</h2>
 <h3 id="intégration-de-git-1">Intégration de Git</h3>
+<p>Comme vous savez utiliser Git pour versionner votre code, on peut complexifier ce schéma en intégrant la création de nouvelle branche, les commits et les fusions de branches (<em>merge</em>).</p>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  start{"Start"} --&gt; branch{{"git branch"}}
+  branch --&gt; dev("Développement")
+  dev --&gt; build{{"npm run build"}}
+  build --&gt; tests("Tests")
+  tests --&gt; dev
+  build --&gt; commit{{"git commit"}}
+  commit --&gt; merge{{"git merge"}}
+  merge --&gt; prod("Production")
+  prod --&gt; stop{"End"}
+  stop --&gt; start
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<ul>
+<li>Si mon <em>build</em> est prêt, je peux <em>commit</em> mes changements (<code>git commit</code>) et j’ajoute un message qui explique ce que fait le nouveau code que je viens commit. Si votre développement vous fait ajouter beaucoup de code pour une seule feature, vous pouvez (devez) faire plusieurs <em>commits</em>. Vous pouvez les voir comme des <em>checkpoints</em> dans votre développement — si vous cassez quelque chose, vous pouvez revenir au dernier <em>commit</em>, ou celui d’avant, etc.</li>
+</ul>
+</section>
+<section id="le-cycle-du-développement-web-4" class="slide level2">
+<h2>Le cycle du développement web</h2>
+<h3 id="intégration-de-git-2">Intégration de Git</h3>
 <div class="cell" data-reveal="true" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -333,6 +366,10 @@ Marie Gradeler
 <li><p>Ensuite, je dois <em>merge</em> le code de ma branche avec la branche prinicipale de mon code (généralement <em>main</em>) avec <code>git merge</code>.</p></li>
 <li><p>La dernière étape est de mettre mon application en production. C’est très complexe et ce ne sera pas à vous de le faire. Le Docker Compose s’en charge pour vous.</p></li>
 </ul>
+</section>
+<section id="le-cycle-du-développement-web-5" class="slide level2">
+<h2>Le cycle du développement web</h2>
+<p>On a vu une version <strong>très simplifiée</strong> de ce cycle, mais suffisante pour nos TPs ensemble (et pour votre projet GeoNum). Vous pouvez poursuivre le TP jusqu’à avoir réussi à héberger votre code sur GitHub. Ensuite, on reprendra les diapos pour apprendre à ajouter notre première couche à l’application&nbsp;!</p>
 </section>
 <section id="se-familiariser-avec-le-code-de-lapplication" class="slide level2">
 <h2>Se familiariser avec le code de l’application</h2>
@@ -422,16 +459,18 @@ Marie Gradeler
 <h3 id="problématiser">Problématiser</h3>
 <p>La première chose à faire est de découper le problème / la consigne en plus petits éléments à résoudre.</p>
 <blockquote>
-<p>Créez une carte grâce à <strong>OpenLayers</strong> à l’échelle globale. Vous pouvez utiliser le <strong>fond de carte</strong> que vous voulez SAUF celui par défaut (si vous êtes en manque d’inspiration, je vous conseille un des fonds de <a href="https://maps.stamen.com/#watercolor/12/37.7706/-122.3782">Stamen Maps</a>). Ensuite, en partant du jeu de données <a href="http://localhost:4471/data/land_matrix/land_matrix_mines.gpkg">land_matrix_mines</a> qu’on a utilisé la dernière fois, <strong>affichez la couche de votre choix sur la carte</strong>. Si vous avez besoin de la couche au format GeoJSON vous pouvez l’exporter comme telle depuis QGIS (pour rappel, on travaille en WGS84, il serait avisé d’exporter la couche dans ce système de projection). Enfin, si vous avez le temps, ajoutez <strong>un titre</strong> à votre carte.</p>
+<p><span class="smaller">Créez une carte grâce à <strong>OpenLayers</strong> à l’échelle globale. Vous pouvez utiliser le <strong>fond de carte</strong> que vous voulez SAUF celui par défaut (si vous êtes en manque d’inspiration, je vous conseille un des fonds de <a href="https://maps.stamen.com/#watercolor/12/37.7706/-122.3782">Stamen Maps</a>). Ensuite, en partant du jeu de données <a href="http://localhost:4471/data/land_matrix/land_matrix_mines.gpkg">land_matrix_mines</a> qu’on a utilisé la dernière fois, <strong>affichez la couche de votre choix sur la carte</strong>. Si vous avez besoin de la couche au format GeoJSON vous pouvez l’exporter comme telle depuis QGIS (pour rappel, on travaille en WGS84, il serait avisé d’exporter la couche dans ce système de projection). Enfin, si vous avez le temps, ajoutez <strong>un titre</strong> à votre carte.</span></p>
 </blockquote>
+<div class="smaller">
 <ul>
-<li class="fragment"><p>Créer une application OpenLayers (aucune méthode n’est recommandée, j’ai le choix parmi les options disponibles).</p></li>
+<li class="fragment"><p>Créer une application OpenLayers (aucune méthode n’est recommandée, j’ai le choix parmi les options disponibles)</p></li>
 <li class="fragment"><p>Changer le fond de carte (fonds Stamen recommandés)</p></li>
 <li class="fragment"><p>Chercher comment importer un jeu de données au format vecteur dans une application OpenLayers (la consigne parle de GeoJSON)</p></li>
 <li class="fragment"><p>Exporter une couche de land_matrix_mines en GeoJSON (WGS 84)</p></li>
 <li class="fragment"><p>Importer la donnée dans mon application</p></li>
 <li class="fragment"><p>Afficher la donnée sur la carte OpenLayers</p></li>
 </ul>
+</div>
 </section>
 <section id="conseils-pour-coder-1" class="slide level2">
 <h2>Conseils pour coder</h2>
@@ -448,16 +487,18 @@ Marie Gradeler
 <li><p>Une description de ce qu’est cet objet <code>Map</code></p></li>
 <li><p>Un exemple (“<em>snippet</em>”, petit morceau de code) qui montre comment utiliser <code>Map</code></p></li>
 </ul>
-<div class="fragment">
+</section>
+<section id="conseils-pour-coder-3" class="slide level2">
+<h2>Conseils pour coder</h2>
+<h3 id="ressources-la-documentation-2">Ressources&nbsp;: la documentation</h3>
 <p><strong>Quand on continue à défiler vers le bas, on voit plusieurs autres sections&nbsp;:</strong></p>
 <ul>
 <li><p>La définition de la fonction pour créer l’objet <code>Map</code> et les options qu’il prend (<code>new Map(options)</code>)</p></li>
 <li><p>Les évènements qui peuvent être déclenchés (“<em>fired</em>”) par notre objet <code>Map</code> dans la section <code>Fires:</code></p></li>
 <li><p>Les <code>Méthodes</code> de l’objet <code>Map</code>, donc les fonctions qui peuvent être déclenchées avec cet objet Map pour généralement le lire ou le modifier</p></li>
 </ul>
-</div>
 </section>
-<section id="conseils-pour-coder-3" class="slide level2">
+<section id="conseils-pour-coder-4" class="slide level2">
 <h2>Conseils pour coder</h2>
 <h3 id="la-documentation">La documentation</h3>
 <div class="cell" data-reveal="true" data-layout-align="default">
@@ -487,7 +528,7 @@ Marie Gradeler
 </div>
 <p>OK c’est un peu compliqué. Pour simplifier, on va prendre les éléments qui nous intéressent le plus.</p>
 </section>
-<section id="conseils-pour-coder-4" class="slide level2">
+<section id="conseils-pour-coder-5" class="slide level2">
 <h2>Conseils pour coder</h2>
 <h3 id="la-documentation-1">La documentation</h3>
 <div class="columns">
@@ -528,14 +569,14 @@ Marie Gradeler
 </ul>
 </div></div>
 </section>
-<section id="conseils-pour-coder-5" class="slide level2">
+<section id="conseils-pour-coder-6" class="slide level2">
 <h2>Conseils pour coder</h2>
 <h3 id="la-documentation-2">La documentation</h3>
 <p>Pour créer une carte sous OpenLayers, le point d’entrée principal est la <a href="https://openlayers.org/en/latest/examples/">galerie d’exemples</a>. <strong>Je vous conseille vivement de toujours commencer par là</strong> avant d’aller voir d’autres ressources comme StackOverflow, etc. comme ce sont les exemples officiels qui sont maintenus à jour et respectent les bonnes pratiques d’utilisation du code OpenLayers.</p>
 <p>Par exemple, si vous souhaitez ajouter un flux WMS à votre carte, basez-vous sur le code de l’exemple <a href="https://openlayers.org/en/latest/examples/wms-image.html">Single Image WMS</a>.</p>
 
 <img data-src="media/example_openlayers.png" class="quarto-figure quarto-figure-center r-stretch" alt="Exemple d’OpenLayers pour importer une couche WMS"></section>
-<section id="conseils-pour-coder-6" class="slide level2">
+<section id="conseils-pour-coder-7" class="slide level2">
 <h2>Conseils pour coder</h2>
 <h3 id="les-extensions-de-lide">Les extensions de l’IDE</h3>
 <p>Les extensions présentes dans votre IDE (comme VSCode) vous donnent des indications sur les fonctions que vous utilisez.</p>
@@ -546,10 +587,9 @@ Marie Gradeler
 <div class="fragment">
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb5-1"><a></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Ouvrez les parenthèses et laissez votre curseur à l’intérieur. VSCode devrait vous afficher les arguments attendus (<code>message</code>), leur type (<code>any</code>), s’il y a des arguments optionnels possibles (oui)… et quelques exemples.</p>
-<p><strong>Lorsque vous utilisez de nouvelles fonctions, notamment en utilisant OpenLayers, apprenez à utiliser les indications de votre IDE.</strong> Cela vous évitera quelques bugs et vous aidera à comprendre ce que vous faites.</p>
 </div>
 </section>
-<section id="conseils-pour-coder-7" class="slide level2">
+<section id="conseils-pour-coder-8" class="slide level2">
 <h2>Conseils pour coder</h2>
 <h3 id="la-console-de-développement">La console de développement</h3>
 <p>Les outils de développeurs, et particulièrement la console, sont indispensables pour développer une application web. Pour y accéder, ouvrez votre application dans votre navigateur et appuyez sur la touche <code>F12</code>.</p>
@@ -566,26 +606,27 @@ Marie Gradeler
 10</code></pre>
 </div>
 </section>
-<section id="conseils-pour-coder-8" class="slide level2">
+<section id="conseils-pour-coder-9" class="slide level2">
 <h2>Conseils pour coder</h2>
 <p>Maintenant qu’on a vu les ressources officielles d’OpenLayers et comment utiliser notre IDE, on va regarder ce qu’il y a d’autre.</p>
 </section>
-<section id="conseils-pour-coder-9" class="slide level2">
+<section id="conseils-pour-coder-10" class="slide level2">
 <h2>Conseils pour coder</h2>
 <h3 id="les-tutoriels-pour-bien-démarrer">Les tutoriels pour bien démarrer</h3>
-<p>Ça fonctionne peut-être moins bien en salle de classe, mais les <strong>tutoriels YouTube</strong> restent un très bon moyen d’apprendre à utiliser une librairie. Pensez à vérifier que la vidéo est assez <strong>récente</strong> (regardez la date de publication).</p>
-<p>Vous pouvez mettre pause, afficher les sous-titres et les traduire en direct… ça reste une excellente ressource, même s’il faut toujours la regarder d’un <strong>œil critique</strong> (comme tout, en fait). C’est toujours bien de regarder au moins deux vidéos sur le même sujet pour voir les différentes approches des personnes.</p>
+<p>Ça fonctionne peut-être moins bien en salle de classe, mais les <strong>tutoriels vidéo</strong> restent un très bon moyen d’apprendre à utiliser une librairie. Pensez à vérifier que la vidéo est assez <strong>récente</strong> (regardez la date de publication).</p>
 <div class="fragment">
 <p>Vous pouvez aussi trouver des tutoriels au format écrit comme des <strong>articles de blog</strong> — blogs privés, Medium, etc.</p>
 <p>Comme pour les vidéos, regardez la date de publication et essayez de choisir du <strong>contenu récent</strong>. Il serait dommage de suivre un tutoriel datant d’OpenLayers 5 en était sous OpenLayers 7+.</p>
 </div>
 </section>
-<section id="conseils-pour-coder-10" class="slide level2">
+<section id="conseils-pour-coder-11" class="slide level2">
 <h2>Conseils pour coder</h2>
 <h3 id="les-forums-pour-résoudre-ses-problèmes">Les forums pour résoudre ses problèmes</h3>
 <p>Les sources de discussion les plus connues pour parler de code sont <a href="https://stackoverflow.com/questions">StackOverflow</a> et <a href="https://gis.stackexchange.com/questions/tagged/qgis">StackExchange</a>.</p>
 <div class="fragment">
-<p>Les Stack sont des forums spécialisés où les utilisateurs posent des questions, généralement liées à l’utilisation d’un logiciel, au développement en se basant sur une certaine librairie… contrairement aux <em>issues</em> qui font remonter des bugs, les questions sur StackOverflow proviennent souvent d’utilisateurs qui ont besoin d’aide.</p>
+<p>Les Stack sont des forums spécialisés où les utilisateurs posent des questions, généralement liées à l’utilisation d’un logiciel, au développement en se basant sur une certaine librairie…</p>
+</div>
+<div class="fragment">
 <p><strong>Pas la peine de taper votre recherche dans StackOverflow ou StackExchange.</strong> Si vous avez un bug, faites une recherche Google… ils sont généralement dans les premiers résultats.</p>
 <p>Essayez avec&nbsp;: “openlayers layer not showing”</p>
 </div>
@@ -593,23 +634,11 @@ Marie Gradeler
 <p><em>Il existe d’autres ressources pour communiquer avec d’autres utilisateurs et poser ses questions. Certains utilisent Reddit, d’autres des forums spécialisés pour leur application, des serveurs Discord…</em></p>
 </div>
 </section>
-<section id="conseils-pour-coder-11" class="slide level2">
-<h2>Conseils pour coder</h2>
-<h3 id="lia-générative-pour-maider-un-peu-partout">L’IA générative pour m’aider un peu partout</h3>
-<p>Normalement, on en a déjà parlé au cours précédent. L’IA générative peut intervenir à chaque étape du processus, mais soyez <strong>efficaces</strong> et <strong>responsables</strong>.</p>
-<p>Référez-vous au cours sur le sujet pour savoir comment optimiser vos prompts.</p>
-<p>Plus loin dans ce cours-ci, une diapo reprend quelques conseils pour intégrer l’IA dans la méthode de développement que je vous propose.</p>
-</section>
 <section id="conseils-pour-coder-12" class="slide level2">
 <h2>Conseils pour coder</h2>
-<h3 id="mémo">Mémo</h3>
-<ul>
-<li class="fragment"><p>Utilisez des <code>console.log()</code> à outrance pour vérifier qu’une fonction a bien été appelée, qu’une variable a bien été lue, etc.</p></li>
-<li class="fragment"><p>Copiez le code des exemples OpenLayers et essayez de le changer petit à petit pour l’adapter à votre code.</p></li>
-<li class="fragment"><p>Quand vous voulez ajouter de nouveaux éléments, allez-y petit à petit et vérifiez à chaque étape que tout fonctionne, ça permettra plus facilement de retrouver les bugs.</p></li>
-<li class="fragment"><p>Une des premières choses à vérifier quand le code ne fonctionne pas est le <strong>nom des variables</strong>. Parfois on oublie un “s”, parfois on a ajouté une majuscule…</p></li>
-<li class="fragment"><p><strong>COMMENTEZ VOTRE CODE&nbsp;!</strong> Non seulement ce sera pris en compte dans l’évaluation, mais surtout vous allez galérer à comprendre votre code en revenant dessus dans quelques mois et/ou les personnes avec qui vous allez travailler vont aussi mettre du temps à vous comprendre.</p></li>
-</ul>
+<h3 id="lia-générative-pour-maider-un-peu-partout">L’IA générative pour m’aider un peu partout</h3>
+<p>Normalement, on en a déjà parlé au cours précédent. L’IA générative peut intervenir à chaque étape du processus.</p>
+<p>Référez-vous au cours sur le sujet pour savoir comment optimiser vos prompts et vous en servir plus efficacement.</p>
 </section>
 <section id="une-méthode-pour-aborder-les-problèmes-en-développement-web" class="slide level2">
 <h2>(Une) Méthode pour aborder les problèmes en développement web</h2>
@@ -620,26 +649,14 @@ Marie Gradeler
 <li class="fragment"><p>Commencer à coder en se basant sur les tutoriels / exemples. Partir de quelque chose qui fonctionne et adapter le code <strong>petit à petit</strong> à notre problème. Quand on a du mal à comprendre ce qu’on écrit, utiliser d’abord l’IDE et la documentation.</p></li>
 <li class="fragment"><p>Aux premiers problèmes, bugs, etc. chercher la source avec <strong>la console de développement</strong> en abusant des <code>console.log()</code>.</p></li>
 <li class="fragment"><p>Une fois la source du bug identifiée, utiliser la <strong>documentation</strong>, les forums, les tutoriels, etc. pour corriger le bug.</p></li>
-<li class="fragment"><p>Quand votre nouvelle <em>feature</em> fonctionne (par exemple une couche qui s’affiche bien), recommencer la boucle pour la feature suivante (problématiser, coder à partir d’exemples que vous adaptez petit-à-petit, corrigez les bugs, etc.).</p></li>
-</ul>
-</section>
-<section id="une-méthode-pour-aborder-les-problèmes-en-développement-web-1" class="slide level2">
-<h2>(Une) Méthode pour aborder les problèmes en développement web</h2>
-<h3 id="et-lia-générative-elle-intervient-quand">Et l’IA générative, elle intervient quand&nbsp;?</h3>
-<p>L’IA générative peut intervenir à chaque étape du processus, mais soyez <strong>efficaces</strong> et <strong>responsables</strong>.</p>
-<ul>
-<li class="fragment"><p>Vous pourriez lui demander de découper votre problème en différentes étapes, mais demandez-vous si vous en avez réellement besoin ou si la consigne vous semble déjà claire.</p></li>
-<li class="fragment"><p>Vous pourriez lui demander de générer du code “de départ”, mais attention à lui donner un prompt <strong>précis</strong> (librairies utilisées et versions, environnement de développement… soyez <em>précis</em>). Attention, c’est souvent quand vous êtes vagues et demandez une grosse tâche “d’un coup” que l’IA va se mettre à <strong>halluciner</strong>.</p></li>
-<li class="fragment"><p>L’IA est en revanche un bon compagnon pour chercher des solutions aux bugs… mais comme elle hallucine souvent, <strong>commencez par des recherches Google</strong>&nbsp;: parfois c’est un bug courant et le premier sujet sur StackOverflow répond largement à votre besoin… sans inventer de fonctions qui n’existent pas. <strong>Regardez ensuite toujours la documentation des fonctions qui posent problème.</strong> Si vous êtes toujours coincés après avoir fait ça (qui ne demande que quelques minutes), l’IA générative pourrait vous débloquer.</p></li>
+<li class="fragment"><p>Quand votre nouvelle <em>feature</em> fonctionne (par exemple une couche qui s’affiche bien), recommencer la boucle pour la feature suivante.</p></li>
 </ul>
 </section>
 <section id="on-ajoute-notre-première-couche-ensemble" class="slide level2">
 <h2>On ajoute notre première couche ensemble</h2>
-<p>Maintenant, on va ajouter notre première couche WMS ensemble.</p>
-<blockquote>
-<p>Ajoutez une couche de données à votre application à partir d’un flux WMS.</p>
-</blockquote>
-</section>
+<p>Maintenant, on va ajouter notre première couche WMS ensemble. <strong>Ouvrez <code>geonum_docker</code> dans votre IDE préféré et c’est parti&nbsp;!</strong></p>
+
+<img data-src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMHRibDNrZ21pOHVwNmR6dGY2NzQzdTVxMjNndzNhYjFydWJub3h0cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gxAuyTiJzxyYWpxLOu/giphy.gif" class="quarto-figure quarto-figure-center r-stretch" alt="Ariane 5 setup"></section>
 <section id="on-ajoute-notre-première-couche-ensemble-1" class="slide level2">
 <h2>On ajoute notre première couche ensemble</h2>
 <h3 id="problématisation">Problématisation</h3>
@@ -701,7 +718,7 @@ Marie Gradeler
 <h2>On ajoute notre première couche ensemble</h2>
 <p>🤔 Qu’est-ce qui est différent dans <code>main.js</code>&nbsp;?</p>
 <div class="fragment">
-<p>👆 Mon conseil&nbsp;: au début, ignorez toute la section <strong>import</strong> qui peut sembler un peu floue et concentrer vous sur les <strong>variables</strong> qui sont définies dans le code, puis sur les <strong>objets OpenLayers</strong>.</p>
+<p>👆 Mon conseil&nbsp;: au début, ignorez toute la section <strong>import</strong> qui peut sembler un peu floue et concentrez vous sur les <strong>variables</strong> qui sont définies dans le code, puis sur les <strong>objets OpenLayers</strong>.</p>
 </div>
 <div class="fragment">
 <div class="columns">
@@ -1081,14 +1098,13 @@ Marie Gradeler
 <h2>On ajoute notre première couche ensemble</h2>
 <p>Ensuite, on doit tester notre application en conditions de déploiement — autrement dit, on teste son <em>build</em>.</p>
 <ul>
-<li>Ouvrez un terminal dans le répertoire <code>geonum_docker/app</code> et lancez la commande <code>npm run build</code></li>
+<li class="fragment"><p>Ouvrez un terminal dans le répertoire <code>geonum_docker/app</code> et lancez la commande <code>npm run build</code></p></li>
+<li class="fragment"><p>Si ce n’est pas fait, lancez votre <em>stack</em> server <code>geonum_docker</code> (depuis Docker desktop ou avec <code>docker compose up -d</code> depuis la racine de votre projet <code>geonum_docker</code>)</p></li>
+<li class="fragment"><p>Ouvrez votre localhost et vérifiez que vous voyez bien la nouvelle feature sur votre application&nbsp;!</p></li>
 </ul>
-<!-- -->
-<ul>
-<li><p>Si ce n’est pas fait, lancez votre <em>stack</em> server <code>geonum_docker</code> (depuis Docker desktop ou avec <code>docker compose up -d</code> depuis la racine de votre projet <code>geonum_docker</code>)</p></li>
-<li><p>Ouvrez votre localhost et vérifiez que vous voyez bien la nouvelle feature sur votre application&nbsp;!</p></li>
-</ul>
+<div class="fragment">
 <p><strong>Quand vous estimez que votre nouvelle <em>feature</em> est prête (tout fonctionne dans la version build, vous avez ajouté les éléments que vous vouliez, etc.), on va pouvoir la <em>merge</em> dans notre branche principale et la mettre en production&nbsp;!</strong></p>
+</div>
 </section>
 <section id="on-ajoute-notre-première-couche-ensemble-16" class="slide level2">
 <h2>On ajoute notre première couche ensemble</h2>
@@ -1100,6 +1116,10 @@ Marie Gradeler
 </ul>
 <div class="fragment">
 <p>Ensuite, il faut qu’on <em>merge</em> le code de notre branche de développement dans la branche principale. On pourrait le faire localement, mais on va utiliser GitHub pour ça — vous allez sans doute l’utiliser pour collaborer pendant le projet GéoNum donc autant pratiquer maintenant.</p>
+</div>
+</section>
+<section id="on-ajoute-notre-première-couche-ensemble-17" class="slide level2">
+<h2>On ajoute notre première couche ensemble</h2>
 <p>GitHub devrait vous indiquer que vous avez <em>push</em> une branche il y a quelques secondes et vous proposer de faire une <em>merge request</em>.</p>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -1114,13 +1134,12 @@ Marie Gradeler
 </div>
 </div>
 </div>
-</div>
 <div class="fragment">
 <p>Ensuite, vous pouvez affiner ce qu’il doit se passer pendant le <em>merge</em>. Par exemple, vous pouvez choisir de supprimer la branche <code>couche-WMS-exemple</code> à la fin du merge. Je vous le déconseille pour le moment, on la supprimera manuellement.</p>
 <p><strong>Maintenant, lancez le <em>merge</em>&nbsp;!</strong></p>
 </div>
 </section>
-<section id="on-ajoute-notre-première-couche-ensemble-17" class="slide level2">
+<section id="on-ajoute-notre-première-couche-ensemble-18" class="slide level2">
 <h2>On ajoute notre première couche ensemble</h2>
 <p>Ce qu’on vient de faire, c’est mettre à jour le code de <code>main</code> (ou <code>master</code>) dans notre dépôt GitHub en y intégrant le code de notre nouvelle branche <code>couche-WMS-exemple</code>.</p>
 <p>Il ne nous reste plus qu’à récupérer le code sur notre machine et vérifier que tout s’affiche correctement&nbsp;!</p>
@@ -1131,16 +1150,20 @@ Marie Gradeler
 <li><p>Relancez votre <em>stack</em> Docker si jamais vous l’aviez arrêtée</p></li>
 <li><p>Ouvrez votre localhost et vérifiez que tout fonctionne</p></li>
 </ul>
-<p><strong>Et voilà&nbsp;! Bravo, vous venez de compléter un cycle de développement.</strong></p>
 </section>
+<section id="on-ajoute-notre-première-couche-ensemble-19" class="slide level2">
+<h2>On ajoute notre première couche ensemble</h2>
+<p><strong>Et voilà&nbsp;! Bravo, vous venez de compléter un cycle de développement.</strong></p>
+
+<img data-src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTJ6NjZ6djFwbjUzMmh5OXN2YWplcTRoeGxlY2E4NjZhMXRiOTQwMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TRFcNpyLTdo2kUmkwm/giphy.gif" class="quarto-figure quarto-figure-center r-stretch" alt="GIF&nbsp;: Ariane 5 décolle&nbsp;!"></section>
 <section id="on-récapitule-rapidement" class="slide level2">
 <h2>On récapitule rapidement&nbsp;?</h2>
 <p>Vous savez maintenant&nbsp;:</p>
 <ul>
-<li><p>Problématiser en découpant vos besoins en petites étapes&nbsp;;</p></li>
-<li><p>Chercher par où commencer chaque étape dans la documentation et les exemples officiels&nbsp;;</p></li>
-<li><p>Vous servir de votre IDE, des forums et autres outils à disposition pour vous appuyer&nbsp;;</p></li>
-<li><p>Compléter un cycle de développement de votre nouvelle feature depuis la création de <em>branch</em>&nbsp;à la <em>merge request</em> sans oublier de <em>build</em> votre application.</p></li>
+<li><p><strong>Problématiser</strong> en découpant vos besoins en petites étapes&nbsp;;</p></li>
+<li><p><strong>Chercher par où commencer</strong> chaque étape dans la documentation et les exemples officiels&nbsp;;</p></li>
+<li><p><strong>Vous servir de votre IDE</strong>, des forums et autres outils à disposition pour vous appuyer&nbsp;;</p></li>
+<li><p><strong>Compléter un cycle de développement</strong> de votre nouvelle feature depuis la création de <em>branch</em>&nbsp;à la <em>merge request</em> sans oublier de <em>build</em> votre application.</p></li>
 </ul>
 <p>Maintenant, vous êtes parés pour la suite&nbsp;!</p>
 </section>

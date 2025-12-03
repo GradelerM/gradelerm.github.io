@@ -27,6 +27,10 @@ format:
 
 -   On ajoute notre première couche ensemble
 
+## Avant toute chose…
+
+Commencez par suivre la section "Création de l’application en NodeJS" du TP avant de commencer le point sur le cycle de développement.
+
 ## Le cycle du développement web
 
 ### La version simpliste
@@ -89,6 +93,26 @@ flowchart LR
 
 -   Si je trouve des bugs, je continue le développement.
 
+## Le cycle du développement web
+
+### Intégration de Git
+
+Comme vous savez utiliser Git pour versionner votre code, on peut complexifier ce schéma en intégrant la création de nouvelle branche, les commits et les fusions de branches (*merge*).
+
+```{mermaid}
+flowchart LR
+  start{"Start"} --> branch{{"git branch"}}
+  branch --> dev("Développement")
+  dev --> build{{"npm run build"}}
+  build --> tests("Tests")
+  tests --> dev
+  build --> commit{{"git commit"}}
+  commit --> merge{{"git merge"}}
+  merge --> prod("Production")
+  prod --> stop{"End"}
+  stop --> start
+```
+
 -   Si mon *build* est prêt, je peux *commit* mes changements (`git commit`) et j’ajoute un message qui explique ce que fait le nouveau code que je viens commit. Si votre développement vous fait ajouter beaucoup de code pour une seule feature, vous pouvez (devez) faire plusieurs *commits*. Vous pouvez les voir comme des *checkpoints* dans votre développement — si vous cassez quelque chose, vous pouvez revenir au dernier *commit*, ou celui d’avant, etc.
 
 ## Le cycle du développement web
@@ -112,6 +136,10 @@ flowchart LR
 -   Ensuite, je dois *merge* le code de ma branche avec la branche prinicipale de mon code (généralement *main*) avec `git merge`.
 
 -   La dernière étape est de mettre mon application en production. C’est très complexe et ce ne sera pas à vous de le faire. Le Docker Compose s’en charge pour vous.
+
+## Le cycle du développement web
+
+On a vu une version **très simplifiée** de ce cycle, mais suffisante pour nos TPs ensemble (et pour votre projet GeoNum). Vous pouvez poursuivre le TP jusqu’à avoir réussi à héberger votre code sur GitHub. Ensuite, on reprendra les diapos pour apprendre à ajouter notre première couche à l’application !
 
 ## Se familiariser avec le code de l’application
 
@@ -216,10 +244,10 @@ const map = new Map({
 
 La première chose à faire est de découper le problème / la consigne en plus petits éléments à résoudre.
 
-> Créez une carte grâce à **OpenLayers** à l’échelle globale. Vous pouvez utiliser le **fond de carte** que vous voulez SAUF celui par défaut (si vous êtes en manque d’inspiration, je vous conseille un des fonds de [Stamen Maps](https://maps.stamen.com/#watercolor/12/37.7706/-122.3782)). Ensuite, en partant du jeu de données [land_matrix_mines](http://localhost:4471/data/land_matrix/land_matrix_mines.gpkg) qu’on a utilisé la dernière fois, **affichez la couche de votre choix sur la carte**. Si vous avez besoin de la couche au format GeoJSON vous pouvez l’exporter comme telle depuis QGIS (pour rappel, on travaille en WGS84, il serait avisé d’exporter la couche dans ce système de projection). Enfin, si vous avez le temps, ajoutez **un titre** à votre carte.
+> [Créez une carte grâce à **OpenLayers** à l’échelle globale. Vous pouvez utiliser le **fond de carte** que vous voulez SAUF celui par défaut (si vous êtes en manque d’inspiration, je vous conseille un des fonds de [Stamen Maps](https://maps.stamen.com/#watercolor/12/37.7706/-122.3782)). Ensuite, en partant du jeu de données [land_matrix_mines](http://localhost:4471/data/land_matrix/land_matrix_mines.gpkg) qu’on a utilisé la dernière fois, **affichez la couche de votre choix sur la carte**. Si vous avez besoin de la couche au format GeoJSON vous pouvez l’exporter comme telle depuis QGIS (pour rappel, on travaille en WGS84, il serait avisé d’exporter la couche dans ce système de projection). Enfin, si vous avez le temps, ajoutez **un titre** à votre carte.]{.smaller}
 
-::: incremental
--   Créer une application OpenLayers (aucune méthode n’est recommandée, j’ai le choix parmi les options disponibles).
+::: {.incremental .smaller}
+-   Créer une application OpenLayers (aucune méthode n’est recommandée, j’ai le choix parmi les options disponibles)
 
 -   Changer le fond de carte (fonds Stamen recommandés)
 
@@ -252,7 +280,10 @@ Tapez "Map" et cliquez sur le premier résultat ([lien ici](https://openlayers.o
 
 -   Un exemple ("*snippet*", petit morceau de code) qui montre comment utiliser `Map`
 
-::: fragment
+## Conseils pour coder
+
+### Ressources : la documentation
+
 **Quand on continue à défiler vers le bas, on voit plusieurs autres sections :**
 
 -   La définition de la fonction pour créer l’objet `Map` et les options qu’il prend (`new Map(options)`)
@@ -260,7 +291,6 @@ Tapez "Map" et cliquez sur le premier résultat ([lien ici](https://openlayers.o
 -   Les évènements qui peuvent être déclenchés ("*fired*") par notre objet `Map` dans la section `Fires:`
 
 -   Les `Méthodes` de l’objet `Map`, donc les fonctions qui peuvent être déclenchées avec cet objet Map pour généralement le lire ou le modifier
-:::
 
 ## Conseils pour coder
 
@@ -359,8 +389,6 @@ console.log()
 ```
 
 Ouvrez les parenthèses et laissez votre curseur à l’intérieur. VSCode devrait vous afficher les arguments attendus (`message`), leur type (`any`), s’il y a des arguments optionnels possibles (oui)… et quelques exemples.
-
-**Lorsque vous utilisez de nouvelles fonctions, notamment en utilisant OpenLayers, apprenez à utiliser les indications de votre IDE.** Cela vous évitera quelques bugs et vous aidera à comprendre ce que vous faites.
 :::
 
 ## Conseils pour coder
@@ -397,9 +425,7 @@ Maintenant qu’on a vu les ressources officielles d’OpenLayers et comment uti
 
 ### Les tutoriels pour bien démarrer
 
-Ça fonctionne peut-être moins bien en salle de classe, mais les **tutoriels YouTube** restent un très bon moyen d’apprendre à utiliser une librairie. Pensez à vérifier que la vidéo est assez **récente** (regardez la date de publication).
-
-Vous pouvez mettre pause, afficher les sous-titres et les traduire en direct… ça reste une excellente ressource, même s’il faut toujours la regarder d’un **œil critique** (comme tout, en fait). C’est toujours bien de regarder au moins deux vidéos sur le même sujet pour voir les différentes approches des personnes.
+Ça fonctionne peut-être moins bien en salle de classe, mais les **tutoriels vidéo** restent un très bon moyen d’apprendre à utiliser une librairie. Pensez à vérifier que la vidéo est assez **récente** (regardez la date de publication).
 
 ::: fragment
 Vous pouvez aussi trouver des tutoriels au format écrit comme des **articles de blog** — blogs privés, Medium, etc.
@@ -414,8 +440,10 @@ Comme pour les vidéos, regardez la date de publication et essayez de choisir du
 Les sources de discussion les plus connues pour parler de code sont [StackOverflow](https://stackoverflow.com/questions) et [StackExchange](https://gis.stackexchange.com/questions/tagged/qgis).
 
 ::: fragment
-Les Stack sont des forums spécialisés où les utilisateurs posent des questions, généralement liées à l’utilisation d’un logiciel, au développement en se basant sur une certaine librairie… contrairement aux *issues* qui font remonter des bugs, les questions sur StackOverflow proviennent souvent d’utilisateurs qui ont besoin d’aide.
+Les Stack sont des forums spécialisés où les utilisateurs posent des questions, généralement liées à l’utilisation d’un logiciel, au développement en se basant sur une certaine librairie…
+:::
 
+::: fragment
 **Pas la peine de taper votre recherche dans StackOverflow ou StackExchange.** Si vous avez un bug, faites une recherche Google… ils sont généralement dans les premiers résultats.
 
 Essayez avec : "openlayers layer not showing"
@@ -429,27 +457,9 @@ Essayez avec : "openlayers layer not showing"
 
 ### L’IA générative pour m’aider un peu partout
 
-Normalement, on en a déjà parlé au cours précédent. L’IA générative peut intervenir à chaque étape du processus, mais soyez **efficaces** et **responsables**.
+Normalement, on en a déjà parlé au cours précédent. L’IA générative peut intervenir à chaque étape du processus.
 
-Référez-vous au cours sur le sujet pour savoir comment optimiser vos prompts.
-
-Plus loin dans ce cours-ci, une diapo reprend quelques conseils pour intégrer l’IA dans la méthode de développement que je vous propose.
-
-## Conseils pour coder
-
-### Mémo
-
-::: incremental
--   Utilisez des `console.log()` à outrance pour vérifier qu’une fonction a bien été appelée, qu’une variable a bien été lue, etc.
-
--   Copiez le code des exemples OpenLayers et essayez de le changer petit à petit pour l’adapter à votre code.
-
--   Quand vous voulez ajouter de nouveaux éléments, allez-y petit à petit et vérifiez à chaque étape que tout fonctionne, ça permettra plus facilement de retrouver les bugs.
-
--   Une des premières choses à vérifier quand le code ne fonctionne pas est le **nom des variables**. Parfois on oublie un "s", parfois on a ajouté une majuscule…
-
--   **COMMENTEZ VOTRE CODE !** Non seulement ce sera pris en compte dans l’évaluation, mais surtout vous allez galérer à comprendre votre code en revenant dessus dans quelques mois et/ou les personnes avec qui vous allez travailler vont aussi mettre du temps à vous comprendre.
-:::
+Référez-vous au cours sur le sujet pour savoir comment optimiser vos prompts et vous en servir plus efficacement.
 
 ## (Une) Méthode pour aborder les problèmes en développement web
 
@@ -466,28 +476,14 @@ Plus loin dans ce cours-ci, une diapo reprend quelques conseils pour intégrer l
 
 -   Une fois la source du bug identifiée, utiliser la **documentation**, les forums, les tutoriels, etc. pour corriger le bug.
 
--   Quand votre nouvelle *feature* fonctionne (par exemple une couche qui s’affiche bien), recommencer la boucle pour la feature suivante (problématiser, coder à partir d’exemples que vous adaptez petit-à-petit, corrigez les bugs, etc.).
-:::
-
-## (Une) Méthode pour aborder les problèmes en développement web
-
-### Et l’IA générative, elle intervient quand ?
-
-L’IA générative peut intervenir à chaque étape du processus, mais soyez **efficaces** et **responsables**.
-
-::: incremental
--   Vous pourriez lui demander de découper votre problème en différentes étapes, mais demandez-vous si vous en avez réellement besoin ou si la consigne vous semble déjà claire.
-
--   Vous pourriez lui demander de générer du code "de départ", mais attention à lui donner un prompt **précis** (librairies utilisées et versions, environnement de développement… soyez *précis*). Attention, c’est souvent quand vous êtes vagues et demandez une grosse tâche "d’un coup" que l’IA va se mettre à **halluciner**.
-
--   L’IA est en revanche un bon compagnon pour chercher des solutions aux bugs… mais comme elle hallucine souvent, **commencez par des recherches Google** : parfois c’est un bug courant et le premier sujet sur StackOverflow répond largement à votre besoin… sans inventer de fonctions qui n’existent pas. **Regardez ensuite toujours la documentation des fonctions qui posent problème.** Si vous êtes toujours coincés après avoir fait ça (qui ne demande que quelques minutes), l’IA générative pourrait vous débloquer.
+-   Quand votre nouvelle *feature* fonctionne (par exemple une couche qui s’affiche bien), recommencer la boucle pour la feature suivante.
 :::
 
 ## On ajoute notre première couche ensemble
 
-Maintenant, on va ajouter notre première couche WMS ensemble.
+Maintenant, on va ajouter notre première couche WMS ensemble. **Ouvrez `geonum_docker` dans votre IDE préféré et c’est parti !**
 
-> Ajoutez une couche de données à votre application à partir d’un flux WMS.
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMHRibDNrZ21pOHVwNmR6dGY2NzQzdTVxMjNndzNhYjFydWJub3h0cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gxAuyTiJzxyYWpxLOu/giphy.gif){fig-alt="Ariane 5 setup" fig-align="center"}
 
 ## On ajoute notre première couche ensemble
 
@@ -562,7 +558,7 @@ En gros, on n’a rien à modifier dans `index.html` ni dans le fichier de style
 
 . . .
 
-👆 Mon conseil : au début, ignorez toute la section **import** qui peut sembler un peu floue et concentrer vous sur les **variables** qui sont définies dans le code, puis sur les **objets OpenLayers**.
+👆 Mon conseil : au début, ignorez toute la section **import** qui peut sembler un peu floue et concentrez vous sur les **variables** qui sont définies dans le code, puis sur les **objets OpenLayers**.
 
 . . .
 
@@ -1006,15 +1002,17 @@ const map = new Map({
 
 Ensuite, on doit tester notre application en conditions de déploiement — autrement dit, on teste son *build*.
 
+::: incremental
 -   Ouvrez un terminal dans le répertoire `geonum_docker/app` et lancez la commande `npm run build`
-
-<!-- -->
 
 -   Si ce n’est pas fait, lancez votre *stack* server `geonum_docker` (depuis Docker desktop ou avec `docker compose up -d` depuis la racine de votre projet `geonum_docker`)
 
 -   Ouvrez votre localhost et vérifiez que vous voyez bien la nouvelle feature sur votre application !
+:::
 
+::: fragment
 **Quand vous estimez que votre nouvelle *feature* est prête (tout fonctionne dans la version build, vous avez ajouté les éléments que vous vouliez, etc.), on va pouvoir la *merge* dans notre branche principale et la mettre en production !**
+:::
 
 ## On ajoute notre première couche ensemble
 
@@ -1029,6 +1027,8 @@ Vous commencez à connaître les étapes.
 . . .
 
 Ensuite, il faut qu’on *merge* le code de notre branche de développement dans la branche principale. On pourrait le faire localement, mais on va utiliser GitHub pour ça — vous allez sans doute l’utiliser pour collaborer pendant le projet GéoNum donc autant pratiquer maintenant.
+
+## On ajoute notre première couche ensemble
 
 GitHub devrait vous indiquer que vous avez *push* une branche il y a quelques secondes et vous proposer de faire une *merge request*.
 
@@ -1058,19 +1058,23 @@ Il ne nous reste plus qu’à récupérer le code sur notre machine et vérifier
 
 -   Ouvrez votre localhost et vérifiez que tout fonctionne
 
+## On ajoute notre première couche ensemble
+
 **Et voilà ! Bravo, vous venez de compléter un cycle de développement.**
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTJ6NjZ6djFwbjUzMmh5OXN2YWplcTRoeGxlY2E4NjZhMXRiOTQwMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TRFcNpyLTdo2kUmkwm/giphy.gif){fig-alt="GIF : Ariane 5 décolle !" fig-align="center"}
 
 ## On récapitule rapidement ?
 
 Vous savez maintenant :
 
--   Problématiser en découpant vos besoins en petites étapes ;
+-   **Problématiser** en découpant vos besoins en petites étapes ;
 
--   Chercher par où commencer chaque étape dans la documentation et les exemples officiels ;
+-   **Chercher par où commencer** chaque étape dans la documentation et les exemples officiels ;
 
--   Vous servir de votre IDE, des forums et autres outils à disposition pour vous appuyer ;
+-   **Vous servir de votre IDE**, des forums et autres outils à disposition pour vous appuyer ;
 
--   Compléter un cycle de développement de votre nouvelle feature depuis la création de *branch* à la *merge request* sans oublier de *build* votre application.
+-   **Compléter un cycle de développement** de votre nouvelle feature depuis la création de *branch* à la *merge request* sans oublier de *build* votre application.
 
 Maintenant, vous êtes parés pour la suite !
 

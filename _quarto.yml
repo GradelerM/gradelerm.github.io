@@ -29,6 +29,9 @@ website:
         - cours/geonum/03_cours_geoserver.qmd
         - cours/geonum/04_cours_intro_openlayers.qmd
         - cours/geonum/05_cours_openlayers_bases.qmd
+        - cours/geonum/06_cours_ajout_couches.qmd
+        - cours/geonum/07_cours_interactions.qmd
+        - cours/geonum/08_cours_enrichir_ma_carte.qmd
   
   page-footer: 
     left: ""

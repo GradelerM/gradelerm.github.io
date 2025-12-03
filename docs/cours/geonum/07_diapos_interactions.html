@@ -11,8 +11,8 @@
   <meta name="generator" content="quarto-1.7.32">
 
   <meta name="author" content="Marie Gradeler">
-  <meta name="dcterms.date" content="2025-12-01">
-  <title>Architecture client-serveur</title>
+  <meta name="dcterms.date" content="2025-12-02">
+  <title>Ajouter des interactions à ma carte</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -195,7 +195,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Architecture client-serveur</h1>
+  <h1 class="title">Ajouter des interactions à ma carte</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -205,167 +205,164 @@ Marie Gradeler
 </div>
 </div>
 
-  <p class="date">2025-12-01</p>
+  <p class="date">2025-12-02</p>
 </section>
 <section id="sommaire" class="slide level2">
 <h2>Sommaire</h2>
 <ul>
-<li><p>Révision du fonctionnement d’une architecture client-serveur</p></li>
-<li><p>Introduction à Docker pour créer une architecture client-serveur</p></li>
+<li><p>Le DOM, l’API pour interagir avec notre document HTML</p></li>
+<li><p>Les évènements du DOM</p></li>
+<li><p>Les évènements spécifiques à OpenLayers</p></li>
 </ul>
 </section>
-<section id="larchitecture-client-serveur" class="slide level2">
-<h2>L’architecture client-serveur</h2>
+<section id="le-dom-lapi-pour-interagir-avec-notre-document-html" class="slide level2">
+<h2>Le DOM, l’API pour interagir avec notre document HTML</h2>
+<h3 id="qui-est-le-dom">Qui est le Dom’&nbsp;?</h3>
+<div class="columns">
+<div class="column" style="width:60%;">
+<blockquote>
+<p>Le <strong>DOM</strong> (<em>Document Object Model</em> en anglais) est une API qui représente et permet d’interagir ave tout document de langage de balisage basé sur HTML ou XML.</p>
+<p>Le DOM […] permet au code exécuté dans un navigateur d’accéder à chaque nœud du document et d’interagir avec lui. Les nœuds peuvent être créés, déplacés et modifiés.</p>
+</blockquote>
+<p><span class="smaller">Source&nbsp;: <a href="https://developer.mozilla.org/fr/docs/Glossary/DOM">MDN</a></span></p>
+</div><div class="column" style="width:40%;">
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/5/5a/DOM-model.svg"></p>
+<p><span class="smaller">Source de l’image&nbsp;: <a href="https://fr.wikipedia.org/wiki/Document_Object_Model">Wikipedia</a></span></p>
+</div></div>
+</section>
+<section id="le-dom-lapi-pour-interagir-avec-notre-document-html-1" class="slide level2">
+<h2>Le DOM, l’API pour interagir avec notre document HTML</h2>
+<h3 id="récupérer-un-nœud-dans-mon-dom">Récupérer un nœud dans mon DOM</h3>
+<p>On va voir comment accéder à nos éléments créés en HTML (nos <em>nœuds</em> du DOM) grâce à JavaScript. Si ce n’est pas déjà fait, ajoutez un titre dans le <code>&lt;body&gt;</code> de votre document. Assurez-vous de lui donner un identifiant <strong>unique</strong> avec <code>id</code> :</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a></a><span class="dt">&lt;</span><span class="kw">h1</span><span class="ot"> id</span><span class="op">=</span><span class="st">"title"</span><span class="dt">&gt;</span>My map<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Si la carte se dessine par-dessus, vous devez lui dire de ne pas se positionner tout en haut du document.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb2-1"><a></a><span class="pp">#map</span> {</span>
+<span id="cb2-2"><a></a>  <span class="kw">position</span><span class="ch">:</span> <span class="dv">absolute</span><span class="op">;</span></span>
+<span id="cb2-3"><a></a>  <span class="kw">top</span><span class="ch">:</span> <span class="dv">160</span><span class="dt">px</span><span class="op">;</span> <span class="co">/* On demande à la carte de se positionner plus bas */</span></span>
+<span id="cb2-4"><a></a>  <span class="kw">bottom</span><span class="ch">:</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb2-5"><a></a>  <span class="kw">width</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb2-6"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="le-dom-lapi-pour-interagir-avec-notre-document-html-2" class="slide level2">
+<h2>Le DOM, l’API pour interagir avec notre document HTML</h2>
+<h3 id="récupérer-un-nœud-dans-mon-dom-1">Récupérer un nœud dans mon DOM</h3>
+<p>Maintenant, on va utiliser le DOM (<em>Document Object Model</em>) pour accéder à notre titre.</p>
+<p>L’objet <code>document</code> possède des attributs et des méthodes qu’on va pouvoir utiliser à notre avantage. Nous allons nous servir de la méthode <code>getElementById()</code> pour récupérer notre titre. Pour rappel, voici comment notre titre a été déclaré dans le HTML&nbsp;:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a></a><span class="dt">&lt;</span><span class="kw">h1</span><span class="ot"> id</span><span class="op">=</span><span class="st">"title"</span><span class="dt">&gt;</span>My map<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Dans votre fichier JS, tapez la ligne de code suivante et vérifiez le résultats dans la console de votre navigateur (rappel&nbsp;: appuyez sur <code>F12</code> pour y accéder).</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource javascript number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb4-1"><a></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"title"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="le-dom-lapi-pour-interagir-avec-notre-document-html-3" class="slide level2">
+<h2>Le DOM, l’API pour interagir avec notre document HTML</h2>
+<h3 id="récupérer-un-nœud-dans-mon-dom-2">Récupérer un nœud dans mon DOM</h3>
+<p><strong>Il ne s’est rien passé, c’est normal&nbsp;?</strong></p>
+<p>Oui, c’est normal. Notre application a bien récupéré notre nœud “map” mais on ne lui a pas demandé d’afficher le résultat.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb5-1"><a></a><span class="kw">const</span> title <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"title"</span>)<span class="op">;</span></span>
+<span id="cb5-2"><a></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(title)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Vérifiez que le résultat s’affiche bien dans votre console et passez votre souris dessus.</p>
+</section>
+<section id="le-dom-lapi-pour-interagir-avec-notre-document-html-4" class="slide level2">
+<h2>Le DOM, l’API pour interagir avec notre document HTML</h2>
+<h3 id="modifier-un-nœud-dans-mon-dom">Modifier un nœud dans mon DOM</h3>
+<p>Super, on a réussi à récupérer notre titre&nbsp;! Maintenant, on en fait quoi&nbsp;?</p>
+<p>D’abord, récupérez le contenu de votre balise <code>&lt;div&gt;</code> via sa propriété <code>innerHTML</code>.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb6-1"><a></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(title<span class="op">.</span><span class="at">innerHTML</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
-<h3 id="rappels-sur-ce-quest-un-serveur">Rappels sur ce qu’est un serveur</h3>
-<p><strong>Le serveur matériel (hardware) :</strong> Une ou plusieurs machines physiques reliées entre elles et et sur lesquelles fonctionnent un ou plusieurs logiciels.<br>
-<a href="https://www.ionos.fr/digitalguide/serveur/know-how/quest-ce-quun-serveur-une-notion-deux-definitions/"><em>Source&nbsp;: Ionos</em></a></p>
-<p>Dans ce TP, notre serveur physique sera notre ordinateur. En pratique, cela ressemble plus souvent à ça (serveurs WikiMedia foundation)&nbsp;:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Wikimedia_Foundation_Servers-8055_35.jpg/1920px-Wikimedia_Foundation_Servers-8055_35.jpg" class="quarto-figure quarto-figure-center" style="width:60.0%" alt="Wikimedia foundation servers (hardware)"></p>
-</figure>
-</div>
+<p>Généralement, si on peut récupérer quelque chose, on peut le modifier. Pour changer le contenu d’une <code>&lt;div&gt;</code>, c’est simple&nbsp;:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb7-1"><a></a>title<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="st">"Ma super carte&nbsp;!"</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="larchitecture-client-serveur-1" class="slide level2">
-<h2>L’architecture client-serveur</h2>
-<h3 id="rappels-sur-ce-quest-un-serveur-1">Rappels sur ce qu’est un serveur</h3>
-<p><strong>Le serveur (software) :</strong> Un programme effectuant des interactions en réseau avec d’autres programmes appelés logiciels clients. Le service apporté dépend du logiciel serveur.<br>
-<a href="https://www.ionos.fr/digitalguide/serveur/know-how/quest-ce-quun-serveur-une-notion-deux-definitions/"><em>Source&nbsp;: Ionos</em></a></p>
-<p>Un logiciel serveur peut-être un serveur Web (Apache, Nginx), un serveur email, un serveur de bases de données (PostgreSQL), un serveur cartographique (GeoServer), etc. Un logiciel client est par exemple un navigateur internet pour afficher un site web (Firefox, Google Chrome), un client mail (Thunderbird), et plus généralement une machine cliente.</p>
+<section id="le-dom-lapi-pour-interagir-avec-notre-document-html-5" class="slide level2">
+<h2>Le DOM, l’API pour interagir avec notre document HTML</h2>
+<h3 id="modifier-un-nœud-dans-mon-dom-à-quoi-ça-sert">Modifier un nœud dans mon DOM, à quoi ça sert&nbsp;?</h3>
+<p>Modifier les nœuds après la création du document peut permettre d’<strong>ajouter dynamiquement du contenu</strong>. C’est comme ça qu’on va pouvoir créer une table attributaire, par exemple.</p>
+<p><strong>Dès que vous ne pouvez pas écrire quelque chose en HTML “dès le départ”, vous pouvez l’ajouter en JavaScript grâce au DOM&nbsp;!</strong></p>
 </section>
-<section id="larchitecture-client-serveur-2" class="slide level2">
-<h2>L’architecture client-serveur</h2>
-<h3 id="comment-le-serveur-communique-t-il-avec-les-clients">Comment le serveur communique-t-il avec les clients&nbsp;?</h3>
-<p>Dans le cas des serveurs web et cartographiques, le client (par exemple notre Firefox) va envoyer des <strong>requêtes</strong> au serveur (par exemple GeoServer). Le serveur va lire la requête et renvoyer une <strong>réponse</strong>. Cette réponse peut-être une page web, un JSON, un flux cartographique, mais aussi un message d’erreur comme le fameux <em>404 not found</em>.</p>
-
-<img data-src="media/client_server.jpeg" class="r-stretch quarto-figure-center"><p class="caption">Source : codegym.cc</p></section>
-<section id="larchitecture-client-serveur-3" class="slide level2">
-<h2>L’architecture client-serveur</h2>
-<h3 id="comment-le-serveur-communique-t-il-avec-la-source-de-donnée">Comment le serveur communique-t-il avec la source de donnée&nbsp;?</h3>
-<p>En réalité, la plupart des applications fonctionnent de la manière suivante&nbsp;: le client envoie des requêtes au serveur. Le serveur va communiquer avec la base de données, traiter le résultat et renvoyer une réponse au client.</p>
-<p><em>Exemple&nbsp;:<br>
-- Client = mon application Firefox<br>
-- Serveur = les serveurs de Google<br>
-- Database = la base de données de Google<br>
-- Requête = cherche les sites qui correspondent à la requête “apprendre le JavaScript”<br>
-- Réponse = liste des sites qui correspondent à la requête “apprendre le JavaScript”</em></p>
-
-<img data-src="media/client_server_db.jpeg" class="r-stretch quarto-figure-center"><p class="caption">Source&nbsp;: codegym.cc</p></section>
-<section id="nos-besoins" class="slide level2">
-<h2>Nos besoins</h2>
+<section id="les-évènements-du-dom" class="slide level2">
+<h2>Les évènements du DOM</h2>
+<h3 id="les-évènements-en-général">Les évènements en général</h3>
+<blockquote>
+<p>Les évènements sont des actions ou des occurences qui se produisent dans le système que vous programmez et dont le système vous informe afin que vous puissiez y répondre d’une manière ou d’une autre si vous le souhaitez.</p>
+</blockquote>
+<p><span class="smaller">Source&nbsp;: <a href="https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Scripting/Events">MDN</a></span></p>
 <div class="fragment">
-<p>On souhaite servir des couches de données géographique avec GeoServer et pouvoir permettre à des applications clientes de les lire.</p>
-<ul>
-<li>Un client pour récupérer et afficher nos couches de données (Firefox, QGIS, …)</li>
-<li>Un serveur web cartographique (GeoServer)</li>
-</ul>
+<h3 id="ceux-du-dom">Ceux du DOM</h3>
+<blockquote>
+<p>Les évènements DOM sont déclenchés pour <strong>notifier</strong> au code des <strong>«&nbsp;changements intéressants&nbsp;»</strong> qui peuvent affecter l’exécution du code. Ces chagements peuvent résulter d’interactions avec l’utilisateur, <strong>comme l’utilisation de la souris</strong> […].</p>
+</blockquote>
+<p><span class="smaller">Source&nbsp;: <a href="https://developer.mozilla.org/fr/docs/Web/API/Document_Object_Model/Events">MDN</a></span></p>
 </div>
+</section>
+<section id="les-évènements-du-dom-1" class="slide level2">
+<h2>Les évènements du DOM</h2>
+<p>Ces évènements vont donc nous permettre de <strong>savoir quand «&nbsp;quelque chose&nbsp;»</strong> se passe et d’agir en conséquence.</p>
+<p>Pour l’exemple, on va créer un bouton sous notre titre.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb8-1"><a></a><span class="dt">&lt;</span><span class="kw">button</span><span class="dt">&gt;</span>Bouton<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Cliquez dessus. Il ne se passe rien… normal&nbsp;! On a simplement créé un nœud “bouton” mais on ne lui a pas dit quoi faire.</p>
+</section>
+<section id="les-évènements-du-dom-2" class="slide level2">
+<h2>Les évènements du DOM</h2>
+<p>Pour qu’il se passe quelque chose, on peut utiliser plusieurs méthodes. Ici, je vous présente <code>.addEventListener()</code> (c’est la <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener">méthode recommandée</a>).</p>
+<p>Cette méthode permet de dire à notre application d’<strong>écouter</strong> (<em>listen</em>) des <strong>évènements</strong> (<em>events</em>) et d’agit en conséquence en exécutant une <strong>fonction</strong>.</p>
+<div class="sourceCode" id="cb9" data-code-line-numbers="|1,3|2|5"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb9-1"><a></a><span class="kw">function</span> <span class="fu">direBonjour</span>() {</span>
+<span id="cb9-2"><a></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Bonjour&nbsp;!"</span>)<span class="op">;</span></span>
+<span id="cb9-3"><a></a>}</span>
+<span id="cb9-4"><a></a></span>
+<span id="cb9-5"><a></a>button<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">'click'</span><span class="op">,</span> direBonjour)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>. . . Cette fois, votre bouton devrait vous dire bonjour&nbsp;!</p>
+</section>
+<section id="les-évènements-du-dom-3" class="slide level2">
+<h2>Les évènements du DOM</h2>
+<p>Pas besoin de se contenter de <code>console.log()</code>, on peut faire plein d’autres choses&nbsp;! Cette fois, on va faire en sorte que notre bouton change la couleur de notre titre.</p>
+<p>Pour rappel, on récupére déjà dans notre code le nœud du titre&nbsp;:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb10-1"><a></a><span class="kw">const</span> title <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">"title"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Maintenant, on remplace <code>direBonjour()</code> par une nouvelle fonction&nbsp;:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb11-1"><a></a><span class="kw">function</span> <span class="fu">titreBleu</span>() {</span>
+<span id="cb11-2"><a></a>  title<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">color</span> <span class="op">=</span> <span class="st">"orange"</span><span class="op">;</span></span>
+<span id="cb11-3"><a></a>}</span>
+<span id="cb11-4"><a></a></span>
+<span id="cb11-5"><a></a>button<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">'click'</span><span class="op">,</span> titreBleu)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Et voilà&nbsp;! C’est moche, mais ça fonctionne.</p>
+</section>
+<section id="les-évènements-du-dom-4" class="slide level2">
+<h2>Les évènements du DOM</h2>
+<p>On peut aussi se servir de ce bouton pour interagir avec la carte. Dans mon code, j’ai créé une couche <code>maCouche</code> qui est affichée sur ma carte.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb12-1"><a></a><span class="kw">const</span> maCouche <span class="op">=</span> <span class="kw">new</span> <span class="fu">ImageLayer</span>({</span>
+<span id="cb12-2"><a></a>  <span class="dt">source</span><span class="op">:</span> maSource<span class="op">,</span></span>
+<span id="cb12-3"><a></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
-<p>Généralement, quand on développe une application, on a tout sur notre ordinateur (les serveurs et les clients) et on attend que l’application soit prête pour l’héberger sur un serveur dédié. On a deux possibilités&nbsp;: utiliser des machines virtuelles (VM) ou <strong>Docker</strong>.</p>
+<p>On va utiliser le bouton pour la retirer de la carte&nbsp;! Pour ça, on se sert de la méthode <code>.removeLayer()</code> de la classe <code>map</code> (<a href="https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.html">docs</a>).</p>
+<p><strong>Attention à bien utiliser notre variable “map” APRÈS l’avoir déclarée&nbsp;!</strong></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb13-1"><a></a>button<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">'click'</span><span class="op">,</span> <span class="kw">function</span> () {</span>
+<span id="cb13-2"><a></a>  map<span class="op">.</span><span class="fu">removeLayer</span>(maCouche)<span class="op">;</span></span>
+<span id="cb13-3"><a></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Et voilà&nbsp;! Vous verrez dans le TP la méthode <code>.addLayer()</code> qui permet de faire l’inverse et rajouter une couche à la carte.</p>
 </div>
 </section>
-<section id="vms-docker-et-docker-compose" class="slide level2">
-<h2>VMs, Docker et Docker Compose</h2>
-<div class="fragment">
-<h3 id="les-machines-virtuelles-vm">Les Machines Virtuelles (VM)</h3>
-<ul>
-<li><p>Il faut voir une machine virtuelle comme un ordinateur qui serait <strong>dématérialisé</strong> (sans composants matériels). Elle possède un processeur, de la mémoire, des espaces de stockage pour la donnée, elle peut se connecter à internet…</p></li>
-<li><p>Outils de création de machines virtuelles&nbsp;: VirtualBox, VMWare…</p></li>
-</ul>
-<p><em>Exemple&nbsp;: en téléchargeant VirtualBox, je peux créer une machine virtuelle Linux sur mon ordinateur Windows.</em></p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="media/virtual-machine-diagram.svg" alt="Diagramme Machine Virtuelle"></p>
-<figcaption>Source : microsoft.com</figcaption>
-</figure>
-</div>
-</div>
-</section>
-<section id="vms-docker-et-docker-compose-1" class="slide level2">
-<h2>VMs, Docker et Docker Compose</h2>
-<h3 id="les-machines-virtuelles-vm-1">Les Machines Virtuelles (VM)</h3>
-<p>Si je voulais mettre en place mon serveur sur une machine virtuelle, je devrais&nbsp;:</p>
-<ul>
-<li><p>créer la machine (avec des caractéristiques suffisantes pour faire tourner l’application)</p></li>
-<li><p>télécharger, installer et configurer GeoServer</p></li>
-<li><p>éventuellement télécharger, installer et configurer une base Postgresql avec PostGIS et la connecter au serveur</p></li>
-<li><p>refaire la même chose pour tout autre serveur que je voudrais installer (au hasard, un serveur pour une application OpenLayers)</p></li>
-<li><p>etc.</p></li>
-</ul>
+<section id="les-évènements-spécifiques-à-openlayers" class="slide level2">
+<h2>Les évènements spécifiques à OpenLayers</h2>
+<p>L’API d’OpenLayers a aussi donné à la librairie des évènements très pratiques pour pouvoir interagir avec notre carte. Vous verrez les plus importants lors des prochains TPs, mais faisons un exemple ensemble.</p>
+<p>Accédez à la documentation de <a href="https://openlayers.org/en/latest/apidoc/module-ol_Map-Map.html">Map</a> et regardez la section “fires”. Il s’agit de la liste des évènements qui peuvent être <strong>déclenchés par la carte</strong>.</p>
 
-<img data-src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYm1qNGw0eHk1ZmxmNmtiaXQwenc5NDdqcDRkbTNyc3M1YmJzdXRnbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LgR0AnXJBrO4E/giphy.webp" class="quarto-figure quarto-figure-center r-stretch" alt="GIF : Chat déboussolé" width="412"></section>
-<section id="vms-docker-et-docker-compose-2" class="slide level2">
-<h2>VMs, Docker et Docker Compose</h2>
-<h3 id="les-machines-virtuelles-vm-2">Les Machines Virtuelles (VM)</h3>
-<p>Multiplier les machines virtuelles sur l’hôte est très demandeur.</p>
+<img data-src="../../static/captures/geonum_api_map_fires.png" class="quarto-figure quarto-figure-center r-stretch" alt="Capture d’écran de la section &quot;fire&quot; de la documentation de &quot;map&quot; d’OpenLayers"></section>
+<section id="les-évènements-spécifiques-à-openlayers-1" class="slide level2">
+<h2>Les évènements spécifiques à OpenLayers</h2>
+<p>Nous allons nous servir de l’évènement <code>singleclick</code> de la carte pour récupérer les coordonnées de notre clic sur la carte.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource js number-lines code-with-copy"><code class="sourceCode javascript"><span id="cb14-1"><a></a><span class="im">import</span> { toLonLat } <span class="im">from</span> <span class="st">'ol/proj'</span><span class="op">;</span></span>
+<span id="cb14-2"><a></a></span>
+<span id="cb14-3"><a></a>map<span class="op">.</span><span class="fu">on</span>(<span class="st">'singleclick'</span><span class="op">,</span> <span class="kw">function</span> (evt) {</span>
+<span id="cb14-4"><a></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="fu">toLonLat</span>(evt<span class="op">.</span><span class="at">coordinate</span>))<span class="op">;</span></span>
+<span id="cb14-5"><a></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li><p>ressources divisées entre l’hôte et les machines</p></li>
-<li><p>autant d’OS à faire tourner que de machines</p></li>
-<li><p>chaque machine = plusieurs Go d’espace</p></li>
-</ul>
-<p>C’est aussi <strong>difficile à maintenir</strong> - il faut garder tous les OS à jour, etc.</p>
-<p><strong>Mais nous, on aime la simplicité et éviter de consommer plein de mémoire “pour rien”.</strong></p>
-</section>
-<section id="vms-docker-et-docker-compose-3" class="slide level2">
-<h2>VMs, Docker et Docker Compose</h2>
-<h3 id="heureusement">Heureusement…</h3>
-<p>…il existe des outils de containerisation comme <strong>Docker</strong>.</p>
-
-<img data-src="media/Docker_logo.svg" class="quarto-figure quarto-figure-center r-stretch" alt="Ancien logo docker"></section>
-<section id="vms-docker-et-docker-compose-4" class="slide level2">
-<h2>VMs, Docker et Docker Compose</h2>
-<h3 id="docker">Docker</h3>
-<ul>
-<li><p>Docker permet de faire tourner ce qu’on appelle des <strong>containers.</strong></p></li>
-<li><p>Les containers sont réduits au <strong>minimum nécessaire</strong> pour faire tourner des services (un serveur, une base de données, …).</p></li>
-<li><p>Autre outil de containerisation&nbsp;: Podman</p></li>
-</ul>
-
-<img data-src="media/container-diagram.svg" alt="Schéma containers" class="r-stretch quarto-figure-center"><p class="caption">Source : microsoft.com</p></section>
-<section id="vms-docker-et-docker-compose-5" class="slide level2">
-<h2>VMs, Docker et Docker Compose</h2>
-<h3 id="docker-compose">Docker Compose</h3>
-<ul>
-<li><p>Sorti en 2013, <strong>Docker Compose</strong> permet de gérer des applications multi-containers.</p></li>
-<li><p>Pour cela, on va rédiger un fichier de type <code>docker-compose.yml</code> qui va agir comme une “recette” pour permettre à Docker de créer et connecter l’ensemble des containers dont on a besoin.</p></li>
+<li class="fragment"><p>L’évènement <code>singleclick</code> ne se déclenche qu’au clic simple sur la carte (il existe aussi l’évènement <code>dblclick</code> pour le double-clic).</p></li>
+<li class="fragment"><p><code>evt</code> nous permet de récupérer les informations sur notre évènement.</p></li>
+<li class="fragment"><p>On accède aux coordonnées avec la propriété <code>coordinate</code> de notre évènement.</p></li>
+<li class="fragment"><p>On les convertit en latitude et longitude avec <code>toLonLat()</code>.</p></li>
 </ul>
 </section>
-<section id="déploiement" class="slide level2">
-<h2>Déploiement</h2>
-<h3 id="recette-pour-un-bon-geoserver">Recette pour un bon GeoServer</h3>
-<p>Récupérez le contenu du dépôt GitHub du cours (voir notes du TP).</p>
-</section>
-<section id="notre-docker-compose" class="slide level2">
-<h2>Notre Docker Compose</h2>
-<p>Explications sur le contenu&nbsp;:</p>
-<div class="sourceCode" id="cb1" data-code-line-numbers="|1|3,15|3|4|5|6,7,8,9|10,11|12,13"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a></a><span class="fu">services</span><span class="kw">:</span></span>
-<span id="cb1-2"><a></a></span>
-<span id="cb1-3"><a></a><span class="at">  </span><span class="fu">geoserver</span><span class="kw">:</span></span>
-<span id="cb1-4"><a></a><span class="at">    </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> geonum_geoserver</span></span>
-<span id="cb1-5"><a></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> docker.osgeo.org/geoserver:2.26.0</span></span>
-<span id="cb1-6"><a></a><span class="at">    </span><span class="fu">environment</span><span class="kw">:</span></span>
-<span id="cb1-7"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> RUN_UNPRIVILEGED=true</span></span>
-<span id="cb1-8"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> CHANGE_OWNERSHIP_ON_FOLDERS="/opt /opt/geoserver_data/ /mnt/geoserver_geodata"</span></span>
-<span id="cb1-9"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> CORS_ENABLED=true</span></span>
-<span id="cb1-10"><a></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
-<span id="cb1-11"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"8080:8080"</span></span>
-<span id="cb1-12"><a></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
-<span id="cb1-13"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> $PWD/geoserver/opt:/opt/geoserver_data</span></span>
-<span id="cb1-14"><a></a><span class="at">  </span></span>
-<span id="cb1-15"><a></a><span class="at">  </span><span class="fu">web</span><span class="kw">:</span></span>
-<span id="cb1-16"><a></a><span class="at">    </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> geonum_web</span></span>
-<span id="cb1-17"><a></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> caddy:latest</span></span>
-<span id="cb1-18"><a></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
-<span id="cb1-19"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"80:80"</span></span>
-<span id="cb1-20"><a></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
-<span id="cb1-21"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> $PWD/Caddyfile:/etc/caddy/Caddyfile</span></span>
-<span id="cb1-22"><a></a><span class="at">      </span><span class="kw">-</span><span class="at"> $PWD/app/dist/:/srv</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="à-vous" class="slide level2">
-<h2>À vous&nbsp;!</h2>
-<p>Poursuivez le TP jusqu’à réussir à vous connecter à votre GeoServer.</p>
+<section id="les-évènements-spécifiques-à-openlayers-2" class="slide level2">
+<h2>Les évènements spécifiques à OpenLayers</h2>
+<p>À vous de jouer&nbsp;! Vous pouvez commencer à suivre le TP pour apprendre à créer un menu d’affichage des couches et afficher une table attributaire.</p>
 
 
 </section>

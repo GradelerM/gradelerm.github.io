@@ -1,0 +1,213 @@
+---
+title: "Enrichir ma carte"
+format: html
+---
+
+## Objectifs de la session
+
+Cette fois, c’est nous qui définissions les objectifs petit à petit en fonction de nos besoins.
+
+## Supports
+
+Aujourd’hui, c’est de la pratique. M’entendre parler pendant des heures, c’est fini !
+
+![](https://kaamelott-gifboard.fr/gifs/on-en-a-gros.gif){fig-alt="GIF : Kaamelott on en a gros" fig-align="center" width="427"}
+
+## TP – Ajouter une table attributaire personnalisée
+
+::: callout-important
+## Pour bien démarrer le TP…
+
+Ce TP part du principe que vous avez suivi les précédents. Si ce n’est pas le cas, il manquera des éléments importants dans votre code. **Les exercices suivants partent du principe que vous avez déjà affiché vos couches, il faudrait donc au moins que celles-ci soient fonctionnelles pour la suite !**
+:::
+
+On va se réintéresser à notre couche WMS "deals" et à sa table attributaire (session "Interactions carte-interface). Je vous remets notre code ici pour vous rappeler quels éléments permettent de récupérer la table attributaire. Attention au nom de vos couches et de vos sources, ce ne sont peut-être pas les mêmes que les miens !
+
+``` javascript
+map.on('singleclick', (event) => {
+  const coord = event.coordinate;
+  const res = map.getView().getResolution();
+  const proj = 'EPSG:3857';
+  const parametres = {'INFO_FORMAT': 'text/html'};
+
+  const url = sourceDeals.getFeatureInfoUrl(coord, res, proj, parametres);
+
+  if (url) {
+    fetch(url)
+      .then((response) => response.text())
+      .then((html) => {
+        document.getElementById('attributes').innerHTML = html;
+       });
+  }
+});
+```
+
+Faites attention à cet élément :
+
+``` javascript
+const parametres = {'INFO_FORMAT': 'text/html'};
+```
+
+Notez qu’on demande en fait à notre GeoServer de nous donner la **réponse** de notre **requête** au format **text/html**. C’est sympathique, mais difficile à customiser et surtout pas super pratique quand la table attribuaire est LONGUE. Heureusement, on peut récupérer le résultat au format JSON qui sera bien pratique pour customiser notre table.
+
+Comme toujours, quand on souhaite ajouter un nouvel élément à notre carte, il faut qu’on commence par écrire du HTML. On va modifier notre div `id="attributes"` pour y ajouter une table. Récupérez le code ci-dessous et regardez la différence, vous allez comprendre.
+
+``` javascript
+<div id="attributes" class="menu">
+    <!-- Je crée une table -->
+    <table>
+<!-- On utilise l’élément tr pour créer une ligne : tr = table row -->
+    <tr>
+        <!-- On utilise les éléments th (table header) pour créer les headers de nos trois colonnes -->
+        <th>Deal ID</th>
+        <th>Creation date</th>
+        <th>Country</th>
+    </tr>
+    <!-- On utilise l’élément tr pour créer une AUTRE ligne : tr = table row -->
+    <tr>
+        <!-- On crée trois colonnes vides avec td -->
+        <td>…</td>
+        <td>…</td>
+        <td>…</td>
+    </tr>
+</table>
+</div>
+```
+
+Vous devriez maintenant voir apparaître une table dans votre `div`. Elle est austère, d’accord, mais vous pourrez la styliser après. Pour le moment, on va faire avec. Regardez bien mes commentaires pour comprendre comment est structuré le code ainsi que ces trois éléments :
+
+``` html
+      <td>…</td>
+      <td>…</td>
+      <td>…</td>
+```
+
+Vous comprenez sûrement qu’on souhaite remplacer ces "…" par des valeurs lorsqu’on clique sur un point de la couche. Il va donc falloir modifier cet élément HTML avec nos fonctions JavaScript. Souvenez-vous qu’on utilise les identifiants pour retrouver les éléments HTML avec `.getElementById()`. Donc :
+
+``` html
+      <td id="table-deal-id">…</td>
+      <td id="table-creation-date">…</td>
+      <td id="table-country">…</td>
+```
+
+Maintenant qu’on a nos éléments, il va falloir les remplir. Retournez chercher votre méthode `map.on()` dans votre code, on va devoir l’améliorer un peu.
+
+``` javascript
+map.on('singleclick', (event) => {
+  const coord = event.coordinate;
+  const res = map.getView().getResolution();
+  const proj = 'EPSG:3857';
+
+  const parametres = { 'INFO_FORMAT': 'application/json' } // On a changé un truc ici
+
+  const url = sourceDeals.getFeatureInfoUrl(coord, res, proj, parametres);
+
+  if (url) {
+    fetch(url)
+      .then((response) => response.text())
+      .then((json) => { // On a aussi changé un truc ici et dans la fonction
+        const obj = JSON.parse(json);
+        console.log(obj);
+      });
+  }
+});
+```
+
+Testez votre couche et regardez le résultat dans la console. Si tout a fonctionné, vous devriez voir un objet JavaScript ! Prenez le temps de l’explorer dans votre console pour comprendre ce que vous regardez. L‘information qui nous intéresse est quelque part dans `features`. Voilà ce qu’on doit faire avec la donnée :
+
+-   vérifier qu’on a bien cliqué sur une feature sur la carte (en JavaScript, ça demande de vérifier qu’on a bien de la donnée dans `features`)
+
+-   récupérer la `feature` sur laquelle j’ai cliqué pour pouvoir accéder à ses `properties`
+
+-   récupérer mes cellules pour remplacer leur contenu
+
+-   remplacer le contenu des cellules de ma table avec les `properties`
+
+On va procéder petit à petit. D’abord, on **vérifie qu’on a bien une feature dans `feature`** :
+
+``` javascript
+  if (url) {
+    fetch(url)
+      .then((response) => response.text())
+      .then((json) => { // On a aussi changé un truc ici et dans la fonction
+        const obj = JSON.parse(json);
+        if (obj.features[0]) {
+          console.log("J’ai cliqué sur une feature !");
+        } else {
+          console.log("J’ai cliqué à côté…");
+        }
+      });
+  }
+```
+
+On utilise une condition `if` pour tester la présence d’une feature dans `obj`. `obj.features[0]` peut se traduire par : "Récupère mon tableau `feature` de mon `obj` et prends le premier élément". La condition regarde simplement si `feature[0]` est vide ou non. Si ce n’est pas vide, on a reçu quelque chose, on a donc cliqué sur une feature. Au contraire, si c’est vide, c’est qu’on a cliqué à côté. Testez la fonction avant de passer à la suite.
+
+Si on a bien récupéré une `feature`, cela veut dire qu’on peut récupérer ses `properties`. Il suffit d’ajouter au bon endroit de la fonction les deux lignes suivantes :
+
+``` javascript
+const properties = obj.features[0].properties;
+console.log(properties);
+```
+
+Vous commencez à comprendre comment on accède à un élément dans un objet JavaScript. Il suffit d’appeler la propriété qu’on veut avec `.<propriété>`. Regardez comment est structuré votre objet `properties` dans la console du navigateur. Maintenant, modifiez la ligne `console.log(properties);` pour afficher la propriété `target_country`. Quand c’est réussi, passez à la suite !
+
+Très bien, on sait maintenant récupérer des propriétés. Il ne nous reste plus qu’à modifier le HTML de notre document en conséquence en utilisant `.innerHTML` ! Je vous donne le code pour la colonne `deal_id` et je vous laisse compléter le code pour les deux autres colonnes.
+
+``` javascript
+  if (url) {
+    fetch(url)
+      .then((response) => response.text())
+      .then((json) => {
+        const obj = JSON.parse(json);
+        if (obj.features[0]) {
+          console.log("J’ai cliqué sur une feature !");
+          const properties = obj.features[0].properties;
+          console.log(properties);
+          // On affiche deal_id dans notre table
+          document.getElementById('table-deal-id').innerHTML = properties.deal_id;
+        } else {
+          console.log("J’ai cliqué à côté…");
+          // On a cliqué "nulle part" donc on remet des … dans la colonne "deal_id"
+          document.getElementById('table-deal-id').innerHTML = "";
+        }
+      });
+  }
+```
+
+Testez votre application. Normalement, ça marche ! Quand vous cliquez sur une feature, vous devriez récupérer son ID. Voilà comment on crée une table customisée pour interroger une couche ! **Maintenant, à vous de compléter les deux autres colonnes.** Une fois que vous avez réussi, ajoutez une colonne qui montre la valeur de `mineral_resources` pour le deal sur lequel vous cliquez. Et quand ça aussi ça fonctionne, prenez quelques minutes pour styliser votre table !
+
+![Si vous vous sentez comme ça après cet exercice, c’est normal. Vous venez de passer un très gros morceau, bien joué à vous ! Peu importe l’heure, vous avez gagné le droit d’aller vous chercher le café de la victoire pour vous reposer un peu les neurones.](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXA3OHNtMW5vdTlrdHRmbDZwcjUwMWw1bzdjenQ5ZnNwOGI4bzN5cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MC4HOOheKrTkMhpL6i/giphy.gif){fig-alt="GIF : Exhausted lady in her bed" fig-align="center"}
+
+## TP – Ajouter une échelle
+
+Allez, on va faire quelque chose qui demande moins de lignes de code pour s’aérer un peu la tête. Je vous colle quelques éléments pour vous aider ici sans trop vous guider, j’estime que vous devriez pouvoir trouver comment faire assez facilement.
+
+D’abord, voilà un import OpenLayers fort utile :
+
+``` javascript
+import ScaleLine from 'ol/control/ScaleLine.js';
+```
+
+Un autre morceau, pour créer l’objet "échelle" :
+
+``` javascript
+const scaleline = new ScaleLine();
+```
+
+Et enfin, trouvez comment ajouter ça à votre code existant :
+
+``` javascript
+const map = new Map({
+  controls: [scaleline],
+});
+```
+
+Et voilà !
+
+![Et en préparant ce TP, j’ai pu découvrir que la montée d’échelle est un sport qui existe. À vous d’être aussi efficaces avec votre code !](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTN0MjJ5aDZmY2piMzB6N3dvdGN4OXF6ODM2eXFqdTA2azVqMmtubiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MnV9h47Yjjujm/giphy.gif){fig-alt="GIF : Compétition de montée d’échelle" fig-align="center"}
+
+## …
+
+La suite est en cours de rédaction. Si vous êtes arrivé⋅e ici, déjà, vous êtes bien curieux⋅se ! Ensuite, profitez-en pour réfléchir à ce dont vous auriez besoin dans votre projet GeoNum pour me demander de préparer de nouveaux exercices.
+
+Si vous avez déjà des idées, vous pouvez aussi vous lancer ! Je reste disponible pour aider sur quelque chose qui n’a pas forcément été préparé dans mon TP 😃

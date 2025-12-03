@@ -27,7 +27,9 @@ format: html
 
 On va ajouter l’application dans notre stack existante. Pour ça, retournez dans le dossier dans lequel on a travaillé lors de la dernière séance (celui avec le GeoServer) qui devrait s’appeler `geonum_docker`.
 
-Rendez-vous sur le [site officiel d’OpenLayers](https://openlayers.org/) et cherchez la section "Quick Start". Prenez le temps de parcourir la page, elle contient toutes les informations dont vous avez besoin. Ensuite, ouvrez un terminal dans votre dossier `geonum_docker` et tapez la commande suivante :
+Si un dossier `app` existe déjà, **supprimez-le**. Allez-y, ne soyez pas timides !
+
+Ensuite, rendez-vous sur le [site officiel d’OpenLayers](https://openlayers.org/) et cherchez la section "Quick Start". Prenez le temps de parcourir la page, elle contient toutes les informations dont vous avez besoin. Ensuite, ouvrez un terminal dans votre dossier `geonum_docker` et tapez la commande suivante :
 
 ``` bash
 npm create ol-app app
@@ -44,7 +46,7 @@ cd app
 Ensuite, on doit *build* notre application pour que notre serveur de production (Caddy) puisse lire le contenu de l’application.
 
 ``` bash
-npm build
+npm run build
 ```
 
 ::: callout-important

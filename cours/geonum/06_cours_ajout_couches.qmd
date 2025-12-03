@@ -1,0 +1,513 @@
+---
+title: "Ajouter des couches"
+format: html
+---
+
+## Objectifs de la session
+
+-   Ajouter des couches à ma carte (WMS, WFS, GeoJSON)
+
+-   Les fonctions de base pour ajouter les couches : `map.addLayer()` et ses dérivés
+
+-   Styliser mes couches
+
+-   Ajouter une légende
+
+## Supports
+
+*Pas de support spécifique pour ce cous, référez-vous à "Développer avec NodeJS et OpenLayers" (Section "Cycle de développement") pour le code détaillé d’affichage des couches.*
+
+## TP – Ajouter MES couches
+
+### Importer une couche depuis mon GeoServer (version WMS)
+
+N’oubliez pas de créer une nouvelle branche git sur laquelle travailler ! Si vous avez un doute sur la méthode, référez-vous à “Développer avec NodeJS et OpenLayers” (Section “Cycle de développement”).
+
+**Ensuite, vérifiez que vos containers Docker tournent toujours.** Pour ça, rendez-vous sur <http://localhost:8080/geoserver/> et vérifiez que vous voyez bien l’interface de GeoServer. Sinon, démarrez la stack depuis Docker Desktop ou bien ouvrez un terminal à la racine de votre projet et tapez `docker compose up`.
+
+**On souhaite maintenant ajouter une couche OpenLayers depuis notre GeoServer.**
+
+Vous avez une impression de déjà-vu ? Normal ! Si vous avez bien suivi le TP précédent, ce sera un jeu d’enfant pour vous. Si vous voulez retourner au TP pour être guidés parce que vous avez un trou de mémoire, c’est [par ici](./serveurs_carto.qmd). Pour vous aider, je vous remets ici quelques éléments :
+
+-   Le jeu de données [land_matrix_mines](/data/land_matrix/land_matrix_mines.gpkg) à télécharger
+
+-   Le fichier de style SLD des couches à copier ci-dessous (vous n’êtes pas obligés d’utiliser ceux-ci !)
+
+::: {.callout-note collapse="true"}
+## SLD pour "deals"
+
+``` xml
+<?xml version="1.0" encoding="UTF-8"?>
+<StyledLayerDescriptor xmlns="http://www.opengis.net/sld" xmlns:se="http://www.opengis.net/se" xmlns:ogc="http://www.opengis.net/ogc" xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1.0">
+  <NamedLayer>
+    <se:Name>gpkg_land_matrix — deals</se:Name>
+    <UserStyle>
+      <se:Name>gpkg_land_matrix — deals</se:Name>
+      <se:FeatureTypeStyle>
+        <se:Rule>
+          <se:Name>Deal</se:Name>
+          <se:PointSymbolizer>
+            <se:Graphic>
+              <se:Mark>
+                <se:WellKnownName>circle</se:WellKnownName>
+                <se:Fill>
+                  <se:SvgParameter name="fill">#ffd157</se:SvgParameter>
+                </se:Fill>
+                <se:Stroke>
+                  <se:SvgParameter name="stroke">#232323</se:SvgParameter>
+                  <se:SvgParameter name="stroke-width">0.5</se:SvgParameter>
+                </se:Stroke>
+              </se:Mark>
+              <se:Size>7</se:Size>
+            </se:Graphic>
+          </se:PointSymbolizer>
+        </se:Rule>
+      </se:FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+</StyledLayerDescriptor>
+```
+:::
+
+::: {.callout-note collapse="true"}
+## SLD pour "deals_by_country"
+
+``` xml
+<?xml version="1.0" encoding="UTF-8"?>
+<StyledLayerDescriptor xmlns="http://www.opengis.net/sld" xmlns:se="http://www.opengis.net/se" xmlns:ogc="http://www.opengis.net/ogc" xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1.0">
+  <NamedLayer>
+    <se:Name>gpkg_land_matrix — deals_by_country</se:Name>
+    <UserStyle>
+      <se:Name>gpkg_land_matrix — deals_by_country</se:Name>
+      <se:FeatureTypeStyle>
+        <se:Rule>
+          <se:Name>Single symbol</se:Name>
+          <se:PolygonSymbolizer>
+            <se:Fill>
+              <se:SvgParameter name="fill">#fdbf6f</se:SvgParameter>
+              <se:SvgParameter name="fill-opacity">0.35</se:SvgParameter>
+            </se:Fill>
+            <se:Stroke>
+              <se:SvgParameter name="stroke">#232323</se:SvgParameter>
+              <se:SvgParameter name="stroke-width">1</se:SvgParameter>
+              <se:SvgParameter name="stroke-linejoin">bevel</se:SvgParameter>
+            </se:Stroke>
+          </se:PolygonSymbolizer>
+        </se:Rule>
+      </se:FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+</StyledLayerDescriptor>
+```
+:::
+
+::: {.callout-note collapse="true"}
+## SLD pour "deals_by_country_centroid"
+
+``` xml
+<?xml version="1.0" encoding="UTF-8"?>
+<StyledLayerDescriptor xmlns="http://www.opengis.net/sld" xmlns:se="http://www.opengis.net/se" xmlns:ogc="http://www.opengis.net/ogc" xsi:schemaLocation="http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1.0">
+  <NamedLayer>
+    <se:Name>gpkg_land_matrix — deals_by_country_centroid</se:Name>
+    <UserStyle>
+      <se:Name>gpkg_land_matrix — deals_by_country_centroid</se:Name>
+      <se:FeatureTypeStyle>
+        <se:Rule>
+          <se:Name>201 - 5466</se:Name>
+          <se:Description>
+            <se:Title>201 - 5466</se:Title>
+          </se:Description>
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+            <ogc:And>
+              <ogc:PropertyIsGreaterThanOrEqualTo>
+                <ogc:PropertyName>suface_ha</ogc:PropertyName>
+                <ogc:Literal>200.81000000000000227</ogc:Literal>
+              </ogc:PropertyIsGreaterThanOrEqualTo>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>suface_ha</ogc:PropertyName>
+                <ogc:Literal>5466.3999999999996362</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <se:PointSymbolizer>
+            <se:Graphic>
+              <se:Mark>
+                <se:WellKnownName>circle</se:WellKnownName>
+                <se:Fill>
+                  <se:SvgParameter name="fill">#e5b636</se:SvgParameter>
+                </se:Fill>
+                <se:Stroke>
+                  <se:SvgParameter name="stroke">#232323</se:SvgParameter>
+                  <se:SvgParameter name="stroke-width">0.5</se:SvgParameter>
+                </se:Stroke>
+              </se:Mark>
+              <se:Size>4</se:Size>
+            </se:Graphic>
+          </se:PointSymbolizer>
+        </se:Rule>
+        <se:Rule>
+          <se:Name>5466 - 20413</se:Name>
+          <se:Description>
+            <se:Title>5466 - 20413</se:Title>
+          </se:Description>
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>suface_ha</ogc:PropertyName>
+                <ogc:Literal>5466.3999999999996362</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>suface_ha</ogc:PropertyName>
+                <ogc:Literal>20412.80000000001018634</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <se:PointSymbolizer>
+            <se:Graphic>
+              <se:Mark>
+                <se:WellKnownName>circle</se:WellKnownName>
+                <se:Fill>
+                  <se:SvgParameter name="fill">#e5b636</se:SvgParameter>
+                </se:Fill>
+                <se:Stroke>
+                  <se:SvgParameter name="stroke">#232323</se:SvgParameter>
+                  <se:SvgParameter name="stroke-width">0.5</se:SvgParameter>
+                </se:Stroke>
+              </se:Mark>
+              <se:Size>10</se:Size>
+            </se:Graphic>
+          </se:PointSymbolizer>
+        </se:Rule>
+        <se:Rule>
+          <se:Name>20413 - 61376</se:Name>
+          <se:Description>
+            <se:Title>20413 - 61376</se:Title>
+          </se:Description>
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>suface_ha</ogc:PropertyName>
+                <ogc:Literal>20412.80000000001018634</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>suface_ha</ogc:PropertyName>
+                <ogc:Literal>61375.88199999996868428</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <se:PointSymbolizer>
+            <se:Graphic>
+              <se:Mark>
+                <se:WellKnownName>circle</se:WellKnownName>
+                <se:Fill>
+                  <se:SvgParameter name="fill">#e5b636</se:SvgParameter>
+                </se:Fill>
+                <se:Stroke>
+                  <se:SvgParameter name="stroke">#232323</se:SvgParameter>
+                  <se:SvgParameter name="stroke-width">0.5</se:SvgParameter>
+                </se:Stroke>
+              </se:Mark>
+              <se:Size>16</se:Size>
+            </se:Graphic>
+          </se:PointSymbolizer>
+        </se:Rule>
+        <se:Rule>
+          <se:Name>61376 - 160220</se:Name>
+          <se:Description>
+            <se:Title>61376 - 160220</se:Title>
+          </se:Description>
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>suface_ha</ogc:PropertyName>
+                <ogc:Literal>61375.88199999996868428</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>suface_ha</ogc:PropertyName>
+                <ogc:Literal>160220.00000000005820766</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <se:PointSymbolizer>
+            <se:Graphic>
+              <se:Mark>
+                <se:WellKnownName>circle</se:WellKnownName>
+                <se:Fill>
+                  <se:SvgParameter name="fill">#e5b636</se:SvgParameter>
+                </se:Fill>
+                <se:Stroke>
+                  <se:SvgParameter name="stroke">#232323</se:SvgParameter>
+                  <se:SvgParameter name="stroke-width">0.5</se:SvgParameter>
+                </se:Stroke>
+              </se:Mark>
+              <se:Size>22</se:Size>
+            </se:Graphic>
+          </se:PointSymbolizer>
+        </se:Rule>
+        <se:Rule>
+          <se:Name>160220 - 1509612</se:Name>
+          <se:Description>
+            <se:Title>160220 - 1509612</se:Title>
+          </se:Description>
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+            <ogc:And>
+              <ogc:PropertyIsGreaterThan>
+                <ogc:PropertyName>suface_ha</ogc:PropertyName>
+                <ogc:Literal>160220.00000000005820766</ogc:Literal>
+              </ogc:PropertyIsGreaterThan>
+              <ogc:PropertyIsLessThanOrEqualTo>
+                <ogc:PropertyName>suface_ha</ogc:PropertyName>
+                <ogc:Literal>1509612</ogc:Literal>
+              </ogc:PropertyIsLessThanOrEqualTo>
+            </ogc:And>
+          </ogc:Filter>
+          <se:PointSymbolizer>
+            <se:Graphic>
+              <se:Mark>
+                <se:WellKnownName>circle</se:WellKnownName>
+                <se:Fill>
+                  <se:SvgParameter name="fill">#e5b636</se:SvgParameter>
+                </se:Fill>
+                <se:Stroke>
+                  <se:SvgParameter name="stroke">#232323</se:SvgParameter>
+                  <se:SvgParameter name="stroke-width">0.5</se:SvgParameter>
+                </se:Stroke>
+              </se:Mark>
+              <se:Size>29</se:Size>
+            </se:Graphic>
+          </se:PointSymbolizer>
+        </se:Rule>
+      </se:FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+</StyledLayerDescriptor>
+```
+:::
+
+Une fois que vos couches sont (à nouveau) importées dans votre GeoServer et que vous parvenez à les visualiser correctement, **importez la couche "deals" dans votre application OpenLayers.** Il doit s’agir d’une **nouvelle couche** : ne remplacez pas celle de l’exemple que nous venons d’afficher ! En utilisant le TP précédent et ce qu’on vient de voir, vous ne devriez pas avoir trop de difficultés.
+
+Pour rappel, vous pouvez ouvrir l’outil de développement de votre navigateur avec la touche `F12` et vous verrez les messages d’erreur dans l’onglet `Console`. C’est eux qui vous diront ce qui ne va pas dans le code !
+
+Au besoin, vous pouvez utiliser une fusée de détresse, mais comme pour les vraies, c’est mieux de les allumer **quand on en a besoin** et pas juste parce qu’on est curieux.
+
+::: {.callout-important collapse="true"}
+## Fusée de détresse : comment trouver l’url qui pointe vers mon service wms ?
+
+![](https://media1.tenor.com/m/nuBTC0Fcb0kAAAAC/periculum-harry-potter.gif){fig-alt="GIF: Harry Potter flare" fig-align="center" width="593"}
+
+-   Prévisualisez votre couche dans GeoServer
+
+-   Copiez l’URL qui est dans la barre de votre navigateur
+
+-   Supprimez tout ce qui est après le "?" et votre URL devrait se terminer par "wms", par exemple : "[http://localhost:8080/geoserver/land_matrix/wms](http://localhost:8080/geoserver/land_matrix/wms')"
+:::
+
+::: {.callout-important collapse="true"}
+## Fusée de détresse : comment trouver le nom de mon espace et de ma couche ?
+
+![](https://media1.tenor.com/m/YpGQDIBC5YYAAAAd/arcane-jinx.gif){fig-alt="GIF : Arcane Jinx flare" fig-align="center"}
+
+-   Allez dans "Couches" ou "Prévisualisation de la couche" dans GeoServer
+
+-   Trouvez votre couche dans la liste et regardez la colonne "Nom"
+
+-   La première partie du nom (avant les ":") correspond à l’espace et la seconde partie au nom de la couche, par exemple : "land_matrix:deals"
+:::
+
+::: {.callout-important collapse="true"}
+## Fusée de détresse : J’ai créé ma couche mais elle n’apparaît pas sur la carte
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmI3cTV3ODN2ZmRhbTM4MDc1M2dobTRiaTl2Y2w2Z2I5Y3hsbXNvZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/AsfJT1vNXYyBWlPe4S/giphy.webp){fig-alt="GIF: Monster Hunter Wild flare" fig-align="center"}
+
+Vous pensez avoir bien créé votre source `ImageWMS` et votre couche `ImageLayer` mais il n’y a rien sur la carte et pas de message d’erreur ?
+
+Vérifiez que vous avez bien ajouté votre couche dans la propriété `layers:` de votre objet `map` ! Pour rappel, pour ajouter un élément à un tableau ("*array*") en JavaScript, il faut séparer ces éléments par des virgules.
+:::
+
+Si vous avez atteint cette ligne, bravo ! **Si vous coincez, appelez-moi.** Il faudrait que tout le monde parvienne à atteindre au moins cette étape avant la fin du TP.
+
+S’il après ça vous reste un peu de temps, ajoutez les couches "deals_by_country" et "deals_by_country_centroid" à la carte.
+
+### Importer une couche depuis mon GeoServer (version WFS)
+
+Les images, c’est bien, mais peut-être qu’on voudrait plutôt récupérer les features de notre couche et les styliser directement dans l’application pour ajouter plus d’interaction.
+
+Notre objectif va être d’afficher notre couche `dealsByCountryCentroid` et de la styliser pour afficher des cercles proportionnels. Et vous allez voir que récupérer une couche WFS avec OpenLayers, c’est du gâteau.
+
+Je vous donne la structure du code à écrire dans `main.js`. N’oubliez pas que les éléments encadrés par des chevrons `"<un_truc>"` doivent être remplacés par une vraie valeur. Par exemple, si je vous écris `const formation = "<ma_formation>"`, vous devrez mettre dans votre code `const formation = "geonum"`. Facile ! Voilà donc le snippet de base :
+
+``` javascript
+// N’oubliez pas de mettre un commentaire pour m’expliquer ce que vous faites
+const sourceCentroid = new VectorSource({
+  format: new GeoJSON(),
+  url: '<mon_flux_wfs>'
+});
+
+const layerCentroid = new VectorLayer({
+  source: sourceCentroid,
+});
+```
+
+… et les imports à ajouter tout en haut du fichier :
+
+``` javascript
+import VectorSource from 'ol/source/Vector';
+import GeoJSON from 'ol/format/GeoJSON.js';
+import VectorLayer from 'ol/layer/Vector';
+```
+
+Vous remarquez que vous avons un élément `<mon_flux_wms>` à remplacer. Pour trouver l’URL de ce flux, allez dans votre interface GeoServer, sélectionnez "Prévisualisation de la couche". Cette fois, au lieu de choisir "OpenLayers" (qui nous donne le flux WMS), allez dans la colonne "Tous les formats" et sélectionnez GeoJSON. **Je rappelle qu’on ne travaille plus sur la couche `deals` mais bien sur la couche `dealsByCountryCentroid`.** Il ne vous reste plus qu’à copier l’URL dans votre navigateur : c’est la valeur de `url` dans votre `VectorSource()`.
+
+::: {.callout-note collapse="true"}
+## Oups, j’ai oublié de retirer les chevrons "\<" en collant mon url
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbm84eWJjMWNlNnF4d2lxdjFhYnJoYmRkM3RweWZ5M2Q3ZWlya3hidSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eUrE2DuMKOE0g/giphy.webp){fig-alt="GIF : Justine Timberlake blasé" fig-align="center"}
+:::
+
+Il ne reste plus qu’une seule étape pour afficher la couche sur la carte. Je vous laisse trouver laquelle !
+
+::::: {.callout-note collapse="true"}
+## Allez, un petit indice ?
+
+Vous l’avez déjà fait plusieurs fois dans le TP précédent et celui-ci, et c’est souvent une étape qu’on oublie.
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmN4NWdqczB6enZtdzJwZW5wazBwbjducTA2aDhnMm1qNWF1dm10eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MZ9nZGQn1nqBG/200.webp){fig-alt="GIF : Mr Bean malicieux" fig-align="center"}
+
+:::: {.callout-note collapse="true"}
+## Je ne trouve vraiment pas…
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHl0dHJvajQ2cm9ldGxhcWtvaXRobmhtZGpmeWZlNjBxM3V3bjBwciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/w89ak63KNl0nJl80ig/giphy.webp){fig-alt="GIF : The Office, agent sous couverture" fig-align="center" width="240"}
+
+::: {.callout-note collapse="true"}
+## Promis, j’ai vraiment cherché !
+
+Bon, d’accord. Dites-moi, comment se porte l’attribut `layers` de votre objet `map` ?
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTMxd2h6aDBvczhuandzdzRnNTYwYzRhOW14NW53OXo5Y2tqYmk1aiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/i7WbuFkyAZ8HUAIn8E/giphy.webp){fig-alt="GIF : Gollum donne la réponse de l’énigme" fig-align="center" width="200"}
+:::
+::::
+:::::
+
+Une fois cette étape complétée, la couche devrait apparaître sur votre carte. Super ! Par contre, ça ressemble certainement à des cercles blancs, un peu transparents, avec un contour bleu. Et surtout, ce ne sont pas des cercles proportionnels !
+
+Heureusement, vous avez été bien attentifs pendant vos cours de Leaflet et vous avez déjà stylisé des couches à partir de donnée GeoJSON, ça devrait être super facile pour vous. Comme la documentation GeoServer n’est pas très claire sur ce point, je vous donne un snippet et je vais vous demander de l’ajuster un peu pour vérifier que vous comprendez bien qui fait quoi.
+
+D’abord, on importe les éléments de style dont on va avoir besoin :
+
+``` javascript
+import {Circle, Fill, Stroke, Style} from 'ol/style.js';
+```
+
+On commence par créer un style "pas proportionnel" qu’on stocke dans la constante `styleCentroid`.
+
+``` javascript
+const styleCentroid = new Style({
+  image: new Circle({
+    radius: 40,
+    fill: new Fill({ color: 'white' }),
+    stroke: new Stroke({ color: 'blue', width: 5 }),
+  }),
+});
+```
+
+N’oubliez pas d’appeler votre style dans la propriété `style` de votre `VectorLayer` ou bien la couche ne changera pas.
+
+``` javascript
+const layerCentroid = new VectorLayer({
+  source: sourceCentroid,
+  style: styleCentroid    // On a rajouté cette ligne
+});
+```
+
+Attention à l’ordre dans lequel vous ajoutez les éléments dans le code. N’oubliez pas que pour appeler une constante (ou une variable) comme `styleCentroid`, il faut avoir défini celle-ci avant !
+
+Regardez à quoi ressemble la couche maintenant qu’on lui a donné un style. C’est moche, hein ? Et bien c’est à vous de la rendre belle. Modifiez le code pour obtenir quelque chose qui ressemble à ça :
+
+![](media/ol_styling_circles.png){fig-alt="Couche de cercles oranges sur OpenLayers" fig-align="center"}
+
+Notez que les cercles ne sont pas entièrement opaques. Prenez le temps de vous appliquer, cela vous servira de base pour la suite. **Quand vous avez terminé**, vous pourrez utiliser ce snippet pour afficher des cercles proportionnels.
+
+``` javascript
+function getStyleCentroid(feature) {
+  const nDeals = feature.get('n_deals');
+  const rayon = Math.sqrt(nDeals) * 0.01;
+  const style = new Style({
+    image: new Circle({
+      radius: rayon,
+      fill: new Fill({ color: 'white' }),
+      stroke: new Stroke({ color: 'blue', width: 5 }),
+    }),
+  });
+  return style;
+}
+
+const layerCentroid = new VectorLayer({
+  source: sourceCentroid,
+  style: getStyleCentroid,
+});
+```
+
+Vous noterez que la différence principale ici est qu’on appelle une **fonction** et non une constante, et que cette fonction prend `feature` en argument. En fait, ce qu’il se passe, c’est que la fonction va regarder chaque objet de ma couche (chaque *feature*) et appliquer les étapes qu’on a définies à l’intérieur.
+
+-   on lit un attribut de notre `feature` avec la méthode `.get()`
+
+-   on calcule un rayon
+
+-   on définit notre style comme précédemment, mais au lieu d’être une valeur fixe, notre propriété `radius` prend la valeur de notre rayon
+
+Je suis restée volontairement vague dans ce cas pour ne pas vous souffler toutes les réponses. Comme précédemment, vous allez devoir modifier le snippet de code pour rendre la couche un peu plus élégante. Je vous montre mon exemple, essayez de le reproduire le plus fidèlement possible :
+
+![](media/ol_styling_proportional.png){fig-alt="Couche de cercles proportionnels dans OpenLayers" fig-align="center"}
+
+Une fois que c’est terminé, il reste un dernier exercice à faire avec ces cercles proportionnels. Vous aurez compris qu’ici, nos cercles sont proportionnels au nombre de deals qui sont enregistrés dans le pays. **Maintenant, créez une couche de cercles proportionnels en vous basant sur la surface total couverte par les deals dans chaque pays.**
+
+On arrive sur la fin du TP et vous commencez (j’espère) à bien comprendre comment fonctionne notre application donc je ne vous donne pas d’indices. Faites juste attention à bien faire varier la taille des cercles petit à petit : si jamais votre navigateur essaie de dessiner des cercles trop grands, vous avez des chances de faire crasher votre ordinateur (ça m’est *peut-être* arrivé pendant mes tests et ce serait dommage que ça vous arrive aussi).
+
+### Et maintenant, le détail qui tue…
+
+Quand on développe une application, on essaie d’éviter d’utiliser les **chemins absolus** ou bien d’éviter de les répéter.
+
+::: callout-tip
+## Chemins absolus, chemins relatifs
+
+Si vous ne savez pas ce que sont des **chemins absolus** et **chemins relatifs**, regardez votre terminal. Vous devriez avoir votre nom et le chemin vers votre `geonum_docker`. Chez moi, ça ressemble à ça :
+
+``` bash
+marie@pop-os:~/Documents/Cours/GeoNum/Webmapping/geonum_docker$
+```
+
+La partie `~/Documents/Cours/GeoNum/Webmapping/geonum_docker$` et le **chemin absolu** vers mon projet `geonum_docker`. Si je voulais accéder à `app`, j’aurais deux choix :
+
+``` bash
+# Utliser le chemin absolu
+cd ~/Documents/Cours/GeoNum/Webmapping/geonum_docker/app
+
+# Utiliser le chemin relatif au répertoire où je me trouve, ici genum_docker
+cd ./app
+
+# ou bien
+cd app
+```
+:::
+
+Quand vous avez appelé votre GeoServer, vous avez utilisé une URL qui pointe vers un chemin absolu sur votre ordinateur (`localhost`). Le problème, **c’est que ce chemin d’accès va changer quand on mettra en ligne notre application** (pas celle-ci, mais celle du projet GeoNum).
+
+Autrement dit, la personne qui devra mettre en ligne votre application devra d’abord démarrer votre GeoServer, puis retourner copier-coller l’URL et **aller la modifier partout où vous allez l’utiliser dans votre code**. C’est beaucoup trop fastidieux.
+
+On va donc utiliser une bonne pratique de code qui va aussi régler ce problème : **éviter au maximum de répéter une information qui ne change pas**. Vous allez donc pouvoir créer une variable dans laquelle stocker l’URL de votre GeoServer (la partie que vous collez après `url` quand vous créez une source).
+
+*Je ne vous donne pas la solution ici comme ça faciliterait trop les étapes précédentes, mais j’ai confiance en vous, vous pouvez le faire ! Appelez-moi si vous avez un doute ou que ça ne fonctionne pas.*
+
+### Je suis en avance !
+
+Pas de panique, on n’a pas le temps de s’ennuyer ici ! On va faire un peu de HTML et de CSS. Trouvez comment gagner de l’espace en haut de la page web pour ajouter un titre (avec la balise `<h1>`) et donnez un joli nom à votre page !
+
+Si vous avez encore un peu de temps, expérimentez avec le style de la carte. Vous pouvez arrondir les coins, changer la police du titre, ou pourquoi pas commencer à dégager une zone pour mettre la légende et les options d’affichage des couches.
+
+Vous pourriez aussi relire votre code JavaScript. Est-ce que certaines informations se répètent, est-ce que vous pourriez les mettre dans des variables ?
+
+## C’est fini pour aujourd’hui !
+
+**Merci à vous d’avoir tenu le coup, je sais que c’était dense.** Maintenant que vous avez une base solide pour votre carte, on va pouvoir ajouter des interactions avec celle-ci au cours des prochaines séances !
+
+![](media/jojo_to_be_continued.png){fig-alt="Jojo's to be continued" fig-align="center"}
