@@ -96,13 +96,26 @@ Accédez à votre <http://localhost/> pour voir l’application en production.
 
 Avant d’aller plus loin dans la création de notre application, on va utiliser **Git** pour versionner notre projet et l’héberger en ligne.
 
-D’abord, vérifiez que votre projet est bien versionné.
+**D’abord, retournez à la racine de votre projet `geonum_docker`** :
+
+``` bash
+cd ..
+```
+
+Ensuite, vérifiez que votre projet est bien versionné.
 
 ``` bash
 git status
 ```
 
 Si vous avez un message long qui fait peur, c’est bon signe. En fait, **notre projet est déjà vesionné parce qu’on l’a récupéré sur mon GitHub**. On a importé mes fichiers… mais aussi le git associé !
+
+Si jamais ce n’est pas le cas, alors vous devez initialiser votre dépôt :
+
+``` {.bash .js}
+git init
+git status
+```
 
 *Note : toutes les étapes suivantes peuvent être faites en interface graphique si vous préférez. Moi je travaille en lignes de commande, et comme c’est ce qui est le plus universel c’est ce que je vous partage ici.*
 
@@ -136,7 +149,7 @@ Oui, je parle d’expérience. Non, tous mes collègues n’ont pas ri.
 
 -   Donnez un nom et une description à votre dépôt
 
--   Ne changez rien d’autre
+-   Assurez-vous de ne créer ni de readme ni de gitignore
 
 -   Cliquez sur "create repository"
 

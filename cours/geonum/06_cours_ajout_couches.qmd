@@ -27,7 +27,7 @@ N’oubliez pas de créer une nouvelle branche git sur laquelle travailler ! Si
 
 **On souhaite maintenant ajouter une couche OpenLayers depuis notre GeoServer.**
 
-Vous avez une impression de déjà-vu ? Normal ! Si vous avez bien suivi le TP précédent, ce sera un jeu d’enfant pour vous. Si vous voulez retourner au TP pour être guidés parce que vous avez un trou de mémoire, c’est [par ici](./serveurs_carto.qmd). Pour vous aider, je vous remets ici quelques éléments :
+Vous avez une impression de déjà-vu ? Normal ! Si vous avez bien suivi le TP précédent, ce sera un jeu d’enfant pour vous. Pour vous aider, je vous remets ici quelques éléments :
 
 -   Le jeu de données [land_matrix_mines](/data/land_matrix/land_matrix_mines.gpkg) à télécharger
 
@@ -284,7 +284,7 @@ Vous avez une impression de déjà-vu ? Normal ! Si vous avez bien suivi le TP
 ```
 :::
 
-Une fois que vos couches sont (à nouveau) importées dans votre GeoServer et que vous parvenez à les visualiser correctement, **importez la couche "deals" dans votre application OpenLayers.** Il doit s’agir d’une **nouvelle couche** : ne remplacez pas celle de l’exemple que nous venons d’afficher ! En utilisant le TP précédent et ce qu’on vient de voir, vous ne devriez pas avoir trop de difficultés.
+Une fois que vos couches sont (à nouveau) importées dans votre GeoServer et que vous parvenez à les visualiser correctement, **importez la couche "deals" dans votre application OpenLayers.** Il doit s’agir d’une **nouvelle couche** : ne remplacez pas celle de l’exemple que nous venons d’afficher !
 
 Pour rappel, vous pouvez ouvrir l’outil de développement de votre navigateur avec la touche `F12` et vous verrez les messages d’erreur dans l’onglet `Console`. C’est eux qui vous diront ce qui ne va pas dans le code !
 
@@ -311,7 +311,7 @@ Au besoin, vous pouvez utiliser une fusée de détresse, mais comme pour les vra
 
 -   Trouvez votre couche dans la liste et regardez la colonne "Nom"
 
--   La première partie du nom (avant les ":") correspond à l’espace et la seconde partie au nom de la couche, par exemple : "land_matrix:deals"
+-   La première partie du nom (avant les ":") correspond à l’**espace** et la seconde partie au **nom de la couche**, par exemple : "land_matrix:deals"
 :::
 
 ::: {.callout-important collapse="true"}
@@ -324,9 +324,7 @@ Vous pensez avoir bien créé votre source `ImageWMS` et votre couche `ImageLaye
 Vérifiez que vous avez bien ajouté votre couche dans la propriété `layers:` de votre objet `map` ! Pour rappel, pour ajouter un élément à un tableau ("*array*") en JavaScript, il faut séparer ces éléments par des virgules.
 :::
 
-Si vous avez atteint cette ligne, bravo ! **Si vous coincez, appelez-moi.** Il faudrait que tout le monde parvienne à atteindre au moins cette étape avant la fin du TP.
-
-S’il après ça vous reste un peu de temps, ajoutez les couches "deals_by_country" et "deals_by_country_centroid" à la carte.
+Si vous avez atteint cette ligne, bravo ! Ensuite, ajoutez les couches "deals_by_country" et "deals_by_country_centroid" à la carte.
 
 ### Importer une couche depuis mon GeoServer (version WFS)
 
@@ -390,7 +388,7 @@ Bon, d’accord. Dites-moi, comment se porte l’attribut `layers` de votre obje
 
 Une fois cette étape complétée, la couche devrait apparaître sur votre carte. Super ! Par contre, ça ressemble certainement à des cercles blancs, un peu transparents, avec un contour bleu. Et surtout, ce ne sont pas des cercles proportionnels !
 
-Heureusement, vous avez été bien attentifs pendant vos cours de Leaflet et vous avez déjà stylisé des couches à partir de donnée GeoJSON, ça devrait être super facile pour vous. Comme la documentation GeoServer n’est pas très claire sur ce point, je vous donne un snippet et je vais vous demander de l’ajuster un peu pour vérifier que vous comprendez bien qui fait quoi.
+Heureusement, vous avez été bien attentifs pendant vos cours de Leaflet et vous avez déjà stylisé des couches à partir de donnée GeoJSON, ça devrait être super facile pour vous. Comme la documentation GeoServer n’est pas très claire sur ce point, je vous donne un snippet et je vais vous demander de l’ajuster un peu pour vérifier que vous comprenez bien qui fait quoi.
 
 D’abord, on importe les éléments de style dont on va avoir besoin :
 
@@ -425,7 +423,7 @@ Regardez à quoi ressemble la couche maintenant qu’on lui a donné un style. C
 
 ![](media/ol_styling_circles.png){fig-alt="Couche de cercles oranges sur OpenLayers" fig-align="center"}
 
-Notez que les cercles ne sont pas entièrement opaques. Prenez le temps de vous appliquer, cela vous servira de base pour la suite. **Quand vous avez terminé**, vous pourrez utiliser ce snippet pour afficher des cercles proportionnels.
+Notez que les cercles ne sont pas entièrement opaques. Prenez le temps de vous appliquer, cela vous servira de base pour la suite. **Quand vous avez terminé**, vous pouvez utiliser ce snippet pour afficher des cercles proportionnels.
 
 ``` javascript
 function getStyleCentroid(feature) {
@@ -461,7 +459,7 @@ Je suis restée volontairement vague dans ce cas pour ne pas vous souffler toute
 
 Une fois que c’est terminé, il reste un dernier exercice à faire avec ces cercles proportionnels. Vous aurez compris qu’ici, nos cercles sont proportionnels au nombre de deals qui sont enregistrés dans le pays. **Maintenant, créez une couche de cercles proportionnels en vous basant sur la surface total couverte par les deals dans chaque pays.**
 
-On arrive sur la fin du TP et vous commencez (j’espère) à bien comprendre comment fonctionne notre application donc je ne vous donne pas d’indices. Faites juste attention à bien faire varier la taille des cercles petit à petit : si jamais votre navigateur essaie de dessiner des cercles trop grands, vous avez des chances de faire crasher votre ordinateur (ça m’est *peut-être* arrivé pendant mes tests et ce serait dommage que ça vous arrive aussi).
+On arrive sur la fin du TP et vous commencez (j’espère) à bien comprendre comment fonctionne notre application donc je ne vous donne pas d’indices. Faites juste attention à bien faire varier la taille des cercles petit à petit : si jamais votre navigateur essaie de dessiner des cercles trop grands, vous avez des chances de faire crasher votre machine (ça m’est *peut-être* arrivé pendant mes tests et ce serait dommage que ça vous arrive aussi).
 
 ### Et maintenant, le détail qui tue…
 
@@ -476,7 +474,7 @@ Si vous ne savez pas ce que sont des **chemins absolus** et **chemins relatifs**
 marie@pop-os:~/Documents/Cours/GeoNum/Webmapping/geonum_docker$
 ```
 
-La partie `~/Documents/Cours/GeoNum/Webmapping/geonum_docker$` et le **chemin absolu** vers mon projet `geonum_docker`. Si je voulais accéder à `app`, j’aurais deux choix :
+La partie `~/Documents/Cours/GeoNum/Webmapping/geonum_docker$` est le **chemin absolu** vers mon projet `geonum_docker`. Si je voulais accéder à `app`, j’aurais deux choix :
 
 ``` bash
 # Utliser le chemin absolu
@@ -485,7 +483,7 @@ cd ~/Documents/Cours/GeoNum/Webmapping/geonum_docker/app
 # Utiliser le chemin relatif au répertoire où je me trouve, ici genum_docker
 cd ./app
 
-# ou bien
+# ou bien, aussi en relatif
 cd app
 ```
 :::
@@ -500,14 +498,14 @@ On va donc utiliser une bonne pratique de code qui va aussi régler ce problème
 
 ### Je suis en avance !
 
-Pas de panique, on n’a pas le temps de s’ennuyer ici ! On va faire un peu de HTML et de CSS. Trouvez comment gagner de l’espace en haut de la page web pour ajouter un titre (avec la balise `<h1>`) et donnez un joli nom à votre page !
+Pas de panique, on n’a pas le temps de s’ennuyer ici ! On va faire un peu de HTML et de CSS. Trouvez comment gagner de l’espace en haut de la page web pour ajouter un titre (avec la balise `<h1>`) et donnez un joli nom à votre page si ce n’est pas déjà fait !
 
-Si vous avez encore un peu de temps, expérimentez avec le style de la carte. Vous pouvez arrondir les coins, changer la police du titre, ou pourquoi pas commencer à dégager une zone pour mettre la légende et les options d’affichage des couches.
+Ensuite, expérimentez avec le style de la carte. Vous pouvez arrondir les coins, changer la police du titre, ou pourquoi pas commencer à dégager une zone pour mettre la légende et les options d’affichage des couches.
 
 Vous pourriez aussi relire votre code JavaScript. Est-ce que certaines informations se répètent, est-ce que vous pourriez les mettre dans des variables ?
 
 ## C’est fini pour aujourd’hui !
 
-**Merci à vous d’avoir tenu le coup, je sais que c’était dense.** Maintenant que vous avez une base solide pour votre carte, on va pouvoir ajouter des interactions avec celle-ci au cours des prochaines séances !
+**Bien joué !** Maintenant que vous avez une base solide pour votre carte, on va pouvoir ajouter des interactions avec celle-ci au cours des prochaines séances.
 
 ![](media/jojo_to_be_continued.png){fig-alt="Jojo's to be continued" fig-align="center"}

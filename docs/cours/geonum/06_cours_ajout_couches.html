@@ -254,7 +254,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>N’oubliez pas de créer une nouvelle branche git sur laquelle travailler&nbsp;! Si vous avez un doute sur la méthode, référez-vous à “Développer avec NodeJS et OpenLayers” (Section “Cycle de développement”).</p>
 <p><strong>Ensuite, vérifiez que vos containers Docker tournent toujours.</strong> Pour ça, rendez-vous sur <a href="http://localhost:8080/geoserver/" class="uri">http://localhost:8080/geoserver/</a> et vérifiez que vous voyez bien l’interface de GeoServer. Sinon, démarrez la stack depuis Docker Desktop ou bien ouvrez un terminal à la racine de votre projet et tapez <code>docker compose up</code>.</p>
 <p><strong>On souhaite maintenant ajouter une couche OpenLayers depuis notre GeoServer.</strong></p>
-<p>Vous avez une impression de déjà-vu&nbsp;? Normal&nbsp;! Si vous avez bien suivi le TP précédent, ce sera un jeu d’enfant pour vous. Si vous voulez retourner au TP pour être guidés parce que vous avez un trou de mémoire, c’est <a href="./serveurs_carto.qmd">par ici</a>. Pour vous aider, je vous remets ici quelques éléments&nbsp;:</p>
+<p>Vous avez une impression de déjà-vu&nbsp;? Normal&nbsp;! Si vous avez bien suivi le TP précédent, ce sera un jeu d’enfant pour vous. Pour vous aider, je vous remets ici quelques éléments&nbsp;:</p>
 <ul>
 <li><p>Le jeu de données <a href="../../data/land_matrix/land_matrix_mines.gpkg">land_matrix_mines</a> à télécharger</p></li>
 <li><p>Le fichier de style SLD des couches à copier ci-dessous (vous n’êtes pas obligés d’utiliser ceux-ci&nbsp;!)</p></li>
@@ -534,7 +534,7 @@ SLD pour “deals_by_country_centroid”
 </div>
 </div>
 </div>
-<p>Une fois que vos couches sont (à nouveau) importées dans votre GeoServer et que vous parvenez à les visualiser correctement, <strong>importez la couche “deals” dans votre application OpenLayers.</strong> Il doit s’agir d’une <strong>nouvelle couche</strong>&nbsp;: ne remplacez pas celle de l’exemple que nous venons d’afficher&nbsp;! En utilisant le TP précédent et ce qu’on vient de voir, vous ne devriez pas avoir trop de difficultés.</p>
+<p>Une fois que vos couches sont (à nouveau) importées dans votre GeoServer et que vous parvenez à les visualiser correctement, <strong>importez la couche “deals” dans votre application OpenLayers.</strong> Il doit s’agir d’une <strong>nouvelle couche</strong>&nbsp;: ne remplacez pas celle de l’exemple que nous venons d’afficher&nbsp;!</p>
 <p>Pour rappel, vous pouvez ouvrir l’outil de développement de votre navigateur avec la touche <code>F12</code> et vous verrez les messages d’erreur dans l’onglet <code>Console</code>. C’est eux qui vous diront ce qui ne va pas dans le code&nbsp;!</p>
 <p>Au besoin, vous pouvez utiliser une fusée de détresse, mais comme pour les vraies, c’est mieux de les allumer <strong>quand on en a besoin</strong> et pas juste parce qu’on est curieux.</p>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -582,7 +582,7 @@ Fusée de détresse&nbsp;: comment trouver le nom de mon espace et de ma couche&
 <ul>
 <li><p>Allez dans “Couches” ou “Prévisualisation de la couche” dans GeoServer</p></li>
 <li><p>Trouvez votre couche dans la liste et regardez la colonne “Nom”</p></li>
-<li><p>La première partie du nom (avant les “:”) correspond à l’espace et la seconde partie au nom de la couche, par exemple&nbsp;: “land_matrix:deals”</p></li>
+<li><p>La première partie du nom (avant les “:”) correspond à l’<strong>espace</strong> et la seconde partie au <strong>nom de la couche</strong>, par exemple&nbsp;: “land_matrix:deals”</p></li>
 </ul>
 </div>
 </div>
@@ -609,8 +609,7 @@ Fusée de détresse&nbsp;: J’ai créé ma couche mais elle n’apparaît pas s
 </div>
 </div>
 </div>
-<p>Si vous avez atteint cette ligne, bravo&nbsp;! <strong>Si vous coincez, appelez-moi.</strong> Il faudrait que tout le monde parvienne à atteindre au moins cette étape avant la fin du TP.</p>
-<p>S’il après ça vous reste un peu de temps, ajoutez les couches “deals_by_country” et “deals_by_country_centroid” à la carte.</p>
+<p>Si vous avez atteint cette ligne, bravo&nbsp;! Ensuite, ajoutez les couches “deals_by_country” et “deals_by_country_centroid” à la carte.</p>
 </section>
 <section id="importer-une-couche-depuis-mon-geoserver-version-wfs" class="level3">
 <h3 class="anchored" data-anchor-id="importer-une-couche-depuis-mon-geoserver-version-wfs">Importer une couche depuis mon GeoServer (version WFS)</h3>
@@ -715,7 +714,7 @@ Promis, j’ai vraiment cherché&nbsp;!
 </div>
 </div>
 <p>Une fois cette étape complétée, la couche devrait apparaître sur votre carte. Super&nbsp;! Par contre, ça ressemble certainement à des cercles blancs, un peu transparents, avec un contour bleu. Et surtout, ce ne sont pas des cercles proportionnels&nbsp;!</p>
-<p>Heureusement, vous avez été bien attentifs pendant vos cours de Leaflet et vous avez déjà stylisé des couches à partir de donnée GeoJSON, ça devrait être super facile pour vous. Comme la documentation GeoServer n’est pas très claire sur ce point, je vous donne un snippet et je vais vous demander de l’ajuster un peu pour vérifier que vous comprendez bien qui fait quoi.</p>
+<p>Heureusement, vous avez été bien attentifs pendant vos cours de Leaflet et vous avez déjà stylisé des couches à partir de donnée GeoJSON, ça devrait être super facile pour vous. Comme la documentation GeoServer n’est pas très claire sur ce point, je vous donne un snippet et je vais vous demander de l’ajuster un peu pour vérifier que vous comprenez bien qui fait quoi.</p>
 <p>D’abord, on importe les éléments de style dont on va avoir besoin&nbsp;:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {Circle<span class="op">,</span> Fill<span class="op">,</span> Stroke<span class="op">,</span> Style} <span class="im">from</span> <span class="st">'ol/style.js'</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>On commence par créer un style “pas proportionnel” qu’on stocke dans la constante <code>styleCentroid</code>.</p>
@@ -738,7 +737,7 @@ Promis, j’ai vraiment cherché&nbsp;!
 <p><img src="media/ol_styling_circles.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Couche de cercles oranges sur OpenLayers"></p>
 </figure>
 </div>
-<p>Notez que les cercles ne sont pas entièrement opaques. Prenez le temps de vous appliquer, cela vous servira de base pour la suite. <strong>Quand vous avez terminé</strong>, vous pourrez utiliser ce snippet pour afficher des cercles proportionnels.</p>
+<p>Notez que les cercles ne sont pas entièrement opaques. Prenez le temps de vous appliquer, cela vous servira de base pour la suite. <strong>Quand vous avez terminé</strong>, vous pouvez utiliser ce snippet pour afficher des cercles proportionnels.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">getStyleCentroid</span>(feature) {</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> nDeals <span class="op">=</span> feature<span class="op">.</span><span class="fu">get</span>(<span class="st">'n_deals'</span>)<span class="op">;</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> rayon <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sqrt</span>(nDeals) <span class="op">*</span> <span class="fl">0.01</span><span class="op">;</span></span>
@@ -769,7 +768,7 @@ Promis, j’ai vraiment cherché&nbsp;!
 </figure>
 </div>
 <p>Une fois que c’est terminé, il reste un dernier exercice à faire avec ces cercles proportionnels. Vous aurez compris qu’ici, nos cercles sont proportionnels au nombre de deals qui sont enregistrés dans le pays. <strong>Maintenant, créez une couche de cercles proportionnels en vous basant sur la surface total couverte par les deals dans chaque pays.</strong></p>
-<p>On arrive sur la fin du TP et vous commencez (j’espère) à bien comprendre comment fonctionne notre application donc je ne vous donne pas d’indices. Faites juste attention à bien faire varier la taille des cercles petit à petit&nbsp;: si jamais votre navigateur essaie de dessiner des cercles trop grands, vous avez des chances de faire crasher votre ordinateur (ça m’est <em>peut-être</em> arrivé pendant mes tests et ce serait dommage que ça vous arrive aussi).</p>
+<p>On arrive sur la fin du TP et vous commencez (j’espère) à bien comprendre comment fonctionne notre application donc je ne vous donne pas d’indices. Faites juste attention à bien faire varier la taille des cercles petit à petit&nbsp;: si jamais votre navigateur essaie de dessiner des cercles trop grands, vous avez des chances de faire crasher votre machine (ça m’est <em>peut-être</em> arrivé pendant mes tests et ce serait dommage que ça vous arrive aussi).</p>
 </section>
 <section id="et-maintenant-le-détail-qui-tue" class="level3">
 <h3 class="anchored" data-anchor-id="et-maintenant-le-détail-qui-tue">Et maintenant, le détail qui tue…</h3>
@@ -786,14 +785,14 @@ Chemins absolus, chemins relatifs
 <div class="callout-body-container callout-body">
 <p>Si vous ne savez pas ce que sont des <strong>chemins absolus</strong> et <strong>chemins relatifs</strong>, regardez votre terminal. Vous devriez avoir votre nom et le chemin vers votre <code>geonum_docker</code>. Chez moi, ça ressemble à ça&nbsp;:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">marie@pop-os:~/Documents/Cours/GeoNum/Webmapping/geonum_docker$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>La partie <code>~/Documents/Cours/GeoNum/Webmapping/geonum_docker$</code> et le <strong>chemin absolu</strong> vers mon projet <code>geonum_docker</code>. Si je voulais accéder à <code>app</code>, j’aurais deux choix&nbsp;:</p>
+<p>La partie <code>~/Documents/Cours/GeoNum/Webmapping/geonum_docker$</code> est le <strong>chemin absolu</strong> vers mon projet <code>geonum_docker</code>. Si je voulais accéder à <code>app</code>, j’aurais deux choix&nbsp;:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Utliser le chemin absolu</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Documents/Cours/GeoNum/Webmapping/geonum_docker/app</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Utiliser le chemin relatif au répertoire où je me trouve, ici genum_docker</span></span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ./app</span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># ou bien</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># ou bien, aussi en relatif</span></span>
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> app</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
@@ -804,14 +803,14 @@ Chemins absolus, chemins relatifs
 </section>
 <section id="je-suis-en-avance" class="level3">
 <h3 class="anchored" data-anchor-id="je-suis-en-avance">Je suis en avance&nbsp;!</h3>
-<p>Pas de panique, on n’a pas le temps de s’ennuyer ici&nbsp;! On va faire un peu de HTML et de CSS. Trouvez comment gagner de l’espace en haut de la page web pour ajouter un titre (avec la balise <code>&lt;h1&gt;</code>) et donnez un joli nom à votre page&nbsp;!</p>
-<p>Si vous avez encore un peu de temps, expérimentez avec le style de la carte. Vous pouvez arrondir les coins, changer la police du titre, ou pourquoi pas commencer à dégager une zone pour mettre la légende et les options d’affichage des couches.</p>
+<p>Pas de panique, on n’a pas le temps de s’ennuyer ici&nbsp;! On va faire un peu de HTML et de CSS. Trouvez comment gagner de l’espace en haut de la page web pour ajouter un titre (avec la balise <code>&lt;h1&gt;</code>) et donnez un joli nom à votre page si ce n’est pas déjà fait&nbsp;!</p>
+<p>Ensuite, expérimentez avec le style de la carte. Vous pouvez arrondir les coins, changer la police du titre, ou pourquoi pas commencer à dégager une zone pour mettre la légende et les options d’affichage des couches.</p>
 <p>Vous pourriez aussi relire votre code JavaScript. Est-ce que certaines informations se répètent, est-ce que vous pourriez les mettre dans des variables&nbsp;?</p>
 </section>
 </section>
 <section id="cest-fini-pour-aujourdhui" class="level2">
 <h2 class="anchored" data-anchor-id="cest-fini-pour-aujourdhui">C’est fini pour aujourd’hui&nbsp;!</h2>
-<p><strong>Merci à vous d’avoir tenu le coup, je sais que c’était dense.</strong> Maintenant que vous avez une base solide pour votre carte, on va pouvoir ajouter des interactions avec celle-ci au cours des prochaines séances&nbsp;!</p>
+<p><strong>Bien joué&nbsp;!</strong> Maintenant que vous avez une base solide pour votre carte, on va pouvoir ajouter des interactions avec celle-ci au cours des prochaines séances.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="media/jojo_to_be_continued.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Jojo's to be continued"></p>

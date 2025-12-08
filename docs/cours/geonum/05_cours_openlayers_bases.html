@@ -315,14 +315,19 @@ Point diapos tous ensemble sur le cycle de développement
 <section id="versionner-mon-code-en-local-avec-un-commit" class="level3">
 <h3 class="anchored" data-anchor-id="versionner-mon-code-en-local-avec-un-commit">Versionner mon code en local avec un <em>commit</em></h3>
 <p>Avant d’aller plus loin dans la création de notre application, on va utiliser <strong>Git</strong> pour versionner notre projet et l’héberger en ligne.</p>
-<p>D’abord, vérifiez que votre projet est bien versionné.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>D’abord, retournez à la racine de votre projet <code>geonum_docker</code></strong>&nbsp;:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ..</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ensuite, vérifiez que votre projet est bien versionné.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Si vous avez un message long qui fait peur, c’est bon signe. En fait, <strong>notre projet est déjà vesionné parce qu’on l’a récupéré sur mon GitHub</strong>. On a importé mes fichiers… mais aussi le git associé&nbsp;!</p>
+<p>Si jamais ce n’est pas le cas, alors vous devez initialiser votre dépôt&nbsp;:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash js code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><em>Note&nbsp;: toutes les étapes suivantes peuvent être faites en interface graphique si vous préférez. Moi je travaille en lignes de commande, et comme c’est ce qui est le plus universel c’est ce que je vous partage ici.</em></p>
 <p>Normalement, vous savez faire la suite, mais voilà quand même comment <em>stage</em> vos changements (autrement dit, les ajouter à votre prochain <em>commit</em>)&nbsp;:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Maintenant, on crée notre <em>commit</em> avec un message qui indique ce que fait le code qu’on a ajouté depuis le dernier <em>commit</em>&nbsp;:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Carte OpenLayers basique"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Carte OpenLayers basique"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="héberger-mon-code-sur-github" class="level3">
 <h3 class="anchored" data-anchor-id="héberger-mon-code-sur-github">Héberger mon code sur GitHub</h3>
@@ -345,7 +350,7 @@ Attention aux infos que vous mettez en ligne
 <li><p>Ouvrez <a href="https://github.com/">GitHub</a></p></li>
 <li><p>Créez un nouveau Repository (Dépôt&nbsp;?) en cliquand sur le bouton New (ou en allant directement sur <a href="https://github.com/new" class="uri">https://github.com/new</a>)</p></li>
 <li><p>Donnez un nom et une description à votre dépôt</p></li>
-<li><p>Ne changez rien d’autre</p></li>
+<li><p>Assurez-vous de ne créer ni de readme ni de gitignore</p></li>
 <li><p>Cliquez sur “create repository”</p></li>
 </ul>
 <p>Ensuite, suivez les instructions données par GitHub pour mettre en ligne votre dépôt. Commencez après la ligne <code>git commit -m "First commit"</code> (on a déjà créé notre commit juste avant).</p>
@@ -364,11 +369,11 @@ Double authentification
 <p>Si vous prenez la sécurité de vos comptes en ligne au sérieux et que vous avez activé la double-authentification en ligne, ce sera un petit peu plus compliqué de définir votre <code>remote origin</code>. Le lien “simple” vers votre dépôt ne suffit pas.</p>
 <p>Pour accéder à votre code depuis votre PC, vous allez devoir créer un <strong>Personal access token</strong> depuis vos <a href="https://github.com/settings/tokens">Developers settings</a> (vous devez être connecté pour accéder au lien). En haut à droite, sélectionnez “Generate new token (classic)” et donnez vous au moins les droits de la section <em>Repo</em>. Ensuite, <strong>sauvegardez bien votre token quelque part (comme dans un gestionnaire de mots de passe) car vous ne pourrez plus le récupérer&nbsp;!</strong></p>
 <p>Maintenant, retourner dans votre dossier <code>geonum_docker</code> et dans la ligne de commande, tapez en remplaçant les valeurs entre <code>&lt;&gt;</code>&nbsp;;</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote set-url origin https://oauth2:<span class="op">&lt;</span>accesstoken1234<span class="op">&gt;</span>@github.com/<span class="op">&lt;</span>Username<span class="op">&gt;</span>/<span class="op">&lt;</span>repository_name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote set-url origin https://oauth2:<span class="op">&lt;</span>accesstoken1234<span class="op">&gt;</span>@github.com/<span class="op">&lt;</span>Username<span class="op">&gt;</span>/<span class="op">&lt;</span>repository_name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <blockquote class="blockquote">
 <p>Par exemple, si mon token est <code>123456789azerty</code>, mon nom d’utilisateur <code>GradelerM</code> et mon dépôt <code>geonum_docker</code>, ça donne ça&nbsp;:</p>
 </blockquote>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote set-url origin https://oauth2:123456789azerty@github.com/GradelerM/geonum_docker</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote set-url origin https://oauth2:123456789azerty@github.com/GradelerM/geonum_docker</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Vous pouvez lancer à nouveau un <code>git push</code>&nbsp;!</p>
 </div>
 </div>

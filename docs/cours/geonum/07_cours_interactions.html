@@ -258,10 +258,10 @@ Avant de commencer le TP
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Ce TP suppose que vous avez déjà ajouté les couches du jeu de données Land Matrix dans votre GeoServer et que vous pouvez les récupérer dans votre application. Si ce n’est pas le cas, veuillez vous référer aux étapes précédentes, sinon vous allez être un peu perdus&nbsp;!</p>
+<p>Ce TP suppose que vous avez déjà ajouté les couches du jeu de données Land Matrix dans votre GeoServer et que vous pouvez les récupérer dans votre application. Si ce n’est pas le cas, veuillez vous référer aux étapes précédentes, sinon vous allez être un peu perdus.</p>
 </div>
 </div>
-<p>Pour référence, je vous mets ici le contenu de mon code au démarrage de ce TP. Vous noterez qu’il manque les éléments qu’on a ajoutés pendant le cours, alors repartez plutôt du votre&nbsp;!</p>
+<p><strong>Pour référence,</strong> je vous mets ici le contenu de mon code au <strong>démarrage</strong> de ce TP. Ça veut dire qu’il manque les éléments qu’on a ajoutés pendant le cours, alors repartez plutôt du votre&nbsp;!</p>
 <p><strong>index.html</strong></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="ot"> lang</span><span class="op">=</span><span class="st">"en"</span><span class="dt">&gt;</span></span>
@@ -460,7 +460,7 @@ Pensez bien à…
 <p>Voilà, on peut désormais afficher et masquer la couche à volonté&nbsp;!</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://media1.tenor.com/m/wn2_Qq6flogAAAAC/magical-magic.gif" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="GIF : Magic" width="435"></p>
+<p><img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWd3eWhzaGFoNWhyNmllaXhrNGh3bDBybGI4NDRscDBnbWtydDdiZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8Ry7iAVwKBQpG/giphy.gif" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="GIF : Adventure Time&nbsp;: Jake arc en ciel" width="435"></p>
 </figure>
 </div>
 <p>À vous&nbsp;! Créez une autre checkbox qui permet d’afficher ou masquer la couche deals. J’aimerais que cette checkbox soit <strong>au-dessus</strong> de la première&nbsp;!</p>
@@ -524,7 +524,7 @@ Tip
 <div class="sourceCode" id="cb16"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>map<span class="op">.</span><span class="fu">on</span>(<span class="st">'singleclick'</span><span class="op">,</span> (<span class="bu">event</span>) <span class="kw">=&gt;</span> {</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"J’ai cliqué sur la carte&nbsp;!"</span>)<span class="op">;</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Sauvegardez, gardez la console de votre navigateur ouverte et cliquez sur la carte pour vérifier que le message apparaît bien. Si c’est bon, on vient d’apprendre comment exécuter des fonctions en cliquant sur la carte&nbsp;! On sait ensuite que dans l’exemple ils utilisent la méthode <code>getFeatureInfoUrl()</code> de leur source de données pour récupérer les informations des features. Ouvrez la <a href="https://openlayers.org/en/latest/apidoc/module-ol_source_ImageWMS-ImageWMS.html#getFeatureInfoUrl">documentation de ImageWMS</a> on va en avoir besoin. Voilà ce qu’elle nous dit au sujet de la méthode <code>getFeatureInfoUrl()</code>&nbsp;:</p>
+<p>Sauvegardez, gardez la console de votre navigateur ouverte et cliquez sur la carte pour vérifier que le message apparaît bien. Si c’est bon, on vient d’apprendre comment exécuter des fonctions en cliquant sur la carte&nbsp;! On sait ensuite que dans l’exemple ils utilisent la méthode <code>getFeatureInfoUrl()</code> de leur source de données pour récupérer les informations des features. Ouvrez la <a href="https://openlayers.org/en/latest/apidoc/module-ol_source_ImageWMS-ImageWMS.html#getFeatureInfoUrl">documentation de ImageWMS</a>, on va en avoir besoin. Voilà ce qu’elle nous dit au sujet de la méthode <code>getFeatureInfoUrl()</code>&nbsp;:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="media/get_feature_info_url_ol.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Documentation getFeatureInfoUrl() d’OpenLayers"></p>

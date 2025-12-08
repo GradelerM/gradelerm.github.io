@@ -24,10 +24,10 @@ format: html
 ::: callout-important
 ## Avant de commencer le TP
 
-Ce TP suppose que vous avez déjà ajouté les couches du jeu de données Land Matrix dans votre GeoServer et que vous pouvez les récupérer dans votre application. Si ce n’est pas le cas, veuillez vous référer aux étapes précédentes, sinon vous allez être un peu perdus !
+Ce TP suppose que vous avez déjà ajouté les couches du jeu de données Land Matrix dans votre GeoServer et que vous pouvez les récupérer dans votre application. Si ce n’est pas le cas, veuillez vous référer aux étapes précédentes, sinon vous allez être un peu perdus.
 :::
 
-Pour référence, je vous mets ici le contenu de mon code au démarrage de ce TP. Vous noterez qu’il manque les éléments qu’on a ajoutés pendant le cours, alors repartez plutôt du votre !
+**Pour référence,** je vous mets ici le contenu de mon code au **démarrage** de ce TP. Ça veut dire qu’il manque les éléments qu’on a ajoutés pendant le cours, alors repartez plutôt du votre !
 
 **index.html**
 
@@ -265,7 +265,7 @@ checkboxCountries.addEventListener('change', (event) => {
 
 Voilà, on peut désormais afficher et masquer la couche à volonté !
 
-![](https://media1.tenor.com/m/wn2_Qq6flogAAAAC/magical-magic.gif){fig-alt="GIF : Magic" fig-align="center" width="435"}
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWd3eWhzaGFoNWhyNmllaXhrNGh3bDBybGI4NDRscDBnbWtydDdiZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8Ry7iAVwKBQpG/giphy.gif){fig-alt="GIF : Adventure Time : Jake arc en ciel" fig-align="center" width="435"}
 
 À vous ! Créez une autre checkbox qui permet d’afficher ou masquer la couche deals. J’aimerais que cette checkbox soit **au-dessus** de la première !
 
@@ -340,7 +340,7 @@ map.on('singleclick', (event) => {
 });
 ```
 
-Sauvegardez, gardez la console de votre navigateur ouverte et cliquez sur la carte pour vérifier que le message apparaît bien. Si c’est bon, on vient d’apprendre comment exécuter des fonctions en cliquant sur la carte ! On sait ensuite que dans l’exemple ils utilisent la méthode `getFeatureInfoUrl()` de leur source de données pour récupérer les informations des features. Ouvrez la [documentation de ImageWMS](https://openlayers.org/en/latest/apidoc/module-ol_source_ImageWMS-ImageWMS.html#getFeatureInfoUrl) on va en avoir besoin. Voilà ce qu’elle nous dit au sujet de la méthode `getFeatureInfoUrl()` :
+Sauvegardez, gardez la console de votre navigateur ouverte et cliquez sur la carte pour vérifier que le message apparaît bien. Si c’est bon, on vient d’apprendre comment exécuter des fonctions en cliquant sur la carte ! On sait ensuite que dans l’exemple ils utilisent la méthode `getFeatureInfoUrl()` de leur source de données pour récupérer les informations des features. Ouvrez la [documentation de ImageWMS](https://openlayers.org/en/latest/apidoc/module-ol_source_ImageWMS-ImageWMS.html#getFeatureInfoUrl), on va en avoir besoin. Voilà ce qu’elle nous dit au sujet de la méthode `getFeatureInfoUrl()` :
 
 ![](media/get_feature_info_url_ol.png){fig-alt="Documentation getFeatureInfoUrl() d’OpenLayers" fig-align="center"}
 
