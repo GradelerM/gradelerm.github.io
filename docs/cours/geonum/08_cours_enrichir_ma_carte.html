@@ -203,7 +203,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#supports" id="toc-supports" class="nav-link" data-scroll-target="#supports">Supports</a></li>
   <li><a href="#tp-ajouter-une-table-attributaire-personnalisée" id="toc-tp-ajouter-une-table-attributaire-personnalisée" class="nav-link" data-scroll-target="#tp-ajouter-une-table-attributaire-personnalisée">TP – Ajouter une table attributaire personnalisée</a></li>
   <li><a href="#tp-ajouter-une-échelle" id="toc-tp-ajouter-une-échelle" class="nav-link" data-scroll-target="#tp-ajouter-une-échelle">TP – Ajouter une échelle</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">…</a></li>
+  <li><a href="#tp-ajouter-un-marqueur-custom" id="toc-tp-ajouter-un-marqueur-custom" class="nav-link" data-scroll-target="#tp-ajouter-un-marqueur-custom">TP — Ajouter un marqueur custom</a></li>
+  <li><a href="#tp-ajouter-une-popup-ou-un-tooltip" id="toc-tp-ajouter-une-popup-ou-un-tooltip" class="nav-link" data-scroll-target="#tp-ajouter-une-popup-ou-un-tooltip">TP — Ajouter une popup (ou un tooltip)</a></li>
   </ul>
 </nav>
     </div>
@@ -282,19 +283,19 @@ Pour bien démarrer le TP…
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;!--</span> Je crée une table <span class="op">--&gt;</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>table<span class="op">&gt;</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;!--</span> On utilise l’élément tr pour créer une ligne <span class="op">:</span> tr <span class="op">=</span> table row <span class="op">--&gt;</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>tr<span class="op">&gt;</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;!--</span> On utilise les éléments <span class="fu">th</span> (table header) pour créer les headers de nos trois colonnes <span class="op">--&gt;</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;</span>th<span class="op">&gt;</span>Deal ID<span class="op">&lt;/</span>th<span class="op">&gt;</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;</span>th<span class="op">&gt;</span>Creation date<span class="op">&lt;/</span>th<span class="op">&gt;</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;</span>th<span class="op">&gt;</span>Country<span class="op">&lt;/</span>th<span class="op">&gt;</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;/</span>tr<span class="op">&gt;</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;!--</span> On utilise l’élément tr pour créer une AUTRE ligne <span class="op">:</span> tr <span class="op">=</span> table row <span class="op">--&gt;</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>tr<span class="op">&gt;</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;!--</span> On crée trois colonnes vides avec td <span class="op">--&gt;</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;</span>td<span class="op">&gt;</span>…<span class="op">&lt;/</span>td<span class="op">&gt;</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;</span>td<span class="op">&gt;</span>…<span class="op">&lt;/</span>td<span class="op">&gt;</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;</span>td<span class="op">&gt;</span>…<span class="op">&lt;/</span>td<span class="op">&gt;</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;/</span>tr<span class="op">&gt;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>tr<span class="op">&gt;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;!--</span> On utilise les éléments <span class="fu">th</span> (table header) pour créer les headers de nos trois colonnes <span class="op">--&gt;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>th<span class="op">&gt;</span>Deal ID<span class="op">&lt;/</span>th<span class="op">&gt;</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>th<span class="op">&gt;</span>Creation date<span class="op">&lt;/</span>th<span class="op">&gt;</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>th<span class="op">&gt;</span>Country<span class="op">&lt;/</span>th<span class="op">&gt;</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>tr<span class="op">&gt;</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;!--</span> On utilise l’élément tr pour créer une AUTRE ligne <span class="op">:</span> tr <span class="op">=</span> table row <span class="op">--&gt;</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>tr<span class="op">&gt;</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;!--</span> On crée trois colonnes vides avec td <span class="op">--&gt;</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>td<span class="op">&gt;</span>…<span class="op">&lt;/</span>td<span class="op">&gt;</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>td<span class="op">&gt;</span>…<span class="op">&lt;/</span>td<span class="op">&gt;</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>td<span class="op">&gt;</span>…<span class="op">&lt;/</span>td<span class="op">&gt;</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>tr<span class="op">&gt;</span></span>
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>table<span class="op">&gt;</span></span>
 <span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>div<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Vous devriez maintenant voir apparaître une table dans votre <code>div</code>. Elle est austère, d’accord, mais vous pourrez la styliser après. Pour le moment, on va faire avec. Regardez bien mes commentaires pour comprendre comment est structuré le code ainsi que ces trois éléments&nbsp;:</p>
@@ -395,8 +396,14 @@ Pour bien démarrer le TP…
 </figure>
 </div>
 </section>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section">…</h2>
+<section id="tp-ajouter-un-marqueur-custom" class="level2">
+<h2 class="anchored" data-anchor-id="tp-ajouter-un-marqueur-custom">TP — Ajouter un marqueur custom</h2>
+<p>…</p>
+</section>
+<section id="tp-ajouter-une-popup-ou-un-tooltip" class="level2">
+<h2 class="anchored" data-anchor-id="tp-ajouter-une-popup-ou-un-tooltip">TP — Ajouter une popup (ou un tooltip)</h2>
+<p>…</p>
+<hr>
 <p>La suite est en cours de rédaction. Si vous êtes arrivé⋅e ici, déjà, vous êtes bien curieux⋅se&nbsp;! Ensuite, profitez-en pour réfléchir à ce dont vous auriez besoin dans votre projet GeoNum pour me demander de préparer de nouveaux exercices.</p>
 <p>Si vous avez déjà des idées, vous pouvez aussi vous lancer&nbsp;! Je reste disponible pour aider sur quelque chose qui n’a pas forcément été préparé dans mon TP 😃</p>
 

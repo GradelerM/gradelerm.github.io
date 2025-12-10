@@ -1,7 +1,7 @@
 ---
 title: "Ajouter des interactions à ma carte"
 author: "Marie Gradeler"
-date: 2 Dec 2025
+date: 11 Dec 2025
 format: 
   revealjs: 
     theme: [default, ../../styles/slides.scss]
@@ -85,7 +85,7 @@ document.getElementById("title");
 
 **Il ne s’est rien passé, c’est normal ?**
 
-Oui, c’est normal. Notre application a bien récupéré notre nœud "map" mais on ne lui a pas demandé d’afficher le résultat.
+Oui, c’est normal. Notre application a bien récupéré notre nœud "title" mais on ne lui a pas demandé d’afficher le résultat.
 
 ``` js
 const title = document.getElementById("title");
@@ -145,7 +145,7 @@ Ces évènements vont donc nous permettre de **savoir quand « quelque chose �
 Pour l’exemple, on va créer un bouton sous notre titre.
 
 ``` html
-<button>Bouton</button>
+<button id="bouton">Bouton</button>
 ```
 
 Cliquez dessus. Il ne se passe rien… normal ! On a simplement créé un nœud "bouton" mais on ne lui a pas dit quoi faire.
@@ -154,9 +154,11 @@ Cliquez dessus. Il ne se passe rien… normal ! On a simplement créé un nœud
 
 Pour qu’il se passe quelque chose, on peut utiliser plusieurs méthodes. Ici, je vous présente `.addEventListener()` (c’est la [méthode recommandée](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)).
 
-Cette méthode permet de dire à notre application d’**écouter** (*listen*) des **évènements** (*events*) et d’agit en conséquence en exécutant une **fonction**.
+Cette méthode permet de dire à notre application d’**écouter** (*listen*) des **évènements** (*events*) et d’agir en conséquence en exécutant une **fonction**.
 
-``` {.js code-line-numbers="|1,3|2|5"}
+``` {.js code-line-numbers="|1|3-5|7|"}
+const button = document.getElementById("bouton");
+
 function direBonjour() {
   console.log("Bonjour !");
 }
@@ -210,7 +212,7 @@ button.addEventListener('click', function () {
 });
 ```
 
-Et voilà ! Vous verrez dans le TP la méthode `.addLayer()` qui permet de faire l’inverse et rajouter une couche à la carte.
+Et voilà ! Vous verrez dans le TP d’autres méthodes pratiques pour afficher/masquer les couches de votre carte.
 
 ## Les évènements spécifiques à OpenLayers
 

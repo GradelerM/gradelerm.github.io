@@ -57,19 +57,19 @@ Comme toujours, quand on souhaite ajouter un nouvel élément à notre carte, il
     <!-- Je crée une table -->
     <table>
 <!-- On utilise l’élément tr pour créer une ligne : tr = table row -->
-    <tr>
-        <!-- On utilise les éléments th (table header) pour créer les headers de nos trois colonnes -->
-        <th>Deal ID</th>
-        <th>Creation date</th>
-        <th>Country</th>
-    </tr>
-    <!-- On utilise l’élément tr pour créer une AUTRE ligne : tr = table row -->
-    <tr>
-        <!-- On crée trois colonnes vides avec td -->
-        <td>…</td>
-        <td>…</td>
-        <td>…</td>
-    </tr>
+<tr>
+<!-- On utilise les éléments th (table header) pour créer les headers de nos trois colonnes -->
+<th>Deal ID</th>
+<th>Creation date</th>
+<th>Country</th>
+</tr>
+<!-- On utilise l’élément tr pour créer une AUTRE ligne : tr = table row -->
+<tr>
+<!-- On crée trois colonnes vides avec td -->
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
 </table>
 </div>
 ```
@@ -206,7 +206,15 @@ Et voilà !
 
 ![Et en préparant ce TP, j’ai pu découvrir que la montée d’échelle est un sport qui existe. À vous d’être aussi efficaces avec votre code !](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTN0MjJ5aDZmY2piMzB6N3dvdGN4OXF6ODM2eXFqdTA2azVqMmtubiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MnV9h47Yjjujm/giphy.gif){fig-alt="GIF : Compétition de montée d’échelle" fig-align="center"}
 
-## …
+## TP — Ajouter un marqueur custom
+
+…
+
+## TP — Ajouter une popup (ou un tooltip)
+
+…
+
+------------------------------------------------------------------------
 
 La suite est en cours de rédaction. Si vous êtes arrivé⋅e ici, déjà, vous êtes bien curieux⋅se ! Ensuite, profitez-en pour réfléchir à ce dont vous auriez besoin dans votre projet GeoNum pour me demander de préparer de nouveaux exercices.
 
