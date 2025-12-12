@@ -7,25 +7,49 @@ format: html
 
 Les profs sont encore en train de se mettre d’accord sur ce qui est demandé pour le projet final. Pour ceux qui voudraient commencer, je mets déjà quelques éléments comme le jeu de données pour que vous puissiez commencer à l’intégrer dans GeoServer.
 
+## Disclaimer
+
+Ajouter à sa carte absolument tous les éléments demandés ne permet pas d’atteindre la note maximale (mais déjà une très bonne note). Les derniers points sont accordés au style de la carte, sa mise en page et à des fonctionnalités supplémentaires que vous ajoutez (qu’on aura pas vues en cours, pour prouver que vous êtes capables de faire plus que répéter les éléments vus en TP).
+
+On notera aussi le code en lui-même donc faites nous des commentaires utiles et indentez-le bien !
+
 ## Résumé des éléments demandés
 
-_En cours de rédaction_
+*En cours de rédaction*
 
-- Un GeoServer qui sert au moins une couche de points requêtable (deals) et une couche de polygones (pays). Vous pouvez (et devriez certainement) servir plus de couches.
+-   Un GeoServer qui sert au moins une couche de points requêtable (deals) et une couche de polygones (pays). Vous pouvez (et devriez certainement) servir plus de couches.
 
-- Une page qui contient une carte OpenLayers et une carte Leaflet (ou plusieurs pages web si vous êtes très chauds).
+-   Une page qui contient une carte OpenLayers et une carte Leaflet (ou plusieurs pages web si vous êtes très chauds).
 
-- Le code final build (`npm run build`) et visible sur le serveur de production `localhost:80`.
+-   Le code final build (`npm run build`) et visible sur le serveur de production `localhost:80`.
 
-- Le code mis en ligne sur un projet GitHub (on ne demande pas de branch, etc. mais juste d’avoir le code final sur GitHub).
+-   Le code mis en ligne sur un projet GitHub (on ne demande pas de branch, etc. mais juste d’avoir le code final sur GitHub).
+
+### Sur la page web en général
+
+-   Un titre
+
+-   Vos noms
+
+-   Un petit texte pour présenter votre choix de jeu de données. Si vous travaillez sur la donnée Land Matrix Agri, mettez-vous dans votre rôle. Vous êtes un lobby de l’agriculture ? Des défenseurs des droits des communautés locales ? Vous regardez où se trouve la production mondiale de soja et son augmentation par année ? Inventez-nous un peu de contexte pour votre site.
 
 ### Sur la carte OpenLayers
 
-- Un menu pour choisir entre deux fonds de carte (utilisez des radio buttons).
+-   Au moins 2 fonds de cartes, 1 couche WMS et 1 couche WFS.
 
-- Un menu qui permet d’afficher / masquer les autres couches de la carte.
+<!-- -->
 
-- Un menu qui vous permet de filtrer une des couches (probablement deals).
+-   Un menu pour choisir entre deux fonds de carte (utilisez des radio buttons).
+
+-   Un menu qui permet d’afficher / masquer les autres couches de la carte.
+
+-   Un menu qui vous permet de filtrer une des couches (probablement deals).
+
+-   Une couche accompagnée d’une table attributaire.
+
+### Sur la carte Leaflet
+
+*Suspense !*
 
 ## Le jeu de données
 
@@ -35,3 +59,8 @@ Pour ceux qui veulent commencer à importer les couches dans GeoServer.
 
 [land_matrix_agri](/data/land_matrix/land_matrix_agri.gpkg)
 
+------------------------------------------------------------------------
+
+La page manque de GIFs, donc en attentant :
+
+![](https://media.tenor.com/uZTCyak8racAAAAM/clair-obscur-clair-obscur-expedition-33.gif){fig-align="center"}

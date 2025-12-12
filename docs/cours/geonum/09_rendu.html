@@ -171,9 +171,12 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#attention-cette-page-est-en-cours-de-rédaction" id="toc-attention-cette-page-est-en-cours-de-rédaction" class="nav-link active" data-scroll-target="#attention-cette-page-est-en-cours-de-rédaction">Attention, cette page est en cours de rédaction&nbsp;!</a></li>
+  <li><a href="#disclaimer" id="toc-disclaimer" class="nav-link" data-scroll-target="#disclaimer">Disclaimer</a></li>
   <li><a href="#résumé-des-éléments-demandés" id="toc-résumé-des-éléments-demandés" class="nav-link" data-scroll-target="#résumé-des-éléments-demandés">Résumé des éléments demandés</a>
   <ul class="collapse">
+  <li><a href="#sur-la-page-web-en-général" id="toc-sur-la-page-web-en-général" class="nav-link" data-scroll-target="#sur-la-page-web-en-général">Sur la page web en général</a></li>
   <li><a href="#sur-la-carte-openlayers" id="toc-sur-la-carte-openlayers" class="nav-link" data-scroll-target="#sur-la-carte-openlayers">Sur la carte OpenLayers</a></li>
+  <li><a href="#sur-la-carte-leaflet" id="toc-sur-la-carte-leaflet" class="nav-link" data-scroll-target="#sur-la-carte-leaflet">Sur la carte Leaflet</a></li>
   </ul></li>
   <li><a href="#le-jeu-de-données" id="toc-le-jeu-de-données" class="nav-link" data-scroll-target="#le-jeu-de-données">Le jeu de données</a></li>
   </ul>
@@ -205,6 +208,11 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="attention-cette-page-est-en-cours-de-rédaction">Attention, cette page est en cours de rédaction&nbsp;!</h2>
 <p>Les profs sont encore en train de se mettre d’accord sur ce qui est demandé pour le projet final. Pour ceux qui voudraient commencer, je mets déjà quelques éléments comme le jeu de données pour que vous puissiez commencer à l’intégrer dans GeoServer.</p>
 </section>
+<section id="disclaimer" class="level2">
+<h2 class="anchored" data-anchor-id="disclaimer">Disclaimer</h2>
+<p>Ajouter à sa carte absolument tous les éléments demandés ne permet pas d’atteindre la note maximale (mais déjà une très bonne note). Les derniers points sont accordés au style de la carte, sa mise en page et à des fonctionnalités supplémentaires que vous ajoutez (qu’on aura pas vues en cours, pour prouver que vous êtes capables de faire plus que répéter les éléments vus en TP).</p>
+<p>On notera aussi le code en lui-même donc faites nous des commentaires utiles et indentez-le bien&nbsp;!</p>
+</section>
 <section id="résumé-des-éléments-demandés" class="level2">
 <h2 class="anchored" data-anchor-id="résumé-des-éléments-demandés">Résumé des éléments demandés</h2>
 <p><em>En cours de rédaction</em></p>
@@ -214,13 +222,30 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Le code final build (<code>npm run build</code>) et visible sur le serveur de production <code>localhost:80</code>.</p></li>
 <li><p>Le code mis en ligne sur un projet GitHub (on ne demande pas de branch, etc. mais juste d’avoir le code final sur GitHub).</p></li>
 </ul>
+<section id="sur-la-page-web-en-général" class="level3">
+<h3 class="anchored" data-anchor-id="sur-la-page-web-en-général">Sur la page web en général</h3>
+<ul>
+<li><p>Un titre</p></li>
+<li><p>Vos noms</p></li>
+<li><p>Un petit texte pour présenter votre choix de jeu de données. Si vous travaillez sur la donnée Land Matrix Agri, mettez-vous dans votre rôle. Vous êtes un lobby de l’agriculture&nbsp;? Des défenseurs des droits des communautés locales&nbsp;? Vous regardez où se trouve la production mondiale de soja et son augmentation par année&nbsp;? Inventez-nous un peu de contexte pour votre site.</p></li>
+</ul>
+</section>
 <section id="sur-la-carte-openlayers" class="level3">
 <h3 class="anchored" data-anchor-id="sur-la-carte-openlayers">Sur la carte OpenLayers</h3>
+<ul>
+<li>Au moins 2 fonds de cartes, 1 couche WMS et 1 couche WFS.</li>
+</ul>
+<!-- -->
 <ul>
 <li><p>Un menu pour choisir entre deux fonds de carte (utilisez des radio buttons).</p></li>
 <li><p>Un menu qui permet d’afficher / masquer les autres couches de la carte.</p></li>
 <li><p>Un menu qui vous permet de filtrer une des couches (probablement deals).</p></li>
+<li><p>Une couche accompagnée d’une table attributaire.</p></li>
 </ul>
+</section>
+<section id="sur-la-carte-leaflet" class="level3">
+<h3 class="anchored" data-anchor-id="sur-la-carte-leaflet">Sur la carte Leaflet</h3>
+<p><em>Suspense&nbsp;!</em></p>
 </section>
 </section>
 <section id="le-jeu-de-données" class="level2">
@@ -228,6 +253,13 @@ ul.task-list li input[type="checkbox"] {
 <p>Pour ceux qui veulent commencer à importer les couches dans GeoServer.</p>
 <p><strong>Si vous voulez utiliser un autre jeu de données, sur un truc qui vous intéresse plus, vous pouvez&nbsp;! Tant qu’on a tous les éléments demandés dans l’évaluation, peu importe la donnée.</strong></p>
 <p><a href="../../data/land_matrix/land_matrix_agri.gpkg">land_matrix_agri</a></p>
+<hr>
+<p>La page manque de GIFs, donc en attentant&nbsp;:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media.tenor.com/uZTCyak8racAAAAM/clair-obscur-clair-obscur-expedition-33.gif" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 
 
 </section>

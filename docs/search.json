@@ -34,11 +34,21 @@
     ]
   },
   {
+    "objectID": "cours/geonum/09_rendu.html#disclaimer",
+    "href": "cours/geonum/09_rendu.html#disclaimer",
+    "title": "Rendu",
+    "section": "Disclaimer",
+    "text": "Disclaimer\nAjouter à sa carte absolument tous les éléments demandés ne permet pas d’atteindre la note maximale (mais déjà une très bonne note). Les derniers points sont accordés au style de la carte, sa mise en page et à des fonctionnalités supplémentaires que vous ajoutez (qu’on aura pas vues en cours, pour prouver que vous êtes capables de faire plus que répéter les éléments vus en TP).\nOn notera aussi le code en lui-même donc faites nous des commentaires utiles et indentez-le bien !",
+    "crumbs": [
+      "Rendu"
+    ]
+  },
+  {
     "objectID": "cours/geonum/09_rendu.html#résumé-des-éléments-demandés",
     "href": "cours/geonum/09_rendu.html#résumé-des-éléments-demandés",
     "title": "Rendu",
     "section": "Résumé des éléments demandés",
-    "text": "Résumé des éléments demandés\nEn cours de rédaction\n\nUn GeoServer qui sert au moins une couche de points requêtable (deals) et une couche de polygones (pays). Vous pouvez (et devriez certainement) servir plus de couches.\nUne page qui contient une carte OpenLayers et une carte Leaflet (ou plusieurs pages web si vous êtes très chauds).\nLe code final build (npm run build) et visible sur le serveur de production localhost:80.\nLe code mis en ligne sur un projet GitHub (on ne demande pas de branch, etc. mais juste d’avoir le code final sur GitHub).\n\n\nSur la carte OpenLayers\n\nUn menu pour choisir entre deux fonds de carte (utilisez des radio buttons).\nUn menu qui permet d’afficher / masquer les autres couches de la carte.\nUn menu qui vous permet de filtrer une des couches (probablement deals).",
+    "text": "Résumé des éléments demandés\nEn cours de rédaction\n\nUn GeoServer qui sert au moins une couche de points requêtable (deals) et une couche de polygones (pays). Vous pouvez (et devriez certainement) servir plus de couches.\nUne page qui contient une carte OpenLayers et une carte Leaflet (ou plusieurs pages web si vous êtes très chauds).\nLe code final build (npm run build) et visible sur le serveur de production localhost:80.\nLe code mis en ligne sur un projet GitHub (on ne demande pas de branch, etc. mais juste d’avoir le code final sur GitHub).\n\n\nSur la page web en général\n\nUn titre\nVos noms\nUn petit texte pour présenter votre choix de jeu de données. Si vous travaillez sur la donnée Land Matrix Agri, mettez-vous dans votre rôle. Vous êtes un lobby de l’agriculture ? Des défenseurs des droits des communautés locales ? Vous regardez où se trouve la production mondiale de soja et son augmentation par année ? Inventez-nous un peu de contexte pour votre site.\n\n\n\nSur la carte OpenLayers\n\nAu moins 2 fonds de cartes, 1 couche WMS et 1 couche WFS.\n\n\n\nUn menu pour choisir entre deux fonds de carte (utilisez des radio buttons).\nUn menu qui permet d’afficher / masquer les autres couches de la carte.\nUn menu qui vous permet de filtrer une des couches (probablement deals).\nUne couche accompagnée d’une table attributaire.\n\n\n\nSur la carte Leaflet\nSuspense !",
     "crumbs": [
       "Rendu"
     ]
@@ -48,7 +58,7 @@
     "href": "cours/geonum/09_rendu.html#le-jeu-de-données",
     "title": "Rendu",
     "section": "Le jeu de données",
-    "text": "Le jeu de données\nPour ceux qui veulent commencer à importer les couches dans GeoServer.\nSi vous voulez utiliser un autre jeu de données, sur un truc qui vous intéresse plus, vous pouvez ! Tant qu’on a tous les éléments demandés dans l’évaluation, peu importe la donnée.\nland_matrix_agri",
+    "text": "Le jeu de données\nPour ceux qui veulent commencer à importer les couches dans GeoServer.\nSi vous voulez utiliser un autre jeu de données, sur un truc qui vous intéresse plus, vous pouvez ! Tant qu’on a tous les éléments demandés dans l’évaluation, peu importe la donnée.\nland_matrix_agri\n\nLa page manque de GIFs, donc en attentant :",
     "crumbs": [
       "Rendu"
     ]
