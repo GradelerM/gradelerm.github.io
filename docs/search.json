@@ -16,41 +16,41 @@
   {
     "objectID": "cours/geonum/09_rendu.html",
     "href": "cours/geonum/09_rendu.html",
-    "title": "Enrichir ma carte",
+    "title": "Rendu",
     "section": "",
     "text": "Les profs sont encore en train de se mettre d’accord sur ce qui est demandé pour le projet final. Pour ceux qui voudraient commencer, je mets déjà quelques éléments comme le jeu de données pour que vous puissiez commencer à l’intégrer dans GeoServer.",
     "crumbs": [
-      "Enrichir ma carte"
+      "Rendu"
     ]
   },
   {
     "objectID": "cours/geonum/09_rendu.html#attention-cette-page-est-en-cours-de-rédaction",
     "href": "cours/geonum/09_rendu.html#attention-cette-page-est-en-cours-de-rédaction",
-    "title": "Enrichir ma carte",
+    "title": "Rendu",
     "section": "",
     "text": "Les profs sont encore en train de se mettre d’accord sur ce qui est demandé pour le projet final. Pour ceux qui voudraient commencer, je mets déjà quelques éléments comme le jeu de données pour que vous puissiez commencer à l’intégrer dans GeoServer.",
     "crumbs": [
-      "Enrichir ma carte"
+      "Rendu"
     ]
   },
   {
     "objectID": "cours/geonum/09_rendu.html#résumé-des-éléments-demandés",
     "href": "cours/geonum/09_rendu.html#résumé-des-éléments-demandés",
-    "title": "Enrichir ma carte",
+    "title": "Rendu",
     "section": "Résumé des éléments demandés",
     "text": "Résumé des éléments demandés\nEn cours de rédaction\n\nUn GeoServer qui sert au moins une couche de points requêtable (deals) et une couche de polygones (pays). Vous pouvez (et devriez certainement) servir plus de couches.\nUne page qui contient une carte OpenLayers et une carte Leaflet (ou plusieurs pages web si vous êtes très chauds).\nLe code final build (npm run build) et visible sur le serveur de production localhost:80.\nLe code mis en ligne sur un projet GitHub (on ne demande pas de branch, etc. mais juste d’avoir le code final sur GitHub).\n\n\nSur la carte OpenLayers\n\nUn menu pour choisir entre deux fonds de carte (utilisez des radio buttons).\nUn menu qui permet d’afficher / masquer les autres couches de la carte.\nUn menu qui vous permet de filtrer une des couches (probablement deals).",
     "crumbs": [
-      "Enrichir ma carte"
+      "Rendu"
     ]
   },
   {
     "objectID": "cours/geonum/09_rendu.html#le-jeu-de-données",
     "href": "cours/geonum/09_rendu.html#le-jeu-de-données",
-    "title": "Enrichir ma carte",
+    "title": "Rendu",
     "section": "Le jeu de données",
     "text": "Le jeu de données\nPour ceux qui veulent commencer à importer les couches dans GeoServer.\nSi vous voulez utiliser un autre jeu de données, sur un truc qui vous intéresse plus, vous pouvez ! Tant qu’on a tous les éléments demandés dans l’évaluation, peu importe la donnée.\nland_matrix_agri",
     "crumbs": [
-      "Enrichir ma carte"
+      "Rendu"
     ]
   },
   {
