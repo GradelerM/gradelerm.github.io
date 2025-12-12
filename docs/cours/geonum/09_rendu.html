@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OpenLayers – cycle de développement</title>
+<title>Enrichir ma carte</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,41 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -87,9 +52,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -132,7 +94,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../cours/geonum/05_cours_openlayers_bases.html">OpenLayers – cycle de développement</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../cours/geonum/09_rendu.html">Enrichir ma carte</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -170,7 +132,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../cours/geonum/05_cours_openlayers_bases.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../cours/geonum/05_cours_openlayers_bases.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">OpenLayers – cycle de développement</span></a>
   </div>
 </li>
@@ -194,7 +156,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../cours/geonum/09_rendu.html" class="sidebar-item-text sidebar-link">
+  <a href="../../cours/geonum/09_rendu.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Enrichir ma carte</span></a>
   </div>
 </li>
@@ -208,16 +170,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#objectifs-de-la-session" id="toc-objectifs-de-la-session" class="nav-link active" data-scroll-target="#objectifs-de-la-session">Objectifs de la session</a></li>
-  <li><a href="#supports" id="toc-supports" class="nav-link" data-scroll-target="#supports">Supports</a></li>
-  <li><a href="#tp-mise-en-place-dune-application-openlayers-avec-nodejs-mais-cette-fois-on-est-préparés" id="toc-tp-mise-en-place-dune-application-openlayers-avec-nodejs-mais-cette-fois-on-est-préparés" class="nav-link" data-scroll-target="#tp-mise-en-place-dune-application-openlayers-avec-nodejs-mais-cette-fois-on-est-préparés">TP – Mise en place d’une application OpenLayers avec NodeJS, mais cette fois on est préparés</a>
+  <li><a href="#attention-cette-page-est-en-cours-de-rédaction" id="toc-attention-cette-page-est-en-cours-de-rédaction" class="nav-link active" data-scroll-target="#attention-cette-page-est-en-cours-de-rédaction">Attention, cette page est en cours de rédaction&nbsp;!</a></li>
+  <li><a href="#résumé-des-éléments-demandés" id="toc-résumé-des-éléments-demandés" class="nav-link" data-scroll-target="#résumé-des-éléments-demandés">Résumé des éléments demandés</a>
   <ul class="collapse">
-  <li><a href="#création-de-lapplication-en-nodejs" id="toc-création-de-lapplication-en-nodejs" class="nav-link" data-scroll-target="#création-de-lapplication-en-nodejs">Création de l’application en NodeJS</a></li>
-  <li><a href="#le-cycle-de-développement" id="toc-le-cycle-de-développement" class="nav-link" data-scroll-target="#le-cycle-de-développement">Le cycle de développement</a></li>
-  <li><a href="#versionner-mon-code-en-local-avec-un-commit" id="toc-versionner-mon-code-en-local-avec-un-commit" class="nav-link" data-scroll-target="#versionner-mon-code-en-local-avec-un-commit">Versionner mon code en local avec un <em>commit</em></a></li>
-  <li><a href="#héberger-mon-code-sur-github" id="toc-héberger-mon-code-sur-github" class="nav-link" data-scroll-target="#héberger-mon-code-sur-github">Héberger mon code sur GitHub</a></li>
+  <li><a href="#sur-la-carte-openlayers" id="toc-sur-la-carte-openlayers" class="nav-link" data-scroll-target="#sur-la-carte-openlayers">Sur la carte OpenLayers</a></li>
   </ul></li>
-  <li><a href="#tp-jajoute-ma-première-couche-à-lapplication" id="toc-tp-jajoute-ma-première-couche-à-lapplication" class="nav-link" data-scroll-target="#tp-jajoute-ma-première-couche-à-lapplication">TP – J’ajoute ma première couche à l’application</a></li>
+  <li><a href="#le-jeu-de-données" id="toc-le-jeu-de-données" class="nav-link" data-scroll-target="#le-jeu-de-données">Le jeu de données</a></li>
   </ul>
 </nav>
     </div>
@@ -226,7 +184,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">OpenLayers – cycle de développement</h1>
+<h1 class="title">Enrichir ma carte</h1>
 </div>
 
 
@@ -243,154 +201,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="objectifs-de-la-session" class="level2">
-<h2 class="anchored" data-anchor-id="objectifs-de-la-session">Objectifs de la session</h2>
+<section id="attention-cette-page-est-en-cours-de-rédaction" class="level2">
+<h2 class="anchored" data-anchor-id="attention-cette-page-est-en-cours-de-rédaction">Attention, cette page est en cours de rédaction&nbsp;!</h2>
+<p>Les profs sont encore en train de se mettre d’accord sur ce qui est demandé pour le projet final. Pour ceux qui voudraient commencer, je mets déjà quelques éléments comme le jeu de données pour que vous puissiez commencer à l’intégrer dans GeoServer.</p>
+</section>
+<section id="résumé-des-éléments-demandés" class="level2">
+<h2 class="anchored" data-anchor-id="résumé-des-éléments-demandés">Résumé des éléments demandés</h2>
+<p><em>En cours de rédaction</em></p>
 <ul>
-<li><p>Discuter des outils de développement web et comment les utiliser</p></li>
-<li><p>Ajouter une application OpenLayers à notre <em>stack</em> Docker</p></li>
-<li><p><em>Build</em> et “mettre en production” l’application, servie par un serveur Caddy</p></li>
-<li><p>Comprendre la structure du code de l’application OpenLayers</p></li>
-<li><p>Créer un commit et héberger votre code sur GitHub</p></li>
+<li><p>Un GeoServer qui sert au moins une couche de points requêtable (deals) et une couche de polygones (pays). Vous pouvez (et devriez certainement) servir plus de couches.</p></li>
+<li><p>Une page qui contient une carte OpenLayers et une carte Leaflet (ou plusieurs pages web si vous êtes très chauds).</p></li>
+<li><p>Le code final build (<code>npm run build</code>) et visible sur le serveur de production <code>localhost:80</code>.</p></li>
+<li><p>Le code mis en ligne sur un projet GitHub (on ne demande pas de branch, etc. mais juste d’avoir le code final sur GitHub).</p></li>
+</ul>
+<section id="sur-la-carte-openlayers" class="level3">
+<h3 class="anchored" data-anchor-id="sur-la-carte-openlayers">Sur la carte OpenLayers</h3>
+<ul>
+<li><p>Un menu pour choisir entre deux fonds de carte (utilisez des radio buttons).</p></li>
+<li><p>Un menu qui permet d’afficher / masquer les autres couches de la carte.</p></li>
+<li><p>Un menu qui vous permet de filtrer une des couches (probablement deals).</p></li>
 </ul>
 </section>
-<section id="supports" class="level2">
-<h2 class="anchored" data-anchor-id="supports">Supports</h2>
-<p><a href="../../cours/geonum/05_diapos_ai.html" target="_blank">Cours&nbsp;: Un point sur l’IA</a></p>
-<p><a href="../../cours/geonum/05_diapos_node_openlayers.html" target="_blank">Cours&nbsp;: Développer avec NodeJS et OpenLayers</a></p>
 </section>
-<section id="tp-mise-en-place-dune-application-openlayers-avec-nodejs-mais-cette-fois-on-est-préparés" class="level2">
-<h2 class="anchored" data-anchor-id="tp-mise-en-place-dune-application-openlayers-avec-nodejs-mais-cette-fois-on-est-préparés">TP – Mise en place d’une application OpenLayers avec NodeJS, mais cette fois on est préparés</h2>
-<section id="création-de-lapplication-en-nodejs" class="level3">
-<h3 class="anchored" data-anchor-id="création-de-lapplication-en-nodejs">Création de l’application en NodeJS</h3>
-<p>On va ajouter l’application dans notre stack existante. Pour ça, retournez dans le dossier dans lequel on a travaillé lors de la dernière séance (celui avec le GeoServer) qui devrait s’appeler <code>geonum_docker</code>.</p>
-<p>Si un dossier <code>app</code> existe déjà, <strong>supprimez-le</strong>. Allez-y, ne soyez pas timides&nbsp;!</p>
-<p>Ensuite, rendez-vous sur le <a href="https://openlayers.org/">site officiel d’OpenLayers</a> et cherchez la section “Quick Start”. Prenez le temps de parcourir la page, elle contient toutes les informations dont vous avez besoin. Ensuite, ouvrez un terminal dans votre dossier <code>geonum_docker</code> et tapez la commande suivante&nbsp;:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> create ol-app app</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><em>Note&nbsp;: elle est un peu différente de celle qui vous est donné sur la page. Cherchez la différence, essayez de comprendre ce qui change.</em></p>
-<p>Ensuite, déplacez-vous dans le dossier <code>app</code>&nbsp;:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> app</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Ensuite, on doit <em>build</em> notre application pour que notre serveur de production (Caddy) puisse lire le contenu de l’application.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run build</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Point diapos tous ensemble sur le cycle de développement
-</div>
-</div>
-<div class="callout-body-container callout-body">
-
-</div>
-</div>
-</section>
-<section id="le-cycle-de-développement" class="level3">
-<h3 class="anchored" data-anchor-id="le-cycle-de-développement">Le cycle de développement</h3>
-<p>Comme on l’a vu à l’instant en cours, le développement d’une application est un cycle. Si on le simplifie, on a une boucle qui alterne <em>développement &gt; tests &gt; production</em>.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-    dev("Développement") --&gt; tests
-    tests("Tests") --&gt; dev
-    tests --&gt; prod("Production")
-    prod --&gt; dev
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<ul>
-<li><p><strong>Développement&nbsp;:</strong> on ajoute de nouveaux éléments à l’application.</p></li>
-<li><p><strong>Tests&nbsp;:</strong> on teste les nouvelles fonctionnalités. Si on trouve des bugs ou des choses à améliorer, on retourne à la phase de développement.</p></li>
-<li><p><strong>Production&nbsp;:</strong> si notre application a passé tous les tests, alors elle est prête à accueillir définitivement les nouveaux éléments qu’on a développés.</p></li>
-</ul>
-<p>Pour accéder au serveur de développement (pour développer les nouveaux éléments et faire les tests)&nbsp;:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> start</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Pour <em>build</em> notre application qui est stable et prête à être mise en production&nbsp;:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run build</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Pour rappel, si vous voulez voir le résultats de votre build, il faut lancer votre <em>stack</em> docker pour que votre serveur web (Caddy) puisse servir votre application.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> .. <span class="co"># Pour revenir à la racine de geonum_docker</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose up <span class="at">-d</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Accédez à votre <a href="http://localhost/" class="uri">http://localhost/</a> pour voir l’application en production.</p>
-</section>
-<section id="versionner-mon-code-en-local-avec-un-commit" class="level3">
-<h3 class="anchored" data-anchor-id="versionner-mon-code-en-local-avec-un-commit">Versionner mon code en local avec un <em>commit</em></h3>
-<p>Avant d’aller plus loin dans la création de notre application, on va utiliser <strong>Git</strong> pour versionner notre projet et l’héberger en ligne.</p>
-<p><strong>D’abord, retournez à la racine de votre projet <code>geonum_docker</code></strong>&nbsp;:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ..</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Ensuite, vérifiez que votre projet est bien versionné.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Si vous avez un message long qui fait peur, c’est bon signe. En fait, <strong>notre projet est déjà vesionné parce qu’on l’a récupéré sur mon GitHub</strong>. On a importé mes fichiers… mais aussi le git associé&nbsp;!</p>
-<p>Si jamais ce n’est pas le cas, alors vous devez initialiser votre dépôt&nbsp;:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash js code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><em>Note&nbsp;: toutes les étapes suivantes peuvent être faites en interface graphique si vous préférez. Moi je travaille en lignes de commande, et comme c’est ce qui est le plus universel c’est ce que je vous partage ici.</em></p>
-<p>Normalement, vous savez faire la suite, mais voilà quand même comment <em>stage</em> vos changements (autrement dit, les ajouter à votre prochain <em>commit</em>)&nbsp;:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Maintenant, on crée notre <em>commit</em> avec un message qui indique ce que fait le code qu’on a ajouté depuis le dernier <em>commit</em>&nbsp;:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Carte OpenLayers basique"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="héberger-mon-code-sur-github" class="level3">
-<h3 class="anchored" data-anchor-id="héberger-mon-code-sur-github">Héberger mon code sur GitHub</h3>
-<p>Ensuite, vous pouvez créer un dépôt GitHub (ce sera plus sympa pour voir et partager votre application). Je pars du principe que vous avez tous un compte GitHub. Vous n’êtes pas obligé de le faire, mais ça reste <strong>vivement recommandé</strong> surtout que je vais vous demander un rendu sur GitHub… et que vous devrez aussi héberger vos projets GeoNum sur GitHub.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Attention aux infos que vous mettez en ligne
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Vous allez créer un dépôt qui sera visible en ligne. Bien évidemment, ne mettez aucune information sensible (mots de passe, etc.) ni rien d’autre que vous ne voulez pas partager. Avec Git, on peut même retrouver le commentaire dans votre code où vous avez écrit des mots pas très élégants parce que vous étiez frustré⋅e, donc n’écrivez pas n’importe quoi.</p>
-<p>Oui, je parle d’expérience. Non, tous mes collègues n’ont pas ri.</p>
-</div>
-</div>
-<ul>
-<li><p>Ouvrez <a href="https://github.com/">GitHub</a></p></li>
-<li><p>Créez un nouveau Repository (Dépôt&nbsp;?) en cliquand sur le bouton New (ou en allant directement sur <a href="https://github.com/new" class="uri">https://github.com/new</a>)</p></li>
-<li><p>Donnez un nom et une description à votre dépôt</p></li>
-<li><p>Assurez-vous de ne créer ni de readme ni de gitignore</p></li>
-<li><p>Cliquez sur “create repository”</p></li>
-</ul>
-<p>Ensuite, suivez les instructions données par GitHub pour mettre en ligne votre dépôt. Commencez après la ligne <code>git commit -m "First commit"</code> (on a déjà créé notre commit juste avant).</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Double authentification
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Si vous prenez la sécurité de vos comptes en ligne au sérieux et que vous avez activé la double-authentification en ligne, ce sera un petit peu plus compliqué de définir votre <code>remote origin</code>. Le lien “simple” vers votre dépôt ne suffit pas.</p>
-<p>Pour accéder à votre code depuis votre PC, vous allez devoir créer un <strong>Personal access token</strong> depuis vos <a href="https://github.com/settings/tokens">Developers settings</a> (vous devez être connecté pour accéder au lien). En haut à droite, sélectionnez “Generate new token (classic)” et donnez vous au moins les droits de la section <em>Repo</em>. Ensuite, <strong>sauvegardez bien votre token quelque part (comme dans un gestionnaire de mots de passe) car vous ne pourrez plus le récupérer&nbsp;!</strong></p>
-<p>Maintenant, retourner dans votre dossier <code>geonum_docker</code> et dans la ligne de commande, tapez en remplaçant les valeurs entre <code>&lt;&gt;</code>&nbsp;;</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote set-url origin https://oauth2:<span class="op">&lt;</span>accesstoken1234<span class="op">&gt;</span>@github.com/<span class="op">&lt;</span>Username<span class="op">&gt;</span>/<span class="op">&lt;</span>repository_name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<blockquote class="blockquote">
-<p>Par exemple, si mon token est <code>123456789azerty</code>, mon nom d’utilisateur <code>GradelerM</code> et mon dépôt <code>geonum_docker</code>, ça donne ça&nbsp;:</p>
-</blockquote>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote set-url origin https://oauth2:123456789azerty@github.com/GradelerM/geonum_docker</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Vous pouvez lancer à nouveau un <code>git push</code>&nbsp;!</p>
-</div>
-</div>
-</div>
-<p>Voilà, normalement tout est prêt pour la suite&nbsp;!</p>
-</section>
-</section>
-<section id="tp-jajoute-ma-première-couche-à-lapplication" class="level2">
-<h2 class="anchored" data-anchor-id="tp-jajoute-ma-première-couche-à-lapplication">TP – J’ajoute ma première couche à l’application</h2>
-<p>Avant d’aller plus loin, on va prendre le temps de comprendre comment est structuré le code de notre application et quels outils sont à notre disposition pour coder. Ensuite, on ajoutera la première couche de données ensemble.</p>
-<p>Tous les éléments de ce TP se trouvent dans les diapos, alors soyez attentifs&nbsp;!</p>
+<section id="le-jeu-de-données" class="level2">
+<h2 class="anchored" data-anchor-id="le-jeu-de-données">Le jeu de données</h2>
+<p>Pour ceux qui veulent commencer à importer les couches dans GeoServer.</p>
+<p><strong>Si vous voulez utiliser un autre jeu de données, sur un truc qui vous intéresse plus, vous pouvez&nbsp;! Tant qu’on a tous les éléments demandés dans l’évaluation, peu importe la donnée.</strong></p>
+<p><a href="../../data/land_matrix/land_matrix_agri.gpkg">land_matrix_agri</a></p>
 
 
 </section>

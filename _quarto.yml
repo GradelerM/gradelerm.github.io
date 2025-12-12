@@ -32,6 +32,7 @@ website:
         - cours/geonum/06_cours_ajout_couches.qmd
         - cours/geonum/07_cours_interactions.qmd
         - cours/geonum/08_cours_enrichir_ma_carte.qmd
+        - cours/geonum/09_rendu.qmd
   
   page-footer: 
     left: ""
