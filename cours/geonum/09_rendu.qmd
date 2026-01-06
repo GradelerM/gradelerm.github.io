@@ -180,7 +180,7 @@ On notera aussi le code en lui-même donc faites nous des commentaires utiles et
 
 ## Rendu
 
-Le rendu est attendu pour le **30 Janvier 2026**. Quand votre code est en ligne sur GitHub, prévenez-nous par mail : **marie.gradeler@gmail.com** et **bastien.cahier@gmail.com**.
+Le rendu est attendu avant le **8 Février 2026**. Quand votre code est en ligne sur GitHub, prévenez-nous par mail : **marie.gradeler@gmail.com** et **bastien.cahier@gmail.com**.
 
 Allez, au travail ! Faites-nous de magnifiques cartes !
 
