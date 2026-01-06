@@ -170,15 +170,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#attention-cette-page-est-en-cours-de-rédaction" id="toc-attention-cette-page-est-en-cours-de-rédaction" class="nav-link active" data-scroll-target="#attention-cette-page-est-en-cours-de-rédaction">Attention, cette page est en cours de rédaction&nbsp;!</a></li>
-  <li><a href="#disclaimer" id="toc-disclaimer" class="nav-link" data-scroll-target="#disclaimer">Disclaimer</a></li>
-  <li><a href="#résumé-des-éléments-demandés" id="toc-résumé-des-éléments-demandés" class="nav-link" data-scroll-target="#résumé-des-éléments-demandés">Résumé des éléments demandés</a>
+  <li><a href="#consignes" id="toc-consignes" class="nav-link active" data-scroll-target="#consignes">Consignes</a></li>
+  <li><a href="#détails-pour-la-notation" id="toc-détails-pour-la-notation" class="nav-link" data-scroll-target="#détails-pour-la-notation">Détails pour la notation</a></li>
+  <li><a href="#éléments-demandés-à-minima" id="toc-éléments-demandés-à-minima" class="nav-link" data-scroll-target="#éléments-demandés-à-minima">Éléments demandés <em>à minima</em></a>
   <ul class="collapse">
-  <li><a href="#sur-la-page-web-en-général" id="toc-sur-la-page-web-en-général" class="nav-link" data-scroll-target="#sur-la-page-web-en-général">Sur la page web en général</a></li>
+  <li><a href="#pour-la-partie-geoserver" id="toc-pour-la-partie-geoserver" class="nav-link" data-scroll-target="#pour-la-partie-geoserver">Pour la partie GeoServer</a></li>
+  <li><a href="#sur-lales-pages-web" id="toc-sur-lales-pages-web" class="nav-link" data-scroll-target="#sur-lales-pages-web">Sur la/les page(s) web</a></li>
   <li><a href="#sur-la-carte-openlayers" id="toc-sur-la-carte-openlayers" class="nav-link" data-scroll-target="#sur-la-carte-openlayers">Sur la carte OpenLayers</a></li>
   <li><a href="#sur-la-carte-leaflet" id="toc-sur-la-carte-leaflet" class="nav-link" data-scroll-target="#sur-la-carte-leaflet">Sur la carte Leaflet</a></li>
   </ul></li>
-  <li><a href="#le-jeu-de-données" id="toc-le-jeu-de-données" class="nav-link" data-scroll-target="#le-jeu-de-données">Le jeu de données</a></li>
+  <li><a href="#rendu" id="toc-rendu" class="nav-link" data-scroll-target="#rendu">Rendu</a></li>
+  <li><a href="#noubliez-pas-de-me-faire-un-retour" id="toc-noubliez-pas-de-me-faire-un-retour" class="nav-link" data-scroll-target="#noubliez-pas-de-me-faire-un-retour">N’oubliez pas de me faire un retour&nbsp;!</a></li>
   </ul>
 </nav>
     </div>
@@ -204,26 +206,261 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="attention-cette-page-est-en-cours-de-rédaction" class="level2">
-<h2 class="anchored" data-anchor-id="attention-cette-page-est-en-cours-de-rédaction">Attention, cette page est en cours de rédaction&nbsp;!</h2>
-<p>Les profs sont encore en train de se mettre d’accord sur ce qui est demandé pour le projet final. Pour ceux qui voudraient commencer, je mets déjà quelques éléments comme le jeu de données pour que vous puissiez commencer à l’intégrer dans GeoServer.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Les consignes suivantes s’adressent à la promo du M2 GeoNum 2024-2025.</p>
+</div>
+</div>
+<section id="consignes" class="level2">
+<h2 class="anchored" data-anchor-id="consignes">Consignes</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2lrb3g4NGV5Y3l2ejMxZXp3dnM1OHUzZmtiZHpqaHI1NW13anZ2ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NQ1YNmyVdaFH8KK6zu/giphy.webp" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="GIF : Miguel et Tulio ont peur des consignes"></p>
+</figure>
+</div>
+<p>L’évaluation se fait (pour la plupart d’entre vous) par binôme. Vous devez vous baser soit sur un jeu de données que vous avez sélectionné vous-même, soit sur le jeu <a href="#0">land_matrix_agri</a>. Dans ce cas, je vous ai donné un “rôle” pour que tout le monde n’ait pas le même rendu. Cela s’applique aussi bien à OpenLayers qu’à la partie Leaflet.</p>
+<p>Merci de nous prévenir rapidement au moindre changement !</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Groupe</th>
+<th>Sujet</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Paul GREAUME &amp; Nicolas HERMAN</td>
+<td>Sujet 6) Cabinet de juristes</td>
+</tr>
+<tr class="even">
+<td>Charlotte JOUVE &amp; Silya GUERBOUB</td>
+<td>Sujet 1) ONG militante</td>
+</tr>
+<tr class="odd">
+<td>Angélique PETIT &amp; Lisa FERREIRA</td>
+<td>Sujet 2) ONG environnement</td>
+</tr>
+<tr class="even">
+<td>Tom MONTAIGNON &amp; Ethan LANG</td>
+<td>Donnée perso</td>
+</tr>
+<tr class="odd">
+<td>Stéphanie GABETTE &amp; Kolia NADALUTTI</td>
+<td>Donnée perso</td>
+</tr>
+<tr class="even">
+<td>Inès PERONNARD &amp; Laura CARRIER &amp; Jeanne DUPRETZ</td>
+<td>Sujet 3) Lobby huile de palme</td>
+</tr>
+<tr class="odd">
+<td>Roland GRANDMAISON &amp; Olivier PRIMA</td>
+<td>Donnée perso</td>
+</tr>
+<tr class="even">
+<td>Paul VALENTIN &amp; Arthur THIBAUDON</td>
+<td>Sujet 4) Cabinet de conseil</td>
+</tr>
+<tr class="odd">
+<td>Elias MAKHLOUF</td>
+<td>Sujet 5) Spéculateur financier</td>
+</tr>
+<tr class="even">
+<td>Fanny FORTIN</td>
+<td>Soit binôme avec Elias, soit Sujet 7) Observatoire de la diversité agricole</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sujet 1) ONG militante qui lutte contre l’accaparement des terres
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Vous êtes une ONG militante qui lutte contre l’accaparement des terres. Votre objectif est plutôt de choquer l’opinion publique et montrer l’urgence de la situation.</p>
+<p><em>Conseil&nbsp;: Vous cherchez à choquer l’opinion publique en montrant le négatif bien plus que le positif. Vous avez beaucoup d’angles d’attaque avec le jeu de données, à vous de choisir celui qui vous plaît le plus. Vous avez le droit d’imaginer des actions militantes engagées pour certains cas.</em></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sujet 2) ONG centrée sur la protection de l’environnement
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Vous êtes une ONG plutôt centrée sur la question de protection de l’environnement. Votre objectif est de montrer où ont lieu les dégradations environnementales liées à ces projets (globalement et par région du monde et/ou par pays et/ou par type de plantation).</p>
+<p><em>Conseil : Utilisez le champ des impacts négatifs sur l’environnement et montrez où ils se situent à l’échelle globale, puis choisissez un autre angle de focus&nbsp;: quelle région du monde, quels pays sont les plus touchés ? En valeur absolue ou proportionnellement à leur nombre de deals agricoles ? Vous pouvez sinon utiliser le champ surface_ha pour imaginer une estimation des surfaces touchées, etc. C’est peut-être moins évident que pour le prisme des droits humains de prime abord, mais vous avez de quoi faire&nbsp;!</em></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sujet 3) Lobby des producteurs d’huile de palme
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Vous êtes un lobby industriel qui cherche à redorer l’image de la production de l’huile de palme en montrant que l’agriculture à grande échelle permet d’apporter des bénéfices aux communautés locales.</p>
+<p><em>Conseil&nbsp;: Vous cherchez à vous concentrer sur le positif et éluder le négatif pour présenter l’agriculture intensive sous son meilleur jour. Jouez avec les visualisations pour passer le négatif sous silence et mettre en avant les résultats positifs.</em></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sujet 4) Cabinet de conseil pour aider les entreprises à s’implanter
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Vous êtes un cabinet de conseil qui aide les multinationales à s’implanter dans des régions comme l’Amérique Latine, l’Afrique ou l’Asie du Sud-Est en limitant des conflits avec les communautés locales et en leur donnant des conseils éthiques pour être bien vus (typiquement, apporter des avantages aux communautés locales).</p>
+<p><em>Conseil&nbsp;: Montrez que “la consultation de votre cabinet fonctionne” en mettant en avant des cas d’investissement les choses se sont bien passées (= communauté favorable au projet et pas de violences et d’éviction). Le déplacement reste acceptable s’il est bien géré, idem pour les dégradations environnementales. Vous avez le droit de choisir certains cas en disant que votre cabinet y est intervenu&nbsp;! Rien ne vous empêche d’ajouter une colonne fictive pour ça, il faut juste penser à le préciser quelque part (une note de bas de page ?).</em></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sujet 5) Fonds d’investissement dans l’agriculture
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Vous êtes des spéculateurs financiers à la recherche de nouvelles tendances dans l’agriculture, à la recherche de hotspots de croissance et des secteurs qui sont en pleine expansion ces dernières années. Vous pourriez suggérer à d’autres investisseurs dans quel produit investir suivant s’ils veulent se concentrer sur l’Amérique Latine, l’Afrique ou l’Asie.</p>
+<p><em>Conseil&nbsp;: Utilisez le champ “created_at” pour montrer où se concentrent les investissements ces dernières années et dégager des tendances et des hotspots (qui peuvent être fictifs dans votre narration, pourvu que ça colle avec ce qu’on voit sur la carte).</em></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sujet 6) Cabinet de juristes
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Vous êtes un cabinet d’auditeurs légaux qui vérifient la conformité des projets. Vous cherchez principalement à identifier les projets à “haut risque légal” qui pourraient aboutir à un procès.</p>
+<p><em>Conseil&nbsp;: Regardez les cas avec présence de communautés locales et vérifiez si elles ont été consultées. Une absence de consultation est illégale. Si les communautés ont été consultées, regardez leur réaction. En cas de réaction négative et en l’absence de bénéfices pour ces communautés, il est aussi probable qu’un procès ait lieu.</em></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sujet 7) Observatoire de la diversité agricole
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Vous êtes un institut de recherche agronomique et vous cherchez à comprendre la répartition mondiale des types de cultures pour que vos “clients” puissent les relier à des questions de sécurité alimentaire. Contrairement aux spéculateurs financiers, vous devez rester neutres.</p>
+<p><em>Conseil&nbsp;: Permettez à l’utilisateur de se concentrer sur un seul type de culture, si possible. Par exemple, quelqu’un peut vouloir savoir où se trouvent les champs qui produisent du soja, et consulter votre site pour ça. N’oubliez pas de rester neutres et sans jugement de valeur.</em></p>
+</div>
+</div>
+</div>
 </section>
-<section id="disclaimer" class="level2">
-<h2 class="anchored" data-anchor-id="disclaimer">Disclaimer</h2>
-<p>Ajouter à sa carte absolument tous les éléments demandés ne permet pas d’atteindre la note maximale (mais déjà une très bonne note). Les derniers points sont accordés au style de la carte, sa mise en page et à des fonctionnalités supplémentaires que vous ajoutez (qu’on aura pas vues en cours, pour prouver que vous êtes capables de faire plus que répéter les éléments vus en TP).</p>
+<section id="détails-pour-la-notation" class="level2">
+<h2 class="anchored" data-anchor-id="détails-pour-la-notation">Détails pour la notation</h2>
+<p>On doit vous noter sur la <strong>publication de couches</strong> et la <strong>création de cartes</strong>&nbsp;: du coup, vous n’êtes pas évalués sur tout les parties “architecture web” qu’on a vues en cours&nbsp;!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media1.tenor.com/m/aT7kl0dCEjcAAAAd/you-drank.gif" class="img-fluid figure-img" alt="GIF : Tulio et Miguel, et encore une carte" width="400"></p>
+<figcaption>Je sais, vous vouliez VRAIMENT être notés sur Git, la déception doit être insupportable. Il faudra faire avec.</figcaption>
+</figure>
+</div>
+<p><strong>Ce sur quoi vous êtes notés&nbsp;:</strong></p>
+<ul>
+<li><p>GeoServer (publication de couches)</p></li>
+<li><p>OpenLayers</p></li>
+<li><p>Leaflet</p></li>
+<li><p>HTML et CSS basiques (styliser un minimum le contenu)</p></li>
+</ul>
+<p><strong>Ce sur quoi vous n’êtes PAS notés&nbsp;:</strong></p>
+<ul>
+<li><p>Docker</p></li>
+<li><p>Git</p></li>
+<li><p>Déploiement du GeoServer</p></li>
+<li><p>NodeJS</p></li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ne pas être noté sur les éléments ci-dessus, ça veut dire que vous pouvez (et DEVEZ) me demander de l’aide si ça coince quelque part. Envoyez-moi un mail si vous n’arrivez pas/plus à faire tourner votre architecture web ou même si vous avez du mal à mettre votre projet en ligne sur Git pour le rendu final.</p>
+</div>
+</div>
+<p><strong>Ajouter à sa carte absolument tous les éléments demandés ne permet pas d’atteindre la note maximale (mais déjà une très bonne note).</strong> Les derniers points sont accordés au style de la carte, sa mise en page et à des fonctionnalités supplémentaires que vous ajoutez (qu’on aura pas vues en cours, pour prouver que vous êtes capables de faire plus que répéter les éléments vus en TP).</p>
 <p>On notera aussi le code en lui-même donc faites nous des commentaires utiles et indentez-le bien&nbsp;!</p>
 </section>
-<section id="résumé-des-éléments-demandés" class="level2">
-<h2 class="anchored" data-anchor-id="résumé-des-éléments-demandés">Résumé des éléments demandés</h2>
-<p><em>En cours de rédaction</em></p>
+<section id="éléments-demandés-à-minima" class="level2">
+<h2 class="anchored" data-anchor-id="éléments-demandés-à-minima">Éléments demandés <em>à minima</em></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXF2anZ3dXdpZXFmMXU3dzdud2w4MjMxdHU3Nzg1eWozenFvcnphYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1mgpw7QGirOAmHurZY/200.webp" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="GIF : Miguel et Tulio lisent une carte"></p>
+</figure>
+</div>
+<section id="pour-la-partie-geoserver" class="level3">
+<h3 class="anchored" data-anchor-id="pour-la-partie-geoserver">Pour la partie GeoServer</h3>
+<p><em>Notée par Marie</em></p>
 <ul>
-<li><p>Un GeoServer qui sert au moins une couche de points requêtable (deals) et une couche de polygones (pays). Vous pouvez (et devriez certainement) servir plus de couches.</p></li>
-<li><p>Une page qui contient une carte OpenLayers et une carte Leaflet (ou plusieurs pages web si vous êtes très chauds).</p></li>
+<li><p>Un GeoServer qui sert au moins une couche de points requêtable et une couche de polygones. Vous pouvez (et devrez probablement) servir plus de couches.</p></li>
+<li><p>SOIT deux pages web, une pour Leaflet et une pour OpenLayers (option recommandée), SOIT une page web qui contient à la fois une carte OpenLayers et une carte Leaflet (peu recommandé, sauf si vous savez ce que vous faites).</p></li>
 <li><p>Le code final build (<code>npm run build</code>) et visible sur le serveur de production <code>localhost:80</code>.</p></li>
 <li><p>Le code mis en ligne sur un projet GitHub (on ne demande pas de branch, etc. mais juste d’avoir le code final sur GitHub).</p></li>
 </ul>
-<section id="sur-la-page-web-en-général" class="level3">
-<h3 class="anchored" data-anchor-id="sur-la-page-web-en-général">Sur la page web en général</h3>
+</section>
+<section id="sur-lales-pages-web" class="level3">
+<h3 class="anchored" data-anchor-id="sur-lales-pages-web">Sur la/les page(s) web</h3>
+<p><em>Notée par les deux profs</em></p>
 <ul>
 <li><p>Un titre</p></li>
 <li><p>Vos noms</p></li>
@@ -232,34 +469,55 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="sur-la-carte-openlayers" class="level3">
 <h3 class="anchored" data-anchor-id="sur-la-carte-openlayers">Sur la carte OpenLayers</h3>
+<p><em>Notée par Marie</em></p>
 <ul>
-<li>Au moins 2 fonds de cartes, 1 couche WMS et 1 couche WFS.</li>
-</ul>
-<!-- -->
-<ul>
+<li><p>Au moins 2 fonds de cartes, 1 couche WMS et 1 couche WFS.</p></li>
 <li><p>Un menu pour choisir entre deux fonds de carte (utilisez des radio buttons).</p></li>
 <li><p>Un menu qui permet d’afficher / masquer les autres couches de la carte.</p></li>
-<li><p>Un menu qui vous permet de filtrer une des couches (probablement deals).</p></li>
+<li><p>Un menu qui vous permet de filtrer une des couches WMS (probablement “deals”).</p></li>
 <li><p>Une couche accompagnée d’une table attributaire.</p></li>
+<li><p>Une échelle et une légende*.</p></li>
 </ul>
+<p><em>Comme on n’a pas pu voir la légende ensemble en cours, n’importe quelle méthode sera acceptée. Vous pouvez même la dessiner dans Inkscape/Illustrator et l’importer au format JPEG/PNG/SVG. Je vous conseille quand même d’aller voir dans le TP “enrichir ma carte”, j’ai donné des indices ;)</em></p>
 </section>
 <section id="sur-la-carte-leaflet" class="level3">
 <h3 class="anchored" data-anchor-id="sur-la-carte-leaflet">Sur la carte Leaflet</h3>
-<p><em>Suspense&nbsp;!</em></p>
+<p><em>Notée par Bastien</em></p>
+<ul>
+<li><p>Un menu de gestion des couches pour afficher/masquer&nbsp;:</p>
+<ul>
+<li><p>Deux fonds de base (carte/satellite par exemple)</p></li>
+<li><p>Une ou plusieurs couches personnalisées (on doit pouvoir afficher plusieurs couches personnalisées en même temps)</p></li>
+</ul></li>
+<li><p>Au moins une couche personnalisée avec&nbsp;:</p>
+<ul>
+<li><p>Un stle défini dynamiquement selon les attributs (donc avec une fonction&nbsp;!)</p></li>
+<li><p>Un popup (soigné si possible) qui s’affiche au clic sur une entité</p></li>
+</ul></li>
+</ul>
 </section>
 </section>
-<section id="le-jeu-de-données" class="level2">
-<h2 class="anchored" data-anchor-id="le-jeu-de-données">Le jeu de données</h2>
-<p>Pour ceux qui veulent commencer à importer les couches dans GeoServer.</p>
-<p><strong>Si vous voulez utiliser un autre jeu de données, sur un truc qui vous intéresse plus, vous pouvez&nbsp;! Tant qu’on a tous les éléments demandés dans l’évaluation, peu importe la donnée.</strong></p>
-<p><a href="../../data/land_matrix/land_matrix_agri.gpkg">land_matrix_agri</a></p>
-<hr>
-<p>La page manque de GIFs, donc en attentant&nbsp;:</p>
+<section id="rendu" class="level2">
+<h2 class="anchored" data-anchor-id="rendu">Rendu</h2>
+<p>Le rendu est attendu pour le <strong>30 Janvier 2026</strong>. Allez, au boulot&nbsp;! Faites-nous de magnifiques cartes&nbsp;!</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://media.tenor.com/uZTCyak8racAAAAM/clair-obscur-clair-obscur-expedition-33.gif" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3A2Mm81d2gxeGtteXpwZXdya3F3OGw4N3Jha21hNG54bXQxNjJ5YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/taU6RaT2Aaxt6/giphy.webp" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="GIF : Miguel avec une carte"></p>
 </figure>
 </div>
+</section>
+<section id="noubliez-pas-de-me-faire-un-retour" class="level2">
+<h2 class="anchored" data-anchor-id="noubliez-pas-de-me-faire-un-retour">N’oubliez pas de me faire un retour&nbsp;!</h2>
+<p>Ce que vous avez suivi avec moi est un cours récent et encore perfectible. N’oubliez pas de me faire un retour à la fin de l’année de Master&nbsp;! Vous pouvez dire ce que vous n’avez pas aimé aussi, je m’en remettrai avec un gros pot de glace et j’améliorerai le cours pour ceux qui viendront après.</p>
+<p>N’hésitez pas non plus à m’envoyer des questions liées à vos projets GeoNum, je serais ravie de vous aider. Promis, je passerai sur le campus pendant le développement de vos projets.</p>
+<p><strong>Quoi qu’il en soit, merci beaucoup&nbsp;! Vous avez été très cool, c’était un plaisir de venir vous faire cours.</strong></p>
+<p>Et pour ceux qui connaissent la source des GIF et qui trouvent qu’il manque quelque chose, non, je ne l’ai pas oublié, le voilà&nbsp;:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHd0bzZzczdpM2xpbnkxYXZpdGhnNGJkNjZ2Z29tYWttbWJpcmsyaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ee8nTInXzCjCNVUNNv/giphy.webp" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="GIF : Miguel qui joue de la guitare"></p>
+</figure>
+</div>
+<p>Bonne continuation et à bientôt peut-être&nbsp;! Qui sait, le monde de la géomatique est petit 😁</p>
 
 
 </section>

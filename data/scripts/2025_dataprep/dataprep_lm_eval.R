@@ -322,3 +322,9 @@ deals %>%
 
 # --- Export data once ready ---
 st_write(deals, dsn = "data/land_matrix/land_matrix_agri.gpkg", layer = "deals")
+
+# --- Read and display data ---
+land_matrix_agri <- st_read(
+  "data/land_matrix/land_matrix_agri.gpkg",
+  layer = "deals"
+)

@@ -209,8 +209,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#supports" id="toc-supports" class="nav-link" data-scroll-target="#supports">Supports</a></li>
   <li><a href="#tp-ajouter-une-table-attributaire-personnalisée" id="toc-tp-ajouter-une-table-attributaire-personnalisée" class="nav-link" data-scroll-target="#tp-ajouter-une-table-attributaire-personnalisée">TP – Ajouter une table attributaire personnalisée</a></li>
   <li><a href="#tp-ajouter-une-échelle" id="toc-tp-ajouter-une-échelle" class="nav-link" data-scroll-target="#tp-ajouter-une-échelle">TP – Ajouter une échelle</a></li>
-  <li><a href="#tp-ajouter-un-marqueur-custom" id="toc-tp-ajouter-un-marqueur-custom" class="nav-link" data-scroll-target="#tp-ajouter-un-marqueur-custom">TP — Ajouter un marqueur custom</a></li>
-  <li><a href="#tp-ajouter-une-popup-ou-un-tooltip" id="toc-tp-ajouter-une-popup-ou-un-tooltip" class="nav-link" data-scroll-target="#tp-ajouter-une-popup-ou-un-tooltip">TP — Ajouter une popup (ou un tooltip)</a></li>
+  <li><a href="#tp-ajouter-une-légende" id="toc-tp-ajouter-une-légende" class="nav-link" data-scroll-target="#tp-ajouter-une-légende">TP — Ajouter une légende</a>
+  <ul class="collapse">
+  <li><a href="#légende-pour-la-couche-wms" id="toc-légende-pour-la-couche-wms" class="nav-link" data-scroll-target="#légende-pour-la-couche-wms">Légende pour la couche WMS</a></li>
+  <li><a href="#légende-pour-la-couche-wfs" id="toc-légende-pour-la-couche-wfs" class="nav-link" data-scroll-target="#légende-pour-la-couche-wfs">Légende pour la couche WFS</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -402,18 +405,89 @@ Pour bien démarrer le TP…
 </figure>
 </div>
 </section>
-<section id="tp-ajouter-un-marqueur-custom" class="level2">
-<h2 class="anchored" data-anchor-id="tp-ajouter-un-marqueur-custom">TP — Ajouter un marqueur custom</h2>
-<p>…</p>
+<section id="tp-ajouter-une-légende" class="level2">
+<h2 class="anchored" data-anchor-id="tp-ajouter-une-légende">TP — Ajouter une légende</h2>
+<section id="légende-pour-la-couche-wms" class="level3">
+<h3 class="anchored" data-anchor-id="légende-pour-la-couche-wms">Légende pour la couche WMS</h3>
+<p>Affichez la légende des deux couches WMS quelque part dans votre interface. Je vous conseille de regarder l’<a href="https://openlayers.org/en/latest/examples/wms-getlegendgraphic.html">exemple officiel d’OpenLayers</a> et je vous donn quelques clés de comprégension&nbsp;:</p>
+<ul>
+<li><p>Vous devez créer quelque part dans votre interface une balise <code>&lt;img id="legend"&gt;</code>. C’est elle qui contiendra l’image de la légende.</p></li>
+<li><p>Vous avez besoin de récupérer la résolution de la carte pour pouvoir demander la légende à GeoServer. Si votre objet s’appelle <code>map</code>, c’est comme ça qu’il faut vous y prendre&nbsp;:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> resolution <span class="op">=</span> map<span class="op">.</span><span class="fu">getView</span>()<span class="op">.</span><span class="fu">getResolution</span>()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Vous devez ensuite récupérer l’URL de l’image de la légende. C’est ce dont <code>&lt;img&gt;</code> a besoin pour afficher l’image dans l’interface. En imaginant que la source de ma couche s’appelle <code>source</code> et que j’ai bien stocké la résolution de ma carte dans <code>resolution</code> &nbsp;:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> url <span class="op">=</span> source<span class="op">.</span><span class="fu">getLegendUrl</span>(resolution)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Pour définir la source <code>src</code> d’un tag <code>&lt;img&gt;</code> dont l’id est “legend”, on s’y prend de la manière suivante&nbsp;:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'legend'</span>)<span class="op">.</span><span class="at">src</span> <span class="op">=</span> url<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+<p>Avec ces éléments, il est facile d’afficher une légende sur sa carte&nbsp;!</p>
 </section>
-<section id="tp-ajouter-une-popup-ou-un-tooltip" class="level2">
-<h2 class="anchored" data-anchor-id="tp-ajouter-une-popup-ou-un-tooltip">TP — Ajouter une popup (ou un tooltip)</h2>
-<p>…</p>
-<hr>
-<p>La suite est en cours de rédaction. Si vous êtes arrivé⋅e ici, déjà, vous êtes bien curieux⋅se&nbsp;! Ensuite, profitez-en pour réfléchir à ce dont vous auriez besoin dans votre projet GeoNum pour me demander de préparer de nouveaux exercices.</p>
-<p>Si vous avez déjà des idées, vous pouvez aussi vous lancer&nbsp;! Je reste disponible pour aider sur quelque chose qui n’a pas forcément été préparé dans mon TP 😃</p>
+<section id="légende-pour-la-couche-wfs" class="level3">
+<h3 class="anchored" data-anchor-id="légende-pour-la-couche-wfs">Légende pour la couche WFS</h3>
+<p>Il manque une légende pour notre couche WFS. Comme on définit un style en JavaScript, on va devoir “dessiner” nous-même notre légende. Je vous donne l’exemple des cercles proportionnels — pour des cercles “classiques” c’est encore plus simple. Voici quelques éléments pour vous guider&nbsp;:</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Écrire mon HTML
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Vous devez commencer, comme toujours, par créer vos éléments en HTML. Ici, il vous faudra au minimum une <code>&lt;div&gt;</code> pour contenir tout le reste de votre légende, et à l’intérieur une nouvelle <code>&lt;div&gt;</code> par cercle que vous souhaitez afficher. Par exemple, j’ai choisi d’afficher quatre cercles.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dessiner un cercle
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Mes cercles sont en fait des <code>&lt;div&gt;</code> stylisées en CSS. Voici les propriétés importantes&nbsp;:</p>
+<ul>
+<li><p><code>display</code>&nbsp;: utilisez <code>block</code> ou <code>inline-block</code> si vous trouvez que votre cercle ne réagit pas aux autres propriétés CSS.</p></li>
+<li><p><code>height</code> et <code>width</code>&nbsp;: si ces deux propriétés ne sont pas définies, elles sont nulles lorsque votre div est vide et vous ne la verrez donc pas. Il faut donner une hauteur et une largeur à notre futur cercle.</p></li>
+<li><p><code>border-radius</code>&nbsp;: c’est la propriété CSS qui permet d’arrondir les coins d’une div. Un cercle, en fait, c’est une div avec des coins très arrondis.</p></li>
+<li><p><code>background-color</code>&nbsp;: sans cette propriété, vous ne verrez pas votre cercle car il n’a pas de couleur.</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+J’ai des cercles, comment changer leur taille ?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Vous allez devoir vous baser sur la manière dont vous calculez le <code>rayon</code> de vos cercles proportionnels dans la légende OpenLayers (donc votre <code>Style</code>).</p>
+<p>À partir de là, vous avez plusieurs possibilités&nbsp;:</p>
+<ul>
+<li><p>Soit vous appliquez vous-même la formule à des “paliers” pour trouver la taille correspondante. Par exemple, j’utilise la formule du rayon pour calculer la hauteur et la largeur (= diamètre) du cercle qui doit représenter 50 deals et je définis manuellement <code>height</code> et <code>width</code> en CSS.</p></li>
+<li><p>Soit vous utilisez une formule en CSS pour ne pas avoir à faire le calcul vous-même pour chaque palier. Par exemple, pour mon palier 50 deals j’ai mis quelque part dans mon CSS cette propriété (attention, cette ligne de code correspond à MA formule <code>rayon</code> dans mon objet <code>Style</code>, pensez à bien utiliser la votre&nbsp;!)&nbsp;:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>height<span class="in">:</span> calc<span class="in">(</span>sqrt<span class="in">(</span>50<span class="in">)</span> <span class="op">*</span> 3px<span class="in">)</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Soit vous êtes super chaud et vous voulez automatiser le tout en JavaScript. Dans ce cas je vous laisse faire, vous savez déjà utiliser <code>setAttribute()</code>.</p></li>
+</ul>
+</div>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
