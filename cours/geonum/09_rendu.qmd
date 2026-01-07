@@ -11,7 +11,7 @@ Les consignes suivantes s’adressent à la promo du M2 GeoNum 2024-2025.
 
 ![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2lrb3g4NGV5Y3l2ejMxZXp3dnM1OHUzZmtiZHpqaHI1NW13anZ2ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NQ1YNmyVdaFH8KK6zu/giphy.webp){fig-alt="GIF : Miguel et Tulio ont peur des consignes" fig-align="center"}
 
-L’évaluation se fait (pour la plupart d’entre vous) par binôme. Vous devez vous baser soit sur un jeu de données que vous avez sélectionné vous-même, soit sur le jeu [land_matrix_agri](#0). Dans ce cas, je vous ai donné un "rôle" pour que tout le monde n’ait pas le même rendu. Cela s’applique aussi bien à OpenLayers qu’à la partie Leaflet.
+L’évaluation se fait (pour la plupart d’entre vous) par binôme. Vous devez vous baser soit sur un jeu de données que vous avez sélectionné vous-même, soit sur le jeu [land_matrix_agri](/data/land_matrix/land_matrix_agri.gpkg). Dans ce cas, je vous ai donné un "rôle" pour que tout le monde n’ait pas le même rendu. Cela s’applique aussi bien à OpenLayers qu’à la partie Leaflet.
 
 Merci de nous prévenir rapidement au moindre changement !
 
