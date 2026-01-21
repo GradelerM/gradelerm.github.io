@@ -4,7 +4,7 @@ format: html
 ---
 
 ::: callout-tip
-Les consignes suivantes s’adressent à la promo du M2 GeoNum 2024-2025.
+Les consignes suivantes s’adressent à la promo du M2 GeoNum 2025-2026.
 :::
 
 ## Consignes
@@ -25,8 +25,7 @@ Merci de nous prévenir rapidement au moindre changement !
 | Inès PERONNARD & Laura CARRIER & Jeanne DUPRETZ | Sujet 3) Lobby huile de palme |
 | Roland GRANDMAISON & Olivier PRIMA | Donnée perso |
 | Paul VALENTIN & Arthur THIBAUDON | Sujet 4) Cabinet de conseil |
-| Elias MAKHLOUF | Sujet 5) Spéculateur financier |
-| Fanny FORTIN | Soit binôme avec Elias, soit Sujet 7) Observatoire de la diversité agricole |
+| Elias MAKHLOUF & Fanny FORTIN | Sujet 5) Spéculateur financier |
 
 ::: {.callout-note collapse="true"}
 ## Sujet 1) ONG militante qui lutte contre l’accaparement des terres
@@ -180,7 +179,7 @@ On notera aussi le code en lui-même donc faites nous des commentaires utiles et
 
 ## Rendu
 
-Le rendu est attendu avant le **8 Février 2026**. Quand votre code est en ligne sur GitHub, prévenez-nous par mail : **marie.gradeler@gmail.com** et **bastien.cahier@gmail.com**.
+Le rendu est attendu pour le **12 Février 2026**. Quand votre code est en ligne sur GitHub, prévenez-nous par mail : **marie.gradeler@gmail.com** et **bastien.cahier@gmail.com**.
 
 Allez, au travail ! Faites-nous de magnifiques cartes !
 

@@ -206,7 +206,7 @@ Et voilà !
 
 ![Et en préparant ce TP, j’ai pu découvrir que la montée d’échelle est un sport qui existe. À vous d’être aussi efficaces avec votre code !](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTN0MjJ5aDZmY2piMzB6N3dvdGN4OXF6ODM2eXFqdTA2azVqMmtubiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MnV9h47Yjjujm/giphy.gif){fig-alt="GIF : Compétition de montée d’échelle" fig-align="center"}
 
-## TP — Ajouter une légende
+## TP – Ajouter une légende
 
 ### Légende pour la couche WMS
 
