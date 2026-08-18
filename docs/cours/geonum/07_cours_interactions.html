@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Interactions carte-interface</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -68,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-ff1415f384dbeb7aa012942a502a64fd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-1b31ff6697aff01d9ee8042ccbe5a4e6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -260,7 +263,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Avant de commencer le TP
+<span class="screen-reader-only">Important</span>Avant de commencer le TP
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -269,7 +272,7 @@ Avant de commencer le TP
 </div>
 <p><strong>Pour référence,</strong> je vous mets ici le contenu de mon code au <strong>démarrage</strong> de ce TP. Ça veut dire qu’il manque les éléments qu’on a ajoutés pendant le cours, alors repartez plutôt du votre&nbsp;!</p>
 <p><strong>index.html</strong></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="ot"> lang</span><span class="op">=</span><span class="st">"en"</span><span class="dt">&gt;</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> charset</span><span class="op">=</span><span class="st">"UTF-8"</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
@@ -281,9 +284,9 @@ Avant de commencer le TP
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"map"</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> type=</span><span class="st">"module"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"./main.js"</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>style.css</strong></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">@import</span> <span class="st">"node_modules/ol/ol.css"</span><span class="op">;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">@import</span> <span class="st">"node_modules/ol/ol.css"</span><span class="op">;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>html<span class="op">,</span> body {</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">margin</span><span class="ch">:</span> <span class="dv">0</span><span class="op">;</span></span>
@@ -294,9 +297,9 @@ Avant de commencer le TP
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">top</span><span class="ch">:</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">bottom</span><span class="ch">:</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">width</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>main.js</strong></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="st">'./style.css'</span><span class="op">;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="st">'./style.css'</span><span class="op">;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {<span class="bu">Map</span><span class="op">,</span> View} <span class="im">from</span> <span class="st">'ol'</span><span class="op">;</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { ImageWMS } <span class="im">from</span> <span class="st">'ol/source'</span><span class="op">;</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> TileLayer <span class="im">from</span> <span class="st">'ol/layer/Tile'</span><span class="op">;</span></span>
@@ -337,7 +340,7 @@ Avant de commencer le TP
 <span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>    <span class="dt">center</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">0</span>]<span class="op">,</span></span>
 <span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>    <span class="dt">zoom</span><span class="op">:</span> <span class="dv">2</span></span>
 <span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="créer-un-menu-daffichage-de-couches" class="level3">
 <h3 class="anchored" data-anchor-id="créer-un-menu-daffichage-de-couches">Créer un menu d’affichage de couches</h3>
 <p>On souhaite maintenant créer un menu avec des cases de type “checkbox” qui vont nous permettre de choisir si on veut afficher ou masquer une couche. On doit commencer par créer cet élément dans l’interface en modifiant <code>index.html</code>.</p>
@@ -346,16 +349,16 @@ Avant de commencer le TP
 <li><p>Ajoutez à l’intérieur un input de type checkbox avec la balise <code>&lt;input type="checkbox"/&gt;</code> et donnez lui un label avec le nom de la couche</p></li>
 </ul>
 <p>Comme c’est la première fois qu’on doit écrire du HTML ensemble, je vous guide pas à pas. Commencez par ouvrir <code>index.html</code> et ajouter sous la <code>div</code> de votre carte (la div <code>map</code>) une autre div, comme ceci&nbsp;:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"layers"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"menu"</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"layers"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"menu"</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>On crée une nouvelle <code>div</code> dont l’identifiant est <code>layers</code>, ce qui nous permettra de la retrouver par la suite. On lui a aussi ajouté une classe qu’on appelle <code>menu</code> et qui nous permettra d’appliquer un seul style à tous nos éléments de menu. Si c’est un peu flou maintenant, vous comprendrez plus tard en ajoutant d’autres menus.</p>
 <p>Comme notre <code>div</code> est vide, on ne la voit pas. Ça va être difficile de la positionner ailleurs sur la carte. J’ai l’habitude de mettre un peu n’importe quoi à l’intérieur, juste le temps de régler mon CSS correctement. Ma div ressemble donc à&nbsp;:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"layers"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"menu"</span><span class="dt">&gt;</span>cthulhu fhtagn<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"layers"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"menu"</span><span class="dt">&gt;</span>cthulhu fhtagn<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>On pourra retirer le texte après. Vous remarquerez qu’on ne voit (probablement) toujours pas notre texte. Essayez de rafraîchir la page - sauf si vous avez déjà modifié votre CSS, vous devriez le voir tout en haut à gauche de l’écran avant que la carte ne le recouvre&nbsp;! C’est normal, nous n’avons pas “positionné” notre élément. Ce n’est pas un cours de CSS donc on ne rentrera pas dans les détails. Ouvrez <code>styles.css</code> et ajoutez le code suivant&nbsp;:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.menu</span> {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.menu</span> {</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">position</span><span class="ch">:</span> <span class="dv">absolute</span><span class="op">;</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>On sélectionne toutes les balises HTML avec la classe <code>menu</code> et on leur applique un positionnement absolu. Sauvegardez et vous devriez voir apparaître le texte. Super&nbsp;! Mais… c’est moche et ça ne ressemble pas DU TOUT à un menu. Pas de souci, on y arrive. Ajoutez les éléments suivants (j’ai commenté le code pour vous aider à comprendre)&nbsp;:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.menu</span> {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.menu</span> {</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Positionnement dans le body */</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">position</span><span class="ch">:</span> <span class="dv">absolute</span><span class="op">;</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">top</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
@@ -371,7 +374,7 @@ Avant de commencer le TP
 <span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Rectangle blanc avec coins arrondis */</span></span>
 <span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">white</span><span class="op">;</span></span>
 <span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="kw">border-radius</span><span class="ch">:</span> <span class="dv">8</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ah, c’est déjà plus sympa&nbsp;! On va même pouvoir supprimer le texte de notre balise HTML dans <code>index.html</code>. En gros, voilà ce que je fais avec ce code CSS&nbsp;:</p>
 <ul>
 <li><p>J’indique que l’élément a une position absolue dans le body (donc pas relative à un élément) et qu’il doit se trouver à 20 pixels du haut (<code>top</code>) et 20 pixels de la droite (<code>right</code>) de l’écran.</p></li>
@@ -381,10 +384,10 @@ Avant de commencer le TP
 </ul>
 <p>Voilà globalement le niveau maximum de difficulté du CSS que je vais vous demander pour styliser votre application, mais vous pouvez évidemment allez plus loin&nbsp;!</p>
 <p>Maintenant qu’on a un menu, il va falloir ajouter la checkbox qui permettra d’afficher ou masquer ma couche. Retournez dans <code>index.html</code> et ajoutez la balise <code>&lt;input&gt;</code> et son <code>&lt;label&gt;</code> dans notre <code>&lt;div id="layers&gt;</code>, comme ceci&nbsp;:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"layers"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"menu"</span><span class="dt">&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"layers"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"menu"</span><span class="dt">&gt;</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"checkbox"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"checkbox-countries"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"checkbox-countries"</span><span class="ot"> checked </span><span class="dt">/&gt;</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">label</span><span class="ot"> for</span><span class="op">=</span><span class="st">"checkbox-countries"</span><span class="dt">&gt;</span>Deals by countries<span class="dt">&lt;/</span><span class="kw">label</span><span class="dt">&gt;</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Vérifiez que vous pouvez cliquer sur la checkbox pour la cocher/décocher. L’interface est prête&nbsp;! Il faut maintenant qu’on parvienne à dire à notre application qu’il faut afficher ou masquer la couche deals_by_country en fonction.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -392,7 +395,7 @@ Avant de commencer le TP
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Attention à bien différencier ajouter/retirer une couche et modifier sa visibilité
+<span class="screen-reader-only">Important</span>Attention à bien différencier ajouter/retirer une couche et modifier sa visibilité
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -414,13 +417,13 @@ Attention à bien différencier ajouter/retirer une couche et modifier sa visibi
 </div>
 <p>La méthode <code>setVisible()</code> prend un argument <code>visible</code>. Cet argument est de type “boolean”, il peut donc prendre la valeur <code>true</code> ou <code>false</code>. On va faire le test et utiliser cette fonction pour faire disparaître notre couche. Allez dans <code>main.js</code> et ajouter cette ligne à la fin de votre script.</p>
 <p><strong>Attention&nbsp;!</strong> <code>layerDealsByCountry</code> est le nom de la variable dans laquelle j’ai créé ma couche “deals_by_country”. Si vous avez nommé votre couche différemment, n’oubliez pas de changer le nom&nbsp;!</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>layerDealsByCountry<span class="op">.</span><span class="fu">setVisible</span>(<span class="kw">false</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>layerDealsByCountry<span class="op">.</span><span class="fu">setVisible</span>(<span class="kw">false</span>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Normalement, la couche ne devrait plus être visible sur la carte. Super, la méthode a fonctionné&nbsp;! Il ne nous reste plus qu’à “connecter” cette méthode à notre élément checkbox.</p>
 <p>On a déjà vu qu’il est possible de trouver un élément HTML et de le modifier en utilisant du JavaScript. Pour trouver un élément, le plus facile est de rechercher son identifiant <code>id</code>. Ajoutez en bas de <code>main.js</code>&nbsp;:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> checkboxCountries <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'checkbox-countries'</span>)<span class="op">;</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(checkboxCountries)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> checkboxCountries <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'checkbox-countries'</span>)<span class="op">;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(checkboxCountries)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Sauvegardez et allez dans la console de votre navigateur. Vous devriez voir apparaître votre tag <code>&lt;input&gt;</code> dans la console. Si vous le survolez avec la souris, la checkbox devrait être passée en surbrillance. Si ça fonctionne, parfait ! Ça veut dire qu’on arrive bien à récupérer notre élément de checkbox. Maintenant, on souhaite exécuter du code lorsque son statut “checked” change. Pour cela, on doit “écouter” la checkbox pour savoir si l’évènement “change” a eu lieu.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> checkboxCountries <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'checkbox-countries'</span>)<span class="op">;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> checkboxCountries <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'checkbox-countries'</span>)<span class="op">;</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>checkboxCountries<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">'change'</span><span class="op">,</span> (<span class="bu">event</span>) <span class="kw">=&gt;</span> {</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="bu">event</span><span class="op">.</span><span class="at">currentTarget</span><span class="op">.</span><span class="at">checked</span>) {</span>
@@ -430,13 +433,13 @@ Attention à bien différencier ajouter/retirer une couche et modifier sa visibi
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">// On fait des trucs quand la checkbox n’est PAS checkée</span></span>
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Pas checked"</span>)<span class="op">;</span></span>
 <span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><p><code>addEventListener</code> indique qu’on souhaite “écouter” les évènements de notre checkbox. On précise le type d’évènement avec le premier paramètre, <code>'change'</code>.</p></li>
 <li><p>La condition <code>if</code> vérifie si notre checkbox est checkée ou non. On récupère cette information grâce à <code>event.current.checked</code>. Si cette condition est <code>true</code>, on affiche “Checked” dans la console. Si cette condition est <code>false</code>, on affiche “Pas checked”.</p></li>
 </ul>
 <p>Essayez&nbsp;! Cliquez sur la checkbox et surveillez votre console. On voit bien s’afficher les messages. On y est presque&nbsp;! Maintenant, au lieu d’afficher du texte, on souhaite afficher la couche quand la condition est <code>true</code> et la masquer quand la condition est <code>false</code>.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> checkboxCountries <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'checkbox-countries'</span>)<span class="op">;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> checkboxCountries <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'checkbox-countries'</span>)<span class="op">;</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>checkboxCountries<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">'change'</span><span class="op">,</span> (<span class="bu">event</span>) <span class="kw">=&gt;</span> {</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="bu">event</span><span class="op">.</span><span class="at">currentTarget</span><span class="op">.</span><span class="at">checked</span>) {</span>
@@ -446,14 +449,14 @@ Attention à bien différencier ajouter/retirer une couche et modifier sa visibi
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">// On fait des trucs quand la checkbox n’est PAS checkée</span></span>
 <span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    layer_deals_by_country<span class="op">.</span><span class="fu">setVisible</span>(<span class="kw">false</span>)<span class="op">;</span></span>
 <span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Pensez bien à…
+<span class="screen-reader-only">Caution</span>Pensez bien à…
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -481,8 +484,8 @@ Tip
 </div>
 <div class="callout-body-container callout-body">
 <p>Sauf indication contraire (via du CSS), les éléments HTML sont affichés dans l’ordre dans lequel ils sont déclarés.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"2"</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"1"</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"2"</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"1"</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Dans cet exemple, ma div 1 sera plus bas que ma div 2. Ça devrait vous aider !</p>
 </div>
 </div>
@@ -491,7 +494,7 @@ Tip
 <h3 class="anchored" data-anchor-id="interroger-une-couche-wms-et-afficher-les-résultats">Interroger une couche WMS et afficher les résultats</h3>
 <p>On souhaite maintenant interroger la couche deals en cliquant dessus. Cette étape est plus compliquée que la précédente car elle va nous demander d’utiliser <code>fetch()</code>. Normalement vous l’avez déjà abordé dans un autre cours, mais on va procéder petit à petit pour bien comprendre ce qu’on fait. Ouvrez l’exemple OpenLayers <a href="https://openlayers.org/en/latest/examples/getfeatureinfo-image.html">WMS GetFeatureInfo (Image Layer)</a>.</p>
 <p>Commençons par s’intéresser à cette partie du code&nbsp;:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>map<span class="op">.</span><span class="fu">on</span>(<span class="st">'singleclick'</span><span class="op">,</span> <span class="kw">function</span> (evt) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>map<span class="op">.</span><span class="fu">on</span>(<span class="st">'singleclick'</span><span class="op">,</span> <span class="kw">function</span> (evt) {</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'info'</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="st">''</span><span class="op">;</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> viewResolution <span class="op">=</span> <span class="co">/** </span><span class="an">@type</span><span class="co"> {number} */</span> (view<span class="op">.</span><span class="fu">getResolution</span>())<span class="op">;</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> url <span class="op">=</span> wmsSource<span class="op">.</span><span class="fu">getFeatureInfoUrl</span>(</span>
@@ -507,7 +510,7 @@ Tip
 <span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'info'</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> html<span class="op">;</span></span>
 <span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>      })<span class="op">;</span></span>
 <span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><p><code>.on('singleclick')</code> permet d’exécuter une fonction lorsqu’on clique sur la carte.</p></li>
 <li><p><code>document.getElementById()</code> récupère l’élément ‘info’ dans lequel ils affichent leurs résultats.</p></li>
@@ -517,7 +520,7 @@ Tip
 <li><p><code>document.getElementById()</code> récupère à nouveau l’élément ‘info’ et définir la valeur de son <code>innerHTML</code> pour pouvoir afficher les résultats.</p></li>
 </ul>
 <p>Compliqué&nbsp;? Non, ça va aller&nbsp;! On va tranquillement réécrire cette fonction pour la couche <code>deals</code>. Pour rappel, voici comment j’appelle la couche <code>deals</code> dans mon code&nbsp;:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> sourceDeals <span class="op">=</span> <span class="kw">new</span> <span class="fu">ImageWMS</span>({</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> sourceDeals <span class="op">=</span> <span class="kw">new</span> <span class="fu">ImageWMS</span>({</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">url</span><span class="op">:</span> geoserverWms<span class="op">,</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">params</span><span class="op">:</span> { <span class="st">'LAYERS'</span> <span class="op">:</span> <span class="st">'land_matrix:deals'</span> }<span class="op">,</span></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">serverType</span><span class="op">:</span> <span class="st">'geoserver'</span><span class="op">,</span></span>
@@ -525,11 +528,11 @@ Tip
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> layerDeals <span class="op">=</span> <span class="kw">new</span> <span class="fu">ImageLayer</span>({</span>
 <span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">source</span><span class="op">:</span> sourceDeals</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Je commence donc par exécuter une fonction lorsque je clique sur la carte&nbsp;:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>map<span class="op">.</span><span class="fu">on</span>(<span class="st">'singleclick'</span><span class="op">,</span> (<span class="bu">event</span>) <span class="kw">=&gt;</span> {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>map<span class="op">.</span><span class="fu">on</span>(<span class="st">'singleclick'</span><span class="op">,</span> (<span class="bu">event</span>) <span class="kw">=&gt;</span> {</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"J’ai cliqué sur la carte&nbsp;!"</span>)<span class="op">;</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Sauvegardez, gardez la console de votre navigateur ouverte et cliquez sur la carte pour vérifier que le message apparaît bien. Si c’est bon, on vient d’apprendre comment exécuter des fonctions en cliquant sur la carte&nbsp;! On sait ensuite que dans l’exemple ils utilisent la méthode <code>getFeatureInfoUrl()</code> de leur source de données pour récupérer les informations des features. Ouvrez la <a href="https://openlayers.org/en/latest/apidoc/module-ol_source_ImageWMS-ImageWMS.html#getFeatureInfoUrl">documentation de ImageWMS</a>, on va en avoir besoin. Voilà ce qu’elle nous dit au sujet de la méthode <code>getFeatureInfoUrl()</code>&nbsp;:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -544,52 +547,52 @@ Tip
 <li><p><code>params</code>, un objet contenant plusieurs paramètres comme le format désiré du résultat ou encore les couches qu’on souhaite interroger</p></li>
 </ul>
 <p>Récupérons ces éléments dans l’ordre en commençant par les coordonnées. Dans l’exemple, ils référencent directement la source de coordonnées <code>evt.coordinate</code> dans la fonction… mais ça va un peu vite. Pour mieux comprendre, on va stocker les coordonnées de notre évènement (= notre clic) dans une constante.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>map<span class="op">.</span><span class="fu">on</span>(<span class="st">'singleclick'</span><span class="op">,</span> (<span class="bu">event</span>) <span class="kw">=&gt;</span> {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>map<span class="op">.</span><span class="fu">on</span>(<span class="st">'singleclick'</span><span class="op">,</span> (<span class="bu">event</span>) <span class="kw">=&gt;</span> {</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"J’ai cliqué sur la carte&nbsp;!"</span>)<span class="op">;</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> coord <span class="op">=</span> <span class="bu">event</span><span class="op">.</span><span class="at">coordinate</span><span class="op">;</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>En fait, l’évènement ‘singleclick’ de la carte <code>map</code> permet de récupérer les coordonnées du clic en accédant à sa propriété <code>coordinate</code>. On écrit donc <code>event.coordinate</code>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Pourquoi on a “event” et pas “evt”&nbsp;?
+<span class="screen-reader-only">Note</span>Pourquoi on a “event” et pas “evt”&nbsp;?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>J’ai fait exprès de changer le nom du paramètre pour appeler tous les évènements “event” dans notre code et pour ajouter cette petite note. En fait, quand on crée une fonction, on peut nommer notre paramètre comme on veut. Par exemple, dans le code suivant&nbsp;:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>map<span class="op">.</span><span class="fu">on</span>(<span class="st">'singleclick'</span><span class="op">,</span> (<span class="bu">event</span>) <span class="kw">=&gt;</span> {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>map<span class="op">.</span><span class="fu">on</span>(<span class="st">'singleclick'</span><span class="op">,</span> (<span class="bu">event</span>) <span class="kw">=&gt;</span> {</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> coord <span class="op">=</span> <span class="bu">event</span><span class="op">.</span><span class="at">coordinate</span><span class="op">;</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>… la variable <code>coordinates</code> a la même valeur que si j’écris&nbsp;:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>map<span class="op">.</span><span class="fu">on</span>(<span class="st">'singleclick'</span><span class="op">,</span> (evt) <span class="kw">=&gt;</span> {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>map<span class="op">.</span><span class="fu">on</span>(<span class="st">'singleclick'</span><span class="op">,</span> (evt) <span class="kw">=&gt;</span> {</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> coord <span class="op">=</span> evt<span class="op">.</span><span class="at">coordinate</span><span class="op">;</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>… ou encore&nbsp;:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>map<span class="op">.</span><span class="fu">on</span>(<span class="st">'singleclick'</span><span class="op">,</span> (monEvenementQuiVientDeMaCarteQuandJeClique) <span class="kw">=&gt;</span> {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>map<span class="op">.</span><span class="fu">on</span>(<span class="st">'singleclick'</span><span class="op">,</span> (monEvenementQuiVientDeMaCarteQuandJeClique) <span class="kw">=&gt;</span> {</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> coord <span class="op">=</span> monEvenementQuiVientDeMaCarteQuandJeClique<span class="op">.</span><span class="at">coordinate</span><span class="op">;</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Bien sûr, si vous ne vous sentez pas encore trop en confiance, inutile de renommer ce genre d’éléments pour uniformiser le code. Vous pouvez garder ce que vous voyez dans le code OpenLayers.</p>
 </div>
 </div>
 </div>
 <p>Après les coordonnées, on récupère la résolution. On sait qu’on lit la résolution depuis la vue de la carte, donc on peut d’abord récupérer cette vue PUIS lire sa résolution (toujours dans notre fonction, pas à l’extérieur&nbsp;!)&nbsp;:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> view <span class="op">=</span> map<span class="op">.</span><span class="fu">getView</span>()<span class="op">;</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> res <span class="op">=</span> view<span class="op">.</span><span class="fu">getResolution</span>()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> view <span class="op">=</span> map<span class="op">.</span><span class="fu">getView</span>()<span class="op">;</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> res <span class="op">=</span> view<span class="op">.</span><span class="fu">getResolution</span>()<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>On peut aussi enchaîner les méthodes comme ceci&nbsp;:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> res <span class="op">=</span> map<span class="op">.</span><span class="fu">getView</span>()<span class="op">.</span><span class="fu">getResolution</span>()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> res <span class="op">=</span> map<span class="op">.</span><span class="fu">getView</span>()<span class="op">.</span><span class="fu">getResolution</span>()<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Pourquoi on ne reprend pas le /** @type */ du code original&nbsp;?
+<span class="screen-reader-only">Note</span>Pourquoi on ne reprend pas le /** @type */ du code original&nbsp;?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -600,9 +603,9 @@ Pourquoi on ne reprend pas le /** @type */ du code original&nbsp;?
 </div>
 </div>
 <p>On est à mi-chemin et le reste est très simple. La projection doit être indiquée par une chaîne de caractères&nbsp;:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> proj <span class="op">=</span> <span class="st">'EPSG:3857'</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> proj <span class="op">=</span> <span class="st">'EPSG:3857'</span><span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Et on reprend les paramètres de l’exemple pour indiquer qu’on veut récupérer notre réponse au format HTML. Par défaut, GeoServer renverra la table attributaire de l’élément sous forme d’un tableau en HTML.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> parametres <span class="op">=</span> {<span class="st">'INFO_FORMAT'</span><span class="op">:</span> <span class="st">'text/html'</span>}<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> parametres <span class="op">=</span> {<span class="st">'INFO_FORMAT'</span><span class="op">:</span> <span class="st">'text/html'</span>}<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>On a tous nos éléments, il ne nous reste qu’à appeler la méthode <code>getFeatureInfoUrl()</code> sur notre <strong>source</strong> de données (attention, pas la couche&nbsp;!) pour générer l’url qui nous permettra de récupérer la réponse. La documentation nous indique que les paramètres doivent être renseignés dans l’ordre suivant&nbsp;:</p>
 <ul>
 <li><p>coordinate</p></li>
@@ -610,16 +613,16 @@ Pourquoi on ne reprend pas le /** @type */ du code original&nbsp;?
 <li><p>projection</p></li>
 <li><p>params</p></li>
 </ul>
-<div class="sourceCode" id="cb25"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> url <span class="op">=</span> sourceDeals<span class="op">.</span><span class="fu">getFeatureInfoUrl</span>(coord<span class="op">,</span> res<span class="op">,</span> proj<span class="op">,</span> parametres)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> url <span class="op">=</span> sourceDeals<span class="op">.</span><span class="fu">getFeatureInfoUrl</span>(coord<span class="op">,</span> res<span class="op">,</span> proj<span class="op">,</span> parametres)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ou encore, pour ressembler à l’exemple&nbsp;:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> url <span class="op">=</span> sourceDeals<span class="op">.</span><span class="fu">getFeatureInfoUrl</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> url <span class="op">=</span> sourceDeals<span class="op">.</span><span class="fu">getFeatureInfoUrl</span>(</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  coord<span class="op">,</span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  res<span class="op">,</span></span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  proj<span class="op">,</span></span>
 <span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  parametres</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Pour récapituler, voilà à quoi ressemble ma fonction pour le moment. J’ai ajouté un <code>console.log()</code> pour voir l’url s’afficher dans ma console et donc bien vérifier que j’arrive à générer cette adresse.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>map<span class="op">.</span><span class="fu">on</span>(<span class="st">'singleclick'</span><span class="op">,</span> (<span class="bu">event</span>) <span class="kw">=&gt;</span> {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>map<span class="op">.</span><span class="fu">on</span>(<span class="st">'singleclick'</span><span class="op">,</span> (<span class="bu">event</span>) <span class="kw">=&gt;</span> {</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"J’ai cliqué sur la carte&nbsp;!"</span>)<span class="op">;</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> coord <span class="op">=</span> <span class="bu">event</span><span class="op">.</span><span class="at">coordinate</span><span class="op">;</span></span>
@@ -630,15 +633,15 @@ Pourquoi on ne reprend pas le /** @type */ du code original&nbsp;?
 <span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> url <span class="op">=</span> sourceDeals<span class="op">.</span><span class="fu">getFeatureInfoUrl</span>(coord<span class="op">,</span> res<span class="op">,</span> proj<span class="op">,</span> parametres)<span class="op">;</span></span>
 <span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(url)<span class="op">;</span></span>
-<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Attention, voilà la partie plus compliquée&nbsp;: maintenant qu’on a une addresse, on doit utilier la fonction <code>fetch()</code> pour récupérer la donnée. C’est une fonction bien particulière. Elle est dite “asynchrone” car elle ne bloque pas le reste du code lorsqu’elle tourne, contrairement aux autres fonctions “synchrones”. Si j’écris une fonction <code>reboursSynchrone()</code>, l’exécution de mon code et donc mon application est bloquée pendant que la fonction de mon compte à rebours s’exécute. Si c’est quasiment instantané, ça ne pose pas de problème. Si c’est quelque chose de plus lent, par exemple un compte à rebours de dix secondes ou bien <strong>attendre la réponse d’un serveur</strong> dans le cas de notre fetch, notre application est bloquée et on est bien embêtés. Au contraire, si j’écris une fonction <code>reboursAsynchrone()</code> <strong>l’application n’attendra pas</strong> que la fonction ait terminé son compte à rebours pour pouvoir continuer de faire des trucs.</p>
 <p>Du coup, l’asynchrone, c’est très pratique&nbsp;! Par contre, comme c’est particulier et qu’il est plus difficile de prévoir quand elle va terminer son exécution et si elle va rencontrer des erreurs ou non, on va devoir lui réserver un traitement particulier. Reprenons le code de l’exemple pour l’expliquer petit à petit.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch</span>(url)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fetch</span>(url)</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">then</span>((response) <span class="kw">=&gt;</span> response<span class="op">.</span><span class="fu">text</span>())</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">then</span>((html) <span class="kw">=&gt;</span> {</span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// J’ai modifié la ligne suivante pour simplifier, on s’intéressera à elle un peu plus tard</span></span>
 <span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"C’est une réussite&nbsp;!"</span>)<span class="op">;</span></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Vous noterez l’utilisation de méthodes <code>.then()</code> qui contiennent des fonctions. Ce sont les fonctions à exécuter quand le maillon précédent de la chaîne a fini de se résoudre. Si on devait écrire en langage courant ce que signifie ce code, voilà ce que ça donnerait&nbsp;:</p>
 <ul>
 <li><p><code>fetch(url)</code> → “Récupère les informations qui sont disponibles à cette adresse”</p></li>
@@ -646,22 +649,22 @@ Pourquoi on ne reprend pas le /** @type */ du code original&nbsp;?
 <li><p><code>.then((html) =&gt; { console.log("C’est une réussite&nbsp;!"); })</code> → “Ensuite, quand tu as <strong>réussi</strong> l’étape précédente, stocke le texte au format HTML de l’étape précédente dans une variable que j’appelle”html” et affiche un message dans ma console”</p></li>
 </ul>
 <p>Vous noterez que j’ai précisé que <code>.then()</code> s’exécute si l’étape précédente a réussi. Si ce n’est pas le cas, l’exécution de notre chaîne de méthodes <code>fetch()</code> s’arrête et un message d’erreur s’affiche dans la console. Comme on a plutôt confiance en notre GeoServer, on peut se lancer et exécuter ce <code>fetch()</code> mais attention, seulement si on a bien une addresse à interroger&nbsp;! Si la variable <code>url</code> est <code>undefined</code>, notre application risque de péter les plombs. On ajoute une condition autour du <code>fetch()</code> pour éviter les erreurs&nbsp;:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (url) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (url) {</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fetch</span>(url)</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">then</span>((response) <span class="kw">=&gt;</span> response<span class="op">.</span><span class="fu">text</span>())</span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">then</span>((html) <span class="kw">=&gt;</span> {</span>
 <span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>      <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"C’est une réussite&nbsp;!"</span>)<span class="op">;</span></span>
 <span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>      <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(html)<span class="op">;</span></span>
 <span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Vous pouvez tester les <code>console.log()</code>. Le HTML qu’on obtient n’est pas très gracieux tel quel, il vaudrait mieux l’afficher dans l’interface de l’application&nbsp;!</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Au secours, je n’ai toujours pas compris fetch()
+<span class="screen-reader-only">Note</span>Au secours, je n’ai toujours pas compris fetch()
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -678,9 +681,9 @@ Au secours, je n’ai toujours pas compris fetch()
 </div>
 </div>
 <p>Quand on doit afficher un nouvel élément dans l’interface, il faut toujours penser à créer une nouvelle balise HTML (souvent une <code>&lt;div&gt;</code>) pour le mettre à l’intérieur. Comme pour l’exemple précédent, on crée une div dans le HTML. Je place la mienne après <code>&lt;div id="layers"&gt;</code> et je remets n’importe quoi dedans juste pour la voir dans mon interface.</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"attributes"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"menu"</span><span class="dt">&gt;</span>cthulhu ftaghn<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"attributes"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"menu"</span><span class="dt">&gt;</span>cthulhu ftaghn<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Sauvegardez et regardez l’application. Et là, horreur&nbsp;! Notre menu de couches est remplacé par la nouvelle div qu’on vient de créer&nbsp;! C’est normal, elles ont le même style car on a aussi appelé <code>class="menu"</code> dans la div. Le problème, c’est que dans <code>styles.css</code>, on voit que tous nos menus sont positionnés au même endroit&nbsp;: regardez <code>top</code> et <code>right</code>.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.menu</span> {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.menu</span> {</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Positionnement dans le body */</span></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">position</span><span class="ch">:</span> <span class="dv">absolute</span><span class="op">;</span></span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">top</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
@@ -696,9 +699,9 @@ Au secours, je n’ai toujours pas compris fetch()
 <span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Rectangle blanc avec coins arrondis */</span></span>
 <span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">white</span><span class="op">;</span></span>
 <span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a>  <span class="kw">border-radius</span><span class="ch">:</span> <span class="dv">8</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>On va donc devoir positionner nos deux <code>&lt;div&gt;</code> indépendamment l’une de l’autre. Pour les sélectionner individuellement, on peut utiliser le sélecteur <code>#</code> qui permet de chercher par <code>id</code>. Voilà mon code&nbsp;:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.menu</span> {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.menu</span> {</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Padding */</span></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">8</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -723,11 +726,11 @@ Au secours, je n’ai toujours pas compris fetch()
 <span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>  <span class="kw">position</span><span class="ch">:</span> <span class="dv">absolute</span><span class="op">;</span></span>
 <span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a>  <span class="kw">top</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
 <span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a>  <span class="kw">left</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Voilà, maintenant <code>.menu</code> me permet de définir un padding, des dimensions minimales, une couleur de background et des coins arrondis pour tous mes éléments avec la classe <code>class="menu"</code>, mais par contre j’ai bien positionné indépendamment mon menu de layers et ma nouvelle div <code>attributes</code>.</p>
 <p>Maintenant, modifiez le style de <code>#attributes</code> pour l’afficher en bas de la carte et sur toute la largeur de l’écran. Il nous faut beaucoup d’espace pour afficher notre table.</p>
 <p>C’est bon, vous avez une <code>&lt;div id="attributes"&gt;</code> qui vous plaît&nbsp;? Vous pouvez supprimer le texte qui était dans la div, on n’en aura plus besoin. Maintenant, on cherche à dire à notre application&nbsp;: “Prends le texte HTML que je récupère grâce à ma fonction et mets-le dans ma div Attributes”. On a formulé notre idée en langage naturel, on va maintenant pouvoir l’écrire en JavaScript. D’abord, on se demande à quel endroit dans notre code on récupère ce HTML. Souvenez-vous&nbsp;:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Interroger la couche deals et afficher les résultats</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Interroger la couche deals et afficher les résultats</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>map<span class="op">.</span><span class="fu">on</span>(<span class="st">'singleclick'</span><span class="op">,</span> (<span class="bu">event</span>) <span class="kw">=&gt;</span> {</span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"J’ai cliqué sur la carte&nbsp;!"</span>)<span class="op">;</span></span>
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -747,13 +750,13 @@ Au secours, je n’ai toujours pas compris fetch()
 <span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(html)<span class="op">;</span></span>
 <span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a>      })<span class="op">;</span></span>
 <span id="cb33-20"><a href="#cb33-20" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-21"><a href="#cb33-21" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Vous voyez mon commentaire&nbsp;? C’est dans cette fonction qu’on va écrire notre code. Zoomons sur cette petite partie&nbsp;:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">then</span>((html) <span class="kw">=&gt;</span> {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">then</span>((html) <span class="kw">=&gt;</span> {</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Dans cette fonction, on a accès à notre "html" !</span></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"C’est une réussite&nbsp;!"</span>)<span class="op">;</span></span>
 <span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(html)<span class="op">;</span></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>      })<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>      })<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Si je traduis le texte précédent en langage naturel, pour rappel, ça fait&nbsp;:</p>
 <ul>
 <li><p>Quand tu as <strong>réussi</strong> l’étape précédente (souvenez-vous de <em>then</em>), alors stocke le résultat dans une variable <code>html</code> et&nbsp;:</p></li>
@@ -761,7 +764,7 @@ Au secours, je n’ai toujours pas compris fetch()
 <li><p>Affiche le contenu du HTML dans ma console</p></li>
 </ul>
 <p>On aimerait remplacer les deux dernières étapes par “affiche le HTML dans mon interface”. Pour cela, on utilise la ligne de code suivante (à ajouter au bon endroit dans la fonction, à vous de jouer)&nbsp;:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'attributes'</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> html<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'attributes'</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> html<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Super, vous savez maintenant requêter une couche WMS&nbsp;! Le résultat est un peu moche pour le moment mais vous pourrez revenir plus tard pour l’affiner.</p>
 </section>
 <section id="filtrer-des-couches-wms" class="level3">
@@ -775,11 +778,11 @@ Au secours, je n’ai toujours pas compris fetch()
 </figure>
 </div>
 <p>Collez le texte suivant dans le champ CQL et cliquez sur “Appliquer”&nbsp;:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode html cql code-with-copy"><code class="sourceCode html"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>deal_size &gt; 10000</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode html cql code-with-copy"><code class="sourceCode html"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>deal_size &gt; 10000</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Normalement, vous avez vu certains points disparaître. Il ne vous reste plus que les deals de plus de 10&nbsp;000 hectares. Si vous avez un doute, vous pouvez vérifier en cliquant sur les points pour afficher leurs attributs. C’est facile, non&nbsp;? Essayez les filtres suivant et essayez de comprendre à quoi ils peuvent servir&nbsp;:</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>silver = true</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb38"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>target_country = 'Argentina'</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb39"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>target_country = 'Argentina' OR target_country = 'Philippines'</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>silver = true</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>target_country = 'Argentina'</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>target_country = 'Argentina' OR target_country = 'Philippines'</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -795,14 +798,14 @@ Important
 </div>
 </div>
 <p>Bien, vous savez maintenant écrire un filtre simple en CQL, mais comment est-ce qu’on fait pour filtrer la couche depuis notre application OpenLayers&nbsp;? Voici mon code pour appliquer à ma couche <code>deals</code> un filtre qui va uniquement récupérer les mines qui se trouvent en Argentine (<em>Argentina</em>) ou aux Philippines (<em>Philippines</em>). Comparez ce snippet avec votre code pour comprendre où mettre ce code et ce qu’il fait&nbsp;:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> sourceDeals <span class="op">=</span> <span class="kw">new</span> <span class="fu">ImageWMS</span>({</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> sourceDeals <span class="op">=</span> <span class="kw">new</span> <span class="fu">ImageWMS</span>({</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">url</span><span class="op">:</span> geoserverWms<span class="op">,</span></span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">params</span><span class="op">:</span> {</span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'LAYERS'</span> <span class="op">:</span> <span class="st">'land_matrix:deals'</span><span class="op">,</span></span>
 <span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"CQL_FILTER"</span> <span class="op">:</span> <span class="st">"target_country = 'Argentina' OR target_country = 'Philippines'"</span><span class="op">,</span></span>
 <span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
 <span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">serverType</span><span class="op">:</span> <span class="st">'geoserver'</span><span class="op">,</span></span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -831,7 +834,7 @@ Important
 </figure>
 </div>
 <p>Vous voyez où on veut en venir&nbsp;? Comme on commence à avoir l’habitude de faire des menus, je vous laisse créer et positionner celui-ci avec un peu de HTML et de CSS et on passe directement à l’ajout des boutons. On va devoir mettre dans notre élément <code>&lt;div&gt;</code> plusieurs boutons radio avec la balise <code>&lt;input type="radio"&gt;</code>. Voilà le code pour les éléments “Or” et “Argent”&nbsp;:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- Radio button menu - production --&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- Radio button menu - production --&gt;</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"production"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"menu"</span><span class="dt">&gt;</span></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span></span>
@@ -845,7 +848,7 @@ Important
 <span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">label</span><span class="ot"> for</span><span class="op">=</span><span class="st">"silver"</span><span class="dt">&gt;</span>Argent<span class="dt">&lt;/</span><span class="kw">label</span><span class="dt">&gt;</span></span>
 <span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
 <span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Vous noterez plusieurs choses&nbsp;:</p>
 <ul>
 <li><p><code>&lt;input&gt;</code> et <code>&lt;label&gt;</code> vont par paires</p></li>
@@ -865,21 +868,21 @@ Important
 <p>Le résultat auquel on voudrait arriver, c’est donc&nbsp;: <strong>“Mon CQL dans les <code>params</code> de la source de ma couche <code>deals</code> change dès que je sélectionne un nouveau minéral”</strong>.</p>
 <p>Ça tombe bien&nbsp;! La <a href="https://openlayers.org/en/latest/apidoc/module-ol_source_ImageWMS-ImageWMS.html#updateParams">documentation de la source ImageWMS</a> (celle qu’on utilise pour notre couche) nous apprend qu’il existe une méthode <code>.updateParams()</code> qui permet de mettre à jour les paramètres d’une couche.</p>
 <p>Commencez par ajouter ces deux éléments en bas de <code>main.js</code>. Souvenez-vous de la manière dont on a “écouté” notre checkbox du premier exercice de ce TP. Le code ressemble beaucoup, non&nbsp;?</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> buttonGold <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'button-gold'</span>)<span class="op">;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> buttonGold <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'button-gold'</span>)<span class="op">;</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>buttonGold<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">'change'</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
 <span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Test"</span>)<span class="op">;</span></span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Voici ce que font les deux éléments du code&nbsp;:</p>
 <ul>
 <li><p>la première ligne récupère mon bouton radio qui grâce à son identifiant en utilisant la méthode <code>.getElementById()</code> que vous avons déjà vue précédemment</p></li>
 <li><p>les trois lignes suivantes nous permettent d’écouter notre bouton radio grâce à <code>.addEventListener()</code> et d’exécuter une fonction quand le bouton radio est coché, et la fonction affiche “Test” dans la console de développement</p></li>
 </ul>
 <p>On y est presque. On arrive à exécuter quelque chose quand on sélectionne “Or” dans notre carte, mais ça ne nous permet pas de filtrer la couche. On va retirer notre <code>console.log()</code> et demander à JavaScript de modifier les paramètres de la source de notre couche deals grâce à la ligne suivante&nbsp;:</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>sourceDeals<span class="op">.</span><span class="fu">updateParams</span>({ <span class="st">'CQL_FILTER'</span> <span class="op">:</span> <span class="st">'gold=true'</span> })<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>sourceDeals<span class="op">.</span><span class="fu">updateParams</span>({ <span class="st">'CQL_FILTER'</span> <span class="op">:</span> <span class="st">'gold=true'</span> })<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Pour rappel, la source de mes deals est stockée dans la variable <code>sourceDeals</code> mais attention, il est possible que la votre porte un autre nom. Pensez à vérifier&nbsp;!</p>
 <p>Histoire de pouvoir tester au moins avec les boutons “Or” et “Argent”, je vous donne un snippet de code plus complet.</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Or</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Or</span></span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> buttonGold <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'button-gold'</span>)<span class="op">;</span></span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>buttonGold<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">'change'</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
 <span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Quand l’utilisateur clique sur le bouton "Or", je mets à jour mon filtre CQL</span></span>
@@ -890,17 +893,17 @@ Important
 <span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> buttonSilver <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'button-silver'</span>)<span class="op">;</span></span>
 <span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>buttonSilver<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">'change'</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
 <span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>  sourceDeals<span class="op">.</span><span class="fu">updateParams</span>({ <span class="st">'CQL_FILTER'</span> <span class="op">:</span> <span class="st">'silver=true'</span> })<span class="op">;</span></span>
-<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Testez l’application en cliquant alternativement sur les boutons radio de Or et Argent. Si les deux couches sont différentes, super, ça fonctionne&nbsp;!</p>
 <p>Maintenant que vous avez compris comment faire, <strong>faites la même chose pour toutes les autres options de filtrage de vos boutons radio.</strong></p>
 <p>Quand vous avez terminé, rajoutez une option “Tous” avec la valeur <code>value="all"</code> et faites en sorte qu’il affiche tous les deals (je vous ai mis des indices ci-dessous si vous avez du mal mais essayez d’abord de réfléchir sans)</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Indice 1 - ajouter l’option “Tous” dans mon menu
+<span class="screen-reader-only">Note</span>Indice 1 - ajouter l’option “Tous” dans mon menu
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -911,12 +914,12 @@ Indice 1 - ajouter l’option “Tous” dans mon menu
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Indice 2 - filtrer “Tous”
+<span class="screen-reader-only">Note</span>Indice 2 - filtrer “Tous”
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -990,13 +993,14 @@ Indice 2 - filtrer “Tous”
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

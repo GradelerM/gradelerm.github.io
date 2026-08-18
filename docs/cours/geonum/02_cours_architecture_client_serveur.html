@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Architecture web</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -68,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-ff1415f384dbeb7aa012942a502a64fd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-1b31ff6697aff01d9ee8042ccbe5a4e6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -272,7 +275,7 @@ Important
 <section id="git" class="level4">
 <h4 class="anchored" data-anchor-id="git">Git</h4>
 <p>Ouvrez le terminal de votre choix (pour les utilisateurs Windows, je recommande Powershell) et tapez la commande suivante&nbsp;:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> version</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Vous devriez obtenir la réponse suivante&nbsp;: <code>git version 2.43.0</code></p>
 <p>Si la version est plus ancienne, il faut la mettre à jour. Si vous avez un message d’erreur, git n’est pas installé. Dans les deux cas, rendez-vous sur la page d’installation de git pour télécharger et installer la nouvelle version&nbsp;: <a href="#0">https://git-scm.com/install/windows</a></p>
 <p>Vous pouvez vérifier que git est installé et à jour en re-tapant la commande <code>git version</code>.</p>
@@ -281,21 +284,21 @@ Important
 <section id="nodejs" class="level4">
 <h4 class="anchored" data-anchor-id="nodejs">NodeJS</h4>
 <p>Dans le terminal, tapez la commande suivante&nbsp;:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> <span class="at">-v</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> <span class="at">-v</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Vous devriez obtenir la réponse suivante&nbsp;: <code>v24.11.1</code></p>
 <p>Si Node n’est pas installé… on peut essayer mais on a peu de chances d’avoir les droits sur les ordis de la fac. Voilà quand même le lien officiel&nbsp;: <a href="https://nodejs.org/en/download" class="uri">https://nodejs.org/en/download</a></p>
 <p>Si Node est installé mais la version trop ancienne, essayez la commande suivante&nbsp;:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nvm</span> install 24</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nvm</span> install 24</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Puis vérifier la mise à jour avec la commande suivante&nbsp;:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> <span class="at">-v</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> <span class="at">-v</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="docker" class="level4">
 <h4 class="anchored" data-anchor-id="docker">Docker</h4>
 <p>Pour vérifier que Docker est installé, vous avez plusieurs options&nbsp;: cherchez le logiciel “Docker Desktop” sur votre ordinateur ou bien tapez la commande suivante&nbsp;:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run hello-world</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run hello-world</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><em>Note&nbsp;: si vous utilisez votre propre machine Linux, essayez <code>sudo</code>. Quoi qu’il en soit, il vaut mieux éviter d’utiliser Docker en tant que super utilisateur, référez-vous aux instructions post-installation officielles&nbsp;: <a href="https://docs.docker.com/engine/install/linux-postinstall" class="uri">https://docs.docker.com/engine/install/linux-postinstall</a></em></p>
 <p>Vous devriez obtenir dans votre terminal le message suivant&nbsp;:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Hello</span> from Docker!</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Hello</span> from Docker!</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">This</span> message shows that your installation appears to be working correctly.</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ex">To</span> generate this message, Docker took the following steps:</span>
@@ -314,7 +317,7 @@ Important
 <span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a> <span class="ex">https://hub.docker.com/</span></span>
 <span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="ex">For</span> more examples and ideas, visit:</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a> <span class="ex">https://docs.docker.com/get-started/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a> <span class="ex">https://docs.docker.com/get-started/</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Si c’est le cas, docker est installé est fonctionne. Sinon… si vous êtes sur les ordinateurs de la fac, on est fichus. On n’a pas les droits pour l’installer. Donc… on croise les doigts 🤞</p>
 </section>
 </section>
@@ -324,15 +327,15 @@ Important
 <p>Créez un dossier dans lequel vous voulez travailler. Il nous servira pour le cours de GeoServer et le cours d’OpenLayers. Vous pouvez l’appeler comme vous voulez, mais évitez les espaces et autres caractères difficiles à prendre en charge quand on doit définir un chemin d’accès.</p>
 <p>Ensuite, ouvrez ce dossier dans votre terminal (le clic droit devrait vous donner l’option sous Linux comme Windows). Vérfiez que le chemin pointe bien vers votre nom de dossier. Par exemple, si j’ai créé un dossier qui s’appelle “Cours_Geoserver_Openlayers” dans Documents, le chemin doit ressembler à ça&nbsp;: <code>~/Documents/Cours_Geoserver_Openlayers</code></p>
 <p>Quand c’est bon, on va utiliser Git pour cloner mon dépôt. En langage courant, ça veut dire qu’on utilise Git pour créer une copie de mon code sur votre ordinateur.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/GradelerM/geonum_docker.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/GradelerM/geonum_docker.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Vérifiez votre dossier. Vous devriez avec un nouveau répertoire <code>geonum_docker</code>. Ouvrez ce répertoire dans VSCode pour qu’on puisse regarder le code ensemble.</p>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout callout-style-default callout-important callout-empty-content callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Point diapos sur le contenu du répertoire
+<span class="screen-reader-only">Important</span>Point diapos sur le contenu du répertoire
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -344,7 +347,7 @@ Point diapos sur le contenu du répertoire
 <h3 class="anchored" data-anchor-id="déploiement-de-la-stack">Déploiement de la <em>stack</em></h3>
 <p>Maintenant qu’on a compris le contenu du fichier <code>docker_compose.yml</code>, on peut déployer notre GeoServer et commencer à l’utiliser. Pour ça, ouvrez un terminal dans VSCode et vérifiez que le chemin correspond bien au répertoire qu’on vient de récupérer. Si on reprend l’exemple, précédent, au lieu d’avoir <code>~/Documents/Cours_Geoserver_Openlayers</code> vous devriez maintenant avoir <code>~/Documents/Cours_Geoserver_Openlayers/geonum_docker</code> . C’est ce qu’on va appeler à partir de maintenant la <strong>racine</strong> de notre projet.</p>
 <p>Une fois que votre terminal est ouvert à la racine de votre projet, taper la commande suivante&nbsp;:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose up <span class="at">-d</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose up <span class="at">-d</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Cette commande demande à Docker de lire notre recette de <code>docker_compose.yml</code> pour créer notre GeoServer (et une autre application web qu’on utilisera plus tard, mais pas aujourd’hui).</p>
 <p>Si vous avez Docker Desktop d’installé, vous pouvez l’ouvrir pour vérifier qu’il se passe bien quelque chose.</p>
 <p><strong>Si ça prend du temps la première fois, c’est normal.</strong> Docker doit d’abord aller récupérer les “recettes” (images) en ligne pour GeoServer et Caddy (qu’on présentera pendant les cours OpenLayers). Normalement, les prochaines fois, ça ira vite.</p>
@@ -356,12 +359,12 @@ Point diapos sur le contenu du répertoire
 <h2 class="anchored" data-anchor-id="mémo">Mémo</h2>
 <p>Dans cette section, j’ajoute quelques éléments d’aide à la compréhension du cours comme des <strong>explications supplémentaires</strong> ou des <strong>pistes pour aller plus loin</strong>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Containers, images, services…
+<span class="screen-reader-only">Note</span>Containers, images, services…
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -439,13 +442,14 @@ Containers, images, services…
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
