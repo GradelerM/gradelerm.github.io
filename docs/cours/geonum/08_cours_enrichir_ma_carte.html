@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Enrichir ma carte</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -68,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-ff1415f384dbeb7aa012942a502a64fd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-1b31ff6697aff01d9ee8042ccbe5a4e6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -260,7 +263,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Pour bien démarrer le TP…
+<span class="screen-reader-only">Important</span>Pour bien démarrer le TP…
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -268,7 +271,7 @@ Pour bien démarrer le TP…
 </div>
 </div>
 <p>On va se réintéresser à notre couche WMS “deals” et à sa table attributaire (session “Interactions carte-interface). Je vous remets notre code ici pour vous rappeler quels éléments permettent de récupérer la table attributaire. Attention au nom de vos couches et de vos sources, ce ne sont peut-être pas les mêmes que les miens&nbsp;!</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>map<span class="op">.</span><span class="fu">on</span>(<span class="st">'singleclick'</span><span class="op">,</span> (<span class="bu">event</span>) <span class="kw">=&gt;</span> {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>map<span class="op">.</span><span class="fu">on</span>(<span class="st">'singleclick'</span><span class="op">,</span> (<span class="bu">event</span>) <span class="kw">=&gt;</span> {</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> coord <span class="op">=</span> <span class="bu">event</span><span class="op">.</span><span class="at">coordinate</span><span class="op">;</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> res <span class="op">=</span> map<span class="op">.</span><span class="fu">getView</span>()<span class="op">.</span><span class="fu">getResolution</span>()<span class="op">;</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> proj <span class="op">=</span> <span class="st">'EPSG:3857'</span><span class="op">;</span></span>
@@ -283,12 +286,12 @@ Pour bien démarrer le TP…
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'attributes'</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> html<span class="op">;</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>       })<span class="op">;</span></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Faites attention à cet élément&nbsp;:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> parametres <span class="op">=</span> {<span class="st">'INFO_FORMAT'</span><span class="op">:</span> <span class="st">'text/html'</span>}<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> parametres <span class="op">=</span> {<span class="st">'INFO_FORMAT'</span><span class="op">:</span> <span class="st">'text/html'</span>}<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Notez qu’on demande en fait à notre GeoServer de nous donner la <strong>réponse</strong> de notre <strong>requête</strong> au format <strong>text/html</strong>. C’est sympathique, mais difficile à customiser et surtout pas super pratique quand la table attribuaire est LONGUE. Heureusement, on peut récupérer le résultat au format JSON qui sera bien pratique pour customiser notre table.</p>
 <p>Comme toujours, quand on souhaite ajouter un nouvel élément à notre carte, il faut qu’on commence par écrire du HTML. On va modifier notre div <code>id="attributes"</code> pour y ajouter une table. Récupérez le code ci-dessous et regardez la différence, vous allez comprendre.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>div id<span class="op">=</span><span class="st">"attributes"</span> <span class="kw">class</span><span class="op">=</span><span class="st">"menu"</span><span class="op">&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>div id<span class="op">=</span><span class="st">"attributes"</span> <span class="kw">class</span><span class="op">=</span><span class="st">"menu"</span><span class="op">&gt;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;!--</span> Je crée une table <span class="op">--&gt;</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>table<span class="op">&gt;</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;!--</span> On utilise l’élément tr pour créer une ligne <span class="op">:</span> tr <span class="op">=</span> table row <span class="op">--&gt;</span></span>
@@ -306,17 +309,17 @@ Pour bien démarrer le TP…
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>td<span class="op">&gt;</span>…<span class="op">&lt;/</span>td<span class="op">&gt;</span></span>
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>tr<span class="op">&gt;</span></span>
 <span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>table<span class="op">&gt;</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>div<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>div<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Vous devriez maintenant voir apparaître une table dans votre <code>div</code>. Elle est austère, d’accord, mais vous pourrez la styliser après. Pour le moment, on va faire avec. Regardez bien mes commentaires pour comprendre comment est structuré le code ainsi que ces trois éléments&nbsp;:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>…<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>…<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>…<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>…<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">td</span><span class="dt">&gt;</span>…<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Vous comprenez sûrement qu’on souhaite remplacer ces “…” par des valeurs lorsqu’on clique sur un point de la couche. Il va donc falloir modifier cet élément HTML avec nos fonctions JavaScript. Souvenez-vous qu’on utilise les identifiants pour retrouver les éléments HTML avec <code>.getElementById()</code>. Donc&nbsp;:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">td</span><span class="ot"> id</span><span class="op">=</span><span class="st">"table-deal-id"</span><span class="dt">&gt;</span>…<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">td</span><span class="ot"> id</span><span class="op">=</span><span class="st">"table-deal-id"</span><span class="dt">&gt;</span>…<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">td</span><span class="ot"> id</span><span class="op">=</span><span class="st">"table-creation-date"</span><span class="dt">&gt;</span>…<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">td</span><span class="ot"> id</span><span class="op">=</span><span class="st">"table-country"</span><span class="dt">&gt;</span>…<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">td</span><span class="ot"> id</span><span class="op">=</span><span class="st">"table-country"</span><span class="dt">&gt;</span>…<span class="dt">&lt;/</span><span class="kw">td</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Maintenant qu’on a nos éléments, il va falloir les remplir. Retournez chercher votre méthode <code>map.on()</code> dans votre code, on va devoir l’améliorer un peu.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>map<span class="op">.</span><span class="fu">on</span>(<span class="st">'singleclick'</span><span class="op">,</span> (<span class="bu">event</span>) <span class="kw">=&gt;</span> {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>map<span class="op">.</span><span class="fu">on</span>(<span class="st">'singleclick'</span><span class="op">,</span> (<span class="bu">event</span>) <span class="kw">=&gt;</span> {</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> coord <span class="op">=</span> <span class="bu">event</span><span class="op">.</span><span class="at">coordinate</span><span class="op">;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> res <span class="op">=</span> map<span class="op">.</span><span class="fu">getView</span>()<span class="op">.</span><span class="fu">getResolution</span>()<span class="op">;</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> proj <span class="op">=</span> <span class="st">'EPSG:3857'</span><span class="op">;</span></span>
@@ -333,7 +336,7 @@ Pour bien démarrer le TP…
 <span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(obj)<span class="op">;</span></span>
 <span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>      })<span class="op">;</span></span>
 <span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Testez votre couche et regardez le résultat dans la console. Si tout a fonctionné, vous devriez voir un objet JavaScript&nbsp;! Prenez le temps de l’explorer dans votre console pour comprendre ce que vous regardez. L‘information qui nous intéresse est quelque part dans <code>features</code>. Voilà ce qu’on doit faire avec la donnée&nbsp;:</p>
 <ul>
 <li><p>vérifier qu’on a bien cliqué sur une feature sur la carte (en JavaScript, ça demande de vérifier qu’on a bien de la donnée dans <code>features</code>)</p></li>
@@ -342,7 +345,7 @@ Pour bien démarrer le TP…
 <li><p>remplacer le contenu des cellules de ma table avec les <code>properties</code></p></li>
 </ul>
 <p>On va procéder petit à petit. D’abord, on <strong>vérifie qu’on a bien une feature dans <code>feature</code></strong>&nbsp;:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (url) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (url) {</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fetch</span>(url)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">then</span>((response) <span class="kw">=&gt;</span> response<span class="op">.</span><span class="fu">text</span>())</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">then</span>((json) <span class="kw">=&gt;</span> { <span class="co">// On a aussi changé un truc ici et dans la fonction</span></span>
@@ -353,14 +356,14 @@ Pour bien démarrer le TP…
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>          <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"J’ai cliqué à côté…"</span>)<span class="op">;</span></span>
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        }</span>
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>      })<span class="op">;</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>On utilise une condition <code>if</code> pour tester la présence d’une feature dans <code>obj</code>. <code>obj.features[0]</code> peut se traduire par&nbsp;: “Récupère mon tableau <code>feature</code> de mon <code>obj</code> et prends le premier élément”. La condition regarde simplement si <code>feature[0]</code> est vide ou non. Si ce n’est pas vide, on a reçu quelque chose, on a donc cliqué sur une feature. Au contraire, si c’est vide, c’est qu’on a cliqué à côté. Testez la fonction avant de passer à la suite.</p>
 <p>Si on a bien récupéré une <code>feature</code>, cela veut dire qu’on peut récupérer ses <code>properties</code>. Il suffit d’ajouter au bon endroit de la fonction les deux lignes suivantes&nbsp;:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> properties <span class="op">=</span> obj<span class="op">.</span><span class="at">features</span>[<span class="dv">0</span>]<span class="op">.</span><span class="at">properties</span><span class="op">;</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(properties)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> properties <span class="op">=</span> obj<span class="op">.</span><span class="at">features</span>[<span class="dv">0</span>]<span class="op">.</span><span class="at">properties</span><span class="op">;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(properties)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Vous commencez à comprendre comment on accède à un élément dans un objet JavaScript. Il suffit d’appeler la propriété qu’on veut avec <code>.&lt;propriété&gt;</code>. Regardez comment est structuré votre objet <code>properties</code> dans la console du navigateur. Maintenant, modifiez la ligne <code>console.log(properties);</code> pour afficher la propriété <code>target_country</code>. Quand c’est réussi, passez à la suite&nbsp;!</p>
 <p>Très bien, on sait maintenant récupérer des propriétés. Il ne nous reste plus qu’à modifier le HTML de notre document en conséquence en utilisant <code>.innerHTML</code>&nbsp;! Je vous donne le code pour la colonne <code>deal_id</code> et je vous laisse compléter le code pour les deux autres colonnes.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (url) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (url) {</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">fetch</span>(url)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">then</span>((response) <span class="kw">=&gt;</span> response<span class="op">.</span><span class="fu">text</span>())</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">then</span>((json) <span class="kw">=&gt;</span> {</span>
@@ -377,7 +380,7 @@ Pour bien démarrer le TP…
 <span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>          <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'table-deal-id'</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> <span class="st">""</span><span class="op">;</span></span>
 <span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>        }</span>
 <span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>      })<span class="op">;</span></span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Testez votre application. Normalement, ça marche&nbsp;! Quand vous cliquez sur une feature, vous devriez récupérer son ID. Voilà comment on crée une table customisée pour interroger une couche&nbsp;! <strong>Maintenant, à vous de compléter les deux autres colonnes.</strong> Une fois que vous avez réussi, ajoutez une colonne qui montre la valeur de <code>mineral_resources</code> pour le deal sur lequel vous cliquez. Et quand ça aussi ça fonctionne, prenez quelques minutes pour styliser votre table&nbsp;!</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -390,13 +393,13 @@ Pour bien démarrer le TP…
 <h2 class="anchored" data-anchor-id="tp-ajouter-une-échelle">TP – Ajouter une échelle</h2>
 <p>Allez, on va faire quelque chose qui demande moins de lignes de code pour s’aérer un peu la tête. Je vous colle quelques éléments pour vous aider ici sans trop vous guider, j’estime que vous devriez pouvoir trouver comment faire assez facilement.</p>
 <p>D’abord, voilà un import OpenLayers fort utile&nbsp;:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ScaleLine <span class="im">from</span> <span class="st">'ol/control/ScaleLine.js'</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ScaleLine <span class="im">from</span> <span class="st">'ol/control/ScaleLine.js'</span><span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Un autre morceau, pour créer l’objet “échelle”&nbsp;:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> scaleline <span class="op">=</span> <span class="kw">new</span> <span class="fu">ScaleLine</span>()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> scaleline <span class="op">=</span> <span class="kw">new</span> <span class="fu">ScaleLine</span>()<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Et enfin, trouvez comment ajouter ça à votre code existant&nbsp;:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> map <span class="op">=</span> <span class="kw">new</span> <span class="bu">Map</span>({</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> map <span class="op">=</span> <span class="kw">new</span> <span class="bu">Map</span>({</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">controls</span><span class="op">:</span> [scaleline]<span class="op">,</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Et voilà&nbsp;!</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -413,11 +416,11 @@ Pour bien démarrer le TP…
 <ul>
 <li><p>Vous devez créer quelque part dans votre interface une balise <code>&lt;img id="legend"&gt;</code>. C’est elle qui contiendra l’image de la légende.</p></li>
 <li><p>Vous avez besoin de récupérer la résolution de la carte pour pouvoir demander la légende à GeoServer. Si votre objet s’appelle <code>map</code>, c’est comme ça qu’il faut vous y prendre&nbsp;:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> resolution <span class="op">=</span> map<span class="op">.</span><span class="fu">getView</span>()<span class="op">.</span><span class="fu">getResolution</span>()<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> resolution <span class="op">=</span> map<span class="op">.</span><span class="fu">getView</span>()<span class="op">.</span><span class="fu">getResolution</span>()<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Vous devez ensuite récupérer l’URL de l’image de la légende. C’est ce dont <code>&lt;img&gt;</code> a besoin pour afficher l’image dans l’interface. En imaginant que la source de ma couche s’appelle <code>source</code> et que j’ai bien stocké la résolution de ma carte dans <code>resolution</code> &nbsp;:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> url <span class="op">=</span> source<span class="op">.</span><span class="fu">getLegendUrl</span>(resolution)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> url <span class="op">=</span> source<span class="op">.</span><span class="fu">getLegendUrl</span>(resolution)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Pour définir la source <code>src</code> d’un tag <code>&lt;img&gt;</code> dont l’id est “legend”, on s’y prend de la manière suivante&nbsp;:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'legend'</span>)<span class="op">.</span><span class="at">src</span> <span class="op">=</span> url<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode javascript code-with-copy"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">'legend'</span>)<span class="op">.</span><span class="at">src</span> <span class="op">=</span> url<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 </ul>
 <p>Avec ces éléments, il est facile d’afficher une légende sur sa carte&nbsp;!</p>
 </section>
@@ -425,12 +428,12 @@ Pour bien démarrer le TP…
 <h3 class="anchored" data-anchor-id="légende-pour-la-couche-wfs">Légende pour la couche WFS</h3>
 <p>Il manque une légende pour notre couche WFS. Comme on définit un style en JavaScript, on va devoir “dessiner” nous-même notre légende. Je vous donne l’exemple des cercles proportionnels — pour des cercles “classiques” c’est encore plus simple. Voici quelques éléments pour vous guider&nbsp;:</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Écrire mon HTML
+<span class="screen-reader-only">Tip</span>Écrire mon HTML
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -441,12 +444,12 @@ Pour bien démarrer le TP…
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Dessiner un cercle
+<span class="screen-reader-only">Tip</span>Dessiner un cercle
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -463,12 +466,12 @@ Dessiner un cercle
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-J’ai des cercles, comment changer leur taille ?
+<span class="screen-reader-only">Tip</span>J’ai des cercles, comment changer leur taille ?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -479,7 +482,7 @@ J’ai des cercles, comment changer leur taille ?
 <ul>
 <li><p>Soit vous appliquez vous-même la formule à des “paliers” pour trouver la taille correspondante. Par exemple, j’utilise la formule du rayon pour calculer la hauteur et la largeur (= diamètre) du cercle qui doit représenter 50 deals et je définis manuellement <code>height</code> et <code>width</code> en CSS.</p></li>
 <li><p>Soit vous utilisez une formule en CSS pour ne pas avoir à faire le calcul vous-même pour chaque palier. Par exemple, pour mon palier 50 deals j’ai mis quelque part dans mon CSS cette propriété (attention, cette ligne de code correspond à MA formule <code>rayon</code> dans mon objet <code>Style</code>, pensez à bien utiliser la votre&nbsp;!)&nbsp;:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>height<span class="in">:</span> calc<span class="in">(</span>sqrt<span class="in">(</span>50<span class="in">)</span> <span class="op">*</span> 3px<span class="in">)</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>height<span class="in">:</span> calc<span class="in">(</span>sqrt<span class="in">(</span>50<span class="in">)</span> <span class="op">*</span> 3px<span class="in">)</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Soit vous êtes super chaud et vous voulez automatiser le tout en JavaScript. Dans ce cas je vous laisse faire, vous savez déjà utiliser <code>setAttribute()</code>.</p></li>
 </ul>
 </div>
@@ -542,13 +545,14 @@ J’ai des cercles, comment changer leur taille ?
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

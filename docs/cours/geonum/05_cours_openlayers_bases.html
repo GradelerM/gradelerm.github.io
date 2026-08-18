@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>OpenLayers – cycle de développement</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -68,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-ff1415f384dbeb7aa012942a502a64fd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-1b31ff6697aff01d9ee8042ccbe5a4e6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -265,19 +268,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>On va ajouter l’application dans notre stack existante. Pour ça, retournez dans le dossier dans lequel on a travaillé lors de la dernière séance (celui avec le GeoServer) qui devrait s’appeler <code>geonum_docker</code>.</p>
 <p>Si un dossier <code>app</code> existe déjà, <strong>supprimez-le</strong>. Allez-y, ne soyez pas timides&nbsp;!</p>
 <p>Ensuite, rendez-vous sur le <a href="https://openlayers.org/">site officiel d’OpenLayers</a> et cherchez la section “Quick Start”. Prenez le temps de parcourir la page, elle contient toutes les informations dont vous avez besoin. Ensuite, ouvrez un terminal dans votre dossier <code>geonum_docker</code> et tapez la commande suivante&nbsp;:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> create ol-app app</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> create ol-app app</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><em>Note&nbsp;: elle est un peu différente de celle qui vous est donné sur la page. Cherchez la différence, essayez de comprendre ce qui change.</em></p>
 <p>Ensuite, déplacez-vous dans le dossier <code>app</code>&nbsp;:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> app</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> app</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ensuite, on doit <em>build</em> notre application pour que notre serveur de production (Caddy) puisse lire le contenu de l’application.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run build</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run build</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-important callout-empty-content callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Point diapos tous ensemble sur le cycle de développement
+<span class="screen-reader-only">Important</span>Point diapos tous ensemble sur le cycle de développement
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -310,30 +313,30 @@ Point diapos tous ensemble sur le cycle de développement
 <li><p><strong>Production&nbsp;:</strong> si notre application a passé tous les tests, alors elle est prête à accueillir définitivement les nouveaux éléments qu’on a développés.</p></li>
 </ul>
 <p>Pour accéder au serveur de développement (pour développer les nouveaux éléments et faire les tests)&nbsp;:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> start</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> start</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Pour <em>build</em> notre application qui est stable et prête à être mise en production&nbsp;:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run build</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run build</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Pour rappel, si vous voulez voir le résultats de votre build, il faut lancer votre <em>stack</em> docker pour que votre serveur web (Caddy) puisse servir votre application.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> .. <span class="co"># Pour revenir à la racine de geonum_docker</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose up <span class="at">-d</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> .. <span class="co"># Pour revenir à la racine de geonum_docker</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose up <span class="at">-d</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Accédez à votre <a href="http://localhost/" class="uri">http://localhost/</a> pour voir l’application en production.</p>
 </section>
 <section id="versionner-mon-code-en-local-avec-un-commit" class="level3">
 <h3 class="anchored" data-anchor-id="versionner-mon-code-en-local-avec-un-commit">Versionner mon code en local avec un <em>commit</em></h3>
 <p>Avant d’aller plus loin dans la création de notre application, on va utiliser <strong>Git</strong> pour versionner notre projet et l’héberger en ligne.</p>
 <p><strong>D’abord, retournez à la racine de votre projet <code>geonum_docker</code></strong>&nbsp;:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ..</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ..</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ensuite, vérifiez que votre projet est bien versionné.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Si vous avez un message long qui fait peur, c’est bon signe. En fait, <strong>notre projet est déjà vesionné parce qu’on l’a récupéré sur mon GitHub</strong>. On a importé mes fichiers… mais aussi le git associé&nbsp;!</p>
 <p>Si jamais ce n’est pas le cas, alors vous devez initialiser votre dépôt&nbsp;:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash js code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash js code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><em>Note&nbsp;: toutes les étapes suivantes peuvent être faites en interface graphique si vous préférez. Moi je travaille en lignes de commande, et comme c’est ce qui est le plus universel c’est ce que je vous partage ici.</em></p>
 <p>Normalement, vous savez faire la suite, mais voilà quand même comment <em>stage</em> vos changements (autrement dit, les ajouter à votre prochain <em>commit</em>)&nbsp;:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Maintenant, on crée notre <em>commit</em> avec un message qui indique ce que fait le code qu’on a ajouté depuis le dernier <em>commit</em>&nbsp;:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Carte OpenLayers basique"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Carte OpenLayers basique"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="héberger-mon-code-sur-github" class="level3">
 <h3 class="anchored" data-anchor-id="héberger-mon-code-sur-github">Héberger mon code sur GitHub</h3>
@@ -344,7 +347,7 @@ Point diapos tous ensemble sur le cycle de développement
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Attention aux infos que vous mettez en ligne
+<span class="screen-reader-only">Warning</span>Attention aux infos que vous mettez en ligne
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -361,12 +364,12 @@ Attention aux infos que vous mettez en ligne
 </ul>
 <p>Ensuite, suivez les instructions données par GitHub pour mettre en ligne votre dépôt. Commencez après la ligne <code>git commit -m "First commit"</code> (on a déjà créé notre commit juste avant).</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Double authentification
+<span class="screen-reader-only">Tip</span>Double authentification
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -375,11 +378,11 @@ Double authentification
 <p>Si vous prenez la sécurité de vos comptes en ligne au sérieux et que vous avez activé la double-authentification en ligne, ce sera un petit peu plus compliqué de définir votre <code>remote origin</code>. Le lien “simple” vers votre dépôt ne suffit pas.</p>
 <p>Pour accéder à votre code depuis votre PC, vous allez devoir créer un <strong>Personal access token</strong> depuis vos <a href="https://github.com/settings/tokens">Developers settings</a> (vous devez être connecté pour accéder au lien). En haut à droite, sélectionnez “Generate new token (classic)” et donnez vous au moins les droits de la section <em>Repo</em>. Ensuite, <strong>sauvegardez bien votre token quelque part (comme dans un gestionnaire de mots de passe) car vous ne pourrez plus le récupérer&nbsp;!</strong></p>
 <p>Maintenant, retourner dans votre dossier <code>geonum_docker</code> et dans la ligne de commande, tapez en remplaçant les valeurs entre <code>&lt;&gt;</code>&nbsp;;</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote set-url origin https://oauth2:<span class="op">&lt;</span>accesstoken1234<span class="op">&gt;</span>@github.com/<span class="op">&lt;</span>Username<span class="op">&gt;</span>/<span class="op">&lt;</span>repository_name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote set-url origin https://oauth2:<span class="op">&lt;</span>accesstoken1234<span class="op">&gt;</span>@github.com/<span class="op">&lt;</span>Username<span class="op">&gt;</span>/<span class="op">&lt;</span>repository_name<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <blockquote class="blockquote">
 <p>Par exemple, si mon token est <code>123456789azerty</code>, mon nom d’utilisateur <code>GradelerM</code> et mon dépôt <code>geonum_docker</code>, ça donne ça&nbsp;:</p>
 </blockquote>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote set-url origin https://oauth2:123456789azerty@github.com/GradelerM/geonum_docker</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote set-url origin https://oauth2:123456789azerty@github.com/GradelerM/geonum_docker</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Vous pouvez lancer à nouveau un <code>git push</code>&nbsp;!</p>
 </div>
 </div>
@@ -447,13 +450,14 @@ Double authentification
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
