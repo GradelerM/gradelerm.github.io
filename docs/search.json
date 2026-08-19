@@ -1472,6 +1472,6 @@
     "href": "ressources.html#mon-environnement-de-travail",
     "title": "Ressources",
     "section": "Mon environnement de travail",
-    "text": "Mon environnement de travail\n\nOrdinateur portable ASUS (ROG Strix) sous Fedora 44 (depuis Juin 2026).\nData Science avec R et Python : éditeur de code Positron, système de publication Quarto (rapports, dashboards, sites), bibliographie avec Zotero.\nGestion de projets, notes, wiki personnel : Logseq et Obsidian.\nMarques-pages : Raindrop.io\nAggrégation de flux RSS : Akgregator ou Fusion (sur serveur)"
+    "text": "Mon environnement de travail\n\nOrdinateur portable ASUS (ROG Strix) sous Fedora 44 (depuis Juin 2026)\nData Science avec R et Python : éditeur de code Positron, système de publication Quarto (rapports, dashboards, sites), bibliographie avec Zotero\nSIG : QGIS\nGestion de projets, notes, wiki personnel : Logseq et Obsidian\nMarques-pages : Raindrop.io\nAggrégation de flux RSS : Akgregator ou Fusion (sur serveur)"
   }
 ]

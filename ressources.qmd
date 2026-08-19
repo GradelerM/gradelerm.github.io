@@ -99,9 +99,9 @@ Sites pour rechercher des alternatives Open-Source à des logiciels existants 
 
 ## Mon environnement de travail
 
-- Ordinateur portable ASUS (ROG Strix) sous [Fedora](https://fedoraproject.org/) 44 (depuis Juin 2026).
-- Data Science avec [R](https://www.r-project.org/) et [Python](https://www.python.org/) : éditeur de code [Positron](https://positron.posit.co/), système de publication [Quarto](https://quarto.org/) (rapports, dashboards, sites), bibliographie avec [Zotero](https://www.zotero.org/).
+- Ordinateur portable ASUS (ROG Strix) sous [Fedora](https://fedoraproject.org/) 44 (depuis Juin 2026)
+- Data Science avec [R](https://www.r-project.org/) et [Python](https://www.python.org/) : éditeur de code [Positron](https://positron.posit.co/), système de publication [Quarto](https://quarto.org/) (rapports, dashboards, sites), bibliographie avec [Zotero](https://www.zotero.org/)
 - SIG : [QGIS](https://qgis.org/download/)
-- Gestion de projets, notes, wiki personnel : [Logseq](https://logseq.com/) et [Obsidian](https://obsidian.md/).
+- Gestion de projets, notes, wiki personnel : [Logseq](https://logseq.com/) et [Obsidian](https://obsidian.md/)
 - Marques-pages : [Raindrop.io](https://raindrop.io/)
 - Aggrégation de flux RSS : [Akgregator](https://apps.kde.org/en-gb/akregator/) ou [Fusion](https://github.com/0x2E/fusion) (sur serveur)
