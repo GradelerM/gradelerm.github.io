@@ -7,7 +7,7 @@ about:
     - icon: github
       text: Github
       href: https://github.com/GradelerM
-    - icon: linkedin
-      text: Linkedin
-      href: https://fr.linkedin.com/in/marie-gradeler
+    # - icon: linkedin
+    #   text: Linkedin
+    #   href: https://fr.linkedin.com/in/marie-gradeler
 ---

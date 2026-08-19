@@ -1,0 +1,93 @@
+/*-- scss:defaults --*/
+
+// === IMPORT FONTS ===
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+// === COLORS ===
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #f8f5f0 !default;
+$gray-300: #dfd7ca !default;
+$gray-400: #ced4da !default;
+$gray-500: #98978b !default;
+$gray-600: #8e8c84 !default;
+$gray-700: #495057 !default;
+$gray-800: #3e3f3a !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+$blue: #325d88 !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #d9534f !default;
+$orange: #f47c3c !default;
+$yellow: #ffc107 !default;
+$green: #93c54b !default;
+$teal: #20c997 !default;
+$cyan: #29abe0 !default;
+
+$primary: $blue !default;
+$secondary: $gray-600 !default;
+$success: $teal !default;
+$info: $cyan !default;
+$warning: $orange !default;
+$danger: $red !default;
+$light: $gray-200 !default;
+$dark: $gray-800 !default;
+
+$min-contrast-ratio: 2 !default;
+
+// === FONTS ===
+$font-family-sans-serif: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-family-monospace: "JetBrains Mono", "IBM Plex Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+
+// === BODY ===
+$body-color: $gray-800 !default;
+
+// === LINKS ===
+$link-color: $success !default;
+
+// === NAV ===
+$navbar-bg: $white;
+$navbar-fg: $gray-800;
+
+// === GRID ===
+$grid-sidebar-width: 300px !default;
+$grid-body-width: 800px !default;
+$grid-margin-width: 300px !default;
+$grid-column-gutter-width: 1.5rem !default;
+
+/*-- scss:rules --*/
+
+// === NAVBAR ===
+.navbar {
+    font-family: "IBM Plex Mono";
+    text-transform: uppercase;
+}
+
+.navbar::after {
+    content: "";
+    background-color: #20c997;
+    height: 2px;
+    width: 82%;
+    position: absolute;
+    top: calc(100% - 4px);
+    left: 8%;
+
+    @media (max-width: map-get($grid-breakpoints, 'lg')) {
+        width: 100%;
+        left: 0;
+    }
+}
+
+.navbar-nav .nav-item {
+    padding-inline: 0.4rem;
+    font-size: medium;
+}
+
+// === PAGES ===
+
+/*-- scss:mixins --*/

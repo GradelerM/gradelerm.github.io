@@ -6,5 +6,26 @@
       "/posts/maps_package.html",
       "/posts/dummy_blog_post.html"
     ]
+  },
+  {
+    "listing": "/teaching.html",
+    "items": [
+      "/cours/geonum/06_cours_ajout_couches.html",
+      "/cours/geonum/07_diapos_interactions.html",
+      "/cours/geonum/02_diapos_architecture_client_serveur.html",
+      "/cours/geonum/02_cours_architecture_client_serveur.html",
+      "/cours/geonum/05_diapos_node_openlayers.html",
+      "/cours/geonum/08_cours_enrichir_ma_carte.html",
+      "/cours/geonum/01_diapos_introduction.html",
+      "/cours/geonum/03_cours_geoserver.html",
+      "/cours/geonum/07_cours_interactions.html",
+      "/cours/geonum/01_cours_introduction.html",
+      "/cours/geonum/03_diapos_geoserver.html",
+      "/cours/geonum/04_diapos_intro_openlayers.html",
+      "/cours/geonum/05_cours_openlayers_bases.html",
+      "/cours/geonum/04_cours_intro_openlayers.html",
+      "/cours/geonum/09_rendu.html",
+      "/cours/geonum/05_diapos_ai.html"
+    ]
   }
 ]
