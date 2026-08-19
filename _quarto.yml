@@ -15,8 +15,6 @@ website:
   navbar:
     logo: /static/logo.png
     left:
-      - text: "Accueil"
-        href: index.qmd
       - text: "À propos"
         href: about.qmd
       - text: "Blog"
@@ -27,6 +25,7 @@ website:
           - text: "GeoNum"
             file: cours/geonum/01_cours_introduction.qmd
       - text: "Ressources"
+        href: ressources.qmd
     
     tools:
       - icon: github

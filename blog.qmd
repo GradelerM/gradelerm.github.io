@@ -7,7 +7,7 @@ listing:
   sort:
     - "date desc"
     - "title"
-  categories: cloud
+  categories: numbered
   fields: 
     - "title"
     - "subtitle"

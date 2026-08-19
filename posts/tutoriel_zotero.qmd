@@ -1,0 +1,10 @@
+---
+title: "Tutoriel Zotero"
+description: "Apprendre à utiliser Zotero."
+author: "Marie Gradeler"
+date: "19/08/2026"
+categories:
+  - Academic
+---
+
+Dans ce post, on apprend à utiliser Zotero.

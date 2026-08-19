@@ -10,7 +10,25 @@
 <atom:link href="https://gradelerm.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.9.38</generator>
-<lastBuildDate>Sun, 09 Mar 2025 23:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 07 Jul 2027 22:00:00 GMT</lastBuildDate>
+<item>
+  <title>Tutoriel Zotero</title>
+  <dc:creator>Marie Gradeler</dc:creator>
+  <link>https://gradelerm.github.io/posts/tutoriel_zotero.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Dans ce post, on apprend à utiliser Zotero.</p>
+
+
+
+ ]]></description>
+  <category>Academic</category>
+  <guid>https://gradelerm.github.io/posts/tutoriel_zotero.html</guid>
+  <pubDate>Wed, 07 Jul 2027 22:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Figures layout</title>
   <dc:creator>Marie Gradeler</dc:creator>
@@ -93,7 +111,7 @@
 
  ]]></description>
   <guid>https://gradelerm.github.io/posts/dummy_blog_post_two.html</guid>
-  <pubDate>Wed, 19 Aug 2026 06:48:17 GMT</pubDate>
+  <pubDate>Wed, 19 Aug 2026 06:58:28 GMT</pubDate>
 </item>
 </channel>
 </rss>

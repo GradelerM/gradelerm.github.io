@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://gradelerm.github.io/blog.html</loc>
-    <lastmod>2026-08-19T06:45:57.966Z</lastmod>
+    <lastmod>2026-08-19T06:56:13.490Z</lastmod>
   </url>
   <url>
     <loc>https://gradelerm.github.io/about.html</loc>
@@ -15,5 +15,21 @@
   <url>
     <loc>https://gradelerm.github.io/cours/geonum/02_cours_architecture_client_serveur.html</loc>
     <lastmod>2026-08-18T15:21:45.786Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gradelerm.github.io/index.html</loc>
+    <lastmod>2026-08-18T15:59:54.350Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gradelerm.github.io/ressources.html</loc>
+    <lastmod>2026-08-19T08:01:07.364Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gradelerm.github.io/posts/tutoriel_zotero.html</loc>
+    <lastmod>2026-08-19T06:58:23.072Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gradelerm.github.io/posts/maps_package.html</loc>
+    <lastmod>2026-08-19T06:57:56.366Z</lastmod>
   </url>
 </urlset>

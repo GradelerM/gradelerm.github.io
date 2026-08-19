@@ -709,7 +709,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Dummy blog post TWO\n\n\n\n\n\nSome dummy blog post for pages config\n\n\n\n\n1 min\n\n\n\n\n\n\nFigures layout\n\n\n\n\n\n\nR\n\ntmap\n\n\n\nLayout des figures dans les articles avec Quarto.\n\n\n\n\n\nMar 10, 2025\n\n\nMarie Gradeler\n\n1 min\n\n\n\n\n\n\nDummy blog post\n\n\n\n\n\n\nR\n\ndataviz\n\n\n\nSome dummy blog post for pages config\n\n\n\n\n\nOct 10, 2024\n\n\nMarie Gradeler\n\n1 min\n\n\n\n\nNo matching items"
+    "text": "Dummy blog post TWO\n\n\n\n\n\nSome dummy blog post for pages config\n\n\n\n\n1 min\n\n\n\n\n\n\nTutoriel Zotero\n\n\n\n\n\n\nAcademic\n\n\n\nApprendre à utiliser Zotero.\n\n\n\n\n\nJul 8, 2027\n\n\nMarie Gradeler\n\n1 min\n\n\n\n\n\n\nFigures layout\n\n\n\n\n\n\nR\n\ntmap\n\n\n\nLayout des figures dans les articles avec Quarto.\n\n\n\n\n\nMar 10, 2025\n\n\nMarie Gradeler\n\n1 min\n\n\n\n\n\n\nDummy blog post\n\n\n\n\n\n\nR\n\ndataviz\n\n\n\nSome dummy blog post for pages config\n\n\n\n\n\nOct 10, 2024\n\n\nMarie Gradeler\n\n1 min\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "cours/geonum/01_cours_introduction.html",
@@ -1403,5 +1403,75 @@
     "title": "Ressources",
     "section": "Tutoriels",
     "text": "Tutoriels"
+  },
+  {
+    "objectID": "posts/tutoriel_zotero.html",
+    "href": "posts/tutoriel_zotero.html",
+    "title": "Tutoriel Zotero",
+    "section": "",
+    "text": "Dans ce post, on apprend à utiliser Zotero."
+  },
+  {
+    "objectID": "ressources.html#r",
+    "href": "ressources.html#r",
+    "title": "Ressources",
+    "section": "R",
+    "text": "R\n\nPackages\n\nLa majorité des packages du tidyverse : https://tidyverse.org/\n\n✨ ggplot2 pour créer des graphiques : https://ggplot2.tidyverse.org/\n✨ dplyr pour manipuler la donnée (filtrer, modifier, etc.) : https://dplyr.tidyverse.org/\ntidyr pour nettoyer la donnée : https://tidyr.tidyverse.org/\npurrr pour utiliser les fonctions de type .map() : https://purrr.tidyverse.org/\nstringr pour travailler avec des chaînes de caractères : https://stringr.tidyverse.org/\nforcats pour travailler avec les facteurs (fonctionne très bien avec ggplot2 pour réordonner les valeurs dans les graphiques) : https://forcats.tidyverse.org/\nlubridate pour travailler avec les dates : https://lubridate.tidyverse.org/\n\nggrepel facilite l’utilisation des labels sur les figures faites avec ggplot2 : https://ggrepel.slowkow.com/\npatchwork permet de combiner plusieurs graphiques ggplot2 : https://patchwork.data-imaginist.com/index.html\n✨ Utilisez sf pour travailler avec de la donnée spatiale : https://r-spatial.github.io/sf/index.html (attention à bien installer les dépendances, tout est détaillé sur le site)\ntmap permet de créer des cartes : https://r-tmap.github.io/tmap/index.html\n\n\n\nTutoriels, guides\n\nUn excellent guide sur comment customiser en profondeur ses graphiques avec ggplot2 : https://www.cedricscherer.com/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/\n\n\n\nOutils\n\nListe des palettes de paletteer, utilisables aussi comme inspiration sans forcément se servir du package : https://pmassicotte.github.io/paletteer_gallery/"
+  },
+  {
+    "objectID": "ressources.html#python",
+    "href": "ressources.html#python",
+    "title": "Ressources",
+    "section": "Python",
+    "text": "Python\n\nUtiliser ggplot avec Python : https://plotnine.org/"
+  },
+  {
+    "objectID": "ressources.html#outils-logiciels",
+    "href": "ressources.html#outils-logiciels",
+    "title": "Ressources",
+    "section": "Outils, logiciels",
+    "text": "Outils, logiciels\n\nRessources\nSites pour rechercher des alternatives Open-Source à des logiciels existants :\n\nhttps://www.opensourcealternative.to/\nhttps://european-alternatives.eu/categories\nhttps://framalibre.org/\n\n\n\nRecherche, Bibliographie\n\nBesoin de référencer des papiers, livres, sites internet et d’exporter citations et bibliographies ? Zotero fait tout ça, et c’est gratuit. https://www.zotero.org/"
+  },
+  {
+    "objectID": "ressources.html",
+    "href": "ressources.html",
+    "title": "Ressources",
+    "section": "",
+    "text": "Vous trouverez sur cette page une liste de ressources que j’utilise régulièrement et qui, je pense, méritent d’être partagées. Certaines sont abordées plus en détail dans mon blog. Les outils que j’utilise le plus souvent ou que je vous recommande le plus sont accompagnés de “✨”.\nCette liste est toujours en cours de rédaction et alimentée petit à petit. Elle est donc amenée à changer régulièrement."
+  },
+  {
+    "objectID": "ressources.html#dataviz",
+    "href": "ressources.html#dataviz",
+    "title": "Ressources",
+    "section": "Dataviz",
+    "text": "Dataviz\n\nLivre sur les fondamentaux de la datavisualisation (EN) : https://clauswilke.com/dataviz/\nhttps://datavizcatalogue.com/ ou https://www.data-to-viz.com/"
+  },
+  {
+    "objectID": "ressources.html#développement-web",
+    "href": "ressources.html#développement-web",
+    "title": "Ressources",
+    "section": "Développement web",
+    "text": "Développement web\n\nLanguages, Frameworks\n\n✨ Svelte et SvelteKit : https://svelte.dev/\n\n\n\nCartographie\n\n✨ OpenLayers : https://openlayers.org/\n✨ Leaflet : https://leafletjs.com/"
+  },
+  {
+    "objectID": "ressources.html#rédaction-développement",
+    "href": "ressources.html#rédaction-développement",
+    "title": "Ressources",
+    "section": "Rédaction, Développement",
+    "text": "Rédaction, Développement\n\nÉditeurs de Code\n\nUne “version” Libre et Open-Source de VSCode, VSCodium : https://github.com/VSCodium/vscodium\n✨ Positron est éditeur basé sur VSCode et développé par les créateurs de RStudio, excellent pour travailler en R (source, RMarkdown), en Python (source, Jupyter Notebook) et avec Quarto, qui gère les deux langages et plus encore : https://positron.posit.co/\n\n\n\nNotebooks, Rapports\n\n✨ Je recommande vivement l’apprentissage de la syntaxe Markdown: https://www.markdownguide.org/\nPour générer des documents plus avancés, il existe Typst, une alternative plus complexe que Markdown et plus simple que LaTeX : https://typst.app/\n✨ Quarto permet de rédiger facilement des documents à partir de notebooks en R ou en Python, en intégrant la syntaxe Markdown mais aussi d’autres comme Typst. Avec Quarto, vous pouvez créer des documents HTML ou PDF, des livres, des dashboards, des blogs, etc. Ce site web et la grande majorité de ses contenus sont propulsés par Quarto ! https://quarto.org/"
+  },
+  {
+    "objectID": "ressources.html#mon-setup",
+    "href": "ressources.html#mon-setup",
+    "title": "Ressources",
+    "section": "Mon setup",
+    "text": "Mon setup\nJe vous partage mes installations pour développer"
+  },
+  {
+    "objectID": "ressources.html#mon-environnement-de-travail",
+    "href": "ressources.html#mon-environnement-de-travail",
+    "title": "Ressources",
+    "section": "Mon environnement de travail",
+    "text": "Mon environnement de travail\n\nOrdinateur portable ASUS (ROG Strix) sous Fedora 44 (depuis Juin 2026).\nData Science avec R et Python : éditeur de code Positron, système de publication Quarto (rapports, dashboards, sites), bibliographie avec Zotero.\nGestion de projets, notes, wiki personnel : Logseq et Obsidian.\nMarques-pages : Raindrop.io\nAggrégation de flux RSS : Akgregator ou Fusion (sur serveur)"
   }
 ]

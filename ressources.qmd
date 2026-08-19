@@ -1,8 +1,107 @@
 ---
 title: "Ressources"
-toc: false
+toc: true
 ---
 
-## Par catégorie
+Vous trouverez sur cette page une liste de ressources que j’utilise régulièrement et qui, je pense, méritent d’être partagées. Certaines sont abordées plus en détail dans mon [blog](blog.qmd). Les outils que j’utilise le plus souvent ou que je vous recommande le plus sont accompagnés de "✨".
 
-## Tutoriels
+Cette liste est toujours en cours de rédaction et alimentée petit à petit. Elle est donc amenée à changer régulièrement.
+
+## Dataviz
+
+- Livre sur les fondamentaux de la datavisualisation (EN) : <https://clauswilke.com/dataviz/>
+
+- <https://datavizcatalogue.com/> ou <https://www.data-to-viz.com/>
+
+## R
+
+### Packages
+
+- La majorité des packages du `tidyverse` : [https://tidyverse.org/](#0)
+
+  - ✨ `ggplot2` pour créer des graphiques : <https://ggplot2.tidyverse.org/>
+
+  - ✨ `dplyr` pour manipuler la donnée (filtrer, modifier, etc.) : <https://dplyr.tidyverse.org/>
+
+  - `tidyr` pour nettoyer la donnée : <https://tidyr.tidyverse.org/>
+
+  - `purrr` pour utiliser les fonctions de type `.map()` : <https://purrr.tidyverse.org/>
+
+  - `stringr` pour travailler avec des chaînes de caractères : <https://stringr.tidyverse.org/>
+
+  - `forcats` pour travailler avec les facteurs (fonctionne très bien avec `ggplot2` pour réordonner les valeurs dans les graphiques) : <https://forcats.tidyverse.org/>
+
+  - `lubridate` pour travailler avec les dates : <https://lubridate.tidyverse.org/>
+
+- `ggrepel` facilite l’utilisation des labels sur les figures faites avec `ggplot2` : <https://ggrepel.slowkow.com/>
+
+- `patchwork` permet de combiner plusieurs graphiques `ggplot2` : <https://patchwork.data-imaginist.com/index.html>
+
+- ✨ Utilisez `sf` pour travailler avec de la donnée spatiale : <https://r-spatial.github.io/sf/index.html> (attention à bien installer les dépendances, tout est détaillé sur le site)
+
+- `tmap` permet de créer des cartes : <https://r-tmap.github.io/tmap/index.html>
+
+### Tutoriels, guides
+
+- Un excellent guide sur comment customiser en profondeur ses graphiques avec `ggplot2` : <https://www.cedricscherer.com/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/>
+
+### Outils
+
+- Liste des palettes de `paletteer`, utilisables aussi comme inspiration sans forcément se servir du package : <https://pmassicotte.github.io/paletteer_gallery/>
+
+## Python
+
+- Utiliser `ggplot` avec Python : <https://plotnine.org/>
+
+## Développement web
+
+### Languages, Frameworks
+
+- ✨ **Svelte** et **SvelteKit** : <https://svelte.dev/>
+
+### Cartographie
+
+- ✨ **OpenLayers** : <https://openlayers.org/>
+
+- ✨ **Leaflet** : <https://leafletjs.com/>
+
+## Rédaction, Développement
+
+### Éditeurs de Code
+
+- Une "version" Libre et Open-Source de VSCode, **VSCodium** : <https://github.com/VSCodium/vscodium>
+
+- ✨ **Positron** est éditeur basé sur VSCode et développé par les créateurs de RStudio, excellent pour travailler en R (source, RMarkdown), en Python (source, Jupyter Notebook) et avec Quarto, qui gère les deux langages et plus encore : <https://positron.posit.co/>
+
+### Notebooks, Rapports
+
+- ✨ Je recommande vivement l’apprentissage de la syntaxe **Markdown**: <https://www.markdownguide.org/>
+
+- Pour générer des documents plus avancés, il existe **Typst**, une alternative plus complexe que Markdown et plus simple que LaTeX : <https://typst.app/>
+
+- ✨ **Quarto** permet de rédiger facilement des documents à partir de notebooks en R ou en Python, en intégrant la syntaxe Markdown mais aussi d’autres comme Typst. Avec Quarto, vous pouvez créer des documents HTML ou PDF, des livres, des dashboards, des blogs, etc. Ce site web et la grande majorité de ses contenus sont propulsés par Quarto ! <https://quarto.org/>
+
+## Outils, logiciels
+
+### Ressources
+
+Sites pour rechercher des alternatives Open-Source à des logiciels existants :
+
+- <https://www.opensourcealternative.to/>
+
+- <https://european-alternatives.eu/categories>
+
+- <https://framalibre.org/>
+
+### Recherche, Bibliographie
+
+- Besoin de référencer des papiers, livres, sites internet et d’exporter citations et bibliographies ? **Zotero** fait tout ça, et c’est gratuit. <https://www.zotero.org/>
+
+## Mon environnement de travail
+
+- Ordinateur portable ASUS (ROG Strix) sous [Fedora](https://fedoraproject.org/) 44 (depuis Juin 2026).
+- Data Science avec [R](https://www.r-project.org/) et [Python](https://www.python.org/) : éditeur de code [Positron](https://positron.posit.co/), système de publication [Quarto](https://quarto.org/) (rapports, dashboards, sites), bibliographie avec [Zotero](https://www.zotero.org/).
+- SIG : [QGIS](https://qgis.org/download/)
+- Gestion de projets, notes, wiki personnel : [Logseq](https://logseq.com/) et [Obsidian](https://obsidian.md/).
+- Marques-pages : [Raindrop.io](https://raindrop.io/)
+- Aggrégation de flux RSS : [Akgregator](https://apps.kde.org/en-gb/akregator/) ou [Fusion](https://github.com/0x2E/fusion) (sur serveur)
