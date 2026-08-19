@@ -72,10 +72,10 @@ $grid-column-gutter-width: 1.5rem !default;
     content: "";
     background-color: #20c997;
     height: 2px;
-    width: 82%;
+    width: calc(100% - 400px);
     position: absolute;
     top: calc(100% - 4px);
-    left: 8%;
+    left: 200px;
 
     @media (max-width: map-get($grid-breakpoints, 'lg')) {
         width: 100%;
