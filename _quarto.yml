@@ -19,7 +19,6 @@ website:
         href: about.qmd
       - text: "Blog"
         href: blog.qmd
-      - text: "Projets"
       - text: "Cours"
         menu:
           - text: "GeoNum"
