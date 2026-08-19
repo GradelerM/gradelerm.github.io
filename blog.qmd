@@ -2,6 +2,7 @@
 title: "Blog"
 listing:
   contents: posts
+  feed: true
   type: default
   sort:
     - "date desc"

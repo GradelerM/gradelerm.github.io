@@ -6,7 +6,8 @@ project:
     - "!cours/geonum/archives/"
 
 website:
-  title: ""
+  site-url: "https://gradelerm.github.io/"
+  title: "GradelerM"
   favicon: static/logo.png
   
   search: true
@@ -31,12 +32,11 @@ website:
       - icon: github
         text: Github
         href: https://github.com/GradelerM
+      - icon: rss
+        href: blog.xml
       # - icon: linkedin
       #   text: Linkedin
       #   href: https://fr.linkedin.com/in/marie-gradeler
-      - icon: envelope
-        text: Email
-        href: mailto:marie.gradeler@gmail.com
   
   sidebar:
     - title: "GeoNum"
@@ -58,6 +58,8 @@ website:
     center:
       - icon: github
         href: https://github.com/GradelerM
+      - icon: rss
+        href: blog.xml
       # - icon: linkedin
       #   href: https://fr.linkedin.com/in/marie-gradeler
 

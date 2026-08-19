@@ -10,4 +10,10 @@ about:
     # - icon: linkedin
     #   text: Linkedin
     #   href: https://fr.linkedin.com/in/marie-gradeler
+    - icon: rss
+      text: "Blog RSS"
+      href: blog.xml
+    - icon: envelope
+      text: Contact
+      href: mailto:marie.gradeler@gmail.com?subject=Contact
 ---

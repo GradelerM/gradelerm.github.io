@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>GradelerM</title>
+<link>https://gradelerm.github.io/blog.html</link>
+<atom:link href="https://gradelerm.github.io/blog.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<generator>quarto-1.9.38</generator>
+<lastBuildDate>Sun, 09 Mar 2025 23:00:00 GMT</lastBuildDate>
+<item>
+  <title>Figures layout</title>
+  <dc:creator>Marie Gradeler</dc:creator>
+  <link>https://gradelerm.github.io/posts/maps_package.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="test-des-layouts" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="test-des-layouts">Test des layouts</h2>
+<p>Classique, on n’ajoute rien.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://gradelerm.github.io/posts/maps_package_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>On utilise plus d’espace pour afficher une figure en plus large.</p>
+<div class="cell page-columns page-full">
+<div class="cell-output-display page-columns page-full">
+<div class="page-columns page-full">
+<figure class="figure page-columns page-full">
+<p class="page-columns page-full"><img src="https://gradelerm.github.io/posts/maps_package_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img column-screen-inset-shaded" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>On peut aussi afficher les figures dans la marge, il semblerait.</p>
+<div class="cell page-columns page-full">
+
+<div class="no-row-height column-margin column-container"><div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://gradelerm.github.io/posts/maps_package_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div></div></div>
+
+
+</section>
+
+ ]]></description>
+  <category>R</category>
+  <category>tmap</category>
+  <guid>https://gradelerm.github.io/posts/maps_package.html</guid>
+  <pubDate>Sun, 09 Mar 2025 23:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Dummy blog post</title>
+  <dc:creator>Marie Gradeler</dc:creator>
+  <link>https://gradelerm.github.io/posts/dummy_blog_post.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+
+ ]]></description>
+  <category>R</category>
+  <category>dataviz</category>
+  <guid>https://gradelerm.github.io/posts/dummy_blog_post.html</guid>
+  <pubDate>Wed, 09 Oct 2024 22:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Dummy blog post TWO</title>
+  <link>https://gradelerm.github.io/posts/dummy_blog_post_two.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+
+ ]]></description>
+  <guid>https://gradelerm.github.io/posts/dummy_blog_post_two.html</guid>
+  <pubDate>Wed, 19 Aug 2026 06:48:17 GMT</pubDate>
+</item>
+</channel>
+</rss>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Marie Gradeler</title>
+<title>Marie Gradeler – GradelerM</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -86,6 +86,9 @@ ul.task-list li input[type="checkbox"] {
     <img src="./static/logo.png" alt="" class="navbar-logo light-content">
     <img src="./static/logo.png" alt="" class="navbar-logo dark-content">
     </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">GradelerM</span>
+    </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -130,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
     <a href="https://github.com/GradelerM" title="Github" class="quarto-navigation-tool px-1" aria-label="Github"><i class="bi bi-github"></i></a>
-    <a href="mailto:marie.gradeler@gmail.com" title="Email" class="quarto-navigation-tool px-1" aria-label="Email"><i class="bi bi-envelope"></i></a>
+    <a href="./blog.xml" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-rss"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -159,6 +162,14 @@ ul.task-list li input[type="checkbox"] {
   <a href="https://github.com/GradelerM" class="about-link" rel="" target="">
     <i class="bi bi-github"></i>
      <span class="about-link-text">Github</span>
+  </a>
+  <a href="/blog.xml" class="about-link" rel="" target="">
+    <i class="bi bi-rss"></i>
+     <span class="about-link-text">Blog RSS</span>
+  </a>
+  <a href="mailto:marie.gradeler@gmail.com?subject=Contact" class="about-link" rel="" target="">
+    <i class="bi bi-envelope"></i>
+     <span class="about-link-text">Contact</span>
   </a>
 </div>
 </div>
@@ -229,7 +240,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/gradelerm\.github\.io\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -567,6 +578,12 @@ ul.task-list li input[type="checkbox"] {
     <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/GradelerM">
       <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="./blog.xml">
+      <i class="bi bi-rss" role="img">
 </i> 
     </a>
   </li>  

@@ -1396,5 +1396,12 @@
     "title": "Cours",
     "section": "",
     "text": "Hello"
+  },
+  {
+    "objectID": "ressources.html#tutoriels",
+    "href": "ressources.html#tutoriels",
+    "title": "Ressources",
+    "section": "Tutoriels",
+    "text": "Tutoriels"
   }
 ]
