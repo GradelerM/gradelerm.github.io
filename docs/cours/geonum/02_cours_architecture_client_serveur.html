@@ -281,8 +281,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="objectifs-de-la-session" class="level2">
 <h2 class="anchored" data-anchor-id="objectifs-de-la-session">Objectifs de la session</h2>
 <ul>
-<li>Comprendre comment fonctionne une architecture web basique</li>
-<li>Déployer une architecture web de développement en utilisant Docker</li>
+<li>Comprendre comment fonctionne une architecture web basique.</li>
+<li>Déployer une architecture web de développement en utilisant Docker.</li>
 </ul>
 <p><em>Durée&nbsp;: 1h</em></p>
 </section>
@@ -312,7 +312,7 @@ Important
 <h4 class="anchored" data-anchor-id="git">Git</h4>
 <p>Ouvrez le terminal de votre choix (pour les utilisateurs Windows, je recommande Powershell) et tapez la commande suivante&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> version</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Vous devriez obtenir la réponse suivante&nbsp;: <code>git version 2.43.0</code></p>
+<p>Vous devriez obtenir la réponse suivante&nbsp;: <code>git version 2.56.0</code></p>
 <p>Si la version est plus ancienne, il faut la mettre à jour. Si vous avez un message d’erreur, git n’est pas installé. Dans les deux cas, rendez-vous sur la page d’installation de git pour télécharger et installer la nouvelle version&nbsp;: <a href="#0">https://git-scm.com/install/windows</a></p>
 <p>Vous pouvez vérifier que git est installé et à jour en re-tapant la commande <code>git version</code>.</p>
 <p><em>Note&nbsp;: il faut parfois redémarrer l’ordinateur pour qu’il reconnaisse bien l’installation de Git.</em></p>
@@ -321,18 +321,18 @@ Important
 <h4 class="anchored" data-anchor-id="nodejs">NodeJS</h4>
 <p>Dans le terminal, tapez la commande suivante&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> <span class="at">-v</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Vous devriez obtenir la réponse suivante&nbsp;: <code>v24.11.1</code></p>
+<p>Vous devriez obtenir la réponse suivante&nbsp;: <code>v26.6.0</code></p>
 <p>Si Node n’est pas installé… on peut essayer mais on a peu de chances d’avoir les droits sur les ordis de la fac. Voilà quand même le lien officiel&nbsp;: <a href="https://nodejs.org/en/download" class="uri">https://nodejs.org/en/download</a></p>
 <p>Si Node est installé mais la version trop ancienne, essayez la commande suivante&nbsp;:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nvm</span> install 24</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Puis vérifier la mise à jour avec la commande suivante&nbsp;:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nvm</span> install 26</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Puis vérifiez que la mise à jour a bien fonctionné avec la commande suivante&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> <span class="at">-v</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="docker" class="level4">
 <h4 class="anchored" data-anchor-id="docker">Docker</h4>
 <p>Pour vérifier que Docker est installé, vous avez plusieurs options&nbsp;: cherchez le logiciel “Docker Desktop” sur votre ordinateur ou bien tapez la commande suivante&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run hello-world</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><em>Note&nbsp;: si vous utilisez votre propre machine Linux, essayez <code>sudo</code>. Quoi qu’il en soit, il vaut mieux éviter d’utiliser Docker en tant que super utilisateur, référez-vous aux instructions post-installation officielles&nbsp;: <a href="https://docs.docker.com/engine/install/linux-postinstall" class="uri">https://docs.docker.com/engine/install/linux-postinstall</a></em></p>
+<p><em>Note&nbsp;: si vous utilisez votre propre machine Linux et que vous avez un message, essayez <code>sudo</code>. Si ça fonctionne, alors référez-vous aux instructions post-installation officielles&nbsp;: <a href="https://docs.docker.com/engine/install/linux-postinstall" class="uri">https://docs.docker.com/engine/install/linux-postinstall</a>. Il vaut mieux éviter d’utiliser Docker en tant que super utilisateur.</em></p>
 <p>Vous devriez obtenir dans votre terminal le message suivant&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Hello</span> from Docker!</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">This</span> message shows that your installation appears to be working correctly.</span>
@@ -361,10 +361,14 @@ Important
 <h3 class="anchored" data-anchor-id="récupération-du-code-sur-github">Récupération du code sur GitHub</h3>
 <p>Rendez-vous sur le GitHub du projet pour récupérer le code&nbsp;: <a href="https://github.com/GradelerM/geonum_docker" class="uri">https://github.com/GradelerM/geonum_docker</a></p>
 <p>Créez un dossier dans lequel vous voulez travailler. Il nous servira pour le cours de GeoServer et le cours d’OpenLayers. Vous pouvez l’appeler comme vous voulez, mais évitez les espaces et autres caractères difficiles à prendre en charge quand on doit définir un chemin d’accès.</p>
-<p>Ensuite, ouvrez ce dossier dans votre terminal (le clic droit devrait vous donner l’option sous Linux comme Windows). Vérfiez que le chemin pointe bien vers votre nom de dossier. Par exemple, si j’ai créé un dossier qui s’appelle “Cours_Geoserver_Openlayers” dans Documents, le chemin doit ressembler à ça&nbsp;: <code>~/Documents/Cours_Geoserver_Openlayers</code></p>
+<p>Ensuite, ouvrez ce dossier dans votre terminal (le clic droit devrait vous donner l’option). Vérfiez que le chemin pointe bien vers votre nom de dossier. Par exemple, si j’ai créé un dossier qui s’appelle “Cours_Geoserver_Openlayers” dans Documents, le chemin doit ressembler à ça&nbsp;: <code>~/Documents/Cours_Geoserver_Openlayers</code></p>
 <p>Quand c’est bon, on va utiliser Git pour cloner mon dépôt. En langage courant, ça veut dire qu’on utilise Git pour créer une copie de mon code sur votre ordinateur.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/GradelerM/geonum_docker.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Vérifiez votre dossier. Vous devriez avec un nouveau répertoire <code>geonum_docker</code>. Ouvrez ce répertoire dans VSCode pour qu’on puisse regarder le code ensemble.</p>
+<p>Il reste une dernière étape. Pour le moment, votre répertoire est toujours “connecté” à mon dépôt GitHub. On va le déconnecter avec la commande suivante :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote remove origin</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Vérifiez que la commande suivante n’affiche rien (pas d’url pointant vers mon GitHub en tout cas). Si c’est bon, bravo, vous avez bien préparé votre répertoire de travail !</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote <span class="at">-v</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-important callout-empty-content callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -381,12 +385,12 @@ Important
 </section>
 <section id="déploiement-de-la-stack" class="level3">
 <h3 class="anchored" data-anchor-id="déploiement-de-la-stack">Déploiement de la <em>stack</em></h3>
-<p>Maintenant qu’on a compris le contenu du fichier <code>docker_compose.yml</code>, on peut déployer notre GeoServer et commencer à l’utiliser. Pour ça, ouvrez un terminal dans VSCode et vérifiez que le chemin correspond bien au répertoire qu’on vient de récupérer. Si on reprend l’exemple, précédent, au lieu d’avoir <code>~/Documents/Cours_Geoserver_Openlayers</code> vous devriez maintenant avoir <code>~/Documents/Cours_Geoserver_Openlayers/geonum_docker</code> . C’est ce qu’on va appeler à partir de maintenant la <strong>racine</strong> de notre projet.</p>
+<p>Maintenant qu’on a compris le contenu du fichier <code>docker_compose.yml</code>, on peut déployer notre GeoServer et commencer à l’utiliser. Pour ça, ouvrez un terminal dans VSCode et vérifiez que le chemin correspond bien au répertoire qu’on vient de créer. Si on reprend l’exemple, précédent, au lieu d’avoir <code>~/Documents/Cours_Geoserver_Openlayers</code> vous devriez maintenant avoir <code>~/Documents/Cours_Geoserver_Openlayers/geonum_docker</code> . C’est ce qu’on va appeler à partir de maintenant la <strong>racine</strong> de notre projet.</p>
 <p>Une fois que votre terminal est ouvert à la racine de votre projet, taper la commande suivante&nbsp;:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose up <span class="at">-d</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose up <span class="at">-d</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Cette commande demande à Docker de lire notre recette de <code>docker_compose.yml</code> pour créer notre GeoServer (et une autre application web qu’on utilisera plus tard, mais pas aujourd’hui).</p>
 <p>Si vous avez Docker Desktop d’installé, vous pouvez l’ouvrir pour vérifier qu’il se passe bien quelque chose.</p>
-<p><strong>Si ça prend du temps la première fois, c’est normal.</strong> Docker doit d’abord aller récupérer les “recettes” (images) en ligne pour GeoServer et Caddy (qu’on présentera pendant les cours OpenLayers). Normalement, les prochaines fois, ça ira vite.</p>
+<p><strong>Si ça prend du temps la première fois, c’est normal.</strong> Docker doit d’abord aller récupérer les “recettes” (images) en ligne pour GeoServer et Caddy (qu’on présentera pendant les cours OpenLayers). Normalement, ce sera beaucoup plus rapide les fois suivantes.</p>
 <p>Quand le container est prêt, rendez-vous sur <a href="http://localhost:8080/geoserver/web/?0" class="uri">http://localhost:8080/geoserver/web/?0</a>. Si vous voyez l’interface de GeoServer, hourra&nbsp;! On peut passer au prochain cours.</p>
 <p>Sinon, appelez-moi, on va débugger tout ça ensemble.</p>
 </section>

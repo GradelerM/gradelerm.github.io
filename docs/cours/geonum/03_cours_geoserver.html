@@ -283,9 +283,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="objectifs-de-la-session" class="level2">
 <h2 class="anchored" data-anchor-id="objectifs-de-la-session">Objectifs de la session</h2>
 <ul>
-<li><p>Apprendre ce qu’est un serveur cartographique</p></li>
+<li><p>Apprendre ce qu’est un serveur cartographique.</p></li>
 <li><p>Connaître les standards OGC WFS, WMS, WMTS…</p></li>
-<li><p>Savoir importer, styliser et visualiser une couche de données dans GeoServer</p></li>
+<li><p>Savoir importer, styliser et visualiser une couche de données dans GeoServer.</p></li>
 </ul>
 <p><em>Durée&nbsp;: 2h</em></p>
 </section>
@@ -376,7 +376,7 @@ Important
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Si vous ne pouvez pas créer de nouveau dossier, c’est que vous ne disposez pas des permissions suffisantes. Dans mon cas (sur Ubuntu), tous les dossiers appartenaient à l’utilisateur et au groupe <code>root</code>. Il faut utiliser la commande <code>chown</code>&nbsp;:</p>
+<p>Si vous ne pouvez pas créer de nouveau dossier, c’est que vous ne disposez pas des permissions suffisantes. Dans mon cas (sur Fedora), tous les dossiers appartenaient à l’utilisateur et au groupe <code>root</code>. Il faut utiliser la commande <code>chown</code>&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chown <span class="at">-R</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>:<span class="op">&lt;</span>group<span class="op">&gt;</span> /chemin/vers/mon/dossier</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Pour changer les droits de mon dossier `/home/marie/Documents/GeoServer` j’ai donc tapé&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chown <span class="at">-R</span> marie:marie /home/marie/Documents/GeoServer</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -386,16 +386,16 @@ Important
 </div>
 <p>Ensuite, dans l’interface de GeoServer, nous devons <strong>créer un nouvel espace de travail</strong>. Ils servent à compartimenter la donnée. Dans un cas d’utilisation réelle, on aurait par exemple un espace de travail par projet. Il est possible de définir des droits utilisateurs spécifiques aux espaces de travail (par exemple, l’utilisateur “John” peut ajouter de la donnée dans l’espace “espaces_verts” mais pas dans “bassins_versants”).</p>
 <ul>
-<li><p>Allez dans “Espaces de travail” (à gauche)</p></li>
-<li><p>Cliquez sur “Ajouter un nouvel espace de travail”</p></li>
-<li><p>Donnez lui comme nom et comme URI <code>land_matrix</code></p></li>
+<li><p>Allez dans “Espaces de travail” (à gauche).</p></li>
+<li><p>Cliquez sur “Ajouter un nouvel espace de travail”.</p></li>
+<li><p>Donnez lui comme nom et comme URI <code>land_matrix</code> .</p></li>
 <li><p>Vous devriez revenir à la liste de vos espaces de travail.</p></li>
 </ul>
 <p>On doit ensuite définir notre Geopackage comme étant un nouvel <strong>entrepôt de données</strong>. Cela permet d’indiquer à GeoServer qu’il s’agit d’une source de données. C’est assez similaires aux connexions dans QGIS.</p>
 <ul>
-<li><p>Allez dans “Entrepôts” (à gauche)</p></li>
-<li><p>Cliquez sur “Ajouter un nouvel entrepôt”</p></li>
-<li><p>Choisissez “GeoPackage”</p></li>
+<li><p>Allez dans “Entrepôts” (à gauche).</p></li>
+<li><p>Cliquez sur “Ajouter un nouvel entrepôt”.</p></li>
+<li><p>Choisissez “GeoPackage”.</p></li>
 <li><p>Donnez lui pour nom <code>land_matrix_mines</code>. Vous pouvez aussi lui donner une description.</p></li>
 <li><p>Dans <strong>“Paramètres de connexion”</strong>, près de “database*”, cliquez sur “Parcourir…”. Vous devriez pouvoir accéder à <code>data/</code> et y trouver <code>land_matrix_mines.gpkg</code>. Cliquez dessus.</p></li>
 <li><p>Allez tout en bas de la page et cliquez sur “Sauvegarder”.</p></li>
@@ -412,7 +412,7 @@ Important
 <p>Les trois choses à faire absolument à chaque fois dans l’onglet données sont&nbsp;:</p>
 <ul>
 <li><p>Renseigner les informations dans “<strong>Informations de base sur les donneés</strong>” comme le nom de la couche et un résumé. N’oubliez pas de laisser “Activé” et “Publié” cochés pour rendre la couche accessible depuis l’extérieur.</p></li>
-<li><p>Vérifier le “<strong>Système de Référence de Coordonnées (SRC)</strong>” qui doit être pré-rempli en EPSG:4326 dans notre cas. Il correspond à la projection WGS84 utilisée dans la grande majorité des cas en cartographie web.</p></li>
+<li><p>Vérifier le “<strong>Système de Référence de Coordonnées (SRC)</strong>” qui doit être pré-rempli en EPSG:4326 dans notre cas. Il correspond à la projection WGS84 utilisée dans la grande majorité des cas en cartographie web, même si les outils permettent petit à petit de se diriger plutôt vers la projection <em>Equal Earth</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> (EPSG:8857). Une version future de ce TP adoptera la projection <em>Equal Earth</em>. Si vous êtes déjà suffisamment à l’aise pour prendre des libertés vis-à-vis du TP, vous pouvez l’utiliser dès maintenant ! Et pour des cartes centrées sur la France, vous pourrez aussi utiliser la projection classique Lambert-93 (EPSG:2154).</p></li>
 <li><p>Définir les “<strong>Emprises</strong>” qui se calculent automatiquement sur GeoServer en cliquant sur “Calculer depuis les limites du SRS” et “Calculées sur les emprises natives”.</p></li>
 </ul>
 <p>Cliquez ensuite sur “Appliquer” pour sauvegarder vos changements et scrollez en haut de la page pour accéder à l’onglet “Publication”.</p>
@@ -421,8 +421,8 @@ Important
 </ul>
 <p>Cliquez sur “Sauvegarder”. La couche devrait maintenant apparaître au sommet du tableau. Cliquez simplement sur le nom de la couche (ici “deals”) pour la paramétrer à nouveau si besoin. Pour vérifier que tout a fonctionné, on peut prévisualiser la couche directement depuis GeoServer.</p>
 <ul>
-<li><p>Allez dans “Prévisualisation de la Couche” (à gauche)</p></li>
-<li><p>Sur la ligne de la couche “deals”, sélectionnez “OpenLayers” (dans la colonne “Formats usuels”)</p></li>
+<li><p>Allez dans “Prévisualisation de la Couche” (à gauche).</p></li>
+<li><p>Sur la ligne de la couche “deals”, sélectionnez “OpenLayers” (dans la colonne “Formats usuels”).</p></li>
 </ul>
 <p>Vous devriez voir apparaître quelque chose comme ça, avec des informations supplémentaires si vous cliquez sur des points (possible car notre couche est interrogeable)&nbsp;:</p>
 <div class="quarto-figure quarto-figure-center">
@@ -430,7 +430,7 @@ Important
 <p><img src="../../static/captures/geonum_geoserver_layer_preview.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Prévisualisation de la couche deals dans GeoServer"></p>
 </figure>
 </div>
-<p>Si c’est bon, bravo, ça a fonctionné ! Si vous voyez des artefacts autour des points, c’est normal. Ce que vous regardez, ce ne sont pas des polygones mais une image produite à partir de notre couche et transmise comme un flux WMS par notre serveur. L’intérêt, c’est qu’on peut afficher rapidement des couches très lourdes de cette manière, là où un GeoJSON commencerait à ramer. Et on peut toujours zoomer et cliquer sur un point pour l’interroger. C’est super pratique&nbsp;! Ce flux WMS est récupéré et lu par une petite appli OpenLayers, c’est comme ça que vous êtes capable de voir la couche sur votre page web (vous sentez venir la transition vers les prochains cours, là&nbsp;?).</p>
+<p>Si c’est bon, bravo, ça a fonctionné ! Si vous voyez des artefacts autour des points, c’est normal. Ce que vous regardez, ce ne sont pas des polygones mais une image produite à partir de notre couche et transmise comme un flux WMS par notre serveur. L’intérêt, c’est qu’on peut afficher rapidement des couches très lourdes de cette manière, là où un GeoJSON commencerait à ramer. Et on peut toujours zoomer et cliquer sur un point pour l’interroger. C’est super pratique&nbsp;! Ce flux WMS est récupéré et lu par une petite appli OpenLayers, c’est comme ça que vous êtes capable de voir la couche sur votre page web. Vous sentez la transition vers le prochain cours ?</p>
 <p>Bon, super, on a notre couche moche. Maintenant, on en fait quoi de tous ces points rouges&nbsp;?</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -445,7 +445,7 @@ Important
 <p>Pour le moment, afficher notre couche “deals” va juste donner l’impression que notre carte a attrappé la varicelle. On va commencer par changer son apparence en faisant des points bien ronds et d’une couleur plus agréable. Pour ça, on va devoir <strong>créer un nouveau style</strong>.</p>
 <ul>
 <li><p>Allez dans “Styles” et cliquer sur “Ajouter un nouveau style”.</p></li>
-<li><p>Nommez le style “deals” et choisissez l’espace de travail “land_matrix”. Conservez le format SLD, c’est le seul disponible sans ajouter d’extensions.</p></li>
+<li><p>Nommez le style “deals” et choisissez l’espace de travail “land_matrix”. Conservez le format SLD, c’est le seul disponible sans installer d’extensions à GeoServer.</p></li>
 <li><p>Pour nous aider, GeoServer propose de générer un SLD par défaut. Sélectionnez “Point” et cliquez sur “Générer…”. Vous devriez vous retrouver avec un fichier .xml décrivant la couche.</p></li>
 </ul>
 <p>On pourrait aller lire en détail le <a href="https://docs.geoserver.org/main/en/user/styling/sld/cookbook/index.html">SLD Cookbook</a> de GeoServer pour écrire notre fichier manuellement, mais on est plus malins que ça. On a un super outil à disposition qui s’appelle QGIS.</p>
@@ -453,7 +453,7 @@ Important
 <li><strong>Si vous ne l’avez pas déjà fait, créez un projet QGIS et ajoutez les couches Land Matrix.</strong></li>
 <li>Donnez un style sympa aux points de la couche deals. J’ai changé la couleur pour les rendre orange.</li>
 <li>Allez dans les propriétés de votre couche et dans “Symbologie”. Tout en bas, choisissez “Style” et “Enregistrer le style…”.</li>
-<li>Choisissez l’option “En tant que fichier SLD” et choisissez le chemin et le nom de votre fichier en cliquant sur “…” après “Fichier”. J’ai appelé le mien “deals.sld”</li>
+<li>Choisissez l’option “En tant que fichier SLD” et choisissez le chemin et le nom de votre fichier en cliquant sur “…” après “Fichier”. J’ai appelé le mien “deals.sld”.</li>
 <li>Allez chercher votre fichier et ouvrez-le avec un éditeur de texte (Notepad, VSCode, peu importe).</li>
 <li>Copiez le contenu.</li>
 <li>Retournez sur votre page GeoServer, supprimez tout le contenu de la zone de texte et collez à la place le contenu de <code>deals.sld</code>. Voilà ce que ça donne pour moi&nbsp;:</li>
@@ -807,25 +807,31 @@ Tip
 <ul>
 <li><p>C’est quoi l’intérêt du serveur carto, déjà&nbsp;?</p>
 <ul>
-<li><p>Centralisation de la donnée et mise à jour</p></li>
-<li><p>Distribution de la donnée</p></li>
-<li><p>Gestion des droits</p></li>
-<li><p>Bien quand on a une organisation et bcp de données, s’intègre très bien dans une IDG</p></li>
-<li><p>Bien pour les couches Raster et les couches Vecteur lourdes qui peuvent être servies en tant qu’images (WMS)</p></li>
-<li><p>Connexion directe à une base de données PostgreSQL</p></li>
-<li><p>Possibilité d’écrire des requêtes SQL pour former les couches</p></li>
+<li><p>Centralisation de la donnée et mise à jour.</p></li>
+<li><p>Distribution de la donnée.</p></li>
+<li><p>Gestion des droits.</p></li>
+<li><p>Bien quand on a une organisation et bcp de données, s’intègre très bien dans une IDG.</p></li>
+<li><p>Bien pour les couches Raster et les couches Vecteur lourdes qui peuvent être servies en tant qu’images (WMS).</p></li>
+<li><p>Connexion directe à une base de données PostgreSQL possible.</p></li>
+<li><p>Possibilité d’écrire des requêtes SQL pour former les couches.</p></li>
 <li><p>Possibilité de créer des styles complexes “à la QGIS”.</p></li>
 </ul></li>
 <li><p>Est-ce que j’en ai besoin pour mon projet GeoNum&nbsp;?</p>
 <ul>
-<li>Ça dépend des données que vous utilisez et ce que vous en faites. Le mieux c’est d’en discuter avec les profs&nbsp;!</li>
+<li>Ça dépend des données que vous utilisez et ce que vous en faites. Le mieux c’est d’en parler ensemble&nbsp;!</li>
 </ul></li>
 </ul>
 
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Je vous recommande d’aller explorer le site <a href="https://newworldmap.org/?mode=linked&amp;region=304&amp;z=1.00&amp;lon=0.000&amp;lat=0.000">The New World Map</a> sur le sujet.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

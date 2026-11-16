@@ -14,9 +14,9 @@ format:
 
 ## Sommaire
 
--   Révision du fonctionnement d’une architecture client-serveur
+- Révision du fonctionnement d’une architecture client-serveur.
 
--   Introduction à Docker pour créer une architecture client-serveur
+- Introduction à Docker pour créer une architecture client-serveur.
 
 ## L’architecture client-serveur
 
@@ -69,8 +69,8 @@ En réalité, la plupart des applications fonctionnent de la manière suivante 
 
 On souhaite servir des couches de données géographique avec GeoServer et pouvoir permettre à des applications clientes de les lire.
 
--   Un client pour récupérer et afficher nos couches de données (Firefox, QGIS, …)
--   Un serveur web cartographique (GeoServer)
+- Un client pour récupérer et afficher nos couches de données (Firefox, QGIS, …)
+- Un serveur web cartographique (GeoServer)
 
 . . .
 
@@ -82,9 +82,9 @@ Généralement, quand on développe une application, on a tout sur notre ordinat
 
 ### Les Machines Virtuelles (VM)
 
--   Il faut voir une machine virtuelle comme un ordinateur qui serait **dématérialisé** (sans composants matériels). Elle possède un processeur, de la mémoire, des espaces de stockage pour la donnée, elle peut se connecter à internet…
+- Il faut voir une machine virtuelle comme un ordinateur qui serait **dématérialisé** (sans composants matériels). Elle possède un processeur, de la mémoire, des espaces de stockage pour la donnée, elle peut se connecter à internet…
 
--   Outils de création de machines virtuelles : VirtualBox, VMWare…
+- Outils de création de machines virtuelles : VirtualBox, VMWare…
 
 *Exemple : en téléchargeant VirtualBox, je peux créer une machine virtuelle Linux sur mon ordinateur Windows.*
 
@@ -96,15 +96,15 @@ Généralement, quand on développe une application, on a tout sur notre ordinat
 
 Si je voulais mettre en place mon serveur sur une machine virtuelle, je devrais :
 
--   créer la machine (avec des caractéristiques suffisantes pour faire tourner l’application)
+- créer la machine (avec des caractéristiques suffisantes pour faire tourner l’application)
 
--   télécharger, installer et configurer GeoServer
+- télécharger, installer et configurer GeoServer
 
--   éventuellement télécharger, installer et configurer une base Postgresql avec PostGIS et la connecter au serveur
+- éventuellement télécharger, installer et configurer une base Postgresql avec PostGIS et la connecter au serveur
 
--   refaire la même chose pour tout autre serveur que je voudrais installer (au hasard, un serveur pour une application OpenLayers)
+- refaire la même chose pour tout autre serveur que je voudrais installer (au hasard, un serveur pour une application OpenLayers)
 
--   etc.
+- etc.
 
 ![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYm1qNGw0eHk1ZmxmNmtiaXQwenc5NDdqcDRkbTNyc3M1YmJzdXRnbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LgR0AnXJBrO4E/giphy.webp){fig-alt="GIF : Chat déboussolé" fig-align="center" width="412"}
 
@@ -114,11 +114,11 @@ Si je voulais mettre en place mon serveur sur une machine virtuelle, je devrais�
 
 Multiplier les machines virtuelles sur l’hôte est très demandeur.
 
--   ressources divisées entre l’hôte et les machines
+- ressources divisées entre l’hôte et les machines
 
--   autant d’OS à faire tourner que de machines
+- autant d’OS à faire tourner que de machines
 
--   chaque machine = plusieurs Go d’espace
+- chaque machine = plusieurs Go d’espace
 
 C’est aussi **difficile à maintenir** - il faut garder tous les OS à jour, etc.
 
@@ -136,11 +136,11 @@ C’est aussi **difficile à maintenir** - il faut garder tous les OS à jour, e
 
 ### Docker
 
--   Docker permet de faire tourner ce qu’on appelle des **containers.**
+- Docker permet de faire tourner ce qu’on appelle des **containers.**
 
--   Les containers sont réduits au **minimum nécessaire** pour faire tourner des services (un serveur, une base de données, …).
+- Les containers sont réduits au **minimum nécessaire** pour faire tourner des services (un serveur, une base de données, …).
 
--   Autre outil de containerisation : Podman
+- Autre outil de containerisation : Podman
 
 ![Source : microsoft.com](media/container-diagram.svg){fig-alt="Schéma containers" fig-align="center"}
 
@@ -148,9 +148,9 @@ C’est aussi **difficile à maintenir** - il faut garder tous les OS à jour, e
 
 ### Docker Compose
 
--   Sorti en 2013, **Docker Compose** permet de gérer des applications multi-containers.
+- Sorti en 2013, **Docker Compose** permet de gérer des applications multi-containers.
 
--   Pour cela, on va rédiger un fichier de type `docker-compose.yml` qui va agir comme une "recette" pour permettre à Docker de créer et connecter l’ensemble des containers dont on a besoin.
+- Pour cela, on va rédiger un fichier de type `docker-compose.yml` qui va agir comme une "recette" pour permettre à Docker de créer et connecter l’ensemble des containers dont on a besoin.
 
 ## Déploiement
 

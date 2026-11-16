@@ -5,8 +5,8 @@ format: html
 
 ## Objectifs de la session
 
--   Comprendre comment fonctionne une architecture web basique
--   Déployer une architecture web de développement en utilisant Docker
+- Comprendre comment fonctionne une architecture web basique.
+- Déployer une architecture web de développement en utilisant Docker.
 
 *Durée : 1h*
 
@@ -32,7 +32,7 @@ Ouvrez le terminal de votre choix (pour les utilisateurs Windows, je recommande 
 git version
 ```
 
-Vous devriez obtenir la réponse suivante : `git version 2.43.0`
+Vous devriez obtenir la réponse suivante : `git version 2.56.0`
 
 Si la version est plus ancienne, il faut la mettre à jour. Si vous avez un message d’erreur, git n’est pas installé. Dans les deux cas, rendez-vous sur la page d’installation de git pour télécharger et installer la nouvelle version : [https://git-scm.com/install/windows](#0)
 
@@ -48,17 +48,17 @@ Dans le terminal, tapez la commande suivante :
 node -v
 ```
 
-Vous devriez obtenir la réponse suivante : `v24.11.1`
+Vous devriez obtenir la réponse suivante : `v26.6.0`
 
 Si Node n’est pas installé… on peut essayer mais on a peu de chances d’avoir les droits sur les ordis de la fac. Voilà quand même le lien officiel : <https://nodejs.org/en/download>
 
 Si Node est installé mais la version trop ancienne, essayez la commande suivante :
 
 ``` bash
-nvm install 24
+nvm install 26
 ```
 
-Puis vérifier la mise à jour avec la commande suivante :
+Puis vérifiez que la mise à jour a bien fonctionné avec la commande suivante :
 
 ``` bash
 node -v
@@ -72,7 +72,7 @@ Pour vérifier que Docker est installé, vous avez plusieurs options : cherchez
 docker run hello-world
 ```
 
-*Note : si vous utilisez votre propre machine Linux, essayez `sudo`. Quoi qu’il en soit, il vaut mieux éviter d’utiliser Docker en tant que super utilisateur, référez-vous aux instructions post-installation officielles : <https://docs.docker.com/engine/install/linux-postinstall>*
+*Note : si vous utilisez votre propre machine Linux et que vous avez un message, essayez `sudo`. Si ça fonctionne, alors référez-vous aux instructions post-installation officielles : <https://docs.docker.com/engine/install/linux-postinstall>. Il vaut mieux éviter d’utiliser Docker en tant que super utilisateur.*
 
 Vous devriez obtenir dans votre terminal le message suivant :
 
@@ -107,7 +107,7 @@ Rendez-vous sur le GitHub du projet pour récupérer le code : <https://github.
 
 Créez un dossier dans lequel vous voulez travailler. Il nous servira pour le cours de GeoServer et le cours d’OpenLayers. Vous pouvez l’appeler comme vous voulez, mais évitez les espaces et autres caractères difficiles à prendre en charge quand on doit définir un chemin d’accès.
 
-Ensuite, ouvrez ce dossier dans votre terminal (le clic droit devrait vous donner l’option sous Linux comme Windows). Vérfiez que le chemin pointe bien vers votre nom de dossier. Par exemple, si j’ai créé un dossier qui s’appelle "Cours_Geoserver_Openlayers" dans Documents, le chemin doit ressembler à ça : `~/Documents/Cours_Geoserver_Openlayers`
+Ensuite, ouvrez ce dossier dans votre terminal (le clic droit devrait vous donner l’option). Vérfiez que le chemin pointe bien vers votre nom de dossier. Par exemple, si j’ai créé un dossier qui s’appelle "Cours_Geoserver_Openlayers" dans Documents, le chemin doit ressembler à ça : `~/Documents/Cours_Geoserver_Openlayers`
 
 Quand c’est bon, on va utiliser Git pour cloner mon dépôt. En langage courant, ça veut dire qu’on utilise Git pour créer une copie de mon code sur votre ordinateur.
 
@@ -117,13 +117,25 @@ git clone https://github.com/GradelerM/geonum_docker.git
 
 Vérifiez votre dossier. Vous devriez avec un nouveau répertoire `geonum_docker`. Ouvrez ce répertoire dans VSCode pour qu’on puisse regarder le code ensemble.
 
+Il reste une dernière étape. Pour le moment, votre répertoire est toujours "connecté" à mon dépôt GitHub. On va le déconnecter avec la commande suivante :
+
+``` bash
+git remote remove origin
+```
+
+Vérifiez que la commande suivante n’affiche rien (pas d’url pointant vers mon GitHub en tout cas). Si c’est bon, bravo, vous avez bien préparé votre répertoire de travail !
+
+``` bash
+git remote -v
+```
+
 ::: callout-important
 ## Point diapos sur le contenu du répertoire
 :::
 
 ### Déploiement de la *stack*
 
-Maintenant qu’on a compris le contenu du fichier `docker_compose.yml`, on peut déployer notre GeoServer et commencer à l’utiliser. Pour ça, ouvrez un terminal dans VSCode et vérifiez que le chemin correspond bien au répertoire qu’on vient de récupérer. Si on reprend l’exemple, précédent, au lieu d’avoir `~/Documents/Cours_Geoserver_Openlayers` vous devriez maintenant avoir `~/Documents/Cours_Geoserver_Openlayers/geonum_docker` . C’est ce qu’on va appeler à partir de maintenant la **racine** de notre projet.
+Maintenant qu’on a compris le contenu du fichier `docker_compose.yml`, on peut déployer notre GeoServer et commencer à l’utiliser. Pour ça, ouvrez un terminal dans VSCode et vérifiez que le chemin correspond bien au répertoire qu’on vient de créer. Si on reprend l’exemple, précédent, au lieu d’avoir `~/Documents/Cours_Geoserver_Openlayers` vous devriez maintenant avoir `~/Documents/Cours_Geoserver_Openlayers/geonum_docker` . C’est ce qu’on va appeler à partir de maintenant la **racine** de notre projet.
 
 Une fois que votre terminal est ouvert à la racine de votre projet, taper la commande suivante :
 
@@ -135,7 +147,7 @@ Cette commande demande à Docker de lire notre recette de `docker_compose.yml` p
 
 Si vous avez Docker Desktop d’installé, vous pouvez l’ouvrir pour vérifier qu’il se passe bien quelque chose.
 
-**Si ça prend du temps la première fois, c’est normal.** Docker doit d’abord aller récupérer les "recettes" (images) en ligne pour GeoServer et Caddy (qu’on présentera pendant les cours OpenLayers). Normalement, les prochaines fois, ça ira vite.
+**Si ça prend du temps la première fois, c’est normal.** Docker doit d’abord aller récupérer les "recettes" (images) en ligne pour GeoServer et Caddy (qu’on présentera pendant les cours OpenLayers). Normalement, ce sera beaucoup plus rapide les fois suivantes.
 
 Quand le container est prêt, rendez-vous sur <http://localhost:8080/geoserver/web/?0>. Si vous voyez l’interface de GeoServer, hourra ! On peut passer au prochain cours.
 
@@ -152,13 +164,13 @@ Dans cette section, j’ajoute quelques éléments d’aide à la compréhension
 
 Pas de panique ! On n’a pas besoin de savoir exactement comment fonctionne Docker pour ce TP. Si on veut simplifier :
 
--   Docker permet de faire tourner des **services** dans des **containers** créés à partir d’**images**.
+- Docker permet de faire tourner des **services** dans des **containers** créés à partir d’**images**.
 
--   Une **image** est une recette à suivre pour créer mon container. Elle demande à Docker de créer un container basé sur Debian, d’y installer GeoServer ou bien une base PostgreSQL avec l’extension postGIS, etc.
+- Une **image** est une recette à suivre pour créer mon container. Elle demande à Docker de créer un container basé sur Debian, d’y installer GeoServer ou bien une base PostgreSQL avec l’extension postGIS, etc.
 
--   Un **container** est le produit d’une image. C’est un peu le plat cuisiné à partir de la recette. C’est à l’intérieur du container que tourne mon **service** comme ma base de données ou mon serveur web. On peut connecter plusieurs containers entre eux, pratique si on veut un site web et une base de données qui fonctionnent ensemble !
+- Un **container** est le produit d’une image. C’est un peu le plat cuisiné à partir de la recette. C’est à l’intérieur du container que tourne mon **service** comme ma base de données ou mon serveur web. On peut connecter plusieurs containers entre eux, pratique si on veut un site web et une base de données qui fonctionnent ensemble !
 
--   Un **service** est généralement une base de données (ex. PostgreSQL), un serveur de site web (ex. Apache), un serveur cartographique (ex. GeoServer), etc. Comme les bonnes pratiques demandent d’avoir un seul service par container, on va parler du "container GeoServer" pour dire "le container qui contient mon service GeoServer", ça va plus vite.
+- Un **service** est généralement une base de données (ex. PostgreSQL), un serveur de site web (ex. Apache), un serveur cartographique (ex. GeoServer), etc. Comme les bonnes pratiques demandent d’avoir un seul service par container, on va parler du "container GeoServer" pour dire "le container qui contient mon service GeoServer", ça va plus vite.
 
 Si ce n’est encore pas clair et que ça vous gêne pour la compréhension de la suite du TP, hop, on lève la main et on demande des explications, je suis là pour ça ! Et si vous voulez aller plus loin, rendez-vous sur la [documentation officelle de Docker](https://docs.docker.com/).
 :::

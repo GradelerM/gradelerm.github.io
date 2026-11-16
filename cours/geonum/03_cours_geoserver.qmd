@@ -5,11 +5,11 @@ format: html
 
 ## Objectifs de la session
 
--   Apprendre ce qu’est un serveur cartographique
+- Apprendre ce qu’est un serveur cartographique.
 
--   Connaître les standards OGC WFS, WMS, WMTS…
+- Connaître les standards OGC WFS, WMS, WMTS…
 
--   Savoir importer, styliser et visualiser une couche de données dans GeoServer
+- Savoir importer, styliser et visualiser une couche de données dans GeoServer.
 
 *Durée : 2h*
 
@@ -34,8 +34,8 @@ Si tout s’est bien passé lors du TP précédent, vous devriez avoir une insta
 
 Pour relancer votre instance, vous pouvez :
 
--   ouvrir un terminal à la racine du dossier `geonum_docker` et taper la commande `docker compose up -d`
--   ouvrir l’application Docker Desktop, trouver la *stack* de containers `geonum_docker` et `geonum_web` et cliquer sur "Start"
+- ouvrir un terminal à la racine du dossier `geonum_docker` et taper la commande `docker compose up -d`
+- ouvrir l’application Docker Desktop, trouver la *stack* de containers `geonum_docker` et `geonum_web` et cliquer sur "Start"
 
 Si jamais votre instance tourne mais que vous ne trouvez pas votre GeoServer, il est peut-être à une adresse différente. Vérifiez le contenu de la ligne "ports" du fichier `docker-compose.yml`.
 
@@ -56,38 +56,38 @@ Dans ce cas, vous trouverez votre GeoServer à l’adresse [http://localhost:808
 
 Une fois dans l’interface :
 
--   En haut à droite de l’écran, si ce n’est pas déjà le cas, sélectionnez le langage "fr" pour passer l’interface en français.
+- En haut à droite de l’écran, si ce n’est pas déjà le cas, sélectionnez le langage "fr" pour passer l’interface en français.
 
--   Connectez vous avec l’identifiant `admin` et le mot de passe `geoserver`. Ce sont les identifiants par défaut quand vous créez une instance de GeoServer. Si vous mettiez votre application en ligne, il faudrait évidemment changer ça.
+- Connectez vous avec l’identifiant `admin` et le mot de passe `geoserver`. Ce sont les identifiants par défaut quand vous créez une instance de GeoServer. Si vous mettiez votre application en ligne, il faudrait évidemment changer ça.
 
 ### Se familiariser avec notre jeu de données
 
 Ensuite, téléchargez le jeu de données [land_matrix_mines](/data/land_matrix/land_matrix_mines.gpkg). C’est celui qu’on utilisera pendant mes cours. **Prenez quelques minutes pour vous familiariser avec dans QGIS avant de passer à la suite.** Vous devriez pouvoir répondre aux questions suivantes :
 
--   Quel est le format du jeu de données ?
+- Quel est le format du jeu de données ?
 
--   Quelles sont les couches présentes et à quoi correspondent-elles ?
+- Quelles sont les couches présentes et à quoi correspondent-elles ?
 
--   Quelle est leur géométrie (points, polygones…) ?
+- Quelle est leur géométrie (points, polygones…) ?
 
--   Quels sont les attributs de chacune des couches ? Comment est-ce que je pourrais m’en servir pour styliser ma couche et créer une carte intéressante ?
+- Quels sont les attributs de chacune des couches ? Comment est-ce que je pourrais m’en servir pour styliser ma couche et créer une carte intéressante ?
 
 ### Créer un espace de travail et importer des données
 
 Maintenant que vous voyez mieux sur quelle donnée on va travailler, il est temps de l’importer dans GeoServer. Pour ça, on va créer un dossier `geoserver/opt/data` et y glisser le jeu de données.
 
--   Ouvrez votre gestionnaire de fichiers à la racine du projet (répertoire `geonum_docker`)
+- Ouvrez votre gestionnaire de fichiers à la racine du projet (répertoire `geonum_docker`)
 
--   Dans `geoserver` \> `opt`, créez un nouveau répertoire `data`. *Note : vous pouvez l’appeler comme vous voulez, on utilise juste une convention ici.*
+- Dans `geoserver` \> `opt`, créez un nouveau répertoire `data`. *Note : vous pouvez l’appeler comme vous voulez, on utilise juste une convention ici.*
 
--   Vérifiez bien que `data` se trouve dans le même répertoire que `styles`, `workspaces`, etc.
+- Vérifiez bien que `data` se trouve dans le même répertoire que `styles`, `workspaces`, etc.
 
--   Déplacez le jeu de données `land_matrix_mines` dans le dossier `data`
+- Déplacez le jeu de données `land_matrix_mines` dans le dossier `data`
 
 ::: {.callout-important collapse="true"}
 ## Je ne peux pas créer de nouveau dossier / déplacer mon fichier !
 
-Si vous ne pouvez pas créer de nouveau dossier, c’est que vous ne disposez pas des permissions suffisantes. Dans mon cas (sur Ubuntu), tous les dossiers appartenaient à l’utilisateur et au groupe `root`. Il faut utiliser la commande `chown` :
+Si vous ne pouvez pas créer de nouveau dossier, c’est que vous ne disposez pas des permissions suffisantes. Dans mon cas (sur Fedora), tous les dossiers appartenaient à l’utilisateur et au groupe `root`. Il faut utiliser la commande `chown` :
 
 ``` bash
 sudo chown -R <user>:<group> /chemin/vers/mon/dossier
@@ -104,65 +104,67 @@ Si ça ne fonctionne pas, ne restez pas bloqués et appelez-moi, on règle ça e
 
 Ensuite, dans l’interface de GeoServer, nous devons **créer un nouvel espace de travail**. Ils servent à compartimenter la donnée. Dans un cas d’utilisation réelle, on aurait par exemple un espace de travail par projet. Il est possible de définir des droits utilisateurs spécifiques aux espaces de travail (par exemple, l’utilisateur "John" peut ajouter de la donnée dans l’espace "espaces_verts" mais pas dans "bassins_versants").
 
--   Allez dans "Espaces de travail" (à gauche)
+- Allez dans "Espaces de travail" (à gauche).
 
--   Cliquez sur "Ajouter un nouvel espace de travail"
+- Cliquez sur "Ajouter un nouvel espace de travail".
 
--   Donnez lui comme nom et comme URI `land_matrix`
+- Donnez lui comme nom et comme URI `land_matrix` .
 
--   Vous devriez revenir à la liste de vos espaces de travail.
+- Vous devriez revenir à la liste de vos espaces de travail.
 
 On doit ensuite définir notre Geopackage comme étant un nouvel **entrepôt de données**. Cela permet d’indiquer à GeoServer qu’il s’agit d’une source de données. C’est assez similaires aux connexions dans QGIS.
 
--   Allez dans "Entrepôts" (à gauche)
+- Allez dans "Entrepôts" (à gauche).
 
--   Cliquez sur "Ajouter un nouvel entrepôt"
+- Cliquez sur "Ajouter un nouvel entrepôt".
 
--   Choisissez "GeoPackage"
+- Choisissez "GeoPackage".
 
--   Donnez lui pour nom `land_matrix_mines`. Vous pouvez aussi lui donner une description.
+- Donnez lui pour nom `land_matrix_mines`. Vous pouvez aussi lui donner une description.
 
--   Dans **"Paramètres de connexion"**, près de "database\*", cliquez sur "Parcourir…". Vous devriez pouvoir accéder à `data/` et y trouver `land_matrix_mines.gpkg`. Cliquez dessus.
+- Dans **"Paramètres de connexion"**, près de "database\*", cliquez sur "Parcourir…". Vous devriez pouvoir accéder à `data/` et y trouver `land_matrix_mines.gpkg`. Cliquez dessus.
 
--   Allez tout en bas de la page et cliquez sur "Sauvegarder".
+- Allez tout en bas de la page et cliquez sur "Sauvegarder".
 
 Maintenant, vous devriez voir la liste des couches présentes dans le GeoPackage.
 
 Retournez sur la page "Entrepôts", vous devriez voir votre entrepôt "land_matrix_mines" associé à l’espace de travail "land_matrix". On avance ! Maintenant, on veut publier et lire des **couches**.
 
--   Allez dans "Couches" (à gauche)
+- Allez dans "Couches" (à gauche)
 
--   Cliquez sur "Ajouter une nouvelle couche".
+- Cliquez sur "Ajouter une nouvelle couche".
 
--   Sélectionnez "land_matrix:land_matrix_mines". Vous devriez voir apparaître une liste de couches.
+- Sélectionnez "land_matrix:land_matrix_mines". Vous devriez voir apparaître une liste de couches.
 
--   Cliquez sur "Publier" à droite de la couche "deals".
+- Cliquez sur "Publier" à droite de la couche "deals".
 
 L’onglet de publication de couche permet de configurer la couche et d’y ajouter de la métadonnée. Dans ce TP, on se concentrera sur les informations "cruciales" pour définir une couche, mais vous pourrez toujours allez plus loin en utilisant la [documentation GeoServer sur les couches](https://docs.geoserver.org/latest/en/user/data/webadmin/layers.html).
 
 Les trois choses à faire absolument à chaque fois dans l’onglet données sont :
 
--   Renseigner les informations dans "**Informations de base sur les donneés**" comme le nom de la couche et un résumé. N’oubliez pas de laisser "Activé" et "Publié" cochés pour rendre la couche accessible depuis l’extérieur.
+- Renseigner les informations dans "**Informations de base sur les donneés**" comme le nom de la couche et un résumé. N’oubliez pas de laisser "Activé" et "Publié" cochés pour rendre la couche accessible depuis l’extérieur.
 
--   Vérifier le "**Système de Référence de Coordonnées (SRC)**" qui doit être pré-rempli en EPSG:4326 dans notre cas. Il correspond à la projection WGS84 utilisée dans la grande majorité des cas en cartographie web.
+- Vérifier le "**Système de Référence de Coordonnées (SRC)**" qui doit être pré-rempli en EPSG:4326 dans notre cas. Il correspond à la projection WGS84 utilisée dans la grande majorité des cas en cartographie web, même si les outils permettent petit à petit de se diriger plutôt vers la projection *Equal Earth*[^1] (EPSG:8857). Une version future de ce TP adoptera la projection *Equal Earth*. Si vous êtes déjà suffisamment à l’aise pour prendre des libertés vis-à-vis du TP, vous pouvez l’utiliser dès maintenant ! Et pour des cartes centrées sur la France, vous pourrez aussi utiliser la projection classique Lambert-93 (EPSG:2154).
 
--   Définir les "**Emprises**" qui se calculent automatiquement sur GeoServer en cliquant sur "Calculer depuis les limites du SRS" et "Calculées sur les emprises natives".
+- Définir les "**Emprises**" qui se calculent automatiquement sur GeoServer en cliquant sur "Calculer depuis les limites du SRS" et "Calculées sur les emprises natives".
+
+[^1]: Je vous recommande d’aller explorer le site [The New World Map](https://newworldmap.org/?mode=linked&region=304&z=1.00&lon=0.000&lat=0.000) sur le sujet.
 
 Cliquez ensuite sur "Appliquer" pour sauvegarder vos changements et scrollez en haut de la page pour accéder à l’onglet "Publication".
 
--   Dans "**Paramètres de couche**", cochez Interrogeable et vérifiez que le style par défaut est bien "point".
+- Dans "**Paramètres de couche**", cochez Interrogeable et vérifiez que le style par défaut est bien "point".
 
 Cliquez sur "Sauvegarder". La couche devrait maintenant apparaître au sommet du tableau. Cliquez simplement sur le nom de la couche (ici "deals") pour la paramétrer à nouveau si besoin. Pour vérifier que tout a fonctionné, on peut prévisualiser la couche directement depuis GeoServer.
 
--   Allez dans "Prévisualisation de la Couche" (à gauche)
+- Allez dans "Prévisualisation de la Couche" (à gauche).
 
--   Sur la ligne de la couche "deals", sélectionnez "OpenLayers" (dans la colonne "Formats usuels")
+- Sur la ligne de la couche "deals", sélectionnez "OpenLayers" (dans la colonne "Formats usuels").
 
 Vous devriez voir apparaître quelque chose comme ça, avec des informations supplémentaires si vous cliquez sur des points (possible car notre couche est interrogeable) :
 
 ![](/static/captures/geonum_geoserver_layer_preview.png){fig-alt="Prévisualisation de la couche deals dans GeoServer" fig-align="center"}
 
-Si c’est bon, bravo, ça a fonctionné ! Si vous voyez des artefacts autour des points, c’est normal. Ce que vous regardez, ce ne sont pas des polygones mais une image produite à partir de notre couche et transmise comme un flux WMS par notre serveur. L’intérêt, c’est qu’on peut afficher rapidement des couches très lourdes de cette manière, là où un GeoJSON commencerait à ramer. Et on peut toujours zoomer et cliquer sur un point pour l’interroger. C’est super pratique ! Ce flux WMS est récupéré et lu par une petite appli OpenLayers, c’est comme ça que vous êtes capable de voir la couche sur votre page web (vous sentez venir la transition vers les prochains cours, là ?).
+Si c’est bon, bravo, ça a fonctionné ! Si vous voyez des artefacts autour des points, c’est normal. Ce que vous regardez, ce ne sont pas des polygones mais une image produite à partir de notre couche et transmise comme un flux WMS par notre serveur. L’intérêt, c’est qu’on peut afficher rapidement des couches très lourdes de cette manière, là où un GeoJSON commencerait à ramer. Et on peut toujours zoomer et cliquer sur un point pour l’interroger. C’est super pratique ! Ce flux WMS est récupéré et lu par une petite appli OpenLayers, c’est comme ça que vous êtes capable de voir la couche sur votre page web. Vous sentez la transition vers le prochain cours ?
 
 Bon, super, on a notre couche moche. Maintenant, on en fait quoi de tous ces points rouges ?
 
@@ -176,21 +178,21 @@ Facile. On va d’abord la rendre un peu plus belle, puis on va la lire dans not
 
 Pour le moment, afficher notre couche "deals" va juste donner l’impression que notre carte a attrappé la varicelle. On va commencer par changer son apparence en faisant des points bien ronds et d’une couleur plus agréable. Pour ça, on va devoir **créer un nouveau style**.
 
--   Allez dans "Styles" et cliquer sur "Ajouter un nouveau style".
+- Allez dans "Styles" et cliquer sur "Ajouter un nouveau style".
 
--   Nommez le style "deals" et choisissez l’espace de travail "land_matrix". Conservez le format SLD, c’est le seul disponible sans ajouter d’extensions.
+- Nommez le style "deals" et choisissez l’espace de travail "land_matrix". Conservez le format SLD, c’est le seul disponible sans installer d’extensions à GeoServer.
 
--   Pour nous aider, GeoServer propose de générer un SLD par défaut. Sélectionnez "Point" et cliquez sur "Générer…". Vous devriez vous retrouver avec un fichier .xml décrivant la couche.
+- Pour nous aider, GeoServer propose de générer un SLD par défaut. Sélectionnez "Point" et cliquez sur "Générer…". Vous devriez vous retrouver avec un fichier .xml décrivant la couche.
 
 On pourrait aller lire en détail le [SLD Cookbook](https://docs.geoserver.org/main/en/user/styling/sld/cookbook/index.html) de GeoServer pour écrire notre fichier manuellement, mais on est plus malins que ça. On a un super outil à disposition qui s’appelle QGIS.
 
--   **Si vous ne l’avez pas déjà fait, créez un projet QGIS et ajoutez les couches Land Matrix.**
--   Donnez un style sympa aux points de la couche deals. J’ai changé la couleur pour les rendre orange.
--   Allez dans les propriétés de votre couche et dans "Symbologie". Tout en bas, choisissez "Style" et "Enregistrer le style…".
--   Choisissez l’option "En tant que fichier SLD" et choisissez le chemin et le nom de votre fichier en cliquant sur "…" après "Fichier". J’ai appelé le mien "deals.sld"
--   Allez chercher votre fichier et ouvrez-le avec un éditeur de texte (Notepad, VSCode, peu importe).
--   Copiez le contenu.
--   Retournez sur votre page GeoServer, supprimez tout le contenu de la zone de texte et collez à la place le contenu de `deals.sld`. Voilà ce que ça donne pour moi :
+- **Si vous ne l’avez pas déjà fait, créez un projet QGIS et ajoutez les couches Land Matrix.**
+- Donnez un style sympa aux points de la couche deals. J’ai changé la couleur pour les rendre orange.
+- Allez dans les propriétés de votre couche et dans "Symbologie". Tout en bas, choisissez "Style" et "Enregistrer le style…".
+- Choisissez l’option "En tant que fichier SLD" et choisissez le chemin et le nom de votre fichier en cliquant sur "…" après "Fichier". J’ai appelé le mien "deals.sld".
+- Allez chercher votre fichier et ouvrez-le avec un éditeur de texte (Notepad, VSCode, peu importe).
+- Copiez le contenu.
+- Retournez sur votre page GeoServer, supprimez tout le contenu de la zone de texte et collez à la place le contenu de `deals.sld`. Voilà ce que ça donne pour moi :
 
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -232,9 +234,9 @@ Une autre méthode pour charger le contenu d’un fichier de style .sld est de c
 
 Maintenant, il faut dire à GeoServer qu’on veut utiliser ce style avec notre couche "deals".
 
--   Allez dans "Couches".
--   Sélectionnez la couche "deals et allez dans l’onglet "Publication".
--   Dans "Style par défaut", sélectionnez "land_matrix:deals" et sauvegardez.
+- Allez dans "Couches".
+- Sélectionnez la couche "deals et allez dans l’onglet "Publication".
+- Dans "Style par défaut", sélectionnez "land_matrix:deals" et sauvegardez.
 
 Maintenant, vous pouvez de nouveau prévisualiser la couche "deals" et voilà ! Vous savez maintenant créer un nouveau style SLD depuis QGIS et l’ajouter à une couche dans GeoServer !
 
@@ -471,11 +473,11 @@ Courage, on touche au but. Vous aurez bientôt fait le tour du fonctionnement ba
 
 Pour commencer, on va rapidement vérifier qu’on communique bien avec notre GeoServer en utilisant QGIS et la requête `GetCapabilities` du serveur. Cette requête, lorsqu’elle réussit, nous répond avec un fichier .xml qui explique à QGIS tout ce que le serveur est capable de faire, et notamment quelles couches peuvent être affichées.
 
--   Dans QGIS, cliquez sur "Ajouter une couche" et sélectionnez "WMS".
+- Dans QGIS, cliquez sur "Ajouter une couche" et sélectionnez "WMS".
 
--   Dans l’onglet "Couches", cliquez sur "Nouveau".
+- Dans l’onglet "Couches", cliquez sur "Nouveau".
 
--   Appelez la connexion "mon_geoserver" et collez l’url `GetCapabilities` dans "URL". Elle devrait être identique à celle-ci :
+- Appelez la connexion "mon_geoserver" et collez l’url `GetCapabilities` dans "URL". Elle devrait être identique à celle-ci :
 
 ``` html
 http://localhost:8080/geoserver/land_matrix/wms?service=WMS&version=1.1.0&request=GetCapabilities
@@ -497,7 +499,7 @@ http://localhost/geoserver/land_matrix/wms?service=WMS&version=1.1.0&request=Get
 ```
 :::
 
--   Cliquez ensuite sur "Connexion" et vérifiez qu’une liste de couche apparaît et qu’elle contient bien vos couches "deals", etc.
+- Cliquez ensuite sur "Connexion" et vérifiez qu’une liste de couche apparaît et qu’elle contient bien vos couches "deals", etc.
 
 Vous pouvez afficher la couche dans QGIS avec "Add" si vous le souhaitez. L’essentiel, c’est qu’on a vérifié que notre serveur émet bien des flux WMS pour nos couches et qu’on peut bien les lire.
 
@@ -509,24 +511,24 @@ Le prochain cours nous permettra d’apprendre à lire nos couches dans une appl
 
 ## Récap sur les serveurs carto
 
--   C’est quoi l’intérêt du serveur carto, déjà ?
+- C’est quoi l’intérêt du serveur carto, déjà ?
 
-    -   Centralisation de la donnée et mise à jour
+  - Centralisation de la donnée et mise à jour.
 
-    -   Distribution de la donnée
+  - Distribution de la donnée.
 
-    -   Gestion des droits
+  - Gestion des droits.
 
-    -   Bien quand on a une organisation et bcp de données, s’intègre très bien dans une IDG
+  - Bien quand on a une organisation et bcp de données, s’intègre très bien dans une IDG.
 
-    -   Bien pour les couches Raster et les couches Vecteur lourdes qui peuvent être servies en tant qu’images (WMS)
+  - Bien pour les couches Raster et les couches Vecteur lourdes qui peuvent être servies en tant qu’images (WMS).
 
-    -   Connexion directe à une base de données PostgreSQL
+  - Connexion directe à une base de données PostgreSQL possible.
 
-    -   Possibilité d’écrire des requêtes SQL pour former les couches
+  - Possibilité d’écrire des requêtes SQL pour former les couches.
 
-    -   Possibilité de créer des styles complexes "à la QGIS".
+  - Possibilité de créer des styles complexes "à la QGIS".
 
--   Est-ce que j’en ai besoin pour mon projet GeoNum ?
+- Est-ce que j’en ai besoin pour mon projet GeoNum ?
 
-    -   Ça dépend des données que vous utilisez et ce que vous en faites. Le mieux c’est d’en discuter avec les profs !
+  - Ça dépend des données que vous utilisez et ce que vous en faites. Le mieux c’est d’en parler ensemble !
