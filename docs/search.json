@@ -1489,5 +1489,25 @@
     "title": "Dummy blog post",
     "section": "Section B",
     "text": "Section B\nCurabitur ac tellus nibh. Vestibulum a metus vel quam dictum posuere quis vel augue. Pellentesque a dolor at leo gravida luctus. Donec faucibus nisl nec ante pellentesque eleifend. Vivamus vel diam vel diam ullamcorper aliquet a in mauris. Donec vulputate mauris lacus, quis tempus metus hendrerit quis. Vivamus turpis ante, interdum sed diam id, elementum tincidunt urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse accumsan elit et ipsum tempus porttitor tristique quis mi. Fusce cursus metus pulvinar lacus rhoncus, luctus sodales turpis sollicitudin."
+  },
+  {
+    "objectID": "cours/geonum/01_cours_introduction.html#cours-en-2026-2027",
+    "href": "cours/geonum/01_cours_introduction.html#cours-en-2026-2027",
+    "title": "Introduction",
+    "section": "Cours en 2026-2027",
+    "text": "Cours en 2026-2027\n\n27 Novembre, 9h-12h — Architecture Web et Serveurs Cartographiques\n2 Décembre, 9h-12h — Introduction à OpenLayers et au cycle de développement d’une application web (aide au projet GéoNum)\n8 Décembre, 9h-12h — Ajouter des couches à la carte (WMS, WFS, GeoJson)\n9 Décembre, 9h-12h — Interactions carte-interface et enrichir la carte en fonctionnalités",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "cours/geonum/01_cours_introduction.html#contact",
+    "href": "cours/geonum/01_cours_introduction.html#contact",
+    "title": "Introduction",
+    "section": "Contact",
+    "text": "Contact\nPour toute question, vous pouvez me contacter sur mon mail perso : marie.gradeler@gmail.com",
+    "crumbs": [
+      "Introduction"
+    ]
   }
 ]

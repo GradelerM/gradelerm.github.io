@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://gradelerm.github.io/cours/geonum/01_cours_introduction.html</loc>
-    <lastmod>2026-08-19T05:26:48.130Z</lastmod>
+    <lastmod>2026-11-16T16:25:34.784Z</lastmod>
   </url>
   <url>
     <loc>https://gradelerm.github.io/cours/geonum/02_cours_architecture_client_serveur.html</loc>
@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://gradelerm.github.io/ressources.html</loc>
-    <lastmod>2026-08-19T08:03:28.012Z</lastmod>
+    <lastmod>2026-11-16T16:09:46.927Z</lastmod>
   </url>
   <url>
     <loc>https://gradelerm.github.io/posts/tutoriel_zotero.html</loc>
@@ -38,6 +38,38 @@
   </url>
   <url>
     <loc>https://gradelerm.github.io/cours/geonum/03_cours_geoserver.html</loc>
+    <lastmod>2026-08-18T15:21:45.786Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gradelerm.github.io/posts/dummy_blog_post_two.html</loc>
+    <lastmod>2026-08-18T15:21:45.881Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gradelerm.github.io/cours/geonum/04_cours_intro_openlayers.html</loc>
+    <lastmod>2026-08-18T15:21:45.786Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gradelerm.github.io/cours/geonum/05_cours_openlayers_bases.html</loc>
+    <lastmod>2026-08-18T15:21:45.786Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gradelerm.github.io/cours/geonum/06_cours_ajout_couches.html</loc>
+    <lastmod>2026-08-18T15:21:45.786Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gradelerm.github.io/cours/geonum/09_rendu.html</loc>
+    <lastmod>2026-08-18T15:21:45.787Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gradelerm.github.io/cours/geonum/07_cours_interactions.html</loc>
+    <lastmod>2026-08-18T15:21:45.786Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gradelerm.github.io/cours/geonum/08_cours_enrichir_ma_carte.html</loc>
+    <lastmod>2026-08-18T15:21:45.786Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gradelerm.github.io/cours/geonum/04_diapos_intro_openlayers.html</loc>
     <lastmod>2026-08-18T15:21:45.786Z</lastmod>
   </url>
 </urlset>
