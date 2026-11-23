@@ -42,6 +42,7 @@ website:
       contents: 
         - cours/geonum/01_cours_introduction.qmd
         - cours/geonum/02_cours_architecture_client_serveur.qmd
+        - cours/geonum/03_cours_geoserver.qmd
         
         # - cours/geonum/01_cours_introduction.qmd
         # - cours/geonum/02_cours_architecture_client_serveur.qmd

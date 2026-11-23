@@ -111,7 +111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -159,10 +159,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../cours/geonum/03_cours_geoserver.html">GeoServer</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../cours/geonum/01_cours_introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../cours/geonum/02_cours_architecture_client_serveur.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Architecture web</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../cours/geonum/03_cours_geoserver.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">GeoServer</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -749,7 +784,7 @@ Tip
 <h3 class="anchored" data-anchor-id="sauvegarder-son-travail">Sauvegarder son travail</h3>
 <p>Si vous travaillez sur votre machine, votre travail est déjà bien en sécurité. Si vous avez <strong>connecté votre dépôt local à un dépôt sur GitHub</strong> (ou autre) ou bien si vous avez <strong>utilisé un <em>codespace</em></strong>, vous allez pouvoir “<em>commit”</em> votre travail.</p>
 <p>On y reviendra à la prochaine séance. Cela vous permet de dire à Git “voilà les changements que j’ai apportés à mon code” et d’y ajouter un petit message.</p>
-<p>Commencez par utiliser <code>git add .</code> pour ajouter vos modifications à ce qu’on va envoyer depuis votre environnement de travail (votre ordinateur ou <em>codespace</em>) jusqu’au dépôt (GitHub).</p>
+<p>Dans le terminal, ommencez par utiliser <code>git add .</code> pour ajouter vos modifications à ce qu’on va envoyer depuis votre environnement de travail (votre ordinateur ou <em>codespace</em>) jusqu’au dépôt (GitHub).</p>
 <p>Ensuite, ajoutez un message qui décrit rapidement ce que vous avez appliqué comme changements grâce à <code>git commit -m "&lt;contenu-du-message&gt;"</code>. Par exemple : <code>git commit -m "Couches ajoutées à GeoServer"</code>.</p>
 <p>Enfin, envoyez vos modifications à votre dépôt avec <code>git push</code> ! 🚀</p>
 <p>C’est satisfaisant, hein ? Voilà qui met un point final à votre TP.</p>
