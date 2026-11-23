@@ -533,6 +533,22 @@ http://localhost/geoserver/land_matrix/wms?service=WMS&version=1.1.0&request=Get
 
 Vous pouvez afficher la couche dans QGIS avec "Add" si vous le souhaitez. L’essentiel, c’est qu’on a vérifié que notre serveur émet bien des flux WMS pour nos couches et qu’on peut bien les lire.
 
+### Sauvegarder son travail
+
+Si vous travaillez sur votre machine, votre travail est déjà bien en sécurité. Si vous avez **connecté votre dépôt local à un dépôt sur GitHub** (ou autre) ou bien si vous avez **utilisé un *codespace***, vous allez pouvoir "*commit"* votre travail.
+
+On y reviendra à la prochaine séance. Cela vous permet de dire à Git "voilà les changements que j’ai apportés à mon code" et d’y ajouter un petit message.
+
+Dans le terminal, ommencez par utiliser `git add .` pour ajouter vos modifications à ce qu’on va envoyer depuis votre environnement de travail (votre ordinateur ou *codespace*) jusqu’au dépôt (GitHub).
+
+Ensuite, ajoutez un message qui décrit rapidement ce que vous avez appliqué comme changements grâce à `git commit -m "<contenu-du-message>"`. Par exemple : `git commit -m "Couches ajoutées à GeoServer"`.
+
+Enfin, envoyez vos modifications à votre dépôt avec `git push` ! 🚀
+
+C’est satisfaisant, hein ? Voilà qui met un point final à votre TP.
+
+### Bravo !!!
+
 **Bien joué ! Vous maîtrisez maintenant les fonctionnalités basiques de GeoServer. Vous savez le déployer grâce à Docker, importer des couches de données, les styliser et les visualiser dans GeoServer et dans QGIS.**
 
 ![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDA0aHFneGM3MzR3NTE0cm9odG55N2I3Y3JrMWM4bWNiODJrbmg2dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/VhWVAa7rUtT3xKX6Cd/giphy.gif){fig-align="center"}
