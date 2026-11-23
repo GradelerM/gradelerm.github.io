@@ -10,76 +10,7 @@
 <atom:link href="https://gradelerm.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.9.38</generator>
-<lastBuildDate>Wed, 07 Jul 2027 22:00:00 GMT</lastBuildDate>
-<item>
-  <title>Tutoriel Zotero</title>
-  <dc:creator>Marie Gradeler</dc:creator>
-  <link>https://gradelerm.github.io/posts/tutoriel_zotero.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>Dans ce post, on apprend à utiliser Zotero.</p>
-
-
-
- ]]></description>
-  <category>Academic</category>
-  <guid>https://gradelerm.github.io/posts/tutoriel_zotero.html</guid>
-  <pubDate>Wed, 07 Jul 2027 22:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Figures layout</title>
-  <dc:creator>Marie Gradeler</dc:creator>
-  <link>https://gradelerm.github.io/posts/maps_package.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<section id="test-des-layouts" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="test-des-layouts">Test des layouts</h2>
-<p>Classique, on n’ajoute rien.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://gradelerm.github.io/posts/maps_package_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>On utilise plus d’espace pour afficher une figure en plus large.</p>
-<div class="cell page-columns page-full">
-<div class="cell-output-display page-columns page-full">
-<div class="page-columns page-full">
-<figure class="figure page-columns page-full">
-<p class="page-columns page-full"><img src="https://gradelerm.github.io/posts/maps_package_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img column-screen-inset-shaded" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>On peut aussi afficher les figures dans la marge, il semblerait.</p>
-<div class="cell page-columns page-full">
-
-<div class="no-row-height column-margin column-container"><div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://gradelerm.github.io/posts/maps_package_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div></div></div>
-
-
-</section>
-
- ]]></description>
-  <category>R</category>
-  <category>tmap</category>
-  <guid>https://gradelerm.github.io/posts/maps_package.html</guid>
-  <pubDate>Sun, 09 Mar 2025 23:00:00 GMT</pubDate>
-</item>
+<lastBuildDate>Wed, 10 Nov 2027 23:00:00 GMT</lastBuildDate>
 <item>
   <title>Dummy blog post</title>
   <dc:creator>Marie Gradeler</dc:creator>
@@ -89,38 +20,19 @@
 
 
 
-<section id="section-a" class="level2">
-<h2 class="anchored" data-anchor-id="section-a">Section A</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id pharetra leo, eget mollis nisl. Nullam ultrices justo risus, in tristique est aliquet et. Nam nec iaculis libero, at mollis eros. Fusce vulputate nibh vel velit imperdiet placerat. Phasellus blandit mattis tellus, ac tristique arcu ornare at. Nullam tincidunt enim vel elementum aliquet. Nunc nec massa neque. Suspendisse in nulla vulputate, elementum massa eu, mattis odio. Nam iaculis libero dui, ac ullamcorper diam malesuada sed. Donec id erat pellentesque, ornare elit sit amet, pretium enim. Cras placerat pharetra dapibus.</p>
-<p>Morbi lacinia massa non lectus semper semper. Nulla massa nulla, volutpat a malesuada nec, sagittis cursus nisl. In dignissim quam eget nunc rutrum, in egestas massa consequat. Aenean rhoncus vel odio sed ultricies. Cras molestie in justo vitae feugiat. Maecenas nunc erat, feugiat et quam a, aliquam consectetur quam. Cras varius nec ante a ultricies. Quisque volutpat pretium est, quis porta dolor tristique a. Pellentesque non aliquet diam.</p>
-</section>
-<section id="section-b" class="level2">
-<h2 class="anchored" data-anchor-id="section-b">Section B</h2>
-<p>Curabitur ac tellus nibh. Vestibulum a metus vel quam dictum posuere quis vel augue. Pellentesque a dolor at leo gravida luctus. Donec faucibus nisl nec ante pellentesque eleifend. Vivamus vel diam vel diam ullamcorper aliquet a in mauris. Donec vulputate mauris lacus, quis tempus metus hendrerit quis. Vivamus turpis ante, interdum sed diam id, elementum tincidunt urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse accumsan elit et ipsum tempus porttitor tristique quis mi. Fusce cursus metus pulvinar lacus rhoncus, luctus sodales turpis sollicitudin.</p>
+<section id="bonjour" class="level2">
+<h2 class="anchored" data-anchor-id="bonjour">Bonjour !</h2>
+<p>Si vous êtes arrivé⋅e ici, vous êtes une personne bien curieuse !</p>
+<p>J’expérimente avec les possibilités de création de site web en utilisant <a href="https://quarto.org/docs/websites/website-blog.html">Quarto</a>, et il semblerait qu’on puisse y ajouter un blog. Ça tombe bien, quand on parle de R, de carto et d’outils libres, j’ai des choses à raconter !</p>
+<p>Mais pour le moment, il n’y a rien.</p>
 
 
 </section>
 
  ]]></description>
-  <category>R</category>
-  <category>dataviz</category>
+  <category>Tests</category>
   <guid>https://gradelerm.github.io/posts/dummy_blog_post.html</guid>
-  <pubDate>Wed, 09 Oct 2024 22:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Dummy blog post TWO</title>
-  <link>https://gradelerm.github.io/posts/dummy_blog_post_two.html</link>
-  <description><![CDATA[ 
-
-
-
-
-
-
-
- ]]></description>
-  <guid>https://gradelerm.github.io/posts/dummy_blog_post_two.html</guid>
-  <pubDate>Mon, 23 Nov 2026 15:00:48 GMT</pubDate>
+  <pubDate>Wed, 10 Nov 2027 23:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

@@ -709,7 +709,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Dummy blog post TWO\n\n\n\n\n\nSome dummy blog post for pages config\n\n\n\n\n1 min\n\n\n\n\n\n\nTutoriel Zotero\n\n\n\n\n\n\nAcademic\n\n\n\nApprendre à utiliser Zotero.\n\n\n\n\n\nJul 8, 2027\n\n\nMarie Gradeler\n\n1 min\n\n\n\n\n\n\nFigures layout\n\n\n\n\n\n\nR\n\ntmap\n\n\n\nLayout des figures dans les articles avec Quarto.\n\n\n\n\n\nMar 10, 2025\n\n\nMarie Gradeler\n\n1 min\n\n\n\n\n\n\nDummy blog post\n\n\n\n\n\n\nR\n\ndataviz\n\n\n\nSome dummy blog post for pages config\n\n\n\n\n\nOct 10, 2024\n\n\nMarie Gradeler\n\n2 min\n\n\n\n\nNo matching items"
+    "text": "Dummy blog post\n\n\n\n\n\n\nTests\n\n\n\nDummy pour configurer le blog\n\n\n\n\n\nNov 11, 2027\n\n\nMarie Gradeler\n\n1 min\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "cours/geonum/01_cours_introduction.html",
@@ -1459,7 +1459,7 @@
     "href": "posts/dummy_blog_post.html",
     "title": "Dummy blog post",
     "section": "",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id pharetra leo, eget mollis nisl. Nullam ultrices justo risus, in tristique est aliquet et. Nam nec iaculis libero, at mollis eros. Fusce vulputate nibh vel velit imperdiet placerat. Phasellus blandit mattis tellus, ac tristique arcu ornare at. Nullam tincidunt enim vel elementum aliquet. Nunc nec massa neque. Suspendisse in nulla vulputate, elementum massa eu, mattis odio. Nam iaculis libero dui, ac ullamcorper diam malesuada sed. Donec id erat pellentesque, ornare elit sit amet, pretium enim. Cras placerat pharetra dapibus.\nMorbi lacinia massa non lectus semper semper. Nulla massa nulla, volutpat a malesuada nec, sagittis cursus nisl. In dignissim quam eget nunc rutrum, in egestas massa consequat. Aenean rhoncus vel odio sed ultricies. Cras molestie in justo vitae feugiat. Maecenas nunc erat, feugiat et quam a, aliquam consectetur quam. Cras varius nec ante a ultricies. Quisque volutpat pretium est, quis porta dolor tristique a. Pellentesque non aliquet diam."
+    "text": "Si vous êtes arrivé⋅e ici, vous êtes une personne bien curieuse !\nJ’expérimente avec les possibilités de création de site web en utilisant Quarto, et il semblerait qu’on puisse y ajouter un blog. Ça tombe bien, quand on parle de R, de carto et d’outils libres, j’ai des choses à raconter !\nMais pour le moment, il n’y a rien."
   },
   {
     "objectID": "posts/dummy_blog_post.html#section-a",
@@ -1630,5 +1630,12 @@
     "crumbs": [
       "Architecture web"
     ]
+  },
+  {
+    "objectID": "posts/dummy_blog_post.html#bonjour",
+    "href": "posts/dummy_blog_post.html#bonjour",
+    "title": "Dummy blog post",
+    "section": "",
+    "text": "Si vous êtes arrivé⋅e ici, vous êtes une personne bien curieuse !\nJ’expérimente avec les possibilités de création de site web en utilisant Quarto, et il semblerait qu’on puisse y ajouter un blog. Ça tombe bien, quand on parle de R, de carto et d’outils libres, j’ai des choses à raconter !\nMais pour le moment, il n’y a rien."
   }
 ]

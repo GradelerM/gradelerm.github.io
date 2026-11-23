@@ -1,4 +1,0 @@
----
-title: "Dummy blog post TWO"
-description: "Some dummy blog post for pages config"
----
