@@ -24,10 +24,10 @@ format: html
 [Documentation GeoServer](https://docs.geoserver.org/main/en/user/installation/docker.html) - [Dépôt de l’image Docker](https://github.com/geoserver/docker)
 
 ::: callout-important
-Ce TP suppose que Docker est installé sur la machine. Il a été écrit pour une machine Linux, certains chemins et lignes de commande peuvent donc être différents sur une machine Windows ou Mac.
+Ce TP suppose que Docker est installé sur la machine ou que le *codespace* sur GitHub a bien été mis en place. Il a été écrit pour une machine Linux, certains chemins et lignes de commande peuvent donc être différents sur une machine Windows ou Mac.
 :::
 
-Si tout s’est bien passé lors du TP précédent, vous devriez avoir une instance de GeoServer qui tourne à l’adresse suivante : <http://localhost:8080/geoserver/web/?0>
+Si tout s’est bien passé lors du TP précédent, vous devriez avoir une instance de GeoServer qui tourne à l’adresse <http://localhost:8080/geoserver/web/?0> (si vous êtes sur votre machine) ou bien sur le port indiqué dans votre GitHub Codespaces.
 
 ::: {.callout-note collapse="true"}
 ## Je ne trouve pas mon GeoServer
@@ -36,6 +36,13 @@ Pour relancer votre instance, vous pouvez :
 
 - ouvrir un terminal à la racine du dossier `geonum_docker` et taper la commande `docker compose up -d`
 - ouvrir l’application Docker Desktop, trouver la *stack* de containers `geonum_docker` et `geonum_web` et cliquer sur "Start"
+- ouvrir l’onglet *Containers* de votre VSCode (fonctionne avec GitHub Codespaces) et lancer avec le bouton "play" les containers `geonum_docker` et `geonum_web`.
+
+**Pour ceux qui ont perdu leur *codespace* :**
+
+Allez sur votre dépôt et cliquez sur ***\<\> Code***, puis allez dans l’onglet Codespaces, ou bien cherchez-le directement dans votre liste de *codespaces* sur la page <https://github.com/codespaces>.
+
+**Pour ceux qui sont sur leur machine (donc pas avec GitHub Codespaces) :**
 
 Si jamais votre instance tourne mais que vous ne trouvez pas votre GeoServer, il est peut-être à une adresse différente. Vérifiez le contenu de la ligne "ports" du fichier `docker-compose.yml`.
 
@@ -60,6 +67,12 @@ Une fois dans l’interface :
 
 - Connectez vous avec l’identifiant `admin` et le mot de passe `geoserver`. Ce sont les identifiants par défaut quand vous créez une instance de GeoServer. Si vous mettiez votre application en ligne, il faudrait évidemment changer ça.
 
+::: callout-note
+## Mettre en ligne mon application développée avec GitHub Codespaces
+
+Attention, le code a été adapté pour une utilisation facilitée de GeoServer dans un *codespace*. Ne mettez pas en production une application basée sur ce code, elle ne serait pas sécurisée ! Si vous avez besoin d’un GeoServer pour votre projet GeoNum, vous devrez l’installer sur votre machine et supprimer les lignes comme indiquées par les commentaires dans le `docker-compose.yml`. Mieux encore, demandez de l’aide aux profs !
+:::
+
 ### Se familiariser avec notre jeu de données
 
 Ensuite, téléchargez le jeu de données [land_matrix_mines](/data/land_matrix/land_matrix_mines.gpkg). C’est celui qu’on utilisera pendant mes cours. **Prenez quelques minutes pour vous familiariser avec dans QGIS avant de passer à la suite.** Vous devriez pouvoir répondre aux questions suivantes :
@@ -76,13 +89,15 @@ Ensuite, téléchargez le jeu de données [land_matrix_mines](/data/land_matrix/
 
 Maintenant que vous voyez mieux sur quelle donnée on va travailler, il est temps de l’importer dans GeoServer. Pour ça, on va créer un dossier `geoserver/opt/data` et y glisser le jeu de données.
 
-- Ouvrez votre gestionnaire de fichiers à la racine du projet (répertoire `geonum_docker`)
+**Pour ceux qui sont sur leur machine :**
 
-- Dans `geoserver` \> `opt`, créez un nouveau répertoire `data`. *Note : vous pouvez l’appeler comme vous voulez, on utilise juste une convention ici.*
+- Ouvrez votre gestionnaire de fichiers ou votre arborescence de fichiers (VSCode) à la racine du projet (répertoire `geonum_docker`).
+
+- Dans `geoserver` \> `opt`, créez un nouveau répertoire `data`. *Note : vous pouvez en théorie l’appeler comme vous voulez, on utilise juste une convention ici.*
 
 - Vérifiez bien que `data` se trouve dans le même répertoire que `styles`, `workspaces`, etc.
 
-- Déplacez le jeu de données `land_matrix_mines` dans le dossier `data`
+- Déplacez le jeu de données `land_matrix_mines` dans le dossier `data`.
 
 ::: {.callout-important collapse="true"}
 ## Je ne peux pas créer de nouveau dossier / déplacer mon fichier !
@@ -99,16 +114,29 @@ Pour changer les droits de mon dossier \`/home/marie/Documents/GeoServer\` j’a
 sudo chown -R marie:marie /home/marie/Documents/GeoServer
 ```
 
+Pour ceux qui sont sur un *codespace*, vous pouvez directement copier-coller cette ligne :
+
+``` bash
+sudo chown -R codespace:root geoserver/
+```
+
+Pensez ensuite à relancer votre container.
+
+``` bash
+docker compose down
+docker compose up -d
+```
+
 Si ça ne fonctionne pas, ne restez pas bloqués et appelez-moi, on règle ça ensemble.
 :::
 
-Ensuite, dans l’interface de GeoServer, nous devons **créer un nouvel espace de travail**. Ils servent à compartimenter la donnée. Dans un cas d’utilisation réelle, on aurait par exemple un espace de travail par projet. Il est possible de définir des droits utilisateurs spécifiques aux espaces de travail (par exemple, l’utilisateur "John" peut ajouter de la donnée dans l’espace "espaces_verts" mais pas dans "bassins_versants").
+Ensuite, dans l’interface de GeoServer, nous devons **créer un nouvel espace de travail**. Ils servent à compartimenter la donnée. Dans un cas d’utilisation réelle, on aurait par exemple un espace de travail par projet. Il est possible de définir des droits utilisateurs spécifiques aux espaces de travail (par exemple, l’utilisateur "Bob" peut ajouter de la donnée dans l’espace "espaces_verts" mais pas dans "bassins_versants").
 
 - Allez dans "Espaces de travail" (à gauche).
 
 - Cliquez sur "Ajouter un nouvel espace de travail".
 
-- Donnez lui comme nom et comme URI `land_matrix` .
+- Donnez-lui comme nom et comme URI `land_matrix` .
 
 - Vous devriez revenir à la liste de vos espaces de travail.
 
@@ -164,7 +192,7 @@ Vous devriez voir apparaître quelque chose comme ça, avec des informations sup
 
 ![](/static/captures/geonum_geoserver_layer_preview.png){fig-alt="Prévisualisation de la couche deals dans GeoServer" fig-align="center"}
 
-Si c’est bon, bravo, ça a fonctionné ! Si vous voyez des artefacts autour des points, c’est normal. Ce que vous regardez, ce ne sont pas des polygones mais une image produite à partir de notre couche et transmise comme un flux WMS par notre serveur. L’intérêt, c’est qu’on peut afficher rapidement des couches très lourdes de cette manière, là où un GeoJSON commencerait à ramer. Et on peut toujours zoomer et cliquer sur un point pour l’interroger. C’est super pratique ! Ce flux WMS est récupéré et lu par une petite appli OpenLayers, c’est comme ça que vous êtes capable de voir la couche sur votre page web. Vous sentez la transition vers le prochain cours ?
+Si c’est bon, bravo, ça a fonctionné ! Si vous voyez des artefacts autour des points, c’est normal. Ce que vous regardez, ce ne sont pas des polygones mais **une image produite à partir de notre couche et transmise comme un flux WMS par notre serveur**. L’intérêt, c’est qu’on peut afficher rapidement des couches très lourdes de cette manière, là où un GeoJSON commencerait à ramer. Et on peut toujours zoomer et cliquer sur un point pour l’interroger. C’est super pratique ! Ce flux WMS est récupéré et lu par une petite appli OpenLayers, c’est comme ça que vous êtes capable de voir la couche sur votre page web. Vous sentez la transition vers le prochain cours ?
 
 Bon, super, on a notre couche moche. Maintenant, on en fait quoi de tous ces points rouges ?
 
@@ -226,7 +254,9 @@ On pourrait aller lire en détail le [SLD Cookbook](https://docs.geoserver.org/m
 </StyledLayerDescriptor>
 ```
 
-Vous pouvez prévisualiser la légende en cliquant sur "Aperçu de la légende". Le bouton "Ajouter une légende" permet quand à lui d’ajouter une image customisée plutôt qu’une génération automatique. C’est pratique quand on a des légendes complexes, mais pas pour le moment. Ensuite, sauvegardez la légende quand elle vous convient.
+Vous pouvez prévisualiser la légende en cliquant sur "Aperçu de la légende". Le bouton "Ajouter une légende" permet quand à lui d’ajouter une image customisée plutôt qu’utiliser une image générée automatiquement. C’est pratique quand on a des légendes complexes, mais pas pour le moment.
+
+Ensuite, sauvegardez la légende quand elle vous convient.
 
 ::: callout-tip
 Une autre méthode pour charger le contenu d’un fichier de style .sld est de cliquer sur "Browse" en dessous de "Fichier de style". Allez chercher votre fichier .sld et cliquez sur "Charger…" pour vous économiser quelques copier-coller par la suite !
@@ -235,7 +265,7 @@ Une autre méthode pour charger le contenu d’un fichier de style .sld est de c
 Maintenant, il faut dire à GeoServer qu’on veut utiliser ce style avec notre couche "deals".
 
 - Allez dans "Couches".
-- Sélectionnez la couche "deals et allez dans l’onglet "Publication".
+- Sélectionnez la couche "deals" et allez dans l’onglet "Publication".
 - Dans "Style par défaut", sélectionnez "land_matrix:deals" et sauvegardez.
 
 Maintenant, vous pouvez de nouveau prévisualiser la couche "deals" et voilà ! Vous savez maintenant créer un nouveau style SLD depuis QGIS et l’ajouter à une couche dans GeoServer !
@@ -300,7 +330,7 @@ Une fois que vous avez au moins ajouté votre style à "deals_by_country" dans G
           <se:Description>
             <se:Title>201 - 5466</se:Title>
           </se:Description>
-          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc"
             <ogc:And>
               <ogc:PropertyIsGreaterThanOrEqualTo>
                 <ogc:PropertyName>suface_ha</ogc:PropertyName>
@@ -333,7 +363,7 @@ Une fois que vous avez au moins ajouté votre style à "deals_by_country" dans G
           <se:Description>
             <se:Title>5466 - 20413</se:Title>
           </se:Description>
-          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc"
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>suface_ha</ogc:PropertyName>
@@ -366,7 +396,7 @@ Une fois que vous avez au moins ajouté votre style à "deals_by_country" dans G
           <se:Description>
             <se:Title>20413 - 61376</se:Title>
           </se:Description>
-          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc"
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>suface_ha</ogc:PropertyName>
@@ -399,7 +429,7 @@ Une fois que vous avez au moins ajouté votre style à "deals_by_country" dans G
           <se:Description>
             <se:Title>61376 - 160220</se:Title>
           </se:Description>
-          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc"
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>suface_ha</ogc:PropertyName>
@@ -432,7 +462,7 @@ Une fois que vous avez au moins ajouté votre style à "deals_by_country" dans G
           <se:Description>
             <se:Title>160220 - 1509612</se:Title>
           </se:Description>
-          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
+          <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc"
             <ogc:And>
               <ogc:PropertyIsGreaterThan>
                 <ogc:PropertyName>suface_ha</ogc:PropertyName>
@@ -477,7 +507,7 @@ Pour commencer, on va rapidement vérifier qu’on communique bien avec notre Ge
 
 - Dans l’onglet "Couches", cliquez sur "Nouveau".
 
-- Appelez la connexion "mon_geoserver" et collez l’url `GetCapabilities` dans "URL". Elle devrait être identique à celle-ci :
+- Appelez la connexion "mon_geoserver" et collez l’url `GetCapabilities` dans "URL". Elle devrait ressembler à celle-ci :
 
 ``` html
 http://localhost:8080/geoserver/land_matrix/wms?service=WMS&version=1.1.0&request=GetCapabilities
@@ -519,7 +549,7 @@ Le prochain cours nous permettra d’apprendre à lire nos couches dans une appl
 
   - Gestion des droits.
 
-  - Bien quand on a une organisation et bcp de données, s’intègre très bien dans une IDG.
+  - Bien quand on a une organisation et beaucoup de données, s’intègre très bien dans une IDG.
 
   - Bien pour les couches Raster et les couches Vecteur lourdes qui peuvent être servies en tant qu’images (WMS).
 

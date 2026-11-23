@@ -17,8 +17,8 @@ website:
     left:
       - text: "À propos"
         href: about.qmd
-      - text: "Blog"
-        href: blog.qmd
+      # - text: "Blog"
+      #   href: blog.qmd
       - text: "Cours"
         menu:
           - text: "GeoNum"
@@ -42,13 +42,16 @@ website:
       contents: 
         - cours/geonum/01_cours_introduction.qmd
         - cours/geonum/02_cours_architecture_client_serveur.qmd
-        - cours/geonum/03_cours_geoserver.qmd
-        - cours/geonum/04_cours_intro_openlayers.qmd
-        - cours/geonum/05_cours_openlayers_bases.qmd
-        - cours/geonum/06_cours_ajout_couches.qmd
-        - cours/geonum/07_cours_interactions.qmd
-        - cours/geonum/08_cours_enrichir_ma_carte.qmd
-        - cours/geonum/09_rendu.qmd
+        
+        # - cours/geonum/01_cours_introduction.qmd
+        # - cours/geonum/02_cours_architecture_client_serveur.qmd
+        # - cours/geonum/03_cours_geoserver.qmd
+        # - cours/geonum/04_cours_intro_openlayers.qmd
+        # - cours/geonum/05_cours_openlayers_bases.qmd
+        # - cours/geonum/06_cours_ajout_couches.qmd
+        # - cours/geonum/07_cours_interactions.qmd
+        # - cours/geonum/08_cours_enrichir_ma_carte.qmd
+        # - cours/geonum/09_rendu.qmd
   
   page-footer: 
     left: ""

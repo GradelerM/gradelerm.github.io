@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Marie Gradeler">
-<meta name="dcterms.date" content="2025-12-01">
+<meta name="dcterms.date" content="2026-11-27">
 
 <title>Architecture client-serveur – GradelerM</title>
 <style>
@@ -248,7 +248,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 1, 2025</p>
+      <p class="date">November 27, 2026</p>
     </div>
   </div>
   
@@ -435,27 +435,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="notre-docker-compose">Notre Docker Compose</h2>
 <p>Explications sur le contenu&nbsp;:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">services</span><span class="kw">:</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="at">  </span><span class="fu">geoserver</span><span class="kw">:</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="at">    </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> geonum_geoserver</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> docker.osgeo.org/geoserver:2.26.0</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="at">    </span><span class="fu">environment</span><span class="kw">:</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="at">      </span><span class="kw">-</span><span class="at"> RUN_UNPRIVILEGED=true</span></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="at">      </span><span class="kw">-</span><span class="at"> CHANGE_OWNERSHIP_ON_FOLDERS="/opt /opt/geoserver_data/ /mnt/geoserver_geodata"</span></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="at">      </span><span class="kw">-</span><span class="at"> CORS_ENABLED=true</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"8080:8080"</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
-<span id="cb1-13"><a href="#cb1-13"></a><span class="at">      </span><span class="kw">-</span><span class="at"> $PWD/geoserver/opt:/opt/geoserver_data</span></span>
-<span id="cb1-14"><a href="#cb1-14"></a><span class="at">  </span></span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="at">  </span><span class="fu">web</span><span class="kw">:</span></span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="at">    </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> geonum_web</span></span>
-<span id="cb1-17"><a href="#cb1-17"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> caddy:latest</span></span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
-<span id="cb1-19"><a href="#cb1-19"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"80:80"</span></span>
-<span id="cb1-20"><a href="#cb1-20"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
-<span id="cb1-21"><a href="#cb1-21"></a><span class="at">      </span><span class="kw">-</span><span class="at"> $PWD/Caddyfile:/etc/caddy/Caddyfile</span></span>
-<span id="cb1-22"><a href="#cb1-22"></a><span class="at">      </span><span class="kw">-</span><span class="at"> $PWD/app/dist/:/srv</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="at">    </span><span class="fu">geoserver</span><span class="kw">:</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="at">        </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> geonum_geoserver</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="at">        </span><span class="fu">image</span><span class="kw">:</span><span class="at"> docker.osgeo.org/geoserver:2.28.2</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="at">        </span><span class="fu">environment</span><span class="kw">:</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="at">            </span><span class="kw">-</span><span class="at"> RUN_UNPRIVILEGED=true</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="at">            </span><span class="kw">-</span><span class="at"> CHANGE_OWNERSHIP_ON_FOLDERS="/opt /opt/geoserver_data/ /mnt/geoserver_geodata"</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="at">            </span><span class="kw">-</span><span class="at"> CORS_ENABLED=true</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="at">            </span><span class="kw">-</span><span class="at"> SKIP_DEMO_DATA=true</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="at">            </span><span class="kw">-</span><span class="at"> PROXY_BASE_URL=${CODESPACE_NAME:+https://${CODESPACE_NAME}-8080.${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}/geoserver}</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="at">            </span><span class="kw">-</span><span class="at"> CATALINA_OPTS=-DGEOSERVER_CSRF_WHITELIST=${CODESPACE_NAME:-localhost}-8080.${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN:-local},localhost -DGEOSERVER_CSRF_DISABLED=true</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="at">        </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="at">            </span><span class="kw">-</span><span class="at"> </span><span class="st">"8080:8080"</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="at">        </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="at">            </span><span class="kw">-</span><span class="at"> ./geoserver/opt:/opt/geoserver_data</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="at">    </span></span>
+<span id="cb1-17"><a href="#cb1-17"></a><span class="at">    </span><span class="fu">web</span><span class="kw">:</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="at">        </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> geonum_web</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="at">        </span><span class="fu">image</span><span class="kw">:</span><span class="at"> caddy:2-alpine</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="at">        </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="at">            </span><span class="kw">-</span><span class="at"> </span><span class="st">"80:80"</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a><span class="at">        </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb1-23"><a href="#cb1-23"></a><span class="at">            </span><span class="kw">-</span><span class="at"> ./Caddyfile:/etc/caddy/Caddyfile</span></span>
+<span id="cb1-24"><a href="#cb1-24"></a><span class="at">            </span><span class="kw">-</span><span class="at"> ./app/dist/:/srv</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="à-vous" class="level2">
 <h2 class="anchored" data-anchor-id="à-vous">À vous&nbsp;!</h2>

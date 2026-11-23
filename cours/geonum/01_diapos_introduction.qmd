@@ -1,14 +1,14 @@
 ---
-title: "Formation WebCarto GeoNum 2025-2026"
+title: "Formation WebCarto GeoNum 2026-2027"
 author: "Marie Gradeler"
-date: 1 Dec 2025
+date: 27 Nov 2026
 format: 
   revealjs: 
     theme: [default, ../../styles/slides.scss]
     transition: slide
     controls: true
     controls-layout: edges
-    footer: "Formation WebCarto GeoNum 2025-2026"
+    footer: "Formation WebCarto GeoNum 2026-2027"
     logo: ../../static/logos/logo-geonum.webp
 ---
 

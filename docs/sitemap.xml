@@ -10,11 +10,11 @@
   </url>
   <url>
     <loc>https://gradelerm.github.io/cours/geonum/01_cours_introduction.html</loc>
-    <lastmod>2026-11-16T16:26:49.562Z</lastmod>
+    <lastmod>2026-11-23T13:37:34.138Z</lastmod>
   </url>
   <url>
     <loc>https://gradelerm.github.io/cours/geonum/02_cours_architecture_client_serveur.html</loc>
-    <lastmod>2026-11-16T16:58:55.431Z</lastmod>
+    <lastmod>2026-11-23T15:14:14.836Z</lastmod>
   </url>
   <url>
     <loc>https://gradelerm.github.io/index.html</loc>
@@ -38,7 +38,7 @@
   </url>
   <url>
     <loc>https://gradelerm.github.io/cours/geonum/03_cours_geoserver.html</loc>
-    <lastmod>2026-11-16T17:23:49.202Z</lastmod>
+    <lastmod>2026-11-23T15:36:31.453Z</lastmod>
   </url>
   <url>
     <loc>https://gradelerm.github.io/posts/dummy_blog_post_two.html</loc>
@@ -74,10 +74,18 @@
   </url>
   <url>
     <loc>https://gradelerm.github.io/cours/geonum/01_diapos_introduction.html</loc>
-    <lastmod>2026-11-16T16:31:43.378Z</lastmod>
+    <lastmod>2026-11-23T13:38:35.936Z</lastmod>
   </url>
   <url>
     <loc>https://gradelerm.github.io/cours/geonum/02_diapos_architecture_client_serveur.html</loc>
-    <lastmod>2026-11-16T17:01:03.324Z</lastmod>
+    <lastmod>2026-11-23T13:49:10.186Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gradelerm.github.io/cours/geonum/02_diapos_architecture_client_server.html</loc>
+    <lastmod>2026-11-23T13:49:10.186Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gradelerm.github.io/cours/geonum/03_diapos_geoserver.html</loc>
+    <lastmod>2026-11-23T15:04:07.717Z</lastmod>
   </url>
 </urlset>
