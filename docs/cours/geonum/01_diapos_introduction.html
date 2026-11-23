@@ -7,18 +7,21 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.38">
 
   <meta name="author" content="Marie Gradeler">
-  <meta name="dcterms.date" content="2025-12-01">
-  <title>Formation WebCarto GeoNum 2025-2026</title>
+  <meta name="dcterms.date" content="2026-11-27">
+  <title>GradelerM – Formation WebCarto GeoNum 2026-2027</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -31,7 +34,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-18e29b6cea4c0a39f312ef258f15e278.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-8dda7ce02edb418d2c0a0915d2385ac2.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -129,7 +132,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Formation WebCarto GeoNum 2025-2026</h1>
+  <h1 class="title">Formation WebCarto GeoNum 2026-2027</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -139,7 +142,7 @@ Marie Gradeler
 </div>
 </div>
 
-  <p class="date">2025-12-01</p>
+  <p class="date">2026-11-27</p>
 </section>
 <section id="intervenante" class="slide level2">
 <h2>Intervenante</h2>
@@ -150,19 +153,17 @@ Marie Gradeler
 <p>🗺️ Master GeoNum (arrivée en M2)</p>
 <p>💻 Stage AgroParisTech dans le cadre du Master : développement d’une appli de cartographie web</p>
 <p>💻 Contrat de 6 mois au CIRAD pour terminer la production de l’appli carto du stage</p>
-<p>💻 Depuis, je travaille comme consultante IFAD sur le project Land Matrix (création d’indicateurs, stats avec R, beaucoup de dataviz et développement Web)</p>
+<p>💻 Depuis, je travaille comme consultante CIRAD (après 3 ans IFAD) sur le project Land Matrix (création d’indicateurs, stats avec R, beaucoup de dataviz et développement Web)</p>
 </section>
 <section id="les-cours" class="slide level2">
 <h2>Les cours</h2>
 <ul>
-<li><em>1er Décembre, 9h-12h</em> — Architecture Web et Serveurs Cartographiques</li>
-<li><em>2 Décembre, 9h-12h</em> — Introduction à OpenLayers</li>
-<li><em>4 Décembre, 9h-12h</em> — Ajouter des couches à ma carte</li>
-<li><em>8 Décembre, 9h-12h</em> — Interactions entre carte et interface</li>
-<li><em>11 Décembre, 9h-12h</em> — Enrichir la carte en fonctionnalités, partie 1</li>
-<li><em>12 Décembre, 9h-12h</em> — Enrichir la carte en fonctionnalités, partie 2</li>
+<li><p><em>27 Novembre, 9h-12h</em> — Architecture Web et Serveurs Cartographiques</p></li>
+<li><p><em>2 Décembre, 9h-12h</em> — Introduction à OpenLayers et au cycle de développement d’une application web (aide au projet GéoNum)</p></li>
+<li><p><em>8 Décembre, 9h-12h</em> — Ajouter des couches à la carte (WMS, WFS, GeoJson)</p></li>
+<li><p><em>9 Décembre, 9h-12h</em> — Interactions carte-interface et enrichir la carte en fonctionnalités</p></li>
 </ul>
-<p>On va travailler sur les <strong>serveurs cartographiques</strong>, notamment <strong>GeoServer</strong>, mais aussi sur la librairie de cartographie <strong>OpenLayers</strong>. Cela va nous demander de savoir écrire du code en <strong>JavaScript</strong>, d’être capable d’exécuter une ou deux lignes de commandes en <strong>Bash</strong> et de comprendre l’architecture <strong>client-serveur</strong> du web.</p>
+<p>Nous allons travailler sur les <strong>serveurs cartographiques</strong>, notamment <strong>GeoServer</strong>, mais aussi sur la librairie de cartographie <strong>OpenLayers</strong>. Cela va nous demander de savoir écrire du code en <strong>JavaScript</strong>, d’être capable d’exécuter une ou deux lignes de commandes en <strong>Bash</strong> et de comprendre l’architecture <strong>client-serveur</strong> du web.</p>
 <p>Je vous recommande de revoir les cours de <strong>Leaflet</strong> (entre autres) qui sont complémentaires de celui-ci. Si vous connaissez Leaflet, vous connaissez presque déjà OpenLayers.</p>
 </section>
 <section id="les-ressources" class="slide level2">
@@ -170,17 +171,17 @@ Marie Gradeler
 <h4 id="mon-site-internet-httpsgradelerm.github.io">💻 Mon site internet&nbsp;: <a href="https://gradelerm.github.io" class="uri">https://gradelerm.github.io</a></h4>
 <p>Il est en cours de construction mais suffit déjà à héberger les ressources pour le cours. Vous y trouverez tout le reste !</p>
 <h4 id="moi-marie.gradelergmail.com">Moi&nbsp;: <a href="mailto:marie.gradeler@gmail.com">marie.gradeler@gmail.com</a></h4>
-<p>N’hésitez pas à me contacter. Mes cours sont condensés sur 2 semaines. Si quelque chose ne va pas, je dois le savoir dès la première séance. Je serai aussi disponible pour vous accompagner durant les projets GeoNum si vous avez besoin d’aide sur l’une des notions abordées en cours.</p>
+<p>N’hésitez pas à me contacter. Mes cours sont condensés sur 2-3 semaines. Si quelque chose ne va pas, je dois le savoir dès la première séance. Je serai aussi disponible pour vous accompagner durant les projets GeoNum si vous avez besoin d’aide sur l’une des notions abordées en cours.</p>
 
 <img data-src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjU0MWlrOHM3djBoYmNpa2U2bDl0bGJucWtieGU0NXdzOGVnbnN0NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUA7b7cyCdP8INUXjG/giphy.webp" class="quarto-figure quarto-figure-center r-stretch" alt="GIF: Write a letter" width="267"></section>
 <section id="comment-ça-se-passe" class="slide level2">
 <h2>Comment ça se passe</h2>
 <h3 id="organisation-des-cours">Organisation des cours</h3>
 <ul>
-<li><p>Pas mal de mise en pratique</p></li>
-<li><p>On m’appelle si on est perdu, je suis là pour <strong>vous aider</strong> (ne me laissez pas faire mon cours dans le vide parce que vous avez abandonné tout espoir de raccrocher les wagons, ça ne sert à rien)</p></li>
+<li><p>Pas mal de mise en pratique.</p></li>
+<li><p>On m’appelle si on est perdu, je suis là pour <strong>vous aider</strong> (ne me laissez pas faire mon cours dans le vide parce que vous avez abandonné tout espoir de raccrocher les wagons, ça ne sert à rien).</p></li>
 <li><p>Si on doit ralentir parce que j’ai trop prévu de choses techniques, <strong>on ralentit</strong> et puis c’est tout, j’adapterai l’évaluation à ce qu’on a eu le temps de voir en cours.</p></li>
-<li><p>Je sais que c’est difficile mais on <strong>lâche son téléphone pendant le cours</strong> (ou cet onglet mal planqué) et on se concentre sur le cours.</p></li>
+<li><p>Essayez. <strong>Vous avez tous les capacités pour sortir une carte web</strong>, et mon cours devrait vraiment, <em>vraiment</em> vous aider pour le projet de fin d’année.</p></li>
 </ul>
 </section>
 <section id="évaluation" class="slide level2">
@@ -189,7 +190,7 @@ Marie Gradeler
 <p>🛠️ Publication de couches sur un <strong>GeoServer</strong></p>
 <p>🗺️ Lecture des flux WMS sur une petite appli <strong>OpenLayers OU Leaflet</strong></p>
 <p>💻 Déploiement (rudimentaire) de votre serveur GeoServer + application OpenLayers OU Leaflet en s’appuyant sur l’architecture web fournie</p>
-<p>Je vais recalibrer l’évaluation suivant la vitesse à laquelle on avance et le niveau moyen de la promo en dev. Du coup, vous aurez les consignes pendant le dernier cours.</p>
+<p>Je vais recalibrer l’évaluation suivant la vitesse à laquelle on avance et le niveau moyen de la promo en développement web. Du coup, vous aurez les consignes pendant le dernier cours.</p>
 </section>
 <section id="cest-parti" class="slide level2">
 <h2>C’est parti !</h2>
@@ -203,7 +204,7 @@ Marie Gradeler
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="../../static/logos/logo-geonum.webp" class="slide-logo"></p>
 <div class="footer footer-default">
-<p>Formation WebCarto GeoNum 2025-2026</p>
+<p>Formation WebCarto GeoNum 2026-2027</p>
 </div>
 </div></div>
 
@@ -389,7 +390,7 @@ Marie Gradeler
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -463,13 +464,14 @@ Marie Gradeler
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
@@ -484,7 +486,7 @@ Marie Gradeler
         }
           var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
           var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp('/' + window.location.host + '/');
+            var filterRegex = new RegExp("https:\/\/gradelerm\.github\.io\/");
           var isInternal = (href) => {
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }

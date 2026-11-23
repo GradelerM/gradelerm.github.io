@@ -6,33 +6,52 @@ project:
     - "!cours/geonum/archives/"
 
 website:
-  title: ""
+  site-url: "https://gradelerm.github.io/"
+  title: "GradelerM"
   favicon: static/logo.png
   
-  search: false
+  search: true
   
   navbar:
+    logo: /static/logo.png
     left:
-      - text: "Accueil"
-        href: index.qmd
+      - text: "À propos"
+        href: about.qmd
+      # - text: "Blog"
+      #   href: blog.qmd
       - text: "Cours"
         menu:
           - text: "GeoNum"
             file: cours/geonum/01_cours_introduction.qmd
+      - text: "Ressources"
+        href: ressources.qmd
+    
+    tools:
+      - icon: github
+        text: Github
+        href: https://github.com/GradelerM
+      - icon: rss
+        href: blog.xml
+      # - icon: linkedin
+      #   text: Linkedin
+      #   href: https://fr.linkedin.com/in/marie-gradeler
   
   sidebar:
     - title: "GeoNum"
-      style: "docked"
+      style: "floating"
       contents: 
         - cours/geonum/01_cours_introduction.qmd
         - cours/geonum/02_cours_architecture_client_serveur.qmd
-        - cours/geonum/03_cours_geoserver.qmd
-        - cours/geonum/04_cours_intro_openlayers.qmd
-        - cours/geonum/05_cours_openlayers_bases.qmd
-        - cours/geonum/06_cours_ajout_couches.qmd
-        - cours/geonum/07_cours_interactions.qmd
-        - cours/geonum/08_cours_enrichir_ma_carte.qmd
-        - cours/geonum/09_rendu.qmd
+        
+        # - cours/geonum/01_cours_introduction.qmd
+        # - cours/geonum/02_cours_architecture_client_serveur.qmd
+        # - cours/geonum/03_cours_geoserver.qmd
+        # - cours/geonum/04_cours_intro_openlayers.qmd
+        # - cours/geonum/05_cours_openlayers_bases.qmd
+        # - cours/geonum/06_cours_ajout_couches.qmd
+        # - cours/geonum/07_cours_interactions.qmd
+        # - cours/geonum/08_cours_enrichir_ma_carte.qmd
+        # - cours/geonum/09_rendu.qmd
   
   page-footer: 
     left: ""
@@ -40,14 +59,20 @@ website:
     center:
       - icon: github
         href: https://github.com/GradelerM
-      - icon: linkedin
-        href: https://fr.linkedin.com/in/marie-gradeler
+      - icon: rss
+        href: blog.xml
+      # - icon: linkedin
+      #   href: https://fr.linkedin.com/in/marie-gradeler
+
 
 format:
   html:
-    theme: minty
+    theme: theme/custom.scss
+      # light: 
+      #   - theme/custom.scss
+      # dark: 
+      #   - theme/custom.scss
     css: styles.css
     toc: true
 
 editor: visual
-

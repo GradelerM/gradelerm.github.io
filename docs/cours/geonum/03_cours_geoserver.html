@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>GeoServer</title>
+<title>GeoServer – GradelerM</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -60,19 +63,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<link href="../../static/logo.png" rel="icon" type="image/png">
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../static/logo.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-aca402cbfd1db37eedacf7b027d04790.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-ff1415f384dbeb7aa012942a502a64fd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-8e6c35aa1e5fba652634084ae772980a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -89,23 +108,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../static/logo.png" alt="" class="navbar-logo light-content">
+    <img src="../../static/logo.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">GradelerM</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
-<span class="menu-text">Accueil</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">À propos</span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-cours" role="link" data-bs-toggle="dropdown" aria-expanded="false">
@@ -118,87 +147,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
     </ul>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../ressources.html"> 
+<span class="menu-text">Ressources</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
+    <a href="https://github.com/GradelerM" title="Github" class="quarto-navigation-tool px-1" aria-label="Github"><i class="bi bi-github"></i></a>
+    <a href="../../blog.xml" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-rss"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../cours/geonum/03_cours_geoserver.html">GeoServer</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../cours/geonum/01_cours_introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../cours/geonum/02_cours_architecture_client_serveur.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Architecture web</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../cours/geonum/03_cours_geoserver.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">GeoServer</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../cours/geonum/04_cours_intro_openlayers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">OpenLayers – introduction</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../cours/geonum/05_cours_openlayers_bases.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">OpenLayers – cycle de développement</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../cours/geonum/06_cours_ajout_couches.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Ajouter des couches</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../cours/geonum/07_cours_interactions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Interactions carte-interface</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../cours/geonum/08_cours_enrichir_ma_carte.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Enrichir ma carte</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../cours/geonum/09_rendu.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Rendu</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -214,6 +178,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#créer-un-espace-de-travail-et-importer-des-données" id="toc-créer-un-espace-de-travail-et-importer-des-données" class="nav-link" data-scroll-target="#créer-un-espace-de-travail-et-importer-des-données">Créer un espace de travail et importer des données</a></li>
   <li><a href="#styliser-mes-couches" id="toc-styliser-mes-couches" class="nav-link" data-scroll-target="#styliser-mes-couches">Styliser mes couches</a></li>
   <li><a href="#lire-mes-flux-carto-dans-une-autre-application" id="toc-lire-mes-flux-carto-dans-une-autre-application" class="nav-link" data-scroll-target="#lire-mes-flux-carto-dans-une-autre-application">Lire mes flux carto dans une autre application</a></li>
+  <li><a href="#sauvegarder-son-travail" id="toc-sauvegarder-son-travail" class="nav-link" data-scroll-target="#sauvegarder-son-travail">Sauvegarder son travail</a></li>
+  <li><a href="#bravo" id="toc-bravo" class="nav-link" data-scroll-target="#bravo">Bravo !!!</a></li>
   </ul></li>
   <li><a href="#récap-sur-les-serveurs-carto" id="toc-récap-sur-les-serveurs-carto" class="nav-link" data-scroll-target="#récap-sur-les-serveurs-carto">Récap sur les serveurs carto</a></li>
   </ul>
@@ -244,9 +210,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="objectifs-de-la-session" class="level2">
 <h2 class="anchored" data-anchor-id="objectifs-de-la-session">Objectifs de la session</h2>
 <ul>
-<li><p>Apprendre ce qu’est un serveur cartographique</p></li>
+<li><p>Apprendre ce qu’est un serveur cartographique.</p></li>
 <li><p>Connaître les standards OGC WFS, WMS, WMTS…</p></li>
-<li><p>Savoir importer, styliser et visualiser une couche de données dans GeoServer</p></li>
+<li><p>Savoir importer, styliser et visualiser une couche de données dans GeoServer.</p></li>
 </ul>
 <p><em>Durée&nbsp;: 2h</em></p>
 </section>
@@ -269,17 +235,17 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Ce TP suppose que Docker est installé sur la machine. Il a été écrit pour une machine Linux, certains chemins et lignes de commande peuvent donc être différents sur une machine Windows ou Mac.</p>
+<p>Ce TP suppose que Docker est installé sur la machine ou que le <em>codespace</em> sur GitHub a bien été mis en place. Il a été écrit pour une machine Linux, certains chemins et lignes de commande peuvent donc être différents sur une machine Windows ou Mac.</p>
 </div>
 </div>
-<p>Si tout s’est bien passé lors du TP précédent, vous devriez avoir une instance de GeoServer qui tourne à l’adresse suivante&nbsp;: <a href="http://localhost:8080/geoserver/web/?0" class="uri">http://localhost:8080/geoserver/web/?0</a></p>
+<p>Si tout s’est bien passé lors du TP précédent, vous devriez avoir une instance de GeoServer qui tourne à l’adresse <a href="http://localhost:8080/geoserver/web/?0" class="uri">http://localhost:8080/geoserver/web/?0</a> (si vous êtes sur votre machine) ou bien sur le port indiqué dans votre GitHub Codespaces.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Je ne trouve pas mon GeoServer
+<span class="screen-reader-only">Note</span>Je ne trouve pas mon GeoServer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -289,13 +255,17 @@ Je ne trouve pas mon GeoServer
 <ul>
 <li>ouvrir un terminal à la racine du dossier <code>geonum_docker</code> et taper la commande <code>docker compose up -d</code></li>
 <li>ouvrir l’application Docker Desktop, trouver la <em>stack</em> de containers <code>geonum_docker</code> et <code>geonum_web</code> et cliquer sur “Start”</li>
+<li>ouvrir l’onglet <em>Containers</em> de votre VSCode (fonctionne avec GitHub Codespaces) et lancer avec le bouton “play” les containers <code>geonum_docker</code> et <code>geonum_web</code>.</li>
 </ul>
+<p><strong>Pour ceux qui ont perdu leur <em>codespace</em> :</strong></p>
+<p>Allez sur votre dépôt et cliquez sur <strong><em>&lt;&gt; Code</em></strong>, puis allez dans l’onglet Codespaces, ou bien cherchez-le directement dans votre liste de <em>codespaces</em> sur la page <a href="https://github.com/codespaces" class="uri">https://github.com/codespaces</a>.</p>
+<p><strong>Pour ceux qui sont sur leur machine (donc pas avec GitHub Codespaces) :</strong></p>
 <p>Si jamais votre instance tourne mais que vous ne trouvez pas votre GeoServer, il est peut-être à une adresse différente. Vérifiez le contenu de la ligne “ports” du fichier <code>docker-compose.yml</code>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ports</span><span class="kw">:</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">"8080:8080"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">"8080:8080"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Le port de droite indique à quelle adresse est servi votre GeoServer. Le port de sortie peut être différent&nbsp;:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ports</span><span class="kw">:</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">"8080:8081"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">"8080:8081"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Dans ce cas, vous trouverez votre GeoServer à l’adresse <a href="http://localhost:8080/geoserver/web/?0">http://localhost:8081/geoserver/web/?0</a>. Il peut être nécessaire de changer de port si vous avez déjà une application qui utilise le port <code>8080</code> sur votre machine.</p>
 </div>
 </div>
@@ -305,6 +275,19 @@ Je ne trouve pas mon GeoServer
 <li><p>En haut à droite de l’écran, si ce n’est pas déjà le cas, sélectionnez le langage “fr” pour passer l’interface en français.</p></li>
 <li><p>Connectez vous avec l’identifiant <code>admin</code> et le mot de passe <code>geoserver</code>. Ce sont les identifiants par défaut quand vous créez une instance de GeoServer. Si vous mettiez votre application en ligne, il faudrait évidemment changer ça.</p></li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Mettre en ligne mon application développée avec GitHub Codespaces
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Attention, le code a été adapté pour une utilisation facilitée de GeoServer dans un <em>codespace</em>. Ne mettez pas en production une application basée sur ce code, elle ne serait pas sécurisée ! Si vous avez besoin d’un GeoServer pour votre projet GeoNum, vous devrez l’installer sur votre machine et supprimer les lignes comme indiquées par les commentaires dans le <code>docker-compose.yml</code>. Mieux encore, demandez de l’aide aux profs !</p>
+</div>
+</div>
 </section>
 <section id="se-familiariser-avec-notre-jeu-de-données" class="level3">
 <h3 class="anchored" data-anchor-id="se-familiariser-avec-notre-jeu-de-données">Se familiariser avec notre jeu de données</h3>
@@ -319,44 +302,50 @@ Je ne trouve pas mon GeoServer
 <section id="créer-un-espace-de-travail-et-importer-des-données" class="level3">
 <h3 class="anchored" data-anchor-id="créer-un-espace-de-travail-et-importer-des-données">Créer un espace de travail et importer des données</h3>
 <p>Maintenant que vous voyez mieux sur quelle donnée on va travailler, il est temps de l’importer dans GeoServer. Pour ça, on va créer un dossier <code>geoserver/opt/data</code> et y glisser le jeu de données.</p>
+<p><strong>Pour ceux qui sont sur leur machine :</strong></p>
 <ul>
-<li><p>Ouvrez votre gestionnaire de fichiers à la racine du projet (répertoire <code>geonum_docker</code>)</p></li>
-<li><p>Dans <code>geoserver</code> &gt; <code>opt</code>, créez un nouveau répertoire <code>data</code>. <em>Note&nbsp;: vous pouvez l’appeler comme vous voulez, on utilise juste une convention ici.</em></p></li>
+<li><p>Ouvrez votre gestionnaire de fichiers ou votre arborescence de fichiers (VSCode) à la racine du projet (répertoire <code>geonum_docker</code>).</p></li>
+<li><p>Dans <code>geoserver</code> &gt; <code>opt</code>, créez un nouveau répertoire <code>data</code>. <em>Note&nbsp;: vous pouvez en théorie l’appeler comme vous voulez, on utilise juste une convention ici.</em></p></li>
 <li><p>Vérifiez bien que <code>data</code> se trouve dans le même répertoire que <code>styles</code>, <code>workspaces</code>, etc.</p></li>
-<li><p>Déplacez le jeu de données <code>land_matrix_mines</code> dans le dossier <code>data</code></p></li>
+<li><p>Déplacez le jeu de données <code>land_matrix_mines</code> dans le dossier <code>data</code>.</p></li>
 </ul>
 <div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Je ne peux pas créer de nouveau dossier / déplacer mon fichier !
+<span class="screen-reader-only">Important</span>Je ne peux pas créer de nouveau dossier / déplacer mon fichier !
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Si vous ne pouvez pas créer de nouveau dossier, c’est que vous ne disposez pas des permissions suffisantes. Dans mon cas (sur Ubuntu), tous les dossiers appartenaient à l’utilisateur et au groupe <code>root</code>. Il faut utiliser la commande <code>chown</code>&nbsp;:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chown <span class="at">-R</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>:<span class="op">&lt;</span>group<span class="op">&gt;</span> /chemin/vers/mon/dossier</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Si vous ne pouvez pas créer de nouveau dossier, c’est que vous ne disposez pas des permissions suffisantes. Dans mon cas (sur Fedora), tous les dossiers appartenaient à l’utilisateur et au groupe <code>root</code>. Il faut utiliser la commande <code>chown</code>&nbsp;:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chown <span class="at">-R</span> <span class="op">&lt;</span>user<span class="op">&gt;</span>:<span class="op">&lt;</span>group<span class="op">&gt;</span> /chemin/vers/mon/dossier</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Pour changer les droits de mon dossier `/home/marie/Documents/GeoServer` j’ai donc tapé&nbsp;:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chown <span class="at">-R</span> marie:marie /home/marie/Documents/GeoServer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chown <span class="at">-R</span> marie:marie /home/marie/Documents/GeoServer</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Pour ceux qui sont sur un <em>codespace</em>, vous pouvez directement copier-coller cette ligne :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chown <span class="at">-R</span> codespace:root geoserver/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Pensez ensuite à relancer votre container.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose down</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose up <span class="at">-d</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Si ça ne fonctionne pas, ne restez pas bloqués et appelez-moi, on règle ça ensemble.</p>
 </div>
 </div>
 </div>
-<p>Ensuite, dans l’interface de GeoServer, nous devons <strong>créer un nouvel espace de travail</strong>. Ils servent à compartimenter la donnée. Dans un cas d’utilisation réelle, on aurait par exemple un espace de travail par projet. Il est possible de définir des droits utilisateurs spécifiques aux espaces de travail (par exemple, l’utilisateur “John” peut ajouter de la donnée dans l’espace “espaces_verts” mais pas dans “bassins_versants”).</p>
+<p>Ensuite, dans l’interface de GeoServer, nous devons <strong>créer un nouvel espace de travail</strong>. Ils servent à compartimenter la donnée. Dans un cas d’utilisation réelle, on aurait par exemple un espace de travail par projet. Il est possible de définir des droits utilisateurs spécifiques aux espaces de travail (par exemple, l’utilisateur “Bob” peut ajouter de la donnée dans l’espace “espaces_verts” mais pas dans “bassins_versants”).</p>
 <ul>
-<li><p>Allez dans “Espaces de travail” (à gauche)</p></li>
-<li><p>Cliquez sur “Ajouter un nouvel espace de travail”</p></li>
-<li><p>Donnez lui comme nom et comme URI <code>land_matrix</code></p></li>
+<li><p>Allez dans “Espaces de travail” (à gauche).</p></li>
+<li><p>Cliquez sur “Ajouter un nouvel espace de travail”.</p></li>
+<li><p>Donnez-lui comme nom et comme URI <code>land_matrix</code> .</p></li>
 <li><p>Vous devriez revenir à la liste de vos espaces de travail.</p></li>
 </ul>
 <p>On doit ensuite définir notre Geopackage comme étant un nouvel <strong>entrepôt de données</strong>. Cela permet d’indiquer à GeoServer qu’il s’agit d’une source de données. C’est assez similaires aux connexions dans QGIS.</p>
 <ul>
-<li><p>Allez dans “Entrepôts” (à gauche)</p></li>
-<li><p>Cliquez sur “Ajouter un nouvel entrepôt”</p></li>
-<li><p>Choisissez “GeoPackage”</p></li>
+<li><p>Allez dans “Entrepôts” (à gauche).</p></li>
+<li><p>Cliquez sur “Ajouter un nouvel entrepôt”.</p></li>
+<li><p>Choisissez “GeoPackage”.</p></li>
 <li><p>Donnez lui pour nom <code>land_matrix_mines</code>. Vous pouvez aussi lui donner une description.</p></li>
 <li><p>Dans <strong>“Paramètres de connexion”</strong>, près de “database*”, cliquez sur “Parcourir…”. Vous devriez pouvoir accéder à <code>data/</code> et y trouver <code>land_matrix_mines.gpkg</code>. Cliquez dessus.</p></li>
 <li><p>Allez tout en bas de la page et cliquez sur “Sauvegarder”.</p></li>
@@ -373,7 +362,7 @@ Je ne peux pas créer de nouveau dossier / déplacer mon fichier !
 <p>Les trois choses à faire absolument à chaque fois dans l’onglet données sont&nbsp;:</p>
 <ul>
 <li><p>Renseigner les informations dans “<strong>Informations de base sur les donneés</strong>” comme le nom de la couche et un résumé. N’oubliez pas de laisser “Activé” et “Publié” cochés pour rendre la couche accessible depuis l’extérieur.</p></li>
-<li><p>Vérifier le “<strong>Système de Référence de Coordonnées (SRC)</strong>” qui doit être pré-rempli en EPSG:4326 dans notre cas. Il correspond à la projection WGS84 utilisée dans la grande majorité des cas en cartographie web.</p></li>
+<li><p>Vérifier le “<strong>Système de Référence de Coordonnées (SRC)</strong>” qui doit être pré-rempli en EPSG:4326 dans notre cas. Il correspond à la projection WGS84 utilisée dans la grande majorité des cas en cartographie web, même si les outils permettent petit à petit de se diriger plutôt vers la projection <em>Equal Earth</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> (EPSG:8857). Une version future de ce TP adoptera la projection <em>Equal Earth</em>. Si vous êtes déjà suffisamment à l’aise pour prendre des libertés vis-à-vis du TP, vous pouvez l’utiliser dès maintenant ! Et pour des cartes centrées sur la France, vous pourrez aussi utiliser la projection classique Lambert-93 (EPSG:2154).</p></li>
 <li><p>Définir les “<strong>Emprises</strong>” qui se calculent automatiquement sur GeoServer en cliquant sur “Calculer depuis les limites du SRS” et “Calculées sur les emprises natives”.</p></li>
 </ul>
 <p>Cliquez ensuite sur “Appliquer” pour sauvegarder vos changements et scrollez en haut de la page pour accéder à l’onglet “Publication”.</p>
@@ -382,8 +371,8 @@ Je ne peux pas créer de nouveau dossier / déplacer mon fichier !
 </ul>
 <p>Cliquez sur “Sauvegarder”. La couche devrait maintenant apparaître au sommet du tableau. Cliquez simplement sur le nom de la couche (ici “deals”) pour la paramétrer à nouveau si besoin. Pour vérifier que tout a fonctionné, on peut prévisualiser la couche directement depuis GeoServer.</p>
 <ul>
-<li><p>Allez dans “Prévisualisation de la Couche” (à gauche)</p></li>
-<li><p>Sur la ligne de la couche “deals”, sélectionnez “OpenLayers” (dans la colonne “Formats usuels”)</p></li>
+<li><p>Allez dans “Prévisualisation de la Couche” (à gauche).</p></li>
+<li><p>Sur la ligne de la couche “deals”, sélectionnez “OpenLayers” (dans la colonne “Formats usuels”).</p></li>
 </ul>
 <p>Vous devriez voir apparaître quelque chose comme ça, avec des informations supplémentaires si vous cliquez sur des points (possible car notre couche est interrogeable)&nbsp;:</p>
 <div class="quarto-figure quarto-figure-center">
@@ -391,7 +380,7 @@ Je ne peux pas créer de nouveau dossier / déplacer mon fichier !
 <p><img src="../../static/captures/geonum_geoserver_layer_preview.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Prévisualisation de la couche deals dans GeoServer"></p>
 </figure>
 </div>
-<p>Si c’est bon, bravo, ça a fonctionné ! Si vous voyez des artefacts autour des points, c’est normal. Ce que vous regardez, ce ne sont pas des polygones mais une image produite à partir de notre couche et transmise comme un flux WMS par notre serveur. L’intérêt, c’est qu’on peut afficher rapidement des couches très lourdes de cette manière, là où un GeoJSON commencerait à ramer. Et on peut toujours zoomer et cliquer sur un point pour l’interroger. C’est super pratique&nbsp;! Ce flux WMS est récupéré et lu par une petite appli OpenLayers, c’est comme ça que vous êtes capable de voir la couche sur votre page web (vous sentez venir la transition vers les prochains cours, là&nbsp;?).</p>
+<p>Si c’est bon, bravo, ça a fonctionné ! Si vous voyez des artefacts autour des points, c’est normal. Ce que vous regardez, ce ne sont pas des polygones mais <strong>une image produite à partir de notre couche et transmise comme un flux WMS par notre serveur</strong>. L’intérêt, c’est qu’on peut afficher rapidement des couches très lourdes de cette manière, là où un GeoJSON commencerait à ramer. Et on peut toujours zoomer et cliquer sur un point pour l’interroger. C’est super pratique&nbsp;! Ce flux WMS est récupéré et lu par une petite appli OpenLayers, c’est comme ça que vous êtes capable de voir la couche sur votre page web. Vous sentez la transition vers le prochain cours ?</p>
 <p>Bon, super, on a notre couche moche. Maintenant, on en fait quoi de tous ces points rouges&nbsp;?</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -406,7 +395,7 @@ Je ne peux pas créer de nouveau dossier / déplacer mon fichier !
 <p>Pour le moment, afficher notre couche “deals” va juste donner l’impression que notre carte a attrappé la varicelle. On va commencer par changer son apparence en faisant des points bien ronds et d’une couleur plus agréable. Pour ça, on va devoir <strong>créer un nouveau style</strong>.</p>
 <ul>
 <li><p>Allez dans “Styles” et cliquer sur “Ajouter un nouveau style”.</p></li>
-<li><p>Nommez le style “deals” et choisissez l’espace de travail “land_matrix”. Conservez le format SLD, c’est le seul disponible sans ajouter d’extensions.</p></li>
+<li><p>Nommez le style “deals” et choisissez l’espace de travail “land_matrix”. Conservez le format SLD, c’est le seul disponible sans installer d’extensions à GeoServer.</p></li>
 <li><p>Pour nous aider, GeoServer propose de générer un SLD par défaut. Sélectionnez “Point” et cliquez sur “Générer…”. Vous devriez vous retrouver avec un fichier .xml décrivant la couche.</p></li>
 </ul>
 <p>On pourrait aller lire en détail le <a href="https://docs.geoserver.org/main/en/user/styling/sld/cookbook/index.html">SLD Cookbook</a> de GeoServer pour écrire notre fichier manuellement, mais on est plus malins que ça. On a un super outil à disposition qui s’appelle QGIS.</p>
@@ -414,41 +403,42 @@ Je ne peux pas créer de nouveau dossier / déplacer mon fichier !
 <li><strong>Si vous ne l’avez pas déjà fait, créez un projet QGIS et ajoutez les couches Land Matrix.</strong></li>
 <li>Donnez un style sympa aux points de la couche deals. J’ai changé la couleur pour les rendre orange.</li>
 <li>Allez dans les propriétés de votre couche et dans “Symbologie”. Tout en bas, choisissez “Style” et “Enregistrer le style…”.</li>
-<li>Choisissez l’option “En tant que fichier SLD” et choisissez le chemin et le nom de votre fichier en cliquant sur “…” après “Fichier”. J’ai appelé le mien “deals.sld”</li>
+<li>Choisissez l’option “En tant que fichier SLD” et choisissez le chemin et le nom de votre fichier en cliquant sur “…” après “Fichier”. J’ai appelé le mien “deals.sld”.</li>
 <li>Allez chercher votre fichier et ouvrez-le avec un éditeur de texte (Notepad, VSCode, peu importe).</li>
 <li>Copiez le contenu.</li>
 <li>Retournez sur votre page GeoServer, supprimez tout le contenu de la zone de texte et collez à la place le contenu de <code>deals.sld</code>. Voilà ce que ça donne pour moi&nbsp;:</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;?xml</span><span class="ot"> version=</span><span class="st">"1.0"</span><span class="ot"> encoding=</span><span class="st">"UTF-8"</span><span class="fu">?&gt;</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">StyledLayerDescriptor</span><span class="ot"> xmlns=</span><span class="st">"http://www.opengis.net/sld"</span><span class="ot"> xmlns:se=</span><span class="st">"http://www.opengis.net/se"</span><span class="ot"> xmlns:ogc=</span><span class="st">"http://www.opengis.net/ogc"</span><span class="ot"> xsi:schemaLocation=</span><span class="st">"http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd"</span><span class="ot"> xmlns:xsi=</span><span class="st">"http://www.w3.org/2001/XMLSchema-instance"</span><span class="ot"> xmlns:xlink=</span><span class="st">"http://www.w3.org/1999/xlink"</span><span class="ot"> version=</span><span class="st">"1.1.0"</span>&gt;</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">NamedLayer</span>&gt;</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">se:Name</span>&gt;gpkg_land_matrix — deals&lt;/<span class="kw">se:Name</span>&gt;</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">UserStyle</span>&gt;</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">se:Name</span>&gt;gpkg_land_matrix — deals&lt;/<span class="kw">se:Name</span>&gt;</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">se:FeatureTypeStyle</span>&gt;</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">se:Rule</span>&gt;</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:Name</span>&gt;Deal&lt;/<span class="kw">se:Name</span>&gt;</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:PointSymbolizer</span>&gt;</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">se:Graphic</span>&gt;</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:Mark</span>&gt;</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:WellKnownName</span>&gt;circle&lt;/<span class="kw">se:WellKnownName</span>&gt;</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:Fill</span>&gt;</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span><span class="ot"> name=</span><span class="st">"fill"</span>&gt;#ffd157&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">se:Fill</span>&gt;</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:Stroke</span>&gt;</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span><span class="ot"> name=</span><span class="st">"stroke"</span>&gt;#232323&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span><span class="ot"> name=</span><span class="st">"stroke-width"</span>&gt;0.5&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">se:Stroke</span>&gt;</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">se:Mark</span>&gt;</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:Size</span>&gt;7&lt;/<span class="kw">se:Size</span>&gt;</span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">se:Graphic</span>&gt;</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">se:PointSymbolizer</span>&gt;</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">se:Rule</span>&gt;</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">se:FeatureTypeStyle</span>&gt;</span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">UserStyle</span>&gt;</span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">NamedLayer</span>&gt;</span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">StyledLayerDescriptor</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Vous pouvez prévisualiser la légende en cliquant sur “Aperçu de la légende”. Le bouton “Ajouter une légende” permet quand à lui d’ajouter une image customisée plutôt qu’une génération automatique. C’est pratique quand on a des légendes complexes, mais pas pour le moment. Ensuite, sauvegardez la légende quand elle vous convient.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;?xml</span> <span class="ot">version=</span><span class="st">"1.0"</span> <span class="ot">encoding=</span><span class="st">"UTF-8"</span><span class="fu">?&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">StyledLayerDescriptor</span> <span class="ot">xmlns=</span><span class="st">"http://www.opengis.net/sld"</span> <span class="ot">xmlns:se=</span><span class="st">"http://www.opengis.net/se"</span> <span class="ot">xmlns:ogc=</span><span class="st">"http://www.opengis.net/ogc"</span> <span class="ot">xsi:schemaLocation=</span><span class="st">"http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd"</span> <span class="ot">xmlns:xsi=</span><span class="st">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="ot">xmlns:xlink=</span><span class="st">"http://www.w3.org/1999/xlink"</span> <span class="ot">version=</span><span class="st">"1.1.0"</span>&gt;</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">NamedLayer</span>&gt;</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">se:Name</span>&gt;gpkg_land_matrix — deals&lt;/<span class="kw">se:Name</span>&gt;</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">UserStyle</span>&gt;</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">se:Name</span>&gt;gpkg_land_matrix — deals&lt;/<span class="kw">se:Name</span>&gt;</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">se:FeatureTypeStyle</span>&gt;</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">se:Rule</span>&gt;</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:Name</span>&gt;Deal&lt;/<span class="kw">se:Name</span>&gt;</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:PointSymbolizer</span>&gt;</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">se:Graphic</span>&gt;</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:Mark</span>&gt;</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:WellKnownName</span>&gt;circle&lt;/<span class="kw">se:WellKnownName</span>&gt;</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:Fill</span>&gt;</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span> <span class="ot">name=</span><span class="st">"fill"</span>&gt;#ffd157&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">se:Fill</span>&gt;</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:Stroke</span>&gt;</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span> <span class="ot">name=</span><span class="st">"stroke"</span>&gt;#232323&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span> <span class="ot">name=</span><span class="st">"stroke-width"</span>&gt;0.5&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">se:Stroke</span>&gt;</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">se:Mark</span>&gt;</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:Size</span>&gt;7&lt;/<span class="kw">se:Size</span>&gt;</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">se:Graphic</span>&gt;</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">se:PointSymbolizer</span>&gt;</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">se:Rule</span>&gt;</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">se:FeatureTypeStyle</span>&gt;</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">UserStyle</span>&gt;</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">NamedLayer</span>&gt;</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">StyledLayerDescriptor</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Vous pouvez prévisualiser la légende en cliquant sur “Aperçu de la légende”. Le bouton “Ajouter une légende” permet quand à lui d’ajouter une image customisée plutôt qu’utiliser une image générée automatiquement. C’est pratique quand on a des légendes complexes, mais pas pour le moment.</p>
+<p>Ensuite, sauvegardez la légende quand elle vous convient.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -465,7 +455,7 @@ Tip
 <p>Maintenant, il faut dire à GeoServer qu’on veut utiliser ce style avec notre couche “deals”.</p>
 <ul>
 <li>Allez dans “Couches”.</li>
-<li>Sélectionnez la couche “deals et allez dans l’onglet”Publication”.</li>
+<li>Sélectionnez la couche “deals” et allez dans l’onglet “Publication”.</li>
 <li>Dans “Style par défaut”, sélectionnez “land_matrix:deals” et sauvegardez.</li>
 </ul>
 <p>Maintenant, vous pouvez de nouveau prévisualiser la couche “deals” et voilà&nbsp;! Vous savez maintenant créer un nouveau style SLD depuis QGIS et l’ajouter à une couche dans GeoServer&nbsp;!</p>
@@ -481,7 +471,7 @@ Tip
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Attention à la sémiologie
+<span class="screen-reader-only">Warning</span>Attention à la sémiologie
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -490,233 +480,233 @@ Attention à la sémiologie
 </div>
 <p>Une fois que vous avez au moins ajouté votre style à “deals_by_country” dans GeoServer, vous pouvez passer à la suite. Si vous avez un train de retard, cliquez sur les boutons ci-dessous pour dérouler mes styles et les copier-coller dans votre GeoServer.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-SLD pour “deals_by_country”
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb6"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;?xml</span><span class="ot"> version=</span><span class="st">"1.0"</span><span class="ot"> encoding=</span><span class="st">"UTF-8"</span><span class="fu">?&gt;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">StyledLayerDescriptor</span><span class="ot"> xmlns=</span><span class="st">"http://www.opengis.net/sld"</span><span class="ot"> xmlns:se=</span><span class="st">"http://www.opengis.net/se"</span><span class="ot"> xmlns:ogc=</span><span class="st">"http://www.opengis.net/ogc"</span><span class="ot"> xsi:schemaLocation=</span><span class="st">"http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd"</span><span class="ot"> xmlns:xsi=</span><span class="st">"http://www.w3.org/2001/XMLSchema-instance"</span><span class="ot"> xmlns:xlink=</span><span class="st">"http://www.w3.org/1999/xlink"</span><span class="ot"> version=</span><span class="st">"1.1.0"</span>&gt;</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">NamedLayer</span>&gt;</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">se:Name</span>&gt;gpkg_land_matrix — deals_by_country&lt;/<span class="kw">se:Name</span>&gt;</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">UserStyle</span>&gt;</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">se:Name</span>&gt;gpkg_land_matrix — deals_by_country&lt;/<span class="kw">se:Name</span>&gt;</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">se:FeatureTypeStyle</span>&gt;</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">se:Rule</span>&gt;</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:Name</span>&gt;Single symbol&lt;/<span class="kw">se:Name</span>&gt;</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:PolygonSymbolizer</span>&gt;</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">se:Fill</span>&gt;</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:SvgParameter</span><span class="ot"> name=</span><span class="st">"fill"</span>&gt;#fdbf6f&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:SvgParameter</span><span class="ot"> name=</span><span class="st">"fill-opacity"</span>&gt;0.35&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">se:Fill</span>&gt;</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">se:Stroke</span>&gt;</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:SvgParameter</span><span class="ot"> name=</span><span class="st">"stroke"</span>&gt;#232323&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:SvgParameter</span><span class="ot"> name=</span><span class="st">"stroke-width"</span>&gt;1&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:SvgParameter</span><span class="ot"> name=</span><span class="st">"stroke-linejoin"</span>&gt;bevel&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">se:Stroke</span>&gt;</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">se:PolygonSymbolizer</span>&gt;</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">se:Rule</span>&gt;</span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">se:FeatureTypeStyle</span>&gt;</span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">UserStyle</span>&gt;</span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">NamedLayer</span>&gt;</span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">StyledLayerDescriptor</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-SLD pour “deals_by_country_centroid”
+<span class="screen-reader-only">Note</span>SLD pour “deals_by_country”
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb7"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;?xml</span><span class="ot"> version=</span><span class="st">"1.0"</span><span class="ot"> encoding=</span><span class="st">"UTF-8"</span><span class="fu">?&gt;</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">StyledLayerDescriptor</span><span class="ot"> xmlns=</span><span class="st">"http://www.opengis.net/sld"</span><span class="ot"> xmlns:se=</span><span class="st">"http://www.opengis.net/se"</span><span class="ot"> xmlns:ogc=</span><span class="st">"http://www.opengis.net/ogc"</span><span class="ot"> xsi:schemaLocation=</span><span class="st">"http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd"</span><span class="ot"> xmlns:xsi=</span><span class="st">"http://www.w3.org/2001/XMLSchema-instance"</span><span class="ot"> xmlns:xlink=</span><span class="st">"http://www.w3.org/1999/xlink"</span><span class="ot"> version=</span><span class="st">"1.1.0"</span>&gt;</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">NamedLayer</span>&gt;</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">se:Name</span>&gt;gpkg_land_matrix — deals_by_country_centroid&lt;/<span class="kw">se:Name</span>&gt;</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">UserStyle</span>&gt;</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">se:Name</span>&gt;gpkg_land_matrix — deals_by_country_centroid&lt;/<span class="kw">se:Name</span>&gt;</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">se:FeatureTypeStyle</span>&gt;</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">se:Rule</span>&gt;</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:Name</span>&gt;201 - 5466&lt;/<span class="kw">se:Name</span>&gt;</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:Description</span>&gt;</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">se:Title</span>&gt;201 - 5466&lt;/<span class="kw">se:Title</span>&gt;</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">se:Description</span>&gt;</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">ogc:Filter</span><span class="ot"> xmlns:ogc=</span><span class="st">"http://www.opengis.net/ogc"</span>&gt;</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">ogc:And</span>&gt;</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">ogc:PropertyIsGreaterThanOrEqualTo</span>&gt;</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:PropertyName</span>&gt;suface_ha&lt;/<span class="kw">ogc:PropertyName</span>&gt;</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:Literal</span>&gt;200.81000000000000227&lt;/<span class="kw">ogc:Literal</span>&gt;</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">ogc:PropertyIsGreaterThanOrEqualTo</span>&gt;</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">ogc:PropertyIsLessThanOrEqualTo</span>&gt;</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:PropertyName</span>&gt;suface_ha&lt;/<span class="kw">ogc:PropertyName</span>&gt;</span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:Literal</span>&gt;5466.3999999999996362&lt;/<span class="kw">ogc:Literal</span>&gt;</span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">ogc:PropertyIsLessThanOrEqualTo</span>&gt;</span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">ogc:And</span>&gt;</span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">ogc:Filter</span>&gt;</span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:PointSymbolizer</span>&gt;</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">se:Graphic</span>&gt;</span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:Mark</span>&gt;</span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:WellKnownName</span>&gt;circle&lt;/<span class="kw">se:WellKnownName</span>&gt;</span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:Fill</span>&gt;</span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span><span class="ot"> name=</span><span class="st">"fill"</span>&gt;#e5b636&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">se:Fill</span>&gt;</span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:Stroke</span>&gt;</span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span><span class="ot"> name=</span><span class="st">"stroke"</span>&gt;#232323&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span><span class="ot"> name=</span><span class="st">"stroke-width"</span>&gt;0.5&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">se:Stroke</span>&gt;</span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">se:Mark</span>&gt;</span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:Size</span>&gt;4&lt;/<span class="kw">se:Size</span>&gt;</span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">se:Graphic</span>&gt;</span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">se:PointSymbolizer</span>&gt;</span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">se:Rule</span>&gt;</span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">se:Rule</span>&gt;</span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:Name</span>&gt;5466 - 20413&lt;/<span class="kw">se:Name</span>&gt;</span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:Description</span>&gt;</span>
-<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">se:Title</span>&gt;5466 - 20413&lt;/<span class="kw">se:Title</span>&gt;</span>
-<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">se:Description</span>&gt;</span>
-<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">ogc:Filter</span><span class="ot"> xmlns:ogc=</span><span class="st">"http://www.opengis.net/ogc"</span>&gt;</span>
-<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">ogc:And</span>&gt;</span>
-<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">ogc:PropertyIsGreaterThan</span>&gt;</span>
-<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:PropertyName</span>&gt;suface_ha&lt;/<span class="kw">ogc:PropertyName</span>&gt;</span>
-<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:Literal</span>&gt;5466.3999999999996362&lt;/<span class="kw">ogc:Literal</span>&gt;</span>
-<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">ogc:PropertyIsGreaterThan</span>&gt;</span>
-<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">ogc:PropertyIsLessThanOrEqualTo</span>&gt;</span>
-<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:PropertyName</span>&gt;suface_ha&lt;/<span class="kw">ogc:PropertyName</span>&gt;</span>
-<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:Literal</span>&gt;20412.80000000001018634&lt;/<span class="kw">ogc:Literal</span>&gt;</span>
-<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">ogc:PropertyIsLessThanOrEqualTo</span>&gt;</span>
-<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">ogc:And</span>&gt;</span>
-<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">ogc:Filter</span>&gt;</span>
-<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:PointSymbolizer</span>&gt;</span>
-<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">se:Graphic</span>&gt;</span>
-<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:Mark</span>&gt;</span>
-<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:WellKnownName</span>&gt;circle&lt;/<span class="kw">se:WellKnownName</span>&gt;</span>
-<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:Fill</span>&gt;</span>
-<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span><span class="ot"> name=</span><span class="st">"fill"</span>&gt;#e5b636&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
-<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">se:Fill</span>&gt;</span>
-<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:Stroke</span>&gt;</span>
-<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span><span class="ot"> name=</span><span class="st">"stroke"</span>&gt;#232323&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
-<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span><span class="ot"> name=</span><span class="st">"stroke-width"</span>&gt;0.5&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
-<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">se:Stroke</span>&gt;</span>
-<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">se:Mark</span>&gt;</span>
-<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:Size</span>&gt;10&lt;/<span class="kw">se:Size</span>&gt;</span>
-<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">se:Graphic</span>&gt;</span>
-<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">se:PointSymbolizer</span>&gt;</span>
-<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">se:Rule</span>&gt;</span>
-<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">se:Rule</span>&gt;</span>
-<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:Name</span>&gt;20413 - 61376&lt;/<span class="kw">se:Name</span>&gt;</span>
-<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:Description</span>&gt;</span>
-<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">se:Title</span>&gt;20413 - 61376&lt;/<span class="kw">se:Title</span>&gt;</span>
-<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">se:Description</span>&gt;</span>
-<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">ogc:Filter</span><span class="ot"> xmlns:ogc=</span><span class="st">"http://www.opengis.net/ogc"</span>&gt;</span>
-<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">ogc:And</span>&gt;</span>
-<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">ogc:PropertyIsGreaterThan</span>&gt;</span>
-<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:PropertyName</span>&gt;suface_ha&lt;/<span class="kw">ogc:PropertyName</span>&gt;</span>
-<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:Literal</span>&gt;20412.80000000001018634&lt;/<span class="kw">ogc:Literal</span>&gt;</span>
-<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">ogc:PropertyIsGreaterThan</span>&gt;</span>
-<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">ogc:PropertyIsLessThanOrEqualTo</span>&gt;</span>
-<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:PropertyName</span>&gt;suface_ha&lt;/<span class="kw">ogc:PropertyName</span>&gt;</span>
-<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:Literal</span>&gt;61375.88199999996868428&lt;/<span class="kw">ogc:Literal</span>&gt;</span>
-<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">ogc:PropertyIsLessThanOrEqualTo</span>&gt;</span>
-<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">ogc:And</span>&gt;</span>
-<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">ogc:Filter</span>&gt;</span>
-<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:PointSymbolizer</span>&gt;</span>
-<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">se:Graphic</span>&gt;</span>
-<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:Mark</span>&gt;</span>
-<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:WellKnownName</span>&gt;circle&lt;/<span class="kw">se:WellKnownName</span>&gt;</span>
-<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:Fill</span>&gt;</span>
-<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span><span class="ot"> name=</span><span class="st">"fill"</span>&gt;#e5b636&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
-<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">se:Fill</span>&gt;</span>
-<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:Stroke</span>&gt;</span>
-<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span><span class="ot"> name=</span><span class="st">"stroke"</span>&gt;#232323&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
-<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span><span class="ot"> name=</span><span class="st">"stroke-width"</span>&gt;0.5&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
-<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">se:Stroke</span>&gt;</span>
-<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">se:Mark</span>&gt;</span>
-<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:Size</span>&gt;16&lt;/<span class="kw">se:Size</span>&gt;</span>
-<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">se:Graphic</span>&gt;</span>
-<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">se:PointSymbolizer</span>&gt;</span>
-<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">se:Rule</span>&gt;</span>
-<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">se:Rule</span>&gt;</span>
-<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:Name</span>&gt;61376 - 160220&lt;/<span class="kw">se:Name</span>&gt;</span>
-<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:Description</span>&gt;</span>
-<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">se:Title</span>&gt;61376 - 160220&lt;/<span class="kw">se:Title</span>&gt;</span>
-<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">se:Description</span>&gt;</span>
-<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">ogc:Filter</span><span class="ot"> xmlns:ogc=</span><span class="st">"http://www.opengis.net/ogc"</span>&gt;</span>
-<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">ogc:And</span>&gt;</span>
-<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">ogc:PropertyIsGreaterThan</span>&gt;</span>
-<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:PropertyName</span>&gt;suface_ha&lt;/<span class="kw">ogc:PropertyName</span>&gt;</span>
-<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:Literal</span>&gt;61375.88199999996868428&lt;/<span class="kw">ogc:Literal</span>&gt;</span>
-<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">ogc:PropertyIsGreaterThan</span>&gt;</span>
-<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">ogc:PropertyIsLessThanOrEqualTo</span>&gt;</span>
-<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:PropertyName</span>&gt;suface_ha&lt;/<span class="kw">ogc:PropertyName</span>&gt;</span>
-<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:Literal</span>&gt;160220.00000000005820766&lt;/<span class="kw">ogc:Literal</span>&gt;</span>
-<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">ogc:PropertyIsLessThanOrEqualTo</span>&gt;</span>
-<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">ogc:And</span>&gt;</span>
-<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">ogc:Filter</span>&gt;</span>
-<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:PointSymbolizer</span>&gt;</span>
-<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">se:Graphic</span>&gt;</span>
-<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:Mark</span>&gt;</span>
-<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:WellKnownName</span>&gt;circle&lt;/<span class="kw">se:WellKnownName</span>&gt;</span>
-<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:Fill</span>&gt;</span>
-<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span><span class="ot"> name=</span><span class="st">"fill"</span>&gt;#e5b636&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
-<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">se:Fill</span>&gt;</span>
-<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:Stroke</span>&gt;</span>
-<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span><span class="ot"> name=</span><span class="st">"stroke"</span>&gt;#232323&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
-<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span><span class="ot"> name=</span><span class="st">"stroke-width"</span>&gt;0.5&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
-<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">se:Stroke</span>&gt;</span>
-<span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">se:Mark</span>&gt;</span>
-<span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:Size</span>&gt;22&lt;/<span class="kw">se:Size</span>&gt;</span>
-<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">se:Graphic</span>&gt;</span>
-<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">se:PointSymbolizer</span>&gt;</span>
-<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">se:Rule</span>&gt;</span>
-<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">se:Rule</span>&gt;</span>
-<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:Name</span>&gt;160220 - 1509612&lt;/<span class="kw">se:Name</span>&gt;</span>
-<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:Description</span>&gt;</span>
-<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">se:Title</span>&gt;160220 - 1509612&lt;/<span class="kw">se:Title</span>&gt;</span>
-<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">se:Description</span>&gt;</span>
-<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">ogc:Filter</span><span class="ot"> xmlns:ogc=</span><span class="st">"http://www.opengis.net/ogc"</span>&gt;</span>
-<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">ogc:And</span>&gt;</span>
-<span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">ogc:PropertyIsGreaterThan</span>&gt;</span>
-<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:PropertyName</span>&gt;suface_ha&lt;/<span class="kw">ogc:PropertyName</span>&gt;</span>
-<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:Literal</span>&gt;160220.00000000005820766&lt;/<span class="kw">ogc:Literal</span>&gt;</span>
-<span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">ogc:PropertyIsGreaterThan</span>&gt;</span>
-<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">ogc:PropertyIsLessThanOrEqualTo</span>&gt;</span>
-<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:PropertyName</span>&gt;suface_ha&lt;/<span class="kw">ogc:PropertyName</span>&gt;</span>
-<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:Literal</span>&gt;1509612&lt;/<span class="kw">ogc:Literal</span>&gt;</span>
-<span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">ogc:PropertyIsLessThanOrEqualTo</span>&gt;</span>
-<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">ogc:And</span>&gt;</span>
-<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">ogc:Filter</span>&gt;</span>
-<span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:PointSymbolizer</span>&gt;</span>
-<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">se:Graphic</span>&gt;</span>
-<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:Mark</span>&gt;</span>
-<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:WellKnownName</span>&gt;circle&lt;/<span class="kw">se:WellKnownName</span>&gt;</span>
-<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:Fill</span>&gt;</span>
-<span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span><span class="ot"> name=</span><span class="st">"fill"</span>&gt;#e5b636&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
-<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">se:Fill</span>&gt;</span>
-<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:Stroke</span>&gt;</span>
-<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span><span class="ot"> name=</span><span class="st">"stroke"</span>&gt;#232323&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
-<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span><span class="ot"> name=</span><span class="st">"stroke-width"</span>&gt;0.5&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
-<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">se:Stroke</span>&gt;</span>
-<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">se:Mark</span>&gt;</span>
-<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:Size</span>&gt;29&lt;/<span class="kw">se:Size</span>&gt;</span>
-<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">se:Graphic</span>&gt;</span>
-<span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">se:PointSymbolizer</span>&gt;</span>
-<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">se:Rule</span>&gt;</span>
-<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">se:FeatureTypeStyle</span>&gt;</span>
-<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">UserStyle</span>&gt;</span>
-<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">NamedLayer</span>&gt;</span>
-<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">StyledLayerDescriptor</span>&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;?xml</span> <span class="ot">version=</span><span class="st">"1.0"</span> <span class="ot">encoding=</span><span class="st">"UTF-8"</span><span class="fu">?&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">StyledLayerDescriptor</span> <span class="ot">xmlns=</span><span class="st">"http://www.opengis.net/sld"</span> <span class="ot">xmlns:se=</span><span class="st">"http://www.opengis.net/se"</span> <span class="ot">xmlns:ogc=</span><span class="st">"http://www.opengis.net/ogc"</span> <span class="ot">xsi:schemaLocation=</span><span class="st">"http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd"</span> <span class="ot">xmlns:xsi=</span><span class="st">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="ot">xmlns:xlink=</span><span class="st">"http://www.w3.org/1999/xlink"</span> <span class="ot">version=</span><span class="st">"1.1.0"</span>&gt;</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">NamedLayer</span>&gt;</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">se:Name</span>&gt;gpkg_land_matrix — deals_by_country&lt;/<span class="kw">se:Name</span>&gt;</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">UserStyle</span>&gt;</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">se:Name</span>&gt;gpkg_land_matrix — deals_by_country&lt;/<span class="kw">se:Name</span>&gt;</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">se:FeatureTypeStyle</span>&gt;</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">se:Rule</span>&gt;</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:Name</span>&gt;Single symbol&lt;/<span class="kw">se:Name</span>&gt;</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:PolygonSymbolizer</span>&gt;</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">se:Fill</span>&gt;</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:SvgParameter</span> <span class="ot">name=</span><span class="st">"fill"</span>&gt;#fdbf6f&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:SvgParameter</span> <span class="ot">name=</span><span class="st">"fill-opacity"</span>&gt;0.35&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">se:Fill</span>&gt;</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">se:Stroke</span>&gt;</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:SvgParameter</span> <span class="ot">name=</span><span class="st">"stroke"</span>&gt;#232323&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:SvgParameter</span> <span class="ot">name=</span><span class="st">"stroke-width"</span>&gt;1&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:SvgParameter</span> <span class="ot">name=</span><span class="st">"stroke-linejoin"</span>&gt;bevel&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">se:Stroke</span>&gt;</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">se:PolygonSymbolizer</span>&gt;</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">se:Rule</span>&gt;</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">se:FeatureTypeStyle</span>&gt;</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">UserStyle</span>&gt;</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">NamedLayer</span>&gt;</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">StyledLayerDescriptor</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>SLD pour “deals_by_country_centroid”
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode xml code-with-copy"><code class="sourceCode xml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;?xml</span> <span class="ot">version=</span><span class="st">"1.0"</span> <span class="ot">encoding=</span><span class="st">"UTF-8"</span><span class="fu">?&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">StyledLayerDescriptor</span> <span class="ot">xmlns=</span><span class="st">"http://www.opengis.net/sld"</span> <span class="ot">xmlns:se=</span><span class="st">"http://www.opengis.net/se"</span> <span class="ot">xmlns:ogc=</span><span class="st">"http://www.opengis.net/ogc"</span> <span class="ot">xsi:schemaLocation=</span><span class="st">"http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/StyledLayerDescriptor.xsd"</span> <span class="ot">xmlns:xsi=</span><span class="st">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="ot">xmlns:xlink=</span><span class="st">"http://www.w3.org/1999/xlink"</span> <span class="ot">version=</span><span class="st">"1.1.0"</span>&gt;</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">NamedLayer</span>&gt;</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">se:Name</span>&gt;gpkg_land_matrix — deals_by_country_centroid&lt;/<span class="kw">se:Name</span>&gt;</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">UserStyle</span>&gt;</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">se:Name</span>&gt;gpkg_land_matrix — deals_by_country_centroid&lt;/<span class="kw">se:Name</span>&gt;</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">se:FeatureTypeStyle</span>&gt;</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">se:Rule</span>&gt;</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:Name</span>&gt;201 - 5466&lt;/<span class="kw">se:Name</span>&gt;</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:Description</span>&gt;</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">se:Title</span>&gt;201 - 5466&lt;/<span class="kw">se:Title</span>&gt;</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">se:Description</span>&gt;</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">ogc:Filter</span> <span class="ot">xmlns:ogc=</span><span class="st">"http://www.opengis.net/ogc"</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>            <span class="er">&lt;ogc:And</span>&gt;</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">ogc:PropertyIsGreaterThanOrEqualTo</span>&gt;</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:PropertyName</span>&gt;suface_ha&lt;/<span class="kw">ogc:PropertyName</span>&gt;</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:Literal</span>&gt;200.81000000000000227&lt;/<span class="kw">ogc:Literal</span>&gt;</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">ogc:PropertyIsGreaterThanOrEqualTo</span>&gt;</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">ogc:PropertyIsLessThanOrEqualTo</span>&gt;</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:PropertyName</span>&gt;suface_ha&lt;/<span class="kw">ogc:PropertyName</span>&gt;</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:Literal</span>&gt;5466.3999999999996362&lt;/<span class="kw">ogc:Literal</span>&gt;</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">ogc:PropertyIsLessThanOrEqualTo</span>&gt;</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">ogc:And</span>&gt;</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">ogc:Filter</span>&gt;</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:PointSymbolizer</span>&gt;</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">se:Graphic</span>&gt;</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:Mark</span>&gt;</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:WellKnownName</span>&gt;circle&lt;/<span class="kw">se:WellKnownName</span>&gt;</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:Fill</span>&gt;</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span> <span class="ot">name=</span><span class="st">"fill"</span>&gt;#e5b636&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">se:Fill</span>&gt;</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:Stroke</span>&gt;</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span> <span class="ot">name=</span><span class="st">"stroke"</span>&gt;#232323&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span> <span class="ot">name=</span><span class="st">"stroke-width"</span>&gt;0.5&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">se:Stroke</span>&gt;</span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">se:Mark</span>&gt;</span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:Size</span>&gt;4&lt;/<span class="kw">se:Size</span>&gt;</span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">se:Graphic</span>&gt;</span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">se:PointSymbolizer</span>&gt;</span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">se:Rule</span>&gt;</span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">se:Rule</span>&gt;</span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:Name</span>&gt;5466 - 20413&lt;/<span class="kw">se:Name</span>&gt;</span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:Description</span>&gt;</span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">se:Title</span>&gt;5466 - 20413&lt;/<span class="kw">se:Title</span>&gt;</span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">se:Description</span>&gt;</span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">ogc:Filter</span> <span class="ot">xmlns:ogc=</span><span class="st">"http://www.opengis.net/ogc"</span></span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>            <span class="er">&lt;ogc:And</span>&gt;</span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">ogc:PropertyIsGreaterThan</span>&gt;</span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:PropertyName</span>&gt;suface_ha&lt;/<span class="kw">ogc:PropertyName</span>&gt;</span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:Literal</span>&gt;5466.3999999999996362&lt;/<span class="kw">ogc:Literal</span>&gt;</span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">ogc:PropertyIsGreaterThan</span>&gt;</span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">ogc:PropertyIsLessThanOrEqualTo</span>&gt;</span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:PropertyName</span>&gt;suface_ha&lt;/<span class="kw">ogc:PropertyName</span>&gt;</span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:Literal</span>&gt;20412.80000000001018634&lt;/<span class="kw">ogc:Literal</span>&gt;</span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">ogc:PropertyIsLessThanOrEqualTo</span>&gt;</span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">ogc:And</span>&gt;</span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">ogc:Filter</span>&gt;</span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:PointSymbolizer</span>&gt;</span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">se:Graphic</span>&gt;</span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:Mark</span>&gt;</span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:WellKnownName</span>&gt;circle&lt;/<span class="kw">se:WellKnownName</span>&gt;</span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:Fill</span>&gt;</span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span> <span class="ot">name=</span><span class="st">"fill"</span>&gt;#e5b636&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">se:Fill</span>&gt;</span>
+<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:Stroke</span>&gt;</span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span> <span class="ot">name=</span><span class="st">"stroke"</span>&gt;#232323&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span> <span class="ot">name=</span><span class="st">"stroke-width"</span>&gt;0.5&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
+<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">se:Stroke</span>&gt;</span>
+<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">se:Mark</span>&gt;</span>
+<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:Size</span>&gt;10&lt;/<span class="kw">se:Size</span>&gt;</span>
+<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">se:Graphic</span>&gt;</span>
+<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">se:PointSymbolizer</span>&gt;</span>
+<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">se:Rule</span>&gt;</span>
+<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">se:Rule</span>&gt;</span>
+<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:Name</span>&gt;20413 - 61376&lt;/<span class="kw">se:Name</span>&gt;</span>
+<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:Description</span>&gt;</span>
+<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">se:Title</span>&gt;20413 - 61376&lt;/<span class="kw">se:Title</span>&gt;</span>
+<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">se:Description</span>&gt;</span>
+<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">ogc:Filter</span> <span class="ot">xmlns:ogc=</span><span class="st">"http://www.opengis.net/ogc"</span></span>
+<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a>            <span class="er">&lt;ogc:And</span>&gt;</span>
+<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">ogc:PropertyIsGreaterThan</span>&gt;</span>
+<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:PropertyName</span>&gt;suface_ha&lt;/<span class="kw">ogc:PropertyName</span>&gt;</span>
+<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:Literal</span>&gt;20412.80000000001018634&lt;/<span class="kw">ogc:Literal</span>&gt;</span>
+<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">ogc:PropertyIsGreaterThan</span>&gt;</span>
+<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">ogc:PropertyIsLessThanOrEqualTo</span>&gt;</span>
+<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:PropertyName</span>&gt;suface_ha&lt;/<span class="kw">ogc:PropertyName</span>&gt;</span>
+<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:Literal</span>&gt;61375.88199999996868428&lt;/<span class="kw">ogc:Literal</span>&gt;</span>
+<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">ogc:PropertyIsLessThanOrEqualTo</span>&gt;</span>
+<span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">ogc:And</span>&gt;</span>
+<span id="cb9-90"><a href="#cb9-90" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">ogc:Filter</span>&gt;</span>
+<span id="cb9-91"><a href="#cb9-91" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:PointSymbolizer</span>&gt;</span>
+<span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">se:Graphic</span>&gt;</span>
+<span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:Mark</span>&gt;</span>
+<span id="cb9-94"><a href="#cb9-94" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:WellKnownName</span>&gt;circle&lt;/<span class="kw">se:WellKnownName</span>&gt;</span>
+<span id="cb9-95"><a href="#cb9-95" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:Fill</span>&gt;</span>
+<span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span> <span class="ot">name=</span><span class="st">"fill"</span>&gt;#e5b636&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
+<span id="cb9-97"><a href="#cb9-97" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">se:Fill</span>&gt;</span>
+<span id="cb9-98"><a href="#cb9-98" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:Stroke</span>&gt;</span>
+<span id="cb9-99"><a href="#cb9-99" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span> <span class="ot">name=</span><span class="st">"stroke"</span>&gt;#232323&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
+<span id="cb9-100"><a href="#cb9-100" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span> <span class="ot">name=</span><span class="st">"stroke-width"</span>&gt;0.5&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
+<span id="cb9-101"><a href="#cb9-101" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">se:Stroke</span>&gt;</span>
+<span id="cb9-102"><a href="#cb9-102" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">se:Mark</span>&gt;</span>
+<span id="cb9-103"><a href="#cb9-103" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:Size</span>&gt;16&lt;/<span class="kw">se:Size</span>&gt;</span>
+<span id="cb9-104"><a href="#cb9-104" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">se:Graphic</span>&gt;</span>
+<span id="cb9-105"><a href="#cb9-105" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">se:PointSymbolizer</span>&gt;</span>
+<span id="cb9-106"><a href="#cb9-106" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">se:Rule</span>&gt;</span>
+<span id="cb9-107"><a href="#cb9-107" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">se:Rule</span>&gt;</span>
+<span id="cb9-108"><a href="#cb9-108" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:Name</span>&gt;61376 - 160220&lt;/<span class="kw">se:Name</span>&gt;</span>
+<span id="cb9-109"><a href="#cb9-109" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:Description</span>&gt;</span>
+<span id="cb9-110"><a href="#cb9-110" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">se:Title</span>&gt;61376 - 160220&lt;/<span class="kw">se:Title</span>&gt;</span>
+<span id="cb9-111"><a href="#cb9-111" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">se:Description</span>&gt;</span>
+<span id="cb9-112"><a href="#cb9-112" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">ogc:Filter</span> <span class="ot">xmlns:ogc=</span><span class="st">"http://www.opengis.net/ogc"</span></span>
+<span id="cb9-113"><a href="#cb9-113" aria-hidden="true" tabindex="-1"></a>            <span class="er">&lt;ogc:And</span>&gt;</span>
+<span id="cb9-114"><a href="#cb9-114" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">ogc:PropertyIsGreaterThan</span>&gt;</span>
+<span id="cb9-115"><a href="#cb9-115" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:PropertyName</span>&gt;suface_ha&lt;/<span class="kw">ogc:PropertyName</span>&gt;</span>
+<span id="cb9-116"><a href="#cb9-116" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:Literal</span>&gt;61375.88199999996868428&lt;/<span class="kw">ogc:Literal</span>&gt;</span>
+<span id="cb9-117"><a href="#cb9-117" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">ogc:PropertyIsGreaterThan</span>&gt;</span>
+<span id="cb9-118"><a href="#cb9-118" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">ogc:PropertyIsLessThanOrEqualTo</span>&gt;</span>
+<span id="cb9-119"><a href="#cb9-119" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:PropertyName</span>&gt;suface_ha&lt;/<span class="kw">ogc:PropertyName</span>&gt;</span>
+<span id="cb9-120"><a href="#cb9-120" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:Literal</span>&gt;160220.00000000005820766&lt;/<span class="kw">ogc:Literal</span>&gt;</span>
+<span id="cb9-121"><a href="#cb9-121" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">ogc:PropertyIsLessThanOrEqualTo</span>&gt;</span>
+<span id="cb9-122"><a href="#cb9-122" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">ogc:And</span>&gt;</span>
+<span id="cb9-123"><a href="#cb9-123" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">ogc:Filter</span>&gt;</span>
+<span id="cb9-124"><a href="#cb9-124" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:PointSymbolizer</span>&gt;</span>
+<span id="cb9-125"><a href="#cb9-125" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">se:Graphic</span>&gt;</span>
+<span id="cb9-126"><a href="#cb9-126" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:Mark</span>&gt;</span>
+<span id="cb9-127"><a href="#cb9-127" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:WellKnownName</span>&gt;circle&lt;/<span class="kw">se:WellKnownName</span>&gt;</span>
+<span id="cb9-128"><a href="#cb9-128" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:Fill</span>&gt;</span>
+<span id="cb9-129"><a href="#cb9-129" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span> <span class="ot">name=</span><span class="st">"fill"</span>&gt;#e5b636&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
+<span id="cb9-130"><a href="#cb9-130" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">se:Fill</span>&gt;</span>
+<span id="cb9-131"><a href="#cb9-131" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:Stroke</span>&gt;</span>
+<span id="cb9-132"><a href="#cb9-132" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span> <span class="ot">name=</span><span class="st">"stroke"</span>&gt;#232323&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
+<span id="cb9-133"><a href="#cb9-133" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span> <span class="ot">name=</span><span class="st">"stroke-width"</span>&gt;0.5&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
+<span id="cb9-134"><a href="#cb9-134" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">se:Stroke</span>&gt;</span>
+<span id="cb9-135"><a href="#cb9-135" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">se:Mark</span>&gt;</span>
+<span id="cb9-136"><a href="#cb9-136" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:Size</span>&gt;22&lt;/<span class="kw">se:Size</span>&gt;</span>
+<span id="cb9-137"><a href="#cb9-137" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">se:Graphic</span>&gt;</span>
+<span id="cb9-138"><a href="#cb9-138" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">se:PointSymbolizer</span>&gt;</span>
+<span id="cb9-139"><a href="#cb9-139" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">se:Rule</span>&gt;</span>
+<span id="cb9-140"><a href="#cb9-140" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">se:Rule</span>&gt;</span>
+<span id="cb9-141"><a href="#cb9-141" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:Name</span>&gt;160220 - 1509612&lt;/<span class="kw">se:Name</span>&gt;</span>
+<span id="cb9-142"><a href="#cb9-142" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:Description</span>&gt;</span>
+<span id="cb9-143"><a href="#cb9-143" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">se:Title</span>&gt;160220 - 1509612&lt;/<span class="kw">se:Title</span>&gt;</span>
+<span id="cb9-144"><a href="#cb9-144" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">se:Description</span>&gt;</span>
+<span id="cb9-145"><a href="#cb9-145" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">ogc:Filter</span> <span class="ot">xmlns:ogc=</span><span class="st">"http://www.opengis.net/ogc"</span></span>
+<span id="cb9-146"><a href="#cb9-146" aria-hidden="true" tabindex="-1"></a>            <span class="er">&lt;ogc:And</span>&gt;</span>
+<span id="cb9-147"><a href="#cb9-147" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">ogc:PropertyIsGreaterThan</span>&gt;</span>
+<span id="cb9-148"><a href="#cb9-148" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:PropertyName</span>&gt;suface_ha&lt;/<span class="kw">ogc:PropertyName</span>&gt;</span>
+<span id="cb9-149"><a href="#cb9-149" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:Literal</span>&gt;160220.00000000005820766&lt;/<span class="kw">ogc:Literal</span>&gt;</span>
+<span id="cb9-150"><a href="#cb9-150" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">ogc:PropertyIsGreaterThan</span>&gt;</span>
+<span id="cb9-151"><a href="#cb9-151" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">ogc:PropertyIsLessThanOrEqualTo</span>&gt;</span>
+<span id="cb9-152"><a href="#cb9-152" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:PropertyName</span>&gt;suface_ha&lt;/<span class="kw">ogc:PropertyName</span>&gt;</span>
+<span id="cb9-153"><a href="#cb9-153" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">ogc:Literal</span>&gt;1509612&lt;/<span class="kw">ogc:Literal</span>&gt;</span>
+<span id="cb9-154"><a href="#cb9-154" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">ogc:PropertyIsLessThanOrEqualTo</span>&gt;</span>
+<span id="cb9-155"><a href="#cb9-155" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">ogc:And</span>&gt;</span>
+<span id="cb9-156"><a href="#cb9-156" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">ogc:Filter</span>&gt;</span>
+<span id="cb9-157"><a href="#cb9-157" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">se:PointSymbolizer</span>&gt;</span>
+<span id="cb9-158"><a href="#cb9-158" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">se:Graphic</span>&gt;</span>
+<span id="cb9-159"><a href="#cb9-159" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:Mark</span>&gt;</span>
+<span id="cb9-160"><a href="#cb9-160" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:WellKnownName</span>&gt;circle&lt;/<span class="kw">se:WellKnownName</span>&gt;</span>
+<span id="cb9-161"><a href="#cb9-161" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:Fill</span>&gt;</span>
+<span id="cb9-162"><a href="#cb9-162" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span> <span class="ot">name=</span><span class="st">"fill"</span>&gt;#e5b636&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
+<span id="cb9-163"><a href="#cb9-163" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">se:Fill</span>&gt;</span>
+<span id="cb9-164"><a href="#cb9-164" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">se:Stroke</span>&gt;</span>
+<span id="cb9-165"><a href="#cb9-165" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span> <span class="ot">name=</span><span class="st">"stroke"</span>&gt;#232323&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
+<span id="cb9-166"><a href="#cb9-166" aria-hidden="true" tabindex="-1"></a>                  &lt;<span class="kw">se:SvgParameter</span> <span class="ot">name=</span><span class="st">"stroke-width"</span>&gt;0.5&lt;/<span class="kw">se:SvgParameter</span>&gt;</span>
+<span id="cb9-167"><a href="#cb9-167" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">se:Stroke</span>&gt;</span>
+<span id="cb9-168"><a href="#cb9-168" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">se:Mark</span>&gt;</span>
+<span id="cb9-169"><a href="#cb9-169" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">se:Size</span>&gt;29&lt;/<span class="kw">se:Size</span>&gt;</span>
+<span id="cb9-170"><a href="#cb9-170" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">se:Graphic</span>&gt;</span>
+<span id="cb9-171"><a href="#cb9-171" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">se:PointSymbolizer</span>&gt;</span>
+<span id="cb9-172"><a href="#cb9-172" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">se:Rule</span>&gt;</span>
+<span id="cb9-173"><a href="#cb9-173" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">se:FeatureTypeStyle</span>&gt;</span>
+<span id="cb9-174"><a href="#cb9-174" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">UserStyle</span>&gt;</span>
+<span id="cb9-175"><a href="#cb9-175" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">NamedLayer</span>&gt;</span>
+<span id="cb9-176"><a href="#cb9-176" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">StyledLayerDescriptor</span>&gt;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -728,25 +718,25 @@ SLD pour “deals_by_country_centroid”
 <ul>
 <li><p>Dans QGIS, cliquez sur “Ajouter une couche” et sélectionnez “WMS”.</p></li>
 <li><p>Dans l’onglet “Couches”, cliquez sur “Nouveau”.</p></li>
-<li><p>Appelez la connexion “mon_geoserver” et collez l’url <code>GetCapabilities</code> dans “URL”. Elle devrait être identique à celle-ci&nbsp;:</p></li>
+<li><p>Appelez la connexion “mon_geoserver” et collez l’url <code>GetCapabilities</code> dans “URL”. Elle devrait ressembler à celle-ci&nbsp;:</p></li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>http://localhost:8080/geoserver/land_matrix/wms?service=WMS<span class="er">&amp;</span>version=1.1.0<span class="er">&amp;</span>request=GetCapabilities</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>http://localhost:8080/geoserver/land_matrix/wms?service=WMS<span class="er">&amp;</span>version=1.1.0<span class="er">&amp;</span>request=GetCapabilities</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Ça ne fonctionne pas&nbsp;!
+<span class="screen-reader-only">Important</span>Ça ne fonctionne pas&nbsp;!
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Pour vérifier que votre requête est bonne, allez dans GeoServer, affichez n’importe quelle couche en prévisualisation et copiez l’adresse.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>http://localhost:8080/geoserver/land_matrix/wms?service=WMS<span class="er">&amp;</span>version=1.1.0<span class="er">&amp;</span>request=GetMap<span class="er">&amp;</span>layers=land_matrix%3Adeals<span class="er">&amp;</span>bbox=-180.0%2C-90.0%2C180.0%2C90.0<span class="er">&amp;</span>width=768<span class="er">&amp;</span>height=384<span class="er">&amp;</span>srs=EPSG%3A4326<span class="er">&amp;</span>styles=<span class="er">&amp;</span>format=application/openlayers</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>http://localhost:8080/geoserver/land_matrix/wms?service=WMS<span class="er">&amp;</span>version=1.1.0<span class="er">&amp;</span>request=GetMap<span class="er">&amp;</span>layers=land_matrix%3Adeals<span class="er">&amp;</span>bbox=-180.0%2C-90.0%2C180.0%2C90.0<span class="er">&amp;</span>width=768<span class="er">&amp;</span>height=384<span class="er">&amp;</span>srs=EPSG%3A4326<span class="er">&amp;</span>styles=<span class="er">&amp;</span>format=application/openlayers</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Supprimez tout ce qui se trouve après “request=” et ajoutez “GetCapabilities”.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>http://localhost/geoserver/land_matrix/wms?service=WMS<span class="er">&amp;</span>version=1.1.0<span class="er">&amp;</span>request=GetCapabilities</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>http://localhost/geoserver/land_matrix/wms?service=WMS<span class="er">&amp;</span>version=1.1.0<span class="er">&amp;</span>request=GetCapabilities</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -754,6 +744,18 @@ SLD pour “deals_by_country_centroid”
 <li>Cliquez ensuite sur “Connexion” et vérifiez qu’une liste de couche apparaît et qu’elle contient bien vos couches “deals”, etc.</li>
 </ul>
 <p>Vous pouvez afficher la couche dans QGIS avec “Add” si vous le souhaitez. L’essentiel, c’est qu’on a vérifié que notre serveur émet bien des flux WMS pour nos couches et qu’on peut bien les lire.</p>
+</section>
+<section id="sauvegarder-son-travail" class="level3">
+<h3 class="anchored" data-anchor-id="sauvegarder-son-travail">Sauvegarder son travail</h3>
+<p>Si vous travaillez sur votre machine, votre travail est déjà bien en sécurité. Si vous avez <strong>connecté votre dépôt local à un dépôt sur GitHub</strong> (ou autre) ou bien si vous avez <strong>utilisé un <em>codespace</em></strong>, vous allez pouvoir “<em>commit”</em> votre travail.</p>
+<p>On y reviendra à la prochaine séance. Cela vous permet de dire à Git “voilà les changements que j’ai apportés à mon code” et d’y ajouter un petit message.</p>
+<p>Commencez par utiliser <code>git add .</code> pour ajouter vos modifications à ce qu’on va envoyer depuis votre environnement de travail (votre ordinateur ou <em>codespace</em>) jusqu’au dépôt (GitHub).</p>
+<p>Ensuite, ajoutez un message qui décrit rapidement ce que vous avez appliqué comme changements grâce à <code>git commit -m "&lt;contenu-du-message&gt;"</code>. Par exemple : <code>git commit -m "Couches ajoutées à GeoServer"</code>.</p>
+<p>Enfin, envoyez vos modifications à votre dépôt avec <code>git push</code> ! 🚀</p>
+<p>C’est satisfaisant, hein ? Voilà qui met un point final à votre TP.</p>
+</section>
+<section id="bravo" class="level3">
+<h3 class="anchored" data-anchor-id="bravo">Bravo !!!</h3>
 <p><strong>Bien joué&nbsp;! Vous maîtrisez maintenant les fonctionnalités basiques de GeoServer. Vous savez le déployer grâce à Docker, importer des couches de données, les styliser et les visualiser dans GeoServer et dans QGIS.</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -768,25 +770,31 @@ SLD pour “deals_by_country_centroid”
 <ul>
 <li><p>C’est quoi l’intérêt du serveur carto, déjà&nbsp;?</p>
 <ul>
-<li><p>Centralisation de la donnée et mise à jour</p></li>
-<li><p>Distribution de la donnée</p></li>
-<li><p>Gestion des droits</p></li>
-<li><p>Bien quand on a une organisation et bcp de données, s’intègre très bien dans une IDG</p></li>
-<li><p>Bien pour les couches Raster et les couches Vecteur lourdes qui peuvent être servies en tant qu’images (WMS)</p></li>
-<li><p>Connexion directe à une base de données PostgreSQL</p></li>
-<li><p>Possibilité d’écrire des requêtes SQL pour former les couches</p></li>
+<li><p>Centralisation de la donnée et mise à jour.</p></li>
+<li><p>Distribution de la donnée.</p></li>
+<li><p>Gestion des droits.</p></li>
+<li><p>Bien quand on a une organisation et beaucoup de données, s’intègre très bien dans une IDG.</p></li>
+<li><p>Bien pour les couches Raster et les couches Vecteur lourdes qui peuvent être servies en tant qu’images (WMS).</p></li>
+<li><p>Connexion directe à une base de données PostgreSQL possible.</p></li>
+<li><p>Possibilité d’écrire des requêtes SQL pour former les couches.</p></li>
 <li><p>Possibilité de créer des styles complexes “à la QGIS”.</p></li>
 </ul></li>
 <li><p>Est-ce que j’en ai besoin pour mon projet GeoNum&nbsp;?</p>
 <ul>
-<li>Ça dépend des données que vous utilisez et ce que vous en faites. Le mieux c’est d’en discuter avec les profs&nbsp;!</li>
+<li>Ça dépend des données que vous utilisez et ce que vous en faites. Le mieux c’est d’en parler ensemble&nbsp;!</li>
 </ul></li>
 </ul>
 
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Je vous recommande d’aller explorer le site <a href="https://newworldmap.org/?mode=linked&amp;region=304&amp;z=1.00&amp;lon=0.000&amp;lat=0.000">The New World Map</a> sur le sujet.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -838,13 +846,14 @@ SLD pour “deals_by_country_centroid”
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -859,7 +868,7 @@ SLD pour “deals_by_country_centroid”
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/gradelerm\.github\.io\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1201,8 +1210,8 @@ SLD pour “deals_by_country_centroid”
     </a>
   </li>  
     <li class="nav-item compact">
-    <a class="nav-link" href="https://fr.linkedin.com/in/marie-gradeler">
-      <i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="../../blog.xml">
+      <i class="bi bi-rss" role="img">
 </i> 
     </a>
   </li>  

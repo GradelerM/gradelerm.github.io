@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Architecture web</title>
+<title>Architecture web – GradelerM</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -60,19 +63,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<link href="../../static/logo.png" rel="icon" type="image/png">
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../static/logo.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-aca402cbfd1db37eedacf7b027d04790.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-ff1415f384dbeb7aa012942a502a64fd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-8e6c35aa1e5fba652634084ae772980a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -89,23 +108,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed quarto-light">
+<body class="nav-sidebar floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../static/logo.png" alt="" class="navbar-logo light-content">
+    <img src="../../static/logo.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">GradelerM</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
-<span class="menu-text">Accueil</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">À propos</span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-cours" role="link" data-bs-toggle="dropdown" aria-expanded="false">
@@ -118,9 +147,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
     </ul>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../ressources.html"> 
+<span class="menu-text">Ressources</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
+    <a href="https://github.com/GradelerM" title="Github" class="quarto-navigation-tool px-1" aria-label="Github"><i class="bi bi-github"></i></a>
+    <a href="../../blog.xml" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-rss"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -138,7 +173,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -151,48 +186,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../../cours/geonum/02_cours_architecture_client_serveur.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Architecture web</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../cours/geonum/03_cours_geoserver.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">GeoServer</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../cours/geonum/04_cours_intro_openlayers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">OpenLayers – introduction</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../cours/geonum/05_cours_openlayers_bases.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">OpenLayers – cycle de développement</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../cours/geonum/06_cours_ajout_couches.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Ajouter des couches</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../cours/geonum/07_cours_interactions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Interactions carte-interface</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../cours/geonum/08_cours_enrichir_ma_carte.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Enrichir ma carte</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../cours/geonum/09_rendu.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Rendu</span></a>
   </div>
 </li>
     </ul>
@@ -209,9 +202,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#supports" id="toc-supports" class="nav-link" data-scroll-target="#supports">Supports</a></li>
   <li><a href="#tp-déploiement-de-notre-geoserver" id="toc-tp-déploiement-de-notre-geoserver" class="nav-link" data-scroll-target="#tp-déploiement-de-notre-geoserver">TP – Déploiement de notre GeoServer</a>
   <ul class="collapse">
-  <li><a href="#avant-de-commencer" id="toc-avant-de-commencer" class="nav-link" data-scroll-target="#avant-de-commencer">Avant de commencer</a></li>
-  <li><a href="#récupération-du-code-sur-github" id="toc-récupération-du-code-sur-github" class="nav-link" data-scroll-target="#récupération-du-code-sur-github">Récupération du code sur GitHub</a></li>
-  <li><a href="#déploiement-de-la-stack" id="toc-déploiement-de-la-stack" class="nav-link" data-scroll-target="#déploiement-de-la-stack">Déploiement de la <em>stack</em></a></li>
+  <li><a href="#je-travaille-sur-ma-machine" id="toc-je-travaille-sur-ma-machine" class="nav-link" data-scroll-target="#je-travaille-sur-ma-machine">Je travaille sur ma machine</a></li>
+  </ul></li>
+  <li><a href="#jutilise-github-codespaces" id="toc-jutilise-github-codespaces" class="nav-link" data-scroll-target="#jutilise-github-codespaces">J’utilise GitHub Codespaces</a>
+  <ul class="collapse">
+  <li><a href="#ce-quil-faut-savoir" id="toc-ce-quil-faut-savoir" class="nav-link" data-scroll-target="#ce-quil-faut-savoir">Ce qu’il faut savoir</a></li>
+  <li><a href="#créer-un-dépôt-github" id="toc-créer-un-dépôt-github" class="nav-link" data-scroll-target="#créer-un-dépôt-github">Créer un dépôt GitHub</a></li>
+  <li><a href="#lancer-codespaces" id="toc-lancer-codespaces" class="nav-link" data-scroll-target="#lancer-codespaces">Lancer codespaces</a></li>
   </ul></li>
   <li><a href="#mémo" id="toc-mémo" class="nav-link" data-scroll-target="#mémo">Mémo</a></li>
   </ul>
@@ -242,17 +239,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="objectifs-de-la-session" class="level2">
 <h2 class="anchored" data-anchor-id="objectifs-de-la-session">Objectifs de la session</h2>
 <ul>
-<li>Comprendre comment fonctionne une architecture web basique</li>
-<li>Déployer une architecture web de développement en utilisant Docker</li>
+<li>Comprendre comment fonctionne une architecture web basique.</li>
+<li>Déployer une architecture web de développement en utilisant Docker.</li>
 </ul>
 <p><em>Durée&nbsp;: 1h</em></p>
 </section>
 <section id="supports" class="level2">
 <h2 class="anchored" data-anchor-id="supports">Supports</h2>
-<p><a href="../../cours/geonum/02_diapos_architecture_client_serveur.html" target="_blank">Cours&nbsp;: Architecture client-server</a></p>
+<p><a href="../../cours/geonum/02_diapos_architecture_client_serveur.html" target="_blank">Cours&nbsp;: Architecture client-serveur</a></p>
 </section>
 <section id="tp-déploiement-de-notre-geoserver" class="level2">
 <h2 class="anchored" data-anchor-id="tp-déploiement-de-notre-geoserver">TP – Déploiement de notre GeoServer</h2>
+<p>Il est possible de suivre ce TP et tous les suivants de deux manières :</p>
+<ul>
+<li><p>Vous avez Git, Docker et NodeJS installés sur votre ordinateur ou celui auquel vous avez accès. Dans ce cas, suivez les instructions “<a href="#je-travaille-sur-ma-machine">Je travaille sur ma machine</a>”.</p></li>
+<li><p>Vous n’avez rien de tout ça et vous avez un compte GitHub. Dans ce cas, suivez les instructions “<a href="#jutilise-github-codespaces">J’utilise GitHub Codespaces</a>”.</p></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Je peux faire les deux. Qu’est-ce que je devrais choisir ?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Si vous pouvez faire les deux et n’avez pas de préférence, voilà mes conseils pour choisir :</p>
+<ul>
+<li><p><strong>Vous n’avez pas de compte GitHub et pas envie d’en créer un, travaillez sur votre machine.</strong> Si vous ne pouvez pas travailler sur votre machine, alors je vous conseille de tout de même créer un compte GitHub avec l’adresse de l’Université, pour ne pas le rattacher à la vôtre.</p></li>
+<li><p><strong>Vous êtes déjà expérimenté en code, ou vous aimez expérimenter : travaillez sur votre machine.</strong> GitHub Codespaces ne permet pas une utilisation illimitée, nous avons un certain quota à ne pas dépasser par mois. De plus, vous avez forcément besoin d’une connexion internet pour accéder à Codespaces. Et puis, c’est souvent plus confortable d’avoir son code sur sa machine pour utiliser notre éditeur de code favori, par exemple.</p></li>
+<li><p><strong>Vous n’avez pas déjà installé Docker, Git et Node : commencez le TP avec GitHub Codespaces</strong> et faites l’installation chez vous pour la prochaine session, sinon vous allez avoir un train de retard !</p></li>
+<li><p><strong>Vous n’avez pas beaucoup d’expérience en développement ou avec Git</strong> : ça peut paraître contre-intuitif, mais il sera plus simple de travailler avec <strong>GitHub Codespaces</strong>. Pas besoin d’apprendre des manipulations complexes avec des commandes git.</p></li>
+</ul>
+<p>Notez que je vous demande de me rendre le travail final sous forme de dépôt git. Utiliser GitHub Codespaces est donc la meilleure option pour vous si vous ne savez pas encore trop ce que vous faites.</p>
+</div>
+</div>
+</div>
+<section id="je-travaille-sur-ma-machine" class="level3">
+<h3 class="anchored" data-anchor-id="je-travaille-sur-ma-machine">Je travaille sur ma machine</h3>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -263,39 +290,39 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Ce TP suppose que Git, NodeJS et Docker sont installés sur la machine. Il a été écrit pour une machine Linux, certains chemins et lignes de commande peuvent donc être différents sur une machine Windows ou Mac.</p>
+<p>Cette section suppose que Git, NodeJS et Docker sont installés sur la machine. Il a été écrit pour une machine Linux, certains chemins et lignes de commande peuvent donc être différents sur une machine Windows ou Mac.</p>
 </div>
 </div>
-<section id="avant-de-commencer" class="level3">
-<h3 class="anchored" data-anchor-id="avant-de-commencer">Avant de commencer</h3>
+<section id="avant-de-commencer" class="level4">
+<h4 class="anchored" data-anchor-id="avant-de-commencer">Avant de commencer</h4>
 <p>Avant de commencer, on doit vérifier que Git, NodeJS et Docker sont bien installés et à jour.</p>
-<section id="git" class="level4">
-<h4 class="anchored" data-anchor-id="git">Git</h4>
+<section id="git" class="level5">
+<h5 class="anchored" data-anchor-id="git">Git</h5>
 <p>Ouvrez le terminal de votre choix (pour les utilisateurs Windows, je recommande Powershell) et tapez la commande suivante&nbsp;:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Vous devriez obtenir la réponse suivante&nbsp;: <code>git version 2.43.0</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> version</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Vous devriez obtenir la réponse suivante&nbsp;: <code>git version 2.56.0</code></p>
 <p>Si la version est plus ancienne, il faut la mettre à jour. Si vous avez un message d’erreur, git n’est pas installé. Dans les deux cas, rendez-vous sur la page d’installation de git pour télécharger et installer la nouvelle version&nbsp;: <a href="#0">https://git-scm.com/install/windows</a></p>
 <p>Vous pouvez vérifier que git est installé et à jour en re-tapant la commande <code>git version</code>.</p>
 <p><em>Note&nbsp;: il faut parfois redémarrer l’ordinateur pour qu’il reconnaisse bien l’installation de Git.</em></p>
 </section>
-<section id="nodejs" class="level4">
-<h4 class="anchored" data-anchor-id="nodejs">NodeJS</h4>
+<section id="nodejs" class="level5">
+<h5 class="anchored" data-anchor-id="nodejs">NodeJS</h5>
 <p>Dans le terminal, tapez la commande suivante&nbsp;:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> <span class="at">-v</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Vous devriez obtenir la réponse suivante&nbsp;: <code>v24.11.1</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> <span class="at">-v</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Vous devriez obtenir la réponse suivante&nbsp;: <code>v26.6.0</code></p>
 <p>Si Node n’est pas installé… on peut essayer mais on a peu de chances d’avoir les droits sur les ordis de la fac. Voilà quand même le lien officiel&nbsp;: <a href="https://nodejs.org/en/download" class="uri">https://nodejs.org/en/download</a></p>
 <p>Si Node est installé mais la version trop ancienne, essayez la commande suivante&nbsp;:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nvm</span> install 24</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Puis vérifier la mise à jour avec la commande suivante&nbsp;:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> <span class="at">-v</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nvm</span> install 26</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Puis vérifiez que la mise à jour a bien fonctionné avec la commande suivante&nbsp;:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> <span class="at">-v</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="docker" class="level4">
-<h4 class="anchored" data-anchor-id="docker">Docker</h4>
+<section id="docker" class="level5">
+<h5 class="anchored" data-anchor-id="docker">Docker</h5>
 <p>Pour vérifier que Docker est installé, vous avez plusieurs options&nbsp;: cherchez le logiciel “Docker Desktop” sur votre ordinateur ou bien tapez la commande suivante&nbsp;:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run hello-world</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><em>Note&nbsp;: si vous utilisez votre propre machine Linux, essayez <code>sudo</code>. Quoi qu’il en soit, il vaut mieux éviter d’utiliser Docker en tant que super utilisateur, référez-vous aux instructions post-installation officielles&nbsp;: <a href="https://docs.docker.com/engine/install/linux-postinstall" class="uri">https://docs.docker.com/engine/install/linux-postinstall</a></em></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run hello-world</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><em>Note&nbsp;: si vous utilisez votre propre machine Linux et que vous avez un message, essayez <code>sudo</code>. Si ça fonctionne, alors référez-vous aux instructions post-installation officielles&nbsp;: <a href="https://docs.docker.com/engine/install/linux-postinstall" class="uri">https://docs.docker.com/engine/install/linux-postinstall</a>. Il vaut mieux éviter d’utiliser Docker en tant que super utilisateur.</em></p>
 <p>Vous devriez obtenir dans votre terminal le message suivant&nbsp;:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Hello</span> from Docker!</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Hello</span> from Docker!</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">This</span> message shows that your installation appears to be working correctly.</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ex">To</span> generate this message, Docker took the following steps:</span>
@@ -314,25 +341,29 @@ Important
 <span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a> <span class="ex">https://hub.docker.com/</span></span>
 <span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="ex">For</span> more examples and ideas, visit:</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a> <span class="ex">https://docs.docker.com/get-started/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a> <span class="ex">https://docs.docker.com/get-started/</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Si c’est le cas, docker est installé est fonctionne. Sinon… si vous êtes sur les ordinateurs de la fac, on est fichus. On n’a pas les droits pour l’installer. Donc… on croise les doigts 🤞</p>
 </section>
 </section>
-<section id="récupération-du-code-sur-github" class="level3">
-<h3 class="anchored" data-anchor-id="récupération-du-code-sur-github">Récupération du code sur GitHub</h3>
+<section id="récupération-du-code-sur-github" class="level4">
+<h4 class="anchored" data-anchor-id="récupération-du-code-sur-github">Récupération du code sur GitHub</h4>
 <p>Rendez-vous sur le GitHub du projet pour récupérer le code&nbsp;: <a href="https://github.com/GradelerM/geonum_docker" class="uri">https://github.com/GradelerM/geonum_docker</a></p>
 <p>Créez un dossier dans lequel vous voulez travailler. Il nous servira pour le cours de GeoServer et le cours d’OpenLayers. Vous pouvez l’appeler comme vous voulez, mais évitez les espaces et autres caractères difficiles à prendre en charge quand on doit définir un chemin d’accès.</p>
-<p>Ensuite, ouvrez ce dossier dans votre terminal (le clic droit devrait vous donner l’option sous Linux comme Windows). Vérfiez que le chemin pointe bien vers votre nom de dossier. Par exemple, si j’ai créé un dossier qui s’appelle “Cours_Geoserver_Openlayers” dans Documents, le chemin doit ressembler à ça&nbsp;: <code>~/Documents/Cours_Geoserver_Openlayers</code></p>
+<p>Ensuite, ouvrez ce dossier dans votre terminal (le clic droit devrait vous donner l’option). Vérfiez que le chemin pointe bien vers votre nom de dossier. Par exemple, si j’ai créé un dossier qui s’appelle “Cours_Geoserver_Openlayers” dans Documents, le chemin doit ressembler à ça&nbsp;: <code>~/Documents/Cours_Geoserver_Openlayers</code></p>
 <p>Quand c’est bon, on va utiliser Git pour cloner mon dépôt. En langage courant, ça veut dire qu’on utilise Git pour créer une copie de mon code sur votre ordinateur.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/GradelerM/geonum_docker.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/GradelerM/geonum_docker.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Vérifiez votre dossier. Vous devriez avec un nouveau répertoire <code>geonum_docker</code>. Ouvrez ce répertoire dans VSCode pour qu’on puisse regarder le code ensemble.</p>
-<div class="callout callout-style-default callout-important callout-titled">
+<p>Il reste une dernière étape. Pour le moment, votre répertoire est toujours “connecté” à mon dépôt GitHub. On va le déconnecter avec la commande suivante :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote remove origin</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Vérifiez que la commande suivante n’affiche rien (pas d’url pointant vers mon GitHub en tout cas). Si c’est bon, bravo, vous avez bien préparé votre répertoire de travail !</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote <span class="at">-v</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-important callout-empty-content callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Point diapos sur le contenu du répertoire
+<span class="screen-reader-only">Important</span>Point diapos sur le contenu du répertoire
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -340,32 +371,104 @@ Point diapos sur le contenu du répertoire
 </div>
 </div>
 </section>
-<section id="déploiement-de-la-stack" class="level3">
-<h3 class="anchored" data-anchor-id="déploiement-de-la-stack">Déploiement de la <em>stack</em></h3>
-<p>Maintenant qu’on a compris le contenu du fichier <code>docker_compose.yml</code>, on peut déployer notre GeoServer et commencer à l’utiliser. Pour ça, ouvrez un terminal dans VSCode et vérifiez que le chemin correspond bien au répertoire qu’on vient de récupérer. Si on reprend l’exemple, précédent, au lieu d’avoir <code>~/Documents/Cours_Geoserver_Openlayers</code> vous devriez maintenant avoir <code>~/Documents/Cours_Geoserver_Openlayers/geonum_docker</code> . C’est ce qu’on va appeler à partir de maintenant la <strong>racine</strong> de notre projet.</p>
+<section id="déploiement-de-la-stack" class="level4">
+<h4 class="anchored" data-anchor-id="déploiement-de-la-stack">Déploiement de la <em>stack</em></h4>
+<p>Maintenant qu’on a compris le contenu du fichier <code>docker_compose.yml</code>, on peut déployer notre GeoServer et commencer à l’utiliser. Pour ça, ouvrez un terminal dans VSCode et vérifiez que le chemin correspond bien au répertoire qu’on vient de créer. Si on reprend l’exemple, précédent, au lieu d’avoir <code>~/Documents/Cours_Geoserver_Openlayers</code> vous devriez maintenant avoir <code>~/Documents/Cours_Geoserver_Openlayers/geonum_docker</code> . C’est ce qu’on va appeler à partir de maintenant la <strong>racine</strong> de notre projet.</p>
 <p>Une fois que votre terminal est ouvert à la racine de votre projet, taper la commande suivante&nbsp;:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose up <span class="at">-d</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose up <span class="at">-d</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Cette commande demande à Docker de lire notre recette de <code>docker_compose.yml</code> pour créer notre GeoServer (et une autre application web qu’on utilisera plus tard, mais pas aujourd’hui).</p>
 <p>Si vous avez Docker Desktop d’installé, vous pouvez l’ouvrir pour vérifier qu’il se passe bien quelque chose.</p>
-<p><strong>Si ça prend du temps la première fois, c’est normal.</strong> Docker doit d’abord aller récupérer les “recettes” (images) en ligne pour GeoServer et Caddy (qu’on présentera pendant les cours OpenLayers). Normalement, les prochaines fois, ça ira vite.</p>
-<p>Quand le container est prêt, rendez-vous sur <a href="http://localhost:8080/geoserver/web/?0" class="uri">http://localhost:8080/geoserver/web/?0</a>. Si vous voyez l’interface de GeoServer, hourra&nbsp;! On peut passer au prochain cours.</p>
+<p><strong>Si ça prend du temps la première fois, c’est normal.</strong> Docker doit d’abord aller récupérer les “recettes” (images) en ligne pour GeoServer et Caddy (qu’on présentera pendant les cours OpenLayers). Normalement, ce sera beaucoup plus rapide les fois suivantes.</p>
+<p>Quand le container est prêt, rendez-vous sur <a href="http://localhost:8080/geoserver/web/?0" class="uri">http://localhost:8080/geoserver/web/?0</a>. Si vous voyez l’interface de GeoServer, hourra&nbsp;! On peut passer au prochain TP.</p>
 <p>Sinon, appelez-moi, on va débugger tout ça ensemble.</p>
+</section>
+<section id="et-pour-arrêter-tout-ça" class="level4">
+<h4 class="anchored" data-anchor-id="et-pour-arrêter-tout-ça">Et pour arrêter tout ça ?</h4>
+<p>Facile ! Ouvrez un terminal à la racine de votre projet et tapez <code>docker compose down</code>. Et voilà ! Vous pouvez aussi arrêter vos services depuis l’application de bureau Docker Desktop.</p>
+</section>
+</section>
+</section>
+<section id="jutilise-github-codespaces" class="level2">
+<h2 class="anchored" data-anchor-id="jutilise-github-codespaces">J’utilise GitHub Codespaces</h2>
+<section id="ce-quil-faut-savoir" class="level3">
+<h3 class="anchored" data-anchor-id="ce-quil-faut-savoir">Ce qu’il faut savoir</h3>
+<blockquote class="blockquote">
+<p><a href="https://github.com/features/codespaces">GitHub Codespaces</a> provides cloud-powered development environments for any activity - whether it’s a long-term project, or a short-term task like reviewing a pull request. You can work with these environments from Visual Studio Code or in a browser-based editor.</p>
+</blockquote>
+<p>Comme l’annonce la documentation, GitHub Codespaces vous permet d’accéder à un environnement de développement comprenant une machine virtuelle et l’éditeur de code Visual Studio Code dans votre navigateur web.</p>
+<p>L’intérêt ici, c’est que vous n’avez rien à installer : Codespaces se charge de créer pour vous une machine sous Linux et d’installer Git, Docker et NodeJS en suivant les fichiers de configuration du dépôt.</p>
+<p>Attention cependant : la version gratuite de Codespaces ne permet pas de bénéficier d’une utilisation infinie. La configuration de machine que l’on va utiliser ici devrait nous permettre <strong>environ 60h d’utilisation sur le mois</strong>, ce qui peut suffire… si vous pensez bien à arrêter votre machine à la fin du TP !</p>
+</section>
+<section id="créer-un-dépôt-github" class="level3">
+<h3 class="anchored" data-anchor-id="créer-un-dépôt-github">Créer un dépôt GitHub</h3>
+<p>Connectez vous à votre compte <a href="https://github.com/">GitHub</a> et accédez au dépôt du TP : <a href="https://github.com/GradelerM/geonum_docker" class="uri">https://github.com/GradelerM/geonum_docker</a>.</p>
+<p>En haut à droite, cliquez sur le bouton <strong><em>Fork</em></strong> et sélectionnez l’option <em>Create a new fork</em> (ou équivalent si vous avez votre navigateur dans une autre langue). Cela va vous permettre de créer une copie de mon dépôt que vous pourrez ensuite éditer comme bon vous semble !</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../static/captures/fork_button.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+<p>Vous devriez arrivez sur cet écran, qui va vous demander de nommer votre dépôt. Ici, pour l’exemple, je l’ai appelé <code>geonum_docker_tests</code>. Dans la liste <em>Choose an owner</em>, choisissez votre compte GitHub. Vous pouvez ajouter la description que vous souhaitez. Ensuite, cliquez sur <strong><em>Create fork</em></strong>.</p>
+<p><img src="../../static/captures/codespaces_fork_screen.png" class="img-fluid"></p>
+<p>Maintenant, vous devriez vous trouver sur votre dépôt. Vérifiez qu’en haut à gauche de votre écran, vous avez bien un chemin de la forme <code>&lt;votre_compte&gt;/geonum_docker</code> et non pas <code>GradelerM/geonum_docker</code>.</p>
+<div class="callout callout-style-default callout-important callout-empty-content callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Point diapos sur le contenu du répertoire
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</section>
+<section id="lancer-codespaces" class="level3">
+<h3 class="anchored" data-anchor-id="lancer-codespaces">Lancer codespaces</h3>
+<p>Maintenant qu’on a compris le contenu du fichier <code>docker_compose.yml</code>, on peut déployer notre GeoServer et commencer à l’utiliser. Depuis votre dépôt, cliquez sur le bouton <strong><em>&lt;&gt; Code</em></strong>, allez dans l’onglet <em>Codespaces</em> et cliquez sur le “+” pour créer un nouveau Codespace.</p>
+<p><img src="../../static/captures/codespaces_creation.png" class="img-fluid"></p>
+<p>Vous devriez être redirigés sur une fenêtre de VSCode dans votre navigateur. Pendant que GitHub travaille, regardez à gauche de votre écran : vous voyez le contenu de votre répertoire. C’est l’équivalent des “dossiers” dans votre ordinateur. Vous devriez avoir tout en haut la mention <strong><em>geonum_docker</em></strong>. Si votre terminal s’est ouvert en bas de l’écran, vous devriez retrouver cette mention dans un chemin de la forme <code>workspaces/geonum_docker</code>. Ce dossier <strong><em>geonum_docker</em></strong> est ce qu’on va appeler à partir de maintenant la <strong>racine</strong> de notre projet.</p>
+<p>Une fois que votre terminal est ouvert à la racine de votre projet, taper la commande suivante&nbsp;:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> compose up <span class="at">-d</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Cette commande demande à Docker de lire notre recette de <code>docker_compose.yml</code> pour créer notre GeoServer (et une autre application web qu’on utilisera plus tard, mais pas aujourd’hui).</p>
+<p>Vous pouvez aller voir dans l’onglet <em>Containers</em> (dans la barre verticale à gauche de l’écran). Vous devriez voir apparaître des containers et des images.</p>
+<p><strong>Si ça prend du temps la première fois, c’est normal.</strong> Docker doit d’abord aller récupérer les “recettes” (images) en ligne pour GeoServer et Caddy (qu’on présentera pendant les cours OpenLayers). Normalement, ce sera beaucoup plus rapide les fois suivantes.</p>
+<p>Lorsque l’éditeur vous demande si vous faites confiance au contenu du dossier, acceptez. Sinon, vous n’aurez pas le droit d’exécuter son contenu.</p>
+<p><img src="../../static/captures/codespaces_trust_folder.png" class="img-fluid"></p>
+<p>Quand le container est prêt, rendez-vous dans l’onglet <em>Ports</em> de votre terminal, en bas de l’écran. Normalement, vous avez deux adresses : une en <code>80</code> et une en <code>8080</code>. C’est celle-ci qui nous intéresse. Ouvrez-la dans votre navigateur.</p>
+<p><img src="../../static/captures/codespaces_ports.png" class="img-fluid"></p>
+<p>Si vous avez une page <em>404</em>, c’est normal. Ajoutez <code>/geoserver</code> à la fin de l’adresse, pour avoir quelque chose comme ça :</p>
+<pre><code>https://probable-couscous-956p5pvp7ppc99g9-8080.app.github.dev/geoserver/web/?0</code></pre>
+<p>Si vous voyez l’interface de GeoServer, hourra&nbsp;! On peut passer au prochain TP.</p>
+<p>Sinon, appelez-moi, on va débugger tout ça ensemble.</p>
+<section id="et-pour-arrêter-tout-ça-1" class="level4">
+<h4 class="anchored" data-anchor-id="et-pour-arrêter-tout-ça-1">Et pour arrêter tout ça ?</h4>
+<p><strong>Très bonne question !</strong> Souvenez-vous que nous utilisons un service à accès limité. Pour ne pas gaspiller vos crédits du mois dans un GitHub Codespaces que vous n’utilisez pas, il faut <strong>absolument penser à l’arrêter</strong>.</p>
+<p>Si jamais vous oubliez, la machine devrait s’arrêter au bout de 15 minutes… mais c’est un bon réflexe de la stopper quand on compte les heures, et qu’on veut faire quelques économies d’électricité par la même occasion (ça consomme, un serveur).</p>
+<p>Vous avez deux options :</p>
+<ul>
+<li><p>Allez sur votre dépôt. Depuis le même menu qui vous a permis de créer et lancer votre <em>codespace</em>, cliquez sur les points de suspension “…” et sélectionner l’option <em>Stop codespace</em>.</p></li>
+<li><p>Allez sur la page de gestion de vos <em>codespaces</em> <a href="https://github.com/codespaces" class="uri">https://github.com/codespaces</a>, cliquez sur les points de suspension “…” et sélectionner l’option <em>Stop codespace</em>.</p></li>
+</ul>
+</section>
 </section>
 </section>
 <section id="mémo" class="level2">
 <h2 class="anchored" data-anchor-id="mémo">Mémo</h2>
 <p>Dans cette section, j’ajoute quelques éléments d’aide à la compréhension du cours comme des <strong>explications supplémentaires</strong> ou des <strong>pistes pour aller plus loin</strong>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Containers, images, services…
+<span class="screen-reader-only">Note</span>Containers, images, services…
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -439,13 +542,14 @@ Containers, images, services…
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -460,7 +564,7 @@ Containers, images, services…
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/gradelerm\.github\.io\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -802,8 +906,8 @@ Containers, images, services…
     </a>
   </li>  
     <li class="nav-item compact">
-    <a class="nav-link" href="https://fr.linkedin.com/in/marie-gradeler">
-      <i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="../../blog.xml">
+      <i class="bi bi-rss" role="img">
 </i> 
     </a>
   </li>  

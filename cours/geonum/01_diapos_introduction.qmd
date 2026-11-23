@@ -1,14 +1,14 @@
 ---
-title: "Formation WebCarto GeoNum 2025-2026"
+title: "Formation WebCarto GeoNum 2026-2027"
 author: "Marie Gradeler"
-date: 1 Dec 2025
+date: 27 Nov 2026
 format: 
   revealjs: 
     theme: [default, ../../styles/slides.scss]
     transition: slide
     controls: true
     controls-layout: edges
-    footer: "Formation WebCarto GeoNum 2025-2026"
+    footer: "Formation WebCarto GeoNum 2026-2027"
     logo: ../../static/logos/logo-geonum.webp
 ---
 
@@ -28,18 +28,19 @@ format:
 
 💻 Contrat de 6 mois au CIRAD pour terminer la production de l’appli carto du stage
 
-💻 Depuis, je travaille comme consultante IFAD sur le project Land Matrix (création d’indicateurs, stats avec R, beaucoup de dataviz et développement Web)
+💻 Depuis, je travaille comme consultante CIRAD (après 3 ans IFAD) sur le project Land Matrix (création d’indicateurs, stats avec R, beaucoup de dataviz et développement Web)
 
 ## Les cours
 
--   *1er Décembre, 9h-12h* — Architecture Web et Serveurs Cartographiques
--   *2 Décembre, 9h-12h* — Introduction à OpenLayers
--   *4 Décembre, 9h-12h* — Ajouter des couches à ma carte
--   *8 Décembre, 9h-12h* — Interactions entre carte et interface
--   *11 Décembre, 9h-12h* — Enrichir la carte en fonctionnalités, partie 1
--   *12 Décembre, 9h-12h* — Enrichir la carte en fonctionnalités, partie 2
+- *27 Novembre, 9h-12h* — Architecture Web et Serveurs Cartographiques
 
-On va travailler sur les **serveurs cartographiques**, notamment **GeoServer**, mais aussi sur la librairie de cartographie **OpenLayers**. Cela va nous demander de savoir écrire du code en **JavaScript**, d’être capable d’exécuter une ou deux lignes de commandes en **Bash** et de comprendre l’architecture **client-serveur** du web.
+- *2 Décembre, 9h-12h* — Introduction à OpenLayers et au cycle de développement d’une application web (aide au projet GéoNum)
+
+- *8 Décembre, 9h-12h* — Ajouter des couches à la carte (WMS, WFS, GeoJson)
+
+- *9 Décembre, 9h-12h* — Interactions carte-interface et enrichir la carte en fonctionnalités
+
+Nous allons travailler sur les **serveurs cartographiques**, notamment **GeoServer**, mais aussi sur la librairie de cartographie **OpenLayers**. Cela va nous demander de savoir écrire du code en **JavaScript**, d’être capable d’exécuter une ou deux lignes de commandes en **Bash** et de comprendre l’architecture **client-serveur** du web.
 
 Je vous recommande de revoir les cours de **Leaflet** (entre autres) qui sont complémentaires de celui-ci. Si vous connaissez Leaflet, vous connaissez presque déjà OpenLayers.
 
@@ -51,7 +52,7 @@ Il est en cours de construction mais suffit déjà à héberger les ressources p
 
 #### Moi : [marie.gradeler\@gmail.com](mailto:marie.gradeler@gmail.com)
 
-N’hésitez pas à me contacter. Mes cours sont condensés sur 2 semaines. Si quelque chose ne va pas, je dois le savoir dès la première séance. Je serai aussi disponible pour vous accompagner durant les projets GeoNum si vous avez besoin d’aide sur l’une des notions abordées en cours.
+N’hésitez pas à me contacter. Mes cours sont condensés sur 2-3 semaines. Si quelque chose ne va pas, je dois le savoir dès la première séance. Je serai aussi disponible pour vous accompagner durant les projets GeoNum si vous avez besoin d’aide sur l’une des notions abordées en cours.
 
 ![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjU0MWlrOHM3djBoYmNpa2U2bDl0bGJucWtieGU0NXdzOGVnbnN0NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUA7b7cyCdP8INUXjG/giphy.webp){fig-alt="GIF: Write a letter" fig-align="center" width="267"}
 
@@ -59,13 +60,13 @@ N’hésitez pas à me contacter. Mes cours sont condensés sur 2 semaines. Si q
 
 ### Organisation des cours
 
--   Pas mal de mise en pratique
+- Pas mal de mise en pratique.
 
--   On m’appelle si on est perdu, je suis là pour **vous aider** (ne me laissez pas faire mon cours dans le vide parce que vous avez abandonné tout espoir de raccrocher les wagons, ça ne sert à rien)
+- On m’appelle si on est perdu, je suis là pour **vous aider** (ne me laissez pas faire mon cours dans le vide parce que vous avez abandonné tout espoir de raccrocher les wagons, ça ne sert à rien).
 
--   Si on doit ralentir parce que j’ai trop prévu de choses techniques, **on ralentit** et puis c’est tout, j’adapterai l’évaluation à ce qu’on a eu le temps de voir en cours.
+- Si on doit ralentir parce que j’ai trop prévu de choses techniques, **on ralentit** et puis c’est tout, j’adapterai l’évaluation à ce qu’on a eu le temps de voir en cours.
 
--   Je sais que c’est difficile mais on **lâche son téléphone pendant le cours** (ou cet onglet mal planqué) et on se concentre sur le cours.
+- Essayez. **Vous avez tous les capacités pour sortir une carte web**, et mon cours devrait vraiment, *vraiment* vous aider pour le projet de fin d’année.
 
 ## Évaluation
 
@@ -77,7 +78,7 @@ N’hésitez pas à me contacter. Mes cours sont condensés sur 2 semaines. Si q
 
 💻 Déploiement (rudimentaire) de votre serveur GeoServer + application OpenLayers OU Leaflet en s’appuyant sur l’architecture web fournie
 
-Je vais recalibrer l’évaluation suivant la vitesse à laquelle on avance et le niveau moyen de la promo en dev. Du coup, vous aurez les consignes pendant le dernier cours.
+Je vais recalibrer l’évaluation suivant la vitesse à laquelle on avance et le niveau moyen de la promo en développement web. Du coup, vous aurez les consignes pendant le dernier cours.
 
 ## C’est parti !
 
