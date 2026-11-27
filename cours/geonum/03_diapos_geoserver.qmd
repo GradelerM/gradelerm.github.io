@@ -152,7 +152,7 @@ QGIS Server est plus difficile à mettre en place (il existe des application tie
 
 - GeoServer est un **serveur Open Source** écrit en Java qui permet aux utilisateurs de partager et éditer de la donnée géospatiale.
 
-- Il a été designé pour maximisé son **interopérabilité**, permettant de publier de la donnée des sources de données les plus courantes en utilisant des standards ouverts.
+- Il a été designé pour maximiser son **interopérabilité**, permettant de publier de la donnée des sources de données les plus courantes en utilisant des standards ouverts.
 
 - GeoServer est un projet **développé, testé et soutenu par sa communauté** - comme dans le cas de QGIS.
 

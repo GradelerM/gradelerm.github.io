@@ -170,7 +170,7 @@ L’onglet de publication de couche permet de configurer la couche et d’y ajou
 
 Les trois choses à faire absolument à chaque fois dans l’onglet données sont :
 
-- Renseigner les informations dans "**Informations de base sur les donneés**" comme le nom de la couche et un résumé. N’oubliez pas de laisser "Activé" et "Publié" cochés pour rendre la couche accessible depuis l’extérieur.
+- Renseigner les informations dans "**Informations de base sur les données**" comme le nom de la couche et un résumé. N’oubliez pas de laisser "Activé" et "Publié" cochés pour rendre la couche accessible depuis l’extérieur.
 
 - Vérifier le "**Système de Référence de Coordonnées (SRC)**" qui doit être pré-rempli en EPSG:4326 dans notre cas. Il correspond à la projection WGS84 utilisée dans la grande majorité des cas en cartographie web, même si les outils permettent petit à petit de se diriger plutôt vers la projection *Equal Earth*[^1] (EPSG:8857). Une version future de ce TP adoptera la projection *Equal Earth*. Si vous êtes déjà suffisamment à l’aise pour prendre des libertés vis-à-vis du TP, vous pouvez l’utiliser dès maintenant ! Et pour des cartes centrées sur la France, vous pourrez aussi utiliser la projection classique Lambert-93 (EPSG:2154).
 
